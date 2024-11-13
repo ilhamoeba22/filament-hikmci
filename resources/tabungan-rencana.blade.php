@@ -1,0 +1,125 @@
+@include('header')
+
+<!-- Navbar & Hero Start -->
+<div class="container-fluid position-relative p-0">
+    <!-- Header Start -->
+    <div class="container-fluid bg-breadcrumb">
+        <div class="container text-center py-5" style="max-width: 900px;">
+            <h4 class="text-white display-5 mb-4 wow fadeInDown" data-wow-delay="0.1s">Produk Tabungan Rencana</h4>
+            <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+                <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{ url('tabungan') }}">Tabungan</a></li>
+                <li class="breadcrumb-item active text-primary">Tabungan Rencana</li>
+            </ol>
+        </div>
+    </div>
+    <!-- Header End -->
+</div>
+<!-- Navbar & Hero End -->
+
+<!-- Tabungan rencana Start -->
+<div class="container-fluid tabungan">
+    <div class="container">
+        <div class="row g-5">
+            <div class="wow fadeInRight" data-wow-delay="0.2s">
+                <div class="tabungan-item">
+                    <h1 class="display-3 text-capitalize mb-3 mt-3">Tabungan Rencana</h1>
+                    <div class="row g-5 mb-3">
+
+                        <div class="col-md-6 text-center d-flex justify-content-center align-items-center">
+
+                            <img src="{{asset('frontend/img/t_Rencana.png')}}" class="img-fluid-produk" alt="Responsive image">
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="lh-base justify-text py-2">
+                                Tabungan untuk nasabah perorangan (siswa) dengan syarat
+                                mudah dan sederhana serta fitur yang menarik guna edukasi
+                                untuk budaya mendorong budaya menabung
+                            </h4>
+                            <h1 class="py-4">
+                                Fitur
+                            </h1>
+
+                            <div class="row g-5">
+                                <div class="col-md-6 d-flex align-items-center mb-4">
+                                    <i class="bi bi-bag-fill me-3 icon-hover" style="font-size: 2rem;"></i>
+                                    <h5 class="mb-0">Berdasarkan prinsip syariah dengan akad wadiah</h5>
+                                </div>
+                                <div class="col-md-6 d-flex align-items-center mb-4">
+                                    <i class="bi bi-gift-fill me-3 icon-hover" style="font-size: 2rem;"></i>
+                                    <h5 class="mb-0">Setoran awal ringan</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h1 class="pt-5">
+                        Keunggulan
+                    </h1>
+                    <div class="row g-5">
+                        <div class="col-md-6 d-flex align-items-center mb-4">
+                            <i class="bi bi-cash me-3 icon-hover" style="font-size: 2rem;"></i>
+                            <h5 class="mb-0">Bebas biaya administrasi</h5>
+                        </div>
+                        <div class="col-md-6 d-flex align-items-center mb-4">
+                            <i class="bi bi-hourglass-split me-3 icon-hover" style="font-size: 2rem;"></i>
+                            <h5 class="mb-0">Dapat diambil sewaktu - waktu</h5>
+                        </div>
+                    </div>
+                    <div class="row g-5">
+                        <div class="col-md-6 d-flex align-items-center mb-4">
+                            <i class="bi bi-truck me-3 icon-hover" style="font-size: 2rem;"></i>
+                            <h5 class="mb-0">Layanan pickup service</h5>
+                        </div>
+                        <div class="col-md-6 d-flex align-items-center mb-4">
+                            <i class="bi bi-lock-fill me-3 icon-hover" style="font-size: 2rem;"></i>
+                            <h5 class="mb-0">Dijamin oleh LPS</h5>
+                        </div>
+                    </div>
+
+                    <div class="row g-5">
+                        <div class="col-md-6 d-flex align-items-center mb-4">
+                            <i class="bi bi-cash-stack me-3 icon-hover" style="font-size: 2rem;"></i>
+                            <h5 class="mb-0">Setoran mulai dari Rp 10.000,-</h5>
+                        </div>
+                    </div>
+                    <!-- syarat -->
+                    <h1 class="pt-5">
+                        Syarat
+                    </h1>
+                    <div class="row g-5">
+                        <div class="col-md-6 d-flex align-items-center mb-4">
+                            <i class="bi bi-file-earmark-fill me-3 icon-hover" style="font-size: 2rem;"></i>
+                            <h5 class="mb-0">Tabungan untuk siswa
+                                (PAD, TK, SD / MI, SMP / MTs, SMA / SMK / MA)</h5>
+                        </div>
+                        <div class="col-md-6 d-flex align-items-center mb-4">
+                            <i class="bi bi-backpack me-3 icon-hover" style="font-size: 2rem;"></i>
+                            <h5 class="mb-0">Usia dibawah 17 tahun dan belum memiliki KTP</h5>
+                        </div>
+                    </div>
+                    <div class="row g-5">
+                        <div class="col-md-6 d-flex align-items-center mb-4">
+                            <i class="bi bi-credit-card-2-front me-3 icon-hover" style="font-size: 2rem;"></i>
+                            <h5 class="mb-0">KTP orang tua / wali</h5>
+                        </div>
+                        <div class="col-md-6 d-flex align-items-center mb-4">
+                            <i class="bi bi-patch-check me-3 icon-hover" style="font-size: 2rem;"></i>
+                            <h5 class="mb-0">Persetujuan yang sudah diverifikasi sekolah</h5>
+                        </div>
+                    </div>
+                    <div class="row pb-4 align-items-center text-center">
+                        <div class="col-md-12 ">
+                            <a href="https://wa.me/yourphonenumber" class="btn btn-primary btn-lg">
+                                Buka Rekening
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Products End -->
+
+@include('footer')
