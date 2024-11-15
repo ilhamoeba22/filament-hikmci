@@ -3,14 +3,8 @@
 <!-- Header Start -->
 <div class="container-fluid bg-breadcrumb">
     <div class="container text-center py-5" style="max-width: 900px">
-        <h4
-            class="text-white display-5 mb-4 wow fadeInDown"
-            data-wow-delay="0.1s">
-            Karir
-        </h4>
-        <ol
-            class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown"
-            data-wow-delay="0.3s">
+        <h4 class="text-white display-5 mb-4 wow fadeInDown" data-wow-delay="0.1s">Karir</h4>
+        <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
             <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
             <li class="breadcrumb-item active text-primary">Karir</li>
         </ol>
@@ -19,7 +13,6 @@
 <!-- Header End -->
 
 <!-- Laporan Keuangan Start -->
-
 <div class="container-fluid team py-1">
     <div class="container py-5">
         <div class="text-center mx-auto pb-1 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
@@ -51,6 +44,9 @@
                     </div>
                     @endforeach
                 </div>
+                <div class="d-flex justify-content-center">
+                    {{ $karirs->links('pagination::bootstrap-4') }}
+                </div>
                 @endif
             </div>
         </div>
@@ -58,3 +54,5 @@
 </div>
 
 @include('footer')
+
+<script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}"></script>
