@@ -57,9 +57,9 @@
                     <h4 class="text-white mb-4">Informasi</h4>
                     <a href="{{ url('/') }}"><i class="fas fa-angle-right me-2"></i> Home</a>
                     <a href="{{ url('about') }}"><i class="fas fa-angle-right me-2"></i> Tentang kami</a>
-                    <a href="{{ url('tabungan') }}"><i class="fas fa-angle-right me-2"></i> Tabungan</a>
-                    <a href="{{ url('deposito') }}"><i class="fas fa-angle-right me-2"></i> Deposito</a>
-                    <a href="{{ url('pembiayaan') }}"><i class="fas fa-angle-right me-2"></i> Pembiayaan</a>
+                    <a href="{{ url('karir') }}"><i class="fas fa-angle-right me-2"></i> Karir</a>
+                    <a href="{{ url('wakaf') }}"><i class="fas fa-angle-right me-2"></i> E-Wakaf</a>
+                    <a href="{{ url('asset') }}"><i class="fas fa-angle-right me-2"></i> Asset</a>
                     <a href="{{ url('lapkeu') }}"><i class="fas fa-angle-right me-2"></i> Laporan Keuangan</a>
                 </div>
             </div>

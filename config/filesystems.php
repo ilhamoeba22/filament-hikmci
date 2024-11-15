@@ -32,18 +32,38 @@ return [
 
         'local' => [
             'driver' => 'local',
-            'root' => storage_path('app/private'),
-            'serve' => true,
+            'root' => storage_path('app'),
             'throw' => false,
         ],
 
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
+            'url' => env('APP_URL') . '/storage',
             'visibility' => 'public',
-            'throw' => false,
         ],
+
+        'karir_images' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/karir/images'),
+            'url' => env('APP_URL') . '/storage/karir/images',
+            'visibility' => 'public',
+        ],
+
+        'asset_images' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/asset/images'),
+            'url' => env('APP_URL') . '/storage/asset/images',
+            'visibility' => 'public',
+        ],
+
+        'asset_pdfs' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/asset/pdfs'),
+            'url' => env('APP_URL') . '/storage/asset/pdfs',
+            'visibility' => 'public',
+        ],
+
 
         's3' => [
             'driver' => 's3',
@@ -54,7 +74,6 @@ return [
             'url' => env('AWS_URL'),
             'endpoint' => env('AWS_ENDPOINT'),
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
-            'throw' => false,
         ],
 
     ],

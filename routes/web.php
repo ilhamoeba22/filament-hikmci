@@ -1,18 +1,23 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AssetFrontendController;
+use App\Http\Controllers\KarirFrontendController;
 
-// Route untuk halaman utama
+// Static pages
 Route::view('/', 'index')->name('home');
-
-// Route untuk halaman tentang kami
 Route::view('/about', 'about')->name('about');
-
 Route::view('/team', 'team')->name('team');
 Route::view('/lapkeu', 'lapkeu')->name('lapkeu');
 Route::view('/pengaduan', 'pengaduan')->name('pengaduan');
+Route::view('/deposito', 'deposito')->name('deposito');
+Route::view('/pembiayaan', 'pembiayaan')->name('pembiayaan');
+Route::view('/berita', 'berita')->name('berita');
+Route::view('/karir', 'karir')->name('karir');
+Route::view('/asset', 'asset')->name('asset');
+Route::view('/wakaf', 'wakaf')->name('wakaf');
 
-// Route untuk halaman produk
+// Tabungan pages
 Route::prefix('tabungan')->group(function () {
     Route::view('/', 'tabungan')->name('tabungan');
     Route::view('/tabungan-karimah', 'tabungan-karimah')->name('tabungan-karimah');
@@ -21,15 +26,9 @@ Route::prefix('tabungan')->group(function () {
     Route::view('/tabungan-rencana', 'tabungan-rencana')->name('tabungan-rencana');
 });
 
-Route::view('/deposito', 'deposito')->name('deposito');
-Route::view('/pembiayaan', 'pembiayaan')->name('pembiayaan');
+// karir
+Route::get('/karir', [KarirFrontendController::class, 'index'])->name('karir.index');
+Route::get('/karir/{id}', [KarirFrontendController::class, 'show'])->name('karir.show');
 
-// Route untuk halaman berita
-Route::view('/berita', 'berita')->name('berita');
-
-// Route untuk halaman karir
-Route::view('/karir', 'karir')->name('karir');
-
-// Route untuk layanan lainnya
-Route::view('/e-asset', 'e-asset')->name('e-asset');
-Route::view('/wakaf', 'wakaf')->name('wakaf');
+// asset
+Route::get('/asset', [AssetFrontendController::class, 'index'])->name('asset.index');

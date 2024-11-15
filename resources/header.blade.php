@@ -68,9 +68,9 @@
                         <a href="{{ url('berita') }}" class="nav-item nav-link {{ request()->is('berita') ? 'active' : '' }}">Berita</a>
                         <a href="{{ url('karir') }}" class="nav-item nav-link {{ request()->is('karir') ? 'active' : '' }}">Karir</a>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle {{ request()->is('e-asset') || request()->is('wakaf') ? 'active' : '' }}" data-bs-toggle="dropdown">Layanan Lainnya</a>
+                            <a href="#" class="nav-link dropdown-toggle {{ request()->is('asset') || request()->is('wakaf') ? 'active' : '' }}" data-bs-toggle="dropdown">Layanan Lainnya</a>
                             <div class="dropdown-menu m-0">
-                                <a href="{{ url('e-asset') }}" class="dropdown-item {{ request()->is('e-asset') ? 'active' : '' }}">E-asset</a>
+                                <a href="{{ url('asset') }}" class="dropdown-item {{ request()->is('asset') ? 'active' : '' }}">E-Asset</a>
                                 <a href="{{ url('wakaf') }}" class="dropdown-item {{ request()->is('wakaf') ? 'active' : '' }}">Wakaf</a>
                             </div>
                         </div>
@@ -129,9 +129,9 @@
                     <a href="{{ url('berita') }}" class="nav-item nav-link {{ request()->is('berita') ? 'active' : '' }}">Berita</a>
                     <a href="{{ url('karir') }}" class="nav-item nav-link {{ request()->is('karir') ? 'active' : '' }}">Karir</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle {{ request()->is('e-asset') || request()->is('wakaf') ? 'active' : '' }}" data-bs-toggle="dropdown">Layanan Lainnya</a>
+                        <a href="#" class="nav-link dropdown-toggle {{ request()->is('asset') || request()->is('wakaf') ? 'active' : '' }}" data-bs-toggle="dropdown">Layanan Lainnya</a>
                         <div class="dropdown-menu m-0">
-                            <a href="{{ url('e-asset') }}" class="dropdown-item {{ request()->is('e-asset') ? 'active' : '' }}">E-asset</a>
+                            <a href="{{ url('asset') }}" class="dropdown-item {{ request()->is('asset') ? 'active' : '' }}">E-Asset</a>
                             <a href="{{ url('wakaf') }}" class="dropdown-item {{ request()->is('wakaf') ? 'active' : '' }}">Wakaf</a>
                         </div>
                     </div>
