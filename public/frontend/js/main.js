@@ -24,37 +24,45 @@
     });
 
     // Testimonial carousel
-    $(".testimonial-carousel").owlCarousel({
-        autoplay: true,
-        smartSpeed: 1500,
-        center: false,
-        dots: true,
-        loop: true,
-        margin: 25,
-        nav : true,
-        navText : [
-            '<i class="fa fa-angle-left"></i>',
-            '<i class="fa fa-angle-right"></i>'
-        ],
-        responsiveClass: true,
-        responsive: {
-            0:{
-                items:1
-            },
-            576:{
-                items:1
-            },
-            768:{
-                items:1
-            },
-            992:{
-                items:2
-            },
-            1200:{
-                items:2
-            }
+$(".testimonial-carousel").owlCarousel({
+    autoplay: true,
+    autoplayTimeout: 4000, // Set interval to 4 seconds
+    smartSpeed: 1500,
+    center: false,
+    dots: true,
+    loop: true,
+    margin: 25,
+    nav: true,
+    navText: [
+        '<i class="fa fa-angle-left"></i>',
+        '<i class="fa fa-angle-right"></i>'
+    ],
+    responsiveClass: true,
+    responsive: {
+        0: {
+            items: 1
+        },
+        576: {
+            items: 1
+        },
+        768: {
+            items: 1
+        },
+        992: {
+            items: 2
+        },
+        1200: {
+            items: 2
         }
-    });
+    }
+});
+
+// Ensure the carousel does not pause on hover or focus
+$('.testimonial-carousel').on('mouseover', function() {
+    $(this).trigger('stop.owl.autoplay');
+}).on('mouseleave', function() {
+    $(this).trigger('play.owl.autoplay', [4000]);
+});
 
     // Facts counter
     $('[data-toggle="counter-up"]').counterUp({
@@ -146,4 +154,23 @@ document.addEventListener("DOMContentLoaded", function() {
     if (activeTab) {
         openTab(new Event('click'), activeTab.getAttribute('onclick').match(/'([^']+)'/)[1]);
     }
+});
+
+// Fungsi untuk menentukan halaman aktif Navbar
+function isActive($page)
+{
+    $current_page = basename($_SERVER['PHP_SELF']);
+    return $current_page == $page ? 'active' : '';
+}
+
+// Navbar
+document.addEventListener('DOMContentLoaded', function () {
+    var navbar = document.querySelector('.navbar-light');
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
 });

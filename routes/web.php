@@ -11,11 +11,19 @@ Route::view('/team', 'team')->name('team');
 Route::view('/lapkeu', 'lapkeu')->name('lapkeu');
 Route::view('/pengaduan', 'pengaduan')->name('pengaduan');
 Route::view('/deposito', 'deposito')->name('deposito');
-Route::view('/pembiayaan', 'pembiayaan')->name('pembiayaan');
 Route::view('/berita', 'berita')->name('berita');
 Route::view('/karir', 'karir')->name('karir');
 Route::view('/asset', 'asset')->name('asset');
 Route::view('/wakaf', 'wakaf')->name('wakaf');
+
+// Pembiayaan Pages
+Route::prefix('pembiayaan')->group(function () {
+    Route::view('/', 'pembiayaan')->name('pembiayaan');
+    Route::view('/pembiayaan-consumer-finance', 'pembiayaan-consumer-finance')->name('pembiayaan-consumer-finance');
+    Route::view('/pembiayaan-corporate', 'pembiayaan-corporate')->name('pembiayaan-corporate');
+    Route::view('/pembiayaan-property', 'pembiayaan-property')->name('pembiayaan-property');
+    Route::view('/pembiayaan-umkm', 'pembiayaan-umkm')->name('pembiayaan-umkm');
+});
 
 // Tabungan pages
 Route::prefix('tabungan')->group(function () {

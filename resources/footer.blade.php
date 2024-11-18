@@ -6,7 +6,7 @@
                 <div class="footer-item d-flex flex-column">
                     <div class="footer-item">
                         <a href="{{ url('/') }}">
-                            <img src="{{ asset('frontend/img/logo_mci.png') }}" alt="Footer Logo" class="img-fluid mb-3 w-100" />
+                            <img src="{{ asset('frontend/img/logo/logo_mci.png') }}" alt="Footer Logo" class="img-fluid mb-3 w-100" />
                         </a>
                         <a href="https://maps.app.goo.gl/ayKc9DFvFkt9aDs87" target="_blank" class="mb-3">
                             Jalan Kaliurang KM 09,<br />
@@ -27,9 +27,9 @@
                     <a class="btn btn-secondary btn-md-square rounded-circle me-0" target="_blank" href="https://www.facebook.com/people/Bank-Syariah-HIK-MCI/61554427015454/"><i class="fab fa-facebook-f"></i></a>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 pt-5">
                 <div class="row">
-                    <h4 class="text-white mb-4">Produk Kami</h4>
+                    <h4 class="text-info mb-4">Produk Kami</h4>
                     <div class="col-md-6">
                         <div class="footer-item d-flex flex-column">
                             <h5 class="text-white my-2">Pembiayaan</h5>
@@ -52,9 +52,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 pt-5">
                 <div class="footer-item d-flex flex-column mb-5">
-                    <h4 class="text-white mb-4">Informasi</h4>
+                    <h4 class="text-info mb-4">Informasi</h4>
                     <a href="{{ url('/') }}"><i class="fas fa-angle-right me-2"></i> Home</a>
                     <a href="{{ url('about') }}"><i class="fas fa-angle-right me-2"></i> Tentang kami</a>
                     <a href="{{ url('karir') }}"><i class="fas fa-angle-right me-2"></i> Karir</a>
@@ -67,9 +67,9 @@
         <div class="row g-5 justify-content-end align-items-end mt-0 pt-0">
             <div class="footer-item d-flex flex-column align-items-end mt-0 pt-0">
                 <div class="d-flex justify-content-end align-items-center mt-0 pt-0">
-                    <img src="{{ asset('frontend/img/ib_logo.png') }}" alt="Bank Syariah" class="img-fluid me-3" style="height: 50px;">
-                    <img src="{{ asset('frontend/img/bprs_logo.png') }}" alt="BPR Syariah" class="img-fluid me-3" style="height: 50px;">
-                    <img src="{{ asset('frontend/img/lps.png') }}" alt="Lembaga Penjamin Simpanan" class="img-fluid me-3" style="height: 50px;">
+                    <img src="{{ asset('frontend/img/logo/ib_logo.png') }}" alt="Bank Syariah" class="img-fluid me-3" style="height: 50px;">
+                    <img src="{{ asset('frontend/img/logo/bprs_logo.png') }}" alt="BPR Syariah" class="img-fluid me-3" style="height: 50px;">
+                    <img src="{{ asset('frontend/img/logo/lps.png') }}" alt="Lembaga Penjamin Simpanan" class="img-fluid me-3" style="height: 50px;">
                 </div>
                 <p class="text-white text-end me-3">Terdaftar dan diawasi oleh Otoritas Jasa Keuangan</p>
             </div>
@@ -108,7 +108,7 @@
 <script src="{{ asset('frontend/lib/waypoints/waypoints.min.js') }}"></script>
 <script src="{{ asset('frontend/lib/counterup/counterup.min.js') }}"></script>
 <script src="{{ asset('frontend/lib/owlcarousel/owl.carousel.min.js') }}"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js" defer></script>
 <!-- Template Javascript -->
 <script src="{{ asset('frontend/js/main.js') }}"></script>
 </body>

@@ -26,11 +26,10 @@
           <img
             src="{{ asset('frontend/img/carousel-1.png') }}"
             class="img-fluid rounded h-100 w-100"
-            style="object-fit: cover"
             alt="" />
-          <div class="about-exp">
+          <!-- <div class="about-exp">
             <span>Kantor BPRS HIK MCI</span>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.2s">

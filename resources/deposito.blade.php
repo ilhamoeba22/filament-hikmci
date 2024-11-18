@@ -28,7 +28,7 @@
                     <div class="row g-5 mb-3">
 
                         <div class="col-md-6 text-center d-flex justify-content-start align-items-start">
-                            <img src="img/t_karimah.png" class="img-fluid-produk" alt="Responsive image">
+                            <img src="{{asset('frontend/img/t_karimah.png')}}" class="img-fluid-produk" alt="Responsive image">
                         </div>
                         <div class="col-md-6">
                             <h5 class="lh-base justify-text py-2">

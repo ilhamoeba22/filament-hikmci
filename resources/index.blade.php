@@ -2,7 +2,7 @@
 
 <!-- Carousel Start -->
 <div class="carousel-header">
-    <div id="carouselId" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+    <div id="carouselId" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
         <ol class="carousel-indicators">
             <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active"></li>
             <li data-bs-target="#carouselId" data-bs-slide-to="1"></li>
@@ -32,63 +32,12 @@
             </div>
             <div class="carousel-item">
                 <img src="{{ asset('frontend/img/carousel/MCI_Carousell_UlangTahun_01.png') }}" class="img-fluid w-100" alt="Image" />
-                <div class="carousel-caption-2">
-                    <div class="carousel-caption-2-content" style="max-width: 900px">
-                        <h4 class="text-white text-uppercase fw-bold mb-4 fadeInRight animated" data-animation="fadeInRight" data-delay="1s" style="animation-delay: 1s; letter-spacing: 3px">
-                            Importance life
-                        </h4>
-                        <h1 class="display-2 text-capitalize text-white mb-4 fadeInRight animated" data-animation="fadeInRight" data-delay="1.3s" style="animation-delay: 1.3s">
-                            Always Want Safe Water For Healthy Life
-                        </h1>
-                        <p class="mb-5 fs-5 text-white fadeInRight animated" data-animation="fadeInRight" data-delay="1.5s" style="animation-delay: 1.5s">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                        </p>
-                        <div class="carousel-caption-2-content-btn fadeInRight animated" data-animation="fadeInRight" data-delay="1.7s" style="animation-delay: 1.7s">
-                            <a class="btn btn-primary rounded-pill flex-shrink-0 py-3 px-5 me-2" href="#">Order Now</a>
-                            <a class="btn btn-secondary rounded-pill flex-shrink-0 py-3 px-5 ms-2" href="#">Free Estimate</a>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="carousel-item">
                 <img src="{{ asset('frontend/img/carousel/MCI_Carousell_Award.png') }}" class="img-fluid w-100" alt="Image" />
-                <div class="carousel-caption-3">
-                    <div class="carousel-caption-3-content" style="max-width: 900px">
-                        <h4 class="text-white text-uppercase fw-bold mb-4 fadeInLeft animated" data-animation="fadeInLeft" data-delay="1s" style="animation-delay: 1s; letter-spacing: 3px">
-                            Importance life
-                        </h4>
-                        <h1 class="display-2 text-capitalize text-white mb-4 fadeInLeft animated" data-animation="fadeInLeft" data-delay="1.3s" style="animation-delay: 1.3s">
-                            Always Want Safe Water For Healthy Life
-                        </h1>
-                        <p class="mb-5 fs-5 text-white fadeInLeft animated" data-animation="fadeInLeft" data-delay="1.5s" style="animation-delay: 1.5s">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                        </p>
-                        <div class="carousel-caption-3-content-btn fadeInLeft animated" data-animation="fadeInLeft" data-delay="1.7s" style="animation-delay: 1.7s">
-                            <a class="btn btn-primary rounded-pill flex-shrink-0 py-3 px-5 me-2" href="#">Order Now</a>
-                            <a class="btn btn-secondary rounded-pill flex-shrink-0 py-3 px-5 ms-2" href="#">Free Estimate</a>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="carousel-item">
                 <img src="{{ asset('frontend/img/carousel/MCI_Carousell_Nisbah.png') }}" class="img-fluid w-100" alt="Image" />
-                <div class="carousel-caption-4">
-                    <div class="carousel-caption-4-content" style="max-width: 900px">
-                        <h4 class="text-white text-uppercase fw-bold mb-4 fadeInRight animated" data-animation="fadeInRight" data-delay="1s" style="animation-delay: 1s; letter-spacing: 3px">
-                            Importance life
-                        </h4>
-                        <h1 class="display-2 text-capitalize text-white mb-4 fadeInRight animated" data-animation="fadeInRight" data-delay="1.3s" style="animation-delay: 1.3s">
-                            Always Want Safe Water For Healthy Life
-                        </h1>
-                        <p class="mb-5 fs-5 text-white fadeInRight animated" data-animation="fadeInRight" data-delay="1.5s" style="animation-delay: 1.5s">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                        </p>
-                        <div class="carousel-caption-4-content-btn fadeInRight animated" data-animation="fadeInRight" data-delay="1.7s" style="animation-delay: 1.7s">
-                            <a class="btn btn-primary rounded-pill flex-shrink-0 py-3 px-5 me-2" href="#">Order Now</a>
-                            <a class="btn btn-secondary rounded-pill flex-shrink-0 py-3 px-5 ms-2" href="#">Free Estimate</a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -96,7 +45,7 @@
 <!-- Carousel End -->
 
 <!-- Products Start -->
-<div class="container-fluid product py-5">
+<div class="container-fluid background-index py-5">
     <div class="container py-5">
         <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
             <h3 class="text-uppercase text-primary">Produk Kami</h3>
@@ -107,31 +56,31 @@
         <div class="row g-4 justify-content-center">
             <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.2s">
                 <div class="product-item">
-                    <img src="{{ asset('frontend/img/deposito_img.png') }}" class="img-fluid w-100 rounded-top" alt="Image" />
+                    <img src="{{ asset('frontend/img/home/MCI_Home_Depo.png') }}" class="img-fluid w-100 rounded-top" alt="Image" />
                     <div class="product-content bg-light text-center rounded-bottom p-4">
                         <a href="#" class="h4 d-inline-block mb-3">Deposito</a>
                         <br />
-                        <a href="deposito.php" class="btn btn-secondary rounded-pill py-2 px-4">Selengkapnya</a>
+                        <a href="{{url('deposito')}}" class="btn btn-secondary rounded-pill py-2 px-4">Selengkapnya</a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.2s">
                 <div class="product-item">
-                    <img src="{{ asset('frontend/img/deposito_img.png') }}" class="img-fluid w-100 rounded-top" alt="Image" />
+                    <img src="{{ asset('frontend/img/home/MCI_Home_Tabungan.png') }}" class="img-fluid w-100 rounded-top" alt="Image" />
                     <div class="product-content bg-light text-center rounded-bottom p-4">
                         <a href="#" class="h4 d-inline-block mb-3">Tabungan</a>
                         <br />
-                        <a href="tabungan.php" class="btn btn-secondary rounded-pill py-2 px-4">Selengkapnya</a>
+                        <a href="{{url('tabungan')}}" class="btn btn-secondary rounded-pill py-2 px-4">Selengkapnya</a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.2s">
                 <div class="product-item">
-                    <img src="{{ asset('frontend/img/deposito_img.png') }}" class="img-fluid w-100 rounded-top" alt="Image" />
+                    <img src="{{ asset('frontend/img/home/MCI_Home_Pembiayaan.png') }}" class="img-fluid w-100 rounded-top" alt="Image" />
                     <div class="product-content bg-light text-center rounded-bottom p-4">
                         <a href="#" class="h4 d-inline-block mb-3">Pembiayaan</a>
                         <br />
-                        <a href="pembiayaan.php" class="btn btn-secondary rounded-pill py-2 px-4">Selengkapnya</a>
+                        <a href="{{url('pembiayaan')}}" class="btn btn-secondary rounded-pill py-2 px-4">Selengkapnya</a>
                     </div>
                 </div>
             </div>
@@ -141,7 +90,7 @@
 <!-- Products End -->
 
 <!-- Simulasi Perhitungan Start-->
-<div class="container-fluid simulasi">
+<div class="container-fluid simulasi py-5">
     <div class="container pb-5">
         <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
             <h3 class="text-uppercase text-primary">Simulasi Perhitungan</h3>
@@ -169,35 +118,49 @@
                 <div class="tab-content">
                     <div class="tab-pane fade show active" id="deposito" role="tabpanel">
                         <form class="row g-3" id="depositoForm">
-                            <div class="col-md-6 text-center">
+                            <div class="col-md-8 text-center">
                                 <label for="jumlahDeposito" class="form-label">Jumlah Deposito</label><br />
-                                <input type="number" class="form-control form-control-lg" id="jumlahDeposito" placeholder="Jumlah deposito" />
+                                <input type="number" class="form-control form-control-lg rounded-pill" id="jumlahDeposito" placeholder="Jumlah deposito" />
                             </div>
-                            <div class="col-md-6 text-center">
+                            <div class="col-md-4 text-center">
                                 <label for="jangkaWaktu" class="form-label">Jangka Waktu</label><br />
-                                <input type="number" class="form-control form-control-lg" id="jangkaWaktu" placeholder="Jangka waktu" />
+                                <select class="form-select form-select-lg rounded-pill" id="jangkaWaktu">
+                                    <option value="" disabled selected>Pilih Jangka Waktu</option>
+                                    <option value="3">3 bulan</option>
+                                    <option value="6">6 bulan</option>
+                                    <option value="9">9 bulan</option>
+                                    <option value="12">12 bulan</option>
+                                </select>
                             </div>
-                            <div class="col-12 text-center">
-                                <button type="button" class="btn btn-primary btn-lg" onclick="calculateDeposito()">Hitung</button>
-                            </div>
+
                         </form>
+                        <div class="col-12 text-center mt-4">
+                            <button type="button" class="btn btn-primary btn-lg rounded-pill" onclick="calculateDeposito()">Hitung</button>
+                        </div>
                         <div id="depositoResult" class="result-box text-center mt-4" style="display: none;"></div>
                     </div>
 
                     <div class="tab-pane fade" id="pembiayaan" role="tabpanel">
                         <form class="row g-3" id="pembiayaanForm">
-                            <div class="col-md-6 text-center">
+                            <div class="col-md-8 text-center">
                                 <label for="jumlahPembiayaan" class="form-label">Jumlah Pembiayaan</label><br />
-                                <input type="number" class="form-control form-control-lg" id="jumlahPembiayaan" placeholder="Jumlah Pembiayaan" />
+                                <input type="number" class="form-control form-control-lg rounded-pill" id="jumlahPembiayaan" placeholder="Jumlah Pembiayaan" />
                             </div>
-                            <div class="col-md-6 text-center">
+                            <div class="col-md-4 text-center">
                                 <label for="jangkaWaktuPembiayaan" class="form-label">Jangka Waktu</label><br />
-                                <input type="number" class="form-control form-control-lg" id="jangkaWaktuPembiayaan" placeholder="Jangka waktu" />
+                                <select class="form-select form-select-lg rounded-pill" id="jangkaWaktuPembiayaan">
+                                    <option value="" disabled selected>Pilih Jangka Waktu</option>
+                                    <option value="3">3 bulan</option>
+                                    <option value="6">6 bulan</option>
+                                    <option value="9">9 bulan</option>
+                                    <option value="12">12 bulan</option>
+                                </select>
                             </div>
-                            <div class="col-12 text-center">
-                                <button type="button" class="btn btn-primary btn-lg" onclick="calculatePembiayaan()">Hitung</button>
-                            </div>
+
                         </form>
+                        <div class="col-12 text-center mt-4">
+                            <button type="button" class="btn btn-primary btn-lg rounded-pill" onclick="calculatePembiayaan()">Hitung</button>
+                        </div>
                         <div id="pembiayaanResult" class="result-box text-center mt-4" style="display: none;"></div>
                     </div>
                 </div>
@@ -208,7 +171,7 @@
 <!-- Simulasi Perhitungan End -->
 
 <!-- Blog Start -->
-<div class="container-fluid blog pb-5">
+<div class="container-fluid blog background-index py-5">
     <div class="container pb-5">
         <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
             <h3 class="text-uppercase text-primary">Berita</h3>

@@ -26,29 +26,24 @@
             </h2>
         </div>
         <div class="row g-4 justify-content-center">
-            <?php
-            $products = [
-                ["name" => "Tabungan Karimah", "image" => "frontend/img/tabungan.jpeg", "link" => route('tabungan-karimah')],
-                ["name" => "Tabungan Ukhuwah", "image" => "frontend/img/tabungan.jpeg", "link" => route('tabungan-ukhuwah')],
-                ["name" => "Tabungan Cerdas", "image" => "frontend/img/tabungan.jpeg", "link" => route('tabungan-cerdas')],
-                ["name" => "Tabungan Rencana", "image" => "frontend/img/tabungan.jpeg", "link" => route('tabungan-rencana')],
-            ];
-            foreach ($products as $index => $product) {
-                $delay = 0.2 + ($index * 0.2);
-                echo "
-                <div class='col-md-6 col-lg-4 col-xl-3 wow fadeInUp' data-wow-delay='{$delay}s'>
-                    <div class='product-item'>
-                        <img src='" . asset($product['image']) . "' class='img-fluid w-100 rounded-top' alt='{$product['name']}'>
-                        <div class='product-content bg-light text-center rounded-bottom p-4'>
-                            <a href='{$product['link']}' class='h4 d-inline-block mb-3'>{$product['name']}</a>
-                            <div class='d-block'>
-                                <a href='{$product['link']}' class='btn btn-secondary rounded-pill py-2 px-4 mt-2'>Selengkapnya</a>
-                            </div>
+            @foreach ([
+            ["name" => "Tabungan Karimah", "image" => "frontend/img/tabungan.jpeg", "link" => route('tabungan-karimah')],
+            ["name" => "Tabungan Ukhuwah", "image" => "frontend/img/tabungan.jpeg", "link" => route('tabungan-ukhuwah')],
+            ["name" => "Tabungan Cerdas", "image" => "frontend/img/tabungan.jpeg", "link" => route('tabungan-cerdas')],
+            ["name" => "Tabungan Rencana", "image" => "frontend/img/tabungan.jpeg", "link" => route('tabungan-rencana')],
+            ] as $index => $product)
+            <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="{{ 0.2 + ($index * 0.2) }}s">
+                <div class="product-item">
+                    <img src="{{ asset($product['image']) }}" class="img-fluid w-100 rounded-top" alt="{{ $product['name'] }}">
+                    <div class="product-content bg-light text-center rounded-bottom p-4">
+                        <a href="{{ $product['link'] }}" class="h4 d-inline-block mb-3">{{ $product['name'] }}</a>
+                        <div class="d-block">
+                            <a href="{{ $product['link'] }}" class="btn btn-secondary rounded-pill py-2 px-4 mt-2">Selengkapnya</a>
                         </div>
                     </div>
-                </div>";
-            }
-            ?>
+                </div>
+            </div>
+            @endforeach
         </div>
     </div>
 </div>

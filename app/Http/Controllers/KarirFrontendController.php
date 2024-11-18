@@ -9,7 +9,7 @@ class KarirFrontendController extends Controller
 {
     public function index()
     {
-        $karirs = Karir::paginate(6); // Menampilkan 6 item per halaman
+        $karirs = Karir::paginate(3);
         return view('karir', compact('karirs'));
     }
 
