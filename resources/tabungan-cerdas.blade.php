@@ -25,30 +25,8 @@
                 <div class="tabungan-item">
                     <h1 class="display-3 text-capitalize mb-3 mt-3">Tabungan Cerdas</h1>
                     <div class="row g-5 mb-3">
-
-                        <div class="col-md-6 text-center d-flex justify-content-start align-items-start">
-                            <img src="{{asset('frontend/img/t_karimah.png')}}" class="img-fluid-produk" alt="Responsive image">
-                        </div>
-                        <div class="col-md-6">
-                            <h5 class="lh-base justify-text py-2">
-                                Tabungan untuk nasabah perorangan (siswa) dengan syarat
-                                mudah dan sederhana serta fitur yang menarik guna edukasi
-                                untuk budaya mendorong budaya menabung
-                            </h5>
-                            <h1 class="py-4">
-                                Fitur
-                            </h1>
-
-                            <div class="row g-5">
-                                <div class="col-md-6 d-flex align-items-center mb-4">
-                                    <i class="bi bi-bag-fill me-3 icon-hover" style="font-size: 2rem;"></i>
-                                    <h5 class="mb-0">Berdasarkan prinsip syariah dengan akad wadiah</h5>
-                                </div>
-                                <div class="col-md-6 d-flex align-items-center mb-4">
-                                    <i class="bi bi-gift-fill me-3 icon-hover" style="font-size: 2rem;"></i>
-                                    <h5 class="mb-0">Setoran awal ringan</h5>
-                                </div>
-                            </div>
+                        <div class="col-md-12 text-center d-flex justify-content-start align-items-start">
+                            <img src="{{asset('frontend/img/produk/MCI_TAB_Cerdas.png')}}" class="img-fluid-produk" alt="Responsive image">
                         </div>
                     </div>
                     <h1 class="pt-3">

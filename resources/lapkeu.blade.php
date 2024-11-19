@@ -3,14 +3,10 @@
 <!-- Header Start -->
 <div class="container-fluid bg-breadcrumb">
     <div class="container text-center py-5" style="max-width: 900px">
-        <h4
-            class="text-white display-5 mb-4 wow fadeInDown"
-            data-wow-delay="0.1s">
+        <h4 class="text-white display-5 mb-4 wow fadeInDown" data-wow-delay="0.1s">
             Laporan Keuangan
         </h4>
-        <ol
-            class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown"
-            data-wow-delay="0.3s">
+        <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
             <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
             <li class="breadcrumb-item active text-primary">Laporan Keuangan</li>
         </ol>
@@ -18,9 +14,7 @@
 </div>
 <!-- Header End -->
 
-
 <!-- Laporan Keuangan Start -->
-
 <div class="container-fluid team py-1">
     <div class="container py-5">
         <div class="text-center mx-auto pb-1 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
@@ -31,11 +25,11 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12 d-flex justify-content-end">
-                            <select id="year" class="form-select form-select-sm w-auto" onchange="filterByYear()">
+                            <select id="yearFilter" class="form-select form-select-sm w-auto" onchange="filterByYear()">
                                 <option value="">All</option>
-                                <option value="2023">2023</option>
-                                <option value="2022">2022</option>
-                                <option value="2021">2021</option>
+                                @foreach(range(date('Y'), 2014) as $year)
+                                <option value="{{ $year }}">{{ $year }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -43,7 +37,10 @@
                         <div class="col-md-3">
                             <ul class="nav flex-column nav-tabs-custom">
                                 <li class="nav-item mb-2">
-                                    <a class="nav-link active" aria-current="page" href="#" onclick="openTab(event, 'Publikasi')">Laporan Publikasi</a>
+                                    <a class="nav-link active" aria-current="page" href="#" onclick="openTab(event, 'AllReports')">Semua Laporan</a>
+                                </li>
+                                <li class="nav-item mb-2">
+                                    <a class="nav-link" href="#" onclick="openTab(event, 'Publikasi')">Laporan Publikasi</a>
                                 </li>
                                 <li class="nav-item mb-2">
                                     <a class="nav-link" href="#" onclick="openTab(event, 'TataKelola')">Laporan Tata Kelola</a>
@@ -54,55 +51,62 @@
                             </ul>
                         </div>
                         <div class="col-md-9">
-                            <div class="row mt-0 tabcontent" id="Publikasi">
+                            <div class="row mt-0 tabcontent" id="AllReports" style="display: block;">
+                                <h3>Semua Laporan</h3>
+                                <div class="pdf-container">
+                                    @foreach($laporanPublikasi as $laporan)
+                                    <a href="{{ asset('storage/' . $laporan->file) }}" class="pdf-item d-block" target="_blank" data-year="{{ $laporan->tahun }}">
+                                        <i class="bi bi-filetype-pdf fa-8x"></i>
+                                        <p class="text-center text-dark pdf-title">{{ $laporan->judul }} ({{ $laporan->tahun }})</p>
+                                    </a>
+                                    @endforeach
+
+                                    @foreach($laporanTataKelola as $laporan)
+                                    <a href="{{ asset('storage/' . $laporan->file) }}" class="pdf-item d-block" target="_blank" data-year="{{ $laporan->tahun }}">
+                                        <i class="bi bi-filetype-pdf fa-8x"></i>
+                                        <p class="text-center text-dark pdf-title">{{ $laporan->judul }} ({{ $laporan->tahun }})</p>
+                                    </a>
+                                    @endforeach
+
+                                    @foreach($laporanKeuanganBerkelanjutan as $laporan)
+                                    <a href="{{ asset('storage/' . $laporan->file) }}" class="pdf-item d-block" target="_blank" data-year="{{ $laporan->tahun }}">
+                                        <i class="bi bi-filetype-pdf fa-8x"></i>
+                                        <p class="text-center text-dark pdf-title">{{ $laporan->judul }} ({{ $laporan->tahun }})</p>
+                                    </a>
+                                    @endforeach
+                                </div>
+                            </div>
+                            <div class="row mt-0 tabcontent" id="Publikasi" style="display: none;">
                                 <h3>Laporan Publikasi</h3>
                                 <div class="pdf-container">
-                                    <div class="pdf-item" data-year="2023">PDF 2023</div>
-                                    <div class="pdf-item" data-year="2022">PDF 2022</div>
-                                    <div class="pdf-item" data-year="2021">PDF 2021</div>
-                                    <div class="pdf-item" data-year="2023">PDF 2023</div>
-                                    <div class="pdf-item" data-year="2022">PDF 2022</div>
-                                    <div class="pdf-item" data-year="2021">PDF 2021</div>
-                                    <div class="pdf-item" data-year="2023">PDF 2023</div>
-                                    <div class="pdf-item" data-year="2022">PDF 2022</div>
-                                    <div class="pdf-item" data-year="2021">PDF 2021</div>
-                                    <div class="pdf-item" data-year="2023">PDF 2023</div>
-                                    <div class="pdf-item" data-year="2022">PDF 2022</div>
-                                    <div class="pdf-item" data-year="2021">PDF 2021</div>
+                                    @foreach($laporanPublikasi as $laporan)
+                                    <a href="{{ asset('storage/' . $laporan->file) }}" class="pdf-item d-block" target="_blank" data-year="{{ $laporan->tahun }}">
+                                        <i class="bi bi-filetype-pdf fa-8x"></i>
+                                        <p class="text-center text-dark pdf-title">{{ $laporan->judul }} ({{ $laporan->tahun }})</p>
+                                    </a>
+                                    @endforeach
                                 </div>
                             </div>
-                            <div class="row mt-0 tabcontent" id="TataKelola" style="display:none;">
+                            <div class="row mt-0 tabcontent" id="TataKelola" style="display: none;">
                                 <h3>Laporan Tata Kelola</h3>
                                 <div class="pdf-container">
-                                    <div class="pdf-item" data-year="2023">PDF 2023</div>
-                                    <div class="pdf-item" data-year="2022">PDF 2022</div>
-                                    <div class="pdf-item" data-year="2021">PDF 2021</div>
-                                    <div class="pdf-item" data-year="2023">PDF 2023</div>
-                                    <div class="pdf-item" data-year="2022">PDF 2022</div>
-                                    <div class="pdf-item" data-year="2021">PDF 2021</div>
-                                    <div class="pdf-item" data-year="2023">PDF 2023</div>
-                                    <div class="pdf-item" data-year="2022">PDF 2022</div>
-                                    <div class="pdf-item" data-year="2021">PDF 2021</div>
-                                    <div class="pdf-item" data-year="2023">PDF 2023</div>
-                                    <div class="pdf-item" data-year="2022">PDF 2022</div>
-                                    <div class="pdf-item" data-year="2021">PDF 2021</div>
+                                    @foreach($laporanTataKelola as $laporan)
+                                    <a href="{{ asset('storage/' . $laporan->file) }}" class="pdf-item d-block" target="_blank" data-year="{{ $laporan->tahun }}">
+                                        <i class="bi bi-filetype-pdf fa-8x"></i>
+                                        <p class="text-center text-dark pdf-title">{{ $laporan->judul }} ({{ $laporan->tahun }})</p>
+                                    </a>
+                                    @endforeach
                                 </div>
                             </div>
-                            <div class="row mt-0 tabcontent" id="KeuanganBerkelanjutan" style="display:none;">
+                            <div class="row mt-0 tabcontent" id="KeuanganBerkelanjutan" style="display: none;">
                                 <h3>Laporan Keuangan Berkelanjutan</h3>
                                 <div class="pdf-container">
-                                    <div class="pdf-item" data-year="2023">PDF 2023</div>
-                                    <div class="pdf-item" data-year="2022">PDF 2022</div>
-                                    <div class="pdf-item" data-year="2021">PDF 2021</div>
-                                    <div class="pdf-item" data-year="2023">PDF 2023</div>
-                                    <div class="pdf-item" data-year="2022">PDF 2022</div>
-                                    <div class="pdf-item" data-year="2021">PDF 2021</div>
-                                    <div class="pdf-item" data-year="2023">PDF 2023</div>
-                                    <div class="pdf-item" data-year="2022">PDF 2022</div>
-                                    <div class="pdf-item" data-year="2021">PDF 2021</div>
-                                    <div class="pdf-item" data-year="2023">PDF 2023</div>
-                                    <div class="pdf-item" data-year="2022">PDF 2022</div>
-                                    <div class="pdf-item" data-year="2021">PDF 2021</div>
+                                    @foreach($laporanKeuanganBerkelanjutan as $laporan)
+                                    <a href="{{ asset('storage/' . $laporan->file) }}" class="pdf-item d-block" target="_blank" data-year="{{ $laporan->tahun }}">
+                                        <i class="bi bi-filetype-pdf fa-8x"></i>
+                                        <p class="text-center text-dark pdf-title">{{ $laporan->judul }} ({{ $laporan->tahun }})</p>
+                                    </a>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -112,6 +116,6 @@
         </div>
     </div>
 </div>
-
+<!-- Laporan Keuangan End -->
 
 @include('footer')

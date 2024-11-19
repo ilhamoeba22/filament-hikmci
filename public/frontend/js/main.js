@@ -119,9 +119,8 @@ function calculatePembiayaan() {
     pembiayaanResult.style.display = 'block';
 }
 
-// Laporan Keuangan 
 function openTab(evt, tabName) {
-    evt.preventDefault(); // Mencegah reload halaman
+    evt.preventDefault(); 
     var i, tabcontent, navlinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -137,15 +136,18 @@ function openTab(evt, tabName) {
 }
 
 function filterByYear() {
-    var year = document.getElementById("year").value;
-    var pdfItems = document.getElementsByClassName("pdf-item");
-    for (var i = 0; i < pdfItems.length; i++) {
-        if (year === "" || pdfItems[i].getAttribute("data-year") === year) {
-            pdfItems[i].style.display = "block";
-        } else {
-            pdfItems[i].style.display = "none";
+    var year = document.getElementById("yearFilter").value;
+    var tabs = ["AllReports", "Publikasi", "TataKelola", "KeuanganBerkelanjutan"];
+    tabs.forEach(function(tabName) {
+        var pdfItems = document.querySelectorAll("#" + tabName + " .pdf-item");
+        for (var i = 0; i < pdfItems.length; i++) {
+            if (year === "" || pdfItems[i].getAttribute("data-year") === year) {
+                pdfItems[i].style.display = "block";
+            } else {
+                pdfItems[i].style.display = "none";
+            }
         }
-    }
+    });
 }
 
 // Set default tab

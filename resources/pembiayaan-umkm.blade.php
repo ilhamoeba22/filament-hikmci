@@ -7,8 +7,8 @@
         <div class="container text-center py-5" style="max-width: 900px;">
             <h4 class="text-white display-5 mb-4 wow fadeInDown" data-wow-delay="0.1s">Produk Pembiayaan UMKM</h4>
             <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                <li class="breadcrumb-item"><a href="pembiayaan.php">Pembiayaan</a></li>
+                <li class="breadcrumb-item"><a href="{{ url ('/')}}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{url('pembiayaan')}}">Pembiayaan</a></li>
                 <li class="breadcrumb-item active text-primary">Pembiayaan UMKM</li>
             </ol>
         </div>
@@ -25,28 +25,8 @@
                 <div class="tabungan-item">
                     <h1 class="display-3 text-capitalize mb-3 mt-3">Pembiayaan UMKM</h1>
                     <div class="row g-5 mb-3">
-
-                        <div class="col-md-6 text-center d-flex justify-content-center align-items-center">
-
-                            <img src="img/t_ukhuwah.png" class="img-fluid-produk" alt="Responsive image">
-                        </div>
-                        <div class="col-md-6">
-                            <h4 class="lh-base justify-text py-2">
-                                Produk pembiayaan bank yang diperuntukkan bagi nasabah untuk memenuhi
-                                kebutuhan modal kerja nasabah dan kebutuhan investasi nasabah
-                            </h4>
-                            <h1 class="py-4">
-                                Fitur
-                            </h1>
-
-                            <div class="row g-5">
-                                <div class="col-md-12 d-flex align-items-center mb-4">
-                                    <i class="bi bi-bag-fill me-3 icon-hover" style="font-size: 2rem;"></i>
-                                    <h5 class="mb-0">Berdasarkan prinsip syariah dengan akad Murabahah,
-                                        Musyarakah, Mudharabah</h5>
-                                </div>
-
-                            </div>
+                        <div class="col-md-12 text-center d-flex justify-content-center align-items-center">
+                            <img src="{{asset('frontend/img/produk/MCI_Pemb_UKM.png')}}" class="img-fluid-produk" alt="Responsive image">
                         </div>
                     </div>
                     <h1 class="pt-5">
@@ -74,7 +54,7 @@
                         </div>
                     </div>
 
-                    <!-- syarat -->
+                    <!-- Sayarat -->
                     <h1 class="pt-5">
                         Syarat
                     </h1>

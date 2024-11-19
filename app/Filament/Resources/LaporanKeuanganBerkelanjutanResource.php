@@ -7,6 +7,7 @@ use App\Models\LaporanKeuanganBerkelanjutan;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
+use Filament\Resources\Table;
 use Filament\Tables;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\FileUpload;
@@ -30,7 +31,10 @@ class LaporanKeuanganBerkelanjutanResource extends Resource
                     ->maxLength(255),
                 FileUpload::make('file')
                     ->label('Unggah Dokumen (PDF)')
+                    ->disk('public')
+                    ->directory('laporan/keuangan_berkelanjutan')
                     ->acceptedFileTypes(['application/pdf'])
+                    ->preserveFilenames()
                     ->required(),
                 TextInput::make('tahun')
                     ->required()
@@ -43,7 +47,13 @@ class LaporanKeuanganBerkelanjutanResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('judul')->sortable()->searchable(),
-                TextColumn::make('file')->label('File Path')->sortable()->searchable(),
+                TextColumn::make('file')
+                    ->label('Nama File')
+                    ->sortable()
+                    ->searchable()
+                    ->getStateUsing(fn($record) => basename($record->file))
+                    ->url(fn($record) => asset('storage/' . $record->file))
+                    ->openUrlInNewTab(),
                 TextColumn::make('tahun')->sortable()->searchable(),
                 TextColumn::make('created_at')->label('Tanggal Unggah')->sortable()->searchable(),
             ])

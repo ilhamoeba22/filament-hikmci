@@ -91,8 +91,17 @@ body, h1, h2, h3, h4, h5, h6, p, a, div, span, li, ul, ol, nav, footer, header, 
 }
 /*** Topbar Start ***/
 
-/*** Navbar ***/
+/* Navbar */
+.navbar-light {
+    box-shadow: none;
+    transition: box-shadow 0.3s ease-in-out;
+    z-index: 1000;
+    background: var(--bs-white);
+}
 
+.navbar-light.scrolled {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
 .navbar-light .navbar-nav .nav-link {
     position: relative;
@@ -103,12 +112,6 @@ body, h1, h2, h3, h4, h5, h6, p, a, div, span, li, ul, ol, nav, footer, header, 
     font-weight: 400;
     outline: none;
     transition: .5s;
-    z-index: 1000;
-}
-
-.sticky-top.navbar-light .navbar-nav .nav-link {
-    padding: 20px 0;
-    color: var(--bs-dark);
 }
 
 .navbar-light .navbar-nav .nav-link:hover,
@@ -119,10 +122,6 @@ body, h1, h2, h3, h4, h5, h6, p, a, div, span, li, ul, ol, nav, footer, header, 
 .navbar-light .navbar-brand img {
     max-height: 60px;
     transition: .5s;
-}
-
-.sticky-top.navbar-light .navbar-brand img {
-    max-height: 45px;
 }
 
 .navbar .dropdown-toggle::after {
@@ -149,8 +148,9 @@ body, h1, h2, h3, h4, h5, h6, p, a, div, span, li, ul, ol, nav, footer, header, 
 
 @media (max-width: 991.98px) {
     .sticky-top.navbar-light {
-        position: relative;
-        background: var(--bs-white);
+        position: fixed;
+        background: var(--bs-white); /* Set background to solid color */
+        width: 100%;
     }
 
     .navbar.navbar-expand-lg .navbar-toggler {
@@ -190,7 +190,6 @@ body, h1, h2, h3, h4, h5, h6, p, a, div, span, li, ul, ol, nav, footer, header, 
     }
 
     .navbar-light {
-        position: absolute;
         width: 100%;
         top: 0;
         left: 0;
@@ -239,7 +238,6 @@ body, h1, h2, h3, h4, h5, h6, p, a, div, span, li, ul, ol, nav, footer, header, 
     .navbar-light .navbar-nav .nav-item:hover::after,
     .navbar-light .navbar-nav .nav-item.active::after {
         bottom: 1px;
-        /* opacity: 1; */
     }
 
     .navbar-light .navbar-nav .nav-item:hover::before,
@@ -252,10 +250,18 @@ body, h1, h2, h3, h4, h5, h6, p, a, div, span, li, ul, ol, nav, footer, header, 
         display: none;
     }
 }
+
 /*** Carousel Hero Header Start ***/
 .carousel-header {
     position: relative;
     overflow: hidden;
+    margin-top: 95px;
+}
+
+@media (max-width: 991.98px) {
+    .carousel-header {
+        margin-top: 70px; /* Sesuaikan dengan tinggi header pada perangkat mobile */
+    }
 }
 
 .carousel-indicators {
@@ -287,7 +293,6 @@ body, h1, h2, h3, h4, h5, h6, p, a, div, span, li, ul, ol, nav, footer, header, 
     border-top-right-radius: 50px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 50px;
-
 }
 
 .carousel .carousel-control-next .carousel-control-next-icon {
@@ -308,7 +313,13 @@ body, h1, h2, h3, h4, h5, h6, p, a, div, span, li, ul, ol, nav, footer, header, 
     position: relative;
 }
 
-.carousel .carousel-inner .carousel-item .carousel-caption-1  {
+.carousel .carousel-inner .carousel-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.carousel .carousel-inner .carousel-item .carousel-caption-1 {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -332,7 +343,7 @@ body, h1, h2, h3, h4, h5, h6, p, a, div, span, li, ul, ol, nav, footer, header, 
     justify-content: end;
 }
 
-.carousel .carousel-inner .carousel-item .carousel-caption-2  {
+.carousel .carousel-inner .carousel-item .carousel-caption-2 {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -356,18 +367,17 @@ body, h1, h2, h3, h4, h5, h6, p, a, div, span, li, ul, ol, nav, footer, header, 
     justify-content: start;
 }
 
-
 @media (max-width: 992px) {
     .carousel .carousel-inner .carousel-item {
-        height: 700px;
+        height: auto;
         margin-top: -100px;
     }
 
     .carousel .carousel-inner .carousel-item img {
-        height: 700px;
+        height: auto;
         object-fit: cover;
+        margin-top: 27%;
     }
-
 
     .carousel .carousel-inner .carousel-item .carousel-caption-1 {
         max-width: 100% !important;
@@ -379,10 +389,21 @@ body, h1, h2, h3, h4, h5, h6, p, a, div, span, li, ul, ol, nav, footer, header, 
         text-align: center !important;
     }
 
+    .carousel-caption-1-content h4 {
+        font-size: 1.5rem;
+    }
+
+    .carousel-caption-1-content h1 {
+        font-size: 2rem;
+    }
+
+    .carousel-caption-1-content p {
+        font-size: 1rem;
+    }
+
     .carousel-caption-1-content .carousel-caption-1-content-btn {
         justify-content: center;
     }
-
 
     .carousel .carousel-inner .carousel-item .carousel-caption-2 {
         max-width: 100% !important;
@@ -394,11 +415,21 @@ body, h1, h2, h3, h4, h5, h6, p, a, div, span, li, ul, ol, nav, footer, header, 
         text-align: center !important;
     }
 
+    .carousel-caption-2-content h4 {
+        font-size: 1.5rem;
+    }
+
+    .carousel-caption-2-content h1 {
+        font-size: 2rem;
+    }
+
+    .carousel-caption-2-content p {
+        font-size: 1rem;
+    }
+
     .carousel-caption-2-content .carousel-caption-2-content-btn {
         justify-content: center;
     }
-
-
 
     .carousel .carousel-control-prev .carousel-control-prev-icon,
     .carousel .carousel-control-next .carousel-control-next-icon {
@@ -419,7 +450,7 @@ body, h1, h2, h3, h4, h5, h6, p, a, div, span, li, ul, ol, nav, footer, header, 
 .bg-breadcrumb {
     position: relative;
     overflow: hidden;
-    background: linear-gradient(rgba(0, 20, 66, 0.7), rgba(0, 20, 66, 0.7)), url(../img/breadcumb.png);
+    background: linear-gradient(rgba(0, 20, 66, 0.7), rgba(0, 20, 66, 0.7)), url(../img/about/MCI_Breadcrumb.png);
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1382,27 +1413,31 @@ body {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+
+/* PDF Laporan Keuangan */
 .pdf-container {
     display: flex;
     flex-wrap: wrap;
 }
 
 .pdf-item {
-    width: 150px; /* Perbesar ukuran */
-    height: 200px; /* Perbesar ukuran */
-    margin: 10px;
-    background-color: #fff;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    border: 1px solid #ccc;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 200px; /* Sesuaikan dengan lebar yang diinginkan */
+}
+
+.pdf-title {
+    width: 100%;
+    word-wrap: break-word; /* Membungkus teks ke baris berikutnya */
+    margin-top: 10px;
 }
 
 .pdf-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .background-index {

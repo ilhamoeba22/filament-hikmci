@@ -24,12 +24,12 @@
       <div class="col-xl-6 wow fadeInLeft py-4" data-wow-delay="0.2s">
         <div class="about-img rounded h-100">
           <img
-            src="{{ asset('frontend/img/carousel-1.png') }}"
+            src="{{ asset('frontend/img/about/MCI_Profile.png') }}"
             class="img-fluid rounded h-100 w-100"
             alt="" />
-          <!-- <div class="about-exp">
+          <div class="about-exp">
             <span>Kantor BPRS HIK MCI</span>
-          </div> -->
+          </div>
         </div>
       </div>
       <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.2s">
@@ -193,31 +193,31 @@
     <div class="row g-4 justify-content-center">
       <div class="col-md-6 col-lg-2 col-xl-2 wow fadeInUp" data-wow-delay="0.2s">
         <div class="value-item text-center">
-          <img src="{{ asset('frontend/img/s_img.png') }}" class="img-fluid mb-3" alt="Integrity">
+          <img src="{{ asset('frontend/img/smile/s_img.png') }}" class="img-fluid mb-3" alt="Integrity">
           <h5>Smart Work and Healty</h5>
         </div>
       </div>
       <div class="col-md-6 col-lg-2 col-xl-2 wow fadeInUp" data-wow-delay="0.2s">
         <div class="value-item text-center">
-          <img src="{{ asset('frontend/img/m_img.png') }}" class="img-fluid mb-3" alt="Innovation">
+          <img src="{{ asset('frontend/img/smile/m_img.png') }}" class="img-fluid mb-3" alt="Innovation">
           <h5>Modern and Islamic</h5>
         </div>
       </div>
       <div class="col-md-6 col-lg-2 col-xl-2 wow fadeInUp" data-wow-delay="0.2s">
         <div class="value-item text-center">
-          <img src="{{ asset('frontend/img/i_img.png') }}" class="img-fluid mb-3" alt="Customer Focus">
+          <img src="{{ asset('frontend/img/smile/i_img.png') }}" class="img-fluid mb-3" alt="Customer Focus">
           <h5>Integrity and Professional</h5>
         </div>
       </div>
       <div class="col-md-6 col-lg-2 col-xl-2 wow fadeInUp" data-wow-delay="0.2s">
         <div class="value-item text-center">
-          <img src="{{ asset('frontend/img/l_img.png') }}" class="img-fluid mb-3" alt="Teamwork">
+          <img src="{{ asset('frontend/img/smile/l_img.png') }}" class="img-fluid mb-3" alt="Teamwork">
           <h5>Love, Care, and Respect</h5>
         </div>
       </div>
       <div class="col-md-6 col-lg-2 col-xl-2 wow fadeInUp" data-wow-delay="0.2s">
         <div class="value-item text-center">
-          <img src="{{ asset('frontend/img/e_img.png') }}" class="img-fluid mb-3" alt="Excellence">
+          <img src="{{ asset('frontend/img/smile/e_img.png') }}" class="img-fluid mb-3" alt="Excellence">
           <h5>Exellence and Great Achievement</h5>
         </div>
       </div>

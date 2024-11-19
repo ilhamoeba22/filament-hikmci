@@ -36,6 +36,7 @@ class KarirResource extends Resource
                     ->image()
                     ->disk('public')
                     ->directory('karir/images')
+                    ->preserveFilenames()
                     ->required(),
             ]);
     }

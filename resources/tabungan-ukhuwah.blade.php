@@ -25,31 +25,8 @@
                 <div class="tabungan-item">
                     <h1 class="display-3 text-capitalize mb-3 mt-3">Tabungan Ukhuwah</h1>
                     <div class="row g-5 mb-3">
-
-                        <div class="col-md-6 text-center d-flex justify-content-center align-items-center">
-
-                            <img src="{{asset ('frontend/img/t_ukhuwah.png')}}" class="img-fluid-produk" alt="Responsive image">
-                        </div>
-                        <div class="col-md-6">
-                            <h4 class="lh-base justify-text py-2">
-                                Tabungan bersama BPRS Indonesia dengan akad mudharabah dengan tambahan
-                                aksesoris yaitu berkesempatan mendapatkan hadiah yang telah ditentukan
-                                mekanisme dan tata caranya
-                            </h4>
-                            <h4 class="display-5">
-                                Fitur
-                            </h4>
-
-                            <div class="row g-5">
-                                <div class="col-md-6 d-flex align-items-center mb-4">
-                                    <i class="bi bi-bag-fill me-3 icon-hover" style="font-size: 2rem;"></i>
-                                    <h5 class="mb-0">Berdasarkan prinsip syariah dengan akad mudharabah</h5>
-                                </div>
-                                <div class="col-md-6 d-flex align-items-center mb-4">
-                                    <i class="bi bi-gift-fill me-3 icon-hover" style="font-size: 2rem;"></i>
-                                    <h5 class="mb-0">Berkesempatan mendapatkan hadiah</h5>
-                                </div>
-                            </div>
+                        <div class="col-md-12 text-center d-flex justify-content-start align-items-start">
+                            <img src="{{asset('frontend/img/produk/MCI_TAB_Ukhuwah.png')}}" class="img-fluid-produk" alt="Responsive image">
                         </div>
                     </div>
                     <h4 class="display-5 pt-5">

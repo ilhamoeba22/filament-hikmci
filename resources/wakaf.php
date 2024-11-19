@@ -7,7 +7,7 @@
         <div class="container text-center py-5" style="max-width: 900px;">
             <h4 class="text-white display-5 mb-4 wow fadeInDown" data-wow-delay="0.1s">Produk Pembiayaan Property</h4>
             <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{ url ('/')}}">Home</a></li>
                 <li class="breadcrumb-item active text-primary">Wakaf</li>
             </ol>
         </div>

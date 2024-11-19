@@ -64,6 +64,27 @@ return [
             'visibility' => 'public',
         ],
 
+        'laporan_publikasi' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/laporan/publikasi'),
+            'url' => env('APP_URL') . '/storage/laporan/publikasi',
+            'visibility' => 'public',
+        ],
+
+        'laporan_keuangan_berkelanjutan' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/laporan/keuangan_berkelanjutan'),
+            'url' => env('APP_URL') . '/storage/laporan/keuangan_berkelanjutan',
+            'visibility' => 'public',
+        ],
+
+        'laporan_tata_kelola' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/laporan/tata_kelola'),
+            'url' => env('APP_URL') . '/storage/laporan/tata_kelola',
+            'visibility' => 'public',
+        ],
+
 
         's3' => [
             'driver' => 's3',

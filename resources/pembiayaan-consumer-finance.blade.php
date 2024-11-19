@@ -7,8 +7,8 @@
         <div class="container text-center py-5" style="max-width: 900px;">
             <h4 class="text-white display-5 mb-4 wow fadeInDown" data-wow-delay="0.1s">Consumer Finance</h4>
             <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                <li class="breadcrumb-item"><a href="pembiayaan.php">Pembiayaan</a></li>
+                <li class="breadcrumb-item"><a href="{{ url ('/')}}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{url('pembiayaan')}}">Pembiayaan</a></li>
                 <li class="breadcrumb-item active text-primary">Consumer Finance</li>
             </ol>
         </div>
@@ -41,22 +41,8 @@
                     <div class="tab-pane fade show active" id="v-pills-migran" role="tabpanel" aria-labelledby="v-pills-migran-tab">
                         <h1 class="display-3 text-capitalize ">Calon Pekerja Migran</h1>
                         <div class="row g-5 mb-3">
-                            <div class="col-md-6 d-flex justify-content-center align-items-start">
-                                <img src="img/t_ukhuwah.png" class="img-fluid-produk" alt="Responsive image">
-                            </div>
-                            <div class="col-md-6">
-                                <h4 class="lh-base justify-text py-2">
-                                    Produk pembiayaan bank yang diperuntukkan bagi nasabah
-                                    untuk memenuhi kebutuhan paket pemberangkatan pekerja migran ke negara tujuan
-                                </h4>
-                                <h3>Fitur</h3>
-                                <div class="row g-5">
-                                    <div class="col-md-12 d-flex align-items-center mb-4">
-                                        <i class="bi bi-bag-fill me-3 icon-hover" style="font-size: 2rem;"></i>
-                                        <h5 class="mb-0">Berdasarkan prinsip syariah dengan akad Murabahah,
-                                            Musyarakah, Mudharabah</h5>
-                                    </div>
-                                </div>
+                            <div class="col-md-12 text-center d-flex justify-content-center align-items-center">
+                                <img src="{{asset('frontend/img/produk/MCI_Pemb_PMI.png')}}" class="img-fluid-produk" alt="Responsive image">
                             </div>
                         </div>
                         <!-- Keunggulan -->
@@ -124,25 +110,8 @@
                     <div class="tab-pane fade" id="v-pills-sertifikasi" role="tabpanel" aria-labelledby="v-pills-sertifikasi-tab">
                         <h1 class="display-3 text-capitalize ">Sertifikasi Pendidik</h1>
                         <div class="row g-5 mb-3">
-
-                            <div class="col-md-6 text-center d-flex justify-content-center align-items-start">
-
-                                <img src="img/t_ukhuwah.png" class="img-fluid-produk" alt="Responsive image">
-                            </div>
-                            <div class="col-md-6">
-                                <h4 class="lh-base justify-text py-2">
-                                    Produk pembiayaan bank yang diperuntukkan bagi tenaga pendidik seperti
-                                    guru atau dosen baik berstatus PNS maupun Non PNS
-                                </h4>
-                                <h3>Fitur</h3>
-
-                                <div class="row g-5">
-                                    <div class="col-md-12 d-flex align-items-center mb-4">
-                                        <i class="bi bi-bag-fill me-3 icon-hover" style="font-size: 2rem;"></i>
-                                        <h5 class="mb-0">Berdasarkan prinsip syariah dengan akad Murabahah, Musyarakah, Mudharabah</h5>
-                                    </div>
-
-                                </div>
+                            <div class="col-md-12 text-center d-flex justify-content-center align-items-center">
+                                <img src="{{asset('frontend/img/produk/MCI_Pemb_SERDIK.png')}}" class="img-fluid-produk" alt="Responsive image">
                             </div>
                         </div>
                         <h3>Keunggulan</h3>
@@ -214,25 +183,8 @@
                     <div class="tab-pane fade" id="v-pills-kolektif" role="tabpanel" aria-labelledby="v-pills-kolektif-tab">
                         <h1 class="display-3 text-capitalize ">Kolektif Karyawan</h1>
                         <div class="row g-5 mb-3">
-
-                            <div class="col-md-6 text-center d-flex justify-content-center align-items-start">
-
-                                <img src="img/t_ukhuwah.png" class="img-fluid-produk" alt="Responsive image">
-                            </div>
-                            <div class="col-md-6">
-                                <h4 class="lh-base justify-text py-2">
-                                    Produk pembiayaan bank yang diperuntukkan bagi pegawai dengan sistem potong gaji
-                                    untuk memenuhi kebutuhan modal kerja, investasi maupun kebutuhan komunikasi nasabah
-                                </h4>
-                                <h3>Fitur</h3>
-
-                                <div class="row g-5">
-                                    <div class="col-md-12 d-flex align-items-center mb-4">
-                                        <i class="bi bi-bag-fill me-3 icon-hover" style="font-size: 2rem;"></i>
-                                        <h5 class="mb-0">Berdasarkan prinsip syariah dengan akad Murabahah,
-                                            Musyarakah, Mudharabah</h5>
-                                    </div>
-                                </div>
+                            <div class="col-md-12 text-center d-flex justify-content-center align-items-center">
+                                <img src="{{asset('frontend/img/produk/MCI_Pemb_KolektifKary.png')}}" class="img-fluid-produk" alt="Responsive image">
                             </div>
                         </div>
                         <h3>Keunggulan</h3>
@@ -298,26 +250,8 @@
                     <div class="tab-pane fade" id="v-pills-umroh" role="tabpanel" aria-labelledby="v-pills-umroh-tab">
                         <h1 class="display-3 text-capitalize ">Pembiayaan Umroh</h1>
                         <div class="row g-5 mb-3">
-
-                            <div class="col-md-6 text-center d-flex justify-content-center align-items-start">
-
-                                <img src="img/t_ukhuwah.png" class="img-fluid-produk" alt="Responsive image">
-                            </div>
-                            <div class="col-md-6">
-                                <h5 class="lh-base justify-text py-2">
-                                    Produk pembiayaan bank yang diperuntukkan bagi nasabah untuk
-                                    memenuhi kebutuhan ibadah Umroh nasabah
-                                </h5>
-                                <h3>Fitur</h3>
-
-                                <div class="row g-5">
-                                    <div class="col-md-12 d-flex align-items-center mb-4">
-                                        <i class="bi bi-bag-fill me-3 icon-hover" style="font-size: 2rem;"></i>
-                                        <h5 class="mb-0">Berdasarkan prinsip syariah dengan akad
-                                            Ijarah Mausufah Fia al Dzimah (IMFD)</h5>
-                                    </div>
-
-                                </div>
+                            <div class="col-md-12 text-center d-flex justify-content-center align-items-center">
+                                <img src="{{asset('frontend/img/produk/MCI_Pem_Umroh.png')}}" class="img-fluid-produk" alt="Responsive image">
                             </div>
                         </div>
                         <h3>Keunggulan</h3>

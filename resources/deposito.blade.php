@@ -27,28 +27,8 @@
                     </h1>
                     <div class="row g-5 mb-3">
 
-                        <div class="col-md-6 text-center d-flex justify-content-start align-items-start">
-                            <img src="{{asset('frontend/img/t_karimah.png')}}" class="img-fluid-produk" alt="Responsive image">
-                        </div>
-                        <div class="col-md-6">
-                            <h5 class="lh-base justify-text py-2">
-                                Investasi dana nasabah pada BPRS yang penarikannya hanya
-                                dapat dilakukan pada waktu tertentu yang telah disepakati
-                            </h5>
-                            <h1 class="py-4">
-                                Fitur
-                            </h1>
-
-                            <div class="row g-5">
-                                <div class="col-md-6 d-flex align-items-center mb-4">
-                                    <i class="bi bi-bag-fill me-3 icon-hover" style="font-size: 2rem;"></i>
-                                    <h5 class="mb-0">Berdasarkan prinsip syariah dengan akad mudharabah</h5>
-                                </div>
-                                <div class="col-md-6 d-flex align-items-center mb-4">
-                                    <i class="bi bi-gift-fill me-3 icon-hover" style="font-size: 2rem;"></i>
-                                    <h5 class="mb-0">Nilai investasi mengikuti pergerakan profit bank</h5>
-                                </div>
-                            </div>
+                        <div class="col-md-12 text-center d-flex justify-content-start align-items-start">
+                            <img src="{{asset('frontend/img/produk/MCI_DEPO.png')}}" class="img-fluid-produk" alt="Responsive image">
                         </div>
                     </div>
                     <h1 class="pt-3">

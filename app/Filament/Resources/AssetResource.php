@@ -37,6 +37,7 @@ class AssetResource extends Resource
                     ->image()
                     ->disk('public')
                     ->directory('asset/images')
+                    ->preserveFilenames()
                     ->required(),
                 TextInput::make('pemilik')
                     ->required()
@@ -51,6 +52,7 @@ class AssetResource extends Resource
                     ->disk('public')
                     ->directory('asset/pdfs')
                     ->acceptedFileTypes(['application/pdf'])
+                    ->preserveFilenames()
                     ->required(),
             ]);
     }

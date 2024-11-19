@@ -25,31 +25,8 @@
                 <div class="tabungan-item">
                     <h1 class="display-3 text-capitalize mb-3 mt-3">Tabungan Karimah</h1>
                     <div class="row g-5 mb-3">
-
-                        <div class="col-md-6 text-center d-flex justify-content-start align-items-start">
-                            <img src="{{asset ('frontend/img/t_karimah.png')}}" class="img-fluid-produk" alt="Responsive image">
-                        </div>
-                        <div class="col-md-6">
-                            <h5 class="lh-base justify-text py-2">
-                                Tabungan dalam mata uang Rupiah yang ditujukan untuk kebutuhan
-                                transaksional nasabah dan dapat diambil sewaktu - waktu sebagai
-                                rekening penampungan gaji (payroll), penampungan bagi hasil deposito,
-                                autodebet atau setoran angsuran pembiayaan, autodebet tabungan rencana
-                            </h5>
-                            <h1 class="py-4">
-                                Fitur
-                            </h1>
-
-                            <div class="row g-5">
-                                <div class="col-md-6 d-flex align-items-center mb-4">
-                                    <i class="bi bi-bag-fill me-3 icon-hover" style="font-size: 2rem;"></i>
-                                    <h5 class="mb-0">Berdasarkan prinsip syariah dengan akad wadiah</h5>
-                                </div>
-                                <div class="col-md-6 d-flex align-items-center mb-4">
-                                    <i class="bi bi-gift-fill me-3 icon-hover" style="font-size: 2rem;"></i>
-                                    <h5 class="mb-0">Dapat diambil oleh nasabah sewaktu - waktu</h5>
-                                </div>
-                            </div>
+                        <div class="col-md-12 text-center d-flex justify-content-start align-items-start">
+                            <img src="{{asset('frontend/img/produk/MCI_TAB_Karimah.png')}}" class="img-fluid-produk" alt="Responsive image">
                         </div>
                     </div>
                     <h1 class="pt-3">

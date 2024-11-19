@@ -31,7 +31,10 @@ class LaporanTataKelolaResource extends Resource
                     ->maxLength(255),
                 FileUpload::make('file')
                     ->label('Unggah Dokumen (PDF)')
+                    ->disk('public')
+                    ->directory('laporan/tata_kelola')
                     ->acceptedFileTypes(['application/pdf'])
+                    ->preserveFilenames()
                     ->required(),
                 TextInput::make('tahun')
                     ->required()
@@ -44,7 +47,13 @@ class LaporanTataKelolaResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('judul')->sortable()->searchable(),
-                TextColumn::make('file')->label('File Path')->sortable()->searchable(),
+                TextColumn::make('file')
+                    ->label('Nama File')
+                    ->sortable()
+                    ->searchable()
+                    ->getStateUsing(fn($record) => basename($record->file))
+                    ->url(fn($record) => asset('storage/' . $record->file))
+                    ->openUrlInNewTab(),
                 TextColumn::make('tahun')->sortable()->searchable(),
                 TextColumn::make('created_at')->label('Tanggal Unggah')->sortable()->searchable(),
             ])

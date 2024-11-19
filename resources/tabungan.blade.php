@@ -27,10 +27,10 @@
         </div>
         <div class="row g-4 justify-content-center">
             @foreach ([
-            ["name" => "Tabungan Karimah", "image" => "frontend/img/tabungan.jpeg", "link" => route('tabungan-karimah')],
-            ["name" => "Tabungan Ukhuwah", "image" => "frontend/img/tabungan.jpeg", "link" => route('tabungan-ukhuwah')],
-            ["name" => "Tabungan Cerdas", "image" => "frontend/img/tabungan.jpeg", "link" => route('tabungan-cerdas')],
-            ["name" => "Tabungan Rencana", "image" => "frontend/img/tabungan.jpeg", "link" => route('tabungan-rencana')],
+            ["name" => "Tabungan Karimah", "image" => "frontend/img/tabungan/MCI_Tab_Karimah.png", "link" => route('tabungan-karimah')],
+            ["name" => "Tabungan Ukhuwah", "image" => "frontend/img/tabungan/MCI_Tab_Ukhuwah.png", "link" => route('tabungan-ukhuwah')],
+            ["name" => "Tabungan Cerdas", "image" => "frontend/img/tabungan/MCI_Tab_Cerdas.png", "link" => route('tabungan-cerdas')],
+            ["name" => "Tabungan Rencana", "image" => "frontend/img/tabungan/MCI_Tab_Rencana.png", "link" => route('tabungan-rencana')],
             ] as $index => $product)
             <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="{{ 0.2 + ($index * 0.2) }}s">
                 <div class="product-item">

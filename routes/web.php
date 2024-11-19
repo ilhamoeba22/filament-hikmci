@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\AssetFrontendController;
 use App\Http\Controllers\KarirFrontendController;
 
@@ -8,7 +9,8 @@ use App\Http\Controllers\KarirFrontendController;
 Route::view('/', 'index')->name('home');
 Route::view('/about', 'about')->name('about');
 Route::view('/team', 'team')->name('team');
-Route::view('/lapkeu', 'lapkeu')->name('lapkeu');
+// Ubah route ini untuk menggunakan controller
+Route::get('/lapkeu', [LaporanController::class, 'index'])->name('lapkeu');
 Route::view('/pengaduan', 'pengaduan')->name('pengaduan');
 Route::view('/deposito', 'deposito')->name('deposito');
 Route::view('/berita', 'berita')->name('berita');
@@ -40,3 +42,6 @@ Route::get('/karir/{id}', [KarirFrontendController::class, 'show'])->name('karir
 
 // asset
 Route::get('/asset', [AssetFrontendController::class, 'index'])->name('asset.index');
+
+// Laporan Keuangan
+Route::get('/laporan', [LaporanController::class, 'index'])->name('laporan.index');
