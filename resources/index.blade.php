@@ -34,13 +34,21 @@
                 <img src="frontend/img/carousel/MCI_Carousell_Nisbah.png" class="img-fluid w-100" alt="Image" />
             </div>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon btn btn-primary fadeInLeft animated" aria-hidden="true" data-animation="fadeInLeft" data-delay="1.1s" style="animation-delay: 1.3s;"> <i class="fa fa-angle-left fa-3x"></i></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+            <span class="carousel-control-next-icon btn btn-primary fadeInRight animated" aria-hidden="true" data-animation="fadeInLeft" data-delay="1.1s" style="animation-delay: 1.3s;"><i class="fa fa-angle-right fa-3x"></i></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
 </div>
 <!-- Carousel End -->
 
 <!-- Products Start -->
-<div class="container-fluid background-index py-auto">
-    <div class="container py-5">
+<div class="container-fluid background-index py-5">
+    <div class="container py-2">
         <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
             <h3 class="text-uppercase text-primary">Produk Kami</h3>
             <h1 class="display-5 text-capitalize mb-1">
@@ -164,7 +172,7 @@
 </div>
 <!-- Simulasi Perhitungan End -->
 
-<!-- Blog Start -->
+<!-- Berita Terkini Start -->
 <div class="container-fluid blog background-index py-5">
     <div class="container pb-5">
         <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
@@ -172,60 +180,28 @@
             <h1 class="display-5 text-capitalize mb-3">Berita Terkini</h1>
         </div>
         <div class="row g-4 justify-content-center">
+            @foreach($beritaTerakhir as $berita)
             <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.2s">
                 <div class="blog-item">
                     <div class="blog-img">
-                        <img src="{{ asset('frontend/img/blog-1.jpg') }}" class="img-fluid rounded-top w-100" alt="" />
+                        <img src="{{ asset('storage/' . $berita->gambar) }}" class="img-fluid rounded-top w-100" alt="{{ $berita->judul }}" />
                         <div class="blog-date px-4 py-2">
-                            <i class="fa fa-calendar-alt me-1"></i> Jan 12 2025
+                            <i class="fa fa-calendar-alt me-1"></i> {{ $berita->created_at->format('d M Y') }}
                         </div>
                     </div>
                     <div class="blog-content rounded-bottom p-4">
-                        <a href="#" class="h4 d-inline-block mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde</a>
+                        <a href="{{ route('berita.show', $berita->id) }}" class="h4 d-inline-block mb-3">{{ $berita->judul }}</a>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, officiis?
+                            {{ Str::limit($berita->isi, 100) }}
                         </p>
-                        <a href="#" class="fw-bold text-secondary">Read More <i class="fa fa-angle-right"></i></a>
+                        <a href="{{ route('berita.show', $berita->id) }}" class="fw-bold text-secondary">Read More <i class="fa fa-angle-right"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.4s">
-                <div class="blog-item">
-                    <div class="blog-img">
-                        <img src="{{ asset('frontend/img/blog-2.jpg') }}" class="img-fluid rounded-top w-100" alt="" />
-                        <div class="blog-date px-4 py-2">
-                            <i class="fa fa-calendar-alt me-1"></i> Jan 12 2025
-                        </div>
-                    </div>
-                    <div class="blog-content rounded-bottom p-4">
-                        <a href="#" class="h4 d-inline-block mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde</a>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, officiis?
-                        </p>
-                        <a href="#" class="fw-bold text-secondary">Read More <i class="fa fa-angle-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.6s">
-                <div class="blog-item">
-                    <div class="blog-img">
-                        <img src="{{ asset('frontend/img/blog-3.jpg') }}" class="img-fluid rounded-top w-100" alt="" />
-                        <div class="blog-date px-4 py-2">
-                            <i class="fa fa-calendar-alt me-1"></i> Jan 12 2025
-                        </div>
-                    </div>
-                    <div class="blog-content rounded-bottom p-4">
-                        <a href="#" class="h4 d-inline-block mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde</a>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, officiis?
-                        </p>
-                        <a href="#" class="fw-bold text-secondary">Read More <i class="fa fa-angle-right"></i></a>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>
-<!-- Blog End -->
+<!-- Berita Terkini End -->
 
 @include('footer')

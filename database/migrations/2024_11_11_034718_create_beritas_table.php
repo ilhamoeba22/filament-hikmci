@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('judul');
             $table->text('isi');
+            $table->string('lokasi');
             $table->string('gambar')->nullable();
             $table->foreignId('user_id')->constrained('users');
             $table->timestamps();

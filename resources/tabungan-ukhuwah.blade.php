@@ -32,11 +32,11 @@
                         Fitur
                     </h1>
                     <div class="row g-5">
-                        <div class="col-md-6 d-flex align-items-center mb-4">
+                        <div class="col-md-6 d-flex align-items-center mb-1">
                             <i class="bi bi-bag-fill me-3 icon-hover" style="font-size: 2rem;"></i>
                             <h5 class="mb-0">Berdasarkan prinsip syariah dengan akad mudharabah</h5>
                         </div>
-                        <div class="col-md-6 d-flex align-items-center mb-4">
+                        <div class="col-md-6 d-flex align-items-center mb-1">
                             <i class="bi bi-gift me-3 icon-hover" style="font-size: 2rem;"></i>
                             <h5 class="mb-0">Berkesempatan mendapatkan hadiah</h5>
                         </div>
@@ -45,28 +45,28 @@
                         Keunggulan
                     </h1>
                     <div class="row g-5">
-                        <div class="col-md-6 d-flex align-items-center mb-4">
+                        <div class="col-md-6 d-flex align-items-center mb-1">
                             <i class="bi bi-cash me-3 icon-hover" style="font-size: 2rem;"></i>
                             <h5 class="mb-0">Bebas biaya administrasi</h5>
                         </div>
-                        <div class="col-md-6 d-flex align-items-center mb-4">
+                        <div class="col-md-6 d-flex align-items-center mb-1">
                             <i class="bi bi-cash-stack me-3 icon-hover" style="font-size: 2rem;"></i>
                             <h5 class="mb-0">Setoran awal Rp 100.000,- dan setoran selanjutnya Rp 10.000,-</h5>
                         </div>
                     </div>
                     <div class="row g-5">
-                        <div class="col-md-6 d-flex align-items-center mb-4">
+                        <div class="col-md-6 d-flex align-items-center mb-1">
                             <i class="bi bi-truck me-3 icon-hover" style="font-size: 2rem;"></i>
                             <h5 class="mb-0">Layanan pickup service</h5>
                         </div>
-                        <div class="col-md-6 d-flex align-items-center mb-4">
+                        <div class="col-md-6 d-flex align-items-center mb-1">
                             <i class="bi bi-lock-fill me-3 icon-hover" style="font-size: 2rem;"></i>
                             <h5 class="mb-0">Dijamin oleh LPS</h5>
                         </div>
                     </div>
 
                     <div class="row g-5">
-                        <div class="col-md-6 d-flex align-items-center mb-4">
+                        <div class="col-md-6 d-flex align-items-center mb-1">
                             <i class="bi bi-graph-up me-3 icon-hover" style="font-size: 2rem;"></i>
                             <h5 class="mb-0">Bagi hasil yang kompetitif</h5>
                         </div>
@@ -76,29 +76,29 @@
                         Syarat
                     </h1>
                     <div class="row g-5">
-                        <div class="col-md-6 d-flex align-items-center mb-4">
+                        <div class="col-md-6 d-flex align-items-center mb-1">
                             <i class="bi bi-building me-3 icon-hover" style="font-size: 2rem;"></i>
                             <h5 class="mb-0">Kartu identitas pengurus / badan hukum
                                 (jika mendaftar sebagai Badan Usaha / Perusahaan)</h5>
                         </div>
-                        <div class="col-md-6 d-flex align-items-center mb-4">
+                        <div class="col-md-6 d-flex align-items-center mb-1">
                             <i class="bi bi-person-standing me-3 icon-hover" style="font-size: 2rem;"></i>
                             <h5 class="mb-0">Berusia minimal 17 tahun (jika mendaftar perorangan)</h5>
                         </div>
                     </div>
                     <div class="row g-5">
-                        <div class="col-md-6 d-flex align-items-center mb-4">
+                        <div class="col-md-6 d-flex align-items-center mb-1">
 
                             <i class="bi bi-file-text me-3 icon-hover" style="font-size: 2rem;"></i>
                             <h5 class="mb-0">Fotocopy NPWP (jika mendaftar sebagai Badan Usaha / Perusahaan)</h5>
                         </div>
-                        <div class="col-md-6 d-flex align-items-center mb-4">
+                        <div class="col-md-6 d-flex align-items-center mb-1">
                             <i class="bi bi-person-vcard me-3 icon-hover" style="font-size: 2rem;"></i>
                             <h5 class="mb-0">Fotocopy KTP / Identitas (jika mendaftar perorangan)</h5>
                         </div>
                     </div>
                     <div class="row g-5">
-                        <div class="col-md-6 d-flex align-items-center mb-4">
+                        <div class="col-md-6 d-flex align-items-center mb-1">
                             <i class="bi bi-card-checklist me-3 icon-hover" style="font-size: 2rem;"></i>
                             <h5 class="mb-0">Fotocopy SIUP / TDP / OSS (jika mendaftar sebagai Badan Usaha / Perusahaan)</h5>
                         </div>

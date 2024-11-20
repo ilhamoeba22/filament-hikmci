@@ -19,7 +19,7 @@
 
 <!-- About Start -->
 <div class="container-fluid about py-5">
-  <div class="container py-5">
+  <div class="container py-2">
     <div class="row g-5">
       <div class="col-xl-6 wow fadeInLeft py-4" data-wow-delay="0.2s">
         <div class="about-img rounded h-100">
@@ -130,7 +130,7 @@
 
 <!-- feature Start -->
 <div class="container-fluid feature bg-light py-5">
-  <div class="container py-5">
+  <div class="container py-2">
     <div
       class="text-center mx-auto wow fadeInUp"
       data-wow-delay="0.2s"
@@ -180,7 +180,7 @@
 
 <!-- Corporate Value start-->
 <div class="container-fluid py-5">
-  <div class="container py-5">
+  <div class="container py-2">
     <div
       class="text-center mx-auto wow fadeInUp"
       data-wow-delay="0.2s"

@@ -32,11 +32,11 @@
                         Fitur
                     </h1>
                     <div class="row g-5">
-                        <div class="col-md-6 d-flex align-items-center mb-4">
+                        <div class="col-md-6 d-flex align-items-center mb-1">
                             <i class="bi bi-bag-fill me-3 icon-hover" style="font-size: 2rem;"></i>
                             <h5 class="mb-0">Berdasarkan prinsip syariah dengan akad wadiah</h5>
                         </div>
-                        <div class="col-md-6 d-flex align-items-center mb-4">
+                        <div class="col-md-6 d-flex align-items-center mb-1">
                             <i class="bi bi-calendar-week me-3 icon-hover" style="font-size: 2rem;"></i>
                             <h5 class="mb-0">Dapat diambil oleh nasabah sewaktu - waktu</h5>
                         </div>
@@ -45,28 +45,28 @@
                         Keunggulan
                     </h1>
                     <div class="row g-5">
-                        <div class="col-md-6 d-flex align-items-center mb-4">
+                        <div class="col-md-6 d-flex align-items-center mb-1">
                             <i class="bi bi-cash me-3 icon-hover" style="font-size: 2rem;"></i>
                             <h5 class="mb-0">Bebas biaya administrasi</h5>
                         </div>
-                        <div class="col-md-6 d-flex align-items-center mb-4">
+                        <div class="col-md-6 d-flex align-items-center mb-1">
                             <i class="bi bi-hourglass-split me-3 icon-hover" style="font-size: 2rem;"></i>
                             <h5 class="mb-0">Dapat diambil sewaktu - waktu</h5>
                         </div>
                     </div>
                     <div class="row g-5">
-                        <div class="col-md-6 d-flex align-items-center mb-4">
+                        <div class="col-md-6 d-flex align-items-center mb-1">
                             <i class="bi bi-truck me-3 icon-hover" style="font-size: 2rem;"></i>
                             <h5 class="mb-0">Layanan pickup service</h5>
                         </div>
-                        <div class="col-md-6 d-flex align-items-center mb-4">
+                        <div class="col-md-6 d-flex align-items-center mb-1">
                             <i class="bi bi-lock-fill me-3 icon-hover" style="font-size: 2rem;"></i>
                             <h5 class="mb-0">Dijamin oleh LPS</h5>
                         </div>
                     </div>
 
                     <div class="row g-5">
-                        <div class="col-md-6 d-flex align-items-center mb-4">
+                        <div class="col-md-6 d-flex align-items-center mb-1">
                             <i class="bi bi-cash-stack me-3 icon-hover" style="font-size: 2rem;"></i>
                             <h5 class="mb-0">Setoran awal ringan</h5>
                         </div>
@@ -76,11 +76,11 @@
                         Syarat
                     </h1>
                     <div class="row g-5">
-                        <div class="col-md-6 d-flex align-items-center mb-4">
+                        <div class="col-md-6 d-flex align-items-center mb-1">
                             <i class="bi bi-file-earmark-fill me-3 icon-hover" style="font-size: 2rem;"></i>
                             <h5 class="mb-0">Form pembukaan tabungan</h5>
                         </div>
-                        <div class="col-md-6 d-flex align-items-center mb-4">
+                        <div class="col-md-6 d-flex align-items-center mb-1">
                             <i class="bi bi-credit-card-2-front me-3 icon-hover" style="font-size: 2rem;"></i>
                             <h5 class="mb-0">KTP (Bagi nasabah perorangan)</h5>
                         </div>

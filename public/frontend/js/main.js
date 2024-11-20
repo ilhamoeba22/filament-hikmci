@@ -119,44 +119,51 @@ function calculatePembiayaan() {
     pembiayaanResult.style.display = 'block';
 }
 
+// Filter Berdasarkan Tahun
 function openTab(evt, tabName) {
-    evt.preventDefault(); 
-    var i, tabcontent, navlinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
+    evt.preventDefault();
+    const tabcontent = document.getElementsByClassName("tabcontent");
+    for (let i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
     }
-    navlinks = document.getElementsByClassName("nav-link");
-    for (i = 0; i < navlinks.length; i++) {
-        navlinks[i].className = navlinks[i].className.replace(" active", "");
+
+    const navlinks = document.getElementsByClassName("nav-link");
+    for (let i = 0; i < navlinks.length; i++) {
+        navlinks[i].classList.remove("active");
     }
+
     document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += " active";
-    filterByYear();
+    evt.currentTarget.classList.add("active");
+
+    filterByYear(); // Apply filter after switching tabs
 }
 
 function filterByYear() {
-    var year = document.getElementById("yearFilter").value;
-    var tabs = ["AllReports", "Publikasi", "TataKelola", "KeuanganBerkelanjutan"];
-    tabs.forEach(function(tabName) {
-        var pdfItems = document.querySelectorAll("#" + tabName + " .pdf-item");
-        for (var i = 0; i < pdfItems.length; i++) {
-            if (year === "" || pdfItems[i].getAttribute("data-year") === year) {
-                pdfItems[i].style.display = "block";
+    const year = document.getElementById("yearFilter").value;
+    const tabs = document.querySelectorAll(".tabcontent");
+
+    tabs.forEach(tab => {
+        const pdfItems = tab.querySelectorAll(".pdf-item");
+        pdfItems.forEach(item => {
+            const itemYear = item.getAttribute("data-year");
+            if (!year || itemYear === year) {
+                item.style.display = "block";
             } else {
-                pdfItems[i].style.display = "none";
+                item.style.display = "none";
             }
-        }
+        });
     });
 }
 
-// Set default tab
-document.addEventListener("DOMContentLoaded", function() {
-    var activeTab = document.querySelector(".nav-link.active");
+document.addEventListener("DOMContentLoaded", () => {
+    const activeTab = document.querySelector(".nav-link.active");
     if (activeTab) {
-        openTab(new Event('click'), activeTab.getAttribute('onclick').match(/'([^']+)'/)[1]);
+        openTab(new Event('click'), activeTab.getAttribute("onclick").match(/'([^']+)'/)[1]);
     }
+    filterByYear(); // Ensure the filter is applied on page load
 });
+
+
 
 // Fungsi untuk menentukan halaman aktif Navbar
 function isActive($page)

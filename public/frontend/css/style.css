@@ -1440,6 +1440,82 @@ body {
     transform: translateY(-5px);
 }
 
+/* BG 2 */
 .background-index {
     background-color: #edfdff;
+}
+
+/* Berita Utama */
+.berita-baru {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.berita-baru h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.berita-baru .d-flex {
+    margin-bottom: 0px;
+}
+
+.berita-baru img {
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.berita-baru p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Berita Lainnya */
+.list-berita-lama {
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.list-berita-lama h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.list-berita-lama .list-group-item {
+    border: none;
+    padding: 10px 0;
+}
+
+.list-berita-lama .list-group-item img {
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.list-berita-lama .list-group-item a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.list-berita-lama .list-group-item a:hover {
+    text-decoration: underline;
+}
+
+.list-berita-lama .btn {
+    background-color: #34a5dd;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.list-berita-lama .btn:hover {
+    background-color: #0056b3;
+    border-color: #34a5dd;
 }

@@ -41,21 +41,21 @@
                         Keunggulan
                     </h1>
                     <div class="row g-5">
-                        <div class="col-md-6 d-flex align-items-center mb-4">
+                        <div class="col-md-6 d-flex align-items-center mb-1">
                             <i class="bi bi-cash me-3 icon-hover" style="font-size: 2rem;"></i>
                             <h5 class="mb-0">Pembiayaan tanpa agunan</h5>
                         </div>
-                        <div class="col-md-6 d-flex align-items-center mb-4">
+                        <div class="col-md-6 d-flex align-items-center mb-1">
                             <i class="bi bi-hourglass-split me-3 icon-hover" style="font-size: 2rem;"></i>
                             <h5 class="mb-0">Jangka waktu sampai 60 bulan</h5>
                         </div>
                     </div>
                     <div class="row g-5">
-                        <div class="col-md-6 d-flex align-items-center mb-4">
+                        <div class="col-md-6 d-flex align-items-center mb-1">
                             <i class="bi bi-truck me-3 icon-hover" style="font-size: 2rem;"></i>
                             <h5 class="mb-0">Layanan pickup service</h5>
                         </div>
-                        <div class="col-md-6 d-flex align-items-center mb-4">
+                        <div class="col-md-6 d-flex align-items-center mb-1">
                             <i class="bi bi-lock-fill me-3 icon-hover" style="font-size: 2rem;"></i>
                             <h5 class="mb-0">Plafond hingga Rp 300.000.000,-</h5>
                         </div>
@@ -66,17 +66,17 @@
                         Syarat
                     </h1>
                     <div class="row g-5">
-                        <div class="col-md-6 d-flex align-items-center mb-4">
+                        <div class="col-md-6 d-flex align-items-center mb-1">
                             <i class="bi bi-person-vcard me-3 icon-hover" style="font-size: 2rem;"></i>
                             <h5 class="mb-0">KTP suami / istri</h5>
                         </div>
-                        <div class="col-md-6 d-flex align-items-center mb-4">
+                        <div class="col-md-6 d-flex align-items-center mb-1">
                             <i class="bi bi-file-earmark-text me-3 icon-hover" style="font-size: 2rem;"></i>
                             <h5 class="mb-0">FC KK / NPWP / Surat nikah</h5>
                         </div>
                     </div>
                     <div class="row g-5">
-                        <div class="col-md-6 d-flex align-items-center mb-4">
+                        <div class="col-md-6 d-flex align-items-center mb-1">
                             <i class="bi bi-file-text me-3 icon-hover" style="font-size: 2rem;"></i>
                             <h5 class="mb-0">Rekening tabungan minimal 6 bulan</h5>
                         </div>

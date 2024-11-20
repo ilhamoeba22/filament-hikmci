@@ -14,7 +14,7 @@
 
 <!-- Laporan Keuangan Start -->
 <div class="container-fluid team py-1">
-    <div class="container py-5">
+    <div class="container py-2">
         <div class="text-center mx-auto pb-1 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
             <h1 class="display-5 text-capitalize mb-3">Bergabunglah Bersama kami</h1>
         </div>

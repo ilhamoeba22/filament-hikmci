@@ -1,19 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\AssetFrontendController;
 use App\Http\Controllers\KarirFrontendController;
 
 // Static pages
-Route::view('/', 'index')->name('home');
+Route::get('/', [IndexController::class, 'index'])->name('home');
 Route::view('/about', 'about')->name('about');
 Route::view('/team', 'team')->name('team');
-// Ubah route ini untuk menggunakan controller
-Route::get('/lapkeu', [LaporanController::class, 'index'])->name('lapkeu');
+Route::view('/lapkeu', 'lapkeu')->name('lapkeu');
 Route::view('/pengaduan', 'pengaduan')->name('pengaduan');
 Route::view('/deposito', 'deposito')->name('deposito');
-Route::view('/berita', 'berita')->name('berita');
 Route::view('/karir', 'karir')->name('karir');
 Route::view('/asset', 'asset')->name('asset');
 Route::view('/wakaf', 'wakaf')->name('wakaf');
@@ -36,12 +36,19 @@ Route::prefix('tabungan')->group(function () {
     Route::view('/tabungan-rencana', 'tabungan-rencana')->name('tabungan-rencana');
 });
 
-// karir
+// Karir
 Route::get('/karir', [KarirFrontendController::class, 'index'])->name('karir.index');
 Route::get('/karir/{id}', [KarirFrontendController::class, 'show'])->name('karir.show');
 
-// asset
+// Asset
 Route::get('/asset', [AssetFrontendController::class, 'index'])->name('asset.index');
 
 // Laporan Keuangan
 Route::get('/laporan', [LaporanController::class, 'index'])->name('laporan.index');
+
+// Berita
+Route::prefix('berita')->group(function () {
+    Route::get('/', [BeritaController::class, 'index'])->name('berita');
+    Route::get('/berita-all', [BeritaController::class, 'all'])->name('berita-all');
+    Route::get('/{id}', [BeritaController::class, 'show'])->name('berita.show');
+});

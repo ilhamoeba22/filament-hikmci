@@ -22,9 +22,9 @@
                     </div>
                 </div>
                 <div class="d-flex my-3">
-                    <a class="btn btn-secondary btn-md-square rounded-circle me-3" target="_blank" href="https://maps.app.goo.gl/ayKc9DFvFkt9aDs87"><i class="bi bi-geo-alt-fill"></i></a>
-                    <a class="btn btn-secondary btn-md-square rounded-circle me-3" target="_blank" href="https://www.instagram.com/bprshikmci/"><i class="fab fa-instagram"></i></a>
-                    <a class="btn btn-secondary btn-md-square rounded-circle me-0" target="_blank" href="https://www.facebook.com/people/Bank-Syariah-HIK-MCI/61554427015454/"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-secondary btn-lg-square rounded-circle me-3" target="_blank" href="https://maps.app.goo.gl/ayKc9DFvFkt9aDs87"><i class="bi bi-geo-alt-fill" style="font-size: 30px;"></i></a>
+                    <a class="btn btn-secondary btn-lg-square rounded-circle me-3" target="_blank" href="https://www.instagram.com/bprshikmci/"><i class="fab fa-instagram" style="font-size: 30px;"></i></a>
+                    <a class="btn btn-secondary btn-lg-square rounded-circle me-0" target="_blank" href="https://www.facebook.com/people/Bank-Syariah-HIK-MCI/61554427015454/"><i class="fab fa-facebook-f" style="font-size: 30px;"></i></a>
                 </div>
             </div>
             <div class="col-md-6 pt-5">

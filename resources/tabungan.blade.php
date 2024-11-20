@@ -18,7 +18,7 @@
 
 <!-- Tabungan Start -->
 <div class="container-fluid product py-5">
-    <div class="container py-5">
+    <div class="container py-2">
         <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
             <h4 class="text-uppercase text-primary">Tabungan</h4>
             <h2 class="display-5 text-capitalize mb-3">

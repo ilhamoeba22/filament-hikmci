@@ -20,7 +20,7 @@
 
 <!-- Team Start -->
 <div class="container-fluid team py-5">
-  <div class="container py-5">
+  <div class="container py-2">
     <div
       class="text-center mx-auto pb-5 wow fadeInUp"
       data-wow-delay="0.2s"

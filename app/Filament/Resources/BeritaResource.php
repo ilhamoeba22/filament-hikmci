@@ -36,6 +36,9 @@ class BeritaResource extends Resource
                     ->maxLength(255),
                 Textarea::make('isi')
                     ->required(),
+                TextInput::make('lokasi')
+                    ->required()
+                    ->maxLength(255),
                 FileUpload::make('gambar')
                     ->image()
                     ->nullable(),
@@ -56,6 +59,7 @@ class BeritaResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('judul')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('isi')->limit(50)->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('lokasi')->sortable()->searchable(),
                 Tables\Columns\ImageColumn::make('gambar'),
                 Tables\Columns\TextColumn::make('user.name')->label('User')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('created_at')->label('Tanggal')->sortable()->searchable(),

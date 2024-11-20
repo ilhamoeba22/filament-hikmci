@@ -2,19 +2,23 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\LaporanTataKelolaResource\Pages;
-use App\Models\LaporanTataKelola;
 use Filament\Forms;
-use Filament\Resources\Form;
-use Filament\Resources\Resource;
-use Filament\Resources\Table;
 use Filament\Tables;
+use Filament\Resources\Form;
+use Filament\Resources\Table;
+use Filament\Resources\Resource;
+use App\Models\LaporanTataKelola;
+use Filament\Forms\Components\Select;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\FileUpload;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Actions\DeleteBulkAction;
+use App\Filament\Resources\LaporanTataKelolaResource\Pages;
+use App\Filament\Resources\LaporanTataKelolaResource\Pages\EditLaporanTataKelola;
+use App\Filament\Resources\LaporanTataKelolaResource\Pages\ListLaporanTataKelolas;
+use App\Filament\Resources\LaporanTataKelolaResource\Pages\CreateLaporanTataKelola;
 
 class LaporanTataKelolaResource extends Resource
 {
@@ -36,9 +40,10 @@ class LaporanTataKelolaResource extends Resource
                     ->acceptedFileTypes(['application/pdf'])
                     ->preserveFilenames()
                     ->required(),
-                TextInput::make('tahun')
-                    ->required()
-                    ->maxLength(4),
+                Select::make('tahun')
+                    ->label('Tahun')
+                    ->options(array_combine(range(date('Y'), 2014), range(date('Y'), 2014)))
+                    ->required(),
             ]);
     }
 
