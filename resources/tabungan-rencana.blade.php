@@ -23,13 +23,26 @@
         <div class="row g-5">
             <div class="wow fadeInRight" data-wow-delay="0.2s">
                 <div class="tabungan-item">
-                    <h1 class="display-3 text-capitalize mb-3 mt-3">Tabungan Rencana</h1>
                     <div class="row g-5 mb-3">
                         <div class="col-md-12 text-center d-flex justify-content-start align-items-start">
-                            <img src="{{asset('frontend/img/produk/MCI_TAB_Rencana.png')}}" class="img-fluid-produk" alt="Responsive image">
+                            <img src="{{asset('frontend/img/produk/MCI_Produk_Rencana.png')}}" class="img-fluid-produk" alt="Responsive image">
                         </div>
                     </div>
-                    <h1 class="pt-5">
+                    <h1 class="pt-1">
+                        Fitur
+                    </h1>
+                    <div class="row g-5">
+                        <div class="col-md-6 d-flex align-items-center mb-4">
+                            <i class="bi bi-bag-fill me-3 icon-hover" style="font-size: 2rem;"></i>
+                            <h5 class="mb-0">Berdasarkan prinsip syariah
+                                dengan akad mudharabah</h5>
+                        </div>
+                        <div class="col-md-6 d-flex align-items-center mb-4">
+                            <i class="bi bi-calendar-week me-3 icon-hover" style="font-size: 2rem;"></i>
+                            <h5 class="mb-0">Jangka waktu sampai dengan 60 bulan (5 tahun)</h5>
+                        </div>
+                    </div>
+                    <h1 class="pt-1">
                         Keunggulan
                     </h1>
                     <div class="row g-5">
@@ -60,7 +73,7 @@
                         </div>
                     </div>
                     <!-- syarat -->
-                    <h1 class="pt-5">
+                    <h1 class="pt-1">
                         Syarat
                     </h1>
                     <div class="row g-5">

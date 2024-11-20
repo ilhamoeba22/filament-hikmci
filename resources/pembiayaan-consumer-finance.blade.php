@@ -39,15 +39,20 @@
             <div class="col-lg-9 col-md-8 col-12">
                 <div class="tabungan-item tab-content border rounded p-3" id="v-pills-tabContent">
                     <div class="tab-pane fade show active" id="v-pills-migran" role="tabpanel" aria-labelledby="v-pills-migran-tab">
-                        <h1 class="display-3 text-capitalize ">Calon Pekerja Migran</h1>
                         <div class="row g-5 mb-3">
                             <div class="col-md-12 text-center d-flex justify-content-center align-items-center">
-                                <img src="{{asset('frontend/img/produk/MCI_Pemb_PMI.png')}}" class="img-fluid-produk" alt="Responsive image">
+                                <img src="{{asset('frontend/img/produk/MCI_Produk_PMI.png')}}" class="img-fluid-produk" alt="Responsive image">
+                            </div>
+                        </div>
+                        <h3>Fitur</h3>
+                        <div class="row g-5">
+                            <div class="col-md-12 d-flex align-items-center mb-4">
+                                <i class="bi bi-cash me-3 icon-hover" style="font-size: 2rem;"></i>
+                                <h5 class="mb-0">Berdasarkan prinsip syariah dengan akad Murabahah, Musyarakah, Mudharabah</h5>
                             </div>
                         </div>
                         <!-- Keunggulan -->
                         <h3>Keunggulan</h3>
-
                         <div class="row g-5">
                             <div class="col-md-6 d-flex align-items-center mb-4">
                                 <i class="bi bi-cash me-3 icon-hover" style="font-size: 2rem;"></i>
@@ -108,14 +113,19 @@
                         </div>
                     </div>
                     <div class="tab-pane fade" id="v-pills-sertifikasi" role="tabpanel" aria-labelledby="v-pills-sertifikasi-tab">
-                        <h1 class="display-3 text-capitalize ">Sertifikasi Pendidik</h1>
                         <div class="row g-5 mb-3">
                             <div class="col-md-12 text-center d-flex justify-content-center align-items-center">
-                                <img src="{{asset('frontend/img/produk/MCI_Pemb_SERDIK.png')}}" class="img-fluid-produk" alt="Responsive image">
+                                <img src="{{asset('frontend/img/produk/MCI_Produk_SERDIK.png')}}" class="img-fluid-produk" alt="Responsive image">
+                            </div>
+                        </div>
+                        <h3>Fitur</h3>
+                        <div class="row g-5">
+                            <div class="col-md-12 d-flex align-items-center mb-4">
+                                <i class="bi bi-cash me-3 icon-hover" style="font-size: 2rem;"></i>
+                                <h5 class="mb-0">Berdasarkan prinsip syariah dengan akad Murabahah, Musyarakah, Mudharabah</h5>
                             </div>
                         </div>
                         <h3>Keunggulan</h3>
-
                         <div class="row g-5">
                             <div class="col-md-6 d-flex align-items-center mb-4">
                                 <i class="bi bi-cash me-3 icon-hover" style="font-size: 2rem;"></i>
@@ -133,7 +143,7 @@
                             </div>
                         </div>
 
-                        <!-- syarat -->
+                        <!-- Syarat -->
                         <h3>Syarat</h3>
                         <div class="row g-5">
                             <div class="col-md-6 d-flex align-items-center mb-4">
@@ -181,14 +191,19 @@
                         </div>
                     </div>
                     <div class="tab-pane fade" id="v-pills-kolektif" role="tabpanel" aria-labelledby="v-pills-kolektif-tab">
-                        <h1 class="display-3 text-capitalize ">Kolektif Karyawan</h1>
                         <div class="row g-5 mb-3">
                             <div class="col-md-12 text-center d-flex justify-content-center align-items-center">
-                                <img src="{{asset('frontend/img/produk/MCI_Pemb_KolektifKary.png')}}" class="img-fluid-produk" alt="Responsive image">
+                                <img src="{{asset('frontend/img/produk/MCI_Produk_KolektifKary.png')}}" class="img-fluid-produk" alt="Responsive image">
+                            </div>
+                        </div>
+                        <h3>Fitur</h3>
+                        <div class="row g-5">
+                            <div class="col-md-12 d-flex align-items-center mb-4">
+                                <i class="bi bi-cash me-3 icon-hover" style="font-size: 2rem;"></i>
+                                <h5 class="mb-0">Berdasarkan prinsip syariah dengan akad Murabahah, Musyarakah, Mudharabah</h5>
                             </div>
                         </div>
                         <h3>Keunggulan</h3>
-
                         <div class="row g-5">
                             <div class="col-md-6 d-flex align-items-center mb-4">
                                 <i class="bi bi-cash me-3 icon-hover" style="font-size: 2rem;"></i>
@@ -248,14 +263,19 @@
                         </div>
                     </div>
                     <div class="tab-pane fade" id="v-pills-umroh" role="tabpanel" aria-labelledby="v-pills-umroh-tab">
-                        <h1 class="display-3 text-capitalize ">Pembiayaan Umroh</h1>
                         <div class="row g-5 mb-3">
                             <div class="col-md-12 text-center d-flex justify-content-center align-items-center">
-                                <img src="{{asset('frontend/img/produk/MCI_Pem_Umroh.png')}}" class="img-fluid-produk" alt="Responsive image">
+                                <img src="{{asset('frontend/img/produk/MCI_Produk_Umroh.png')}}" class="img-fluid-produk" alt="Responsive image">
+                            </div>
+                        </div>
+                        <h3>Fitur</h3>
+                        <div class="row g-5">
+                            <div class="col-md-12 d-flex align-items-center mb-4">
+                                <i class="bi bi-cash me-3 icon-hover" style="font-size: 2rem;"></i>
+                                <h5 class="mb-0">Berdasarkan prinsip syariah dengan akad Murabahah, Musyarakah, Mudharabah</h5>
                             </div>
                         </div>
                         <h3>Keunggulan</h3>
-
                         <div class="row g-5">
                             <div class="col-md-6 d-flex align-items-center mb-4">
                                 <i class="bi bi-cash me-3 icon-hover" style="font-size: 2rem;"></i>

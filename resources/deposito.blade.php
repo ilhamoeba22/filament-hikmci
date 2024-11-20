@@ -22,19 +22,28 @@
         <div class="row g-5">
             <div class="wow fadeInRight" data-wow-delay="0.2s">
                 <div class="tabungan-item">
-                    <h1 class="display-3 text-capitalize mb-3 mt-3">
-                        Deposito Karimah
-                    </h1>
                     <div class="row g-5 mb-3">
-
                         <div class="col-md-12 text-center d-flex justify-content-start align-items-start">
-                            <img src="{{asset('frontend/img/produk/MCI_DEPO.png')}}" class="img-fluid-produk" alt="Responsive image">
+                            <img src="{{asset('frontend/img/produk/MCI_Produk_DEPO.png')}}" class="img-fluid-produk" alt="Responsive image">
+                        </div>
+                    </div>
+                    <h1 class="pt-1">
+                        Fitur
+                    </h1>
+                    <div class="row g-5">
+                        <div class="col-md-6 d-flex align-items-center mb-4">
+                            <i class="bi bi-bag-fill me-3 icon-hover" style="font-size: 2rem;"></i>
+                            <h5 class="mb-0">Berdasarkan prinsip syariah
+                                dengan akad mudharabah</h5>
+                        </div>
+                        <div class="col-md-6 d-flex align-items-center mb-4">
+                            <i class="bi bi-cash-coin me-3 icon-hover" style="font-size: 2rem;"></i>
+                            <h5 class="mb-0">Nilai investasi mengikuti pergerakan profit bank</h5>
                         </div>
                     </div>
                     <h1 class="pt-3">
                         Keunggulan
                     </h1>
-
                     <div class="row g-5">
                         <div class="col-md-6 d-flex align-items-center mb-4">
                             <i class="bi bi-file-earmark-fill me-3 icon-hover" style="font-size: 2rem;"></i>
@@ -52,7 +61,17 @@
                         </div>
                         <div class="col-md-6 d-flex align-items-center mb-4">
                             <i class="bi bi-lock-fill me-3 icon-hover" style="font-size: 2rem;"></i>
-                            <h5 class="mb-0">Dijamin oleh LPS</h5>
+                            <h5 class="mb-0">Dijamin LPS hingga 2 milyar</h5>
+                        </div>
+                    </div>
+                    <div class="row g-5">
+                        <div class="col-md-6 d-flex align-items-center mb-4">
+                            <i class="bi bi-wallet2 me-3 icon-hover" style="font-size: 2rem;"></i>
+                            <h5 class="mb-0">Bagi hasil yang menarik dan kompetitif</h5>
+                        </div>
+                        <div class="col-md-6 d-flex align-items-center mb-4">
+                            <i class="bi bi-check-circle me-3 icon-hover" style="font-size: 2rem;"></i>
+                            <h5 class="mb-0">Dapat digunakan sebagai jaminan pembiayaan</h5>
                         </div>
                     </div>
                     <div class="row g-5">

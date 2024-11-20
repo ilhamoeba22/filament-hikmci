@@ -39,11 +39,11 @@
 <!-- Carousel End -->
 
 <!-- Products Start -->
-<div class="container-fluid background-index py-5">
+<div class="container-fluid background-index py-auto">
     <div class="container py-5">
         <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
             <h3 class="text-uppercase text-primary">Produk Kami</h3>
-            <h1 class="display-5 text-capitalize mb-3">
+            <h1 class="display-5 text-capitalize mb-1">
                 Wujudkan Keuangan Syariah yang Berkah dan Terpercaya
             </h1>
         </div>
@@ -113,7 +113,7 @@
                     <div class="tab-pane fade show active" id="deposito" role="tabpanel">
                         <form class="row g-3" id="depositoForm">
                             <div class="col-md-8 text-center">
-                                <label for="jumlahDeposito" class="form-label">Jumlah Deposito</label><br />
+                                <label for="jumlahDeposito" class="form-label">Jumlah Depo</label><br />
                                 <input type="number" class="form-control form-control-lg rounded-pill" id="jumlahDeposito" placeholder="Jumlah deposito" />
                             </div>
                             <div class="col-md-4 text-center">
@@ -137,7 +137,7 @@
                     <div class="tab-pane fade" id="pembiayaan" role="tabpanel">
                         <form class="row g-3" id="pembiayaanForm">
                             <div class="col-md-8 text-center">
-                                <label for="jumlahPembiayaan" class="form-label">Jumlah Pembiayaan</label><br />
+                                <label for="jumlahPembiayaan" class="form-label">Jumlah Biaya</label><br />
                                 <input type="number" class="form-control form-control-lg rounded-pill" id="jumlahPembiayaan" placeholder="Jumlah Pembiayaan" />
                             </div>
                             <div class="col-md-4 text-center">

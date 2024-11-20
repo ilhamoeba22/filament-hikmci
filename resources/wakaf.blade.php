@@ -51,7 +51,7 @@
                         </div>
                     </div>
                     <div class="row g-5">
-                        <h1 class="pt-5">
+                        <h1 class="pt-1">
                             Pengajuan Cash Waqf Linked Deposit (CWLD)
                         </h1>
 
@@ -64,7 +64,7 @@
                         </h4>
                     </div>
                     <div class="row g-3 justify-content-center text-center">
-                        <h1 class="pt-5">
+                        <h1 class="pt-1">
                             Alur Proses Wakaf BPRS HIK MCI
                         </h1>
 

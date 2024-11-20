@@ -5,7 +5,7 @@
     <!-- Header Start -->
     <div class="container-fluid bg-breadcrumb">
         <div class="container text-center py-5" style="max-width: 900px;">
-            <h4 class="text-white display-5 mb-4 wow fadeInDown" data-wow-delay="0.1s">Produk tabungan Cerdas</h4>
+            <h4 class="text-white display-5 mb-4 wow fadeInDown" data-wow-delay="0.1s">Produk Tabungan Cerdas</h4>
             <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
                 <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
                 <li class="breadcrumb-item"><a href="{{ url('tabungan') }}">Tabungan</a></li>
@@ -23,16 +23,28 @@
         <div class="row g-5">
             <div class="wow fadeInRight" data-wow-delay="0.2s">
                 <div class="tabungan-item">
-                    <h1 class="display-3 text-capitalize mb-3 mt-3">Tabungan Cerdas</h1>
                     <div class="row g-5 mb-3">
                         <div class="col-md-12 text-center d-flex justify-content-start align-items-start">
-                            <img src="{{asset('frontend/img/produk/MCI_TAB_Cerdas.png')}}" class="img-fluid-produk" alt="Responsive image">
+                            <img src="{{asset('frontend/img/produk/MCI_Produk_Cerdas.png')}}" class="img-fluid-produk" alt="Responsive image">
+                        </div>
+                    </div>
+                    <h1 class="pt-1">
+                        Fitur
+                    </h1>
+                    <div class="row g-5">
+                        <div class="col-md-6 d-flex align-items-center mb-4">
+                            <i class="bi bi-bag-fill me-3 icon-hover" style="font-size: 2rem;"></i>
+                            <h5 class="mb-0">Berdasarkan prinsip syariah
+                                dengan akad wadiah</h5>
+                        </div>
+                        <div class="col-md-6 d-flex align-items-center mb-4">
+                            <i class="bi bi-cash-coin me-3 icon-hover" style="font-size: 2rem;"></i>
+                            <h5 class="mb-0">Setoran awal ringan</h5>
                         </div>
                     </div>
                     <h1 class="pt-3">
                         Keunggulan
                     </h1>
-
                     <div class="row g-5">
                         <div class="col-md-6 d-flex align-items-center mb-4">
                             <i class="bi bi-cash me-3 icon-hover" style="font-size: 2rem;"></i>
