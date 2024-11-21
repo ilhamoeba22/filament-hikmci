@@ -16,7 +16,7 @@ class BeritaController extends Controller
 
     public function all()
     {
-        $beritas = Berita::with('user')->latest()->paginate(10);
+        $beritas = Berita::with('user')->latest()->paginate(6);
         return view('berita-all', compact('beritas'));
     }
 

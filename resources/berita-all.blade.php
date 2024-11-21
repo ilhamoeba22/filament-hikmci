@@ -41,7 +41,7 @@
             @endforeach
         </div>
         <div class="d-flex justify-content-center">
-            {{ $beritas->links() }}
+            {{ $beritas->links('pagination::bootstrap-4') }}
         </div>
     </div>
 </div>
