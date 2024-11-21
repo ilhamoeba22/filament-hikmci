@@ -21,18 +21,15 @@
 <div class="container-fluid about py-5">
   <div class="container py-2">
     <div class="row g-5">
-      <div class="col-xl-6 wow fadeInLeft py-4" data-wow-delay="0.2s">
+      <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
         <div class="about-img rounded h-100">
           <img
             src="{{ asset('frontend/img/about/MCI_Profile.png') }}"
             class="img-fluid rounded h-100 w-100"
             alt="" />
-          <div class="about-exp">
-            <span>Kantor BPRS HIK MCI</span>
-          </div>
         </div>
       </div>
-      <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.2s">
+      <div class="col-xl-6 wow fadeInRight py-3" data-wow-delay="0.2s">
         <div class="about-item">
           <h4 class="text-primary text-uppercase">Tentang Perusahaan</h4>
           <h2 class="display-3 mb-3">Kenali BPRS HIK MCI</h2>
