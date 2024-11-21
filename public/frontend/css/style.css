@@ -805,6 +805,10 @@ body, h1, h2, h3, h4, h5, h6, p, a, div, span, li, ul, ol, nav, footer, header, 
     border-radius: 10px;
     background: var(--bs-light);
     transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
 .blog .blog-item:hover {
@@ -816,6 +820,7 @@ body, h1, h2, h3, h4, h5, h6, p, a, div, span, li, ul, ol, nav, footer, header, 
     overflow: hidden;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    flex-shrink: 0;
 }
 
 .blog .blog-item .blog-img::after {
@@ -853,12 +858,21 @@ body, h1, h2, h3, h4, h5, h6, p, a, div, span, li, ul, ol, nav, footer, header, 
     z-index: 2;
 }
 
+.blog .blog-item .blog-content {
+    padding: 20px;
+    flex-grow: 1;
+}
+
 .blog .blog-item .blog-content a {
     transition: 0.5s;
 }
 
 .blog .blog-item:hover .blog-content a:hover {
     color: var(--bs-primary) !important;
+}
+
+.blog .blog-item .blog-content p {
+    margin-bottom: 20px;
 }
 /*** Blog End ***/
 
