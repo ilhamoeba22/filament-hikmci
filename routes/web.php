@@ -11,7 +11,6 @@ use App\Http\Controllers\KarirFrontendController;
 Route::get('/', [IndexController::class, 'index'])->name('home');
 Route::view('/about', 'about')->name('about');
 Route::view('/team', 'team')->name('team');
-Route::view('/lapkeu', 'lapkeu')->name('lapkeu');
 Route::view('/pengaduan', 'pengaduan')->name('pengaduan');
 Route::view('/deposito', 'deposito')->name('deposito');
 Route::view('/karir', 'karir')->name('karir');
@@ -45,6 +44,8 @@ Route::get('/asset', [AssetFrontendController::class, 'index'])->name('asset.ind
 
 // Laporan Keuangan
 Route::get('/laporan', [LaporanController::class, 'index'])->name('laporan.index');
+Route::get('/lapkeu', [LaporanController::class, 'index'])->name('lapkeu');
+
 
 // Berita
 Route::prefix('berita')->group(function () {
