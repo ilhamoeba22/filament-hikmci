@@ -15,6 +15,9 @@
 <!-- Karir Start -->
 <div class="container-fluid karir background-index py-5">
     <div class="container pb-5">
+        <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
+            <h1 class="display-5 text-capitalize mb-3">Bergabunglah Bersama Kami</h1>
+        </div>
         <div class="row g-5">
             <div class="wow fadeInRight" data-wow-delay="0.2s">
                 @if(isset($karir))
@@ -24,16 +27,8 @@
                     </div>
                     <div class="col-md-6">
                         <h1 class="display-4 mb-3">{{ $karir->judul }}</h1>
-                        <h5 class="mb-3">Kualifikasi:</h5>
-                        @if(is_array($karir->kualifikasi))
-                        <ul>
-                            @foreach($karir->kualifikasi as $item)
-                            <li>{{ $item }}</li>
-                            @endforeach
-                        </ul>
-                        @else
-                        <p>{{ $karir->kualifikasi }}</p>
-                        @endif
+                        <h5 class="mb-3">Deskripsi:</h5>
+                        <p>{{ $karir->deskripsi }}</p>
                         <a href="{{ route('karir.index') }}" class="btn btn-secondary">Kembali</a>
                     </div>
                 </div>
@@ -51,7 +46,7 @@
                             <div class="karir-content rounded-bottom p-4">
                                 <a href="{{ route('karir.show', $karir->id) }}" class="h4 d-inline-block mb-3">{{ $karir->judul }}</a>
                                 <p>
-                                    {{ Str::limit(implode(', ', $karir->kualifikasi), 100) }}
+                                    {{ Str::limit($karir->deskripsi, 100) }}
                                 </p>
                                 <a href="{{ route('karir.show', $karir->id) }}" class="fw-bold text-secondary">Selengkapnya <i class="fa fa-angle-right"></i></a>
                             </div>

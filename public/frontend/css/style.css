@@ -1597,3 +1597,171 @@ body {
     object-fit: cover;
 }
 /*** Karir End ***/
+
+/*** Wakaf Start ***/
+.wakaf .wakaf-item {
+    border-radius: 10px;
+    background: var(--bs-light);
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.wakaf .wakaf-item:hover {
+    box-shadow: 0 0 45px rgba(0, 0, 0, 0.2);
+}
+
+.wakaf .wakaf-item .wakaf-img {
+    position: relative;
+    overflow: hidden;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    flex-shrink: 0;
+}
+
+.wakaf .wakaf-item .wakaf-img::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.wakaf .wakaf-item .wakaf-img img {
+    transition: 0.5s;
+}
+
+.wakaf .wakaf-item:hover .wakaf-img img {
+    transform: scale(1.2);
+}
+
+.wakaf .wakaf-item:hover .wakaf-img::after {
+    background: rgba(0, 209, 249, 0.2);
+}
+
+.wakaf .wakaf-item .wakaf-date {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    border-radius: 10px;
+    background: var(--bs-primary);
+    color: var(--bs-white);
+    z-index: 2;
+}
+
+.wakaf .wakaf-item .wakaf-content {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.wakaf .wakaf-item .wakaf-content a {
+    transition: 0.5s;
+}
+
+.wakaf .wakaf-item:hover .wakaf-content a:hover {
+    color: var(--bs-primary) !important;
+}
+
+.wakaf .wakaf-item .wakaf-content p {
+    margin-bottom: 20px;
+}
+
+.wakaf-img-detail {
+    max-height: 400px;
+    object-fit: cover;
+}
+/*** Wakaf End ***/
+
+/* Wakaf Detail */
+.wakaf-baru {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.wakaf-baru h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #004085;
+}
+
+.wakaf-baru .d-flex {
+    margin-bottom: 0px;
+}
+
+.wakaf-baru img {
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.wakaf-baru p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Wakaf Lainnya */
+.list-wakaf-lama {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.list-wakaf-lama h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #004085;
+}
+
+.list-wakaf-lama .list-group-item {
+    border: none;
+    padding: 15px 0;
+    transition: transform 0.3s ease;
+}
+
+.list-wakaf-lama .list-group-item:hover {
+    transform: scale(1.05);
+}
+
+.list-wakaf-lama .list-group-item img {
+    border-radius: 5px;
+    margin-right: 15px;
+    transition: transform 0.3s ease;
+}
+
+.list-wakaf-lama .list-group-item img:hover {
+    transform: scale(1.1);
+}
+
+.list-wakaf-lama .list-group-item a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.list-wakaf-lama .list-group-item a:hover {
+    color: #0056b3;
+}
+
+.list-wakaf-lama .btn {
+    background-color: #34a5dd;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.list-wakaf-lama .btn:hover {
+    background-color: #19409a;
+}

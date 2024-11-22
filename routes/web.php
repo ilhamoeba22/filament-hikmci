@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\WakafController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\AssetFrontendController;
@@ -16,6 +17,7 @@ Route::view('/deposito', 'deposito')->name('deposito');
 Route::view('/karir', 'karir')->name('karir');
 Route::view('/asset', 'asset')->name('asset');
 Route::view('/wakaf', 'wakaf')->name('wakaf');
+
 
 // Pembiayaan Pages
 Route::prefix('pembiayaan')->group(function () {
@@ -53,3 +55,7 @@ Route::prefix('berita')->group(function () {
     Route::get('/berita-all', [BeritaController::class, 'all'])->name('berita-all');
     Route::get('/{id}', [BeritaController::class, 'show'])->name('berita.show');
 });
+
+// Route untuk halaman wakaf
+Route::get('/wakaf', [WakafController::class, 'index'])->name('wakaf.index');
+Route::get('/wakaf/{id}', [WakafController::class, 'show'])->name('wakaf.show');

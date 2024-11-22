@@ -16,40 +16,58 @@
 </div>
 <!-- Navbar & Hero End -->
 
-<!-- Pembiayaan Start -->
+<!-- Wakaf Start -->
 <div class="container-fluid tabungan">
     <div class="container">
         <div class="row g-5">
             <div class="wow fadeInRight" data-wow-delay="0.2s">
                 <div class="tabungan-item">
-                    <h2 class=" text-capitalize mb-3 mt-3">
-                        Wakaf Uang BPRS HIK MCI</h2>
                     <div class="row g-5 mb-3">
-
-                        <div class="col-md-6 text-center d-flex justify-content-center align-items-center">
-
-                            <img src="img/t_ukhuwah.png" class="img-fluid-produk" alt="Responsive image">
+                        <div class="col-md-12 text-center d-flex justify-content-start align-items-start">
+                            <img src="{{asset('frontend/img/produk/MCI_Produk_DEPO.png')}}" class="img-fluid-produk" alt="Responsive image">
                         </div>
-                        <div class="col-md-6">
-                            <h4 class="lh-base justify-text py-2">
-                                Orang pintar adalah orang yang mempersiapkan masa depannya di akhirat dengan berwakaf
-                            </h4>
-
-                            <div class="row">
-                                <h3 class="py-4">
-                                    Bekerja Sama dengan Nazir
-                                </h3>
-                                <div class="col-md-6 text-center">
-                                    <img src="img/bmm.png" class="img-fluid" alt="Dompet Dhuafa" style="max-width: 170px;">
-                                    <h5 class="mt-3">Baitulmaal Muamalat</h5>
+                    </div>
+                    <!-- Program Wakaf Saat Ini Start -->
+                    <div class="container-fluid wakaf py-2">
+                        <div class="container pb-5">
+                            <div class="text-center mx-auto pb-3 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
+                                <h1 class="text-capitalize mb-3">Program Wakaf Terkini</h1>
+                            </div>
+                            <div class="row g-4 justify-content-center">
+                                @foreach($wakafs as $wakaf)
+                                <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.2s">
+                                    <div class="wakaf-item">
+                                        <div class="wakaf-img">
+                                            <img src="{{ asset('storage/' . $wakaf->gambar_cover) }}" class="img-fluid rounded-top w-100" alt="{{ $wakaf->judul }}">
+                                            <div class="wakaf-date px-4 py-2">
+                                                <i class="fa fa-calendar-alt me-1"></i> {{ $wakaf->created_at->format('d M Y') }}
+                                            </div>
+                                        </div>
+                                        <div class="wakaf-content rounded-bottom p-4">
+                                            <a href="{{ route('wakaf.show', $wakaf->id) }}" class="h4 d-inline-block mb-3">{{ $wakaf->judul }}</a>
+                                            <p>{{ Str::limit($wakaf->deskripsi, 100) }}</p>
+                                            <p class="text-dark"><strong><i class="fa fa-map-marker-alt me-1"></i> Lokasi:</strong> {{ $wakaf->lokasi }}</p>
+                                            <p class="text-dark"><strong><i class="fa fa-user me-1"></i> Nahzir:</strong> {{ $wakaf->nahzir }}</p>
+                                            <p class="text-dark"><strong><i class="fa fa-bullseye me-1"></i> Target:</strong> {{ $wakaf->target }}</p>
+                                            <p>
+                                                @if($wakaf->status == 'Terpenuhi')
+                                                <i class="fa fa-check-circle text-success"></i>
+                                                <span class="text-dark">Terpenuhi</span>
+                                                @else
+                                                <i class="fa fa-check-circle text-muted"></i>
+                                                Belum Terpenuhi
+                                                @endif
+                                            </p>
+                                            <a href="{{ route('wakaf.show', $wakaf->id) }}" class="fw-bold text-secondary">Selengkapnya <i class="fa fa-angle-right"></i></a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-md-6 text-center">
-                                    <img src="img/dompet-dhuafa.png" class="img-fluid" alt="Bank Muamalat" style="max-width: 200px;">
-                                    <h5 class="mt-3">Dompet Dhuafa</h5>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
+                    <!-- Program Wakaf Saat Ini End -->
+
                     <div class="row g-5">
                         <h1 class="pt-1">
                             Pengajuan Cash Waqf Linked Deposit (CWLD)
