@@ -135,7 +135,7 @@
         <div class="row g-5">
             <div class="col-12 wow fadeInRight" data-wow-delay="0.2s">
                 <div class="container mt-5 mb-5">
-                    <h4 class="text-center mb-4">Alur Pengaduan Nasabah secara Lisan dengan Tatap Muka di Kantor BPRS HIK MCI</h4>
+                    <h4 class="nunito text-center mb-4">Alur Pengaduan Nasabah secara Lisan dengan Tatap Muka di Kantor BPRS HIK MCI</h4>
                     <div class="d-flex flex-wrap justify-content-center align-items-center flow-diagram">
                         <div class="box m-2">Nasabah<br>menyampaikan<br>Pengaduan Tertulis</div>
                         <div class="arrow m-2">&rarr;</div>
@@ -167,7 +167,7 @@
         <div class="row g-5">
             <div class="col-12 wow fadeInRight" data-wow-delay="0.2s">
                 <div class="container mt-5 mb-5">
-                    <h4 class="text-center mb-4">Alur Pengaduan Nasabah secara Tertulis ataupun Lisan tanpa Tatap Muka di Kantor BPRS HIK MCI</h4>
+                    <h4 class="nunito text-center mb-4">Alur Pengaduan Nasabah secara Tertulis ataupun Lisan tanpa Tatap Muka di Kantor BPRS HIK MCI</h4>
                     <div class="d-flex flex-wrap justify-content-center align-items-center flow-diagram">
                         <div class="box m-2">Nasabah<br>menyampaikan<br>Pengaduan Tertulis</div>
                         <div class="arrow m-2">&rarr;</div>
@@ -198,7 +198,7 @@
         <div class="row g-5">
             <div class="col-12 wow fadeInRight" data-wow-delay="0.2s">
                 <div class="table-responsive">
-                    <h4 class="text-center mb-4">Jangka Waktu Penanganan Pengaduan</h4>
+                    <h4 class="nunito text-center mb-4">Jangka Waktu Penanganan Pengaduan</h4>
                     <table class="table table-bordered w-auto mx-auto">
                         <thead>
                             <tr>

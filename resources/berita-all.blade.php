@@ -30,7 +30,7 @@
                         </div>
                     </div>
                     <div class="blog-content rounded-bottom p-4">
-                        <a href="{{ route('berita.show', $berita->id) }}" class="h4 d-inline-block mb-3">{{ $berita->judul }}</a>
+                        <a href="{{ route('berita.show', $berita->id) }}" class="nunito d-inline-block mb-3">{{ $berita->judul }}</a>
                         <p>
                             {{ Str::limit($berita->isi, 100) }}
                         </p>

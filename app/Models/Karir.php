@@ -11,7 +11,6 @@ class Karir extends Model
 
     protected $fillable = [
         'judul',
-        'deskripsi',
         'gambar',
     ];
 

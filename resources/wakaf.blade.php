@@ -44,7 +44,7 @@
                                             </div>
                                         </div>
                                         <div class="wakaf-content rounded-bottom p-4">
-                                            <a href="{{ route('wakaf.show', $wakaf->id) }}" class="h4 d-inline-block mb-3">{{ $wakaf->judul }}</a>
+                                            <a href="{{ route('wakaf.show', $wakaf->id) }}" class="nunito d-inline-block mb-3">{{ $wakaf->judul }}</a>
                                             <p>{{ Str::limit($wakaf->deskripsi, 100) }}</p>
                                             <p class="text-dark"><strong><i class="fa fa-map-marker-alt me-1"></i> Lokasi:</strong> {{ $wakaf->lokasi }}</p>
                                             <p class="text-dark"><strong><i class="fa fa-user me-1"></i> Nahzir:</strong> {{ $wakaf->nahzir }}</p>

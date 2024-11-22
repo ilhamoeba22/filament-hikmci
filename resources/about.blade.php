@@ -69,7 +69,7 @@
           <i class="fas fa-thumbs-up fa-3x text-white"></i>
         </div>
         <div class="ms-3">
-          <h4 class="text-white my-2">Happy Clients</h4>
+          <h4 class="nunito text-white my-2">Happy Clients</h4>
           <div class="counter-counting">
             <span class="text-white fs-2 fw-bold" data-toggle="counter-up">3000</span>
             <span class="h1 fw-bold text-white">+</span>
@@ -83,7 +83,7 @@
           <i class="fas fa-users fa-3x text-white"></i>
         </div>
         <div class="ms-3">
-          <h4 class="text-white my-2">Employees</h4>
+          <h4 class="nunito text-white my-2">Employees</h4>
           <div class="counter-counting">
             <span class="text-white fs-2 fw-bold" data-toggle="counter-up">50</span>
             <span class="h1 fw-bold text-white">+</span>
@@ -97,7 +97,7 @@
           <i class="fas fa-heart fa-3x text-white"></i>
         </div>
         <div class="ms-3">
-          <h4 class="text-white my-2">Years Experience</h4>
+          <h4 class="nunito text-white my-2">Years Experience</h4>
           <div class="counter-counting">
             <span class="text-white fs-2 fw-bold" data-toggle="counter-up">15</span>
             <span class="h1 fw-bold text-white">+</span>
@@ -111,7 +111,7 @@
           <i class="fas fa-dollar-sign fa-3x text-white"></i>
         </div>
         <div class="ms-3">
-          <h4 class="text-white my-2">Total Aset</h4>
+          <h4 class="nunito text-white my-2">Total Aset</h4>
           <div class="counter-counting">
             <span class="text-white fs-2 fw-bold" data-toggle="counter-up">270</span>
             <span class="text-white fs-2 fw-bold">M</span>
@@ -141,14 +141,14 @@
         class="col-md-6 col-lg-6 col-xl-6 wow fadeInUp"
         data-wow-delay="0.2s">
         <div class="feature-item p-4 pb-4">
-          <a href="#" class="h3 mb-3 d-block text-center">Visi Perusahaan</a>
+          <a href="#" class="nunito mb-3 d-block text-center">Visi Perusahaan</a>
           <h5 class="mb-3 mt-3">
             "Terwujudnya Bank Syariah yang unggul dan terpercaya."
           </h5>
         </div>
         <br>
         <div class="feature-item p-4">
-          <a href="#" class="h3 mb-3 d-block text-center">Motto</a>
+          <a href="#" class="nunito mb-3 d-block text-center">Motto</a>
           <h5 class="mb-3 mt-3 text-center  ">
             "Maju Bersama dalam Usaha Sesuai Syariah."
           </h5>
@@ -158,7 +158,7 @@
         class="col-md-6 col-lg-6 col-xl-6 wow fadeInUp"
         data-wow-delay="0.2s">
         <div class="feature-item p-4">
-          <a href="#" class="h3 mb-3 d-block text-center">Misi Perusahaan</a>
+          <a href="#" class="nunito mb-3 d-block text-center">Misi Perusahaan</a>
           <h5 class="mb-3 justify-text">
             <ol>
               <li>Menjalankan usaha perbankan yang sehat dan amanah</li>

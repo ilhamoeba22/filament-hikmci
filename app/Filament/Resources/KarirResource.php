@@ -33,8 +33,6 @@ class KarirResource extends Resource
                 TextInput::make('judul')
                     ->required()
                     ->maxLength(255),
-                Textarea::make('deskripsi')
-                    ->required(),
                 FileUpload::make('gambar')
                     ->image()
                     ->disk('public')
@@ -49,7 +47,6 @@ class KarirResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('judul')->sortable()->searchable(),
-                TextColumn::make('deskripsi')->sortable()->searchable(),
                 ImageColumn::make('gambar')->label('Gambar')->sortable()->searchable(),
                 TextColumn::make('created_at')->label('Tanggal Dibuat')->sortable()->searchable(),
             ])

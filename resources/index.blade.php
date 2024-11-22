@@ -60,7 +60,7 @@
                 <div class="product-item">
                     <img src="{{ asset('frontend/img/home/MCI_Home_Depo.png') }}" class="img-fluid w-100 rounded-top" alt="Image" />
                     <div class="product-content bg-light text-center rounded-bottom p-4">
-                        <a href="#" class="h4 d-inline-block mb-3">Deposito</a>
+                        <a href="#" class="nunito d-inline-block mb-3">Deposito</a>
                         <br />
                         <a href="{{url('deposito')}}" class="btn btn-secondary rounded-pill py-2 px-4">Selengkapnya</a>
                     </div>
@@ -70,7 +70,7 @@
                 <div class="product-item">
                     <img src="{{ asset('frontend/img/home/MCI_Home_Tabungan.png') }}" class="img-fluid w-100 rounded-top" alt="Image" />
                     <div class="product-content bg-light text-center rounded-bottom p-4">
-                        <a href="#" class="h4 d-inline-block mb-3">Tabungan</a>
+                        <a href="#" class="nunito d-inline-block mb-3">Tabungan</a>
                         <br />
                         <a href="{{url('tabungan')}}" class="btn btn-secondary rounded-pill py-2 px-4">Selengkapnya</a>
                     </div>
@@ -80,7 +80,7 @@
                 <div class="product-item">
                     <img src="{{ asset('frontend/img/home/MCI_Home_Pembiayaan.png') }}" class="img-fluid w-100 rounded-top" alt="Image" />
                     <div class="product-content bg-light text-center rounded-bottom p-4">
-                        <a href="#" class="h4 d-inline-block mb-3">Pembiayaan</a>
+                        <a href="#" class="nunito d-inline-block mb-3">Pembiayaan</a>
                         <br />
                         <a href="{{url('pembiayaan')}}" class="btn btn-secondary rounded-pill py-2 px-4">Selengkapnya</a>
                     </div>
@@ -190,7 +190,7 @@
                         </div>
                     </div>
                     <div class="blog-content rounded-bottom p-4">
-                        <a href="{{ route('berita.show', $berita->id) }}" class="h4 d-inline-block mb-3">{{ $berita->judul }}</a>
+                        <a href="{{ route('berita.show', $berita->id) }}" class="nunito d-inline-block mb-3">{{ $berita->judul }}</a>
                         <p>
                             {{ Str::limit($berita->isi, 100) }}
                         </p>
