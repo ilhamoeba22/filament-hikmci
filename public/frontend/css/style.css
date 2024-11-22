@@ -1516,3 +1516,84 @@ body {
 .list-berita-lama .btn:hover {
     background-color: #19409a;
 }
+
+/*** Karir Start ***/
+.karir .karir-item {
+    border-radius: 10px;
+    background: var(--bs-light);
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.karir .karir-item:hover {
+    box-shadow: 0 0 45px rgba(0, 0, 0, 0.2);
+}
+
+.karir .karir-item .karir-img {
+    position: relative;
+    overflow: hidden;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    flex-shrink: 0;
+}
+
+.karir .karir-item .karir-img::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.karir .karir-item .karir-img img {
+    transition: 0.5s;
+}
+
+.karir .karir-item:hover .karir-img img {
+    transform: scale(1.2);
+}
+
+.karir .karir-item:hover .karir-img::after {
+    background: rgba(0, 209, 249, 0.2);
+}
+
+.karir .karir-item .karir-date {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    border-radius: 10px;
+    background: var(--bs-primary);
+    color: var(--bs-white);
+    z-index: 2;
+}
+
+.karir .karir-item .karir-content {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.karir .karir-item .karir-content a {
+    transition: 0.5s;
+}
+
+.karir .karir-item:hover .karir-content a:hover {
+    color: var(--bs-primary) !important;
+}
+
+.karir .karir-item .karir-content p {
+    margin-bottom: 20px;
+}
+
+.karir-img-detail {
+    /* max-height: 400px; */
+    object-fit: cover;
+}
+/*** Karir End ***/

@@ -12,39 +12,54 @@
 </div>
 <!-- Header End -->
 
-<!-- Laporan Keuangan Start -->
-<div class="container-fluid team py-1">
-    <div class="container py-2">
-        <div class="text-center mx-auto pb-1 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
-            <h1 class="display-5 text-capitalize mb-3">Bergabunglah Bersama kami</h1>
-        </div>
+<!-- Karir Start -->
+<div class="container-fluid karir background-index py-5">
+    <div class="container pb-5">
         <div class="row g-5">
             <div class="wow fadeInRight" data-wow-delay="0.2s">
                 @if(isset($karir))
-                <div class="card mb-4">
-                    <img src="{{ asset('storage/' . $karir->gambar) }}" class="card-img-top" alt="{{ $karir->judul }}">
-                    <div class="card-body">
-                        <h1 class="card-title">{{ $karir->judul }}</h1>
-                        <p class="card-text">{{ $karir->deskripsi }}</p>
-                        <a href="{{ route('karir.index') }}" class="btn btn-secondary">kembali</a>
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <img src="{{ asset('storage/' . $karir->gambar) }}" class="img-fluid rounded karir-img-detail" alt="{{ $karir->judul }}">
+                    </div>
+                    <div class="col-md-6">
+                        <h1 class="display-4 mb-3">{{ $karir->judul }}</h1>
+                        <h5 class="mb-3">Kualifikasi:</h5>
+                        @if(is_array($karir->kualifikasi))
+                        <ul>
+                            @foreach($karir->kualifikasi as $item)
+                            <li>{{ $item }}</li>
+                            @endforeach
+                        </ul>
+                        @else
+                        <p>{{ $karir->kualifikasi }}</p>
+                        @endif
+                        <a href="{{ route('karir.index') }}" class="btn btn-secondary">Kembali</a>
                     </div>
                 </div>
                 @else
                 <div class="row">
                     @foreach ($karirs as $karir)
-                    <div class="col-md-4">
-                        <div class="card mb-4 shadow-sm">
-                            <img src="{{ asset('storage/' . $karir->gambar) }}" class="card-img-top" alt="{{ $karir->judul }}">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">{{ $karir->judul }}</h5>
-                                <p class="card-text">{{ Str::limit($karir->deskripsi, 100) }}</p>
-                                <a href="{{ route('karir.show', $karir->id) }}" class="btn btn-primary btn-read-more">Selengkapnya</a>
+                    <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="karir-item">
+                            <div class="karir-img">
+                                <img src="{{ asset('storage/' . $karir->gambar) }}" class="img-fluid rounded-top w-100" alt="{{ $karir->judul }}">
+                                <div class="karir-date px-4 py-2">
+                                    <i class="fa fa-calendar-alt me-1"></i> {{ $karir->created_at->format('d M Y') }}
+                                </div>
+                            </div>
+                            <div class="karir-content rounded-bottom p-4">
+                                <a href="{{ route('karir.show', $karir->id) }}" class="h4 d-inline-block mb-3">{{ $karir->judul }}</a>
+                                <p>
+                                    {{ Str::limit(implode(', ', $karir->kualifikasi), 100) }}
+                                </p>
+                                <a href="{{ route('karir.show', $karir->id) }}" class="fw-bold text-secondary">Selengkapnya <i class="fa fa-angle-right"></i></a>
                             </div>
                         </div>
                     </div>
                     @endforeach
                 </div>
-                <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-center pt-5">
                     {{ $karirs->links('pagination::bootstrap-4') }}
                 </div>
                 @endif
@@ -52,5 +67,6 @@
         </div>
     </div>
 </div>
+<!-- Karir End -->
 
 @include('footer')
