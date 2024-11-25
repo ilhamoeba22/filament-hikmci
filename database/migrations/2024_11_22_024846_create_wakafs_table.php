@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('gambar_cover');
             $table->string('gambar_detail');
             $table->text('deskripsi');
-            $table->decimal('target', 20, 2); // Ubah presisi dan skala untuk mengakomodasi nilai yang besar
+            $table->decimal('target', 20, 2);
             $table->string('lokasi');
             $table->string('nahzir');
             $table->enum('status', ['Terpenuhi', 'Belum Terpenuhi']);

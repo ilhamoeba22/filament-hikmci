@@ -34,7 +34,7 @@
                         <p>
                             {{ Str::limit($berita->isi, 100) }}
                         </p>
-                        <a href="{{ route('berita.show', $berita->id) }}" class="fw-bold text-secondary">Read More <i class="fa fa-angle-right"></i></a>
+                        <a href="{{ route('berita.show', $berita->id) }}" class="fw-bold text-secondary">Selengkapnya <i class="fa fa-angle-right"></i></a>
                     </div>
                 </div>
             </div>

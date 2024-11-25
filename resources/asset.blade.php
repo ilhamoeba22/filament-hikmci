@@ -16,35 +16,37 @@
 </div>
 <!-- Navbar & Hero End -->
 
-<!-- Pembiayaan Start -->
-<div class="container-fluid team py-1">
-    <div class="container py-2">
-        <div class="text-center mx-auto pb-1 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
+<!-- Asset Start -->
+<div class="container-fluid asset background-index py-5">
+    <div class="container pb-5">
+        <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
+            <h3 class="text-uppercase text-primary">Asset</h3>
             <h1 class="display-5 text-capitalize mb-3">Asset Kami</h1>
         </div>
-        <div class="row g-5">
-            <div class="wow fadeInRight" data-wow-delay="0.2s">
-                <div class="row">
-                    @foreach ($assets as $asset)
-                    <div class="col-md-4">
-                        <div class="card mb-4 shadow-sm">
-                            <img src="{{ Storage::url($asset->gambar) }}" class="card-img-top" alt="{{ $asset->judul }}">
-                            <div class="card-body text-left">
-                                <p class="card-text">Pemilik: {{ $asset->pemilik }}</p>
-                                <p class="card-text">Lokasi: {{ $asset->lokasi }}</p>
-                                <p class="card-text">Harga: {{ $asset->harga }}</p>
-                                <div class="d-flex justify-content-center">
-                                    <a href="{{ Storage::url($asset->pdf) }}" class="btn btn-secondary text-center" target="_blank">Lihat Detail PDF</a>
-                                </div>
-                            </div>
-                        </div>
+        <div class="row g-4 justify-content-center">
+            @foreach ($assets as $asset)
+            <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="asset-item">
+                    <div class="asset-img">
+                        <img src="{{ Storage::url($asset->gambar) }}" class="img-fluid rounded-top w-100" alt="{{ $asset->judul }}">
                     </div>
-                    @endforeach
+                    <div class="asset-content rounded-bottom p-4">
+                        <h4 class="d-inline-block mb-3">{{ $asset->judul }}</h4>
+                        <p>Pemilik: {{ $asset->pemilik }}</p>
+                        <p>Lokasi: {{ $asset->lokasi }}</p>
+                        <p>Harga: {{ $asset->harga }}</p>
+                        <a href="{{ Storage::url($asset->pdf) }}" class="btn btn-secondary text-center" target="_blank">Lihat Detail PDF</a>
+                    </div>
                 </div>
             </div>
+            @endforeach
+        </div>
+        <div class="d-flex justify-content-center pt-4">
+            {{ $assets->links('pagination::bootstrap-4') }}
         </div>
     </div>
 </div>
+<!-- Asset End -->
 
 @include('footer')
 

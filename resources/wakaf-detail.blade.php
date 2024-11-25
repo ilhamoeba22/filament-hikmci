@@ -22,25 +22,26 @@
             <div class="col-lg-8">
                 <div class="wakaf-baru">
                     <div class="row justify-content-center">
-                        <div class="col-md-6 text-center">
+                        <h1 class="text-center my-3">{{ $wakaf->judul }}</h1>
+                        <div class="col-md-12 text-center">
                             <img src="{{ asset('storage/' . $wakaf->gambar_detail) }}" class="img-fluid mb-3 w-100 border rounded" alt="{{ $wakaf->judul }}">
-                        </div>
-                        <div class="col-md-6">
-                            <h1 class="text-center my-3">{{ $wakaf->judul }}</h1>
+                            <!-- </div>
+                        <div class="col-md-6"> -->
+
                             <div class="d-flex justify-content-between">
                                 <p>{{ $wakaf->created_at->format('l, d F Y') }}</p>
                             </div>
                             <p style="text-align: justify;">
                                 {!! nl2br(e($wakaf->deskripsi)) !!}
                             </p>
-                            <div class="row">
-                                <div class="col-md-6">
+                            <div class="row justify-content-around">
+                                <div class="col-4">
                                     <h5 class="mb-3">Lokasi:</h5>
                                     <p>{{ $wakaf->lokasi }}</p>
                                     <h5 class="mb-3">Nahzir:</h5>
                                     <p>{{ $wakaf->nahzir }}</p>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-4">
                                     <h5 class="mb-3">Target:</h5>
                                     <p>{{ $wakaf->target }}</p>
                                     <h5 class="mb-3">Status:</h5>

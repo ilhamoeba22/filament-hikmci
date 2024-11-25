@@ -21,8 +21,8 @@
         <div class="row g-4">
             @foreach ($karirs as $karir)
             <div class="col-lg-4 col-md-6">
-                <div class="karir-item border rounded shadow-sm" data-bs-toggle="modal" data-bs-target="#imageModal{{ $karir->id }}">
-                    <div class="karir-img position-relative">
+                <div class="karir-item border rounded shadow-sm">
+                    <div class="karir-img position-relative" data-bs-toggle="modal" data-bs-target="#imageModal{{ $karir->id }}">
                         <img src="{{ asset('storage/' . $karir->gambar) }}"
                             class="img-fluid rounded-top w-100 karir-thumbnail"
                             alt="{{ $karir->judul }}">
@@ -30,9 +30,9 @@
                             {{ $karir->created_at->format('d M Y') }}
                         </div>
                     </div>
-                    <div class="p-4 text-center">
+                    <div class="p-3 text-center">
                         <h4>{{ $karir->judul }}</h4>
-                        <a href="#" class="btn btn-primary btn-sm mt-3">Lamar Sekarang</a>
+                        <a href="mailto:hr_dept@bprshikmci.co.id" class="btn btn-primary btn-sm mt-3" target="_blank">Lamar Sekarang</a>
                     </div>
                 </div>
             </div>
