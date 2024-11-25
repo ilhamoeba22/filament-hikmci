@@ -4,35 +4,16 @@
 <div class="carousel-header">
     <div id="carouselId" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
         <ol class="carousel-indicators">
-            <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active"></li>
-            <li data-bs-target="#carouselId" data-bs-slide-to="1"></li>
-            <li data-bs-target="#carouselId" data-bs-slide-to="2"></li>
-            <li data-bs-target="#carouselId" data-bs-slide-to="3"></li>
+            @foreach($carousels as $index => $carousel)
+            <li data-bs-target="#carouselId" data-bs-slide-to="{{ $index }}" class="{{ $index == 0 ? 'active' : '' }}"></li>
+            @endforeach
         </ol>
         <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-                <img src="frontend/img/carousel/MCI_Carousell_SelamatDatang.png" class="img-fluid w-100" alt="Image" />
-                <!-- <div class="carousel-caption-1">
-                    <div class="carousel-caption-1-content" style="max-width: 900px">
-                        <h4 class="text-white text-uppercase fw-bold mb-4">Importance life</h4>
-                        <h1 class="display-2 text-capitalize text-white mb-4">Always Want Safe Water For Healthy Life</h1>
-                        <p class="mb-5 fs-5 text-white">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        <div class="carousel-caption-1-content-btn">
-                            <a class="btn btn-primary rounded-pill py-3 px-5 me-2" href="#">Order Now</a>
-                            <a class="btn btn-secondary rounded-pill py-3 px-5 ms-2" href="#">Free Estimate</a>
-                        </div>
-                    </div>
-                </div> -->
+            @foreach($carousels as $index => $carousel)
+            <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                <img src="{{ Storage::url($carousel->image) }}" class="img-fluid w-100" alt="Image" />
             </div>
-            <div class="carousel-item">
-                <img src="frontend/img/carousel/MCI_Carousell_UlangTahun_01.png" class="img-fluid w-100" alt="Image" />
-            </div>
-            <div class="carousel-item">
-                <img src="frontend/img/carousel/MCI_Carousell_Award.png" class="img-fluid w-100" alt="Image" />
-            </div>
-            <div class="carousel-item">
-                <img src="frontend/img/carousel/MCI_Carousell_Nisbah.png" class="img-fluid w-100" alt="Image" />
-            </div>
+            @endforeach
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
             <span class="carousel-control-prev-icon btn btn-primary fadeInLeft animated" aria-hidden="true" data-animation="fadeInLeft" data-delay="1.1s" style="animation-delay: 1.3s;"> <i class="fa fa-angle-left fa-3x"></i></span>
