@@ -44,13 +44,7 @@
                                 <img src="{{asset('frontend/img/produk/MCI_Produk_PMI.png')}}" class="img-fluid-produk" alt="Responsive image">
                             </div>
                         </div>
-                        <h3>Fitur</h3>
-                        <div class="row g-5">
-                            <div class="col-md-12 d-flex align-items-center mb-4">
-                                <i class="bi bi-cash me-3 icon-hover" style="font-size: 2rem;"></i>
-                                <h5 class="mb-0">Berdasarkan prinsip syariah dengan akad Murabahah, Musyarakah, Mudharabah</h5>
-                            </div>
-                        </div>
+
                         <!-- Keunggulan -->
                         <h3>Keunggulan</h3>
                         <div class="row g-5">
@@ -118,13 +112,7 @@
                                 <img src="{{asset('frontend/img/produk/MCI_Produk_SERDIK.png')}}" class="img-fluid-produk" alt="Responsive image">
                             </div>
                         </div>
-                        <h3>Fitur</h3>
-                        <div class="row g-5">
-                            <div class="col-md-12 d-flex align-items-center mb-4">
-                                <i class="bi bi-cash me-3 icon-hover" style="font-size: 2rem;"></i>
-                                <h5 class="mb-0">Berdasarkan prinsip syariah dengan akad Murabahah, Musyarakah, Mudharabah</h5>
-                            </div>
-                        </div>
+
                         <h3>Keunggulan</h3>
                         <div class="row g-5">
                             <div class="col-md-6 d-flex align-items-center mb-1">
@@ -196,13 +184,7 @@
                                 <img src="{{asset('frontend/img/produk/MCI_Produk_KolektifKary.png')}}" class="img-fluid-produk" alt="Responsive image">
                             </div>
                         </div>
-                        <h3>Fitur</h3>
-                        <div class="row g-5">
-                            <div class="col-md-12 d-flex align-items-center mb-4">
-                                <i class="bi bi-cash me-3 icon-hover" style="font-size: 2rem;"></i>
-                                <h5 class="mb-0">Berdasarkan prinsip syariah dengan akad Murabahah, Musyarakah, Mudharabah</h5>
-                            </div>
-                        </div>
+
                         <h3>Keunggulan</h3>
                         <div class="row g-5">
                             <div class="col-md-6 d-flex align-items-center mb-1">
@@ -268,13 +250,7 @@
                                 <img src="{{asset('frontend/img/produk/MCI_Produk_Umroh.png')}}" class="img-fluid-produk" alt="Responsive image">
                             </div>
                         </div>
-                        <h3>Fitur</h3>
-                        <div class="row g-5">
-                            <div class="col-md-12 d-flex align-items-center mb-4">
-                                <i class="bi bi-cash me-3 icon-hover" style="font-size: 2rem;"></i>
-                                <h5 class="mb-0">Berdasarkan prinsip syariah dengan akad Murabahah, Musyarakah, Mudharabah</h5>
-                            </div>
-                        </div>
+
                         <h3>Keunggulan</h3>
                         <div class="row g-5">
                             <div class="col-md-6 d-flex align-items-center mb-1">

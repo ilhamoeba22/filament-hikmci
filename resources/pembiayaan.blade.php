@@ -27,9 +27,9 @@
         </div>
         <div class="row g-4 justify-content-center">
             @foreach ([
-            ["name" => "Micro UMKM", "image" => "frontend/img/pembiayaan/MCI_Pemb_UKM.png", "link" => route('pembiayaan-umkm')],
-            ["name" => "Corporate", "image" => "frontend/img/pembiayaan/MCI_Pemb_Corporate.png", "link" => route('pembiayaan-corporate')],
-            ["name" => "Property", "image" => "frontend/img/pembiayaan/MCI_Pemb_Prop.png", "link" => route('pembiayaan-property')],
+            ["name" => "Mikro UMKM", "image" => "frontend/img/pembiayaan/MCI_Pemb_UKM.png", "link" => route('pembiayaan-umkm')],
+            ["name" => "Korporat", "image" => "frontend/img/pembiayaan/MCI_Pemb_Corporate.png", "link" => route('pembiayaan-corporate')],
+            ["name" => "Properti", "image" => "frontend/img/pembiayaan/MCI_Pemb_Prop.png", "link" => route('pembiayaan-property')],
             ["name" => "Consumer Finance", "image" => "frontend/img/pembiayaan/MCI_Pemb_CustFinance.png", "link" => route('pembiayaan-consumer-finance')],
             ] as $index => $product)
             <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="{{ 0.2 + ($index * 0.2) }}s">

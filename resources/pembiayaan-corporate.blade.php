@@ -28,15 +28,7 @@
                             <img src="{{asset('frontend/img/produk/MCI_Produk_PembCorporate.png')}}" class="img-fluid-produk" alt="Responsive image">
                         </div>
                     </div>
-                    <h1 class="pt-1">
-                        Fitur
-                    </h1>
-                    <div class="row g-5">
-                        <div class="col-md-12 d-flex align-items-center mb-4">
-                            <i class="bi bi-bag-fill me-3 icon-hover" style="font-size: 2rem;"></i>
-                            <h5 class="mb-0">Berdasarkan prinsip syariah dengan akad Murabahah, Musyarakah, Mudharabah</h5>
-                        </div>
-                    </div>
+
                     <h1 class="pt-1">
                         Keunggulan
                     </h1>

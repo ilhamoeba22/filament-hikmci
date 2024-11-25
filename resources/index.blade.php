@@ -144,9 +144,22 @@
 
                     <div class="tab-pane fade" id="pembiayaan" role="tabpanel">
                         <form class="row g-3" id="pembiayaanForm">
-                            <div class="col-md-8 text-center">
+                            <div class="col-md-4 text-center">
                                 <label for="jumlahPembiayaan" class="form-label">Jumlah Biaya</label><br />
                                 <input type="number" class="form-control form-control-lg rounded-pill" id="jumlahPembiayaan" placeholder="Jumlah Pembiayaan" />
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <label for="produkPembiayaan" class="form-label">Produk</label><br />
+                                <select class="form-select form-select-lg rounded-pill" id="produkPembiayaan">
+                                    <option value="" disabled selected>Pilih Produk</option>
+                                    <option value="Micro UMKM">Micro UMKM</option>
+                                    <option value="Corporate">Corporate</option>
+                                    <option value="Property">Property</option>
+                                    <option value="CF Pekerja Migran">CF Pekerja Migran</option>
+                                    <option value="CF Sertifikasi Pendidik">CF Sertifikasi Pendidik</option>
+                                    <option value="CF Kolektif Karyawan">CF Kolektif Karyawan</option>
+                                    <option value="CF Umroh">CF Umroh</option>
+                                </select>
                             </div>
                             <div class="col-md-4 text-center">
                                 <label for="jangkaWaktuPembiayaan" class="form-label">Jangka Waktu</label><br />

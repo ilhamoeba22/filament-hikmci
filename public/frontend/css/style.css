@@ -1628,8 +1628,6 @@ body {
     }
 }
 
-
-
 /*** Wakaf Start ***/
 
 .icon-wakaf {
@@ -1659,6 +1657,22 @@ body {
     .row.g-3 > .col-md-1 i {
         transform: rotate(90deg);
     }
+
+    .wakaf .wakaf-item {
+        margin-bottom: 20px;
+    }
+
+    .wakaf .wakaf-item .wakaf-content {
+        padding: 15px;
+    }
+
+    .wakaf .wakaf-item .wakaf-content p {
+        margin-bottom: 10px;
+    }
+
+    .icon-wakaf {
+        transform: rotate(90deg); /* Rotate the arrow icon */
+    }
 }
 
 .wakaf .wakaf-item {
@@ -1681,22 +1695,16 @@ body {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     flex-shrink: 0;
-}
-
-.wakaf .wakaf-item .wakaf-img::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    transition: 0.5s;
-    z-index: 1;
+    padding-top: 75%; /* 4:3 aspect ratio */
 }
 
 .wakaf .wakaf-item .wakaf-img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the container */
     transition: 0.5s;
 }
 
@@ -1740,6 +1748,7 @@ body {
     object-fit: cover;
 }
 /*** Wakaf End ***/
+
 
 /* Wakaf Detail */
 .wakaf-baru,

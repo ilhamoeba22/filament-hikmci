@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (activeTab) {
         openTab(new Event('click'), activeTab.getAttribute("onclick").match(/'([^']+)'/)[1]);
     }
-    filterByYear(); // Ensure the filter is applied on page load
+    filterByYear(); 
 });
 
 
