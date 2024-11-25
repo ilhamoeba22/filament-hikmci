@@ -39,8 +39,8 @@
                                     <div class="wakaf-item">
                                         <div class="wakaf-img">
                                             <img src="{{ asset('storage/' . $wakaf->gambar_cover) }}" class="img-fluid rounded-top w-100" alt="{{ $wakaf->judul }}">
-                                            <div class="wakaf-date px-4 py-2">
-                                                <i class="fa fa-calendar-alt me-1"></i> {{ $wakaf->created_at->format('d M Y') }}
+                                            <div class="wakaf-date bg-primary text-white px-3 py-1 position-absolute top-0 start-0">
+                                                {{ $wakaf->created_at->format('d M Y') }}
                                             </div>
                                         </div>
                                         <div class="wakaf-content rounded-bottom p-4">
