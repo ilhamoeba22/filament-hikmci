@@ -1244,26 +1244,18 @@ body {
 }
 
 /* Simulasi Perhitungan */
-/* Tabs */
-.nav-tabs .nav-item .nav-link {
-    color: #19409a;
-    font-size: 1.2rem;
-    font-weight: 500;
-    padding: 10px 20px;
-    border-radius: 50px;
-    transition: background-color 0.3s, color 0.3s;
+
+table tbody {
+    display: block;
+    max-height: 400px;  /* Atur tinggi sesuai kebutuhan */
+    overflow-y: auto;
+}
+table thead, table tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
 }
 
-.nav-tabs .nav-item .nav-link.active {
-    background-color: #34a5dd;
-    color: #fff;
-}
-
-.nav-tabs .nav-item .nav-link:hover {
-    background-color: #19409a;
-    color: #fff;
-}
-/* Tabs Consumer Finance */
 
 /* styles.css */
 .nav-tabs-custom .nav-link {

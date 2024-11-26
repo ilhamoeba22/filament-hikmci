@@ -109,6 +109,8 @@
 <script src="{{ asset('frontend/lib/counterup/counterup.min.js') }}"></script>
 <script src="{{ asset('frontend/lib/owlcarousel/owl.carousel.min.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js" defer></script>
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+
 <!-- Template Javascript -->
 <script src="{{ asset('frontend/js/main.js') }}"></script>
 </body>

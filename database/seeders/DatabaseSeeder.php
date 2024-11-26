@@ -18,11 +18,14 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'password' => Hash::make('admin'),
         ]);
-        
+
         User::create([
             'name' => 'Ilham',
             'email' => 'ilham@gmail.com',
             'password' => Hash::make('ilham'),
+        ]);
+        $this->call([
+            NominalSeeder::class,
         ]);
     }
 }

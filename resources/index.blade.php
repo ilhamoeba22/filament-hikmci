@@ -86,88 +86,112 @@
                 <img src="{{ asset('frontend/img/home/kalkulator.png') }}" class="img-fluid rounded" alt="Kalkulator">
             </div>
             <div class="col-lg-8 col-md-6">
-                <ul class="nav nav-tabs justify-content-center mb-4" role="tablist">
-                    <li class="nav-item">
-                        <button class="nav-link active" data-bs-toggle="tab" href="#deposito" role="tab">
-                            Deposito
-                        </button>
-                    </li>
-                    <li class="nav-item">
-                        <button class="nav-link" data-bs-toggle="tab" href="#pembiayaan" role="tab">
-                            Pembiayaan
-                        </button>
-                    </li>
-                </ul>
-                <div class="tab-content">
-                    <div class="tab-pane fade show active" id="deposito" role="tabpanel">
-                        <form class="row g-3" id="depositoForm">
-                            <div class="col-md-8 text-center">
-                                <label for="jumlahDeposito" class="form-label">Jumlah Depo</label><br />
-                                <input type="number" class="form-control form-control-lg rounded-pill" id="jumlahDeposito" placeholder="Jumlah deposito" />
-                            </div>
-                            <div class="col-md-4 text-center">
-                                <label for="jangkaWaktu" class="form-label">Jangka Waktu</label><br />
-                                <select class="form-select form-select-lg rounded-pill" id="jangkaWaktu">
-                                    <option value="" disabled selected>Pilih Jangka Waktu</option>
-                                    <option value="3">3 bulan</option>
-                                    <option value="6">6 bulan</option>
-                                    <option value="9">9 bulan</option>
-                                    <option value="12">12 bulan</option>
-                                </select>
-                            </div>
-
-                        </form>
-                        <div class="col-12 text-center mt-4">
-                            <button type="button" class="btn btn-primary btn-lg rounded-pill" onclick="calculateDeposito()">Hitung</button>
-                        </div>
-                        <div id="depositoResult" class="result-box text-center mt-4" style="display: none;"></div>
+                <form class="row g-3" id="pembiayaanForm">
+                    <div class="col-md-4 text-center">
+                        <label for="jumlahPembiayaan" class="form-label">Jumlah Biaya</label><br />
+                        <input type="number" class="form-control form-control-lg rounded-pill" id="jumlahPembiayaan" placeholder="Jumlah Pembiayaan" />
                     </div>
-
-                    <div class="tab-pane fade" id="pembiayaan" role="tabpanel">
-                        <form class="row g-3" id="pembiayaanForm">
-                            <div class="col-md-4 text-center">
-                                <label for="jumlahPembiayaan" class="form-label">Jumlah Biaya</label><br />
-                                <input type="number" class="form-control form-control-lg rounded-pill" id="jumlahPembiayaan" placeholder="Jumlah Pembiayaan" />
-                            </div>
-                            <div class="col-md-4 text-center">
-                                <label for="produkPembiayaan" class="form-label">Produk</label><br />
-                                <select class="form-select form-select-lg rounded-pill" id="produkPembiayaan">
-                                    <option value="" disabled selected>Pilih Produk</option>
-                                    <option value="Micro UMKM">Micro UMKM</option>
-                                    <option value="Corporate">Corporate</option>
-                                    <option value="Property">Property</option>
-                                    <option value="CF Pekerja Migran">CF Pekerja Migran</option>
-                                    <option value="CF Sertifikasi Pendidik">CF Sertifikasi Pendidik</option>
-                                    <option value="CF Kolektif Karyawan">CF Kolektif Karyawan</option>
-                                    <option value="CF Umroh">CF Umroh</option>
-                                </select>
-                            </div>
-                            <div class="col-md-4 text-center">
-                                <label for="jangkaWaktuPembiayaan" class="form-label">Jangka Waktu</label><br />
-                                <select class="form-select form-select-lg rounded-pill" id="jangkaWaktuPembiayaan">
-                                    <option value="" disabled selected>Pilih Jangka Waktu</option>
-                                    <option value="3">3 bulan</option>
-                                    <option value="6">6 bulan</option>
-                                    <option value="9">9 bulan</option>
-                                    <option value="12">12 bulan</option>
-                                </select>
-                            </div>
-
-                        </form>
-                        <div class="col-12 text-center mt-4">
-                            <button type="button" class="btn btn-primary btn-lg rounded-pill" onclick="calculatePembiayaan()">Hitung</button>
-                        </div>
-                        <div id="pembiayaanResult" class="result-box text-center mt-4" style="display: none;"></div>
+                    <div class="col-md-4 text-center">
+                        <label for="produkPembiayaan" class="form-label">Produk</label><br />
+                        <select class="form-select form-select-lg rounded-pill" id="produkPembiayaan">
+                            <option value="" disabled selected>Pilih Produk</option>
+                            <option value="Micro UMKM">Micro UMKM</option>
+                            <option value="Corporate">Corporate</option>
+                            <option value="Property">Property</option>
+                            <option value="CF Pekerja Migran">CF Pekerja Migran</option>
+                            <option value="CF Sertifikasi Pendidik">CF Sertifikasi Pendidik</option>
+                            <option value="CF Kolektif Karyawan">CF Kolektif Karyawan</option>
+                            <option value="CF Umroh">CF Umroh</option>
+                        </select>
                     </div>
+                    <div class="col-md-4 text-center">
+                        <label for="jangkaWaktuPembiayaan" class="form-label">Jangka Waktu</label><br />
+                        <select class="form-select form-select-lg rounded-pill" id="jangkaWaktuPembiayaan">
+                            <option value="" disabled selected>Pilih Jangka Waktu</option>
+                            <option value="3">3 bulan</option>
+                            <option value="6">6 bulan</option>
+                            <option value="9">9 bulan</option>
+                            <option value="12">12 bulan</option>
+                        </select>
+                    </div>
+                </form>
+                <div class="col-12 text-center mt-4">
+                    <button type="button" class="btn btn-primary btn-lg rounded-pill" onclick="calculatePembiayaan()">Hitung</button>
                 </div>
+                <div id="pembiayaanResult" class="result-box text-center mt-4" style="display: none;"></div>
             </div>
         </div>
     </div>
 </div>
 <!-- Simulasi Perhitungan End -->
 
+<!-- Equivalent Rate Deposito Start -->
+<div class="container-fluid simulasi background-index py-5">
+    <div class="container py-5">
+        <div class="text-center mx-auto pb-3 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
+            <h3 class="text-uppercase text-primary">Equivalent Rate Deposito</h3>
+            <h3 class="text-capitalize">
+                Bulan {{ $rateDeposito->first()->bulan ?? 'N/A' }} Tahun {{ $rateDeposito->first()->created_at->format('Y') ?? 'N/A' }}
+            </h3>
+        </div>
+        <div class="row g-4 align-items-center">
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <th rowspan="2" class="text-center align-middle">Nominal</th>
+                        <th colspan="4" class="text-center">Jangka Waktu</th>
+                        <tr>
+                            <th>1 Bulan (ER {{ $rateDeposito->first()->rate_1_bulan ?? 'N/A' }}%)</th>
+                            <th>3 Bulan (ER {{ $rateDeposito->first()->rate_3_bulan ?? 'N/A' }}%)</th>
+                            <th>6 Bulan (ER {{ $rateDeposito->first()->rate_6_bulan ?? 'N/A' }}%)</th>
+                            <th>12 Bulan (ER {{ $rateDeposito->first()->rate_12_bulan ?? 'N/A' }}%)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="nominals-data" style="height: 400px; overflow-y: scroll;">
+                        @foreach ($nominals as $nominal)
+                        <tr>
+                            <td>Rp. {{ number_format($nominal->nominal, 2, ',', '.') }}</td>
+                            <td>
+                                @if ($rateDeposito->first()->rate_1_bulan)
+                                Rp. {{ number_format(($nominal->nominal * $rateDeposito->first()->rate_1_bulan / 100) / 12, 2, ',', '.') }}
+                                @else
+                                N/A
+                                @endif
+                            </td>
+                            <td>
+                                @if ($rateDeposito->first()->rate_3_bulan)
+                                Rp. {{ number_format(($nominal->nominal * $rateDeposito->first()->rate_3_bulan / 100) / 12, 2, ',', '.') }}
+                                @else
+                                N/A
+                                @endif
+                            </td>
+                            <td>
+                                @if ($rateDeposito->first()->rate_6_bulan)
+                                Rp. {{ number_format(($nominal->nominal * $rateDeposito->first()->rate_6_bulan / 100) / 12, 2, ',', '.') }}
+                                @else
+                                N/A
+                                @endif
+                            </td>
+                            <td>
+                                @if ($rateDeposito->first()->rate_12_bulan)
+                                Rp. {{ number_format(($nominal->nominal * $rateDeposito->first()->rate_12_bulan / 100) / 12, 2, ',', '.') }}
+                                @else
+                                N/A
+                                @endif
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Equivalent Rate Deposito End -->
+
+
 <!-- Berita Terkini Start -->
-<div class="container-fluid blog background-index py-5">
+<div class="container-fluid blog py-5">
     <div class="container pb-5">
         <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
             <h3 class="text-uppercase text-primary">Berita</h3>

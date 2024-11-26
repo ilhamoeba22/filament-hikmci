@@ -59,3 +59,6 @@ Route::prefix('berita')->group(function () {
 // Route untuk halaman wakaf
 Route::get('/wakaf', [WakafController::class, 'index'])->name('wakaf.index');
 Route::get('/wakaf/{id}', [WakafController::class, 'show'])->name('wakaf.show');
+
+// Route Ajax Paginate
+Route::get('/get-nominals', [IndexController::class, 'getNominals'])->name('get.nominals');

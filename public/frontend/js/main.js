@@ -184,3 +184,48 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// Deposito Scroll
+
+(function ($) {
+    "use strict";
+
+    // Variabel untuk menyimpan offset
+    let offset = 10; // Posisi awal data, karena 10 data awal sudah dimuat
+    const limit = 10; // Jumlah data yang dimuat per permintaan
+
+    // Fungsi untuk memuat data tambahan saat scroll
+    function loadMoreData(offset, limit) {
+        $.ajax({
+            url: "/get-nominals", // URL untuk memuat data lebih banyak
+            method: "GET",
+            data: { offset: offset, limit: limit },
+            beforeSend: function() {
+                // Menambahkan indikator loading jika diperlukan
+            },
+            success: function(data) {
+                if (data.trim() === '') {
+                    // Jika tidak ada data, kita bisa sembunyikan tombol atau indikator
+                } else {
+                    $('#nominals-data').append(data); // Tambahkan data ke tabel
+                    offset += limit; // Update offset untuk permintaan selanjutnya
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error("AJAX Error:", error);
+            }
+        });
+    }
+
+    // Event listener untuk scroll pada tbody
+    $('#nominals-data').on('scroll', function() {
+        const scrollTop = $(this).scrollTop();
+        const scrollHeight = $(this)[0].scrollHeight;
+        const windowHeight = $(this).height();
+
+        // Jika sudah scroll hampir ke bagian bawah
+        if (scrollTop + windowHeight >= scrollHeight - 10) {
+            loadMoreData(offset, limit); // Memuat data lebih banyak
+        }
+    });
+
+})(jQuery);
