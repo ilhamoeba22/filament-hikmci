@@ -85,36 +85,37 @@ $('.testimonial-carousel').on('mouseover', function() {
 
 })(jQuery);
 
-// Simulasi Perhitungan
-function calculateDeposito() {
-    const jumlahDeposito = document.getElementById('jumlahDeposito').value;
-    const jangkaWaktu = document.getElementById('jangkaWaktu').value;
+// Simulasi Perhitungan Pembiayaan
 
-    // Perform your calculation logic here
-    const hasil = jumlahDeposito * jangkaWaktu; // Example calculation
-
-    const depositoResult = document.getElementById('depositoResult');
-    depositoResult.innerHTML = `
-        <h4>Hasil Perhitungan Deposito</h4>
-        <p>Jumlah Deposito: ${jumlahDeposito}</p>
-        <p>Jangka Waktu: ${jangkaWaktu} bulan</p>
-        <p>Hasil: ${hasil}</p>
-    `;
-    depositoResult.style.display = 'block';
-}
 function calculatePembiayaan() {
-    const jumlahPembiayaan = document.getElementById('jumlahPembiayaan').value;
-    const jangkaWaktuPembiayaan = document.getElementById('jangkaWaktuPembiayaan').value;
+    const jumlahPembiayaan = parseFloat(document.getElementById('jumlahPembiayaan').value);
+    const jangkaWaktuPembiayaan = parseInt(document.getElementById('jangkaWaktuPembiayaan').value);
 
-    // Perform your calculation logic here
-    const hasil = jumlahPembiayaan * jangkaWaktuPembiayaan; // Example calculation
+    if (isNaN(jumlahPembiayaan) || isNaN(jangkaWaktuPembiayaan)) {
+        alert('Mohon masukkan jumlah pembiayaan dan jangka waktu yang valid.');
+        return;
+    }
+
+    const margin = 1.5 / 100; // 1.5%
+    const hasil = Math.floor((jumlahPembiayaan / jangkaWaktuPembiayaan) + (jumlahPembiayaan * margin));
 
     const pembiayaanResult = document.getElementById('pembiayaanResult');
     pembiayaanResult.innerHTML = `
         <h4>Hasil Perhitungan Pembiayaan</h4>
-        <p>Jumlah Pembiayaan: ${jumlahPembiayaan}</p>
-        <p>Jangka Waktu: ${jangkaWaktuPembiayaan} bulan</p>
-        <p>Hasil: ${hasil}</p>
+        <table class="table table-bordered">
+            <tr>
+                <th>Jumlah Pembiayaan</th>
+                <td>Rp. ${jumlahPembiayaan.toLocaleString('id-ID')}</td>
+            </tr>
+            <tr>
+                <th>Jangka Waktu</th>
+                <td>${jangkaWaktuPembiayaan} bulan</td>
+            </tr>
+            <tr>
+                <th>Angsuran Perbulan</th>
+                <td>Rp. ${hasil.toLocaleString('id-ID')}</td>
+            </tr>
+        </table>
     `;
     pembiayaanResult.style.display = 'block';
 }

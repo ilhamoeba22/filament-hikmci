@@ -76,7 +76,7 @@
 <div class="container-fluid simulasi py-5">
     <div class="container pb-5">
         <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
-            <h3 class="text-uppercase text-primary">Simulasi Perhitungan</h3>
+            <h3 class="text-uppercase text-primary">Simulasi Pembiayaan</h3>
             <h3 class="display-5 text-capitalize mb-3">
                 Berapapun Anda Simulasikan, HIK MCI Siap Membantu.
             </h3>
@@ -88,7 +88,7 @@
             <div class="col-lg-8 col-md-6">
                 <form class="row g-3" id="pembiayaanForm">
                     <div class="col-md-4 text-center">
-                        <label for="jumlahPembiayaan" class="form-label">Jumlah Biaya</label><br />
+                        <label for="jumlahPembiayaan" class="form-label">Jumlah Pembiayaan</label><br />
                         <input type="number" class="form-control form-control-lg rounded-pill" id="jumlahPembiayaan" placeholder="Jumlah Pembiayaan" />
                     </div>
                     <div class="col-md-4 text-center">
@@ -108,9 +108,9 @@
                         <label for="jangkaWaktuPembiayaan" class="form-label">Jangka Waktu</label><br />
                         <select class="form-select form-select-lg rounded-pill" id="jangkaWaktuPembiayaan">
                             <option value="" disabled selected>Pilih Jangka Waktu</option>
+                            <option value="1">1 bulan</option>
                             <option value="3">3 bulan</option>
                             <option value="6">6 bulan</option>
-                            <option value="9">9 bulan</option>
                             <option value="12">12 bulan</option>
                         </select>
                     </div>
@@ -125,6 +125,8 @@
 </div>
 <!-- Simulasi Perhitungan End -->
 
+
+
 <!-- Equivalent Rate Deposito Start -->
 <div class="container-fluid simulasi background-index py-5">
     <div class="container py-5">
@@ -134,10 +136,10 @@
                 Bulan {{ $rateDeposito->first()->bulan ?? 'N/A' }} Tahun {{ $rateDeposito->first()->created_at->format('Y') ?? 'N/A' }}
             </h3>
         </div>
-        <div class="row g-4 align-items-center">
+        <div class="row g-5 align-items-center">
             <div class="table-responsive">
-                <table class="table table-bordered table-striped">
-                    <thead>
+                <table class="table table-bordered table-striped table-hover">
+                    <thead class="text-dark">
                         <th rowspan="2" class="text-center align-middle">Nominal</th>
                         <th colspan="4" class="text-center">Jangka Waktu</th>
                         <tr>
@@ -147,32 +149,32 @@
                             <th>12 Bulan (ER {{ $rateDeposito->first()->rate_12_bulan ?? 'N/A' }}%)</th>
                         </tr>
                     </thead>
-                    <tbody id="nominals-data" style="height: 400px; overflow-y: scroll;">
+                    <tbody id="nominals-data" class="text-secondary" style="height: 400px; overflow-y: scroll;">
                         @foreach ($nominals as $nominal)
                         <tr>
-                            <td>Rp. {{ number_format($nominal->nominal, 2, ',', '.') }}</td>
-                            <td>
+                            <td data-label="Nominal">Rp. {{ number_format($nominal->nominal, 2, ',', '.') }}</td>
+                            <td data-label="1 Bulan">
                                 @if ($rateDeposito->first()->rate_1_bulan)
                                 Rp. {{ number_format(($nominal->nominal * $rateDeposito->first()->rate_1_bulan / 100) / 12, 2, ',', '.') }}
                                 @else
                                 N/A
                                 @endif
                             </td>
-                            <td>
+                            <td data-label="3 Bulan">
                                 @if ($rateDeposito->first()->rate_3_bulan)
                                 Rp. {{ number_format(($nominal->nominal * $rateDeposito->first()->rate_3_bulan / 100) / 12, 2, ',', '.') }}
                                 @else
                                 N/A
                                 @endif
                             </td>
-                            <td>
+                            <td data-label="6 Bulan">
                                 @if ($rateDeposito->first()->rate_6_bulan)
                                 Rp. {{ number_format(($nominal->nominal * $rateDeposito->first()->rate_6_bulan / 100) / 12, 2, ',', '.') }}
                                 @else
                                 N/A
                                 @endif
                             </td>
-                            <td>
+                            <td data-label="12 Bulan">
                                 @if ($rateDeposito->first()->rate_12_bulan)
                                 Rp. {{ number_format(($nominal->nominal * $rateDeposito->first()->rate_12_bulan / 100) / 12, 2, ',', '.') }}
                                 @else
@@ -188,6 +190,7 @@
     </div>
 </div>
 <!-- Equivalent Rate Deposito End -->
+
 
 
 <!-- Berita Terkini Start -->
