@@ -89,7 +89,7 @@
                 <form class="row g-3" id="pembiayaanForm">
                     <div class="col-md-4 text-center">
                         <label for="jumlahPembiayaan" class="form-label">Jumlah Pembiayaan</label><br />
-                        <input type="number" class="form-control form-control-lg rounded-pill" id="jumlahPembiayaan" placeholder="Jumlah Pembiayaan" />
+                        <input type="text" class="form-control form-control-lg rounded-pill" id="jumlahPembiayaan" placeholder="Jumlah Pembiayaan" />
                     </div>
                     <div class="col-md-4 text-center">
                         <label for="produkPembiayaan" class="form-label">Produk</label><br />
@@ -108,9 +108,9 @@
                         <label for="jangkaWaktuPembiayaan" class="form-label">Jangka Waktu</label><br />
                         <select class="form-select form-select-lg rounded-pill" id="jangkaWaktuPembiayaan">
                             <option value="" disabled selected>Pilih Jangka Waktu</option>
-                            <option value="1">1 bulan</option>
                             <option value="3">3 bulan</option>
                             <option value="6">6 bulan</option>
+                            <option value="9">9 bulan</option>
                             <option value="12">12 bulan</option>
                         </select>
                     </div>
@@ -125,11 +125,9 @@
 </div>
 <!-- Simulasi Perhitungan End -->
 
-
-
 <!-- Equivalent Rate Deposito Start -->
 <div class="container-fluid simulasi background-index py-5">
-    <div class="container py-5">
+    <div class="container py-2">
         <div class="text-center mx-auto pb-3 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
             <h3 class="text-uppercase text-primary">Equivalent Rate Deposito</h3>
             <h3 class="text-capitalize">
@@ -142,11 +140,11 @@
                     <thead class="text-dark">
                         <th rowspan="2" class="text-center align-middle">Nominal</th>
                         <th colspan="4" class="text-center">Jangka Waktu</th>
-                        <tr>
-                            <th>1 Bulan (ER {{ $rateDeposito->first()->rate_1_bulan ?? 'N/A' }}%)</th>
-                            <th>3 Bulan (ER {{ $rateDeposito->first()->rate_3_bulan ?? 'N/A' }}%)</th>
-                            <th>6 Bulan (ER {{ $rateDeposito->first()->rate_6_bulan ?? 'N/A' }}%)</th>
-                            <th>12 Bulan (ER {{ $rateDeposito->first()->rate_12_bulan ?? 'N/A' }}%)</th>
+                        <tr class="text-center">
+                            <th>1 Bulan </br> (Setara ER {{ $rateDeposito->first()->rate_1_bulan ?? 'N/A' }}%)</th>
+                            <th>3 Bulan </br> (Setara ER {{ $rateDeposito->first()->rate_3_bulan ?? 'N/A' }}%)</th>
+                            <th>6 Bulan </br> (Setara ER {{ $rateDeposito->first()->rate_6_bulan ?? 'N/A' }}%)</th>
+                            <th>12 Bulan </br> (Setara ER {{ $rateDeposito->first()->rate_12_bulan ?? 'N/A' }}%)</th>
                         </tr>
                     </thead>
                     <tbody id="nominals-data" class="text-secondary" style="height: 400px; overflow-y: scroll;">

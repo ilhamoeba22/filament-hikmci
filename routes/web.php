@@ -13,6 +13,7 @@ Route::get('/', [IndexController::class, 'index'])->name('home');
 Route::view('/about', 'about')->name('about');
 Route::view('/team', 'team')->name('team');
 Route::view('/pengaduan', 'pengaduan')->name('pengaduan');
+Route::view('/penghargaan', 'penghargaan')->name('penghargaan');
 Route::view('/deposito', 'deposito')->name('deposito');
 Route::view('/karir', 'karir')->name('karir');
 Route::view('/asset', 'asset')->name('asset');

@@ -12,44 +12,95 @@
 </div>
 <!-- Header End -->
 
-<!-- Karir Start -->
-<div class="container-fluid karir py-5">
-    <div class="container">
-        <div class="text-center mx-auto pb-5" style="max-width: 800px">
-            <h1 class="display-5 text-capitalize mb-3">Bergabunglah Bersama Kami</h1>
+<!-- Gallery Start -->
+<div class="container py-5">
+    <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px">
+        <h1 class="display-5">Galeri Penghargaan</h1>
+        <p class="lead">Berikut adalah beberapa penghargaan yang telah kami terima.</p>
+    </div>
+    <div class="row g-4">
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="gallery-item">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal" data-title="Penghargaan 1" data-description="Deskripsi Penghargaan 1" data-image="{{ asset('frontend/img/penghargaan/award_1.jpg') }}">
+                    <img src="{{ asset('frontend/img/penghargaan/award_1.jpg') }}" class="img-fluid rounded" alt="Penghargaan 1">
+                </a>
+                <div class="gallery-caption text-center mt-2">
+                    <h5>Penghargaan 1</h5>
+                    <p>Deskripsi Penghargaan 1</p>
+                </div>
+            </div>
         </div>
-        <div class="row g-4">
-            @foreach ($karirs as $karir)
-            <div class="col-lg-4 col-md-6">
-                <div class="karir-item border rounded shadow-sm">
-                    <div class="karir-img position-relative" data-bs-toggle="modal" data-bs-target="#imageModal{{ $karir->id }}">
-                        <img src="{{ asset('storage/' . $karir->gambar) }}"
-                            class="img-fluid rounded-top w-100 karir-thumbnail"
-                            alt="{{ $karir->judul }}">
-                        <div class="karir-date bg-primary text-white px-3 py-1 position-absolute top-0 start-0">
-                            {{ $karir->created_at->format('d M Y') }}
-                        </div>
-                    </div>
-                    <div class="p-3 text-center">
-                        <h4>{{ $karir->judul }}</h4>
-                        <a href="mailto:hr_dept@bprshikmci.co.id" class="btn btn-primary btn-sm mt-3" target="_blank">Lamar Sekarang</a>
-                    </div>
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="gallery-item">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal" data-title="Penghargaan 2" data-description="Deskripsi Penghargaan 2" data-image="{{ asset('frontend/img/penghargaan/award_2.jpg') }}">
+                    <img src="{{ asset('frontend/img/penghargaan/award_2.jpg') }}" class="img-fluid rounded" alt="Penghargaan 2">
+                </a>
+                <div class="gallery-caption text-center mt-2">
+                    <h5>Penghargaan 2</h5>
+                    <p>Deskripsi Penghargaan 2</p>
                 </div>
             </div>
-
-            <!-- Modal -->
-            <div class="modal fade" id="imageModal{{ $karir->id }}" tabindex="-1" aria-labelledby="imageModalLabel{{ $karir->id }}" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg">
-                    <div class="modal-content bg-transparent border-0">
-                        <img src="{{ asset('storage/' . $karir->gambar) }}" class="img-fluid rounded" alt="{{ $karir->judul }}">
-                        <button type="button" class="btn-close position-absolute top-0 end-0 p-2" data-bs-dismiss="modal" aria-label="Close" style="z-index: 1055;"></button>
-                    </div>
+        </div>
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="gallery-item">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal" data-title="Penghargaan 3" data-description="Deskripsi Penghargaan 3" data-image="{{ asset('frontend/img/penghargaan/award_3.jpg') }}">
+                    <img src="{{ asset('frontend/img/penghargaan/award_3.jpg') }}" class="img-fluid rounded" alt="Penghargaan 3">
+                </a>
+                <div class="gallery-caption text-center mt-2">
+                    <h5>Penghargaan 3</h5>
+                    <p>Deskripsi Penghargaan 3</p>
                 </div>
             </div>
-            @endforeach
+        </div>
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="gallery-item">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal" data-title="Penghargaan 4" data-description="Deskripsi Penghargaan 4" data-image="{{ asset('frontend/img/penghargaan/award_4.jpg') }}">
+                    <img src="{{ asset('frontend/img/penghargaan/award_4.jpg') }}" class="img-fluid rounded" alt="Penghargaan 4">
+                </a>
+                <div class="gallery-caption text-center mt-2">
+                    <h5>Penghargaan 4</h5>
+                    <p>Deskripsi Penghargaan 4</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="gallery-item">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal" data-title="Penghargaan 5" data-description="Deskripsi Penghargaan 5" data-image="{{ asset('frontend/img/penghargaan/award_5.jpg') }}">
+                    <img src="{{ asset('frontend/img/penghargaan/award_5.jpg') }}" class="img-fluid rounded" alt="Penghargaan 5">
+                </a>
+                <div class="gallery-caption text-center mt-2">
+                    <h5>Penghargaan 5</h5>
+                    <p>Deskripsi Penghargaan 5</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+            <div class="gallery-item">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal" data-title="Penghargaan 6" data-description="Deskripsi Penghargaan 6" data-image="{{ asset('frontend/img/penghargaan/award_6.jpg') }}">
+                    <img src="{{ asset('frontend/img/penghargaan/award_6.jpg') }}" class="img-fluid rounded" alt="Penghargaan 6">
+                </a>
+                <div class="gallery-caption text-center mt-2">
+                    <h5>Penghargaan 6</h5>
+                    <p>Deskripsi Penghargaan 6</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-<!-- Karir End -->
+<!-- Gallery End -->
+
+<!-- Modal -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-transparent border-0">
+            <img id="modalImage" src="" class="img-fluid rounded" alt="">
+            <div class="modal-caption text-center mt-2">
+                <h5 id="modalTitle"></h5>
+                <p id="modalDescription"></p>
+            </div>
+            <button type="button" class="btn-close position-absolute top-0 end-0 p-2" data-bs-dismiss="modal" aria-label="Close" style="z-index: 1055;"></button>
+        </div>
+    </div>
+</div>
 
 @include('footer')

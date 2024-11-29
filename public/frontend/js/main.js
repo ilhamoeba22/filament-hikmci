@@ -87,8 +87,10 @@ $('.testimonial-carousel').on('mouseover', function() {
 
 // Simulasi Perhitungan Pembiayaan
 
+// Simulasi Perhitungan Pembiayaan
+
 function calculatePembiayaan() {
-    const jumlahPembiayaan = parseFloat(document.getElementById('jumlahPembiayaan').value);
+    const jumlahPembiayaan = parseFloat(document.getElementById('jumlahPembiayaan').value.replace(/\./g, ''));
     const jangkaWaktuPembiayaan = parseInt(document.getElementById('jangkaWaktuPembiayaan').value);
 
     if (isNaN(jumlahPembiayaan) || isNaN(jangkaWaktuPembiayaan)) {
@@ -119,6 +121,17 @@ function calculatePembiayaan() {
     `;
     pembiayaanResult.style.display = 'block';
 }
+
+// Fungsi untuk memformat angka dengan titik setiap tiga angka
+function formatNumberInput(input) {
+    const value = input.value.replace(/\D/g, '');
+    input.value = value.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+}
+
+// Event listener untuk memformat angka saat pengguna mengetik
+document.getElementById('jumlahPembiayaan').addEventListener('input', function() {
+    formatNumberInput(this);
+});
 
 // Filter Berdasarkan Tahun
 function openTab(evt, tabName) {

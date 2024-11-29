@@ -56,6 +56,7 @@
                                 <a href="{{ url('team') }}" class="dropdown-item {{ request()->is('team') ? 'active' : '' }}">Pengurus</a>
                                 <a href="{{ url('lapkeu') }}" class="dropdown-item {{ request()->is('lapkeu') ? 'active' : '' }}">Laporan Keuangan</a>
                                 <a href="{{ url('pengaduan') }}" class="dropdown-item {{ request()->is('pengaduan') ? 'active' : '' }}">Layanan Pengaduan</a>
+                                <a href="{{ url('penghargaan') }}" class="dropdown-item {{ request()->is('penghargaan') ? 'active' : '' }}">Penghargaan</a>
                             </div>
                         </div>
                         <div class="nav-item dropdown">
