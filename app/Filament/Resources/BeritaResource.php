@@ -47,9 +47,7 @@ class BeritaResource extends Resource
                     ->required(),
                 DatePicker::make('created_at')
                     ->label('Tanggal')
-                    ->required()
-                    ->default(now())
-                    ->disabled(),
+                    ->required(),
             ]);
     }
 
@@ -62,10 +60,11 @@ class BeritaResource extends Resource
                 Tables\Columns\TextColumn::make('lokasi')->sortable()->searchable(),
                 Tables\Columns\ImageColumn::make('gambar'),
                 Tables\Columns\TextColumn::make('user.name')->label('User')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('created_at')->label('Tanggal')->sortable()->searchable(),
-            ])
-            ->filters([
-                //
+                Tables\Columns\TextColumn::make('created_at')
+                    ->label('Tanggal')
+                    ->sortable()
+                    ->searchable()
+                    ->date('d/m/Y'),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

@@ -14,6 +14,7 @@ class Berita extends Model
         'lokasi',
         'gambar',
         'user_id',
+        'created_at',
     ];
 
     public function user()
