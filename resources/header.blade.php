@@ -74,6 +74,7 @@
                             <div class="dropdown-menu m-0">
                                 <a href="{{ url('asset') }}" class="dropdown-item {{ request()->is('asset') ? 'active' : '' }}">E-Asset</a>
                                 <a href="{{ url('wakaf') }}" class="dropdown-item {{ request()->is('wakaf') ? 'active' : '' }}">Wakaf</a>
+                                <a href="{{ url('edukasi') }}" class="dropdown-item {{ request()->is('edukasi') ? 'active' : '' }}">Edukasi</a>
                             </div>
                         </div>
                     </div>

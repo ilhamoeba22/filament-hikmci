@@ -21,14 +21,12 @@ class Karir extends Model
         parent::boot();
 
         static::deleting(function ($karir) {
-            // Hapus gambar dari penyimpanan
             if ($karir->gambar) {
                 Storage::disk('public')->delete($karir->gambar);
             }
         });
 
         static::updating(function ($karir) {
-            // Hapus gambar lama dari penyimpanan jika gambar diupdate
             if ($karir->isDirty('gambar')) {
                 Storage::disk('public')->delete($karir->getOriginal('gambar'));
             }

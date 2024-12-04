@@ -84,7 +84,18 @@ return [
             'url' => env('APP_URL') . '/storage/laporan/tata_kelola',
             'visibility' => 'public',
         ],
-
+        'edukasi' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/edukasi'),
+            'url' => env('APP_URL') . '/storage/edukasi',
+            'visibility' => 'public',
+        ],
+        'berita' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/berita'),
+            'url' => env('APP_URL') . '/storage/berita',
+            'visibility' => 'public',
+        ],
 
         's3' => [
             'driver' => 's3',
@@ -96,6 +107,8 @@ return [
             'endpoint' => env('AWS_ENDPOINT'),
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
         ],
+
+
 
     ],
 

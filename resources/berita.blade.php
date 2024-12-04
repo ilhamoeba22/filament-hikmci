@@ -23,7 +23,7 @@
                         <p>{{ $berita->created_at->format('l, d F Y') }}</p>
                         <p>Author - {{ $berita->user->name }}</p>
                     </div>
-                    <img src="{{ asset('storage/' . $berita->gambar) }}" class="img-fluid mb-3 w-100 border rounded" alt="{{ $berita->judul }}">
+                    <img src="{{ asset('storage/berita/' . $berita->gambar) }}" class="img-fluid mb-3 w-100 border rounded" alt="{{ $berita->judul }}">
                     <p style="text-align: justify;">
                         <span class="text-dark">{{ $berita->lokasi }} - </span>
                         {!! nl2br(e($berita->isi)) !!}
@@ -36,7 +36,7 @@
                     <ul class="list-group">
                         @foreach($beritaTerkini as $berita)
                         <li class="list-group-item d-flex align-items-center">
-                            <img src="{{ asset('storage/' . $berita->gambar) }}" class="me-3 rounded" style="width: 90px; height: 90px; object-fit: cover;" alt="{{ $berita->judul }}">
+                            <img src="{{ asset('storage/berita/' . $berita->gambar) }}" class="me-3 rounded" style="width: 90px; height: 90px; object-fit: cover;" alt="{{ $berita->judul }}">
                             <div>
                                 <a class="text-dark fw-bold" href="{{ route('berita.show', $berita->id) }}">{{ $berita->judul }}</a>
                                 <p class="mb-0 text-muted">{{ $berita->created_at->format('d M Y') }}</p>

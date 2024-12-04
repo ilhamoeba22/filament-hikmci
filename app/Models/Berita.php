@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Berita extends Model
 {
@@ -20,5 +21,24 @@ class Berita extends Model
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::saving(function ($berita) {
+            if ($berita->isDirty('gambar')) {
+                if ($berita->getOriginal('gambar')) {
+                    Storage::disk('berita')->delete($berita->getOriginal('gambar'));
+                }
+            }
+        });
+
+        static::deleting(function ($berita) {
+            if ($berita->gambar) {
+                Storage::disk('berita')->delete($berita->gambar);
+            }
+        });
     }
 }

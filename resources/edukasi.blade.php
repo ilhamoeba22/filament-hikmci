@@ -6,45 +6,44 @@
         </h4>
         <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
             <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
-            <li class="breadcrumb-item"><a href="{{ url('/berita') }}">Berita</a></li>
-            <li class="breadcrumb-item active text-primary">Semua Berita</li>
+            <li class="breadcrumb-item active text-primary">Edukasi</li>
         </ol>
     </div>
 </div>
 
-<!-- Semua Berita Start -->
+<!-- Semua Edukasi Start -->
 <div class="container-fluid blog background-index py-5">
     <div class="container pb-5">
         <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
-            <h3 class="text-uppercase text-primary">Berita</h3>
-            <h1 class="display-5 text-capitalize mb-3">Semua Berita</h1>
+            <h3 class="text-uppercase text-primary">Edukasi</h3>
+            <h1 class="display-5 text-capitalize mb-3">Semua Edukasi</h1>
         </div>
         <div class="row g-4 justify-content-center">
-            @foreach($beritas as $berita)
+            @foreach($edukasis as $edukasi)
             <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.2s">
                 <div class="blog-item">
                     <div class="blog-img">
-                        <img src="{{ asset('storage/berita/' . $berita->gambar) }}" class="img-fluid rounded-top w-100" alt="{{ $berita->judul }}" />
+                        <img src="{{ asset('storage/edukasi/' . $edukasi->gambar) }}" class="img-fluid rounded-top w-100" alt="{{ $edukasi->judul }}" />
                         <div class="blog-date px-4 py-2">
-                            <i class="fa fa-calendar-alt me-1"></i> {{ $berita->created_at->format('d M Y') }}
+                            <i class="fa fa-calendar-alt me-1"></i> {{ $edukasi->created_at->format('d M Y') }}
                         </div>
                     </div>
                     <div class="blog-content rounded-bottom p-4">
-                        <a href="{{ route('berita.show', $berita->id) }}" class="nunito d-inline-block mb-3">{{ $berita->judul }}</a>
+                        <a href="{{ route('edukasi.show', $edukasi->id) }}" class="nunito d-inline-block mb-3">{{ $edukasi->judul }}</a>
                         <p>
-                            {{ Str::limit($berita->isi, 100) }}
+                            {{ Str::limit($edukasi->isi, 100) }}
                         </p>
-                        <a href="{{ route('berita.show', $berita->id) }}" class="fw-bold text-secondary">Selengkapnya <i class="fa fa-angle-right"></i></a>
+                        <a href="{{ route('edukasi.show', $edukasi->id) }}" class="fw-bold text-secondary">Selengkapnya <i class="fa fa-angle-right"></i></a>
                     </div>
                 </div>
             </div>
             @endforeach
         </div>
         <div class="d-flex justify-content-center pt-5">
-            {{ $beritas->links('pagination::bootstrap-4') }}
+            {{ $edukasis->links('pagination::bootstrap-4') }}
         </div>
     </div>
 </div>
-<!-- Semua Berita End -->
+<!-- Semua Edukasi End -->
 
 @include('footer')

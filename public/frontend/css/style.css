@@ -325,30 +325,7 @@ body, h1, h2, h3, h4, h5, h6, p, a, div, span, li, ul, ol, nav, footer, header, 
     object-fit: cover;
 }
 
-.carousel .carousel-inner .carousel-item .carousel-caption-1 {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    padding-top: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, 0.5));
-    background-size: cover;
-}
-
-.carousel-caption-1-content {
-    text-align: end;
-    padding-right: 100px;
-}
-
-.carousel-caption-1-content .carousel-caption-1-content-btn {
-    display: flex;
-    justify-content: end;
-}
-
+.carousel .carousel-inner .carousel-item .carousel-caption-1,
 .carousel .carousel-inner .carousel-item .carousel-caption-2 {
     position: absolute;
     width: 100%;
@@ -358,83 +335,31 @@ body, h1, h2, h3, h4, h5, h6, p, a, div, span, li, ul, ol, nav, footer, header, 
     padding-top: 100px;
     display: flex;
     align-items: center;
-    text-align: center;
+    justify-content: center;
     background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, 0.5));
     background-size: cover;
 }
 
+.carousel-caption-1-content,
 .carousel-caption-2-content {
-    text-align: start;
-    padding-left: 100px;
+    text-align: center;
+    padding: 0 20px;
 }
 
+.carousel-caption-1-content .carousel-caption-1-content-btn,
 .carousel-caption-2-content .carousel-caption-2-content-btn {
     display: flex;
-    justify-content: start;
+    justify-content: center;
 }
 
 @media (max-width: 992px) {
     .carousel .carousel-inner .carousel-item {
         height: auto;
-        margin-top: -100px;
     }
 
     .carousel .carousel-inner .carousel-item img {
         height: auto;
         object-fit: cover;
-        margin-top: 27%;
-    }
-
-    .carousel .carousel-inner .carousel-item .carousel-caption-1 {
-        max-width: 100% !important;
-        justify-content: center;
-    }
-
-    .carousel-caption-1-content {
-        padding: 0 20px !important;
-        text-align: center !important;
-    }
-
-    .carousel-caption-1-content h4 {
-        font-size: 1.5rem;
-    }
-
-    .carousel-caption-1-content h1 {
-        font-size: 2rem;
-    }
-
-    .carousel-caption-1-content p {
-        font-size: 1rem;
-    }
-
-    .carousel-caption-1-content .carousel-caption-1-content-btn {
-        justify-content: center;
-    }
-
-    .carousel .carousel-inner .carousel-item .carousel-caption-2 {
-        max-width: 100% !important;
-        justify-content: center;
-    }
-
-    .carousel-caption-2-content {
-        padding: 0 20px !important;
-        text-align: center !important;
-    }
-
-    .carousel-caption-2-content h4 {
-        font-size: 1.5rem;
-    }
-
-    .carousel-caption-2-content h1 {
-        font-size: 2rem;
-    }
-
-    .carousel-caption-2-content p {
-        font-size: 1rem;
-    }
-
-    .carousel-caption-2-content .carousel-caption-2-content-btn {
-        justify-content: center;
     }
 
     .carousel .carousel-control-prev .carousel-control-prev-icon,
@@ -541,7 +466,7 @@ body, h1, h2, h3, h4, h5, h6, p, a, div, span, li, ul, ol, nav, footer, header, 
 /*** About End ***/
 
 /*** Service Start ***/
-.service-item {
+/* .service-item {
     position: relative;
     box-shadow: 0 0 45px rgba(0, 0, 0, .08);
 }
@@ -605,7 +530,7 @@ body, h1, h2, h3, h4, h5, h6, p, a, div, span, li, ul, ol, nav, footer, header, 
 .service-item:hover .service-btn i {
     transform: rotate(360deg);
     color: var(--bs-primary) !important;
-}
+} */
 /*** Service End ***/
 
 
@@ -949,104 +874,6 @@ body, h1, h2, h3, h4, h5, h6, p, a, div, span, li, ul, ol, nav, footer, header, 
 }
 /* Team End */
 
-
-/*** testimonial Start ***/
-.testimonial .owl-nav .owl-prev {
-    position: absolute;
-    top: -58px;
-    right: 0;
-    background: var(--bs-primary);
-    color: var(--bs-white);
-    padding: 5px 30px;
-    border-radius: 30px;
-    transition: 0.5s;
-}
-
-.testimonial .owl-nav .owl-prev:hover {
-    background: var(--bs-secondary);
-    color: var(--bs-white);
-}
-
-.testimonial .owl-nav .owl-next {
-    position: absolute;
-    top: -58px;
-    right: 88px;
-    background: var(--bs-primary);
-    color: var(--bs-white);
-    padding: 5px 30px;
-    border-radius: 30px;
-    transition: 0.5s;
-}
-
-.testimonial .owl-nav .owl-next:hover {
-    background: var(--bs-secondary);
-    color: var(--bs-white);
-}
-
-.testimonial-carousel .owl-dots {
-    display: flex;
-    justify-content: center;
-    margin-left: 20px;
-    margin-top: 20px;
-}
-
-.testimonial-carousel .owl-dots .owl-dot {
-    width: 20px;
-    height: 20px;
-    border-radius: 20px;
-    margin-right: 15px;
-    border: 1px solid var(--bs-secondary);
-    background: var(--bs-primary);
-    transition: 0.5s;
-}
-
-.testimonial-carousel .owl-dots .owl-dot.active {
-    width: 20px;
-    height: 20px;
-    border-radius: 20px;
-    border: 1px solid var(--bs-primary);
-    background: var(--bs-secondary) !important;
-    transition: 0.5s;
-}
-
-.testimonial-carousel .owl-dots .owl-dot span {
-    position: relative;
-    margin-top: 50%;
-    margin-left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.testimonial-carousel .owl-dots .owl-dot span::after {
-    content: "";
-    width: 8px;
-    height: 8px;
-    border-radius: 8px;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: var(--bs-white);
-}
-
-@media (max-width: 992px) {
-    .owl-carousel.testimonial-carousel {
-        padding-top: 30px;
-    }
-
-    .testimonial .owl-nav .owl-prev,
-    .testimonial .owl-nav .owl-next {
-        top: -30px;
-    }
-}
-/*** testimonial End ***/
 
 /*** Footer Start ***/
 .footer {
@@ -1407,11 +1234,11 @@ table th, table td {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-
 /* PDF Laporan Keuangan */
 .pdf-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center; /* Center the items horizontally */
 }
 
 .pdf-item {
@@ -1432,6 +1259,19 @@ table th, table td {
 
 .pdf-item:hover {
     transform: translateY(-5px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .pdf-item {
+        max-width: 150px; /* Adjust the max-width for smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .pdf-item {
+        max-width: 120px; /* Adjust the max-width for even smaller screens */
+    }
 }
 
 /* BG 2 */

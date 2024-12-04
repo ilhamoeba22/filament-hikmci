@@ -177,8 +177,6 @@ document.addEventListener("DOMContentLoaded", () => {
     filterByYear(); 
 });
 
-
-
 // Fungsi untuk menentukan halaman aktif Navbar
 function isActive($page)
 {
@@ -199,7 +197,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Deposito Scroll
-
 (function ($) {
     "use strict";
 

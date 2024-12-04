@@ -183,7 +183,6 @@
                         @endforeach
                     </tbody>
                 </table>
-                <!-- <button id="download" class="btn btn-primary mt-3">Download PDF</button> -->
             </div>
         </div>
     </div>
@@ -202,7 +201,7 @@
             <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.2s">
                 <div class="blog-item">
                     <div class="blog-img">
-                        <img src="{{ asset('storage/' . $berita->gambar) }}" class="img-fluid rounded-top w-100" alt="{{ $berita->judul }}" />
+                        <img src="{{ asset('storage/berita/' . $berita->gambar) }}" class="img-fluid rounded-top w-100" alt="{{ $berita->judul }}" />
                         <div class="blog-date px-4 py-2">
                             <i class="fa fa-calendar-alt me-1"></i> {{ $berita->created_at->format('d M Y') }}
                         </div>
@@ -225,71 +224,3 @@
 @include('footer')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
-<!-- <script>
-    document.getElementById('download').addEventListener('click', function() {
-        const {
-            jsPDF
-        } = window.jspdf;
-        const doc = new jsPDF();
-
-        // Mengambil tabel
-        const table = document.getElementById('myTable');
-        const rows = table.querySelectorAll('tr');
-
-        // Menyiapkan data untuk autoTable
-        let pdfTable = [];
-        rows.forEach((row, index) => {
-            const cells = row.querySelectorAll('td, th');
-            let rowData = [];
-            cells.forEach(cell => {
-                rowData.push(cell.innerText);
-            });
-            pdfTable.push(rowData);
-        });
-
-        // Menambahkan tabel ke PDF dengan template
-        doc.autoTable({
-            head: [pdfTable[0]], // Header
-            body: pdfTable.slice(1), // Data
-            margin: {
-                top: 30
-            },
-            styles: {
-                cellPadding: 3,
-                fontSize: 10,
-                halign: 'center',
-                valign: 'middle',
-                overflow: 'linebreak',
-                tableWidth: 'wrap'
-            },
-            columnStyles: {
-                0: {
-                    cellWidth: 'auto'
-                },
-                1: {
-                    cellWidth: 'auto'
-                },
-                2: {
-                    cellWidth: 'auto'
-                },
-                3: {
-                    cellWidth: 'auto'
-                },
-                4: {
-                    cellWidth: 'auto'
-                }
-            },
-            didDrawPage: function(data) {
-                // Header
-                doc.setFontSize(18);
-                doc.setTextColor(40);
-                doc.text("Equivalent Rate Deposito", data.settings.margin.left, 20);
-                doc.setFontSize(12);
-                doc.text("Bulan {{ $rateDeposito->first()->bulan ?? 'N/A' }} Tahun {{ $rateDeposito->first()->created_at->format('Y') ?? 'N/A' }}", data.settings.margin.left, 30);
-            }
-        });
-
-        // Mengunduh PDF
-        doc.save('equivalent_rate_deposito.pdf');
-    });
-</script> -->

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\WakafController;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\EdukasiController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\AssetFrontendController;
 use App\Http\Controllers\KarirFrontendController;
@@ -18,6 +19,7 @@ Route::view('/deposito', 'deposito')->name('deposito');
 Route::view('/karir', 'karir')->name('karir');
 Route::view('/asset', 'asset')->name('asset');
 Route::view('/wakaf', 'wakaf')->name('wakaf');
+Route::view('/edukasi', 'edukasi')->name('edukasi');
 
 
 // Pembiayaan Pages
@@ -63,3 +65,8 @@ Route::get('/wakaf/{id}', [WakafController::class, 'show'])->name('wakaf.show');
 
 // Route Ajax Paginate
 Route::get('/get-nominals', [IndexController::class, 'getNominals'])->name('get.nominals');
+
+// Route Unuk Halaman Edukasi
+
+Route::get('/edukasi', [EdukasiController::class, 'index'])->name('edukasi.index');
+Route::get('/edukasi/{id}', [EdukasiController::class, 'show'])->name('edukasi.show');

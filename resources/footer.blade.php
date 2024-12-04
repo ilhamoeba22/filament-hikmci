@@ -55,10 +55,10 @@
             <div class="col-md-3 pt-5">
                 <div class="footer-item d-flex flex-column mb-5">
                     <h4 class="text-info mb-4">Informasi</h4>
-                    <a href="{{ url('/') }}"><i class="fas fa-angle-right me-2"></i> Home</a>
                     <a href="{{ url('about') }}"><i class="fas fa-angle-right me-2"></i> Tentang kami</a>
                     <a href="{{ url('karir') }}"><i class="fas fa-angle-right me-2"></i> Karir</a>
                     <a href="{{ url('wakaf') }}"><i class="fas fa-angle-right me-2"></i> E-Wakaf</a>
+                    <a href="{{ url('edukasi') }}"><i class="fas fa-angle-right me-2"></i> Edukasi</a>
                     <a href="{{ url('asset') }}"><i class="fas fa-angle-right me-2"></i> Asset</a>
                     <a href="{{ url('lapkeu') }}"><i class="fas fa-angle-right me-2"></i> Laporan Keuangan</a>
                     <a href="{{ url('penghargaan') }}"><i class="fas fa-angle-right me-2"></i> Penghargaan</a>

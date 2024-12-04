@@ -4,26 +4,27 @@ namespace App\Filament\Resources;
 
 use Filament\Forms;
 use Filament\Tables;
-use App\Models\Berita;
+use App\Models\Edukasi;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
-use Filament\Forms\Components\Select;
-use Filament\Forms\Form;
+use Filament\Pages\Actions\EditAction;
 use Filament\Forms\Components\Textarea;
-use Filament\Tables\Actions\EditAction;
-use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
-use Filament\Tables\Columns\ImageColumn;
-use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
 use Illuminate\Database\Eloquent\Builder;
-use App\Filament\Resources\BeritaResource\Pages;
+use Filament\Tables\Actions\BulkActionGroup;
+use Filament\Tables\Actions\DeleteBulkAction;
+use App\Filament\Resources\EdukasiResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use App\Filament\Resources\BeritaResource\RelationManagers;
+use App\Filament\Resources\EdukasiResource\RelationManagers;
+use App\Filament\Resources\EdukasiResource\Pages\EditEdukasi;
+use App\Filament\Resources\EdukasiResource\Pages\ListEdukasis;
+use App\Filament\Resources\EdukasiResource\Pages\CreateEdukasi;
 
-class BeritaResource extends Resource
+class EdukasiResource extends Resource
 {
-    protected static ?string $model = Berita::class;
+    protected static ?string $model = Edukasi::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -36,20 +37,11 @@ class BeritaResource extends Resource
                     ->maxLength(255),
                 Textarea::make('isi')
                     ->required(),
-                TextInput::make('lokasi')
-                    ->required()
-                    ->maxLength(255),
                 FileUpload::make('gambar')
                     ->image()
-                    ->disk('berita')
+                    ->disk('edukasi')
                     ->directory('images')
                     ->preserveFilenames()
-                    ->required(),
-                Select::make('user_id')
-                    ->relationship('user', 'name')
-                    ->required(),
-                DatePicker::make('created_at')
-                    ->label('Tanggal')
                     ->required(),
             ]);
     }
@@ -60,23 +52,20 @@ class BeritaResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('judul')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('isi')->limit(50)->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('lokasi')->sortable()->searchable(),
                 Tables\Columns\ImageColumn::make('gambar')
-                    ->disk('berita')
+                    ->disk('edukasi')
                     ->label('Gambar'),
-                Tables\Columns\TextColumn::make('user.name')->label('User')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->label('Tanggal')
-                    ->sortable()
-                    ->searchable()
-                    ->date('d/m/Y'),
+            ])
+            ->filters([
+                //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                Tables\Actions\BulkActionGroup::make([
+                    Tables\Actions\DeleteBulkAction::make(),
+                ]),
             ]);
     }
 
@@ -90,9 +79,9 @@ class BeritaResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListBeritas::route('/'),
-            'create' => Pages\CreateBerita::route('/create'),
-            'edit' => Pages\EditBerita::route('/{record}/edit'),
+            'index' => Pages\ListEdukasis::route('/'),
+            'create' => Pages\CreateEdukasi::route('/create'),
+            'edit' => Pages\EditEdukasi::route('/{record}/edit'),
         ];
     }
 }
