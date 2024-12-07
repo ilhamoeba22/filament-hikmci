@@ -100,13 +100,14 @@ body, h1, h2, h3, h4, h5, h6, p, a, div, span, li, ul, ol, nav, footer, header, 
 /* Navbar */
 .navbar-light {
     box-shadow: none;
-    transition: box-shadow 0.3s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out, padding 0.3s ease-in-out;
     z-index: 1000;
     background: var(--bs-white);
 }
 
 .navbar-light.scrolled {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -120,14 +121,17 @@ body, h1, h2, h3, h4, h5, h6, p, a, div, span, li, ul, ol, nav, footer, header, 
     transition: .5s;
 }
 
-.navbar-light .navbar-nav .nav-link:hover,
-.navbar-light .navbar-nav .nav-link.active {
-    color: var(--bs-primary);
+.navbar-light.scrolled .navbar-nav .nav-link {
+    padding: 15px 0;
 }
 
 .navbar-light .navbar-brand img {
     max-height: 60px;
     transition: .5s;
+}
+
+.navbar-light.scrolled .navbar-brand img {
+    max-height: 45px;
 }
 
 .navbar .dropdown-toggle::after {

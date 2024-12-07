@@ -28,11 +28,11 @@
 <!-- Carousel End -->
 
 <!-- Products Start -->
-<div class="container-fluid background-index py-5">
+<div class="container-fluid background-index py-3">
     <div class="container py-2">
         <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
             <h3 class="text-uppercase text-primary">Produk Kami</h3>
-            <h1 class="display-5 text-capitalize mb-1">
+            <h1 class="text-capitalize mb-1">
                 Wujudkan Keuangan Syariah yang Berkah dan Terpercaya
             </h1>
         </div>
@@ -41,7 +41,7 @@
                 <div class="product-item">
                     <img src="{{ asset('frontend/img/home/MCI_Home_Depo.png') }}" class="img-fluid w-100 rounded-top" alt="Image" />
                     <div class="product-content bg-light text-center rounded-bottom p-4">
-                        <a href="#" class="nunito d-inline-block mb-3">Deposito</a>
+                        <a href="#" class="nunito d-inline-block mb-3 fw-bold">Deposito</a>
                         <br />
                         <a href="{{url('deposito')}}" class="btn btn-secondary rounded-pill py-2 px-4">Selengkapnya</a>
                     </div>
@@ -51,7 +51,7 @@
                 <div class="product-item">
                     <img src="{{ asset('frontend/img/home/MCI_Home_Tabungan.png') }}" class="img-fluid w-100 rounded-top" alt="Image" />
                     <div class="product-content bg-light text-center rounded-bottom p-4">
-                        <a href="#" class="nunito d-inline-block mb-3">Tabungan</a>
+                        <a href="#" class="nunito d-inline-block mb-3 fw-bold">Tabungan</a>
                         <br />
                         <a href="{{url('tabungan')}}" class="btn btn-secondary rounded-pill py-2 px-4">Selengkapnya</a>
                     </div>
@@ -61,7 +61,7 @@
                 <div class="product-item">
                     <img src="{{ asset('frontend/img/home/MCI_Home_Pembiayaan.png') }}" class="img-fluid w-100 rounded-top" alt="Image" />
                     <div class="product-content bg-light text-center rounded-bottom p-4">
-                        <a href="#" class="nunito d-inline-block mb-3">Pembiayaan</a>
+                        <a href="#" class="nunito d-inline-block mb-3 fw-bold">Pembiayaan</a>
                         <br />
                         <a href="{{url('pembiayaan')}}" class="btn btn-secondary rounded-pill py-2 px-4">Selengkapnya</a>
                     </div>
@@ -73,13 +73,13 @@
 <!-- Products End -->
 
 <!-- Simulasi Perhitungan Start-->
-<div class="container-fluid simulasi py-5">
+<div class="container-fluid simulasi py-3">
     <div class="container pb-5">
         <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
             <h3 class="text-uppercase text-primary">Simulasi Pembiayaan</h3>
-            <h3 class="display-5 text-capitalize mb-3">
-                Berapapun Anda Simulasikan, HIK MCI Siap Membantu.
-            </h3>
+            <h2 class="text-capitalize mb-3">
+                Berapapun Anda Simulasikan, HIK MCI Siap Membantu
+            </h2>
         </div>
         <div class="row g-4 align-items-center">
             <div class="col-lg-4 col-md-6 text-center mb-4 mb-lg-0">
@@ -126,13 +126,13 @@
 <!-- Simulasi Perhitungan End -->
 
 <!-- Equivalent Rate Deposito Start -->
-<div class="container-fluid simulasi background-index py-5">
+<div class="container-fluid simulasi background-index py-3">
     <div class="container py-2">
         <div class="text-center mx-auto pb-3 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
             <h3 class="text-uppercase text-primary">Equivalent Rate Deposito</h3>
-            <h3 class="text-capitalize">
+            <h2 class="text-capitalize">
                 Bulan {{ $rateDeposito->first()->bulan ?? 'N/A' }} Tahun {{ $rateDeposito->first()->created_at->format('Y') ?? 'N/A' }}
-            </h3>
+            </h2>
         </div>
         <div class="row g-5 align-items-center">
             <div class="table-responsive">
@@ -190,11 +190,11 @@
 <!-- Equivalent Rate Deposito End -->
 
 <!-- Berita Terkini Start -->
-<div class="container-fluid blog py-5">
-    <div class="container pb-5">
-        <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
+<div class="container-fluid blog py-3">
+    <div class="container pb-3">
+        <div class="text-center mx-auto pb-3 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
             <h3 class="text-uppercase text-primary">Berita</h3>
-            <h1 class="display-5 text-capitalize mb-3">Berita Terkini</h1>
+            <h2 class="text-capitalize mb-3">Berita Terkini</h2>
         </div>
         <div class="row g-4 justify-content-center">
             @foreach($beritaTerakhir as $berita)
@@ -207,8 +207,8 @@
                         </div>
                     </div>
                     <div class="blog-content rounded-bottom p-4">
-                        <a href="{{ route('berita.show', $berita->id) }}" class="nunito d-inline-block mb-3">{{ $berita->judul }}</a>
-                        <p>
+                        <a href="{{ route('berita.show', $berita->id) }}" class="nunito mb-2" style="font-size: large;">{{ Str::limit($berita->judul, 50) }}</a>
+                        <p class="pt-1">
                             {{ Str::limit($berita->isi, 100) }}
                         </p>
                         <a href="{{ route('berita.show', $berita->id) }}" class="fw-bold text-secondary">Selengkapnya <i class="fa fa-angle-right"></i></a>
@@ -222,5 +222,5 @@
 <!-- Berita Terkini End -->
 
 @include('footer')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script> -->

@@ -14,10 +14,10 @@
 
 <!-- Semua Berita Start -->
 <div class="container-fluid blog background-index py-5">
-    <div class="container pb-5">
-        <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
+    <div class="container pb-3">
+        <div class="text-center mx-auto pb-3 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
             <h3 class="text-uppercase text-primary">Berita</h3>
-            <h1 class="display-5 text-capitalize mb-3">Semua Berita</h1>
+            <h1 class="text-capitalize">Semua Berita</h1>
         </div>
         <div class="row g-4 justify-content-center">
             @foreach($beritas as $berita)
@@ -30,7 +30,7 @@
                         </div>
                     </div>
                     <div class="blog-content rounded-bottom p-4">
-                        <a href="{{ route('berita.show', $berita->id) }}" class="nunito d-inline-block mb-3">{{ $berita->judul }}</a>
+                        <a href="{{ route('berita.show', $berita->id) }}" class="nunito mb-3">{{ Str::limit($berita->judul, 50) }}</a>
                         <p>
                             {{ Str::limit($berita->isi, 100) }}
                         </p>

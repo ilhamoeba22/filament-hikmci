@@ -24,45 +24,45 @@
     });
 
     // Testimonial carousel
-$(".testimonial-carousel").owlCarousel({
-    autoplay: true,
-    autoplayTimeout: 4000, // Set interval to 4 seconds
-    smartSpeed: 1500,
-    center: false,
-    dots: true,
-    loop: true,
-    margin: 25,
-    nav: true,
-    navText: [
-        '<i class="fa fa-angle-left"></i>',
-        '<i class="fa fa-angle-right"></i>'
-    ],
-    responsiveClass: true,
-    responsive: {
-        0: {
-            items: 1
-        },
-        576: {
-            items: 1
-        },
-        768: {
-            items: 1
-        },
-        992: {
-            items: 2
-        },
-        1200: {
-            items: 2
+    $(".testimonial-carousel").owlCarousel({
+        autoplay: true,
+        autoplayTimeout: 4000, // Set interval to 4 seconds
+        smartSpeed: 1500,
+        center: false,
+        dots: true,
+        loop: true,
+        margin: 25,
+        nav: true,
+        navText: [
+            '<i class="fa fa-angle-left"></i>',
+            '<i class="fa fa-angle-right"></i>'
+        ],
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            576: {
+                items: 1
+            },
+            768: {
+                items: 1
+            },
+            992: {
+                items: 2
+            },
+            1200: {
+                items: 2
+            }
         }
-    }
-});
+    });
 
-// Ensure the carousel does not pause on hover or focus
-$('.testimonial-carousel').on('mouseover', function() {
-    $(this).trigger('stop.owl.autoplay');
-}).on('mouseleave', function() {
-    $(this).trigger('play.owl.autoplay', [4000]);
-});
+    // Ensure the carousel does not pause on hover or focus
+    $('.testimonial-carousel').on('mouseover', function() {
+        $(this).trigger('stop.owl.autoplay');
+    }).on('mouseleave', function() {
+        $(this).trigger('play.owl.autoplay', [4000]);
+    });
 
     // Facts counter
     $('[data-toggle="counter-up"]').counterUp({
@@ -84,8 +84,6 @@ $('.testimonial-carousel').on('mouseover', function() {
     });
 
 })(jQuery);
-
-// Simulasi Perhitungan Pembiayaan
 
 // Simulasi Perhitungan Pembiayaan
 
@@ -129,8 +127,13 @@ function formatNumberInput(input) {
 }
 
 // Event listener untuk memformat angka saat pengguna mengetik
-document.getElementById('jumlahPembiayaan').addEventListener('input', function() {
-    formatNumberInput(this);
+document.addEventListener("DOMContentLoaded", function() {
+    var jumlahPembiayaanInput = document.getElementById('jumlahPembiayaan');
+    if (jumlahPembiayaanInput) {
+        jumlahPembiayaanInput.addEventListener('input', function() {
+            formatNumberInput(this);
+        });
+    }
 });
 
 // Filter Berdasarkan Tahun
@@ -172,7 +175,13 @@ function filterByYear() {
 document.addEventListener("DOMContentLoaded", () => {
     const activeTab = document.querySelector(".nav-link.active");
     if (activeTab) {
-        openTab(new Event('click'), activeTab.getAttribute("onclick").match(/'([^']+)'/)[1]);
+        const tabName = activeTab.getAttribute("onclick");
+        if (tabName) {
+            const match = tabName.match(/'([^']+)'/);
+            if (match) {
+                openTab(new Event('click'), match[1]);
+            }
+        }
     }
     filterByYear(); 
 });
@@ -185,12 +194,16 @@ function isActive($page)
 }
 
 // Navbar
-document.addEventListener('DOMContentLoaded', function () {
-    var navbar = document.querySelector('.navbar-light');
-    window.addEventListener('scroll', function () {
+document.addEventListener("DOMContentLoaded", function() {
+    console.log('DOM fully loaded and parsed');
+    window.addEventListener('scroll', function() {
+        var navbar = document.querySelector('.navbar-light');
+        console.log('Scroll event detected');
         if (window.scrollY > 50) {
+            console.log('Adding scrolled class');
             navbar.classList.add('scrolled');
         } else {
+            console.log('Removing scrolled class');
             navbar.classList.remove('scrolled');
         }
     });

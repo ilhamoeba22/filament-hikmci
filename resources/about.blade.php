@@ -32,7 +32,7 @@
       <div class="col-xl-6 wow fadeInRight py-3" data-wow-delay="0.2s">
         <div class="about-item">
           <h4 class="text-primary text-uppercase">Tentang Perusahaan</h4>
-          <h2 class="display-3 mb-3">Kenali BPRS HIK MCI</h2>
+          <h1 class="text-uppercase mb-3">Kenali BPRS HIK MCI</h1>
           <p class="mb-4 lh-base justify-text">
             BPRS HIK MCI, yang berpusat di Jalan Kaliurang KM 9, Ngaglik, Sleman,
             Yogyakarta, beroperasi mulai tanggal 11 Januari 2008. Didukung penuh
@@ -123,18 +123,16 @@
   </div>
 </div>
 
-<!-- Fact Counter -->
-
-<!-- feature Start -->
+<!-- Visi Misi Start -->
 <div class="container-fluid feature bg-light py-5">
   <div class="container py-2">
     <div
       class="text-center mx-auto wow fadeInUp"
       data-wow-delay="0.2s"
       style="max-width: 800px">
-      <h2 class="display-3 text-capitalize mb-3">
+      <h1 class="text-capitalize mb-3">
         Visi Misi Perusahaan
-      </h2>
+      </h1>
     </div>
     <div class="row g-4">
       <div
@@ -160,13 +158,13 @@
         <div class="feature-item p-4">
           <a href="#" class="nunito mb-3 d-block text-center">Misi Perusahaan</a>
           <h5 class="mb-3 justify-text">
-            <ol>
+            <ul style="list-style-type: disc;">
               <li>Menjalankan usaha perbankan yang sehat dan amanah</li>
               <li>Memberikan pelayanan yang terbaik dan Islami</li>
               <li>Berperan aktif dalam pengembangan dunia usaha dan peningkatan kesejahteraan masyarakat</li>
               <li>Meningkatkan kemakmuran pemegang saham, pengurus dan karyawan</li>
               <li>Menjalankan misi dakwah yang rahmatan lil alamin</li>
-            </ol>
+            </ul>
           </h5>
         </div>
       </div>
@@ -182,10 +180,9 @@
       class="text-center mx-auto wow fadeInUp"
       data-wow-delay="0.2s"
       style="max-width: 800px">
-      <h2 class="display-3 text-capitalize mb-3">
+      <h1 class="text-capitalize mb-3">
         Corporate Value
-      </h2>
-      <br>
+      </h1>
     </div>
     <div class="row g-4 justify-content-center">
       <div class="col-md-6 col-lg-2 col-xl-2 wow fadeInUp" data-wow-delay="0.2s">

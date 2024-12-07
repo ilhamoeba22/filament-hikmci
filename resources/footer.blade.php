@@ -1,5 +1,5 @@
 <!-- Footer Start -->
-<div class="container-fluid footer pt-5 wow fadeIn" data-wow-delay="0.2s">
+<div class="container-fluid footer pt-3 wow fadeIn" data-wow-delay="0.2s">
     <div class="container pt-4">
         <div class="row g-5">
             <div class="col-md-3">
@@ -81,7 +81,7 @@
 <!-- Footer End -->
 
 <!-- Copyright Start -->
-<div class="container-fluid copyright py-4">
+<div class="container-fluid copyright py-1">
     <div class="container text-center">
         <div class="col-md-12 text-body">
             Designed With
@@ -102,6 +102,7 @@
 </div>
 <!-- WhatsApp and Back to Top Buttons End -->
 
+
 <!-- JavaScript Libraries -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -112,9 +113,9 @@
 <script src="{{ asset('frontend/lib/owlcarousel/owl.carousel.min.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js" defer></script>
 <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
-
 <!-- Template Javascript -->
 <script src="{{ asset('frontend/js/main.js') }}"></script>
+
 </body>
 
 </html>
