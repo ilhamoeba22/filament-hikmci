@@ -4,7 +4,7 @@
 <div class="container-fluid position-relative p-0">
     <!-- Header Start -->
     <div class="container-fluid bg-breadcrumb">
-        <div class="container text-center py-5" style="max-width: 900px;">
+        <div class="container text-center py-3" style="max-width: 900px;">
             <h4 class="text-white display-5 mb-4 wow fadeInDown" data-wow-delay="0.1s">Asset</h4>
             <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
                 <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
@@ -17,11 +17,10 @@
 <!-- Navbar & Hero End -->
 
 <!-- Asset Start -->
-<div class="container-fluid asset background-index py-5">
-    <div class="container pb-5">
-        <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
-            <h3 class="text-uppercase text-primary">Asset</h3>
-            <h1 class="display-5 text-capitalize mb-3">Asset Kami</h1>
+<div class="container-fluid asset background-index py-3">
+    <div class="container pb-3">
+        <div class="text-center mx-auto pb-3 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
+            <h1 class="text-capitalize mb-3">Asset Kami</h1>
         </div>
         <div class="row g-4 justify-content-center">
             @foreach ($assets as $asset)

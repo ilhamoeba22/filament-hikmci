@@ -3,7 +3,7 @@
 <div class="container-fluid bg-breadcrumb">
     <div class="container text-center py-5" style="max-width: 900px">
         <h4
-            class="text-white display-5 mb-4 wow fadeInDown"
+            class="text-white display-5 mb-3 wow fadeInDown"
             data-wow-delay="0.1s">
             Layanan Pengaduan
         </h4>
@@ -24,8 +24,10 @@
             <div class="wow fadeInRight" data-wow-delay="0.2s">
                 <div class="pengaduan-item">
                     <h4 class="text-primary text-uppercase pt-5">Layanan Pengaduan</h4>
-                    <h1 class="display-3 text-capitalize mb-3">Mekanisme Pengaduan Nasabah</h1>
-                    <p class="mb-4 lh-base justify-text">
+                    <h1 class="text-capitalize text-uppercase mb-3">
+                        Mekanisme Pengaduan Nasabah
+                    </h1>
+                    <p class="mb-3 lh-base justify-text">
                         Berdasarkan POJK nomor 22 tahun 2023 tentang Perlindungan
                         Konsumen dan Masyarakat di Sektor Jasa Keuangan dimana
                         didalamnya mengatur terkait pengaduan nasabah serta
@@ -36,14 +38,14 @@
                         masalah saat bertransaksi.
 
                     </p>
-                    <p class="mb-4 lh-base justify-text">
+                    <p class="mb-3 lh-base justify-text">
                         Pengaduan nasabah dapat disampaikan ke BPRS HIK MCI
                         secara tertulis melalui surat, fax, email, maupun website
                         resmi BPRS HIK MCI serta secara lisan melalui line telepon
                         ataupun datang langsung ke kantor BPRS HIK MCI terdekat
                         beserta dengan persyaratan pengaduan yang diperlukan.
                     </p>
-                    <p class="mb-4 lh-base justify-text">
+                    <p class="mb-3 lh-base justify-text">
                         Adapun persyaratan pengaduan yang diperlukan antara
                         lain yang tertera dibawah ini:
                     </p>
@@ -56,7 +58,7 @@
 <!-- Pengaduan end -->
 
 <!-- Tabel Pengaduan -->
-<div class="container-fluid pengaduan">
+<div class="container-fluid pengaduan py-3">
     <div class="container">
         <div class="row g-5">
             <div class="col-12 wow fadeInRight" data-wow-delay="0.2s">
@@ -70,7 +72,7 @@
                             </tr>
                             <tr>
                                 <th scope="col"></th>
-                                <th scope="col" class="text-center"></th>
+                                <th scope="col" class="text-center">Tanpa Tatap Muka</th>
                                 <th scope="col" class="text-center">Dengan Tatap Muka</th>
                             </tr>
                         </thead>
@@ -129,13 +131,15 @@
 </div>
 <!-- Tabel Pengaduan end -->
 
-<!-- Flow Diagram Tatap Muka Start -->
-<div class="container-fluid pengaduan py-5">
+<!-- Flow Diagram Start -->
+<div class="container-fluid pengaduan py-3">
     <div class="container">
         <div class="row g-5">
-            <div class="col-12 wow fadeInRight" data-wow-delay="0.2s">
-                <div class="container mt-5 mb-5">
-                    <h4 class="nunito text-center mb-4">Alur Pengaduan Nasabah secara Lisan dengan Tatap Muka di Kantor BPRS HIK MCI</h4>
+            <div class="col-12 wow shadow-box fadeInRight mb-3" data-wow-delay="0.2s">
+                <div class="container my-3">
+                    <h3 class="text-capitalize text-uppercase text-center mb-3">
+                        Alur Pengaduan Nasabah secara Lisan dengan Tatap Muka di Kantor BPRS HIK MCI
+                    </h3>
                     <div class="d-flex flex-wrap justify-content-center align-items-center flow-diagram">
                         <div class="box m-2">Nasabah<br>menyampaikan<br>Pengaduan Tertulis</div>
                         <div class="arrow m-2">&rarr;</div>
@@ -148,7 +152,7 @@
                         <div class="box m-2">Penyelesaian<br>Pengaduan<br>Nasabah</div>
                     </div>
                 </div>
-                <ol class="mb-4 lh-base justify-text">
+                <ol class="mb-3 lh-base justify-text">
                     <li>Nasabah datang ke kantor BPRS HIK MCI dengan membawa persyaratan yang telah ditentukan</li>
                     <li>Data diri dan dokumen pendukung pengaduan nasabah akan diverifikasi oleh petugas</li>
                     <li>Petugas akan meregister pengaduan nasabah dan menyampaikan nomer registrasi pengaduan nasabah</li>
@@ -156,18 +160,11 @@
                     <li>Apabila terkait solusi yang ditawarkan kepada nasabah tidak bisa diterima oleh nasabah maka nasabah diharap menyampaikan pengaduan tertulis kepada BPRS HIK MCI</li>
                 </ol>
             </div>
-        </div>
-    </div>
-</div>
-<!-- Flow Diagram Tatap Muka End -->
-
-<!-- Flow Diagram Tanpa Tatap Muka Start -->
-<div class="container-fluid pengaduan mb-5">
-    <div class="container">
-        <div class="row g-5">
-            <div class="col-12 wow fadeInRight" data-wow-delay="0.2s">
-                <div class="container mt-5 mb-5">
-                    <h4 class="nunito text-center mb-4">Alur Pengaduan Nasabah secara Tertulis ataupun Lisan tanpa Tatap Muka di Kantor BPRS HIK MCI</h4>
+            <div class="col-12 wow fadeInRight shadow-box" data-wow-delay="0.2s">
+                <div class="container my-3">
+                    <h3 class="text-capitalize text-uppercase text-center mb-3">
+                        Alur Pengaduan Nasabah secara Tertulis ataupun Lisan tanpa Tatap Muka di Kantor BPRS HIK MCI
+                    </h3>
                     <div class="d-flex flex-wrap justify-content-center align-items-center flow-diagram">
                         <div class="box m-2">Nasabah<br>menyampaikan<br>Pengaduan Tertulis</div>
                         <div class="arrow m-2">&rarr;</div>
@@ -180,7 +177,7 @@
                         <div class="box m-2">Penyelesaian<br>Pengaduan<br>Nasabah</div>
                     </div>
                 </div>
-                <ol class="mb-4 lh-base justify-text">
+                <ol class="mb-3 lh-base justify-text">
                     <li>Nasabah menyampaikan pengaduan secara tertulis beserta dengan persyaratan yang telah ditentukan</li>
                     <li>Petugas akan melakukan verifikasi data diri dan pengaduan nasabah</li>
                     <li>Petugas akan meregister pengaduan nasabah dan menyampaikan nomer registrasi pengaduan nasabah</li>
@@ -191,14 +188,17 @@
         </div>
     </div>
 </div>
+<!-- Flow Diagram End -->
 
 <!-- tabel waktu pengaduan -->
-<div class="container-fluid pengaduan">
-    <div class="container mb-5">
+<div class="container-fluid pengaduan py-3">
+    <div class="container">
         <div class="row g-5">
             <div class="col-12 wow fadeInRight" data-wow-delay="0.2s">
                 <div class="table-responsive">
-                    <h4 class="nunito text-center mb-4">Jangka Waktu Penanganan Pengaduan</h4>
+                    <h3 class="text-capitalize text-uppercase text-center mb-3">
+                        Jangka Waktu Penanganan Pengaduan
+                    </h3>
                     <table class="table table-bordered w-auto mx-auto">
                         <thead>
                             <tr>

@@ -2,7 +2,7 @@
 
 <!-- Header Start -->
 <div class="container-fluid bg-breadcrumb">
-    <div class="container text-center py-5" style="max-width: 900px">
+    <div class="container text-center py-3" style="max-width: 900px">
         <h4 class="text-white display-5 mb-4">Karir</h4>
         <ol class="breadcrumb d-flex justify-content-center mb-0">
             <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
@@ -13,10 +13,10 @@
 <!-- Header End -->
 
 <!-- Karir Start -->
-<div class="container-fluid karir py-5">
+<div class="container-fluid karir py-3">
     <div class="container">
-        <div class="text-center mx-auto pb-5" style="max-width: 800px">
-            <h1 class="display-5 text-capitalize mb-3">Bergabunglah Bersama Kami</h1>
+        <div class="text-center mx-auto pb-3" style="max-width: 800px">
+            <h1 class="text-capitalize mb-3">Bergabunglah Bersama Kami</h1>
         </div>
         <div class="row g-4">
             @foreach ($karirs as $karir)

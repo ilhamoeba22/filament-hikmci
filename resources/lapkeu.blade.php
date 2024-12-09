@@ -15,10 +15,15 @@
 <!-- Header End -->
 
 <!-- Laporan Keuangan Start -->
-<div class="container-fluid team py-1">
+<div class="container-fluid team py-3">
     <div class="container py-2">
-        <div class="text-center mx-auto pb-1 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
-            <h1 class="display-5 text-capitalize mb-3">Laporan Keuangan BPRS HIK MCI</h1>
+        <div
+            class="text-center mx-auto pb-3 wow fadeInUp"
+            data-wow-delay="0.2s"
+            style="max-width: 800px">
+            <h1 class="text-capitalize text-uppercase mb-3">
+                Laporan Keuangan BPRS HIK MCI
+            </h1>
         </div>
         <div class="row g-5">
             <div class="col-md-3">

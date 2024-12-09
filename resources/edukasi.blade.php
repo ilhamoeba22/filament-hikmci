@@ -15,8 +15,7 @@
 <div class="container-fluid blog background-index py-5">
     <div class="container pb-5">
         <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
-            <h3 class="text-uppercase text-primary">Edukasi</h3>
-            <h1 class="display-5 text-capitalize mb-3">Semua Edukasi</h1>
+            <h1 class="text-capitalize mb-3">Semua Edukasi</h1>
         </div>
         <div class="row g-4 justify-content-center">
             @foreach($edukasis as $edukasi)

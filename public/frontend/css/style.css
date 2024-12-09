@@ -29,7 +29,7 @@ body, h1, h2, h3, h4, h5, h6, p, a, div, span, li, ul, ol, nav, footer, header, 
 .back-to-top {
     position: fixed;
     right: 30px;
-    bottom: 30px;
+    bottom: 10px;
     transition: 0.5s;
     z-index: 99;
 }
@@ -920,9 +920,12 @@ body, h1, h2, h3, h4, h5, h6, p, a, div, span, li, ul, ol, nav, footer, header, 
 }
 /*** copyright end ***/
 
+/* Start Pengaduan */
+.table-bordered {
+    color: black;
+}
 
 /* Flowchart Pengaduan*/
-
 .box {
     background-color: #34a5dd; 
     color: white;
@@ -950,6 +953,8 @@ body, h1, h2, h3, h4, h5, h6, p, a, div, span, li, ul, ol, nav, footer, header, 
   .display-3{
     font-size: 3rem;
   }
+  
+/* End Pengaduan */
 
 /* General Styles */
 *,
@@ -1242,7 +1247,7 @@ table th, table td {
 .pdf-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Center the items horizontally */
+    justify-content: left;
 }
 
 .pdf-item {
@@ -1267,12 +1272,22 @@ table th, table td {
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
+    .pdf-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
     .pdf-item {
         max-width: 150px; /* Adjust the max-width for smaller screens */
     }
 }
 
 @media (max-width: 576px) {
+    .pdf-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
     .pdf-item {
         max-width: 120px; /* Adjust the max-width for even smaller screens */
     }
@@ -1911,5 +1926,100 @@ table th, table td {
     .penghargaan .penghargaan-date {
         font-size: 12px;
         padding: 3px 8px;
+    }
+}
+
+
+/* Shadow Box Item */
+.shadow-box {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* Admin image */
+.about-item {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-img img {
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    max-width: 100%;
+    height: auto;
+}
+
+.company-info {
+    margin-top: 20px;
+}
+
+.company-info h4 {
+    margin-bottom: 15px;
+}
+
+.company-info table {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.company-info table td {
+    padding: 5px 10px;
+    vertical-align: top;
+}
+
+.company-info table td:first-child {
+    width: 55%;
+    font-weight: bold;
+    color: #333;
+}
+
+.company-info table td.colon {
+    width: 1%;
+    white-space: nowrap;
+}
+
+.company-info table td:last-child {
+    width: 100%;
+}
+
+@media (max-width: 767.98px) {
+    .about-img img {
+        float: none;
+        margin: 0 auto 15px;
+        display: block;
+    }
+
+    .company-info table {
+        display: block;
+        width: 100%;
+    }
+
+    .company-info table tr {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    .company-info table td {
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+
+    .company-info table td.colon {
+        display: none;
+    }
+
+    .company-info table td:first-child {
+        font-weight: bold;
+        color: #333;
+    }
+
+    .company-info table td:last-child {
+        margin-top: 5px;
     }
 }

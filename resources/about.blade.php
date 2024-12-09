@@ -18,21 +18,13 @@
 <!-- Header End -->
 
 <!-- About Start -->
-<div class="container-fluid about py-5">
+<div class="container-fluid about py-3">
   <div class="container py-2">
+    <h4 class="text-primary text-uppercase">Tentang Perusahaan</h4>
+    <h1 class="text-capitalize text-uppercase">Kenali BPRS HIK MCI</h1>
     <div class="row g-5">
-      <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
-        <div class="about-img rounded h-100">
-          <img
-            src="{{ asset('frontend/img/about/MCI_Profile.png') }}"
-            class="img-fluid rounded h-100 w-100"
-            alt="" />
-        </div>
-      </div>
-      <div class="col-xl-6 wow fadeInRight py-3" data-wow-delay="0.2s">
+      <div class="col-xl-12 wow fadeInRight py-3" data-wow-delay="0.2s">
         <div class="about-item">
-          <h4 class="text-primary text-uppercase">Tentang Perusahaan</h4>
-          <h1 class="text-uppercase mb-3">Kenali BPRS HIK MCI</h1>
           <p class="mb-4 lh-base justify-text">
             BPRS HIK MCI, yang berpusat di Jalan Kaliurang KM 9, Ngaglik, Sleman,
             Yogyakarta, beroperasi mulai tanggal 11 Januari 2008. Didukung penuh
@@ -42,7 +34,7 @@
             syariah masyarakat. Dengan dukungan jaringan yang kuat dan keahlian
             manajemen, kami terus mempersiapkan diri menyambut era digital banking.
           </p>
-          <p class="mb-4 lh-base justify-text">
+          <p class="lh-base justify-text">
             BPRS HIK MCI juga telah meraih berbagai penghargaan bergengsi,
             termasuk predikat "Sangat Bagus" dari Infobank selama empat tahun
             berturut-turut, “The Most Profitable Sharia Rural Banks” (2015-2017),
@@ -56,12 +48,63 @@
         </div>
       </div>
     </div>
+    <div class="row">
+      <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
+        <div class="about-img rounded">
+          <img
+            src="{{ asset('frontend/img/about/MCI_Profile.jpg') }}"
+            class="img-fluid rounded float-start me-3 mb-3" alt="" />
+        </div>
+      </div>
+      <div class="col-xl-6 company-info">
+        <h4 class="text-primary text-uppercase">Informasi Perusahaan</h4>
+        <table class="table table-borderless">
+          <tbody>
+            <tr>
+              <td><strong>Nama Perseroan</strong></td>
+              <td class="colon">:</td>
+              <td>PT Bank Perekonomian Rakyat Syariah Harta Insan Karimah Mitra Cahaya Indonesia (PT BPRS HIK MCI)</td>
+            </tr>
+            <tr>
+              <td><strong>NPWP</strong></td>
+              <td class="colon">:</td>
+              <td>02.683.027.3-542.000</td>
+            </tr>
+            <tr>
+              <td><strong>Legalitas</strong></td>
+              <td class="colon">:</td>
+              <td>Akta Notaris Nomor 4 Tanggal 5 November 2024 Disetujui SK Menteri Hukum & HAM Nomor AHU-0240358.AH.01.11 Tahun 2024 Tanggal 7 November 2024</td>
+            </tr>
+            <tr>
+              <td><strong>Tanggal Pembentukan</strong></td>
+              <td class="colon">:</td>
+              <td>11 Januari 2008</td>
+            </tr>
+            <tr>
+              <td><strong>Modal Dasar</strong></td>
+              <td class="colon">:</td>
+              <td>50.000.000.000</td>
+            </tr>
+            <tr>
+              <td><strong>Modal Disetor</strong></td>
+              <td class="colon">:</td>
+              <td>19.405.000.000</td>
+            </tr>
+            <tr>
+              <td><strong>Alamat</strong></td>
+              <td class="colon">:</td>
+              <td>Jl. Kaliurang KM 9 Ngaglik Sleman DIY</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </div>
 <!-- About End -->
 
 <!-- Fact Counter -->
-<div class="container-fluid counter py-4">
+<div class="container-fluid counter py-1">
   <div class="row g-5">
     <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.2s">
       <div class="counter-item d-flex align-items-center">
@@ -124,7 +167,7 @@
 </div>
 
 <!-- Visi Misi Start -->
-<div class="container-fluid feature bg-light py-5">
+<div class="container-fluid feature bg-light py-3">
   <div class="container py-2">
     <div
       class="text-center mx-auto wow fadeInUp"
@@ -138,14 +181,14 @@
       <div
         class="col-md-6 col-lg-6 col-xl-6 wow fadeInUp"
         data-wow-delay="0.2s">
-        <div class="feature-item p-4 pb-4">
+        <div class="about-item p-4 pb-4">
           <a href="#" class="nunito mb-3 d-block text-center">Visi Perusahaan</a>
           <h5 class="mb-3 mt-3">
             "Terwujudnya Bank Syariah yang unggul dan terpercaya."
           </h5>
         </div>
         <br>
-        <div class="feature-item p-4">
+        <div class="about-item p-4">
           <a href="#" class="nunito mb-3 d-block text-center">Motto</a>
           <h5 class="mb-3 mt-3 text-center  ">
             "Maju Bersama dalam Usaha Sesuai Syariah."
@@ -155,7 +198,7 @@
       <div
         class="col-md-6 col-lg-6 col-xl-6 wow fadeInUp"
         data-wow-delay="0.2s">
-        <div class="feature-item p-4">
+        <div class="about-item p-4">
           <a href="#" class="nunito mb-3 d-block text-center">Misi Perusahaan</a>
           <h5 class="mb-3 justify-text">
             <ul style="list-style-type: disc;">
@@ -174,7 +217,7 @@
 <!-- feature End -->
 
 <!-- Corporate Value start-->
-<div class="container-fluid py-5">
+<div class="container-fluid py-3">
   <div class="container py-2">
     <div
       class="text-center mx-auto wow fadeInUp"
@@ -184,35 +227,12 @@
         Corporate Value
       </h1>
     </div>
-    <div class="row g-4 justify-content-center">
-      <div class="col-md-6 col-lg-2 col-xl-2 wow fadeInUp" data-wow-delay="0.2s">
-        <div class="value-item text-center">
-          <img src="{{ asset('frontend/img/smile/s_img.png') }}" class="img-fluid mb-3" alt="Integrity">
-          <h5>Smart Work and Healty</h5>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-2 col-xl-2 wow fadeInUp" data-wow-delay="0.2s">
-        <div class="value-item text-center">
-          <img src="{{ asset('frontend/img/smile/m_img.png') }}" class="img-fluid mb-3" alt="Innovation">
-          <h5>Modern and Islamic</h5>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-2 col-xl-2 wow fadeInUp" data-wow-delay="0.2s">
-        <div class="value-item text-center">
-          <img src="{{ asset('frontend/img/smile/i_img.png') }}" class="img-fluid mb-3" alt="Customer Focus">
-          <h5>Integrity and Professional</h5>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-2 col-xl-2 wow fadeInUp" data-wow-delay="0.2s">
-        <div class="value-item text-center">
-          <img src="{{ asset('frontend/img/smile/l_img.png') }}" class="img-fluid mb-3" alt="Teamwork">
-          <h5>Love, Care, and Respect</h5>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-2 col-xl-2 wow fadeInUp" data-wow-delay="0.2s">
-        <div class="value-item text-center">
-          <img src="{{ asset('frontend/img/smile/e_img.png') }}" class="img-fluid mb-3" alt="Excellence">
-          <h5>Exellence and Great Achievement</h5>
+    <div class="row">
+      <div class="col-xl-12 wow fadeInLeft" data-wow-delay="0.2s">
+        <div class="about-img rounded">
+          <img
+            src="{{ asset('frontend/img/about/Profile_CorporateValue_Smile.png') }}"
+            class="img-fluid rounded float-start me-3 mb-3" alt="" />
         </div>
       </div>
     </div>

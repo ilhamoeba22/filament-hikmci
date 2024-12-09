@@ -32,7 +32,7 @@
     <div class="container py-2">
         <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
             <h3 class="text-uppercase text-primary">Produk Kami</h3>
-            <h1 class="text-capitalize mb-1">
+            <h1 class="text-capitalize text-uppercase mb-3">
                 Wujudkan Keuangan Syariah yang Berkah dan Terpercaya
             </h1>
         </div>
@@ -74,10 +74,10 @@
 
 <!-- Simulasi Perhitungan Start-->
 <div class="container-fluid simulasi py-3">
-    <div class="container pb-5">
+    <div class="container pb-3">
         <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
             <h3 class="text-uppercase text-primary">Simulasi Pembiayaan</h3>
-            <h2 class="text-capitalize mb-3">
+            <h2 class="text-capitalize text-uppercase mb-3">
                 Berapapun Anda Simulasikan, HIK MCI Siap Membantu
             </h2>
         </div>
@@ -194,7 +194,7 @@
     <div class="container pb-3">
         <div class="text-center mx-auto pb-3 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
             <h3 class="text-uppercase text-primary">Berita</h3>
-            <h2 class="text-capitalize mb-3">Berita Terkini</h2>
+            <h2 class="text-capitalize text-uppercase mb-3">Berita Terkini</h2>
         </div>
         <div class="row g-4 justify-content-center">
             @foreach($beritaTerakhir as $berita)

@@ -30,7 +30,7 @@
                 <div class="row g-5">
                     <div class="container-fluid wakaf py-4">
                         <div class="text-center mx-auto pb-3 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
-                            <h1 class="text-capitalize mb-3">Program Wakaf Terkini</h1>
+                            <h1 class="text-capitalize text-uppercase text-center mb-3">Program Wakaf Terkini</h1>
                         </div>
                         <div class="row g-4 justify-content-center">
                             @foreach($wakafs as $wakaf)
@@ -68,23 +68,23 @@
                 <!-- Program Wakaf Saat Ini End -->
 
                 <div class="row g-5">
-                    <h1 class="pt-1">
+                    <h3 class="text-capitalize text-uppercase text-center mb-3">
                         Pengajuan Cash Waqf Linked Deposit (CWLD)
-                    </h1>
+                    </h3>
 
-                    <h4 class="lh-base justify-text py-2">
+                    <p class="lh-base justify-text mb-3" style="font-size: 1.2em;">
                         Merupakan pemanfaatan bagi hasil deposito yang ditempatkan oleh nasabah di
                         BPRS HIK MCI sebagai dana wakaf. Deposito ditempatkan dalam jangka waktu satu
                         tahun dan bisa ditarik kembali setelah jatuh tempo. Wakif selaku pemilik dana
                         deposito dapat memilih program wakaf dan nadzir yang bekerjasama dengan
                         BPRS HIK MCI.
-                    </h4>
+                    </p>
                 </div>
                 <!-- Alur Proses Wakaf Start -->
                 <div class="row g-3 justify-content-center text-center">
-                    <h1 class="pt-1">
+                    <h3 class="text-capitalize text-uppercase text-center mb-3">
                         Alur Proses Wakaf BPRS HIK MCI
-                    </h1>
+                    </h3>
 
                     <div class="col-md-2 col-6">
                         <i class="bi bi-pencil-square fs-1 icon-wakaf"></i>

@@ -94,14 +94,13 @@
 <!-- Copyright End -->
 
 <!-- WhatsApp and Back to Top Buttons Start -->
-<div class="fixed-buttons" style="position: fixed; bottom: 90px; right: 32px; display: flex; flex-direction: row; gap: 10px;">
+<div class="fixed-buttons" style="position: fixed; bottom: 65px; right: 30px; display: flex; flex-direction: row; gap: 10px;">
     <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
     <a href="https://wa.me/yourphonenumber" class="btn btn-success btn-lg-square rounded-circle mb-2">
         <i class="fab fa-whatsapp" style="font-size: 30px;"></i>
     </a>
 </div>
 <!-- WhatsApp and Back to Top Buttons End -->
-
 
 <!-- JavaScript Libraries -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>

@@ -21,9 +21,9 @@
     <div class="container py-2">
         <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
             <h4 class="text-uppercase text-primary">Pembiayaan</h4>
-            <h2 class="display-5 text-capitalize mb-3">
+            <h1 class="text-capitalize mb-3">
                 Solusi Keuangan Syariah Terpercaya untuk Masa Depan
-            </h2>
+            </h1>
         </div>
         <div class="row g-4 justify-content-center">
             @foreach ([
@@ -36,7 +36,7 @@
                 <div class="product-item">
                     <img src="{{ asset($product['image']) }}" class="img-fluid w-100 rounded-top" alt="{{ $product['name'] }}">
                     <div class="product-content bg-light text-center rounded-bottom p-4">
-                        <a href="{{ $product['link'] }}" class="nunito d-inline-block mb-3">{{ $product['name'] }}</a>
+                        <a href="{{ $product['link'] }}" class="nunito d-inline-block mb-3 fw-bold">{{ $product['name'] }}</a>
                         <div class="d-block">
                             <a href="{{ $product['link'] }}" class="btn btn-secondary rounded-pill py-2 px-4 mt-2">Selengkapnya</a>
                         </div>
