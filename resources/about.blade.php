@@ -223,7 +223,7 @@
       class="text-center mx-auto wow fadeInUp"
       data-wow-delay="0.2s"
       style="max-width: 800px">
-      <h1 class="text-capitalize mb-3">
+      <h1 class="text-capitalize mb-1">
         Corporate Value
       </h1>
     </div>
@@ -232,7 +232,7 @@
         <div class="about-img rounded">
           <img
             src="{{ asset('frontend/img/about/Profile_CorporateValue_Smile.png') }}"
-            class="img-fluid rounded float-start me-3 mb-3" alt="" />
+            class="img-fluid rounded float-start me-0 mb-3 px-5" alt="" />
         </div>
       </div>
     </div>
