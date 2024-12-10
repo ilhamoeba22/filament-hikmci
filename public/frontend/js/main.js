@@ -253,3 +253,32 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
 })(jQuery);
+
+// Export PDF
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("download-pdf").addEventListener("click", function() {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+
+        // Ambil informasi bulan dan tahun dari elemen HTML
+        const bulan = document.getElementById("bulan").innerText;
+        const tahun = document.getElementById("tahun").innerText;
+
+            // Tambahkan judul PDF dengan bulan dan tahun
+            const title = `Equivalent Rate Deposito - ${bulan} ${tahun}`;
+            const subtitle = "BPRS HIK MCI";
+            doc.text(title, 105, 16, null, null, 'center');
+            doc.text(subtitle, 105, 24, null, null, 'center');
+
+            doc.autoTable({
+                startY: 30,
+                head: [['Nominal', '1 Bulan', '3 Bulan', '6 Bulan', '12 Bulan']],
+                body: Array.from(document.querySelectorAll("#myTable tbody tr")).map(row => {
+                    return Array.from(row.querySelectorAll("td")).map(cell => cell.innerText);
+                }),
+            });
+
+            doc.save("equivalent_rate_deposito.pdf");
+        
+    });
+});

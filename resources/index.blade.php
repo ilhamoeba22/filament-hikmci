@@ -128,14 +128,17 @@
 <!-- Equivalent Rate Deposito Start -->
 <div class="container-fluid simulasi background-index py-3">
     <div class="container py-2">
-        <div class="text-center mx-auto pb-3 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
+        <div class="text-center mx-auto pb-1 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
             <h3 class="text-uppercase text-primary">Equivalent Rate Deposito</h3>
             <h2 class="text-capitalize">
-                Bulan {{ $rateDeposito->first()->bulan ?? 'N/A' }} Tahun {{ $rateDeposito->first()->created_at->format('Y') ?? 'N/A' }}
+                Bulan <span id="bulan">{{ $rateDeposito->first()->bulan ?? 'N/A' }}</span> Tahun <span id="tahun">{{ $rateDeposito->first()->created_at->format('Y') ?? 'N/A' }}</span>
             </h2>
         </div>
         <div class="row g-5 align-items-center">
             <div class="table-responsive">
+                <div class="d-flex justify-content-end">
+                    <button id="download-pdf" class="btn btn-secondary mb-3">Download PDF</button>
+                </div>
                 <table class="table table-bordered table-striped table-hover" id="myTable">
                     <thead class="text-dark">
                         <th rowspan="2" class="text-center align-middle">Nominal</th>
@@ -222,5 +225,5 @@
 <!-- Berita Terkini End -->
 
 @include('footer')
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
