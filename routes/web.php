@@ -15,10 +15,8 @@ Route::view('/about', 'about')->name('about');
 Route::view('/team', 'team')->name('team');
 Route::view('/pengaduan', 'pengaduan')->name('pengaduan');
 Route::view('/penghargaan', 'penghargaan')->name('penghargaan');
-Route::view('/deposito', 'deposito')->name('deposito');
 Route::view('/karir', 'karir')->name('karir');
 Route::view('/asset', 'asset')->name('asset');
-Route::view('/wakaf', 'wakaf')->name('wakaf');
 Route::view('/edukasi', 'edukasi')->name('edukasi');
 
 
@@ -40,6 +38,15 @@ Route::prefix('tabungan')->group(function () {
     Route::view('/tabungan-rencana', 'tabungan-rencana')->name('tabungan-rencana');
 });
 
+// Main-Deposito Pages
+Route::prefix('main-deposito')->group(function () {
+    Route::view('/', 'main-deposito')->name('main-deposito');
+    Route::view('/deposito', 'deposito')->name('deposito');
+    Route::get('/wakaf', [WakafController::class, 'index'])->name('wakaf.index');
+    Route::get('/wakaf/{id}', [WakafController::class, 'show'])->name('wakaf.show');
+});
+
+
 // Karir
 Route::get('/karir', [KarirFrontendController::class, 'index'])->name('karir.index');
 Route::get('/karir/{id}', [KarirFrontendController::class, 'show'])->name('karir.show');
@@ -58,10 +65,6 @@ Route::prefix('berita')->group(function () {
     Route::get('/berita-all', [BeritaController::class, 'all'])->name('berita-all');
     Route::get('/{id}', [BeritaController::class, 'show'])->name('berita.show');
 });
-
-// Route untuk halaman wakaf
-Route::get('/wakaf', [WakafController::class, 'index'])->name('wakaf.index');
-Route::get('/wakaf/{id}', [WakafController::class, 'show'])->name('wakaf.show');
 
 // Route Ajax Paginate
 Route::get('/get-nominals', [IndexController::class, 'getNominals'])->name('get.nominals');

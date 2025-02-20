@@ -43,7 +43,7 @@
                     <div class="product-content bg-light text-center rounded-bottom p-4">
                         <a href="#" class="nunito d-inline-block mb-3 fw-bold">Deposito</a>
                         <br />
-                        <a href="{{url('deposito')}}" class="btn btn-secondary rounded-pill py-2 px-4">Selengkapnya</a>
+                        <a href="{{url('main-deposito')}}" class="btn btn-secondary rounded-pill py-2 px-4">Selengkapnya</a>
                     </div>
                 </div>
             </div>

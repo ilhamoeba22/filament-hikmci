@@ -63,7 +63,7 @@
                             <a href="#" class="nav-link dropdown-toggle {{ request()->is('tabungan') || request()->is('deposito') || request()->is('pembiayaan') ? 'active' : '' }}" data-bs-toggle="dropdown">Produk</a>
                             <div class="dropdown-menu m-0">
                                 <a href="{{ url('tabungan') }}" class="dropdown-item {{ request()->is('tabungan') ? 'active' : '' }}">Tabungan</a>
-                                <a href="{{ url('deposito') }}" class="dropdown-item {{ request()->is('deposito') ? 'active' : '' }}">Deposito</a>
+                                <a href="{{ url('main-deposito') }}" class="dropdown-item {{ request()->is('main-deposito') ? 'active' : '' }}">Deposito</a>
                                 <a href="{{ url('pembiayaan') }}" class="dropdown-item {{ request()->is('pembiayaan') ? 'active' : '' }}">Pembiayaan</a>
                             </div>
                         </div>
@@ -73,7 +73,6 @@
                             <a href="#" class="nav-link dropdown-toggle {{ request()->is('asset') || request()->is('wakaf') ? 'active' : '' }}" data-bs-toggle="dropdown">Layanan Lainnya</a>
                             <div class="dropdown-menu m-0">
                                 <a href="{{ url('asset') }}" class="dropdown-item {{ request()->is('asset') ? 'active' : '' }}">E-Asset</a>
-                                <a href="{{ url('wakaf') }}" class="dropdown-item {{ request()->is('wakaf') ? 'active' : '' }}">Wakaf</a>
                                 <a href="{{ url('edukasi') }}" class="dropdown-item {{ request()->is('edukasi') ? 'active' : '' }}">Edukasi</a>
                             </div>
                         </div>

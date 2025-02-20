@@ -33,21 +33,22 @@
                     <div class="col-md-6">
                         <div class="footer-item d-flex flex-column">
                             <h5 class="text-white my-2">Pembiayaan</h5>
-                            <a href="{{ url('pembiayaan-umkm') }}"><i class="fas fa-angle-right me-2"></i> Mikro UMKM</a>
-                            <a href="{{ url('pembiayaan-property') }}"><i class="fas fa-angle-right me-2"></i> Properti</a>
-                            <a href="{{ url('pembiayaan-corporate') }}"><i class="fas fa-angle-right me-2"></i> Corporate</a>
-                            <a href="{{ url('pembiayaan-consumer-finance') }}"><i class="fas fa-angle-right me-2"></i> Consumer Finance</a>
+                            <a href="{{ url('pembiayaan/pembiayaan-umkm') }}"><i class="fas fa-angle-right me-2"></i> UMKM Mikro</a>
+                            <a href="{{ url('pembiayaan/pembiayaan-property') }}"><i class="fas fa-angle-right me-2"></i> Properti</a>
+                            <a href="{{ url('pembiayaan/pembiayaan-corporate') }}"><i class="fas fa-angle-right me-2"></i> Corporate</a>
+                            <a href="{{ url('pembiayaan/pembiayaan-consumer-finance') }}"><i class="fas fa-angle-right me-2"></i> Consumer Finance</a>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="footer-item d-flex flex-column">
                             <h5 class="text-white my-2">Tabungan</h5>
-                            <a href="{{ url('tabungan-ukhuwah') }}"><i class="fas fa-angle-right me-2"></i> Tabungan Ukhuwah</a>
-                            <a href="{{ url('tabungan-karimah') }}"><i class="fas fa-angle-right me-2"></i> Tabungan Karimah</a>
-                            <a href="{{ url('tabungan-rencana') }}"><i class="fas fa-angle-right me-2"></i> Tabungan Rencana</a>
-                            <a href="{{ url('tabungan-finance') }}"><i class="fas fa-angle-right me-2"></i> Tabungan Finance</a>
+                            <a href="{{ url('tabungan/tabungan-ukhuwah') }}"><i class="fas fa-angle-right me-2"></i> Tabungan Ukhuwah</a>
+                            <a href="{{ url('tabungan/tabungan-karimah') }}"><i class="fas fa-angle-right me-2"></i> Tabungan Karimah</a>
+                            <a href="{{ url('tabungan/tabungan-rencana') }}"><i class="fas fa-angle-right me-2"></i> Tabungan Rencana</a>
+                            <a href="{{ url('tabungan/tabungan-cerdas') }}"><i class="fas fa-angle-right me-2"></i> Tabungan Cerdas</a>
                             <h5 class="text-white my-2">Deposito</h5>
-                            <a href="{{ url('deposito') }}"><i class="fas fa-angle-right me-2"></i> Deposito Karimah</a>
+                            <a href="{{ url('main-deposito/deposito') }}"><i class="fas fa-angle-right me-2"></i> Deposito Karimah</a>
+                            <a href="{{ url('main-deposito/wakaf') }}"><i class="fas fa-angle-right me-2"></i> CWLD</a>
                         </div>
                     </div>
                 </div>
@@ -57,9 +58,8 @@
                     <h4 class="text-info mb-4">Informasi</h4>
                     <a href="{{ url('about') }}"><i class="fas fa-angle-right me-2"></i> Tentang kami</a>
                     <a href="{{ url('karir') }}"><i class="fas fa-angle-right me-2"></i> Karir</a>
-                    <a href="{{ url('wakaf') }}"><i class="fas fa-angle-right me-2"></i> E-Wakaf</a>
                     <a href="{{ url('edukasi') }}"><i class="fas fa-angle-right me-2"></i> Edukasi</a>
-                    <a href="{{ url('asset') }}"><i class="fas fa-angle-right me-2"></i> Asset</a>
+                    <a href="{{ url('asset') }}"><i class="fas fa-angle-right me-2"></i> E-Asset</a>
                     <a href="{{ url('lapkeu') }}"><i class="fas fa-angle-right me-2"></i> Laporan Keuangan</a>
                     <a href="{{ url('penghargaan') }}"><i class="fas fa-angle-right me-2"></i> Penghargaan</a>
                     <a href="http://wbs.bprshikmci.co.id/" target="_blank"><i class="fas fa-angle-right me-2"></i> Lapor WBS</a>
@@ -96,7 +96,7 @@
 <!-- WhatsApp and Back to Top Buttons Start -->
 <div class="fixed-buttons" style="position: fixed; bottom: 65px; right: 30px; display: flex; flex-direction: row; gap: 10px;">
     <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
-    <a href="https://wa.me/yourphonenumber" class="btn btn-success btn-lg-square rounded-circle mb-2">
+    <a href="https://wa.me/+628122770657" target="_blank" class="btn btn-success btn-lg-square rounded-circle mb-2">
         <i class="fab fa-whatsapp" style="font-size: 30px;"></i>
     </a>
 </div>

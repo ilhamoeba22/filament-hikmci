@@ -48,12 +48,12 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row d-flex align-items-center">
       <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
         <div class="about-img rounded">
           <img
-            src="{{ asset('frontend/img/about/MCI_Profile.jpg') }}"
-            class="img-fluid rounded float-start me-3 mb-3" alt="" />
+            src="{{ asset('frontend/img/about/MCI_Profile.jpeg') }}"
+            class="img-fluid rounded" alt="" />
         </div>
       </div>
       <div class="col-xl-6 company-info">
@@ -63,7 +63,7 @@
             <tr>
               <td><strong>Nama Perseroan</strong></td>
               <td class="colon">:</td>
-              <td>PT Bank Perekonomian Rakyat Syariah Harta Insan Karimah Mitra Cahaya Indonesia (PT BPRS HIK MCI)</td>
+              <td class="lh-base justify-text">PT Bank Perekonomian Rakyat Syariah Harta Insan Karimah Mitra Cahaya Indonesia (PT BPRS HIK MCI)</td>
             </tr>
             <tr>
               <td><strong>NPWP</strong></td>
@@ -73,12 +73,17 @@
             <tr>
               <td><strong>Legalitas</strong></td>
               <td class="colon">:</td>
-              <td>Akta Notaris Nomor 4 Tanggal 5 November 2024 Disetujui SK Menteri Hukum & HAM Nomor AHU-0240358.AH.01.11 Tahun 2024 Tanggal 7 November 2024</td>
+              <td class="lh-base justify-text">Akta Notaris Nomor 4 Tanggal 5 November 2024 Disetujui SK Menteri Hukum & HAM Nomor AHU-0240358.AH.01.11 Tahun 2024 Tanggal 7 November 2024</td>
             </tr>
             <tr>
-              <td><strong>Tanggal Pembentukan</strong></td>
+              <td><strong>Tanggal Pendirian</strong></td>
               <td class="colon">:</td>
-              <td>11 Januari 2008</td>
+              <td class="lh-base justify-text">Akta Pendirian nomor 17 tanggal 11 Januari 2008. Kemenkumham nomor AHU-0019981.AH.01.09. Tahun 2008 Tanggal 18 Maret 2008</td>
+            </tr>
+            <tr>
+              <td><strong>No Anggota LPS</strong></td>
+              <td class="colon">:</td>
+              <td>42100010</td>
             </tr>
             <tr>
               <td><strong>Modal Dasar</strong></td>
@@ -142,7 +147,7 @@
         <div class="ms-3">
           <h4 class="nunito text-white my-2">Years Experience</h4>
           <div class="counter-counting">
-            <span class="text-white fs-2 fw-bold" data-toggle="counter-up">15</span>
+            <span class="text-white fs-2 fw-bold" data-toggle="counter-up">17</span>
             <span class="h1 fw-bold text-white">+</span>
           </div>
         </div>
@@ -167,48 +172,22 @@
 </div>
 
 <!-- Visi Misi Start -->
-<div class="container-fluid feature bg-light py-3">
+<div class="container-fluid py-3">
   <div class="container py-2">
     <div
       class="text-center mx-auto wow fadeInUp"
       data-wow-delay="0.2s"
       style="max-width: 800px">
-      <h1 class="text-capitalize mb-3">
-        Visi Misi Perusahaan
+      <h1 class="text-capitalize mb-1">
+        Corporate Value
       </h1>
     </div>
-    <div class="row g-4">
-      <div
-        class="col-md-6 col-lg-6 col-xl-6 wow fadeInUp"
-        data-wow-delay="0.2s">
-        <div class="about-item p-4 pb-4">
-          <a href="#" class="nunito mb-3 d-block text-center">Visi Perusahaan</a>
-          <h5 class="mb-3 mt-3">
-            "Terwujudnya Bank Syariah yang unggul dan terpercaya."
-          </h5>
-        </div>
-        <br>
-        <div class="about-item p-4">
-          <a href="#" class="nunito mb-3 d-block text-center">Motto</a>
-          <h5 class="mb-3 mt-3 text-center  ">
-            "Maju Bersama dalam Usaha Sesuai Syariah."
-          </h5>
-        </div>
-      </div>
-      <div
-        class="col-md-6 col-lg-6 col-xl-6 wow fadeInUp"
-        data-wow-delay="0.2s">
-        <div class="about-item p-4">
-          <a href="#" class="nunito mb-3 d-block text-center">Misi Perusahaan</a>
-          <h5 class="mb-3 justify-text">
-            <ul style="list-style-type: disc;">
-              <li>Menjalankan usaha perbankan yang sehat dan amanah</li>
-              <li>Memberikan pelayanan yang terbaik dan Islami</li>
-              <li>Berperan aktif dalam pengembangan dunia usaha dan peningkatan kesejahteraan masyarakat</li>
-              <li>Meningkatkan kemakmuran pemegang saham, pengurus dan karyawan</li>
-              <li>Menjalankan misi dakwah yang rahmatan lil alamin</li>
-            </ul>
-          </h5>
+    <div class="row">
+      <div class="col-xl-12 wow fadeInLeft" data-wow-delay="0.2s">
+        <div class="about-img rounded">
+          <img
+            src="{{ asset('frontend/img/about/PROFILE_MCI_VISI_MISI.png') }}"
+            class="img-fluid rounded float-start me-0 mb-3 px-5" alt="" />
         </div>
       </div>
     </div>
@@ -231,7 +210,7 @@
       <div class="col-xl-12 wow fadeInLeft" data-wow-delay="0.2s">
         <div class="about-img rounded">
           <img
-            src="{{ asset('frontend/img/about/Profile_CorporateValue_Smile.png') }}"
+            src="{{ asset('frontend/img/about/PROFILE_MCI_CORVA.png') }}"
             class="img-fluid rounded float-start me-0 mb-3 px-5" alt="" />
         </div>
       </div>

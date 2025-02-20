@@ -20,7 +20,7 @@
 <div class="container-fluid asset background-index py-3">
     <div class="container pb-3">
         <div class="text-center mx-auto pb-3 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
-            <h1 class="text-capitalize mb-3">Asset Kami</h1>
+            <h1 class="text-capitalize mb-3">Asset Dijual</h1>
         </div>
         <div class="row g-4 justify-content-center">
             @foreach ($assets as $asset)

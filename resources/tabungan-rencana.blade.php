@@ -65,13 +65,6 @@
                             <h5 class="mb-0">Dijamin oleh LPS</h5>
                         </div>
                     </div>
-
-                    <div class="row g-5">
-                        <div class="col-md-6 d-flex align-items-center mb-1">
-                            <i class="bi bi-cash-stack me-3 icon-hover" style="font-size: 2rem;"></i>
-                            <h5 class="mb-0">Setoran mulai dari Rp 10.000,-</h5>
-                        </div>
-                    </div>
                     <!-- syarat -->
                     <h1 class="pt-1">
                         Syarat
@@ -99,7 +92,7 @@
                     </div>
                     <div class="row pb-4 align-items-center text-center">
                         <div class="col-md-12 ">
-                            <a href="https://wa.me/yourphonenumber" class="btn btn-primary btn-lg">
+                            <a href="https://wa.me/+6285771796642" class="btn btn-primary btn-lg">
                                 Buka Rekening
                             </a>
                         </div>

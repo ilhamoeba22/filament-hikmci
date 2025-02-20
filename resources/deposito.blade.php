@@ -38,7 +38,7 @@
                         </div>
                         <div class="col-md-6 d-flex align-items-center mb-1">
                             <i class="bi bi-cash-coin me-3 icon-hover" style="font-size: 2rem;"></i>
-                            <h5 class="mb-0">Nilai investasi mengikuti pergerakan profit bank</h5>
+                            <h5 class="mb-0">Bagi hasil yang diberikan kepada nasabah sesuai dengan tingkat pendapatan bank</h5>
                         </div>
                     </div>
                     <h1 class="pt-3">
@@ -82,7 +82,7 @@
                     </div>
                     <div class="row pb-4 align-items-center text-center">
                         <div class="col-md-12 ">
-                            <a href="https://wa.me/yourphonenumber" class="btn btn-primary btn-lg">
+                            <a href="https://wa.me/+6285771796642" class="btn btn-primary btn-lg">
                                 Buka Rekening
                             </a>
                         </div>

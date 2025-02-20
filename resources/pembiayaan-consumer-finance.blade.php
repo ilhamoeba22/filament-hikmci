@@ -54,7 +54,7 @@
                             </div>
                             <div class="col-md-6 d-flex align-items-center mb-1">
                                 <i class="bi bi-hourglass-split me-3 icon-hover" style="font-size: 2rem;"></i>
-                                <h5 class="mb-0">Jangka waktu sampai 120 bulan</h5>
+                                <h5 class="mb-0">Jangka waktu sampai 36 bulan</h5>
                             </div>
                         </div>
                         <div class="row g-5">
@@ -222,7 +222,7 @@
                             </div>
                             <div class="col-md-6 d-flex align-items-center mb-1">
                                 <i class="bi bi-card-text me-3 icon-hover" style="font-size: 2rem;"></i>
-                                <h5 class="mb-0">Salinan surat keputusan pegawai tetap / tidak tetap</h5>
+                                <h5 class="mb-0">Sertifikat Kelayakan (Certificate Of Eligibility)</h5>
                             </div>
                         </div>
                         <div class="row g-5">
