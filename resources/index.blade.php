@@ -41,7 +41,7 @@
                 <div class="product-item">
                     <img src="{{ asset('frontend/img/home/MCI_Home_Depo.png') }}" class="img-fluid w-100 rounded-top" alt="Image" />
                     <div class="product-content bg-light text-center rounded-bottom p-4">
-                        <a href="#" class="nunito d-inline-block mb-3 fw-bold">Deposito</a>
+                        <a href="{{url('main-deposito')}}" class="nunito d-inline-block mb-3 fw-bold">Deposito</a>
                         <br />
                         <a href="{{url('main-deposito')}}" class="btn btn-secondary rounded-pill py-2 px-4">Selengkapnya</a>
                     </div>
@@ -51,7 +51,7 @@
                 <div class="product-item">
                     <img src="{{ asset('frontend/img/home/MCI_Home_Tabungan.png') }}" class="img-fluid w-100 rounded-top" alt="Image" />
                     <div class="product-content bg-light text-center rounded-bottom p-4">
-                        <a href="#" class="nunito d-inline-block mb-3 fw-bold">Tabungan</a>
+                        <a href="{{url('tabungan')}}" class="nunito d-inline-block mb-3 fw-bold">Tabungan</a>
                         <br />
                         <a href="{{url('tabungan')}}" class="btn btn-secondary rounded-pill py-2 px-4">Selengkapnya</a>
                     </div>
@@ -61,7 +61,7 @@
                 <div class="product-item">
                     <img src="{{ asset('frontend/img/home/MCI_Home_Pembiayaan.png') }}" class="img-fluid w-100 rounded-top" alt="Image" />
                     <div class="product-content bg-light text-center rounded-bottom p-4">
-                        <a href="#" class="nunito d-inline-block mb-3 fw-bold">Pembiayaan</a>
+                        <a href="{{url('pembiayaan')}}" class="nunito d-inline-block mb-3 fw-bold">Pembiayaan</a>
                         <br />
                         <a href="{{url('pembiayaan')}}" class="btn btn-secondary rounded-pill py-2 px-4">Selengkapnya</a>
                     </div>
