@@ -5,7 +5,7 @@
     <!-- Header Start -->
     <div class="container-fluid bg-breadcrumb">
         <div class="container text-center py-3" style="max-width: 900px;">
-            <h4 class="text-white display-5 mb-4 wow fadeInDown" data-wow-delay="0.1s">Asset</h4>
+            <h4 class="text-white display-5 mb-4 wow fadeInDown" data-wow-delay="0.1s">E-Asset</h4>
             <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
                 <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
                 <li class="breadcrumb-item active text-primary">Asset</li>
@@ -17,7 +17,7 @@
 <!-- Navbar & Hero End -->
 
 <!-- Asset Start -->
-<div class="container-fluid asset background-index py-3">
+<!-- <div class="container-fluid asset background-index py-3">
     <div class="container pb-3">
         <div class="text-center mx-auto pb-3 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
             <h1 class="text-capitalize mb-3">Asset Dijual</h1>
@@ -44,8 +44,24 @@
             {{ $assets->links('pagination::bootstrap-4') }}
         </div>
     </div>
-</div>
+</div> -->
 <!-- Asset End -->
+
+<!-- 404 Start -->
+<div class="container-fluid py-5">
+    <div class="container text-center py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <i class="bi bi-exclamation-triangle display-1 text-primary"></i>
+                <h1 class="display-1">404</h1>
+                <h1 class="mb-4">Halaman Dalam Perbaikan</h1>
+                <p class="mb-4">InsyaAllah halaman ini akan segera diperbaiki. Mohon maaf atas ketidaknyamanannya dan terima kasih atas kesabaran Anda.</p>
+                <a class="btn btn-primary rounded-pill py-3 px-5" href="{{ url('/') }}">Kembali ke Halaman Utama</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 404 End -->
 
 @include('footer')
 

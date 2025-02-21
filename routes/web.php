@@ -46,7 +46,6 @@ Route::prefix('main-deposito')->group(function () {
     Route::get('/wakaf/{id}', [WakafController::class, 'show'])->name('wakaf.show');
 });
 
-
 // Karir
 Route::get('/karir', [KarirFrontendController::class, 'index'])->name('karir.index');
 Route::get('/karir/{id}', [KarirFrontendController::class, 'show'])->name('karir.show');

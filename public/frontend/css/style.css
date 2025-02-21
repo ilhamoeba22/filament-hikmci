@@ -248,6 +248,7 @@ body, h1, h2, h3, h4, h5, h6, p, a, div, span, li, ul, ol, nav, footer, header, 
     .navbar-light .navbar-nav .nav-item:hover::after,
     .navbar-light .navbar-nav .nav-item.active::after {
         bottom: 1px;
+        opacity: 1;
     }
 
     .navbar-light .navbar-nav .nav-item:hover::before,

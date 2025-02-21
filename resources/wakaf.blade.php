@@ -185,7 +185,7 @@
                                             <span class="text-dark">Terpenuhi</span>
                                             @else
                                             <i class="fa fa-check-circle text-muted"></i>
-                                            Belum Terpenuhi
+                                            Tersedia
                                             @endif
                                         </p>
                                         <a href="{{ route('wakaf.show', $wakaf->id) }}" class="fw-bold text-secondary">Selengkapnya <i class="fa fa-angle-right"></i></a>
