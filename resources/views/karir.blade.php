@@ -16,8 +16,9 @@
 <div class="container-fluid karir py-3">
     <div class="container">
         <div class="text-center mx-auto pb-3" style="max-width: 800px">
-            <h1 class="text-capitalize mb-3">Bergabunglah Bersama Kami</h1>
+            <h1 class="text-capitalize mb-3">Informasi Lowongan Kerja BPRS HIK MCI</h1>
         </div>
+        @if(count($karirs) > 0)
         <div class="row g-4">
             @foreach ($karirs as $karir)
             <div class="col-lg-4 col-md-6">
@@ -48,6 +49,15 @@
             </div>
             @endforeach
         </div>
+        @else
+        <div class="text-center py-5">
+            <i class="fas fa-info-circle text-primary mb-3" style="font-size: 4rem;"></i>
+            <h3 class="mb-3">Mohon Maaf, Saat Ini Belum Ada Lowongan Pekerjaan</h3>
+            <p class="text-muted fs-4">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</p>
+            <p class="fs-3">Insya Allah akan kami informasikan segera ketika tersedia lowongan baru</p>
+            <p class="fs-5 text-muted">Silakan cek kembali di lain waktu</p>
+        </div>
+        @endif
     </div>
 </div>
 <!-- Karir End -->

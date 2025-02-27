@@ -17,7 +17,7 @@
 </div>
 <!-- Navbar & Hero End -->
 
-<!-- Karimah Start -->
+<!-- tabungan Start -->
 <div class="container-fluid tabungan">
     <div class="container">
         <div class="row g-5">

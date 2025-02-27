@@ -35,7 +35,7 @@
         <div class="team-item rounded border p-4 shadow">
           <div class="row g-0">
             <div class="col-md-4 text-center">
-              <img class="img-fluid rounded-circle mb-3" src="{{ asset('frontend/img/team/MCI_DEDE.png') }}" alt="Team Member">
+              <img class="img-fluid rounded-circle mb-3" src="{{ asset('frontend/img/team/MCI_DEDE.webp') }}" alt="Team Member">
             </div>
             <div class="col-md-8">
               <div class="h-100 d-flex flex-column justify-content-center px-4">
@@ -53,7 +53,7 @@
         <div class="team-item rounded border p-4 shadow">
           <div class="row g-0">
             <div class="col-md-4 text-center">
-              <img class="img-fluid rounded-circle mb-3" src="{{ asset('frontend/img/team/MCI_EDI.png') }}" alt="Team Member">
+              <img class="img-fluid rounded-circle mb-3" src="{{ asset('frontend/img/team/MCI_EDI.webp') }}" alt="Team Member">
             </div>
             <div class="col-md-8">
               <div class="h-100 d-flex flex-column justify-content-center px-4">
@@ -71,7 +71,7 @@
         <div class="team-item rounded border p-4 shadow">
           <div class="row g-0">
             <div class="col-md-4 text-center">
-              <img class="img-fluid rounded-circle mb-3" src="{{ asset('frontend/img/team/MCI_AHIM.png') }}" alt="Team Member">
+              <img class="img-fluid rounded-circle mb-3" src="{{ asset('frontend/img/team/MCI_AHIM.webp') }}" alt="Team Member">
             </div>
             <div class="col-md-8">
               <div class="h-100 d-flex flex-column justify-content-center px-4">
@@ -88,7 +88,7 @@
         <div class="team-item rounded border p-4 shadow">
           <div class="row g-0">
             <div class="col-md-4 text-center">
-              <img class="img-fluid rounded-circle mb-3" src="{{ asset('frontend/img/team/MCI_TOTO.png') }}" alt="Team Member">
+              <img class="img-fluid rounded-circle mb-3" src="{{ asset('frontend/img/team/MCI_TOTO.webp') }}" alt="Team Member">
             </div>
             <div class="col-md-8">
               <div class="h-100 d-flex flex-column justify-content-center px-4">
@@ -105,7 +105,7 @@
         <div class="team-item rounded border p-4 shadow">
           <div class="row g-0">
             <div class="col-md-4 text-center">
-              <img class="img-fluid rounded-circle mb-3" src="{{ asset('frontend/img/team/MCI_KHOLID.png') }}" alt="Team Member">
+              <img class="img-fluid rounded-circle mb-3" src="{{ asset('frontend/img/team/MCI_KHOLID.webp') }}" alt="Team Member">
             </div>
             <div class="col-md-8">
               <div class="h-100 d-flex flex-column justify-content-center px-4">
@@ -122,7 +122,7 @@
         <div class="team-item rounded border p-4 shadow">
           <div class="row g-0">
             <div class="col-md-4 text-center">
-              <img class="img-fluid rounded-circle mb-3" src="{{ asset('frontend/img/team/MCI_MUSHONIFUL.png') }}" alt="Team Member">
+              <img class="img-fluid rounded-circle mb-3" src="{{ asset('frontend/img/team/MCI_MUSHONIFUL.webp') }}" alt="Team Member">
             </div>
             <div class="col-md-8">
               <div class="h-100 d-flex flex-column justify-content-center px-4">
