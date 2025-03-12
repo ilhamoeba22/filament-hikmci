@@ -17,7 +17,7 @@
 <!-- Navbar & Hero End -->
 
 <!-- Asset Start -->
-<!-- <div class="container-fluid asset background-index py-3">
+<div class="container-fluid asset background-index py-3">
     <div class="container pb-3">
         <div class="text-center mx-auto pb-3 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
             <h1 class="text-capitalize mb-3">Asset Dijual</h1>
@@ -44,10 +44,10 @@
             {{ $assets->links('pagination::bootstrap-4') }}
         </div>
     </div>
-</div> -->
+</div>
 <!-- Asset End -->
 <!-- 404 Start -->
-<div class="container-fluid py-5">
+<!-- <div class="container-fluid py-5">
     <div class="container text-center py-5">
         <div class="row justify-content-center">
             <div class="col-lg-6">
@@ -59,7 +59,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- 404 End -->
 
 @include('footer')

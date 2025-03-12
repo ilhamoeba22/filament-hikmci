@@ -143,14 +143,17 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-4 mb-3 text-center">
+                            <div class="col-md-3 mb-3 text-center">
                                 <img src="{{asset('frontend/img/deposito/mm.png')}}" alt="Nazir 1" class="img-fluid" style="max-height: 100px;">
                             </div>
-                            <div class="col-md-4 mb-3 text-center">
+                            <div class="col-md-3 mb-3 text-center">
                                 <img src="{{asset('frontend/img/deposito/bmm.png')}}" alt="Nazir 2" class="img-fluid" style="max-height: 100px;">
                             </div>
-                            <div class="col-md-4 mb-3 text-center">
+                            <div class="col-md-3 mb-3 text-center">
                                 <img src="{{asset('frontend/img/deposito/lazismu.png')}}" alt="Nazir 3" class="img-fluid" style="max-height: 100px;">
+                            </div>
+                            <div class="col-md-3 mb-3 text-center">
+                                <img src="{{asset('frontend/img/deposito/dompet-dhuafa.png')}}" alt="Nazir 4" class="img-fluid" style="max-height: 100px;">
                             </div>
                         </div>
                     </div>
