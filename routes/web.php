@@ -36,6 +36,7 @@ Route::prefix('tabungan')->group(function () {
     Route::view('/tabungan-ukhuwah', 'tabungan-ukhuwah')->name('tabungan-ukhuwah');
     Route::view('/tabungan-cerdas', 'tabungan-cerdas')->name('tabungan-cerdas');
     Route::view('/tabungan-rencana', 'tabungan-rencana')->name('tabungan-rencana');
+    Route::view('/tabungan-cahaya', 'tabungan-cahaya')->name('tabungan-cahaya');
 });
 
 // Main-Deposito Pages

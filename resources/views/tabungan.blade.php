@@ -29,8 +29,12 @@
             ["name" => "Tabungan Karimah", "image" => "frontend/img/tabungan/MCI_Tab_Karimah.png", "link" => route('tabungan-karimah')],
             ["name" => "Tabungan Ukhuwah", "image" => "frontend/img/tabungan/MCI_Tab_Ukhuwah.png", "link" => route('tabungan-ukhuwah')],
             ["name" => "Tabungan Cerdas", "image" => "frontend/img/tabungan/MCI_Tab_Cerdas.png", "link" => route('tabungan-cerdas')],
+            ["name" => "Tabungan Cahaya", "image" => "frontend/img/tabungan/MCI_Tab_Cahaya.png", "link" => route('tabungan-cahaya')],
             ["name" => "Tabungan Rencana", "image" => "frontend/img/tabungan/MCI_Tab_Rencana.png", "link" => route('tabungan-rencana')],
             ] as $index => $product)
+
+            <!-- ["name" => "Tabungan Rencana", "image" => "frontend/img/tabungan/MCI_Tab_Rencana.png", "link" => route('tabungan-rencana')], -->
+
             <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="{{ 0.2 + ($index * 0.2) }}s">
                 <div class="product-item">
                     <img src="{{ asset($product['image']) }}" class="img-fluid w-100 rounded-top" alt="{{ $product['name'] }}">

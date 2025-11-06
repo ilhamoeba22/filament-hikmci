@@ -29,7 +29,7 @@
             @foreach ([
             ["name" => "UMKM Mikro", "image" => "frontend/img/pembiayaan/MCI_Pemb_UKM.png", "link" => route('pembiayaan-umkm')],
             ["name" => "UMKM Korporat", "image" => "frontend/img/pembiayaan/MCI_Pemb_Corporate.png", "link" => route('pembiayaan-corporate')],
-            ["name" => "Properti", "image" => "frontend/img/pembiayaan/MCI_Pemb_Prop.png", "link" => route('pembiayaan-property')],
+            ["name" => "Properti", "image" => "frontend/img/pembiayaan/MCI_Pemb_Properti.png", "link" => route('pembiayaan-property')],
             ["name" => "Consumer Finance", "image" => "frontend/img/pembiayaan/MCI_Pemb_CustFinance.png", "link" => route('pembiayaan-consumer-finance')],
             ] as $index => $product)
             <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="{{ 0.2 + ($index * 0.2) }}s">

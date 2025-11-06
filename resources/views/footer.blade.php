@@ -67,14 +67,17 @@
                 </div>
             </div>
         </div>
-        <div class="row g-5 justify-content-end align-items-end mt-0 pt-0">
-            <div class="footer-item d-flex flex-column align-items-end mt-0 pt-0">
-                <div class="d-flex justify-content-end align-items-center mt-0 pt-0">
+        <div class="row g-5 justify-content-between align-items-center mt-0 pt-0">
+            <div class="col-md-10">
+                <small class="text-white d-block text-end">BPRS HIK MCI merupakan peserta penjaminan LPS</small>
+                <small class="text-white d-block mb-1 text-end">BPRS HIK MCI berizin dan diawasi oleh Otoritas Jasa Keuangan</small>
+            </div>
+            <div class="col-md-2">
+                <div class="d-flex justify-content-start">
                     <img src="{{ asset('frontend/img/logo/ib_logo.png') }}" alt="Bank Syariah" class="img-fluid me-3" style="height: 50px;">
                     <img src="{{ asset('frontend/img/logo/bprs_logo.png') }}" alt="BPR Syariah" class="img-fluid me-3" style="height: 50px;">
-                    <img src="{{ asset('frontend/img/logo/lps.png') }}" alt="Lembaga Penjamin Simpanan" class="img-fluid me-3" style="height: 50px;">
+                    <!-- <img src="{{ asset('frontend/img/logo/lps.png') }}" alt="Lembaga Penjamin Simpanan" class="img-fluid" style="height: 50px;"> -->
                 </div>
-                <p class="text-white text-end me-3">Terdaftar dan diawasi oleh Otoritas Jasa Keuangan</p>
             </div>
         </div>
     </div>

@@ -88,7 +88,7 @@
                         <label for="jumlahPembiayaan" class="form-label">Jumlah Pembiayaan</label>
                         <input type="text" class="form-control form-control-lg rounded-pill" id="jumlahPembiayaan" placeholder="Jumlah Pembiayaan" />
                     </div>
-                    <div class="col-md-4 text-center">
+                    <!-- <div class="col-md-4 text-center">
                         <label for="produkPembiayaan" class="form-label">Produk</label>
                         <select class="form-select form-select-lg rounded-pill" id="produkPembiayaan">
                             <option value="" disabled selected>Pilih Produk</option>
@@ -100,7 +100,7 @@
                             <option value="CF Kolektif Karyawan">CF Kolektif Karyawan</option>
                             <option value="CF Umroh">CF Umroh</option>
                         </select>
-                    </div>
+                    </div> -->
                     <div class="col-md-4 text-center">
                         <label for="jangkaWaktuPembiayaan" class="form-label">Jangka Waktu</label>
                         <select class="form-select form-select-lg rounded-pill" id="jangkaWaktuPembiayaan">

@@ -31,9 +31,9 @@
                     <li class="nav-item mb-2">
                         <a class="nav-link" id="v-pills-kolektif-tab" data-bs-toggle="pill" href="#v-pills-kolektif" role="tab" aria-controls="v-pills-kolektif" aria-selected="false">Kolektif Karyawan</a>
                     </li>
-                    <li class="nav-item mb-2">
+                    <!-- <li class="nav-item mb-2">
                         <a class="nav-link" id="v-pills-umroh-tab" data-bs-toggle="pill" href="#v-pills-umroh" role="tab" aria-controls="v-pills-umroh" aria-selected="false">Pembiayaan Umroh</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
             <div class="col-lg-9 col-md-8 col-12">
