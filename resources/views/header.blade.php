@@ -70,10 +70,18 @@
                         <a href="{{ url('berita') }}" class="nav-item nav-link {{ request()->is('berita') ? 'active' : '' }}">Berita</a>
                         <a href="{{ url('karir') }}" class="nav-item nav-link {{ request()->is('karir') ? 'active' : '' }}">Karir</a>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle {{ request()->is('asset') || request()->is('wakaf') ? 'active' : '' }}" data-bs-toggle="dropdown">Layanan Lainnya</a>
+                            <a href="#" class="nav-link dropdown-toggle {{ request()->is('asset') || request()->is('edukasi') || request()->is('ebook') ? 'active' : '' }}" data-bs-toggle="dropdown">Layanan Lainnya</a>
                             <div class="dropdown-menu m-0">
                                 <a href="{{ url('asset') }}" class="dropdown-item {{ request()->is('asset') ? 'active' : '' }}">E-Asset</a>
-                                <a href="{{ url('edukasi') }}" class="dropdown-item {{ request()->is('edukasi') ? 'active' : '' }}">Edukasi</a>
+
+                                <div class="dropend"> <a href="#" class="dropdown-item dropdown-toggle {{ request()->is('edukasi') || request()->is('ebook') ? 'active' : '' }}" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Media
+                                    </a>
+                                    <ul class="dropdown-menu m-0">
+                                        <li><a class="dropdown-item {{ request()->is('edukasi') ? 'active' : '' }}" href="{{ url('edukasi') }}">Edukasi</a></li>
+                                        <li><a class="dropdown-item {{ request()->is('ebook') ? 'active' : '' }}" href="{{ route('ebook.index') }}">E-Book</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>

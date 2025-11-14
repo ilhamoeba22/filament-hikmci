@@ -1911,3 +1911,119 @@ table th, table td {
         margin-top: 5px;
     }
 }
+
+/* ======================================
+Perbaikan Final Submenu (Paksa ke Bawah & Responsif)
+======================================
+*/
+
+/* 1. Reset posisi submenu (Edukasi/Ebook) */
+.navbar .dropdown-menu .dropend > .dropdown-menu {
+    position: static;
+    top: auto;
+    left: auto;
+    width: 100%;
+    margin: 0;
+    border: 0;
+    box-shadow: none;
+    display: none;     /* Sembunyikan by default */
+}
+
+/* 2. Tampilkan HANYA saat 'ul'-nya dapat class .show */
+.navbar .dropdown-menu .dropend > .dropdown-menu.show {
+    display: block;
+}
+
+/* 3. (PENTING) Beri indentasi agar terlihat seperti anak menu */
+.navbar .dropdown-menu .dropend > .dropdown-menu .dropdown-item {
+    padding-left: 2.5rem; /* Tambahkan padding kiri */
+    color: #555;
+}
+
+
+/* ======================================
+   Style Halaman E-Book (Modern Card List)
+====================================== */
+
+.ebook-card-modern {
+    border: none; /* Modern: Hilangkan border, ganti dengan shadow */
+    border-radius: 12px; /* Sudut tumpul yang modern */
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    overflow: hidden; /* Merapikan sudut */
+}
+
+.ebook-card-modern:hover {
+    transform: translateY(-5px); /* Efek 'terangkat' saat di-hover */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08) !important; /* Shadow lebih jelas */
+}
+
+.ebook-card-modern .card-body {
+    padding: 1rem; /* Spasi adalah kunci kemewahan */
+}
+
+.ebook-cover-new {
+    width: 80px;  /* Ukuran kotak */
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px; /* Sudut tumpul untuk gambar */
+    border: 1px solid #f0f0f0; /* Border halus */
+}
+
+.ebook-info-new {
+    flex-grow: 1; /* Biarkan info ini mengisi sisa ruang */
+}
+
+.ebook-title-new {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--bs-dark); /* Pastikan warna kontras */
+    margin-bottom: 0.3rem;
+    line-height: 1.4;
+}
+
+.ebook-date-new {
+    font-size: 0.9rem;
+}
+
+.ebook-action-new .btn-pill {
+    /* Tombol bentuk 'pil' yang modern */
+    border-radius: 50px;
+    font-weight: 500;
+    padding: 0.6rem 1.25rem;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 10px rgba(var(--bs-primary-rgb), 0.3);
+    transition: box-shadow 0.2s ease;
+}
+
+.ebook-action-new .btn-pill:hover {
+    box-shadow: 0 6px 15px rgba(var(--bs-primary-rgb), 0.4);
+    transform: translateY(-1px);
+}
+
+
+/* ======================================
+   Responsif (untuk HP)
+====================================== */
+@media (max-width: 767.98px) {
+    .ebook-card-modern .card-body {
+        padding: 1rem; /* Padding lebih kecil di HP */
+    }
+
+    .ebook-cover-new {
+        /* Di HP, cover bisa lebih besar di tengah */
+        width: 100px; 
+        height: 100px;
+    }
+    
+    .ebook-title-new {
+        font-size: 1.2rem; /* Judul sedikit lebih kecil */
+    }
+
+    .ebook-action-new .btn {
+        width: 100%; /* Tombol download jadi full-width */
+    }
+
+    .ebook-action-new .btn-pill {
+         padding: 0.75rem 1.25rem; /* Tombol lebih besar agar mudah disentuh */
+    }
+}

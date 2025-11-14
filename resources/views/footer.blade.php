@@ -117,6 +117,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js" defer></script>
 <script src="{{ asset('frontend/js/main.js') }}" defer></script>
 
+@stack('scripts')
 </body>
 
 </html>

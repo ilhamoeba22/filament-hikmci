@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EbookController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\WakafController;
 use App\Http\Controllers\BeritaController;
@@ -69,7 +70,7 @@ Route::prefix('berita')->group(function () {
 // Route Ajax Paginate
 Route::get('/get-nominals', [IndexController::class, 'getNominals'])->name('get.nominals');
 
-// Route Unuk Halaman Edukasi
-
 Route::get('/edukasi', [EdukasiController::class, 'index'])->name('edukasi.index');
 Route::get('/edukasi/{id}', [EdukasiController::class, 'show'])->name('edukasi.show');
+
+Route::get('/ebook', [EbookController::class, 'index'])->name('ebook.index');
