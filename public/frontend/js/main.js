@@ -152,18 +152,25 @@ function openTab(evt, tabName) {
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.classList.add("active");
 
-    filterByYear(); // Apply filter after switching tabs
+    filterReports(); // Apply filter after switching tabs
 }
 
-function filterByYear() {
+function filterReports() {
     const year = document.getElementById("yearFilter").value;
+    const nameFilter = document.getElementById("nameFilter");
+    const nameQuery = nameFilter ? nameFilter.value.toLowerCase() : "";
     const tabs = document.querySelectorAll(".tabcontent");
 
     tabs.forEach(tab => {
         const pdfItems = tab.querySelectorAll(".pdf-item");
         pdfItems.forEach(item => {
             const itemYear = item.getAttribute("data-year");
-            if (!year || itemYear === year) {
+            const itemName = item.querySelector("p").innerText.toLowerCase();
+            
+            const matchesYear = !year || itemYear === year;
+            const matchesName = !nameQuery || itemName.includes(nameQuery);
+
+            if (matchesYear && matchesName) {
                 item.style.display = "block";
             } else {
                 item.style.display = "none";
@@ -183,7 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     }
-    filterByYear(); 
+    filterReports(); 
 });
 
 // Fungsi untuk menentukan halaman aktif Navbar

@@ -44,7 +44,8 @@
             </div>
             <div class="col-md-9">
                 <div class="d-flex justify-content-end mb-3">
-                    <select id="yearFilter" class="form-select form-select-sm w-auto" onchange="filterByYear()">
+                    <input type="text" id="nameFilter" class="form-control form-control-sm me-2" style="max-width: 300px;" placeholder="Cari nama laporan..." onkeyup="filterReports()">
+                    <select id="yearFilter" class="form-select form-select-sm w-auto" onchange="filterReports()">
                         <option value="">Semua Tahun</option>
                         @php
                         $years = collect()
