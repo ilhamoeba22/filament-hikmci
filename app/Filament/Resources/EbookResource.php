@@ -19,6 +19,7 @@ class EbookResource extends Resource
     protected static ?string $model = Ebook::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-book-open';
+    protected static ?string $navigationGroup = 'Manajemen Konten';
     protected static ?string $navigationLabel = 'E-Book';
     protected static ?string $pluralLabel = 'E-Book';
 

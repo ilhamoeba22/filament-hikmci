@@ -4,9 +4,7 @@ namespace App\Filament\Resources;
 
 use Filament\Forms;
 use Filament\Tables;
-use Filament\Resources\Form;
-use Filament\Resources\Table;
-use App\Models\LaporanPublikasi;
+use App\Models\LaporanTahunan;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Select;
 use Filament\Tables\Actions\EditAction;
@@ -15,16 +13,13 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\FileUpload;
 use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Actions\DeleteBulkAction;
-use App\Filament\Resources\LaporanPublikasiResource\Pages;
-use App\Filament\Resources\LaporanPublikasiResource\Pages\EditLaporanPublikasi;
-use App\Filament\Resources\LaporanPublikasiResource\Pages\ListLaporanPublikasis;
-use App\Filament\Resources\LaporanPublikasiResource\Pages\CreateLaporanPublikasi;
+use App\Filament\Resources\LaporanTahunanResource\Pages;
 
-class LaporanPublikasiResource extends Resource
+class LaporanTahunanResource extends Resource
 {
-    protected static ?string $model = LaporanPublikasi::class;
+    protected static ?string $model = LaporanTahunan::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-document-magnifying-glass';
+    protected static ?string $navigationIcon = 'heroicon-o-document-chart-bar';
     protected static ?string $navigationGroup = 'Laporan & Keuangan';
 
     public static function form(Forms\Form $form): Forms\Form
@@ -37,7 +32,7 @@ class LaporanPublikasiResource extends Resource
                 FileUpload::make('file')
                     ->label('Unggah Dokumen (PDF)')
                     ->disk('public')
-                    ->directory('laporan/publikasi')
+                    ->directory('laporan/tahunan')
                     ->acceptedFileTypes(['application/pdf'])
                     ->preserveFilenames()
                     ->required(),
@@ -85,9 +80,9 @@ class LaporanPublikasiResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListLaporanPublikasis::route('/'),
-            'create' => Pages\CreateLaporanPublikasi::route('/create'),
-            'edit' => Pages\EditLaporanPublikasi::route('/{record}/edit'),
+            'index' => Pages\ListLaporanTahunans::route('/'),
+            'create' => Pages\CreateLaporanTahunan::route('/create'),
+            'edit' => Pages\EditLaporanTahunan::route('/{record}/edit'),
         ];
     }
 }

@@ -25,6 +25,7 @@ class KarirResource extends Resource
     protected static ?string $model = Karir::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-briefcase';
+    protected static ?string $navigationGroup = 'Pusat Karir';
 
     public static function form(Forms\Form $form): Forms\Form
     {

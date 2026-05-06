@@ -40,6 +40,9 @@
                     <li class="nav-item mb-2">
                         <a class="nav-link" href="#" onclick="openTab(event, 'KeuanganBerkelanjutan')">Laporan Keuangan Berkelanjutan</a>
                     </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link" href="#" onclick="openTab(event, 'Tahunan')">Laporan Tahunan</a>
+                    </li>
                 </ul>
             </div>
             <div class="col-md-9">
@@ -52,6 +55,7 @@
                         ->merge($laporanPublikasi->pluck('tahun'))
                         ->merge($laporanTataKelola->pluck('tahun'))
                         ->merge($laporanKeuanganBerkelanjutan->pluck('tahun'))
+                        ->merge($laporanTahunan->pluck('tahun'))
                         ->unique()
                         ->sortDesc();
                         @endphp
@@ -78,6 +82,12 @@
                         </a>
                         @endforeach
                         @foreach($laporanKeuanganBerkelanjutan as $laporan)
+                        <a href="{{ asset('storage/' . $laporan->file) }}" class="pdf-item" target="_blank" data-year="{{ $laporan->tahun }}">
+                            <i class="bi bi-filetype-pdf fa-7x"></i>
+                            <p class="text-dark">{{ $laporan->judul }} ({{ $laporan->tahun }})</p>
+                        </a>
+                        @endforeach
+                        @foreach($laporanTahunan as $laporan)
                         <a href="{{ asset('storage/' . $laporan->file) }}" class="pdf-item" target="_blank" data-year="{{ $laporan->tahun }}">
                             <i class="bi bi-filetype-pdf fa-7x"></i>
                             <p class="text-dark">{{ $laporan->judul }} ({{ $laporan->tahun }})</p>
@@ -117,6 +127,19 @@
                     <h3>Laporan Keuangan Berkelanjutan</h3>
                     <div class="pdf-container">
                         @foreach($laporanKeuanganBerkelanjutan as $laporan)
+                        <a href="{{ asset('storage/' . $laporan->file) }}" class="pdf-item" target="_blank" data-year="{{ $laporan->tahun }}">
+                            <i class="bi bi-filetype-pdf fa-7x"></i>
+                            <p class="text-dark">{{ $laporan->judul }} ({{ $laporan->tahun }})</p>
+                        </a>
+                        @endforeach
+                    </div>
+                </div>
+
+                <!-- Laporan Tahunan -->
+                <div class="tabcontent" id="Tahunan" style="display: none;">
+                    <h3>Laporan Tahunan</h3>
+                    <div class="pdf-container">
+                        @foreach($laporanTahunan as $laporan)
                         <a href="{{ asset('storage/' . $laporan->file) }}" class="pdf-item" target="_blank" data-year="{{ $laporan->tahun }}">
                             <i class="bi bi-filetype-pdf fa-7x"></i>
                             <p class="text-dark">{{ $laporan->judul }} ({{ $laporan->tahun }})</p>

@@ -26,7 +26,8 @@ class CarouselResource extends Resource
 {
     protected static ?string $model = Carousel::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-photo';
+    protected static ?string $navigationGroup = 'Manajemen Halaman';
 
     public static function form(Form $form): Form
     {

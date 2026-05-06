@@ -24,7 +24,8 @@ class LaporanTataKelolaResource extends Resource
 {
     protected static ?string $model = LaporanTataKelola::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-document-text';
+    protected static ?string $navigationGroup = 'Laporan & Keuangan';
 
     public static function form(Forms\Form $form): Forms\Form
     {

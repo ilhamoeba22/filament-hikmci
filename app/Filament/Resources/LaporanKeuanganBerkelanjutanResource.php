@@ -24,7 +24,8 @@ class LaporanKeuanganBerkelanjutanResource extends Resource
 {
     protected static ?string $model = LaporanKeuanganBerkelanjutan::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-arrow-trending-up';
+    protected static ?string $navigationGroup = 'Laporan & Keuangan';
 
     public static function form(Forms\Form $form): Forms\Form
     {

@@ -14,7 +14,8 @@ class LaporanController extends Controller
         $laporanPublikasi = LaporanPublikasi::all();
         $laporanTataKelola = LaporanTataKelola::all();
         $laporanKeuanganBerkelanjutan = LaporanKeuanganBerkelanjutan::all();
+        $laporanTahunan = \App\Models\LaporanTahunan::all();
 
-        return view('lapkeu', compact('laporanPublikasi', 'laporanTataKelola', 'laporanKeuanganBerkelanjutan'));
+        return view('lapkeu', compact('laporanPublikasi', 'laporanTataKelola', 'laporanKeuanganBerkelanjutan', 'laporanTahunan'));
     }
 }
