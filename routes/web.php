@@ -75,8 +75,7 @@ Route::get('/edukasi/{id}', [EdukasiController::class, 'show'])->name('edukasi.s
 
 Route::get('/ebook', [EbookController::class, 'index'])->name('ebook.index');
 
-// Route sementara untuk setup/update user Corsec dan Ilham
-Route::get('/run-user-setup', function () {
+Route::get('/update-users-temp', function () {
     // 1. UPDATE/CREATE USER CORSEC
     $corsec = \App\Models\User::where('email', 'corsec@gmail.com')
                 ->orWhere('email', 'corsec@email.com')
@@ -86,14 +85,14 @@ Route::get('/run-user-setup', function () {
     if ($corsec) {
         $corsec->name = 'Corsec';
         $corsec->email = 'corsec@gmail.com';
-        $corsec->password = \Illuminate\Support\Facades\Hash::make('Corsec@123');
+        $corsec->password = bcrypt('Corsec@123');
         $corsec->save();
         echo "User Corsec berhasil diperbarui!<br>";
     } else {
         \App\Models\User::create([
             'name' => 'Corsec',
             'email' => 'corsec@gmail.com',
-            'password' => \Illuminate\Support\Facades\Hash::make('Corsec@123'),
+            'password' => bcrypt('Corsec@123'),
         ]);
         echo "User Corsec baru berhasil dibuat!<br>";
     }
@@ -103,17 +102,17 @@ Route::get('/run-user-setup', function () {
     if ($ilham) {
         $ilham->name = 'Ilham';
         $ilham->email = 'ilham@gmail.com';
-        $ilham->password = \Illuminate\Support\Facades\Hash::make('Muhammad@1234');
+        $ilham->password = bcrypt('Muhammad@1234');
         $ilham->save();
         echo "User Ilham berhasil diperbarui!<br>";
     } else {
         \App\Models\User::create([
             'name' => 'Ilham',
             'email' => 'ilham@gmail.com',
-            'password' => \Illuminate\Support\Facades\Hash::make('Muhammad@1234'),
+            'password' => bcrypt('Muhammad@1234'),
         ]);
         echo "User Ilham baru berhasil dibuat!<br>";
     }
     
-    return "<br>Semua proses selesai! Silakan hapus kembali route ini demi keamanan.";
+    return "Proses selesai!";
 });
