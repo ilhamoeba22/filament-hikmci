@@ -35,4 +35,13 @@ class User extends Authenticatable implements FilamentUser
     {
         return true;
     }
+
+    protected static function booted(): void
+    {
+        static::deleting(function ($user) {
+            if ($user->id === auth()->id()) {
+                throw new \Exception('Anda tidak dapat menghapus akun Anda sendiri.');
+            }
+        });
+    }
 }
