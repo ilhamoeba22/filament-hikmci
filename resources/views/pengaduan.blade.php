@@ -36,7 +36,6 @@
                         nasabah, maka BPRS HIK MCI menyediakan Mekanisme
                         Pengaduan Nasabah untuk menyalurkan pengaduan terkait
                         masalah saat bertransaksi.
-
                     </p>
                     <p class="mb-3 lh-base justify-text">
                         Pengaduan nasabah dapat disampaikan ke BPRS HIK MCI
@@ -50,7 +49,6 @@
                         lain yang tertera dibawah ini:
                     </p>
                 </div>
-
             </div>
         </div>
     </div>
@@ -135,56 +133,132 @@
 <div class="container-fluid pengaduan py-3">
     <div class="container">
         <div class="row g-5">
+
+            {{-- ALUR 1: Lisan Tatap Muka --}}
             <div class="col-12 wow shadow-box fadeInRight mb-3" data-wow-delay="0.2s">
                 <div class="container my-3">
                     <h3 class="text-capitalize text-uppercase text-center mb-3">
                         Alur Pengaduan Nasabah secara Lisan dengan Tatap Muka di Kantor BPRS HIK MCI
                     </h3>
                     <div class="d-flex flex-wrap justify-content-center align-items-center flow-diagram">
-                        <div class="box m-2">Nasabah<br>menyampaikan<br>Pengaduan Tertulis</div>
+                        <div class="box m-2">Nasabah<br>mendatangi Bank<br>dan menyampaikan<br>pengaduan</div>
                         <div class="arrow m-2">&rarr;</div>
-                        <div class="box m-2">Register<br>pengaduan<br>nasabah</div>
+                        <div class="box m-2">Verifikasi data<br>nasabah &amp;<br>pemberitahuan<br>waktu penyelesaian</div>
                         <div class="arrow m-2">&rarr;</div>
-                        <div class="box m-2">Pengumpulan bukti<br>/ dokumen</div>
+                        <div class="box m-2">Register<br>pengaduan &amp;<br>konfirmasi<br>penerimaan</div>
                         <div class="arrow m-2">&rarr;</div>
-                        <div class="box m-2">Tanggapan BPRS</div>
+                        <div class="box m-2">Tanggapan<br>BPRS</div>
                         <div class="arrow m-2">&rarr;</div>
                         <div class="box m-2">Penyelesaian<br>Pengaduan<br>Nasabah</div>
                     </div>
                 </div>
                 <ol class="mb-3 lh-base justify-text">
-                    <li>Nasabah datang ke kantor BPRS HIK MCI dengan membawa persyaratan yang telah ditentukan</li>
-                    <li>Data diri dan dokumen pendukung pengaduan nasabah akan diverifikasi oleh petugas</li>
-                    <li>Petugas akan meregister pengaduan nasabah dan menyampaikan nomer registrasi pengaduan nasabah</li>
-                    <li>Bila pengaduan dapat langsung terselesaikan, maka petugas akan menginformasikan solusi kepada nasabah dan akan memberikan Bukti Terima Pengaduan yang telah dilengkapi solusi dari pihak bank</li>
-                    <li>Apabila terkait solusi yang ditawarkan kepada nasabah tidak bisa diterima oleh nasabah maka nasabah diharap menyampaikan pengaduan tertulis kepada BPRS HIK MCI</li>
+                    <li>Nasabah mendatangi Bank dan menyampaikan pengaduan.</li>
+                    <li>Data Nasabah akan diverifikasi oleh Customer Service (CS) dan CS memberitahukan kepada Nasabah waktu penyelesaian pengaduan maksimal 5 (lima) hari kerja sejak tanggal pengaduan diterima.</li>
+                    <li>CS meneruskan pengaduan tersebut kepada Unit Kerja Pelayanan dan Pengaduan Konsumen (UKPPK).</li>
+                    <li>UKPPK mencatat dan memberikan konfirmasi penerimaan Pengaduan dengan memberikan nomor registrasi pengaduan dan tanggal penerimaan pengaduan.</li>
+                    <li>UKPPK berkoordinasi dengan Unit Kerja Lain (UKL) untuk mencari solusi terkait pengaduan Nasabah tersebut.</li>
+                    <li>UKPPK menyampaikan Tanggapan secara lisan dan/atau tertulis kepada Nasabah terkait dengan solusi yang diberikan.</li>
+                    <li>Apabila Nasabah menerima solusi yang diberikan oleh Bank, maka pengaduan Nasabah dinyatakan selesai.</li>
+                    <li>Apabila Nasabah menolak solusi yang diberikan oleh Bank, maka diarahkan untuk mengajukan pengaduan secara tertulis kepada Bank.</li>
+                    <li>Dalam hal Bank membutuhkan dokumen pendukung dan jangka waktu penyelesaian tidak dapat dipenuhi, Bank meminta kepada Nasabah untuk menyampaikan pengaduan secara tertulis.</li>
                 </ol>
             </div>
+
+            {{-- ALUR 2: Lisan Tanpa Tatap Muka --}}
+            <div class="col-12 wow fadeInRight shadow-box mb-3" data-wow-delay="0.2s">
+                <div class="container my-3">
+                    <h3 class="text-capitalize text-uppercase text-center mb-3">
+                        Alur Pengaduan Nasabah secara Lisan Tanpa Tatap Muka di Kantor BPRS HIK MCI
+                    </h3>
+                    <div class="d-flex flex-wrap justify-content-center align-items-center flow-diagram">
+                        <div class="box m-2">Nasabah<br>menghubungi<br>Nomor Telepon<br>Bank</div>
+                        <div class="arrow m-2">&rarr;</div>
+                        <div class="box m-2">Verifikasi data<br>nasabah &amp;<br>pemberitahuan<br>waktu penyelesaian</div>
+                        <div class="arrow m-2">&rarr;</div>
+                        <div class="box m-2">Register<br>pengaduan &amp;<br>konfirmasi<br>penerimaan</div>
+                        <div class="arrow m-2">&rarr;</div>
+                        <div class="box m-2">Tanggapan<br>BPRS</div>
+                        <div class="arrow m-2">&rarr;</div>
+                        <div class="box m-2">Penyelesaian<br>Pengaduan<br>Nasabah</div>
+                    </div>
+                </div>
+                <ol class="mb-3 lh-base justify-text">
+                    <li>Nasabah menghubungi Nomor Telepon Bank dan menyampaikan Pengaduannya.</li>
+                    <li>Data Nasabah akan diverifikasi oleh Customer Service (CS) dan CS memberitahukan kepada Nasabah waktu penyelesaian pengaduan maksimal 5 (lima) hari kerja sejak tanggal pengaduan diterima.</li>
+                    <li>CS meneruskan pengaduan Nasabah tersebut kepada Unit Kerja Pelayanan dan Pengaduan Konsumen (UKPPK).</li>
+                    <li>UKPPK mencatat dan memberikan konfirmasi penerimaan Pengaduan dengan memberikan nomor registrasi pengaduan dan tanggal penerimaan pengaduan.</li>
+                    <li>UKPPK menghubungi Nasabah kembali melalui pesan singkat atau aplikasi chat kepada Nasabah untuk memastikan pengaduan tersebut.</li>
+                    <li>UKPPK berkoordinasi dengan Unit Kerja Lain (UKL) untuk mencari solusi terkait pengaduan Nasabah tersebut.</li>
+                    <li>UKPPK menyampaikan Tanggapan secara lisan dan/atau tertulis kepada Nasabah terkait solusi yang diberikan.</li>
+                    <li>Apabila Nasabah menerima solusi yang diberikan oleh Bank, maka pengaduan Nasabah dinyatakan selesai.</li>
+                    <li>Apabila Nasabah menolak solusi yang diberikan oleh Bank, maka diarahkan untuk mengajukan pengaduan secara tertulis kepada Bank.</li>
+                    <li>Dalam hal Bank membutuhkan dokumen pendukung dan jangka waktu penyelesaian tidak dapat dipenuhi, Bank meminta kepada Nasabah untuk menyampaikan secara tertulis.</li>
+                </ol>
+            </div>
+
+            {{-- ALUR 3: Tertulis Tatap Muka --}}
+            <div class="col-12 wow fadeInRight shadow-box mb-3" data-wow-delay="0.2s">
+                <div class="container my-3">
+                    <h3 class="text-capitalize text-uppercase text-center mb-3">
+                        Alur Pengaduan Nasabah secara Tertulis dengan Tatap Muka di Kantor BPRS HIK MCI
+                    </h3>
+                    <div class="d-flex flex-wrap justify-content-center align-items-center flow-diagram">
+                        <div class="box m-2">Nasabah<br>menyampaikan<br>Pengaduan Tertulis<br>ke kantor</div>
+                        <div class="arrow m-2">&rarr;</div>
+                        <div class="box m-2">Verifikasi &amp;<br>pengisian formulir<br>pengaduan</div>
+                        <div class="arrow m-2">&rarr;</div>
+                        <div class="box m-2">Pengumpulan<br>bukti /<br>dokumen</div>
+                        <div class="arrow m-2">&rarr;</div>
+                        <div class="box m-2">Tanggapan<br>BPRS</div>
+                        <div class="arrow m-2">&rarr;</div>
+                        <div class="box m-2">Penyelesaian<br>Pengaduan<br>Nasabah</div>
+                    </div>
+                </div>
+                <ol class="mb-3 lh-base justify-text">
+                    <li>Nasabah dan/atau perwakilan Nasabah menyampaikan pengaduan tertulis datang langsung ke kantor dengan membawa identitas dan dokumen pendukung yang diperlukan.</li>
+                    <li>Customer Service (CS) menanyakan keperluan Nasabah dan/atau perwakilan Nasabah dan meneruskan pengaduan kepada Unit Kerja Pelayanan dan Pengaduan Konsumen (UKPPK).</li>
+                    <li>UKPPK memberitahukan kepada Nasabah dan/atau perwakilan Nasabah waktu penyelesaian pengaduan maksimal 10 (sepuluh) hari kerja sejak tanggal pengaduan diterima.</li>
+                    <li>UKPPK menerima informasi pengaduan dan meminta Nasabah dan/atau perwakilan Nasabah mengisi formulir informasi keluhan pada lembar pengaduan Nasabah.</li>
+                    <li>UKPPK melakukan verifikasi dan identifikasi terhadap bukti identitas dan kelengkapan dokumen pendukung yang dibutuhkan.</li>
+                    <li>Dalam hal Nasabah dan/atau perwakilan Nasabah belum memenuhi dokumen, Bank mengkonfirmasi dan meminta kekurangan dokumen dimaksud dalam jangka waktu 10 (sepuluh) hari kerja. Dalam hal kondisi tertentu, Bank dapat memperpanjang jangka waktu dalam 10 (sepuluh) hari kerja.</li>
+                    <li>UKPPK berkoordinasi dengan Unit Kerja Lain (UKL) untuk mencari solusi terkait pengaduan tersebut.</li>
+                    <li>UKPPK menyampaikan tanggapan Pengaduan secara tertulis kepada Nasabah dan/atau perwakilan Nasabah dengan solusi yang diberikan.</li>
+                    <li>Apabila Nasabah dan/atau perwakilan Nasabah menerima solusi yang diberikan oleh Bank, maka pengaduan Nasabah dan/atau perwakilan Nasabah dinyatakan selesai.</li>
+                    <li>Dalam hal tidak terdapat kesepakatan terhadap hasil penanganan Pengaduan, maka Nasabah dan/atau perwakilan Nasabah dapat menyampaikan pengaduan kepada OJK, pengadilan atau di luar Pengadilan.</li>
+                </ol>
+            </div>
+
+            {{-- ALUR 4: Tertulis via Email/Surat --}}
             <div class="col-12 wow fadeInRight shadow-box" data-wow-delay="0.2s">
                 <div class="container my-3">
                     <h3 class="text-capitalize text-uppercase text-center mb-3">
-                        Alur Pengaduan Nasabah secara Tertulis ataupun Lisan tanpa Tatap Muka di Kantor BPRS HIK MCI
+                        Alur Pengaduan Nasabah secara Tertulis Melalui Email atau Surat
                     </h3>
                     <div class="d-flex flex-wrap justify-content-center align-items-center flow-diagram">
-                        <div class="box m-2">Nasabah<br>menyampaikan<br>Pengaduan Tertulis</div>
+                        <div class="box m-2">Nasabah<br>mengirimkan<br>Pengaduan Tertulis<br>via Email / Surat</div>
                         <div class="arrow m-2">&rarr;</div>
-                        <div class="box m-2">Register<br>pengaduan<br>nasabah</div>
+                        <div class="box m-2">Verifikasi &amp;<br>pencatatan<br>pengaduan</div>
                         <div class="arrow m-2">&rarr;</div>
-                        <div class="box m-2">Pengumpulan bukti<br>/ dokumen</div>
+                        <div class="box m-2">Pengumpulan<br>bukti /<br>dokumen</div>
                         <div class="arrow m-2">&rarr;</div>
-                        <div class="box m-2">Tanggapan BPRS</div>
+                        <div class="box m-2">Tanggapan<br>BPRS</div>
                         <div class="arrow m-2">&rarr;</div>
                         <div class="box m-2">Penyelesaian<br>Pengaduan<br>Nasabah</div>
                     </div>
                 </div>
                 <ol class="mb-3 lh-base justify-text">
-                    <li>Nasabah menyampaikan pengaduan secara tertulis beserta dengan persyaratan yang telah ditentukan</li>
-                    <li>Petugas akan melakukan verifikasi data diri dan pengaduan nasabah</li>
-                    <li>Petugas akan meregister pengaduan nasabah dan menyampaikan nomer registrasi pengaduan nasabah</li>
-                    <li>Bila pengaduan dapat langsung terselesaikan, maka petugas akan menginformasikan solusi kepada nasabah. Tetapi jika tidak dapat terselesaikan maka petugas akan menginformasikan lamanya waktu penyelesaian</li>
-                    <li>Pengaduan akan ditindaklanjuti oleh unit kerja yang bertugas menangani dan menyelesaikan pengaduan</li>
+                    <li>Nasabah dan/atau perwakilan Nasabah mengirimkan pengaduan tertulis melalui Email atau Surat dengan melengkapi identitas dan dokumen pendukung yang diperlukan.</li>
+                    <li>Unit Kerja Pelayanan dan Pengaduan Konsumen (UKPPK) menerima, memeriksa, dan mencatat pengaduan serta dokumen pendukung yang diperlukan maksimal 10 (sepuluh) hari kerja sejak tanggal pengaduan diterima.</li>
+                    <li>UKPPK melakukan verifikasi dan identifikasi terhadap bukti identitas dan kelengkapan dokumen pendukung yang dibutuhkan.</li>
+                    <li>Dalam hal Nasabah dan/atau perwakilan Nasabah belum memenuhi dokumen, Bank mengkonfirmasi dan meminta kekurangan dokumen dimaksud dalam jangka waktu 10 (sepuluh) hari kerja. Dalam hal kondisi tertentu, Bank dapat memperpanjang jangka waktu dalam 10 (sepuluh) hari kerja.</li>
+                    <li>UKPPK berkoordinasi dengan UKL untuk mencari solusi terkait dengan pengaduan tersebut.</li>
+                    <li>UKPPK mengirimkan kembali tanggapan Pengaduan secara tertulis kepada Nasabah dan/atau perwakilan Nasabah terkait dengan solusi yang diberikan.</li>
+                    <li>Apabila Nasabah dan/atau perwakilan Nasabah menerima solusi yang diberikan oleh Bank, maka pengaduan Nasabah dan/atau perwakilan Nasabah dinyatakan selesai.</li>
+                    <li>Dalam hal tidak terdapat kesepakatan terhadap hasil penanganan Pengaduan, maka Nasabah dan/atau perwakilan Nasabah dapat menyampaikan pengaduan kepada OJK, pengadilan atau di luar Pengadilan.</li>
                 </ol>
             </div>
+
         </div>
     </div>
 </div>
@@ -209,7 +283,7 @@
                         <tbody>
                             <tr>
                                 <td>Lisan</td>
-                                <td>Maks 5 (lima) hari terhitung sejak pengaduan diterima secara lengkap oleh petugas penerima pengaduan</td>
+                                <td>Maks 5 (lima) hari kerja terhitung sejak pengaduan diterima secara lengkap oleh petugas penerima pengaduan</td>
                             </tr>
                             <tr>
                                 <td>Tertulis</td>
@@ -223,5 +297,47 @@
     </div>
 </div>
 <!-- tabel waktu pengaduan end -->
+
+<!-- Media Layanan Pengaduan -->
+<div class="container-fluid pengaduan py-3">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-12 wow fadeInRight" data-wow-delay="0.2s">
+                <div class="table-responsive">
+                    <h3 class="text-capitalize text-uppercase text-center mb-3">
+                        Media Layanan Pengaduan
+                    </h3>
+                    <table class="table table-bordered w-auto mx-auto">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center">No.</th>
+                                <th scope="col" class="text-center">Media</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center">1</td>
+                                <td>Kantor Bank</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">2</td>
+                                <td>Telepon Bank (0274) 881159</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">3</td>
+                                <td>Email resmi Bank (info@bprshikmci.co.id)</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">4</td>
+                                <td>Aplikasi Portal Pelindungan Konsumen (APPK)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Media Layanan Pengaduan end -->
 
 @include('footer')
