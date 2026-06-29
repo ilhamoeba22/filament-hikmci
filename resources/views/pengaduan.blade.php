@@ -325,7 +325,7 @@
                             </tr>
                             <tr>
                                 <td class="text-center">3</td>
-                                <td>Email resmi Bank (info@bprshikmci.co.id)</td>
+                                <td>Email resmi Bank (corsec@bprshikmci.co.id)</td>
                             </tr>
                             <tr>
                                 <td class="text-center">4</td>
