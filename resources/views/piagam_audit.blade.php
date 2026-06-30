@@ -16,7 +16,7 @@
     <div class="container">
         <div class="text-center mx-auto pb-5" style="max-width: 800px">
             <h1 class="display-5 text-capitalize mb-3">Piagam Audit Internal</h1>
-            <p class="mb-0 text-muted">Piagam Audit Internal PT BPRS HIK MCI adalah dokumen formal yang menetapkan tujuan, wewenang, tanggung jawab, dan posisi fungsi audit internal secara independen dalam perusahaan, sebagai pedoman resmi pelaksanaan kegiatan pengawasan guna meningkatkan tata kelola dan kinerja operasional bank.</p>
+            <p class="mb-0 text-muted fs-5">Piagam Audit Internal PT BPRS HIK MCI adalah dokumen formal yang menetapkan tujuan, wewenang, tanggung jawab, dan posisi fungsi audit internal secara independen dalam perusahaan, sebagai pedoman resmi pelaksanaan kegiatan pengawasan guna meningkatkan tata kelola dan kinerja operasional bank.</p>
         </div>
         <div class="row g-4">
             @forelse($piagams as $piagam)
