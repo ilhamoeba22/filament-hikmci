@@ -15,7 +15,7 @@
 <div class="container-fluid penghargaan py-5">
     <div class="container">
         <div class="text-center mx-auto pb-5" style="max-width: 800px">
-            <h1 class="display-5 text-capitalize mb-3">Piagam Audit Internal BPRS HIK MCI</h1>
+            <h1 class="display-5 text-capitalize mb-3">Piagam Audit Internal</h1>
         </div>
         <div class="row g-4">
             @forelse($piagams as $piagam)
