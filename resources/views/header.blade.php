@@ -50,13 +50,14 @@
                     <div class="navbar-nav ms-auto">
                         <a href="{{ url('/') }}" class="nav-item nav-link {{ request()->is('/') ? 'active' : '' }}">Home</a>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle {{ request()->is('about') || request()->is('team') || request()->is('lapkeu') || request()->is('pengaduan') ? 'active' : '' }}" data-bs-toggle="dropdown">Tentang Kami</a>
+                            <a href="#" class="nav-link dropdown-toggle {{ request()->is('about') || request()->is('team') || request()->is('lapkeu') || request()->is('pengaduan') || request()->is('penghargaan') || request()->is('piagam-audit') ? 'active' : '' }}" data-bs-toggle="dropdown">Tentang Kami</a>
                             <div class="dropdown-menu m-0">
                                 <a href="{{ url('about') }}" class="dropdown-item {{ request()->is('about') ? 'active' : '' }}">Profile</a>
                                 <a href="{{ url('team') }}" class="dropdown-item {{ request()->is('team') ? 'active' : '' }}">Pengurus</a>
                                 <a href="{{ url('lapkeu') }}" class="dropdown-item {{ request()->is('lapkeu') ? 'active' : '' }}">Laporan Keuangan</a>
                                 <a href="{{ url('pengaduan') }}" class="dropdown-item {{ request()->is('pengaduan') ? 'active' : '' }}">Layanan Pengaduan</a>
                                 <a href="{{ url('penghargaan') }}" class="dropdown-item {{ request()->is('penghargaan') ? 'active' : '' }}">Penghargaan</a>
+                                <a href="{{ url('piagam-audit') }}" class="dropdown-item {{ request()->is('piagam-audit') ? 'active' : '' }}">Piagam Audit Internal</a>
                             </div>
                         </div>
                         <div class="nav-item dropdown">

@@ -9,6 +9,7 @@ use App\Http\Controllers\EdukasiController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\AssetFrontendController;
 use App\Http\Controllers\KarirFrontendController;
+use App\Http\Controllers\PiagamAuditController;
 
 // Static pages
 Route::get('/', [IndexController::class, 'index'])->name('home');
@@ -16,6 +17,7 @@ Route::view('/about', 'about')->name('about');
 Route::view('/team', 'team')->name('team');
 Route::view('/pengaduan', 'pengaduan')->name('pengaduan');
 Route::view('/penghargaan', 'penghargaan')->name('penghargaan');
+Route::get('/piagam-audit', [PiagamAuditController::class, 'index'])->name('piagam-audit');
 Route::view('/karir', 'karir')->name('karir');
 Route::view('/asset', 'asset')->name('asset');
 Route::view('/edukasi', 'edukasi')->name('edukasi');

@@ -63,6 +63,7 @@
                     <a href="{{ url('asset') }}"><i class="fas fa-angle-right me-2"></i> E-Asset</a>
                     <a href="{{ url('lapkeu') }}"><i class="fas fa-angle-right me-2"></i> Laporan Keuangan</a>
                     <a href="{{ url('penghargaan') }}"><i class="fas fa-angle-right me-2"></i> Penghargaan</a>
+                    <a href="{{ url('piagam-audit') }}"><i class="fas fa-angle-right me-2"></i> Piagam Audit Internal</a>
                     <a href="http://wbs.bprshikmci.co.id/" target="_blank"><i class="fas fa-angle-right me-2"></i> Lapor WBS</a>
                 </div>
             </div>
