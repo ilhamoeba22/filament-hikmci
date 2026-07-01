@@ -47,10 +47,6 @@ class PiagamAuditInternalResource extends Resource
                     ->preserveFilenames()
                     ->maxSize(10240) // Maksimal 10 MB
                     ->required(),
-                Select::make('tahun')
-                    ->label('Tahun')
-                    ->options(array_combine(range(date('Y'), 2014), range(date('Y'), 2014)))
-                    ->required(),
             ]);
     }
 
@@ -69,10 +65,6 @@ class PiagamAuditInternalResource extends Resource
                     ->getStateUsing(fn($record) => basename($record->file))
                     ->url(fn($record) => asset('storage/' . $record->file))
                     ->openUrlInNewTab(),
-                TextColumn::make('tahun')
-                    ->label('Tahun')
-                    ->sortable()
-                    ->searchable(),
                 TextColumn::make('created_at')
                     ->label('Tanggal Unggah')
                     ->dateTime('d M Y H:i')

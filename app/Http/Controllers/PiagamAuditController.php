@@ -12,7 +12,7 @@ class PiagamAuditController extends Controller
      */
     public function index()
     {
-        $piagams = PiagamAuditInternal::orderBy('tahun', 'desc')->latest()->get();
+        $piagams = PiagamAuditInternal::latest()->get();
 
         return view('piagam_audit', compact('piagams'));
     }

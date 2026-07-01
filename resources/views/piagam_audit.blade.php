@@ -18,7 +18,7 @@
             <h1 class="display-5 text-capitalize mb-3">Piagam Audit Internal</h1>
             <p class="mb-0 text-muted fs-5">Piagam Audit Internal PT BPRS HIK MCI adalah dokumen formal yang menetapkan tujuan, wewenang, tanggung jawab, dan posisi fungsi audit internal secara independen dalam perusahaan, sebagai pedoman resmi pelaksanaan kegiatan pengawasan guna meningkatkan tata kelola dan kinerja operasional bank.</p>
         </div>
-        <div class="row g-4">
+        <div class="row g-4 justify-content-center">
             @forelse($piagams as $piagam)
             <div class="col-lg-4 col-md-6">
                 <div class="penghargaan-item border rounded shadow-sm d-flex flex-column h-100 bg-white">
@@ -28,7 +28,6 @@
                     <div class="p-4 text-center d-flex flex-column justify-content-between flex-grow-1">
                         <div>
                             <h5 class="mb-2 text-dark">{{ $piagam->judul }}</h5>
-                            <p class="text-muted mb-3"><i class="far fa-calendar-alt me-2"></i>Tahun {{ $piagam->tahun }}</p>
                         </div>
                         <div class="mt-auto">
                             <a href="{{ asset('storage/' . $piagam->file) }}" class="btn btn-primary rounded-pill px-4 py-2" target="_blank">

@@ -13,7 +13,6 @@ class PiagamAuditInternal extends Model
     protected $fillable = [
         'judul',
         'file',
-        'tahun',
     ];
 
     public $timestamps = true;
