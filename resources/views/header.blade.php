@@ -4,7 +4,9 @@
 <head>
     <meta charset="utf-8" />
     <title>BPRS HIK MCI</title>
-    <link rel="icon" href="{{ asset('frontend/img/logo/head_logo.png') }}" type="image/x-icon" />
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon" />
+    <link rel="icon" href="{{ asset('frontend/img/logo/head_logo.png') }}" type="image/png" sizes="225x225" />
+    <link rel="apple-touch-icon" href="{{ asset('frontend/img/logo/head_logo.png') }}" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="" name="keywords" />
     <meta content="" name="description" />
