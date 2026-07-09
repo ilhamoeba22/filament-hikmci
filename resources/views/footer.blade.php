@@ -2,69 +2,78 @@
 <div class="container-fluid footer pt-3 wow fadeIn" data-wow-delay="0.2s">
     <!-- Konten footer tetap sama -->
     <div class="container pt-4">
-        <div class="row g-5">
-            <div class="col-md-3">
+        <div class="row g-5 align-items-start">
+            <!-- Column 1: Brand & Contact Info -->
+            <div class="col-lg-3 col-md-6">
                 <div class="footer-item d-flex flex-column">
-                    <div class="footer-item">
-                        <a href="{{ url('/') }}">
-                            <img src="{{ asset('frontend/img/logo/logo_mci.png') }}" alt="Footer Logo" class="img-fluid mb-3 w-100" />
-                        </a>
-                        <a href="https://maps.app.goo.gl/ayKc9DFvFkt9aDs87" target="_blank" class="mb-3">
-                            Jalan Kaliurang KM 09,<br />
-                            Kel Sardonoharjo, Kec Ngaglik, Kab Sleman, DI Yogyakarta,<br />
-                            55581 <br />
-                        </a>
-                        <a href="mailto:corsec@bprshikmci.co.id" class="d-flex align-items-center text-white mt-3">
-                            <i class="fas fa-envelope me-2"></i> corsec@bprshikmci.co.id
-                        </a>
-                        <a href="tel:+0274881159" class="d-flex align-items-center text-white">
-                            <i class="fas fa-phone me-2"></i> +0274 881159
-                        </a>
+                    <a href="{{ url('/') }}" class="mb-3">
+                        <img src="{{ asset('frontend/img/logo/logo_mci.png') }}" alt="Footer Logo" class="img-fluid" style="max-height: 80px; object-fit: contain;" />
+                    </a>
+                    <a href="https://maps.app.goo.gl/ayKc9DFvFkt9aDs87" target="_blank" class="text-white-50 text-decoration-none mb-3 lh-base">
+                        <i class="fas fa-map-marker-alt text-info me-2"></i>Jalan Kaliurang KM 09,<br />
+                        <span class="ms-3">Kel Sardonoharjo, Kec Ngaglik,</span><br />
+                        <span class="ms-3">Kab Sleman, DI Yogyakarta, 55581</span>
+                    </a>
+                    <a href="mailto:corsec@bprshikmci.co.id" class="text-white-50 text-decoration-none mb-2">
+                        <i class="fas fa-envelope text-info me-2"></i>corsec@bprshikmci.co.id
+                    </a>
+                    <a href="tel:+0274881159" class="text-white-50 text-decoration-none mb-3">
+                        <i class="fas fa-phone text-info me-2"></i>+0274 881159
+                    </a>
+                    <div class="d-flex mt-2 gap-2">
+                        <a class="btn btn-secondary btn-sm-square rounded-circle" target="_blank" href="https://maps.app.goo.gl/ayKc9DFvFkt9aDs87"><i class="bi bi-geo-alt-fill"></i></a>
+                        <a class="btn btn-secondary btn-sm-square rounded-circle" target="_blank" href="https://www.instagram.com/bprshikmci/"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-secondary btn-sm-square rounded-circle" target="_blank" href="https://www.facebook.com/people/Bank-Syariah-HIK-MCI/61554427015454/"><i class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
-                <div class="d-flex my-3">
-                    <a class="btn btn-secondary btn-lg-square rounded-circle me-3" target="_blank" href="https://maps.app.goo.gl/ayKc9DFvFkt9aDs87"><i class="bi bi-geo-alt-fill" style="font-size: 30px;"></i></a>
-                    <a class="btn btn-secondary btn-lg-square rounded-circle me-3" target="_blank" href="https://www.instagram.com/bprshikmci/"><i class="fab fa-instagram" style="font-size: 30px;"></i></a>
-                    <a class="btn btn-secondary btn-lg-square rounded-circle me-0" target="_blank" href="https://www.facebook.com/people/Bank-Syariah-HIK-MCI/61554427015454/"><i class="fab fa-facebook-f" style="font-size: 30px;"></i></a>
-                </div>
             </div>
-            <div class="col-md-6 pt-5">
-                <div class="row">
+
+            <!-- Column 2: Products -->
+            <div class="col-lg-6 col-md-6">
+                <div class="footer-item">
                     <h4 class="text-info mb-4">Produk Kami</h4>
-                    <div class="col-md-6">
-                        <div class="footer-item d-flex flex-column">
-                            <h5 class="text-white my-2">Pembiayaan</h5>
-                            <a href="{{ url('pembiayaan/pembiayaan-umkm') }}"><i class="fas fa-angle-right me-2"></i> UMKM Mikro</a>
-                            <a href="{{ url('pembiayaan/pembiayaan-property') }}"><i class="fas fa-angle-right me-2"></i> Properti</a>
-                            <a href="{{ url('pembiayaan/pembiayaan-corporate') }}"><i class="fas fa-angle-right me-2"></i> Corporate</a>
-                            <a href="{{ url('pembiayaan/pembiayaan-consumer-finance') }}"><i class="fas fa-angle-right me-2"></i> Consumer Finance</a>
+                    <div class="row g-4">
+                        <div class="col-sm-6">
+                            <h5 class="text-white mb-3 pb-1 border-bottom border-secondary border-1">Pembiayaan</h5>
+                            <div class="d-flex flex-column gap-2">
+                                <a href="{{ url('pembiayaan/pembiayaan-umkm') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>UMKM Mikro</a>
+                                <a href="{{ url('pembiayaan/pembiayaan-property') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Properti</a>
+                                <a href="{{ url('pembiayaan/pembiayaan-corporate') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Corporate</a>
+                                <a href="{{ url('pembiayaan/pembiayaan-consumer-finance') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Consumer Finance</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="footer-item d-flex flex-column">
-                            <h5 class="text-white my-2">Tabungan</h5>
-                            <a href="{{ url('tabungan/tabungan-ukhuwah') }}"><i class="fas fa-angle-right me-2"></i> Tabungan Ukhuwah</a>
-                            <a href="{{ url('tabungan/tabungan-karimah') }}"><i class="fas fa-angle-right me-2"></i> Tabungan Karimah</a>
-                            <a href="{{ url('tabungan/tabungan-rencana') }}"><i class="fas fa-angle-right me-2"></i> Tabungan Rencana</a>
-                            <a href="{{ url('tabungan/tabungan-cerdas') }}"><i class="fas fa-angle-right me-2"></i> Tabungan Cerdas</a>
-                            <h5 class="text-white my-2">Deposito</h5>
-                            <a href="{{ url('main-deposito/deposito') }}"><i class="fas fa-angle-right me-2"></i> Deposito Karimah</a>
-                            <a href="{{ url('main-deposito/wakaf') }}"><i class="fas fa-angle-right me-2"></i> CWLD</a>
+                        <div class="col-sm-6">
+                            <h5 class="text-white mb-3 pb-1 border-bottom border-secondary border-1">Tabungan</h5>
+                            <div class="d-flex flex-column gap-2 mb-3">
+                                <a href="{{ url('tabungan/tabungan-ukhuwah') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Tabungan Ukhuwah</a>
+                                <a href="{{ url('tabungan/tabungan-karimah') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Tabungan Karimah</a>
+                                <a href="{{ url('tabungan/tabungan-rencana') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Tabungan Rencana</a>
+                                <a href="{{ url('tabungan/tabungan-cerdas') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Tabungan Cerdas</a>
+                            </div>
+                            <h5 class="text-white mb-3 pb-1 border-bottom border-secondary border-1">Deposito</h5>
+                            <div class="d-flex flex-column gap-2">
+                                <a href="{{ url('main-deposito/deposito') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Deposito Karimah</a>
+                                <a href="{{ url('main-deposito/wakaf') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>CWLD</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 pt-5">
-                <div class="footer-item d-flex flex-column mb-5">
+
+            <!-- Column 3: Information -->
+            <div class="col-lg-3 col-md-12">
+                <div class="footer-item">
                     <h4 class="text-info mb-4">Informasi</h4>
-                    <a href="{{ url('about') }}"><i class="fas fa-angle-right me-2"></i> Tentang kami</a>
-                    <a href="{{ url('karir') }}"><i class="fas fa-angle-right me-2"></i> Karir</a>
-                    <a href="{{ url('edukasi') }}"><i class="fas fa-angle-right me-2"></i> Edukasi</a>
-                    <a href="{{ url('asset') }}"><i class="fas fa-angle-right me-2"></i> E-Asset</a>
-                    <a href="{{ url('lapkeu') }}"><i class="fas fa-angle-right me-2"></i> Laporan Keuangan</a>
-                    <a href="{{ url('penghargaan') }}"><i class="fas fa-angle-right me-2"></i> Penghargaan</a>
-                    <a href="{{ url('piagam-audit') }}"><i class="fas fa-angle-right me-2"></i> Piagam Audit Internal</a>
-                    <a href="http://wbs.bprshikmci.co.id/" target="_blank"><i class="fas fa-angle-right me-2"></i> Lapor WBS</a>
+                    <div class="d-flex flex-column gap-2">
+                        <a href="{{ url('about') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Tentang kami</a>
+                        <a href="{{ url('karir') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Karir</a>
+                        <a href="{{ url('edukasi') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Edukasi</a>
+                        <a href="{{ url('asset') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>E-Asset</a>
+                        <a href="{{ url('lapkeu') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Laporan Keuangan</a>
+                        <a href="{{ url('penghargaan') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Penghargaan</a>
+                        <a href="{{ url('piagam-audit') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Piagam Audit Internal</a>
+                        <a href="http://wbs.bprshikmci.co.id/" target="_blank" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Lapor WBS</a>
+                    </div>
                 </div>
             </div>
         </div>
