@@ -35,25 +35,25 @@
                     <div class="row g-4">
                         <div class="col-sm-6">
                             <h5 class="text-white mb-3 pb-1 border-bottom border-secondary border-1">Pembiayaan</h5>
-                            <div class="d-flex flex-column gap-2">
+                            <div class="d-flex flex-column gap-2 mb-4">
                                 <a href="{{ url('pembiayaan/pembiayaan-umkm') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>UMKM Mikro</a>
                                 <a href="{{ url('pembiayaan/pembiayaan-property') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Properti</a>
                                 <a href="{{ url('pembiayaan/pembiayaan-corporate') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Corporate</a>
                                 <a href="{{ url('pembiayaan/pembiayaan-consumer-finance') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Consumer Finance</a>
                             </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <h5 class="text-white mb-3 pb-1 border-bottom border-secondary border-1">Tabungan</h5>
-                            <div class="d-flex flex-column gap-2 mb-3">
-                                <a href="{{ url('tabungan/tabungan-ukhuwah') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Tabungan Ukhuwah</a>
-                                <a href="{{ url('tabungan/tabungan-karimah') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Tabungan Karimah</a>
-                                <a href="{{ url('tabungan/tabungan-rencana') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Tabungan Rencana</a>
-                                <a href="{{ url('tabungan/tabungan-cerdas') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Tabungan Cerdas</a>
-                            </div>
                             <h5 class="text-white mb-3 pb-1 border-bottom border-secondary border-1">Deposito</h5>
                             <div class="d-flex flex-column gap-2">
                                 <a href="{{ url('main-deposito/deposito') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Deposito Karimah</a>
                                 <a href="{{ url('main-deposito/wakaf') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>CWLD</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <h5 class="text-white mb-3 pb-1 border-bottom border-secondary border-1">Tabungan</h5>
+                            <div class="d-flex flex-column gap-2">
+                                <a href="{{ url('tabungan/tabungan-ukhuwah') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Tabungan Ukhuwah</a>
+                                <a href="{{ url('tabungan/tabungan-karimah') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Tabungan Karimah</a>
+                                <a href="{{ url('tabungan/tabungan-rencana') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Tabungan Rencana</a>
+                                <a href="{{ url('tabungan/tabungan-cerdas') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Tabungan Cerdas</a>
                             </div>
                         </div>
                     </div>
