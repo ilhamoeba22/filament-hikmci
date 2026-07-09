@@ -101,7 +101,7 @@
 <!-- WhatsApp and Back to Top Buttons Start -->
 <div class="fixed-buttons" style="position: fixed; bottom: 65px; right: 30px; display: flex; flex-direction: row; gap: 10px;">
     <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
-    <a href="https://wa.me/+628122770657" target="_blank" class="btn btn-success btn-lg-square rounded-circle mb-2">
+    <a href="https://wa.me/+6281222770657" target="_blank" class="btn btn-success btn-lg-square rounded-circle mb-2">
         <i class="fab fa-whatsapp" style="font-size: 30px;"></i>
     </a>
 </div>
