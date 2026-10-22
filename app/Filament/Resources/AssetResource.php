@@ -35,29 +35,20 @@ class AssetResource extends Resource
         return $form
             ->schema([
                 TextInput::make('judul')
+                    ->label('Judul E-Asset')
+                    ->placeholder('Masukkan judul aset / flyer')
                     ->required()
-                    ->maxLength(255),
+                    ->maxLength(255)
+                    ->columnSpanFull(),
                 FileUpload::make('gambar')
+                    ->label('Flyer E-Asset (Potrait 3:4)')
                     ->image()
                     ->disk('public')
                     ->directory('asset/images')
                     ->preserveFilenames()
-                    ->required(),
-                TextInput::make('pemilik')
                     ->required()
-                    ->maxLength(255),
-                TextInput::make('lokasi')
-                    ->required()
-                    ->maxLength(255),
-                TextInput::make('harga')
-                    ->numeric()
-                    ->required(),
-                FileUpload::make('pdf')
-                    ->disk('public')
-                    ->directory('asset/pdfs')
-                    ->acceptedFileTypes(['application/pdf'])
-                    ->preserveFilenames()
-                    ->required(),
+                    ->helperText('Unggah gambar flyer dengan format portrait rasio 3:4.')
+                    ->columnSpanFull(),
             ]);
     }
 
@@ -65,13 +56,22 @@ class AssetResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('judul')->sortable()->searchable(),
-                ImageColumn::make('gambar')->label('Gambar')->sortable()->searchable(),
-                TextColumn::make('pemilik')->sortable()->searchable(),
-                TextColumn::make('lokasi')->sortable()->searchable(),
-                TextColumn::make('harga')->sortable()->searchable(),
-                TextColumn::make('pdf')->label('File PDF')->sortable()->searchable(),
-                TextColumn::make('created_at')->label('Tanggal Dibuat')->sortable()->searchable(),
+                ImageColumn::make('gambar')
+                    ->label('Flyer')
+                    ->disk('public')
+                    ->height(90)
+                    ->extraImgAttributes([
+                        'style' => 'aspect-ratio: 3/4; object-fit: cover; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.15);'
+                    ]),
+                TextColumn::make('judul')
+                    ->label('Judul E-Asset')
+                    ->sortable()
+                    ->searchable()
+                    ->wrap(),
+                TextColumn::make('created_at')
+                    ->label('Tanggal Dibuat')
+                    ->dateTime('d M Y H:i')
+                    ->sortable(),
             ])
             ->filters([
                 //

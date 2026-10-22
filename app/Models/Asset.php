@@ -24,6 +24,13 @@ class Asset extends Model
     {
         parent::boot();
 
+        static::creating(function ($asset) {
+            $asset->pemilik = $asset->pemilik ?? '-';
+            $asset->lokasi = $asset->lokasi ?? '-';
+            $asset->harga = $asset->harga ?? 0;
+            $asset->pdf = $asset->pdf ?? '';
+        });
+
         static::deleting(function ($asset) {
             // Hapus gambar dan PDF dari penyimpanan
             if ($asset->gambar) {
