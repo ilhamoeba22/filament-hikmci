@@ -26,6 +26,9 @@ class AssetResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-building-office-2';
     protected static ?string $navigationGroup = 'Manajemen Halaman';
+    protected static ?string $navigationLabel = 'E-Asset';
+    protected static ?string $modelLabel = 'E-Asset';
+    protected static ?string $pluralModelLabel = 'E-Asset';
 
     public static function form(Form $form): Form
     {
