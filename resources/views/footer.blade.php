@@ -116,6 +116,19 @@
 </div>
 <!-- WhatsApp and Back to Top Buttons End -->
 
+<style>
+.card-shine {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 1;
+  transition: background 0.1s ease;
+}
+.card { position: relative; }
+.card-body { position: relative; z-index: 2; }
+</style>
+
 <!-- JavaScript Libraries (Deferred) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" defer></script>
@@ -126,6 +139,61 @@
 <script src="{{ asset('frontend/lib/owlcarousel/owl.carousel.min.js') }}" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js" defer></script>
 <script src="{{ asset('frontend/js/main.js') }}" defer></script>
+
+<script>
+// 3D Tilt Cards
+(function() {
+  function init3DCards() {
+    document.querySelectorAll('.card-3d').forEach(card => {
+      const shine = card.querySelector('.card-shine');
+      
+      card.style.transformStyle = 'preserve-3d';
+      card.style.willChange = 'transform';
+      
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform = `perspective(800px) rotateY(${x * 16}deg) rotateX(${-y * 16}deg) translateZ(8px)`;
+        if (shine) shine.style.background = `radial-gradient(circle at ${e.clientX - rect.left}px ${e.clientY - rect.top}px, rgba(255,255,255,0.15), transparent 60%)`;
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        card.style.transition = 'transform 0.5s ease';
+        card.style.transform = 'perspective(800px) rotateY(0deg) rotateX(0deg) translateZ(0px)';
+        setTimeout(() => card.style.transition = '', 500);
+      });
+      
+      card.addEventListener('mouseenter', () => { card.style.transition = 'none'; });
+    });
+  }
+  
+  // Scroll reveal animation
+  function initScrollReveal() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    document.querySelectorAll('.card, .fade-up').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      observer.observe(el);
+    });
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => { init3DCards(); initScrollReveal(); });
+  } else {
+    init3DCards(); initScrollReveal();
+  }
+})();
+</script>
 
 @stack('scripts')
 </body>

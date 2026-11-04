@@ -38,7 +38,8 @@
         </div>
         <div class="row g-4 justify-content-center">
             <div class="col-lg-6 col-xl-4">
-                <div class="card h-100">
+                <div class="card h-100 card-3d">
+                    <div class="card-shine"></div>
                     <img src="{{ asset('frontend/img/home/MCI_Home_Depo.webp') }}" class="card-img-top" alt="Deposito" width="400" height="300" loading="lazy" />
                     <div class="card-body text-center">
                         <h5 class="card-title"><a href="{{ url('main-deposito') }}" class="text-decoration-none">Deposito</a></h5>
@@ -47,7 +48,8 @@
                 </div>
             </div>
             <div class="col-lg-6 col-xl-4">
-                <div class="card h-100">
+                <div class="card h-100 card-3d">
+                    <div class="card-shine"></div>
                     <img src="{{ asset('frontend/img/home/MCI_Home_Tabungan.webp') }}" class="card-img-top" alt="Tabungan" width="400" height="300" loading="lazy" />
                     <div class="card-body text-center">
                         <h5 class="card-title"><a href="{{ url('tabungan') }}" class="text-decoration-none">Tabungan</a></h5>
@@ -56,7 +58,8 @@
                 </div>
             </div>
             <div class="col-lg-6 col-xl-4">
-                <div class="card h-100">
+                <div class="card h-100 card-3d">
+                    <div class="card-shine"></div>
                     <img src="{{ asset('frontend/img/home/MCI_Home_Pembiayaan.webp') }}" class="card-img-top" alt="Pembiayaan" width="400" height="300" loading="lazy" />
                     <div class="card-body text-center">
                         <h5 class="card-title"><a href="{{ url('pembiayaan') }}" class="text-decoration-none">Pembiayaan</a></h5>
@@ -201,7 +204,8 @@
         <div class="row g-4 justify-content-center">
             @foreach($beritaTerakhir as $berita)
             <div class="col-lg-6 col-xl-4">
-                <div class="card h-100">
+                <div class="card h-100 card-3d">
+                    <div class="card-shine"></div>
                     <div class="position-relative">
                         <img src="{{ asset('storage/berita/' . $berita->gambar) }}" class="card-img-top" alt="{{ $berita->judul }}" width="400" height="300" loading="lazy" />
                         <div class="position-absolute bottom-0 start-0 bg-primary text-white px-4 py-2">

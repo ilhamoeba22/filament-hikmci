@@ -64,6 +64,7 @@
 
     <!-- Font Awesome -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!-- Google Web Fonts -->
@@ -83,6 +84,16 @@
     <link href="{{ asset('frontend/css/bootstrap.min.css') }}" rel="stylesheet" />
     <!-- Template Stylesheet -->
     <link href="{{ asset('frontend/css/style.css') }}" rel="stylesheet" />
+    <style>
+      /* Navbar scroll effect */
+      header.fixed-top.scrolled {
+        box-shadow: 0 4px 24px rgba(0,0,0,0.1) !important;
+      }
+      
+      /* Smooth page load */
+      body { opacity: 0; transition: opacity 0.3s ease; }
+      body.loaded { opacity: 1; }
+    </style>
 </head>
 
 <body>
@@ -150,6 +161,21 @@
         return $current_page == $page ? 'active' : '';
     }
     ?>
+
+    <script>
+      // Navbar scroll effect
+      window.addEventListener('scroll', () => {
+        const header = document.querySelector('header.fixed-top');
+        if (header) header.classList.toggle('scrolled', window.scrollY > 20);
+      });
+      // Page load fade in
+      window.addEventListener('load', () => {
+        document.body.classList.add('loaded');
+        // Hide spinner
+        const spinner = document.getElementById('spinner');
+        if (spinner) setTimeout(() => { spinner.style.display = 'none'; }, 300);
+      });
+    </script>
 
     <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
