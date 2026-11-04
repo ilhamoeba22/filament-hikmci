@@ -8,8 +8,56 @@
     <link rel="icon" href="{{ asset('frontend/img/logo/head_logo.png') }}" type="image/png" sizes="225x225" />
     <link rel="apple-touch-icon" href="{{ asset('frontend/img/logo/head_logo.png') }}" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="" name="keywords" />
-    <meta content="" name="description" />
+    <meta content="BPRS HIK MCI, Bank Syariah HIK MCI, Pembiayaan Syariah, Deposito Syariah, Tabungan Syariah, BPRS Sleman Yogyakarta" name="keywords" />
+    <meta content="PT BPRS HIK MCI (Harta Insan Karimah Mitra Cahaya Indonesia) - Bank Pembiayaan Rakyat Syariah berizin dan diawasi oleh OJK serta dijamin LPS. Berpusat di Jalan Kaliurang KM 09, Sleman, Yogyakarta." name="description" />
+
+    <!-- Open Graph / Meta Identitas -->
+    <meta property="og:type" content="business.business" />
+    <meta property="og:title" content="BPRS HIK MCI - Bank Pembiayaan Rakyat Syariah" />
+    <meta property="og:description" content="Wujudkan Keuangan Syariah yang Berkah dan Terpercaya bersama BPRS HIK MCI. Berizin dan diawasi OJK, dijamin LPS." />
+    <meta property="og:url" content="https://bprshikmciyk.co.id" />
+    <meta property="og:site_name" content="BPRS HIK MCI" />
+    <meta property="og:image" content="{{ asset('frontend/img/logo/logo_mci.png') }}" />
+
+    <!-- Schema.org JSON-LD Structured Data untuk Google Knowledge Graph & Local Business -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BankOrCreditUnion",
+        "name": "BPRS HIK MCI",
+        "alternateName": [
+            "PT BPRS Harta Insan Karimah Mitra Cahaya Indonesia",
+            "PT Bank Pembiayaan Rakyat Syariah Mitra Cahaya Indonesia",
+            "Bank Syariah HIK MCI",
+            "BPRS HIK MCI Yogyakarta"
+        ],
+        "url": "https://bprshikmciyk.co.id",
+        "logo": "{{ asset('frontend/img/logo/logo_mci.png') }}",
+        "image": "{{ asset('frontend/img/logo/logo_mci.png') }}",
+        "telephone": "+62-274-881159",
+        "email": "corsec@bprshikmci.co.id",
+        "priceRange": "Rp",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Jalan Kaliurang KM 09, Kel. Sardonoharjo, Kec. Ngaglik",
+            "addressLocality": "Sleman",
+            "addressRegion": "Daerah Istimewa Yogyakarta",
+            "postalCode": "55581",
+            "addressCountry": "ID"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -7.7290519,
+            "longitude": 110.3981184
+        },
+        "hasMap": "https://maps.app.goo.gl/QypJrDjHsZMNwof48",
+        "sameAs": [
+            "https://maps.app.goo.gl/QypJrDjHsZMNwof48",
+            "https://www.instagram.com/bprshikmci/",
+            "https://www.facebook.com/people/Bank-Syariah-HIK-MCI/61554427015454/"
+        ]
+    }
+    </script>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
