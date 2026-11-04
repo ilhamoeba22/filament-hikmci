@@ -9,7 +9,7 @@
                     <a href="{{ url('/') }}" class="mb-3">
                         <img src="{{ asset('frontend/img/logo/logo_mci.png') }}" alt="Footer Logo" class="img-fluid" style="max-height: 80px; object-fit: contain;" />
                     </a>
-                    <a href="https://maps.app.goo.gl/ayKc9DFvFkt9aDs87" target="_blank" class="text-white-50 text-decoration-none mb-3 lh-base">
+                    <a href="https://maps.app.goo.gl/QypJrDjHsZMNwof48" target="_blank" class="text-white-50 text-decoration-none mb-3 lh-base">
                         <i class="fas fa-map-marker-alt text-info me-2"></i>Jalan Kaliurang KM 09,<br />
                         <span class="ms-3">Kel Sardonoharjo, Kec Ngaglik,</span><br />
                         <span class="ms-3">Kab Sleman, DI Yogyakarta, 55581</span>
@@ -21,7 +21,7 @@
                         <i class="fas fa-phone text-info me-2"></i>+0274 881159
                     </a>
                     <div class="d-flex mt-2 gap-2">
-                        <a class="btn btn-secondary btn-sm-square rounded-circle" target="_blank" href="https://maps.app.goo.gl/ayKc9DFvFkt9aDs87"><i class="bi bi-geo-alt-fill"></i></a>
+                        <a class="btn btn-secondary btn-sm-square rounded-circle" target="_blank" href="https://maps.app.goo.gl/QypJrDjHsZMNwof48" title="Lokasi Google Maps"><i class="bi bi-geo-alt-fill"></i></a>
                         <a class="btn btn-secondary btn-sm-square rounded-circle" target="_blank" href="https://www.instagram.com/bprshikmci/"><i class="fab fa-instagram"></i></a>
                         <a class="btn btn-secondary btn-sm-square rounded-circle" target="_blank" href="https://www.facebook.com/people/Bank-Syariah-HIK-MCI/61554427015454/"><i class="fab fa-facebook-f"></i></a>
                     </div>
