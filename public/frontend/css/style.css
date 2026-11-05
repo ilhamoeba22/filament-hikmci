@@ -2029,17 +2029,17 @@ section,
   border-radius: 28px;
   overflow: hidden;
   background: #07170c;
-  min-height: 260px;
-  max-height: 540px;
+  min-height: 280px;
+  max-height: 620px;
   border: 1px solid rgba(13, 104, 36, 0.12);
   box-shadow: 0 20px 50px -15px rgba(13, 104, 36, 0.12);
 }
 
 .carousel-banner-img {
   width: 100%;
-  min-height: 260px;
-  height: clamp(260px, 45vw, 520px);
-  max-height: 540px;
+  min-height: 280px;
+  height: clamp(280px, 50vw, 600px);
+  max-height: 620px;
   object-fit: cover;
   object-position: center;
   display: block;
