@@ -194,8 +194,15 @@
 <script src="{{ asset('frontend/lib/counterup/counterup.min.js') }}" defer></script>
 <script src="{{ asset('frontend/lib/owlcarousel/owl.carousel.min.js') }}" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js" defer></script>
-<script src="{{ asset('frontend/js/three.min.js') }}" defer></script>
+@if(request()->is('/'))
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+  if (typeof THREE === 'undefined') {
+    document.write('<script src="{{ asset("frontend/js/three.min.js") }}"><\/script>');
+  }
+</script>
 <script src="{{ asset('frontend/js/hero-3d-scene.js') }}" defer></script>
+@endif
 <script src="{{ asset('frontend/js/main.js') }}" defer></script>
 
 <script>

@@ -231,14 +231,15 @@ function openTab(evt, tabName) {
         evt.preventDefault();
     }
     const tabcontent = document.getElementsByClassName("tabcontent");
+    if (!tabcontent || tabcontent.length === 0) return;
+
     for (let i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
     }
 
-    const navlinks = document.getElementsByClassName("nav-link");
-    for (let i = 0; i < navlinks.length; i++) {
-        navlinks[i].classList.remove("active");
-    }
+    const container = evt && evt.currentTarget ? evt.currentTarget.closest('.nav-tabs') : document.querySelector('.lapkeu-tabs');
+    const navlinks = container ? container.querySelectorAll(".nav-link") : document.querySelectorAll(".lapkeu-tabs .nav-link");
+    navlinks.forEach(link => link.classList.remove("active"));
 
     const targetEl = document.getElementById(tabName);
     if (targetEl) {
@@ -254,17 +255,18 @@ function openTab(evt, tabName) {
 function filterReports() {
     const yearEl = document.getElementById("yearFilter");
     if (!yearEl) return;
-    const year = yearEl.value;
+    const year = yearEl.value || "";
     const nameFilter = document.getElementById("nameFilter");
-    const nameQuery = nameFilter ? nameFilter.value.toLowerCase() : "";
+    const nameQuery = nameFilter && nameFilter.value ? nameFilter.value.toLowerCase() : "";
     const tabs = document.querySelectorAll(".tabcontent");
+    if (!tabs || tabs.length === 0) return;
 
     tabs.forEach(tab => {
         const pdfItems = tab.querySelectorAll(".pdf-item");
         pdfItems.forEach(item => {
             const itemYear = item.getAttribute("data-year");
             const itemP = item.querySelector("p");
-            const itemName = itemP ? itemP.innerText.toLowerCase() : "";
+            const itemName = itemP ? (itemP.innerText || itemP.textContent || "").toLowerCase() : "";
             
             const matchesYear = !year || itemYear === year;
             const matchesName = !nameQuery || itemName.includes(nameQuery);
@@ -279,7 +281,11 @@ function filterReports() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const activeTab = document.querySelector(".nav-link.active");
+    // Only initialize if we are on the laporan keuangan page
+    const lapkeuContainer = document.querySelector(".tabcontent");
+    if (!lapkeuContainer) return;
+
+    const activeTab = document.querySelector(".lapkeu-tabs .nav-link.active, .nav-tabs .nav-link.active");
     if (activeTab) {
         const tabName = activeTab.getAttribute("onclick");
         if (tabName) {
