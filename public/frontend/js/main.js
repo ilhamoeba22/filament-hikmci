@@ -86,12 +86,12 @@
         });
     }
 
-    // Back to top button (ensures clean fade with inline-flex circular display)
+    // Back to top button (ensures snappy 200ms fade with inline-flex circular display)
     $(window).scroll(function () {
         if ($(this).scrollTop() > 350) {
-            $('.back-to-top').stop(true, true).css('display', 'inline-flex').fadeIn('slow');
+            $('.back-to-top').stop(true, true).css('display', 'inline-flex').fadeIn(200);
         } else {
-            $('.back-to-top').stop(true, true).fadeOut('slow');
+            $('.back-to-top').stop(true, true).fadeOut(200);
         }
     });
     $('.back-to-top').click(function (e) {

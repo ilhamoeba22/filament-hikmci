@@ -20,7 +20,7 @@
 
                 <!-- Subtitle / Value Proposition -->
                 <p class="hero-description mb-4">
-                    Solusi perbankan syariah terpercaya di Yogyakarta sejak 2008. Dukung kemajuan usaha Anda melalui pembiayaan produktif, investasi deposito bagi hasil optimal, dan tabungan syariah yang menentramkan.
+                    Solusi perbankan syariah terpercaya di Yogyakarta sejak 2008. Dukung kemajuan usaha Anda melalui pembiayaan produktif, investasi deposito, dan tabungan syariah.
                 </p>
 
                 <!-- Action Button Group -->

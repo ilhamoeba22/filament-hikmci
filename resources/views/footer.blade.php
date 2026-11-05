@@ -172,10 +172,10 @@
       
       card.addEventListener('mouseleave', () => {
         if (rafId) cancelAnimationFrame(rafId);
-        card.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+        card.style.transition = 'transform 0.24s cubic-bezier(0.16, 1, 0.3, 1)';
         card.style.transform = 'perspective(800px) rotateY(0deg) rotateX(0deg) translateZ(0px)';
         if (shine) shine.style.background = 'transparent';
-        setTimeout(() => card.style.transition = '', 400);
+        setTimeout(() => card.style.transition = '', 240);
       });
       
       card.addEventListener('mouseenter', () => {

@@ -120,7 +120,7 @@
                             <div class="d-flex align-items-start">
                                 <i class="bi bi-file-earmark-fill me-3 icon-hover" style="font-size: 2rem;"></i>
                                 <div>
-                                    <h5 class="mb-2">Perorangan Usia 10–16 tahun</h5>
+                                    <h5 class="mb-2">Perorangan Usia 10-16 tahun</h5>
                                     <h6 class="mb-2">Dokumen yang diperlukan:</h6>
                                     <div class="ps-2">
                                         <h6 class="mb-2">• Kartu Identitas Anak (KIA) / Kartu Pelajar (opsional)</h6>
