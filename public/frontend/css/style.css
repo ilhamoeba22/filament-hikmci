@@ -2046,22 +2046,23 @@ section,
   border-radius: 18px !important;
 }
 
+.promo-carousel-container {
+  max-width: 1360px;
+  width: 100%;
+}
+
 .modern-carousel-frame {
   width: 100%;
   border-radius: 28px;
   overflow: hidden;
   background: #07170c;
-  min-height: 240px;
-  max-height: 480px;
   border: 1px solid rgba(13, 104, 36, 0.12);
   box-shadow: 0 20px 50px -15px rgba(13, 104, 36, 0.12);
 }
 
 .carousel-banner-img {
   width: 100%;
-  min-height: 240px;
-  height: clamp(240px, 42vw, 460px);
-  max-height: 480px;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   object-position: center;
   display: block;
