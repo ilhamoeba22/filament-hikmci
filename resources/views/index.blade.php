@@ -265,7 +265,7 @@
             </div>
         </div>
 
-        <!-- Modern Framed Carousel (16:9 Landscape Ratio) -->
+        <!-- Modern Framed Carousel -->
         <div class="modern-carousel-frame rounded-3xl overflow-hidden position-relative shadow-lg border">
             <div id="carouselId" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
                 <ol class="carousel-indicators modern-indicators">
@@ -280,7 +280,7 @@
                     </div>
                     @empty
                     <div class="carousel-item active">
-                        <div class="d-flex align-items-center justify-content-center p-5 text-center text-white" style="aspect-ratio: 16 / 9; min-height: 220px; background: linear-gradient(135deg, #07170c 0%, #0d6824 100%);">
+                        <div class="d-flex align-items-center justify-content-center p-5 text-center text-white" style="min-height: 260px; background: linear-gradient(135deg, #07170c 0%, #0d6824 100%);">
                             <div>
                                 <h4 class="text-white mb-2">BPRS HIK MCI</h4>
                                 <p class="text-white-50 mb-0">Wujudkan Keuangan Syariah yang Berkah dan Terpercaya</p>
