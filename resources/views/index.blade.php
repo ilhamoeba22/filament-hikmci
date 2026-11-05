@@ -40,7 +40,7 @@
                 </div>
 
                 <!-- Trust Strip / Key Metrics (pixel-io split highlights) -->
-                <div class="hero-highlights-strip p-2 p-md-3 rounded-2xl d-flex flex-wrap align-items-center justify-content-between gap-3">
+                <div class="hero-highlights-strip p-2 p-md-3 rounded-2xl d-flex flex-wrap align-items-center justify-content-start gap-3 gap-md-4">
                     <div class="d-flex align-items-center gap-3 highlight-item">
                         <div class="highlight-icon-box bg-emerald-soft">
                             <i class="fas fa-shield-alt text-success"></i>
@@ -58,16 +58,6 @@
                         <div>
                             <div class="highlight-title">100% Prinsip Syariah</div>
                             <div class="highlight-sub">Akad murni, adil & tanpa riba</div>
-                        </div>
-                    </div>
-                    <div class="highlight-divider d-none d-md-block"></div>
-                    <div class="d-flex align-items-center gap-3 highlight-item">
-                        <div class="highlight-icon-box bg-gold-soft">
-                            <i class="fas fa-calendar-check text-warning"></i>
-                        </div>
-                        <div>
-                            <div class="highlight-title">16+ Tahun Mengabdi</div>
-                            <div class="highlight-sub">Sejak 11 Januari 2008</div>
                         </div>
                     </div>
                 </div>
