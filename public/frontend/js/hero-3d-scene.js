@@ -771,13 +771,13 @@
       C.aspect = W / H;
       C.updateProjectionMatrix();
 
-      const isDesktop = window.innerWidth >= 992;
-      focalGroup.visible = isDesktop;
+      const isTabletOrDesktop = window.innerWidth >= 768;
+      focalGroup.visible = isTabletOrDesktop;
       if (LB) {
-        LB.style.display = isDesktop ? 'block' : 'none';
+        LB.style.display = isTabletOrDesktop ? 'block' : 'none';
       }
 
-      if (isDesktop) {
+      if (isTabletOrDesktop) {
         const stageEl = document.getElementById('heroFintechStage');
         if (stageEl) {
           const stageRect = stageEl.getBoundingClientRect();
@@ -800,19 +800,23 @@
           if (W >= 1200) {
             base = 1.0;
             currentOrbitRadius = 2.6;
-          } else {
+          } else if (W >= 992) {
             base = 0.88;
             currentOrbitRadius = 2.3;
+          } else {
+            // Tablet & iPad Portrait (768px - 991px)
+            base = 0.74;
+            currentOrbitRadius = 2.05;
           }
         } else {
-          base = 0.95;
-          currentOrbitRadius = 2.5;
-          world.position.set(3.8, 0.2, 0);
+          base = 0.85;
+          currentOrbitRadius = 2.2;
+          world.position.set(3.2, 0.2, 0);
         }
         city.position.set(0, -2.8, -2.5);
         city.scale.setScalar(0.9);
       } else {
-        // Mode Mobile (< 992px):
+        // Mode Mobile (< 768px):
         // Mempertahankan animasi ambient grid kotak-kotak dan bintang-bintang kecil melayang
         base = 0.7;
         world.position.set(0, -0.6, 0);
