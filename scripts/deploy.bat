@@ -26,3 +26,4 @@ echo   If using Option A: ssh and run 'bash scripts/rollback.sh'
 echo   If using Option B: run 'git push -f production main:main'
 echo.
 pause
+

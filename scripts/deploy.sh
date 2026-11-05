@@ -47,3 +47,4 @@ echo " Deployment Successfully Completed!"
 echo " Active Branch on Server: ${TARGET_BRANCH}"
 echo " To rollback to original main: bash scripts/rollback.sh"
 echo "======================================================"
+

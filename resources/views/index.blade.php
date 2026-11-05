@@ -9,7 +9,7 @@
     <div class="container hero-container position-relative" style="position: relative; z-index: 30 !important; pointer-events: auto !important;">
         <div class="row align-items-center g-4 g-lg-5 min-vh-hero">
             <!-- Left Column: Copy & CTAs -->
-            <div class="col-lg-7 text-start">
+            <div class="col-lg-6 text-start">
                 <!-- Trust Pill Badge -->
                 <div class="d-inline-flex align-items-center gap-2 px-3 py-1.5 rounded-pill hero-badge mb-4">
                     <span class="pulse-dot"></span>
@@ -68,7 +68,7 @@
             </div>
 
             <!-- Right Column: Interactive Stage & Floating Badges -->
-            <div class="col-lg-5 text-center position-relative">
+            <div class="col-lg-6 text-center position-relative">
                 <div class="hero-badges-stage position-relative mx-auto" id="heroFintechStage">
                     <!-- Ambient Glow Behind Badges -->
                     <div class="card-ambient-glow" aria-hidden="true"></div>

@@ -747,25 +747,69 @@
     const dust = new THREE.Points(gg, new THREE.PointsMaterial({ color: 0xffd27a, size: 0.12, map: gG, transparent: true, depthWrite: false, blending: ADD }));
     S.add(dust);
 
-    // Responsif: Penempatan Elemen 3D di Sebelah Kanan (Desktop col-lg-5)
+    // Responsif: Penempatan Elemen 3D tersinkronisasi presisi dengan #heroFintechStage
     let base = 1, W = 1, H = 1;
+    let currentOrbitRadius = 2.6;
 
-    function resize() {
+    function updateStageLayout() {
       if (!el) return;
       W = el.clientWidth || window.innerWidth;
       H = el.clientHeight || window.innerHeight;
+      if (W <= 0 || H <= 0) return;
+
       R.setSize(W, H);
       C.aspect = W / H;
       C.updateProjectionMatrix();
 
-      const wide = W >= 900;
-      base = W < 600 ? 0.52 : (wide ? 1.0 : 0.72);
-      // Di desktop posisi X = 3.9 agar koin (radius 2.6) tidak pernah masuk ke kolom kiri
-      world.position.set(wide ? 3.9 : 0, wide ? 0.2 : 2.0, 0);
+      const stageEl = document.getElementById('heroFintechStage');
+      if (stageEl) {
+        const stageRect = stageEl.getBoundingClientRect();
+        const elRect = el.getBoundingClientRect();
+
+        const stageCenterX = stageRect.left + (stageRect.width / 2) - elRect.left;
+        const stageCenterY = stageRect.top + (stageRect.height / 2) - elRect.top;
+
+        const ndcX = (stageCenterX / W) * 2 - 1;
+        const ndcY = -(stageCenterY / H) * 2 + 1;
+
+        const vH = Math.tan((C.fov * Math.PI / 180) / 2) * C.position.z;
+        const vW = vH * C.aspect;
+
+        const targetX = ndcX * vW;
+        const targetY = ndcY * vH;
+
+        world.position.set(targetX, targetY, 0);
+
+        if (W >= 1200) {
+          base = 1.0;
+          currentOrbitRadius = 2.6;
+        } else if (W >= 992) {
+          base = 0.88;
+          currentOrbitRadius = 2.3;
+        } else if (W >= 768) {
+          base = 0.72;
+          currentOrbitRadius = 2.0;
+        } else if (W >= 480) {
+          base = 0.58;
+          currentOrbitRadius = 1.75;
+        } else {
+          base = 0.50;
+          currentOrbitRadius = 1.55;
+        }
+      } else {
+        const wide = W >= 992;
+        base = W < 600 ? 0.52 : (wide ? 0.95 : 0.72);
+        currentOrbitRadius = wide ? 2.6 : 1.9;
+        world.position.set(wide ? 3.8 : 0, wide ? 0.2 : -0.5, 0);
+      }
     }
 
-    window.addEventListener('resize', resize);
-    resize();
+    window.addEventListener('resize', updateStageLayout);
+    window.addEventListener('orientationchange', updateStageLayout);
+    updateStageLayout();
+    setTimeout(updateStageLayout, 100);
+    setTimeout(updateStageLayout, 400);
+    setTimeout(updateStageLayout, 1000);
 
     // Pelacakan mouse non-blocking pada window
     let mx = 0, my = 0, tx = 0, ty = 0;
@@ -832,8 +876,8 @@
 
       coins.forEach(({ g, c, i }) => {
         const a = (i / 6) * PI * 2;
-        // Radius orbit 2.6 aman dan terpusat di kanan
-        g.position.set(Math.cos(a) * 2.6, Math.sin(t * 1.2 + i) * 0.25, Math.sin(a) * 2.6);
+        // Radius orbit dinamis menyesuaikan ukuran layar
+        g.position.set(Math.cos(a) * currentOrbitRadius, Math.sin(t * 1.2 + i) * 0.25, Math.sin(a) * currentOrbitRadius);
         c.rotation.y = t * 1.4 + i;
       });
 

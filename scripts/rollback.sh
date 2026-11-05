@@ -29,3 +29,4 @@ php artisan view:cache
 echo "======================================================"
 echo " Rollback Complete! Website restored to original main."
 echo "======================================================"
+

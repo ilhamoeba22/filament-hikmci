@@ -1478,6 +1478,38 @@ section,
   pointer-events: none !important;
 }
 
+@media (max-width: 991.98px) {
+  .hero-section {
+    padding-top: 110px !important;
+    padding-bottom: 45px !important;
+    min-height: auto !important;
+  }
+  .min-vh-hero {
+    min-height: auto !important;
+  }
+  .hero-badges-stage {
+    min-height: 400px !important;
+    max-width: 440px !important;
+    margin: 25px auto 0 !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section {
+    padding-top: 95px !important;
+    padding-bottom: 30px !important;
+  }
+  .hero-badges-stage {
+    min-height: 330px !important;
+    max-width: 320px !important;
+    margin: 15px auto 0 !important;
+  }
+  .lab {
+    padding: 3px 8px 3px 6px !important;
+    font-size: 0.65rem !important;
+  }
+}
+
 .card-ambient-glow {
   position: absolute;
   width: 440px;
@@ -3012,11 +3044,24 @@ button:active,
 
   /* Keep floating badges within screen on small devices */
   .floating-glass-badge {
-    position: static !important;
-    inset: auto !important;
-    margin: 10px auto !important;
-    max-width: 290px;
-    padding: 8px 12px;
+    position: absolute !important;
+    padding: 6px 10px !important;
+    font-size: 0.75rem !important;
+    max-width: 200px;
+  }
+
+  .badge-top-right {
+    top: 5px !important;
+    right: 5px !important;
+  }
+
+  .badge-bottom-left {
+    bottom: 5px !important;
+    left: 5px !important;
+  }
+
+  .badge-bottom-right {
+    display: none !important;
   }
 
   .card-ambient-glow {
