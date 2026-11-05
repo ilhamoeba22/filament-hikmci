@@ -154,11 +154,13 @@
     </header>
     <!-- Fixed Header End -->
     <?php
-    // Fungsi untuk menentukan halaman aktif
-    function isActive($page)
-    {
-        $current_page = basename($_SERVER['PHP_SELF']);
-        return $current_page == $page ? 'active' : '';
+    if (!function_exists('isActive')) {
+        // Fungsi untuk menentukan halaman aktif
+        function isActive($page)
+        {
+            $current_page = basename($_SERVER['PHP_SELF'] ?? '');
+            return $current_page == $page ? 'active' : '';
+        }
     }
     ?>
 
@@ -180,10 +182,11 @@
           if (spinner) {
             spinner.classList.remove('show');
             spinner.style.opacity = '0';
+            spinner.style.visibility = 'hidden';
             spinner.style.pointerEvents = 'none';
             setTimeout(() => {
               spinner.style.display = 'none';
-            }, 150);
+            }, 100);
           }
         }
 
@@ -193,8 +196,8 @@
         } else {
           dismissSpinner();
         }
-        // Safety timeout: max 200ms guaranteed dismiss
-        setTimeout(dismissSpinner, 200);
+        // Safety timeout: max 150ms guaranteed dismiss
+        setTimeout(dismissSpinner, 150);
       })();
     </script>
 

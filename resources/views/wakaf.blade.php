@@ -32,7 +32,7 @@
                         Cash Waqf Linked Deposit (CWLD) adalah produk keuangan syariah yang menggabungkan wakaf uang dengan deposito syariah.
                         Melalui CWLD, dana deposito yang ditempatkan oleh nasabah akan diwakafkan secara sementara, sedangkan keuntungan atau
                         bagi hasilnya digunakan untuk program sosial dan kemaslahatan. Program ini dikelola oleh Lembaga Keuangan Syariah
-                        Penerima Wakaf Uang (LKS PWU) dan bekerja sama dengan Nazhir—pihak yang bertanggung jawab menyalurkan dana wakaf kepada
+                        Penerima Wakaf Uang (LKS PWU) dan bekerja sama dengan Nazhir (pihak yang bertanggung jawab menyalurkan dana wakaf kepada
                         penerima manfaat (Mauquf Alaih). Dengan skema ini, nasabah tidak hanya mendapatkan manfaat investasi syariah, tetapi
                         juga berkontribusi dalam keberlanjutan program wakaf produktif yang bermanfaat bagi masyarakat luas.
                     </p>

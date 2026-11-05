@@ -108,7 +108,7 @@
 <!-- Copyright End -->
 
 <!-- WhatsApp and Back to Top Buttons Start -->
-<div class="fixed-buttons" style="position: fixed; bottom: 65px; right: 30px; display: flex; flex-direction: row; align-items: center; gap: 12px; z-index: 9999;">
+<div class="fixed-buttons">
     <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top" style="display: none;" title="Kembali ke atas"><i class="fa fa-arrow-up"></i></a>
     <a href="https://wa.me/+6281222770657" target="_blank" class="btn btn-success btn-lg-square rounded-circle" title="Konsultasi via WhatsApp">
         <i class="fab fa-whatsapp" style="font-size: 26px;"></i>
