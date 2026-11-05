@@ -38,7 +38,7 @@
                         <span class="badge bg-light text-muted border px-3 py-2 small">
                             <i class="bi bi-calendar3 me-1 text-success"></i> {{ $berita->created_at->format('l, d F Y') }}
                         </span>
-                        <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 px-3 py-2 small">
+                        <span class="badge badge-soft-success px-3 py-2 small">
                             <i class="bi bi-person-fill me-1"></i> Author: {{ $berita->user->name }}
                         </span>
                         @if(!empty($berita->lokasi))
@@ -75,7 +75,7 @@
                         <h3 class="h5 fw-bold text-dark mb-0">
                             <i class="bi bi-newspaper text-success me-2"></i>Berita Lainnya
                         </h3>
-                        <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 rounded-pill px-2 py-1 small">Update</span>
+                        <span class="badge badge-soft-success rounded-pill px-2 py-1 small">Update</span>
                     </div>
 
                     <div class="d-flex flex-column gap-3 mb-4">

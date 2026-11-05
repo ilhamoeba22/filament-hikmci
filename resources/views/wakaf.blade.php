@@ -20,26 +20,22 @@
 <!-- Wakaf Content Start -->
 <div class="subpage-content-wrapper">
     <div class="container">
+        <!-- Product Showcase Top Banner (Full Width) -->
+        <div class="product-top-banner wow fadeInUp" data-wow-delay="0.1s">
+            <img src="{{ asset('frontend/img/wakaf/MCI_Produk_Wakaf.png') }}" class="product-top-banner-img" alt="Deposito Wakaf CWLD">
+        </div>
+
         <!-- Overview Hero Showcase Card -->
         <div class="modern-sub-card p-4 p-lg-5 mb-5 wow fadeInUp" data-wow-delay="0.2s">
-            <div class="row g-4 align-items-center">
-                <div class="col-lg-5 text-center">
-                    <div class="product-showcase-frame p-3">
-                        <img src="{{ asset('frontend/img/wakaf/MCI_Produk_Wakaf.png') }}" class="img-fluid rounded-3" alt="Deposito Wakaf CWLD">
-                    </div>
-                </div>
-                <div class="col-lg-7">
-                    <span class="feature-pill-badge mb-3">
-                        <i class="fas fa-hand-holding-heart text-success"></i> Cash Waqf Linked Deposit (CWLD)
-                    </span>
-                    <h2 class="subpage-title text-dark mb-3" style="font-size: clamp(1.5rem, 2.4vw, 2.1rem);">
-                        Investasi Berkah, Pahala Jariyah Abadi
-                    </h2>
-                    <p class="text-muted mb-0 justify-text" style="line-height: 1.85; font-size: 1.05rem;">
-                        Cash Waqf Linked Deposit (CWLD) adalah produk keuangan syariah yang menggabungkan wakaf uang dengan deposito syariah. Melalui CWLD, dana deposito yang ditempatkan oleh nasabah akan diwakafkan secara sementara, sedangkan keuntungan atau bagi hasilnya digunakan untuk program sosial dan kemaslahatan. Program ini dikelola oleh Lembaga Keuangan Syariah Penerima Wakaf Uang (LKS PWU) dan bekerja sama dengan Nazhir (pihak yang bertanggung jawab menyalurkan dana wakaf kepada penerima manfaat (Mauquf Alaih). Dengan skema ini, nasabah tidak hanya mendapatkan manfaat investasi syariah, tetapi juga berkontribusi dalam keberlanjutan program wakaf produktif yang bermanfaat bagi masyarakat luas.
-                    </p>
-                </div>
-            </div>
+            <span class="feature-pill-badge mb-3">
+                <i class="fas fa-hand-holding-heart text-success"></i> Cash Waqf Linked Deposit (CWLD)
+            </span>
+            <h2 class="subpage-title text-dark mb-3" style="font-size: clamp(1.5rem, 2.4vw, 2.1rem);">
+                Investasi Berkah, Pahala Jariyah Abadi
+            </h2>
+            <p class="text-muted mb-0 justify-text" style="line-height: 1.85; font-size: 1.05rem;">
+                Cash Waqf Linked Deposit (CWLD) adalah produk keuangan syariah yang menggabungkan wakaf uang dengan deposito syariah. Melalui CWLD, dana deposito yang ditempatkan oleh nasabah akan diwakafkan secara sementara, sedangkan keuntungan atau bagi hasilnya digunakan untuk program sosial dan kemaslahatan. Program ini dikelola oleh Lembaga Keuangan Syariah Penerima Wakaf Uang (LKS PWU) dan bekerja sama dengan Nazhir (pihak yang bertanggung jawab menyalurkan dana wakaf kepada penerima manfaat (Mauquf Alaih). Dengan skema ini, nasabah tidak hanya mendapatkan manfaat investasi syariah, tetapi juga berkontribusi dalam keberlanjutan program wakaf produktif yang bermanfaat bagi masyarakat luas.
+            </p>
         </div>
 
         <!-- Dalil Wakaf Card -->
@@ -174,7 +170,7 @@
                         <div class="bento-product-thumb position-relative" style="aspect-ratio: 16/10;">
                             <img src="{{ asset('storage/' . $wakaf->gambar_cover) }}" alt="{{ $wakaf->judul }}" loading="lazy">
                             <div class="position-absolute top-0 start-0 m-3">
-                                <span class="badge bg-dark bg-opacity-75 text-white px-3 py-2 rounded-pill small fw-normal">
+                                <span class="badge text-white px-3 py-2 rounded-pill small fw-normal" style="background: rgba(0,0,0,0.75) !important;">
                                     <i class="far fa-calendar-alt me-1"></i> {{ $wakaf->created_at->format('d M Y') }}
                                 </span>
                             </div>
@@ -260,7 +256,7 @@
                         <span class="wakaf-step-icon">
                             <i class="bi bi-pencil-square"></i>
                         </span>
-                        <span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3 py-1 mb-2 fw-bold">Langkah 1</span>
+                        <span class="badge badge-soft-success rounded-pill px-3 py-1 mb-2 fw-bold">Langkah 1</span>
                         <p class="text-dark fw-semibold mb-0" style="font-size: 0.95rem;">
                             Wakif mengisi form keikutsertaan wakaf
                         </p>
@@ -271,7 +267,7 @@
                         <span class="wakaf-step-icon">
                             <i class="bi bi-file-earmark-text"></i>
                         </span>
-                        <span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3 py-1 mb-2 fw-bold">Langkah 2</span>
+                        <span class="badge badge-soft-success rounded-pill px-3 py-1 mb-2 fw-bold">Langkah 2</span>
                         <p class="text-dark fw-semibold mb-0" style="font-size: 0.95rem;">
                             Memberikan kuasa blokir dan pembukaan blokir senilai komitmen wakaf
                         </p>
@@ -282,7 +278,7 @@
                         <span class="wakaf-step-icon">
                             <i class="bi bi-gear-wide-connected"></i>
                         </span>
-                        <span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3 py-1 mb-2 fw-bold">Langkah 3</span>
+                        <span class="badge badge-soft-success rounded-pill px-3 py-1 mb-2 fw-bold">Langkah 3</span>
                         <p class="text-dark fw-semibold mb-0" style="font-size: 0.95rem;">
                             Memberikan Standing Instruction pembukaan deposito kepada bank
                         </p>
@@ -293,7 +289,7 @@
                         <span class="wakaf-step-icon">
                             <i class="bi bi-file-earmark-pdf"></i>
                         </span>
-                        <span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3 py-1 mb-2 fw-bold">Langkah 4</span>
+                        <span class="badge badge-soft-success rounded-pill px-3 py-1 mb-2 fw-bold">Langkah 4</span>
                         <p class="text-dark fw-semibold mb-0" style="font-size: 0.95rem;">
                             Wakif menerima Akta Ikrar Wakaf
                         </p>

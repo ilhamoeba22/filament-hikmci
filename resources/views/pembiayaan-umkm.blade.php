@@ -24,20 +24,9 @@
 <!-- Pembiayaan UMKM Content Start -->
 <div class="subpage-content-wrapper">
     <div class="container">
-        <!-- Product Showcase Hero Banner -->
-        <div class="row justify-content-center mb-5">
-            <div class="col-lg-10">
-                <div class="product-showcase-box text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="mb-3">
-                        <span class="feature-pill-badge">
-                            <i class="bi bi-shop"></i> Pembiayaan Produktif
-                        </span>
-                    </div>
-                    <div class="d-flex justify-content-center align-items-center py-2">
-                        <img src="{{ asset('frontend/img/produk/MCI_Produk_UKM.png') }}" class="product-showcase-img img-fluid rounded-4 shadow-sm" alt="Produk Pembiayaan UMKM">
-                    </div>
-                </div>
-            </div>
+        <!-- Product Showcase Top Banner (Full Width) -->
+        <div class="product-top-banner wow fadeInUp" data-wow-delay="0.1s">
+            <img src="{{ asset('frontend/img/produk/MCI_Produk_UKM.png') }}" class="product-top-banner-img" alt="Produk Pembiayaan UMKM">
         </div>
 
         <!-- Section Keunggulan -->

@@ -78,16 +78,9 @@
                 <div class="tab-content" id="v-pills-tabContent">
                     <!-- Tab 1: Calon Pekerja Migran -->
                     <div class="tab-pane fade show active" id="v-pills-migran" role="tabpanel" aria-labelledby="v-pills-migran-tab">
-                        <!-- Product Showcase -->
-                        <div class="product-showcase-box text-center mb-4">
-                            <div class="mb-3">
-                                <span class="feature-pill-badge">
-                                    <i class="bi bi-airplane-engines"></i> Calon Pekerja Migran
-                                </span>
-                            </div>
-                            <div class="d-flex justify-content-center align-items-center py-2">
-                                <img src="{{ asset('frontend/img/produk/MCI_Produk_PMI.png') }}" class="product-showcase-img img-fluid rounded-4 shadow-sm" alt="Produk Pembiayaan Pekerja Migran">
-                            </div>
+                        <!-- Product Showcase Top Banner (Full Width) -->
+                        <div class="product-top-banner mb-4">
+                            <img src="{{ asset('frontend/img/produk/MCI_Produk_PMI.png') }}" class="product-top-banner-img" alt="Produk Pembiayaan Pekerja Migran">
                         </div>
 
                         <!-- Keunggulan -->
@@ -226,16 +219,9 @@
 
                     <!-- Tab 2: Sertifikasi Tenaga Pendidik -->
                     <div class="tab-pane fade" id="v-pills-sertifikasi" role="tabpanel" aria-labelledby="v-pills-sertifikasi-tab">
-                        <!-- Product Showcase -->
-                        <div class="product-showcase-box text-center mb-4">
-                            <div class="mb-3">
-                                <span class="feature-pill-badge" style="background: rgba(0, 150, 199, 0.1); color: #0096c7; border-color: rgba(0, 150, 199, 0.25);">
-                                    <i class="bi bi-mortarboard"></i> Sertifikasi Tenaga Pendidik
-                                </span>
-                            </div>
-                            <div class="d-flex justify-content-center align-items-center py-2">
-                                <img src="{{ asset('frontend/img/produk/MCI_Produk_SERDIK.png') }}" class="product-showcase-img img-fluid rounded-4 shadow-sm" alt="Produk Pembiayaan Sertifikasi Tenaga Pendidik">
-                            </div>
+                        <!-- Product Showcase Top Banner (Full Width) -->
+                        <div class="product-top-banner mb-4">
+                            <img src="{{ asset('frontend/img/produk/MCI_Produk_SERDIK.png') }}" class="product-top-banner-img" alt="Produk Pembiayaan Sertifikasi Tenaga Pendidik">
                         </div>
 
                         <!-- Keunggulan -->
@@ -385,16 +371,9 @@
 
                     <!-- Tab 3: Kolektif Karyawan -->
                     <div class="tab-pane fade" id="v-pills-kolektif" role="tabpanel" aria-labelledby="v-pills-kolektif-tab">
-                        <!-- Product Showcase -->
-                        <div class="product-showcase-box text-center mb-4">
-                            <div class="mb-3">
-                                <span class="feature-pill-badge" style="background: rgba(217, 119, 6, 0.1); color: #d97706; border-color: rgba(217, 119, 6, 0.25);">
-                                    <i class="bi bi-people"></i> Kolektif Karyawan
-                                </span>
-                            </div>
-                            <div class="d-flex justify-content-center align-items-center py-2">
-                                <img src="{{ asset('frontend/img/produk/MCI_Produk_KolektifKary.png') }}" class="product-showcase-img img-fluid rounded-4 shadow-sm" alt="Produk Pembiayaan Kolektif Karyawan">
-                            </div>
+                        <!-- Product Showcase Top Banner (Full Width) -->
+                        <div class="product-top-banner mb-4">
+                            <img src="{{ asset('frontend/img/produk/MCI_Produk_KolektifKary.png') }}" class="product-top-banner-img" alt="Produk Pembiayaan Kolektif Karyawan">
                         </div>
 
                         <!-- Keunggulan -->
@@ -533,16 +512,9 @@
 
                     <!-- Tab 4: Pembiayaan Umroh -->
                     <div class="tab-pane fade" id="v-pills-umroh" role="tabpanel" aria-labelledby="v-pills-umroh-tab">
-                        <!-- Product Showcase -->
-                        <div class="product-showcase-box text-center mb-4">
-                            <div class="mb-3">
-                                <span class="feature-pill-badge" style="background: #ecfdf5; color: #0d6824;">
-                                    <i class="bi bi-moon-stars"></i> Ibadah ke Tanah Suci
-                                </span>
-                            </div>
-                            <div class="d-flex justify-content-center align-items-center py-2">
-                                <img src="{{ asset('frontend/img/produk/MCI_Produk_Umroh.png') }}" class="product-showcase-img img-fluid rounded-4 shadow-sm" alt="Produk Pembiayaan Umroh">
-                            </div>
+                        <!-- Product Showcase Top Banner (Full Width) -->
+                        <div class="product-top-banner mb-4">
+                            <img src="{{ asset('frontend/img/produk/MCI_Produk_Umroh.png') }}" class="product-top-banner-img" alt="Produk Pembiayaan Umroh">
                         </div>
 
                         <!-- Keunggulan -->

@@ -3056,6 +3056,198 @@ button:active,
   }
 }
 
+/* === ACCESSIBILITY & UTILITY: SOFT BADGES & BG-OPACITY POLYFILL === */
+.badge-soft-success,
+.bg-soft-success {
+  background-color: #ecfdf5 !important;
+  color: #065f46 !important;
+  border: 1px solid rgba(13, 104, 36, 0.2) !important;
+}
+
+.badge-soft-primary,
+.bg-soft-primary {
+  background-color: #eff6ff !important;
+  color: #1d4ed8 !important;
+  border: 1px solid rgba(29, 78, 216, 0.2) !important;
+}
+
+.badge-soft-danger,
+.bg-soft-danger {
+  background-color: #fef2f2 !important;
+  color: #dc2626 !important;
+  border: 1px solid rgba(220, 38, 38, 0.2) !important;
+}
+
+.badge-soft-warning,
+.bg-soft-warning {
+  background-color: #fffbeb !important;
+  color: #b45309 !important;
+  border: 1px solid rgba(180, 83, 9, 0.2) !important;
+}
+
+.badge-soft-info,
+.bg-soft-info {
+  background-color: #f0fdfa !important;
+  color: #0f766e !important;
+  border: 1px solid rgba(15, 118, 110, 0.2) !important;
+}
+
+/* Force override for legacy bg-opacity classes in Bootstrap 5.0 */
+.bg-success.bg-opacity-10 {
+  background-color: #ecfdf5 !important;
+  color: #065f46 !important;
+}
+.bg-primary.bg-opacity-10 {
+  background-color: #eff6ff !important;
+  color: #1d4ed8 !important;
+}
+.bg-danger.bg-opacity-10 {
+  background-color: #fef2f2 !important;
+  color: #dc2626 !important;
+}
+.bg-warning.bg-opacity-10 {
+  background-color: #fffbeb !important;
+  color: #92400e !important;
+}
+.bg-info.bg-opacity-10 {
+  background-color: #f0fdfa !important;
+  color: #0f766e !important;
+}
+.bg-success.bg-opacity-90 {
+  background-color: rgba(13, 104, 36, 0.92) !important;
+  color: #ffffff !important;
+}
+
+/* Document Portal Pagination */
+.lapkeu-pagination-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.lapkeu-page-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.lapkeu-page-btn:hover:not(.disabled) {
+  background: #ecfdf5;
+  border-color: #0d6824;
+  color: #0d6824;
+}
+
+.lapkeu-page-btn.active {
+  background: #0d6824;
+  border-color: #0d6824;
+  color: #ffffff;
+  box-shadow: 0 4px 12px -2px rgba(13, 104, 36, 0.35);
+}
+
+.lapkeu-page-btn.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Full Width Product Top Banner */
+.product-top-banner {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid rgba(13, 104, 36, 0.15);
+  border-radius: 24px;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.product-top-banner:hover {
+  box-shadow: 0 20px 40px -12px rgba(13, 104, 36, 0.12);
+}
+
+.product-top-banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.product-top-banner:hover .product-top-banner-img {
+  transform: scale(1.01);
+}
+
+/* E-Book Responsive Actions */
+.ebook-actions-group {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .ebook-actions-group {
+    flex-direction: column;
+    width: 130px;
+    flex-shrink: 0;
+  }
+}
+
+.ebook-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 999px;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+  flex: 1 1 0%;
+  min-height: 42px;
+}
+
+.ebook-action-btn.btn-view {
+  background: #ffffff;
+  color: #0d6824;
+  border: 1.5px solid #0d6824;
+}
+
+.ebook-action-btn.btn-view:hover {
+  background: #ecfdf5;
+  color: #065f46;
+}
+
+.ebook-action-btn.btn-download {
+  background: #0d6824;
+  color: #ffffff;
+  border: 1.5px solid #0d6824;
+}
+
+.ebook-action-btn.btn-download:hover {
+  background: #094d1b;
+  color: #ffffff;
+}
+
 /* === ACCESSIBILITY: REDUCED MOTION === */
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {

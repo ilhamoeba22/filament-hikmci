@@ -39,7 +39,7 @@
                     <div class="article-thumb-wrapper">
                         <img src="{{ asset('storage/edukasi/' . $edukasi->gambar) }}" alt="{{ $edukasi->judul }}" loading="lazy" />
                         <div class="position-absolute top-0 start-0 m-3">
-                            <span class="badge bg-success bg-opacity-90 text-white rounded-pill px-3 py-2 small shadow-sm">
+                            <span class="badge text-white rounded-pill px-3 py-2 small shadow-sm" style="background-color: #0d6824 !important;">
                                 <i class="bi bi-calendar-event me-1"></i> {{ $edukasi->created_at->format('d M Y') }}
                             </span>
                         </div>

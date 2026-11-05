@@ -57,16 +57,16 @@
         <!-- Company Image & Spec Sheet Section -->
         <div class="row g-4 mb-5 align-items-stretch">
             <div class="col-xl-5">
-                <div class="modern-sub-card p-3 h-100 d-flex flex-column justify-content-between overflow-hidden">
-                    <div class="position-relative overflow-hidden rounded-4 mb-3">
-                        <img src="{{ asset('frontend/img/about/MCI_Profile.jpeg') }}" class="img-fluid rounded-4 w-100 shadow-sm" alt="Kantor BPRS HIK MCI" style="object-fit: cover; min-height: 380px;">
+                <div class="modern-sub-card p-3 h-100 d-flex flex-column overflow-hidden">
+                    <div class="position-relative overflow-hidden rounded-4 mb-3 flex-grow-1" style="min-height: 380px;">
+                        <img src="{{ asset('frontend/img/about/MCI_Profile.jpeg') }}" class="w-100 h-100 position-absolute top-0 start-0 rounded-4 shadow-sm" alt="Kantor BPRS HIK MCI" style="object-fit: cover;">
                         <div class="position-absolute bottom-0 start-0 w-100 p-3" style="background: linear-gradient(to top, rgba(2, 26, 20, 0.85) 0%, transparent 100%);">
                             <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-semibold shadow-sm">
                                 <i class="bi bi-geo-alt-fill me-1"></i> Kantor Pusat Sleman, DIY
                             </span>
                         </div>
                     </div>
-                    <div class="p-2">
+                    <div class="p-2 pt-1">
                         <h5 class="fw-bold text-dark mb-1">Gedung Kantor Pusat</h5>
                         <p class="text-muted small mb-0">Pusat operasional dan layanan perbankan syariah BPRS HIK MCI di Sleman, Yogyakarta.</p>
                     </div>

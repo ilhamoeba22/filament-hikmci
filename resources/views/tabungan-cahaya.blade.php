@@ -20,38 +20,34 @@
 <!-- Tabungan Detail Content Start -->
 <div class="subpage-content-wrapper">
     <div class="container">
-        <!-- Product Showcase Banner -->
-        <div class="row g-4 mb-5 align-items-center">
-            <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
-                <div class="product-showcase-frame">
-                    <img src="{{ asset('frontend/img/produk/MCI_Produk_Cahaya.png') }}" class="img-fluid" alt="Produk Tabungan Cahaya">
+        <!-- Product Showcase Top Banner (Full Width) -->
+        <div class="product-top-banner wow fadeInUp" data-wow-delay="0.1s">
+            <img src="{{ asset('frontend/img/produk/MCI_Produk_Cahaya.png') }}" class="product-top-banner-img" alt="Produk Tabungan Cahaya">
+        </div>
+
+        <!-- Product Overview Intro -->
+        <div class="modern-sub-card p-4 p-lg-5 mb-5 wow fadeInUp" data-wow-delay="0.2s">
+            <span class="feature-pill-badge mb-3">
+                <i class="fas fa-gift"></i> Hadiah Langsung Tanpa Diundi
+            </span>
+            <h2 class="subpage-title text-dark mb-3" style="font-size: clamp(1.6rem, 2.5vw, 2.2rem);">
+                Tabungan Cahaya BPRS HIK MCI
+            </h2>
+            <p class="text-muted mb-4" style="line-height: 1.8;">
+                Simpanan berjangka prestisius dengan akad Mudharabah Mutlaqah yang memberikan kebebasan memilih hadiah langsung berupa barang atau jasa di awal periode, tanpa perlu menunggu undian.
+            </p>
+            <div class="d-flex flex-wrap gap-3">
+                <div class="d-flex align-items-center gap-2 bg-light px-3 py-2 rounded-pill border">
+                    <i class="fas fa-check text-success"></i>
+                    <span class="small fw-semibold text-dark">Hadiah Barang / Jasa</span>
                 </div>
-            </div>
-            <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
-                <div class="p-lg-4">
-                    <span class="feature-pill-badge mb-3">
-                        <i class="fas fa-gift"></i> Hadiah Langsung Tanpa Diundi
-                    </span>
-                    <h2 class="subpage-title text-dark mb-3" style="font-size: clamp(1.6rem, 2.5vw, 2.2rem);">
-                        Tabungan Cahaya BPRS HIK MCI
-                    </h2>
-                    <p class="text-muted mb-4" style="line-height: 1.8;">
-                        Simpanan berjangka prestisius dengan akad Mudharabah Mutlaqah yang memberikan kebebasan memilih hadiah langsung berupa barang atau jasa di awal periode, tanpa perlu menunggu undian.
-                    </p>
-                    <div class="d-flex flex-wrap gap-3">
-                        <div class="d-flex align-items-center gap-2 bg-white px-3 py-2 rounded-pill border">
-                            <i class="fas fa-check text-success"></i>
-                            <span class="small fw-semibold text-dark">Hadiah Barang / Jasa</span>
-                        </div>
-                        <div class="d-flex align-items-center gap-2 bg-white px-3 py-2 rounded-pill border">
-                            <i class="fas fa-check text-success"></i>
-                            <span class="small fw-semibold text-dark">Pengadaan Cepat</span>
-                        </div>
-                        <div class="d-flex align-items-center gap-2 bg-white px-3 py-2 rounded-pill border">
-                            <i class="fas fa-check text-success"></i>
-                            <span class="small fw-semibold text-dark">Gratis Biaya Admin</span>
-                        </div>
-                    </div>
+                <div class="d-flex align-items-center gap-2 bg-light px-3 py-2 rounded-pill border">
+                    <i class="fas fa-check text-success"></i>
+                    <span class="small fw-semibold text-dark">Pengadaan Cepat</span>
+                </div>
+                <div class="d-flex align-items-center gap-2 bg-light px-3 py-2 rounded-pill border">
+                    <i class="fas fa-check text-success"></i>
+                    <span class="small fw-semibold text-dark">Gratis Biaya Admin</span>
                 </div>
             </div>
         </div>

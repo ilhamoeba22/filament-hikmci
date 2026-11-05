@@ -70,7 +70,7 @@
 
                         <!-- Info -->
                         <div class="text-center text-md-start flex-grow-1">
-                            <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 rounded-pill px-3 py-1 mb-2 small fw-semibold">
+                            <span class="badge badge-soft-success rounded-pill px-3 py-1 mb-2 small fw-semibold">
                                 <i class="bi bi-book me-1"></i> E-Book Resmi
                             </span>
                             <h4 class="h5 fw-bold text-dark mb-2 ebook-title-new">{{ $ebook->judul }}</h4>
@@ -80,17 +80,17 @@
                             </p>
                         </div>
 
-                        <!-- Actions -->
-                        <div class="flex-shrink-0 d-flex flex-row flex-md-column gap-2 w-100 w-md-auto justify-content-center">
+                        <!-- Actions (Fully Responsive) -->
+                        <div class="ebook-actions-group">
                             <a href="{{ asset('storage/edukasi/' . $ebook->file_pdf) }}"
-                                class="btn btn-outline-success rounded-pill px-4 py-2 btn-sm flex-fill d-inline-flex align-items-center justify-content-center gap-1"
+                                class="ebook-action-btn btn-view"
                                 target="_blank">
                                 <i class="bi bi-eye"></i>
                                 <span>Lihat</span>
                             </a>
 
                             <a href="{{ asset('storage/edukasi/' . $ebook->file_pdf) }}"
-                                class="btn btn-success rounded-pill px-4 py-2 btn-sm text-white flex-fill d-inline-flex align-items-center justify-content-center gap-1" 
+                                class="ebook-action-btn btn-download" 
                                 target="_blank"
                                 download>
                                 <i class="bi bi-download"></i>

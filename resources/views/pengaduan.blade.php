@@ -151,7 +151,7 @@
                                 </ul>
                             </td>
                             <td rowspan="2" class="align-middle text-center bg-light">
-                                <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 px-3 py-2 rounded-pill fw-semibold">
+                                <span class="badge badge-soft-danger px-3 py-2 rounded-pill fw-semibold">
                                     <i class="bi bi-x-circle me-1"></i> Tidak Diperkenankan
                                 </span>
                             </td>
@@ -201,7 +201,7 @@
                         <i class="bi bi-building"></i>
                     </div>
                     <div>
-                        <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 rounded-pill px-3 py-1 mb-1 small fw-semibold">Alur 1</span>
+                        <span class="badge badge-soft-success rounded-pill px-3 py-1 mb-1 small fw-semibold">Alur 1</span>
                         <h3 class="h5 fw-bold mb-0 text-dark">
                             Alur Pengaduan Nasabah secara Lisan dengan Tatap Muka di Kantor BPRS HIK MCI
                         </h3>
@@ -231,9 +231,9 @@
                             <p>Tanggapan<br>BPRS</p>
                         </div>
                         <div class="flow-step-arrow"><i class="bi bi-arrow-right"></i></div>
-                        <div class="flow-step-card bg-success bg-opacity-10 border-success border-opacity-25">
-                            <span class="flow-step-num bg-success text-white">5</span>
-                            <p class="text-success fw-bold">Penyelesaian<br>Pengaduan<br>Nasabah</p>
+                        <div class="flow-step-card badge-soft-success" style="border: 1.5px solid #0d6824 !important;">
+                            <span class="flow-step-num" style="background: #0d6824 !important; color: #ffffff !important;">5</span>
+                            <p class="fw-bold" style="color: #065f46 !important;">Penyelesaian<br>Pengaduan<br>Nasabah</p>
                         </div>
                     </div>
                 </div>
@@ -263,7 +263,7 @@
                         <i class="bi bi-telephone-inbound"></i>
                     </div>
                     <div>
-                        <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 rounded-pill px-3 py-1 mb-1 small fw-semibold">Alur 2</span>
+                        <span class="badge badge-soft-primary rounded-pill px-3 py-1 mb-1 small fw-semibold">Alur 2</span>
                         <h3 class="h5 fw-bold mb-0 text-dark">
                             Alur Pengaduan Nasabah secara Lisan Tanpa Tatap Muka di Kantor BPRS HIK MCI
                         </h3>
@@ -293,9 +293,9 @@
                             <p>Tanggapan<br>BPRS</p>
                         </div>
                         <div class="flow-step-arrow"><i class="bi bi-arrow-right"></i></div>
-                        <div class="flow-step-card bg-success bg-opacity-10 border-success border-opacity-25">
-                            <span class="flow-step-num bg-success text-white">5</span>
-                            <p class="text-success fw-bold">Penyelesaian<br>Pengaduan<br>Nasabah</p>
+                        <div class="flow-step-card badge-soft-success" style="border: 1.5px solid #0d6824 !important;">
+                            <span class="flow-step-num" style="background: #0d6824 !important; color: #ffffff !important;">5</span>
+                            <p class="fw-bold" style="color: #065f46 !important;">Penyelesaian<br>Pengaduan<br>Nasabah</p>
                         </div>
                     </div>
                 </div>
@@ -326,7 +326,7 @@
                         <i class="bi bi-file-earmark-person"></i>
                     </div>
                     <div>
-                        <span class="badge bg-warning bg-opacity-10 text-dark border border-warning border-opacity-25 rounded-pill px-3 py-1 mb-1 small fw-semibold">Alur 3</span>
+                        <span class="badge badge-soft-warning rounded-pill px-3 py-1 mb-1 small fw-semibold">Alur 3</span>
                         <h3 class="h5 fw-bold mb-0 text-dark">
                             Alur Pengaduan Nasabah secara Tertulis dengan Tatap Muka di Kantor BPRS HIK MCI
                         </h3>
@@ -356,9 +356,9 @@
                             <p>Tanggapan<br>BPRS</p>
                         </div>
                         <div class="flow-step-arrow"><i class="bi bi-arrow-right"></i></div>
-                        <div class="flow-step-card bg-success bg-opacity-10 border-success border-opacity-25">
-                            <span class="flow-step-num bg-success text-white">5</span>
-                            <p class="text-success fw-bold">Penyelesaian<br>Pengaduan<br>Nasabah</p>
+                        <div class="flow-step-card badge-soft-success" style="border: 1.5px solid #0d6824 !important;">
+                            <span class="flow-step-num" style="background: #0d6824 !important; color: #ffffff !important;">5</span>
+                            <p class="fw-bold" style="color: #065f46 !important;">Penyelesaian<br>Pengaduan<br>Nasabah</p>
                         </div>
                     </div>
                 </div>
@@ -389,7 +389,7 @@
                         <i class="bi bi-envelope-paper"></i>
                     </div>
                     <div>
-                        <span class="badge bg-info bg-opacity-10 text-info border border-info border-opacity-25 rounded-pill px-3 py-1 mb-1 small fw-semibold">Alur 4</span>
+                        <span class="badge badge-soft-info rounded-pill px-3 py-1 mb-1 small fw-semibold">Alur 4</span>
                         <h3 class="h5 fw-bold mb-0 text-dark">
                             Alur Pengaduan Nasabah secara Tertulis Melalui Email atau Surat
                         </h3>
@@ -419,9 +419,9 @@
                             <p>Tanggapan<br>BPRS</p>
                         </div>
                         <div class="flow-step-arrow"><i class="bi bi-arrow-right"></i></div>
-                        <div class="flow-step-card bg-success bg-opacity-10 border-success border-opacity-25">
-                            <span class="flow-step-num bg-success text-white">5</span>
-                            <p class="text-success fw-bold">Penyelesaian<br>Pengaduan<br>Nasabah</p>
+                        <div class="flow-step-card badge-soft-success" style="border: 1.5px solid #0d6824 !important;">
+                            <span class="flow-step-num" style="background: #0d6824 !important; color: #ffffff !important;">5</span>
+                            <p class="fw-bold" style="color: #065f46 !important;">Penyelesaian<br>Pengaduan<br>Nasabah</p>
                         </div>
                     </div>
                 </div>
@@ -454,7 +454,7 @@
                             <i class="bi bi-clock-history"></i>
                         </div>
                         <div>
-                            <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 rounded-pill px-3 py-1 mb-1 small fw-semibold">SLA Pelayanan</span>
+                            <span class="badge badge-soft-success rounded-pill px-3 py-1 mb-1 small fw-semibold">SLA Pelayanan</span>
                             <h3 class="h5 fw-bold mb-0 text-dark">
                                 Jangka Waktu Penanganan Pengaduan
                             </h3>
@@ -473,7 +473,7 @@
                                 <tr>
                                     <td class="fw-semibold text-dark">
                                         <div class="d-flex align-items-center gap-2">
-                                            <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 rounded-pill px-2 py-1 small">Lisan</span>
+                                            <span class="badge badge-soft-primary rounded-pill px-2 py-1 small">Lisan</span>
                                         </div>
                                     </td>
                                     <td>
@@ -483,7 +483,7 @@
                                 <tr>
                                     <td class="fw-semibold text-dark">
                                         <div class="d-flex align-items-center gap-2">
-                                            <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 rounded-pill px-2 py-1 small">Tertulis</span>
+                                            <span class="badge badge-soft-success rounded-pill px-2 py-1 small">Tertulis</span>
                                         </div>
                                     </td>
                                     <td>
@@ -504,7 +504,7 @@
                             <i class="bi bi-headset"></i>
                         </div>
                         <div>
-                            <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 rounded-pill px-3 py-1 mb-1 small fw-semibold">Kanal Resmi</span>
+                            <span class="badge badge-soft-primary rounded-pill px-3 py-1 mb-1 small fw-semibold">Kanal Resmi</span>
                             <h3 class="h5 fw-bold mb-0 text-dark">
                                 Media Layanan Pengaduan
                             </h3>
