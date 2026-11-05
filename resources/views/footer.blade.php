@@ -21,9 +21,9 @@
                         <i class="fas fa-phone text-info me-2"></i>+0274 881159
                     </a>
                     <div class="d-flex mt-2 gap-2">
-                        <a class="btn btn-secondary btn-sm-square rounded-circle" target="_blank" href="https://maps.app.goo.gl/QypJrDjHsZMNwof48" title="Lokasi Google Maps"><i class="bi bi-geo-alt-fill"></i></a>
-                        <a class="btn btn-secondary btn-sm-square rounded-circle" target="_blank" href="https://www.instagram.com/bprshikmci/"><i class="fab fa-instagram"></i></a>
-                        <a class="btn btn-secondary btn-sm-square rounded-circle" target="_blank" href="https://www.facebook.com/people/Bank-Syariah-HIK-MCI/61554427015454/"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-secondary btn-sm-square rounded-circle" target="_blank" href="https://maps.app.goo.gl/QypJrDjHsZMNwof48" title="Lokasi Google Maps" aria-label="Lokasi Google Maps"><i class="bi bi-geo-alt-fill"></i></a>
+                        <a class="btn btn-secondary btn-sm-square rounded-circle" target="_blank" href="https://www.instagram.com/bprshikmci/" title="Instagram Bank Syariah BPRS HIK MCI" aria-label="Instagram Bank Syariah BPRS HIK MCI"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-secondary btn-sm-square rounded-circle" target="_blank" href="https://www.facebook.com/people/Bank-Syariah-HIK-MCI/61554427015454/" title="Facebook Bank Syariah BPRS HIK MCI" aria-label="Facebook Bank Syariah BPRS HIK MCI"><i class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
             </div>
@@ -109,8 +109,8 @@
 
 <!-- WhatsApp and Back to Top Buttons Start -->
 <div class="fixed-buttons">
-    <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top" style="display: none;" title="Kembali ke atas"><i class="fa fa-arrow-up"></i></a>
-    <a href="https://wa.me/+6281222770657" target="_blank" class="btn btn-success btn-lg-square rounded-circle" title="Konsultasi via WhatsApp">
+    <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top" style="display: none;" title="Kembali ke atas" aria-label="Kembali ke atas"><i class="fa fa-arrow-up"></i></a>
+    <a href="https://wa.me/6281222770657" target="_blank" class="btn btn-success btn-lg-square rounded-circle" title="Konsultasi via WhatsApp" aria-label="Konsultasi via WhatsApp">
         <i class="fab fa-whatsapp" style="font-size: 26px;"></i>
     </a>
 </div>

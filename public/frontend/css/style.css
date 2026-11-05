@@ -317,9 +317,9 @@ section,
   border-radius: 10px;
   font-size: 0.875rem;
   font-weight: 500;
-  padding: 9px 14px;
+  padding: 10px 14px;
   color: var(--text-main);
-  min-height: 40px;
+  min-height: 44px;
   display: flex;
   align-items: center;
   transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
@@ -330,6 +330,40 @@ section,
   background: var(--light-green);
   color: var(--primary-green);
   transform: translateX(3px);
+}
+
+/* Nested Dropdowns Support */
+@media (min-width: 992px) {
+  .modern-navbar .dropdown:hover > .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+  .modern-navbar .dropend {
+    position: relative;
+  }
+  .modern-navbar .dropend:hover > .dropdown-menu,
+  .modern-navbar .dropend > .dropdown-menu.show {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: 4px;
+  }
+}
+
+@media (max-width: 991px) {
+  .modern-navbar .dropend > .dropdown-menu {
+    position: static;
+    display: none;
+    background: rgba(241, 245, 249, 0.85);
+    border-radius: 10px;
+    margin: 4px 0 6px 12px;
+    padding: 6px;
+  }
+  .modern-navbar .dropend > .dropdown-menu.show {
+    display: block;
+  }
 }
 
 /* Navbar CTA */
@@ -347,7 +381,7 @@ section,
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 42px;
+  min-height: 44px;
 }
 
 .btn-nav-cta:hover {
@@ -1001,7 +1035,22 @@ section,
   background: rgba(255, 255, 255, 0.5);
   margin: 0 5px;
   border: none;
+  position: relative;
+  cursor: pointer;
   transition: width 200ms cubic-bezier(0.16, 1, 0.3, 1), background-color 200ms ease, border-radius 200ms ease;
+}
+
+/* Touch target expansion >= 44x44px for accessibility */
+.modern-indicators li::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
 }
 
 .modern-indicators li.active {
@@ -1037,9 +1086,14 @@ section,
   border: 1px solid rgba(13, 104, 36, 0.15);
   border-radius: var(--radius-full);
   font-weight: 600;
-  font-size: 0.825rem;
-  padding: 6px 14px;
-  min-height: 36px;
+  font-size: 0.85rem;
+  padding: 8px 16px;
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
   transition: transform 160ms cubic-bezier(0.16, 1, 0.3, 1), background-color 160ms ease, border-color 160ms ease, color 160ms ease;
 }
 
@@ -1221,6 +1275,9 @@ section,
 
 .footer a {
   color: rgba(255, 255, 255, 0.65) !important;
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
   transition: color 160ms ease, transform 160ms cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 

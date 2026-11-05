@@ -18,9 +18,6 @@ Route::view('/team', 'team')->name('team');
 Route::view('/pengaduan', 'pengaduan')->name('pengaduan');
 Route::view('/penghargaan', 'penghargaan')->name('penghargaan');
 Route::get('/piagam-audit', [PiagamAuditController::class, 'index'])->name('piagam-audit');
-Route::view('/karir', 'karir')->name('karir');
-Route::view('/asset', 'asset')->name('asset');
-Route::view('/edukasi', 'edukasi')->name('edukasi');
 
 
 // Pembiayaan Pages

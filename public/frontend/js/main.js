@@ -112,6 +112,17 @@ function calculatePembiayaan() {
 
     if (!inputEl || !tenorEl || !pembiayaanResult) return;
 
+    if (inputEl.value.includes('-')) {
+        pembiayaanResult.innerHTML = `
+            <div class="alert alert-warning border-0 rounded-2xl p-3 d-flex align-items-center gap-3">
+                <i class="fas fa-exclamation-triangle fs-4 text-warning"></i>
+                <div class="small">Jumlah pembiayaan tidak boleh bernilai negatif. Mohon masukkan angka positif.</div>
+            </div>
+        `;
+        pembiayaanResult.style.display = 'block';
+        return;
+    }
+
     const jumlahPembiayaan = parseFloat(inputEl.value.replace(/\D/g, ''));
     const jangkaWaktuPembiayaan = parseInt(tenorEl.value, 10);
 
@@ -185,7 +196,7 @@ function calculatePembiayaan() {
             </div>
 
             <div class="d-flex flex-column flex-sm-row gap-2 justify-content-center">
-                <a href="https://wa.me/+6281222770657?text=${waText}" target="_blank" class="btn btn-modern-wa py-2.5 px-4 rounded-pill">
+                <a href="https://wa.me/6281222770657?text=${waText}" target="_blank" class="btn btn-modern-wa py-2.5 px-4 rounded-pill">
                     <i class="fab fa-whatsapp me-2 fs-5"></i>Ajukan Pembiayaan Ini via WhatsApp
                 </a>
                 <button type="button" class="btn btn-outline-secondary rounded-pill py-2.5 px-3" onclick="document.getElementById('pembiayaanForm').reset(); document.getElementById('pembiayaanResult').style.display='none';">
@@ -365,5 +376,29 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             window.print();
         }
+    });
+});
+
+// Nested dropdown support for Bootstrap 5 (e.g. Layanan Lainnya -> Media)
+document.addEventListener("DOMContentLoaded", function () {
+    const nestedToggles = document.querySelectorAll('.dropdown-menu .dropend > .dropdown-toggle');
+    nestedToggles.forEach(function (toggle) {
+        toggle.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const submenu = this.nextElementSibling;
+            if (submenu) {
+                const isShown = submenu.classList.contains('show');
+                const parentMenu = this.closest('.dropdown-menu');
+                if (parentMenu) {
+                    parentMenu.querySelectorAll('.dropdown-menu.show').forEach(function(openMenu) {
+                        openMenu.classList.remove('show');
+                    });
+                }
+                if (!isShown) {
+                    submenu.classList.add('show');
+                }
+            }
+        });
     });
 });

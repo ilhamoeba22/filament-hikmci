@@ -251,7 +251,7 @@
                 </div>
                 <div class="row pb-4 align-items-center text-center">
                     <div class="col-md-12 ">
-                        <a href="https://wa.me/+6282137908367" class="btn btn-primary btn-lg">
+                        <a href="https://wa.me/6282137908367" class="btn btn-primary btn-lg">
                             Buka Rekening
                         </a>
                     </div>
