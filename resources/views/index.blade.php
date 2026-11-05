@@ -6,7 +6,7 @@
     <div id="stage" aria-hidden="true"></div>
     <div id="labels" aria-hidden="true"></div>
 
-    <div class="container hero-container position-relative z-3">
+    <div class="container hero-container position-relative" style="position: relative; z-index: 30 !important; pointer-events: auto !important;">
         <div class="row align-items-center g-4 g-lg-5 min-vh-hero">
             <!-- Left Column: Copy & CTAs -->
             <div class="col-lg-7 text-start">

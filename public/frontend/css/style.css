@@ -425,7 +425,7 @@ section,
   height: 100%;
   overflow: hidden;
   z-index: 1;
-  pointer-events: auto;
+  pointer-events: none !important;
 }
 
 #stage canvas {
@@ -435,6 +435,7 @@ section,
   opacity: 0;
   transition: opacity 1.6s ease;
   outline: none;
+  pointer-events: none !important;
 }
 
 #stage.on canvas {
@@ -446,7 +447,25 @@ section,
   inset: 0;
   overflow: hidden;
   z-index: 2;
-  pointer-events: none;
+  pointer-events: none !important;
+}
+
+.hero-container {
+  position: relative !important;
+  z-index: 30 !important;
+  pointer-events: auto !important;
+}
+
+.hero-section a,
+.hero-section button,
+.hero-section .btn,
+.hero-section .btn-modern-primary,
+.hero-section .btn-modern-ghost,
+.hero-section .btn-modern-wa {
+  position: relative !important;
+  z-index: 35 !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
 }
 
 .min-vh-hero {
@@ -673,6 +692,7 @@ section,
   perspective: 1200px;
   margin: 0 auto;
   position: relative;
+  pointer-events: none !important;
 }
 
 .card-ambient-glow {
@@ -685,13 +705,14 @@ section,
   background: radial-gradient(circle, rgba(25, 240, 176, 0.28) 0%, rgba(255, 210, 122, 0.15) 45%, rgba(0, 0, 0, 0) 72%);
   filter: blur(48px);
   z-index: 1;
-  pointer-events: none;
+  pointer-events: none !important;
 }
 
 .card-3d-wrapper {
   position: relative;
   z-index: 3;
   transform-style: preserve-3d;
+  pointer-events: none !important;
 }
 
 /* 3D Orbiting Coin Floating Labels */
@@ -715,7 +736,7 @@ section,
   color: #d8fff2;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35), 0 0 10px rgba(25, 240, 176, 0.2);
   will-change: transform, opacity;
-  pointer-events: none;
+  pointer-events: none !important;
   user-select: none;
 }
 
@@ -744,7 +765,7 @@ section,
   font-weight: 600;
   color: #19f0b0;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
-  pointer-events: none;
+  pointer-events: none !important;
   z-index: 6;
   white-space: nowrap;
   animation: hintPulse 3s ease-in-out infinite;
@@ -855,6 +876,8 @@ section,
   padding: 10px 16px;
   box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.4), 0 0 15px rgba(25, 240, 176, 0.15);
   color: #ffffff !important;
+  pointer-events: none !important;
+  user-select: none;
 }
 
 .badge-top-right {
