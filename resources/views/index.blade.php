@@ -1,9 +1,9 @@
 @include('header')
 
 <!-- Main Hero Section Start (pixel-io inspired modern split hero) -->
-<section id="hero" class="hero-section position-relative overflow-hidden pt-5 pb-5">
+<section id="hero" class="hero-section position-relative overflow-hidden">
     <div class="container hero-container position-relative z-2">
-        <div class="row align-items-center g-5 min-vh-hero">
+        <div class="row align-items-center g-4 g-lg-5 min-vh-hero">
             <!-- Left Column: Copy & CTAs -->
             <div class="col-lg-7 text-start">
                 <!-- Trust Pill Badge -->
@@ -195,8 +195,8 @@
 <!-- Logo / Trust Marquee Strip End -->
 
 <!-- Core Products Section Start (pixel-io Bento Grid style) -->
-<section id="produk-unggulan" class="products-section py-5 position-relative">
-    <div class="container py-4">
+<section id="produk-unggulan" class="products-section py-4 position-relative">
+    <div class="container py-2">
         <!-- Section Title (Title.tsx style) -->
         <div class="text-center max-w-700 mx-auto mb-5">
             <div class="section-pill-badge mb-3">PRODUK & LAYANAN UNGGULAN</div>
@@ -294,8 +294,8 @@
 <!-- Core Products Section End -->
 
 <!-- RELOCATED CAROUSEL SECTION: Promo, Kegiatan & Informasi Terkini (Clean Modern Frame) -->
-<section id="promo-carousel-section" class="carousel-modern-section py-5">
-    <div class="container py-3">
+<section id="promo-carousel-section" class="carousel-modern-section py-4">
+    <div class="container py-2">
         <!-- Section Title -->
         <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between mb-4">
             <div>
@@ -323,11 +323,20 @@
                     @endforeach
                 </ol>
                 <div class="carousel-inner" role="listbox">
-                    @foreach($carousels as $index => $carousel)
+                    @forelse($carousels as $index => $carousel)
                     <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
                         <img src="{{ Storage::url($carousel->image) }}" class="d-block w-100 carousel-banner-img" alt="Banner BPRS HIK MCI {{ $index + 1 }}" loading="lazy" />
                     </div>
-                    @endforeach
+                    @empty
+                    <div class="carousel-item active">
+                        <div class="d-flex align-items-center justify-content-center p-5 text-center text-white" style="min-height: 260px; background: linear-gradient(135deg, #07170c 0%, #0d6824 100%);">
+                            <div>
+                                <h4 class="text-white mb-2">BPRS HIK MCI</h4>
+                                <p class="text-white-50 mb-0">Wujudkan Keuangan Syariah yang Berkah dan Terpercaya</p>
+                            </div>
+                        </div>
+                    </div>
+                    @endforelse
                 </div>
             </div>
         </div>
@@ -336,8 +345,8 @@
 <!-- Relocated Carousel Section End -->
 
 <!-- Interactive Financing Simulator Start (pixel-io modern fintech tool) -->
-<section id="simulasi-section" class="simulator-section py-5 position-relative">
-    <div class="container py-4">
+<section id="simulasi-section" class="simulator-section py-4 position-relative">
+    <div class="container py-2">
         <div class="text-center max-w-700 mx-auto mb-5">
             <div class="section-pill-badge mb-3">KALKULATOR SYARIAH</div>
             <h2 class="section-heading mb-3">Simulasi Pembiayaan Fleksibel</h2>
@@ -439,8 +448,8 @@
 <!-- Interactive Financing Simulator End -->
 
 <!-- Equivalent Rate Deposito Start (Modern Fintech Table) -->
-<section id="rate-deposito" class="rate-section py-5">
-    <div class="container py-3">
+<section id="rate-deposito" class="rate-section py-4">
+    <div class="container py-2">
         <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between mb-4">
             <div>
                 <div class="section-pill-badge mb-2">BAGI HASIL TERBARU</div>
@@ -516,8 +525,8 @@
 <!-- Equivalent Rate Deposito End -->
 
 <!-- Berita Terkini Start (Modern News Cards) -->
-<section id="berita-section" class="news-section py-5">
-    <div class="container py-3">
+<section id="berita-section" class="news-section py-4">
+    <div class="container py-2">
         <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between mb-4">
             <div>
                 <div class="section-pill-badge mb-2">ARTIKEL & PUBLIKASI</div>
@@ -565,7 +574,7 @@
 <!-- Berita Terkini End -->
 
 <!-- Call To Action Banner Start (pixel-io CTA component inspired) -->
-<section class="cta-section py-5">
+<section class="cta-section py-4">
     <div class="container">
         <div class="cta-banner-wrapper p-4 p-md-5 rounded-3xl position-relative overflow-hidden text-center text-md-start">
             <div class="row align-items-center g-4 position-relative z-2">

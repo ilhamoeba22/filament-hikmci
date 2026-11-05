@@ -1,5 +1,5 @@
 <!-- Footer Start -->
-<div class="container-fluid footer pt-3 wow fadeIn" data-wow-delay="0.2s">
+<div class="container-fluid footer pt-3">
     <!-- Konten footer tetap sama -->
     <div class="container pt-4">
         <div class="row g-5 align-items-start">
@@ -108,10 +108,10 @@
 <!-- Copyright End -->
 
 <!-- WhatsApp and Back to Top Buttons Start -->
-<div class="fixed-buttons" style="position: fixed; bottom: 65px; right: 30px; display: flex; flex-direction: row; gap: 10px;">
-    <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
-    <a href="https://wa.me/+6281222770657" target="_blank" class="btn btn-success btn-lg-square rounded-circle mb-2">
-        <i class="fab fa-whatsapp" style="font-size: 30px;"></i>
+<div class="fixed-buttons" style="position: fixed; bottom: 65px; right: 30px; display: flex; flex-direction: row; align-items: center; gap: 12px; z-index: 9999;">
+    <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top" style="display: none;" title="Kembali ke atas"><i class="fa fa-arrow-up"></i></a>
+    <a href="https://wa.me/+6281222770657" target="_blank" class="btn btn-success btn-lg-square rounded-circle" title="Konsultasi via WhatsApp">
+        <i class="fab fa-whatsapp" style="font-size: 26px;"></i>
     </a>
 </div>
 <!-- WhatsApp and Back to Top Buttons End -->
@@ -184,24 +184,27 @@
     });
   }
   
-  // Smooth Scroll Reveal using IntersectionObserver
+  // Content Reveal Safety: All elements are 100% visible by default (Never hide elements with opacity 0)
   function initScrollReveal() {
-    if (prefersReducedMotion) return;
+    // Ensure all target elements are completely visible immediately
+    document.querySelectorAll('.modern-product-card, .modern-news-card, .simulator-form-card, .cta-banner-wrapper').forEach(el => {
+      el.style.opacity = '1';
+      el.style.visibility = 'visible';
+    });
 
+    if (prefersReducedMotion || !('IntersectionObserver' in window)) return;
+
+    // Subtle enhancement only: elements are already visible
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
-          e.target.style.opacity = '1';
-          e.target.style.transform = 'translateY(0)';
+          e.target.classList.add('is-revealed');
           observer.unobserve(e.target);
         }
       });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.05, rootMargin: '0px 0px 50px 0px' });
     
     document.querySelectorAll('.modern-product-card, .modern-news-card, .simulator-form-card, .cta-banner-wrapper').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
       observer.observe(el);
     });
   }

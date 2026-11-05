@@ -112,6 +112,46 @@ p, span, a, input, select, button, td, th {
   color: var(--primary-green);
 }
 
+/* === SPINNER (Zero-delay dismissal & safety fallback) === */
+#spinner {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  display: none !important;
+  transition: opacity 0.25s ease-out, visibility 0.25s ease-out;
+  z-index: 99999;
+}
+
+#spinner.show {
+  display: flex !important;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+#spinner .spinner-border {
+  color: var(--primary-green) !important;
+}
+
+/* === CONTENT VISIBILITY SAFETY (Ensures zero blank/stuck sections) === */
+.wow,
+.modern-product-card,
+.modern-news-card,
+.simulator-form-card,
+.cta-banner-wrapper,
+section,
+.hero-section,
+.products-section,
+.carousel-modern-section,
+.simulator-section,
+.rate-section,
+.news-section,
+.cta-section,
+.footer {
+  visibility: visible !important;
+  opacity: 1;
+}
+
 /* === AMBIENT BACKDROP (pixel-io style) === */
 .ambient-backdrop {
   position: fixed;
@@ -296,13 +336,13 @@ p, span, a, input, select, button, td, th {
 
 /* === HERO SECTION === */
 .hero-section {
-  padding-top: 135px !important;
-  padding-bottom: 60px !important;
+  padding-top: 120px !important;
+  padding-bottom: 40px !important;
   position: relative;
 }
 
 .min-vh-hero {
-  min-height: calc(85vh - 90px);
+  min-height: auto;
 }
 
 .hero-badge {
@@ -875,15 +915,24 @@ p, span, a, input, select, button, td, th {
 }
 
 .modern-carousel-frame {
-  max-height: 480px;
+  width: 100%;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
   background: #07170c;
+  min-height: 240px;
+  max-height: 480px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-light);
 }
 
 .carousel-banner-img {
-  height: clamp(240px, 40vw, 460px);
   width: 100%;
+  min-height: 240px;
+  height: clamp(240px, 42vw, 460px);
+  max-height: 480px;
   object-fit: cover;
   object-position: center;
+  display: block;
 }
 
 .btn-carousel-arrow {
@@ -1141,10 +1190,86 @@ p, span, a, input, select, button, td, th {
   transform: translateX(3px);
 }
 
+/* === FLOATING ACTION BUTTONS (Back to Top & WhatsApp) === */
+.fixed-buttons {
+  position: fixed !important;
+  bottom: 30px !important;
+  right: 24px !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 12px !important;
+  z-index: 9999 !important;
+}
+
+.fixed-buttons .btn,
+.back-to-top,
+.btn-lg-square,
+.btn-sm-square {
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  min-height: 48px !important;
+  max-width: 48px !important;
+  max-height: 48px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 50% !important;
+  aspect-ratio: 1 / 1 !important;
+  box-sizing: border-box !important;
+  line-height: 1 !important;
+  text-align: center !important;
+}
+
+.fixed-buttons .btn-success {
+  width: 52px !important;
+  height: 52px !important;
+  min-width: 52px !important;
+  min-height: 52px !important;
+  max-width: 52px !important;
+  max-height: 52px !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  aspect-ratio: 1 / 1 !important;
+  background: #25D366 !important;
+  border-color: #25D366 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.fixed-buttons .btn-success:hover {
+  background: #20bd5a !important;
+  transform: translateY(-3px) scale(1.04) !important;
+  box-shadow: 0 8px 22px rgba(37, 211, 102, 0.5) !important;
+}
+
+.back-to-top {
+  background: var(--primary-green) !important;
+  border-color: var(--primary-green) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(13, 104, 36, 0.35) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.back-to-top:hover {
+  background: var(--primary-green-hover) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 20px rgba(13, 104, 36, 0.45) !important;
+}
+
+.back-to-top[style*="display: none"],
+.back-to-top.d-none {
+  display: none !important;
+}
+
 /* === RESPONSIVE RULES (Comprehensive Mobile Audit) === */
 @media (max-width: 991px) {
   .hero-section {
-    padding-top: 110px !important;
+    padding-top: 100px !important;
     padding-bottom: 40px !important;
   }
   

@@ -168,19 +168,40 @@
         const header = document.querySelector('header.fixed-top');
         if (header) header.classList.toggle('scrolled', window.scrollY > 20);
       });
-      // Page load fade in
-      window.addEventListener('load', () => {
-        document.body.classList.add('loaded');
-        // Hide spinner
-        const spinner = document.getElementById('spinner');
-        if (spinner) setTimeout(() => { spinner.style.display = 'none'; }, 300);
-      });
+
+      // Immediate Spinner Dismissal (Zero-hang: does NOT wait for slow external assets)
+      (function() {
+        let dismissed = false;
+        function dismissSpinner() {
+          if (dismissed) return;
+          dismissed = true;
+          document.body.classList.add('loaded');
+          const spinner = document.getElementById('spinner');
+          if (spinner) {
+            spinner.classList.remove('show');
+            spinner.style.opacity = '0';
+            spinner.style.pointerEvents = 'none';
+            setTimeout(() => {
+              spinner.style.display = 'none';
+            }, 150);
+          }
+        }
+
+        // Run as fast as possible on DOM ready or immediate timeout
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', dismissSpinner);
+        } else {
+          dismissSpinner();
+        }
+        // Safety timeout: max 200ms guaranteed dismiss
+        setTimeout(dismissSpinner, 200);
+      })();
     </script>
 
     <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem" role="status">
-            <span class="sr-only">Loading...</span>
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center" style="transition: opacity 0.25s ease-out; z-index: 99999;">
+        <div class="spinner-border text-success" style="width: 3rem; height: 3rem" role="status">
+            <span class="visually-hidden sr-only">Loading...</span>
         </div>
     </div>
     <!-- Spinner End -->

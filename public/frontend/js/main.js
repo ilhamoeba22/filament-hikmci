@@ -1,20 +1,41 @@
 (function ($) {
     "use strict";
 
-    // Spinner with safety timeout
+    // Spinner with immediate safety dismissal (Zero-hang)
     var spinner = function () {
-        setTimeout(function () {
-            if ($('#spinner').length > 0) {
-                $('#spinner').removeClass('show');
+        var hide = function () {
+            var $sp = $('#spinner');
+            if ($sp.length > 0) {
+                $sp.removeClass('show');
+                setTimeout(function () {
+                    $sp.css({
+                        'display': 'none',
+                        'pointer-events': 'none',
+                        'opacity': '0',
+                        'visibility': 'hidden'
+                    });
+                }, 100);
             }
-        }, 100);
+        };
+        hide();
+        setTimeout(hide, 50);
+        setTimeout(hide, 150);
+        $(document).ready(hide);
     };
     spinner();
     
-    // Initiate WOW.js if available
+    // Initiate WOW.js if available and ensure elements are never stuck hidden
     if (typeof WOW === 'function') {
-        new WOW().init();
+        new WOW({
+            boxClass: 'wow',
+            animateClass: 'animated',
+            offset: 0,
+            mobile: true,
+            live: true
+        }).init();
     }
+    // Fallback safety: ensure all .wow elements are visible immediately
+    $('.wow').css('visibility', 'visible');
 
     // Floating Navbar elevation on scroll
     $(window).scroll(function () {
@@ -65,16 +86,17 @@
         });
     }
 
-    // Back to top button
+    // Back to top button (ensures clean fade with inline-flex circular display)
     $(window).scroll(function () {
         if ($(this).scrollTop() > 350) {
-            $('.back-to-top').fadeIn('slow');
+            $('.back-to-top').stop(true, true).css('display', 'inline-flex').fadeIn('slow');
         } else {
-            $('.back-to-top').fadeOut('slow');
+            $('.back-to-top').stop(true, true).fadeOut('slow');
         }
     });
-    $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 800, 'easeInOutExpo');
+    $('.back-to-top').click(function (e) {
+        e.preventDefault();
+        $('html, body').animate({scrollTop: 0}, 600, 'easeInOutExpo');
         return false;
     });
 
