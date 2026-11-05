@@ -7,10 +7,10 @@
         <!-- 1. Header Footer Brand Strip -->
         <div class="footer-brand-strip pb-4 mb-5 border-bottom border-white-10">
             <div class="row align-items-center g-4">
-                <div class="col-lg-7 col-md-12">
+                <div class="col-12">
                     <div class="d-flex flex-column flex-sm-row align-items-sm-center gap-3">
-                        <a href="{{ url('/') }}" class="footer-brand-logo-card d-inline-flex align-items-center justify-content-center p-2 rounded-2xl bg-white shadow-sm" aria-label="Beranda PT BPRS HIK MCI">
-                            <img src="{{ asset('frontend/img/logo/logo_mci.png') }}" alt="Logo PT BPRS HIK MCI" class="img-fluid" style="max-height: 48px; width: auto;" />
+                        <a href="{{ url('/') }}" aria-label="Beranda PT BPRS HIK MCI">
+                            <img src="{{ asset('frontend/img/logo/logo_mci.png') }}" alt="Logo PT BPRS HIK MCI" class="img-fluid" style="max-height: 56px; width: auto;" />
                         </a>
                         <div class="footer-brand-divider d-none d-sm-block"></div>
                         <div>
@@ -19,19 +19,6 @@
                                 Wujudkan Keuangan Syariah yang Berkah dan Terpercaya
                             </p>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-5 col-md-12">
-                    <div class="d-flex flex-wrap align-items-center justify-content-lg-end gap-2">
-                        <span class="footer-badge-pill">
-                            <i class="fas fa-shield-alt text-success me-1"></i>Berizin & Diawasi OJK
-                        </span>
-                        <span class="footer-badge-pill">
-                            <i class="fas fa-landmark text-info me-1"></i>Penjaminan LPS s.d Rp 2 M
-                        </span>
-                        <span class="footer-badge-pill">
-                            <i class="fas fa-certificate text-warning me-1"></i>Kepatuhan DSN-MUI
-                        </span>
                     </div>
                 </div>
             </div>
@@ -164,19 +151,9 @@
                     </p>
                 </div>
                 <div class="col-lg-4 col-md-12">
-                    <div class="d-flex flex-wrap justify-content-lg-end align-items-center gap-3">
-                        <div class="footer-legal-badge p-1 bg-white-5 rounded">
-                            <img src="{{ asset('frontend/img/logo/ojk.svg') }}" alt="Otoritas Jasa Keuangan" class="footer-legal-logo" style="height: 32px; width: auto;" />
-                        </div>
-                        <div class="footer-legal-badge p-1 bg-white-5 rounded">
-                            <img src="{{ asset('frontend/img/logo/lps.png') }}" alt="Lembaga Penjamin Simpanan" class="footer-legal-logo" style="height: 32px; width: auto;" />
-                        </div>
-                        <div class="footer-legal-badge p-1 bg-white-5 rounded">
-                            <img src="{{ asset('frontend/img/logo/ib_logo.png') }}" alt="Bank Syariah" class="footer-legal-logo" style="height: 32px; width: auto;" />
-                        </div>
-                        <div class="footer-legal-badge p-1 bg-white-5 rounded">
-                            <img src="{{ asset('frontend/img/logo/bprs_logo.png') }}" alt="BPR Syariah" class="footer-legal-logo" style="height: 32px; width: auto;" />
-                        </div>
+                    <div class="d-flex flex-wrap justify-content-lg-end align-items-center gap-4">
+                        <img src="{{ asset('frontend/img/logo/ib_logo.png') }}" alt="Bank Syariah" class="img-fluid" style="height: 48px; width: auto; object-fit: contain;" />
+                        <img src="{{ asset('frontend/img/logo/bprs_logo.png') }}" alt="BPR Syariah" class="img-fluid" style="height: 48px; width: auto; object-fit: contain;" />
                     </div>
                 </div>
             </div>

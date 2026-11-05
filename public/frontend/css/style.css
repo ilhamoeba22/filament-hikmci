@@ -1365,22 +1365,6 @@ section,
 }
 
 /* Brand Strip */
-.footer-brand-logo-card {
-  background: #ffffff;
-  padding: 6px 14px;
-  border-radius: var(--radius-lg);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.footer-brand-logo-card:hover {
-  transform: translateY(-2px);
-}
-
-.footer-brand-logo-card:active {
-  transform: scale(0.97);
-}
-
 .footer-brand-divider {
   width: 1px;
   height: 38px;
@@ -1597,23 +1581,6 @@ section,
   background: #ea4335;
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(234, 67, 53, 0.4);
-}
-
-/* Bottom Bar Legal Logos */
-.footer-legal-badge {
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: var(--radius-sm);
-  padding: 4px 8px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(4px);
-}
-
-.footer-legal-logo {
-  filter: brightness(1.05);
-  object-fit: contain;
 }
 
 .footer-compliance-text {
