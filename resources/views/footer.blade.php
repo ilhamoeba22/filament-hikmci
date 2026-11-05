@@ -141,48 +141,67 @@
 <script src="{{ asset('frontend/js/main.js') }}" defer></script>
 
 <script>
-// 3D Tilt Cards
+// 3D Tilt Cards with Hardware Acceleration & Touch / Reduced-Motion Safety
 (function() {
+  const supportsHover = window.matchMedia('(hover: hover)').matches;
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   function init3DCards() {
+    if (!supportsHover || prefersReducedMotion) return;
+
     document.querySelectorAll('.card-3d').forEach(card => {
       const shine = card.querySelector('.card-shine');
       
       card.style.transformStyle = 'preserve-3d';
       card.style.willChange = 'transform';
       
+      let rafId = null;
+
       card.addEventListener('mousemove', e => {
-        const rect = card.getBoundingClientRect();
-        const x = (e.clientX - rect.left) / rect.width - 0.5;
-        const y = (e.clientY - rect.top) / rect.height - 0.5;
-        card.style.transform = `perspective(800px) rotateY(${x * 16}deg) rotateX(${-y * 16}deg) translateZ(8px)`;
-        if (shine) shine.style.background = `radial-gradient(circle at ${e.clientX - rect.left}px ${e.clientY - rect.top}px, rgba(255,255,255,0.15), transparent 60%)`;
+        if (rafId) cancelAnimationFrame(rafId);
+        rafId = requestAnimationFrame(() => {
+          const rect = card.getBoundingClientRect();
+          const x = (e.clientX - rect.left) / rect.width - 0.5;
+          const y = (e.clientY - rect.top) / rect.height - 0.5;
+          card.style.transform = `perspective(800px) rotateY(${x * 14}deg) rotateX(${-y * 14}deg) translateZ(6px)`;
+          if (shine) {
+            shine.style.background = `radial-gradient(circle at ${e.clientX - rect.left}px ${e.clientY - rect.top}px, rgba(255,255,255,0.18), transparent 60%)`;
+          }
+        });
       });
       
       card.addEventListener('mouseleave', () => {
-        card.style.transition = 'transform 0.5s ease';
+        if (rafId) cancelAnimationFrame(rafId);
+        card.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
         card.style.transform = 'perspective(800px) rotateY(0deg) rotateX(0deg) translateZ(0px)';
-        setTimeout(() => card.style.transition = '', 500);
+        if (shine) shine.style.background = 'transparent';
+        setTimeout(() => card.style.transition = '', 400);
       });
       
-      card.addEventListener('mouseenter', () => { card.style.transition = 'none'; });
+      card.addEventListener('mouseenter', () => {
+        card.style.transition = 'none';
+      });
     });
   }
   
-  // Scroll reveal animation
+  // Smooth Scroll Reveal using IntersectionObserver
   function initScrollReveal() {
+    if (prefersReducedMotion) return;
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
           e.target.style.opacity = '1';
           e.target.style.transform = 'translateY(0)';
+          observer.unobserve(e.target);
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
     
-    document.querySelectorAll('.card, .fade-up').forEach(el => {
+    document.querySelectorAll('.modern-product-card, .modern-news-card, .simulator-form-card, .cta-banner-wrapper').forEach(el => {
       el.style.opacity = '0';
-      el.style.transform = 'translateY(24px)';
-      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
       observer.observe(el);
     });
   }

@@ -1,132 +1,188 @@
 (function ($) {
     "use strict";
 
-    // Spinner
+    // Spinner with safety timeout
     var spinner = function () {
         setTimeout(function () {
             if ($('#spinner').length > 0) {
                 $('#spinner').removeClass('show');
             }
-        }, 1);
+        }, 100);
     };
     spinner();
     
-    // Initiate the wowjs
-    new WOW().init();
+    // Initiate WOW.js if available
+    if (typeof WOW === 'function') {
+        new WOW().init();
+    }
 
-    // Sticky Navbar
+    // Floating Navbar elevation on scroll
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 45) {
-            $('.navbar').addClass('sticky-top shadow-sm');
+        if ($(this).scrollTop() > 30) {
+            $('.modern-header-wrapper').addClass('scrolled');
         } else {
-            $('.navbar').removeClass('sticky-top shadow-sm');
+            $('.modern-header-wrapper').removeClass('scrolled');
         }
     });
 
     // Testimonial carousel
-    $(".testimonial-carousel").owlCarousel({
-        autoplay: true,
-        autoplayTimeout: 4000, // Set interval to 4 seconds
-        smartSpeed: 1500,
-        center: false,
-        dots: true,
-        loop: true,
-        margin: 25,
-        nav: true,
-        navText: [
-            '<i class="fa fa-angle-left"></i>',
-            '<i class="fa fa-angle-right"></i>'
-        ],
-        responsiveClass: true,
-        responsive: {
-            0: {
-                items: 1
-            },
-            576: {
-                items: 1
-            },
-            768: {
-                items: 1
-            },
-            992: {
-                items: 2
-            },
-            1200: {
-                items: 2
+    if ($(".testimonial-carousel").length > 0) {
+        $(".testimonial-carousel").owlCarousel({
+            autoplay: true,
+            autoplayTimeout: 4000,
+            smartSpeed: 1200,
+            center: false,
+            dots: true,
+            loop: true,
+            margin: 25,
+            nav: true,
+            navText: [
+                '<i class="fa fa-angle-left"></i>',
+                '<i class="fa fa-angle-right"></i>'
+            ],
+            responsiveClass: true,
+            responsive: {
+                0: { items: 1 },
+                576: { items: 1 },
+                768: { items: 1 },
+                992: { items: 2 },
+                1200: { items: 2 }
             }
-        }
-    });
+        });
 
-    // Ensure the carousel does not pause on hover or focus
-    $('.testimonial-carousel').on('mouseover', function() {
-        $(this).trigger('stop.owl.autoplay');
-    }).on('mouseleave', function() {
-        $(this).trigger('play.owl.autoplay', [4000]);
-    });
+        $('.testimonial-carousel').on('mouseover', function() {
+            $(this).trigger('stop.owl.autoplay');
+        }).on('mouseleave', function() {
+            $(this).trigger('play.owl.autoplay', [4000]);
+        });
+    }
 
-    // Facts counter
-    $('[data-toggle="counter-up"]').counterUp({
-        delay: 5,
-        time: 2000
-    });
+    // CounterUp for statistics if available
+    if ($.fn.counterUp) {
+        $('[data-toggle="counter-up"]').counterUp({
+            delay: 10,
+            time: 1500
+        });
+    }
 
     // Back to top button
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 300) {
+        if ($(this).scrollTop() > 350) {
             $('.back-to-top').fadeIn('slow');
         } else {
             $('.back-to-top').fadeOut('slow');
         }
     });
     $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        $('html, body').animate({scrollTop: 0}, 800, 'easeInOutExpo');
         return false;
     });
 
 })(jQuery);
 
-// Simulasi Perhitungan Pembiayaan
-
+/* ==========================================================================
+   SIMULASI PERHITUNGAN PEMBIAYAAN SYARIAH (Enhanced UX & Conversion)
+   ========================================================================== */
 function calculatePembiayaan() {
-    const jumlahPembiayaan = parseFloat(document.getElementById('jumlahPembiayaan').value.replace(/\./g, ''));
-    const jangkaWaktuPembiayaan = parseInt(document.getElementById('jangkaWaktuPembiayaan').value);
+    const inputEl = document.getElementById('jumlahPembiayaan');
+    const tenorEl = document.getElementById('jangkaWaktuPembiayaan');
+    const pembiayaanResult = document.getElementById('pembiayaanResult');
 
-    if (isNaN(jumlahPembiayaan) || isNaN(jangkaWaktuPembiayaan)) {
-        alert('Mohon masukkan jumlah pembiayaan dan jangka waktu yang valid.');
+    if (!inputEl || !tenorEl || !pembiayaanResult) return;
+
+    const jumlahPembiayaan = parseFloat(inputEl.value.replace(/\D/g, ''));
+    const jangkaWaktuPembiayaan = parseInt(tenorEl.value, 10);
+
+    if (isNaN(jumlahPembiayaan) || jumlahPembiayaan <= 0 || isNaN(jangkaWaktuPembiayaan)) {
+        pembiayaanResult.innerHTML = `
+            <div class="alert alert-warning border-0 rounded-2xl p-3 d-flex align-items-center gap-3">
+                <i class="fas fa-exclamation-triangle fs-4 text-warning"></i>
+                <div class="small">Mohon masukkan jumlah pembiayaan yang valid dan pilih jangka waktu (tenor).</div>
+            </div>
+        `;
+        pembiayaanResult.style.display = 'block';
         return;
     }
 
-    const margin = 1.5 / 100; // 1.5%
-    const hasil = Math.floor((jumlahPembiayaan / jangkaWaktuPembiayaan) + (jumlahPembiayaan * margin));
+    // Estimasi margin syariah flat 1.5% per bulan
+    const marginRate = 1.5 / 100;
+    const pokokBulan = Math.floor(jumlahPembiayaan / jangkaWaktuPembiayaan);
+    const marginBulan = Math.floor(jumlahPembiayaan * marginRate);
+    const angsuranBulan = pokokBulan + marginBulan;
+    const totalPengembalian = angsuranBulan * jangkaWaktuPembiayaan;
 
-    const pembiayaanResult = document.getElementById('pembiayaanResult');
+    const formattedJumlah = 'Rp ' + jumlahPembiayaan.toLocaleString('id-ID');
+    const formattedAngsuran = 'Rp ' + angsuranBulan.toLocaleString('id-ID');
+    const formattedPokok = 'Rp ' + pokokBulan.toLocaleString('id-ID');
+    const formattedMargin = 'Rp ' + marginBulan.toLocaleString('id-ID');
+    const formattedTotal = 'Rp ' + totalPengembalian.toLocaleString('id-ID');
+
+    const waText = encodeURIComponent(
+        `Halo BPRS HIK MCI, saya ingin konsultasi mengenai simulasi pembiayaan:\n` +
+        `• Plafon: ${formattedJumlah}\n` +
+        `• Tenor: ${jangkaWaktuPembiayaan} Bulan\n` +
+        `• Estimasi Angsuran: ${formattedAngsuran} / bulan\n\n` +
+        `Mohon informasi persyaratan dan prosedur pengajuannya. Terima kasih.`
+    );
+
     pembiayaanResult.innerHTML = `
-        <h4>Hasil Perhitungan Pembiayaan</h4>
-        <table class="table table-bordered">
-            <tr>
-                <th>Jumlah Pembiayaan</th>
-                <td>Rp. ${jumlahPembiayaan.toLocaleString('id-ID')}</td>
-            </tr>
-            <tr>
-                <th>Jangka Waktu</th>
-                <td>${jangkaWaktuPembiayaan} bulan</td>
-            </tr>
-            <tr>
-                <th>Angsuran Perbulan</th>
-                <td>Rp. ${hasil.toLocaleString('id-ID')}</td>
-            </tr>
-        </table>
+        <div class="calc-result-card p-3 p-md-4 rounded-3xl bg-white border shadow-sm text-start">
+            <div class="d-flex align-items-center justify-content-between mb-3 pb-3 border-bottom flex-wrap gap-2">
+                <div class="d-flex align-items-center gap-2">
+                    <span class="badge bg-emerald-soft text-success p-2 rounded-circle"><i class="fas fa-check"></i></span>
+                    <h5 class="mb-0 fw-bold text-dark">Hasil Simulasi Pembiayaan</h5>
+                </div>
+                <span class="badge bg-light text-muted fw-normal px-3 py-1.5 rounded-pill border">Akad Murabahah</span>
+            </div>
+
+            <div class="row g-3 text-center mb-3">
+                <div class="col-12 col-md-4">
+                    <div class="p-3 rounded-2xl bg-light h-100">
+                        <small class="text-muted d-block mb-1">Plafon Pembiayaan</small>
+                        <span class="fw-bold fs-6 text-dark">${formattedJumlah}</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="p-3 rounded-2xl bg-light h-100">
+                        <small class="text-muted d-block mb-1">Jangka Waktu</small>
+                        <span class="fw-bold fs-6 text-dark">${jangkaWaktuPembiayaan} Bulan</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="p-3 rounded-2xl bg-light h-100">
+                        <small class="text-muted d-block mb-1">Total Kewajiban</small>
+                        <span class="fw-bold fs-6 text-dark">${formattedTotal}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-3 p-md-4 rounded-2xl mb-4 text-center" style="background: linear-gradient(135deg, rgba(13,104,36,0.06) 0%, rgba(0,150,199,0.06) 100%); border: 1.5px dashed rgba(13,104,36,0.25);">
+                <small class="text-uppercase tracking-wider fw-bold text-success d-block mb-1">Estimasi Angsuran Tetap Bulanan</small>
+                <div class="display-6 fw-bold text-success my-1">${formattedAngsuran}</div>
+                <small class="text-muted">Pokok: ${formattedPokok} + Margin Syariah: ${formattedMargin} per bulan</small>
+            </div>
+
+            <div class="d-flex flex-column flex-sm-row gap-2 justify-content-center">
+                <a href="https://wa.me/+6281222770657?text=${waText}" target="_blank" class="btn btn-modern-wa py-2.5 px-4 rounded-pill">
+                    <i class="fab fa-whatsapp me-2 fs-5"></i>Ajukan Pembiayaan Ini via WhatsApp
+                </a>
+                <button type="button" class="btn btn-outline-secondary rounded-pill py-2.5 px-3" onclick="document.getElementById('pembiayaanForm').reset(); document.getElementById('pembiayaanResult').style.display='none';">
+                    <i class="fas fa-redo me-1"></i>Hitung Ulang
+                </button>
+            </div>
+        </div>
     `;
     pembiayaanResult.style.display = 'block';
+    pembiayaanResult.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
-// Fungsi untuk memformat angka dengan titik setiap tiga angka
+// Format input angka ribuan otomatis
 function formatNumberInput(input) {
+    if (!input) return;
     const value = input.value.replace(/\D/g, '');
-    input.value = value.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    input.value = value ? parseInt(value, 10).toLocaleString('id-ID') : '';
 }
 
-// Event listener untuk memformat angka saat pengguna mengetik
 document.addEventListener("DOMContentLoaded", function() {
     var jumlahPembiayaanInput = document.getElementById('jumlahPembiayaan');
     if (jumlahPembiayaanInput) {
@@ -136,9 +192,11 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-// Filter Berdasarkan Tahun
+// Tab Filter Berdasarkan Tahun (Halaman Laporan Keuangan)
 function openTab(evt, tabName) {
-    evt.preventDefault();
+    if (evt && typeof evt.preventDefault === 'function') {
+        evt.preventDefault();
+    }
     const tabcontent = document.getElementsByClassName("tabcontent");
     for (let i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
@@ -149,14 +207,21 @@ function openTab(evt, tabName) {
         navlinks[i].classList.remove("active");
     }
 
-    document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.classList.add("active");
+    const targetEl = document.getElementById(tabName);
+    if (targetEl) {
+        targetEl.style.display = "block";
+    }
+    if (evt && evt.currentTarget) {
+        evt.currentTarget.classList.add("active");
+    }
 
-    filterReports(); // Apply filter after switching tabs
+    filterReports();
 }
 
 function filterReports() {
-    const year = document.getElementById("yearFilter").value;
+    const yearEl = document.getElementById("yearFilter");
+    if (!yearEl) return;
+    const year = yearEl.value;
     const nameFilter = document.getElementById("nameFilter");
     const nameQuery = nameFilter ? nameFilter.value.toLowerCase() : "";
     const tabs = document.querySelectorAll(".tabcontent");
@@ -165,7 +230,8 @@ function filterReports() {
         const pdfItems = tab.querySelectorAll(".pdf-item");
         pdfItems.forEach(item => {
             const itemYear = item.getAttribute("data-year");
-            const itemName = item.querySelector("p").innerText.toLowerCase();
+            const itemP = item.querySelector("p");
+            const itemName = itemP ? itemP.innerText.toLowerCase() : "";
             
             const matchesYear = !year || itemYear === year;
             const matchesName = !nameQuery || itemName.includes(nameQuery);
@@ -190,102 +256,92 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     }
-    filterReports(); 
+    if (document.getElementById("yearFilter")) {
+        filterReports(); 
+    }
 });
 
-// Fungsi untuk menentukan halaman aktif Navbar
-function isActive($page)
-{
-    $current_page = basename($_SERVER['PHP_SELF']);
-    return $current_page == $page ? 'active' : '';
-}
-
-// Navbar
-document.addEventListener("DOMContentLoaded", function() {
-    console.log('DOM fully loaded and parsed');
-    window.addEventListener('scroll', function() {
-        var navbar = document.querySelector('.navbar-light');
-        console.log('Scroll event detected');
-        if (window.scrollY > 50) {
-            console.log('Adding scrolled class');
-            navbar.classList.add('scrolled');
-        } else {
-            console.log('Removing scrolled class');
-            navbar.classList.remove('scrolled');
-        }
-    });
-});
-
-// Deposito Scroll
+// Lazy Load Data Nominal Deposito saat Scroll (Halaman Deposito)
 (function ($) {
     "use strict";
+    let offset = 10;
+    const limit = 10;
+    let isLoading = false;
 
-    // Variabel untuk menyimpan offset
-    let offset = 10; // Posisi awal data, karena 10 data awal sudah dimuat
-    const limit = 10; // Jumlah data yang dimuat per permintaan
+    function loadMoreData(currentOffset, currentLimit) {
+        if (isLoading) return;
+        isLoading = true;
 
-    // Fungsi untuk memuat data tambahan saat scroll
-    function loadMoreData(offset, limit) {
         $.ajax({
-            url: "/get-nominals", // URL untuk memuat data lebih banyak
+            url: "/get-nominals",
             method: "GET",
-            data: { offset: offset, limit: limit },
-            beforeSend: function() {
-                // Menambahkan indikator loading jika diperlukan
-            },
+            data: { offset: currentOffset, limit: currentLimit },
             success: function(data) {
-                if (data.trim() === '') {
-                    // Jika tidak ada data, kita bisa sembunyikan tombol atau indikator
-                } else {
-                    $('#nominals-data').append(data); // Tambahkan data ke tabel
-                    offset += limit; // Update offset untuk permintaan selanjutnya
+                if (data && data.trim() !== '') {
+                    $('#nominals-data').append(data);
+                    offset += currentLimit;
                 }
+                isLoading = false;
             },
             error: function(xhr, status, error) {
-                console.error("AJAX Error:", error);
+                isLoading = false;
             }
         });
     }
 
-    // Event listener untuk scroll pada tbody
     $('#nominals-data').on('scroll', function() {
         const scrollTop = $(this).scrollTop();
         const scrollHeight = $(this)[0].scrollHeight;
         const windowHeight = $(this).height();
 
-        // Jika sudah scroll hampir ke bagian bawah
-        if (scrollTop + windowHeight >= scrollHeight - 10) {
-            loadMoreData(offset, limit); // Memuat data lebih banyak
+        if (scrollTop + windowHeight >= scrollHeight - 15) {
+            loadMoreData(offset, limit);
         }
     });
 
 })(jQuery);
 
-// Export PDF
+// Export PDF Resmi (dengan safety null check)
 document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("download-pdf").addEventListener("click", function() {
+    const downloadBtn = document.getElementById("download-pdf");
+    if (!downloadBtn) return;
+
+    downloadBtn.addEventListener("click", function() {
+        if (!window.jspdf || !window.jspdf.jsPDF) {
+            alert('Pustaka PDF sedang dimuat, silakan coba sesaat lagi.');
+            return;
+        }
+
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
 
-        // Ambil informasi bulan dan tahun dari elemen HTML
-        const bulan = document.getElementById("bulan").innerText;
-        const tahun = document.getElementById("tahun").innerText;
+        const bulanEl = document.getElementById("bulan");
+        const tahunEl = document.getElementById("tahun");
+        const bulan = bulanEl ? bulanEl.innerText.trim() : "";
+        const tahun = tahunEl ? tahunEl.innerText.trim() : "";
 
-            // Tambahkan judul PDF dengan bulan dan tahun
-            const title = `Equivalent Rate Deposito - ${bulan} ${tahun}`;
-            const subtitle = "BPRS HIK MCI";
-            doc.text(title, 105, 16, null, null, 'center');
-            doc.text(subtitle, 105, 24, null, null, 'center');
-
-            doc.autoTable({
-                startY: 30,
-                head: [['Nominal', '1 Bulan', '3 Bulan', '6 Bulan', '12 Bulan']],
-                body: Array.from(document.querySelectorAll("#myTable tbody tr")).map(row => {
-                    return Array.from(row.querySelectorAll("td")).map(cell => cell.innerText);
-                }),
-            });
-
-            doc.save("equivalent_rate_deposito.pdf");
+        const title = `Equivalent Rate Deposito - ${bulan} ${tahun}`;
+        const subtitle = "PT BPRS HIK MCI (Mitra Cahaya Indonesia)";
         
+        doc.setFontSize(14);
+        doc.text(title, 105, 16, null, null, 'center');
+        doc.setFontSize(10);
+        doc.setTextColor(100);
+        doc.text(subtitle, 105, 22, null, null, 'center');
+
+        if (typeof doc.autoTable === 'function') {
+            doc.autoTable({
+                startY: 28,
+                head: [['Nominal Penempatan', '1 Bulan', '3 Bulan', '6 Bulan', '12 Bulan']],
+                body: Array.from(document.querySelectorAll("#myTable tbody tr")).map(row => {
+                    return Array.from(row.querySelectorAll("td")).map(cell => cell.innerText.trim());
+                }),
+                theme: 'striped',
+                headStyles: { fillColor: [13, 104, 36] }
+            });
+            doc.save(`ER_Deposito_HIK_MCI_${bulan}_${tahun}.pdf`);
+        } else {
+            window.print();
+        }
     });
 });
