@@ -223,8 +223,8 @@
         const x = (e.clientX - rect.left) / rect.width - 0.5;
         const y = (e.clientY - rect.top) / rect.height - 0.5;
 
-        // Multi-axis 3D rotation
-        visual.style.transform = `perspective(1200px) rotateY(${x * 18}deg) rotateX(${-y * 18}deg) translateZ(8px)`;
+        // Multi-axis 3D rotation (subtle frame tilt complementing Three.js internal world rotation)
+        visual.style.transform = `perspective(1200px) rotateY(${x * 7}deg) rotateX(${-y * 7}deg) translateZ(6px)`;
 
         // Specular highlight follow
         if (shine) {

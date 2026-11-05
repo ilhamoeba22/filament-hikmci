@@ -12,6 +12,7 @@
   --primary-green-active: #063412;
   --accent-green: #1a8c33;
   --light-green: #e9f7ec;
+  --em: #19f0b0; /* Futuristic Islamic Emerald Neon for 3D Elements */
   
   --cyan: #0077b6; /* High-contrast accessible cyan */
   --cyan-bright: #0096c7;
@@ -579,8 +580,8 @@ section,
 
 /* === 3D FINTECH ISLAMIC DIGITAL BANKING SHOWCASE === */
 .hero-card-stage {
-  max-width: 460px;
-  padding: 40px 10px;
+  max-width: 480px;
+  padding: 30px 10px;
   perspective: 1200px;
   margin: 0 auto;
   position: relative;
@@ -588,13 +589,13 @@ section,
 
 .card-ambient-glow {
   position: absolute;
-  width: 360px;
-  height: 240px;
+  width: 440px;
+  height: 320px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(13, 104, 36, 0.45) 0%, rgba(0, 150, 199, 0.25) 50%, rgba(255, 255, 255, 0) 72%);
-  filter: blur(44px);
+  background: radial-gradient(circle, rgba(25, 240, 176, 0.32) 0%, rgba(255, 210, 122, 0.18) 45%, rgba(0, 0, 0, 0) 72%);
+  filter: blur(48px);
   z-index: 1;
   pointer-events: none;
 }
@@ -608,62 +609,115 @@ section,
 /* === 3D MODERN ISLAMIC BANKING ARTWORK SHOWCASE === */
 .sharia-3d-visual {
   width: 100%;
-  max-width: 440px;
+  max-width: 480px;
   border-radius: var(--radius-2xl);
   padding: 8px;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.96) 0%, rgba(240, 253, 244, 0.9) 100%);
-  border: 1px solid rgba(13, 104, 36, 0.16);
-  box-shadow: 0 25px 60px -15px rgba(13, 104, 36, 0.22), 0 10px 25px -5px rgba(0, 150, 199, 0.14);
+  background: linear-gradient(145deg, rgba(4, 36, 28, 0.92) 0%, rgba(2, 20, 16, 0.98) 100%);
+  border: 1px solid rgba(25, 240, 176, 0.3);
+  box-shadow: 0 25px 60px -15px rgba(2, 26, 20, 0.65), 0 0 35px rgba(25, 240, 176, 0.18);
   position: relative;
   overflow: hidden;
   transform-style: preserve-3d;
   transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1);
-  cursor: pointer;
+  cursor: grab;
   user-select: none;
 }
 
 .sharia-3d-visual:active {
   transform: scale(0.98);
+  cursor: grabbing;
 }
 
 .sharia-canvas-stage {
   position: relative;
   width: 100%;
-  height: 360px;
+  height: 480px;
   border-radius: calc(var(--radius-2xl) - 4px);
   overflow: hidden;
-  background: radial-gradient(circle at 50% 50%, rgba(240, 253, 244, 0.98) 0%, rgba(248, 250, 252, 0.98) 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: radial-gradient(circle at 50% 45%, #053327 0%, #021a14 60%, #010f0c 100%);
+  display: block;
   touch-action: none;
 }
 
-.hero-3d-webgl-canvas {
-  width: 100% !important;
-  height: 100% !important;
-  display: block;
-  outline: none;
-  cursor: grab;
+/* 3D WebGL Canvas Stage & Floating Akad Labels */
+#stage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
 }
 
-.hero-3d-webgl-canvas:active {
-  cursor: grabbing;
+#stage canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 0;
+  transition: opacity 1.6s ease;
+  outline: none;
+}
+
+#stage.on canvas {
+  opacity: 1;
+}
+
+#labels {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.lab {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 12px 5px 8px;
+  border-radius: 99px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  background: rgba(4, 36, 28, 0.68);
+  border: 1px solid rgba(25, 240, 176, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #d8fff2;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35), 0 0 10px rgba(25, 240, 176, 0.2);
+  will-change: transform, opacity;
+  pointer-events: none;
+  user-select: none;
+}
+
+.lab i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--em, #19f0b0);
+  box-shadow: 0 0 10px var(--em, #19f0b0);
+  display: inline-block;
+  flex-shrink: 0;
 }
 
 .scene-3d-hint {
   position: absolute;
   bottom: 12px;
   right: 14px;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(4, 36, 28, 0.85);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(13, 104, 36, 0.15);
-  padding: 4px 10px;
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(25, 240, 176, 0.35);
+  padding: 4px 12px;
   border-radius: 9999px;
   font-size: 0.68rem;
   font-weight: 600;
-  color: var(--primary-green);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  color: #19f0b0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   pointer-events: none;
   z-index: 6;
   animation: hintPulse 3s ease-in-out infinite;
@@ -1863,9 +1917,20 @@ button:active,
 
   .sharia-3d-visual,
   .fintech-hero-visual {
-    max-width: 320px;
+    max-width: 380px;
+    width: 100%;
     padding: 6px;
     margin: 0 auto;
+  }
+
+  .sharia-canvas-stage {
+    height: 420px;
+  }
+
+  @media (max-width: 420px) {
+    .sharia-canvas-stage {
+      height: 380px;
+    }
   }
 
   /* Keep floating badges within screen on small devices */

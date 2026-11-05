@@ -87,7 +87,9 @@
 
                             <!-- Real-time WebGL 3D Canvas Stage -->
                             <div class="sharia-canvas-stage position-relative overflow-hidden" id="sharia3DCanvasStage">
-                                <canvas id="hero3DCanvas" class="hero-3d-webgl-canvas"></canvas>
+                                <!-- 3D Three.js WebGL Stage & Floating Akad Labels Container -->
+                                <div id="stage" aria-hidden="true"></div>
+                                <div id="labels" aria-hidden="true"></div>
                                 
                                 <!-- Floating Light Glow Ambient Orbs -->
                                 <div class="sharia-glow-orb orb-1" aria-hidden="true"></div>
@@ -95,7 +97,7 @@
 
                                 <!-- Interactive 3D Orbit / Scroll Prompt Pill -->
                                 <div class="scene-3d-hint">
-                                    <i class="fas fa-cube text-warning me-1"></i>3D Interaktif & Scroll
+                                    <i class="fas fa-cube text-warning me-1"></i>3D Interaktif &amp; Scroll
                                 </div>
                             </div>
                         </div>
