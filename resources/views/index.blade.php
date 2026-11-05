@@ -105,11 +105,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Interactive 3D Orbit / Scroll Prompt Pill -->
-                    <div class="scene-3d-hint">
-                        <i class="fas fa-cube text-warning me-1"></i>3D Interaktif &amp; Scroll
-                    </div>
                 </div>
             </div>
         </div>
@@ -179,13 +174,13 @@
                             Investasi syariah dengan nisbah bagi hasil kompetitif. Dana aman dijamin LPS hingga Rp 2 Miliar dengan pilihan jangka waktu 1, 3, 6, hingga 12 bulan.
                         </p>
                         <div class="product-features-list mb-4">
-                            <div class="feature-item"><i class="fas fa-check-circle text-success me-2"></i>Bagi Hasil Kompetitif & Adil</div>
-                            <div class="feature-item"><i class="fas fa-check-circle text-success me-2"></i>Dijamin Penuh oleh LPS</div>
-                            <div class="feature-item"><i class="fas fa-check-circle text-success me-2"></i>Dapat Digunakan Sebagai Jaminan</div>
+                            <div class="feature-item"><span class="feature-icon"><i class="fas fa-check"></i></span><span>Bagi Hasil Kompetitif &amp; Adil</span></div>
+                            <div class="feature-item"><span class="feature-icon"><i class="fas fa-check"></i></span><span>Dijamin Penuh oleh LPS s.d Rp 2 Miliar</span></div>
+                            <div class="feature-item"><span class="feature-icon"><i class="fas fa-check"></i></span><span>Dapat Digunakan Sebagai Jaminan</span></div>
                         </div>
                         <a href="{{ url('main-deposito') }}" class="btn btn-product-action w-100">
                             <span>Pelajari Deposito</span>
-                            <i class="fas fa-arrow-right ms-2"></i>
+                            <i class="fas fa-arrow-right ms-2 transition-arrow"></i>
                         </a>
                     </div>
                 </div>
@@ -206,13 +201,13 @@
                             Kelola keuangan harian dan wujudkan impian dengan ragam tabungan syariah: Tabungan Ukhuwah, Karimah, Rencana, dan Cerdas tanpa potongan riba.
                         </p>
                         <div class="product-features-list mb-4">
-                            <div class="feature-item"><i class="fas fa-check-circle text-info me-2"></i>Akad Wadiah & Mudharabah</div>
-                            <div class="feature-item"><i class="fas fa-check-circle text-info me-2"></i>Setoran Awal Sangat Ringan</div>
-                            <div class="feature-item"><i class="fas fa-check-circle text-info me-2"></i>Fasilitas Buku Tabungan Lengkap</div>
+                            <div class="feature-item"><span class="feature-icon icon-cyan"><i class="fas fa-check"></i></span><span>Akad Wadiah &amp; Mudharabah</span></div>
+                            <div class="feature-item"><span class="feature-icon icon-cyan"><i class="fas fa-check"></i></span><span>Setoran Awal Sangat Ringan</span></div>
+                            <div class="feature-item"><span class="feature-icon icon-cyan"><i class="fas fa-check"></i></span><span>Fasilitas Buku Tabungan Lengkap</span></div>
                         </div>
                         <a href="{{ url('tabungan') }}" class="btn btn-product-action w-100">
                             <span>Pelajari Tabungan</span>
-                            <i class="fas fa-arrow-right ms-2"></i>
+                            <i class="fas fa-arrow-right ms-2 transition-arrow"></i>
                         </a>
                     </div>
                 </div>
@@ -233,13 +228,13 @@
                             Bantuan modal kerja usaha UMKM, kepemilikan properti/rumah impian, hingga kebutuhan konsumtif dengan proses cepat, angsuran tetap, dan akad Murabahah.
                         </p>
                         <div class="product-features-list mb-4">
-                            <div class="feature-item"><i class="fas fa-check-circle text-warning me-2"></i>Angsuran Tetap Hingga Lunas</div>
-                            <div class="feature-item"><i class="fas fa-check-circle text-warning me-2"></i>Proses Cepat & Persyaratan Mudah</div>
-                            <div class="feature-item"><i class="fas fa-check-circle text-warning me-2"></i>Konsultasi Ramah & Berpengalaman</div>
+                            <div class="feature-item"><span class="feature-icon icon-gold"><i class="fas fa-check"></i></span><span>Angsuran Tetap Hingga Lunas</span></div>
+                            <div class="feature-item"><span class="feature-icon icon-gold"><i class="fas fa-check"></i></span><span>Proses Cepat &amp; Persyaratan Mudah</span></div>
+                            <div class="feature-item"><span class="feature-icon icon-gold"><i class="fas fa-check"></i></span><span>Konsultasi Ramah &amp; Berpengalaman</span></div>
                         </div>
                         <a href="{{ url('pembiayaan') }}" class="btn btn-product-action w-100">
                             <span>Pelajari Pembiayaan</span>
-                            <i class="fas fa-arrow-right ms-2"></i>
+                            <i class="fas fa-arrow-right ms-2 transition-arrow"></i>
                         </a>
                     </div>
                 </div>
@@ -355,11 +350,11 @@
                         <div class="col-12">
                             <label class="form-label text-dark fw-semibold mb-2">Pilih Cepat Nominal:</label>
                             <div class="d-flex flex-wrap gap-2 mb-2">
-                                <button type="button" class="btn btn-sm btn-preset-amount" onclick="setPresetAmount(10000000)">Rp 10 Juta</button>
-                                <button type="button" class="btn btn-sm btn-preset-amount" onclick="setPresetAmount(25000000)">Rp 25 Juta</button>
-                                <button type="button" class="btn btn-sm btn-preset-amount" onclick="setPresetAmount(50000000)">Rp 50 Juta</button>
-                                <button type="button" class="btn btn-sm btn-preset-amount" onclick="setPresetAmount(100000000)">Rp 100 Juta</button>
-                                <button type="button" class="btn btn-sm btn-preset-amount" onclick="setPresetAmount(250000000)">Rp 250 Juta</button>
+                                <button type="button" class="btn btn-sm btn-preset-amount" onclick="setPresetAmount(10000000, this)">Rp 10 Juta</button>
+                                <button type="button" class="btn btn-sm btn-preset-amount" onclick="setPresetAmount(25000000, this)">Rp 25 Juta</button>
+                                <button type="button" class="btn btn-sm btn-preset-amount" onclick="setPresetAmount(50000000, this)">Rp 50 Juta</button>
+                                <button type="button" class="btn btn-sm btn-preset-amount" onclick="setPresetAmount(100000000, this)">Rp 100 Juta</button>
+                                <button type="button" class="btn btn-sm btn-preset-amount" onclick="setPresetAmount(250000000, this)">Rp 250 Juta</button>
                             </div>
                         </div>
 
@@ -431,11 +426,11 @@
                             <th rowspan="2" class="text-center align-middle bg-emerald-soft text-dark">Nominal Penempatan</th>
                             <th colspan="4" class="text-center bg-emerald-soft text-dark">Jangka Waktu & Imbal Hasil</th>
                         </tr>
-                        <tr class="text-center bg-light">
-                            <th class="py-3">1 Bulan <br><span class="badge bg-success-soft text-success mt-1">ER {{ $rateDeposito->first()->rate_1_bulan ?? 'N/A' }}%</span></th>
-                            <th class="py-3">3 Bulan <br><span class="badge bg-success-soft text-success mt-1">ER {{ $rateDeposito->first()->rate_3_bulan ?? 'N/A' }}%</span></th>
-                            <th class="py-3">6 Bulan <br><span class="badge bg-success-soft text-success mt-1">ER {{ $rateDeposito->first()->rate_6_bulan ?? 'N/A' }}%</span></th>
-                            <th class="py-3">12 Bulan <br><span class="badge bg-success-soft text-success mt-1">ER {{ $rateDeposito->first()->rate_12_bulan ?? 'N/A' }}%</span></th>
+                        <tr class="text-center table-subhead-row">
+                            <th class="py-3">1 Bulan <br><span class="badge-er mt-1">ER {{ $rateDeposito->first()->rate_1_bulan ?? 'N/A' }}%</span></th>
+                            <th class="py-3">3 Bulan <br><span class="badge-er mt-1">ER {{ $rateDeposito->first()->rate_3_bulan ?? 'N/A' }}%</span></th>
+                            <th class="py-3">6 Bulan <br><span class="badge-er mt-1">ER {{ $rateDeposito->first()->rate_6_bulan ?? 'N/A' }}%</span></th>
+                            <th class="py-3">12 Bulan <br><span class="badge-er mt-1">ER {{ $rateDeposito->first()->rate_12_bulan ?? 'N/A' }}%</span></th>
                         </tr>
                     </thead>
                     <tbody class="text-secondary">
@@ -556,17 +551,17 @@
         <div class="cta-banner-wrapper p-4 p-md-5 rounded-3xl position-relative overflow-hidden text-center text-md-start">
             <div class="row align-items-center g-4 position-relative z-2">
                 <div class="col-md-8">
-                    <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-white/20 text-white text-xs fw-semibold mb-3">
-                        <i class="fas fa-hands-helping"></i> Layanan Konsultasi Gratis
+                    <div class="d-inline-flex align-items-center gap-2 px-3 py-1.5 rounded-pill cta-pill-badge text-white fw-semibold mb-3">
+                        <i class="fas fa-hands-helping text-warning"></i> <span>Layanan Konsultasi Bebas Biaya</span>
                     </div>
                     <h2 class="cta-title text-white fw-bold mb-3">Siap Menjalin Kerjasama Syariah Bersama Kami?</h2>
-                    <p class="cta-subtitle text-white-50 mb-0">
+                    <p class="cta-subtitle text-white mb-0">
                         Kunjungi kantor kami di Sleman atau hubungi layanan WhatsApp resmi untuk pembukaan rekening, simulasi pembiayaan, dan kemitraan usaha.
                     </p>
                 </div>
                 <div class="col-md-4 text-md-end">
-                    <a href="https://wa.me/6281222770657" target="_blank" class="btn btn-light text-success fw-bold rounded-pill px-4 py-3 shadow-sm me-md-2 mb-2 mb-md-0">
-                        <i class="fab fa-whatsapp me-2 fs-5"></i>Hubungi WhatsApp
+                    <a href="https://wa.me/6281222770657" target="_blank" class="btn btn-cta-wa me-md-2 mb-2 mb-md-0">
+                        <i class="fab fa-whatsapp me-2 fs-5 text-success"></i><span>Hubungi WhatsApp</span>
                     </a>
                 </div>
             </div>
@@ -582,11 +577,15 @@
 
 <script>
 // Helper to set preset amounts in simulation input
-function setPresetAmount(amount) {
+function setPresetAmount(amount, btnElement) {
     const input = document.getElementById('jumlahPembiayaan');
     if (input) {
         input.value = amount.toLocaleString('id-ID');
         input.focus();
+    }
+    document.querySelectorAll('.btn-preset-amount').forEach(btn => btn.classList.remove('active'));
+    if (btnElement) {
+        btnElement.classList.add('active');
     }
 }
 

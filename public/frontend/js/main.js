@@ -199,7 +199,7 @@ function calculatePembiayaan() {
                 <a href="https://wa.me/6281222770657?text=${waText}" target="_blank" class="btn btn-modern-wa py-2.5 px-4 rounded-pill">
                     <i class="fab fa-whatsapp me-2 fs-5"></i>Ajukan Pembiayaan Ini via WhatsApp
                 </a>
-                <button type="button" class="btn btn-outline-secondary rounded-pill py-2.5 px-3" onclick="document.getElementById('pembiayaanForm').reset(); document.getElementById('pembiayaanResult').style.display='none';">
+                <button type="button" class="btn btn-outline-secondary rounded-pill py-2.5 px-3" onclick="document.getElementById('pembiayaanForm').reset(); document.querySelectorAll('.btn-preset-amount').forEach(b => b.classList.remove('active')); document.getElementById('pembiayaanResult').style.display='none';">
                     <i class="fas fa-redo me-1"></i>Hitung Ulang
                 </button>
             </div>
