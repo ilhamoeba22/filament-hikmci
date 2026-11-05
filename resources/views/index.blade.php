@@ -246,7 +246,7 @@
 
 <!-- RELOCATED CAROUSEL SECTION: Promo, Kegiatan & Informasi Terkini (Clean Modern Frame) -->
 <section id="promo-carousel-section" class="carousel-modern-section py-4">
-    <div class="container promo-carousel-container py-2">
+    <div class="container py-2">
         <!-- Section Title -->
         <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between mb-4">
             <div>
