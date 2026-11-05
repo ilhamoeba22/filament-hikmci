@@ -237,20 +237,26 @@ section,
   transform: scale(1.02);
 }
 
-/* Accessible Mobile Toggler (Touch Target >= 44px) */
+/* Accessible Mobile Toggler (Touch Target >= 44px, only visible on mobile/tablet < 992px) */
 .modern-toggler {
   width: 44px;
   height: 44px;
   min-width: 44px;
   min-height: 44px;
   padding: 0 !important;
-  display: inline-flex !important;
+  display: none !important;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
   background: rgba(13, 104, 36, 0.08);
   color: var(--primary-green) !important;
   transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+@media (max-width: 991.98px) {
+  .modern-toggler {
+    display: inline-flex !important;
+  }
 }
 
 .modern-toggler:hover,

@@ -100,7 +100,7 @@
                 <a href="{{ url('/') }}" class="navbar-brand p-0 d-flex align-items-center">
                     <img src="{{ asset('frontend/img/logo/logo_mci.png') }}" alt="Logo BPRS HIK MCI" class="navbar-logo" />
                 </a>
-                <button class="navbar-toggler modern-toggler border-0 shadow-none p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
+                <button class="navbar-toggler modern-toggler d-lg-none border-0 shadow-none p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
                     <span class="fa fa-bars text-success fs-5"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
