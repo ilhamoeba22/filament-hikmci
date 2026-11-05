@@ -1,120 +1,199 @@
-<!-- Footer Start -->
-<div class="container-fluid footer pt-3">
-    <!-- Konten footer tetap sama -->
-    <div class="container pt-4">
-        <div class="row g-5 align-items-start">
-            <!-- Column 1: Brand & Contact Info -->
-            <div class="col-lg-3 col-md-6">
-                <div class="footer-item d-flex flex-column">
-                    <a href="{{ url('/') }}" class="mb-3">
-                        <img src="{{ asset('frontend/img/logo/logo_mci.png') }}" alt="Footer Logo" class="img-fluid" style="max-height: 80px; object-fit: contain;" />
-                    </a>
-                    <a href="https://maps.app.goo.gl/QypJrDjHsZMNwof48" target="_blank" class="text-white-50 text-decoration-none mb-3 lh-base">
-                        <i class="fas fa-map-marker-alt text-info me-2"></i>Jalan Kaliurang KM 09,<br />
-                        <span class="ms-3">Kel Sardonoharjo, Kec Ngaglik,</span><br />
-                        <span class="ms-3">Kab Sleman, DI Yogyakarta, 55581</span>
-                    </a>
-                    <a href="mailto:corsec@bprshikmci.co.id" class="text-white-50 text-decoration-none mb-2">
-                        <i class="fas fa-envelope text-info me-2"></i>corsec@bprshikmci.co.id
-                    </a>
-                    <a href="tel:+0274881159" class="text-white-50 text-decoration-none mb-3">
-                        <i class="fas fa-phone text-info me-2"></i>+0274 881159
-                    </a>
-                    <div class="d-flex mt-2 gap-2">
-                        <a class="btn btn-secondary btn-sm-square rounded-circle" target="_blank" href="https://maps.app.goo.gl/QypJrDjHsZMNwof48" title="Lokasi Google Maps" aria-label="Lokasi Google Maps"><i class="bi bi-geo-alt-fill"></i></a>
-                        <a class="btn btn-secondary btn-sm-square rounded-circle" target="_blank" href="https://www.instagram.com/bprshikmci/" title="Instagram Bank Syariah BPRS HIK MCI" aria-label="Instagram Bank Syariah BPRS HIK MCI"><i class="fab fa-instagram"></i></a>
-                        <a class="btn btn-secondary btn-sm-square rounded-circle" target="_blank" href="https://www.facebook.com/people/Bank-Syariah-HIK-MCI/61554427015454/" title="Facebook Bank Syariah BPRS HIK MCI" aria-label="Facebook Bank Syariah BPRS HIK MCI"><i class="fab fa-facebook-f"></i></a>
-                    </div>
-                </div>
-            </div>
+<!-- Footer Start (Fintech Corporate Luxury Redesign) -->
+<footer class="footer-modern position-relative overflow-hidden">
+    <!-- Top Glowing Accent Line -->
+    <div class="footer-top-accent" aria-hidden="true"></div>
 
-            <!-- Column 2: Products -->
-            <div class="col-lg-6 col-md-6">
-                <div class="footer-item">
-                    <h4 class="text-info mb-4">Produk Kami</h4>
-                    <div class="row g-4">
-                        <div class="col-sm-6">
-                            <h5 class="text-white mb-3 pb-1 border-bottom border-secondary border-1">Pembiayaan</h5>
-                            <div class="d-flex flex-column gap-2 mb-4">
-                                <a href="{{ url('pembiayaan/pembiayaan-umkm') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>UMKM Mikro</a>
-                                <a href="{{ url('pembiayaan/pembiayaan-property') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Properti</a>
-                                <a href="{{ url('pembiayaan/pembiayaan-corporate') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Corporate</a>
-                                <a href="{{ url('pembiayaan/pembiayaan-consumer-finance') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Consumer Finance</a>
-                            </div>
-                            <h5 class="text-white mb-3 pb-1 border-bottom border-secondary border-1">Deposito</h5>
-                            <div class="d-flex flex-column gap-2">
-                                <a href="{{ url('main-deposito/deposito') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Deposito Karimah</a>
-                                <a href="{{ url('main-deposito/wakaf') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>CWLD</a>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <h5 class="text-white mb-3 pb-1 border-bottom border-secondary border-1">Tabungan</h5>
-                            <div class="d-flex flex-column gap-2">
-                                <a href="{{ url('tabungan/tabungan-ukhuwah') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Tabungan Ukhuwah</a>
-                                <a href="{{ url('tabungan/tabungan-karimah') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Tabungan Karimah</a>
-                                <a href="{{ url('tabungan/tabungan-rencana') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Tabungan Rencana</a>
-                                <a href="{{ url('tabungan/tabungan-cerdas') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Tabungan Cerdas</a>
-                            </div>
+    <div class="container position-relative pt-5 pb-4">
+        <!-- 1. Header Footer Brand Strip -->
+        <div class="footer-brand-strip pb-4 mb-5 border-bottom border-white-10">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-7 col-md-12">
+                    <div class="d-flex flex-column flex-sm-row align-items-sm-center gap-3">
+                        <a href="{{ url('/') }}" class="footer-brand-logo-card d-inline-flex align-items-center justify-content-center p-2 rounded-2xl bg-white shadow-sm" aria-label="Beranda PT BPRS HIK MCI">
+                            <img src="{{ asset('frontend/img/logo/logo_mci.png') }}" alt="Logo PT BPRS HIK MCI" class="img-fluid" style="max-height: 48px; width: auto;" />
+                        </a>
+                        <div class="footer-brand-divider d-none d-sm-block"></div>
+                        <div>
+                            <span class="footer-brand-name d-block text-white fw-bold">PT BPRS HIK MCI</span>
+                            <p class="footer-tagline mb-0 text-white-75">
+                                Wujudkan Keuangan Syariah yang Berkah dan Terpercaya
+                            </p>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Column 3: Information -->
-            <div class="col-lg-3 col-md-12">
-                <div class="footer-item">
-                    <h4 class="text-info mb-4">Informasi</h4>
-                    <div class="d-flex flex-column gap-2">
-                        <a href="{{ url('about') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Tentang kami</a>
-                        <a href="{{ url('karir') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Karir</a>
-                        <a href="{{ url('edukasi') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Edukasi</a>
-                        <a href="{{ url('asset') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>E-Asset</a>
-                        <a href="{{ url('lapkeu') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Laporan Keuangan</a>
-                        <a href="{{ url('penghargaan') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Penghargaan</a>
-                        <a href="{{ url('piagam-audit') }}" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Piagam Audit Internal</a>
-                        <a href="http://wbs.bprshikmci.co.id/" target="_blank" class="text-white-50 text-decoration-none"><i class="fas fa-angle-right me-2 text-info"></i>Lapor WBS</a>
+                <div class="col-lg-5 col-md-12">
+                    <div class="d-flex flex-wrap align-items-center justify-content-lg-end gap-2">
+                        <span class="footer-badge-pill">
+                            <i class="fas fa-shield-alt text-success me-1"></i>Berizin & Diawasi OJK
+                        </span>
+                        <span class="footer-badge-pill">
+                            <i class="fas fa-landmark text-info me-1"></i>Penjaminan LPS s.d Rp 2 M
+                        </span>
+                        <span class="footer-badge-pill">
+                            <i class="fas fa-certificate text-warning me-1"></i>Kepatuhan DSN-MUI
+                        </span>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row g-5 justify-content-between align-items-center mt-0 pt-0">
-            <div class="col-md-10">
-                <small class="text-white d-block text-end">BPRS HIK MCI merupakan peserta penjaminan LPS</small>
-                <small class="text-white d-block mb-1 text-end">BPRS HIK MCI berizin dan diawasi oleh Otoritas Jasa Keuangan</small>
+
+        <!-- 2. Clean 4-Column Grid -->
+        <div class="row g-4 g-lg-5 mb-5 footer-main-grid">
+            <!-- Kolom 1: Profil & Kantor Pusat -->
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-col-widget">
+                    <h5 class="footer-col-title">
+                        <span>Kantor Pusat</span>
+                    </h5>
+                    <div class="footer-address-block mb-3">
+                        <div class="d-flex align-items-start gap-2 text-white-75 mb-2">
+                            <i class="fas fa-map-marker-alt text-info mt-1 flex-shrink-0"></i>
+                            <span class="lh-base">
+                                Jl. Kaliurang KM 09, Sardonoharjo, Ngaglik, Sleman, D.I. Yogyakarta 55581
+                            </span>
+                        </div>
+                        <a href="https://maps.app.goo.gl/QypJrDjHsZMNwof48" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-footer-map mt-1">
+                            <i class="bi bi-geo-alt-fill text-danger me-1"></i>Petunjuk Arah Google Maps
+                        </a>
+                    </div>
+                    <ul class="footer-contact-list list-unstyled mb-0">
+                        <li class="mb-2">
+                            <a href="tel:+62274881159" class="text-white-75 text-decoration-none d-inline-flex align-items-center">
+                                <i class="fas fa-phone-alt text-info me-2"></i>(0274) 881159
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="mailto:corsec@bprshikmci.co.id" class="text-white-75 text-decoration-none d-inline-flex align-items-center">
+                                <i class="fas fa-envelope text-info me-2"></i>corsec@bprshikmci.co.id
+                            </a>
+                        </li>
+                        <li class="text-white-50 small mt-2">
+                            <i class="far fa-clock text-warning me-2"></i>Jam Layanan: Senin - Jumat, 08.00 - 15.00 WIB
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="col-md-2">
-                <div class="d-flex justify-content-start">
-                    <img src="{{ asset('frontend/img/logo/ib_logo.png') }}" alt="Bank Syariah" class="img-fluid me-3" style="height: 50px;">
-                    <img src="{{ asset('frontend/img/logo/bprs_logo.png') }}" alt="BPR Syariah" class="img-fluid me-3" style="height: 50px;">
-                    <!-- <img src="{{ asset('frontend/img/logo/lps.png') }}" alt="Lembaga Penjamin Simpanan" class="img-fluid" style="height: 50px;"> -->
+
+            <!-- Kolom 2: Produk Unggulan -->
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-col-widget">
+                    <h5 class="footer-col-title">
+                        <span>Produk Unggulan</span>
+                    </h5>
+                    <ul class="footer-links-list list-unstyled mb-0">
+                        <li><a href="{{ url('pembiayaan/pembiayaan-umkm') }}"><i class="fas fa-chevron-right me-2"></i>Pembiayaan UMKM Mikro</a></li>
+                        <li><a href="{{ url('pembiayaan/pembiayaan-property') }}"><i class="fas fa-chevron-right me-2"></i>Pembiayaan Properti</a></li>
+                        <li><a href="{{ url('pembiayaan/pembiayaan-corporate') }}"><i class="fas fa-chevron-right me-2"></i>Pembiayaan Corporate</a></li>
+                        <li><a href="{{ url('pembiayaan/pembiayaan-consumer-finance') }}"><i class="fas fa-chevron-right me-2"></i>Consumer Finance</a></li>
+                        <li><a href="{{ url('main-deposito/deposito') }}"><i class="fas fa-chevron-right me-2"></i>Deposito Karimah</a></li>
+                        <li><a href="{{ url('tabungan/tabungan-ukhuwah') }}"><i class="fas fa-chevron-right me-2"></i>Tabungan Ukhuwah</a></li>
+                        <li><a href="{{ url('tabungan/tabungan-karimah') }}"><i class="fas fa-chevron-right me-2"></i>Tabungan Karimah</a></li>
+                        <li><a href="{{ url('main-deposito/wakaf') }}"><i class="fas fa-chevron-right me-2"></i>CWLD Wakaf</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Kolom 3: Layanan & Kepatuhan -->
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-col-widget">
+                    <h5 class="footer-col-title">
+                        <span>Layanan & Kepatuhan</span>
+                    </h5>
+                    <ul class="footer-links-list list-unstyled mb-0">
+                        <li><a href="{{ url('about') }}"><i class="fas fa-chevron-right me-2"></i>Tentang Kami</a></li>
+                        <li><a href="{{ url('about') }}#pengurus"><i class="fas fa-chevron-right me-2"></i>Profil Pengurus</a></li>
+                        <li><a href="{{ url('lapkeu') }}"><i class="fas fa-chevron-right me-2"></i>Laporan Keuangan Publikasi</a></li>
+                        <li><a href="{{ url('pengaduan') }}"><i class="fas fa-chevron-right me-2"></i>Layanan Pengaduan Konsumen</a></li>
+                        <li><a href="{{ url('karir') }}"><i class="fas fa-chevron-right me-2"></i>Karir</a></li>
+                        <li><a href="{{ url('edukasi') }}"><i class="fas fa-chevron-right me-2"></i>Edukasi Syariah</a></li>
+                        <li><a href="{{ url('edukasi') }}"><i class="fas fa-chevron-right me-2"></i>E-Book</a></li>
+                        <li><a href="{{ url('asset') }}"><i class="fas fa-chevron-right me-2"></i>E-Asset</a></li>
+                        <li><a href="http://wbs.bprshikmci.co.id/" target="_blank" rel="noopener noreferrer"><i class="fas fa-chevron-right me-2"></i>Whistleblowing System (WBS)</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Kolom 4: Hubungi & Media Sosial -->
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-col-widget">
+                    <h5 class="footer-col-title">
+                        <span>Hubungi & Media Sosial</span>
+                    </h5>
+                    <!-- WhatsApp Official Card -->
+                    <div class="footer-wa-card p-3 mb-3 rounded-2xl">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="footer-wa-pulse"></span>
+                            <span class="footer-wa-label">WhatsApp Customer Care</span>
+                        </div>
+                        <p class="footer-wa-sub text-white-75 small mb-3">
+                            Konsultasi pembiayaan & simpanan syariah responsif bersama tim kami.
+                        </p>
+                        <a href="https://wa.me/6281222770657" target="_blank" rel="noopener noreferrer" class="btn btn-wa-official w-100">
+                            <i class="fab fa-whatsapp me-2"></i>Chat WhatsApp Resmi
+                        </a>
+                    </div>
+
+                    <!-- Social Media Links -->
+                    <div class="mt-3">
+                        <span class="footer-social-caption text-white-50 small d-block mb-2">Media Sosial Resmi:</span>
+                        <div class="d-flex align-items-center gap-2">
+                            <a href="https://www.instagram.com/bprshikmci/" target="_blank" rel="noopener noreferrer" class="social-circle-link ig-glow" title="Instagram Resmi @bprshikmci" aria-label="Instagram Resmi @bprshikmci">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.facebook.com/people/Bank-Syariah-HIK-MCI/61554427015454/" target="_blank" rel="noopener noreferrer" class="social-circle-link fb-glow" title="Facebook Resmi BPRS HIK MCI" aria-label="Facebook Resmi BPRS HIK MCI">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://maps.app.goo.gl/QypJrDjHsZMNwof48" target="_blank" rel="noopener noreferrer" class="social-circle-link maps-glow" title="Titik Lokasi Kantor Pusat di Google Maps" aria-label="Titik Lokasi Kantor Pusat di Google Maps">
+                                <i class="bi bi-geo-alt-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Bottom Bar Legal & Regulatory Compliance -->
+        <div class="footer-bottom-bar pt-4 border-top border-white-10">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-8 col-md-12">
+                    <p class="footer-compliance-text mb-2 text-white-75 small">
+                        PT BPRS Harta Insan Karimah Mitra Cahaya Indonesia berizin dan diawasi oleh Otoritas Jasa Keuangan (OJK) serta merupakan peserta penjaminan Lembaga Penjamin Simpanan (LPS) dengan penjaminan simpanan hingga Rp 2 Miliar per nasabah.
+                    </p>
+                    <p class="footer-copyright-text mb-0 text-white-50 small">
+                        &copy; 2024 PT BPRS HIK MCI. Seluruh hak cipta dilindungi undang-undang.
+                    </p>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="d-flex flex-wrap justify-content-lg-end align-items-center gap-3">
+                        <div class="footer-legal-badge p-1 bg-white-5 rounded">
+                            <img src="{{ asset('frontend/img/logo/ojk.svg') }}" alt="Otoritas Jasa Keuangan" class="footer-legal-logo" style="height: 32px; width: auto;" />
+                        </div>
+                        <div class="footer-legal-badge p-1 bg-white-5 rounded">
+                            <img src="{{ asset('frontend/img/logo/lps.png') }}" alt="Lembaga Penjamin Simpanan" class="footer-legal-logo" style="height: 32px; width: auto;" />
+                        </div>
+                        <div class="footer-legal-badge p-1 bg-white-5 rounded">
+                            <img src="{{ asset('frontend/img/logo/ib_logo.png') }}" alt="Bank Syariah" class="footer-legal-logo" style="height: 32px; width: auto;" />
+                        </div>
+                        <div class="footer-legal-badge p-1 bg-white-5 rounded">
+                            <img src="{{ asset('frontend/img/logo/bprs_logo.png') }}" alt="BPR Syariah" class="footer-legal-logo" style="height: 32px; width: auto;" />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</footer>
 <!-- Footer End -->
 
-<!-- Copyright Start -->
-<div class="container-fluid copyright py-1">
-    <div class="container text-center">
-        <div class="col-md-12 text-body">
-            Designed With
-            <i class="fas fa-heart text-white"></i>
-            By
-            <a class="border-bottom text-white" href="#">IT & MIS BPRS HIK MCI</a>
-        </div>
-    </div>
-</div>
-<!-- Copyright End -->
-
-<!-- WhatsApp and Back to Top Buttons Start -->
+<!-- Floating Action Buttons (Strict 1:1 Aspect-Ratio Circles) -->
 <div class="fixed-buttons">
-    <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top" style="display: none;" title="Kembali ke atas" aria-label="Kembali ke atas"><i class="fa fa-arrow-up"></i></a>
-    <a href="https://wa.me/6281222770657" target="_blank" class="btn btn-success btn-lg-square rounded-circle" title="Konsultasi via WhatsApp" aria-label="Konsultasi via WhatsApp">
+    <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top" style="display: none;" title="Kembali ke atas" aria-label="Kembali ke atas">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+    <a href="https://wa.me/6281222770657" target="_blank" rel="noopener noreferrer" class="btn btn-success btn-lg-square rounded-circle" title="Konsultasi via WhatsApp" aria-label="Konsultasi via WhatsApp">
         <i class="fab fa-whatsapp" style="font-size: 26px;"></i>
     </a>
 </div>
-<!-- WhatsApp and Back to Top Buttons End -->
 
 <style>
 .card-shine {
@@ -122,7 +201,7 @@
   inset: 0;
   border-radius: inherit;
   pointer-events: none;
-  z-index: 1;
+  z-index: 2;
   transition: background 0.1s ease;
 }
 .card { position: relative; }
@@ -141,17 +220,75 @@
 <script src="{{ asset('frontend/js/main.js') }}" defer></script>
 
 <script>
-// 3D Tilt Cards with Hardware Acceleration & Touch / Reduced-Motion Safety
+// Interactive 3D Parallax & Hardware Accelerated Tilt System
 (function() {
   const supportsHover = window.matchMedia('(hover: hover)').matches;
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // 1. Hero 3D Parallax Showcase Handler
+  function initHero3DParallax() {
+    if (!supportsHover || prefersReducedMotion) return;
+
+    const stage = document.getElementById('heroFintechStage');
+    const visual = document.getElementById('fintechHeroVisual');
+    if (!stage || !visual) return;
+
+    const shine = visual.querySelector('.card-shine');
+    const badges = stage.querySelectorAll('.layer-parallax-high');
+    let rafId = null;
+
+    stage.addEventListener('mousemove', e => {
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        const rect = stage.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+        // Multi-axis 3D rotation
+        visual.style.transform = `perspective(1200px) rotateY(${x * 18}deg) rotateX(${-y * 18}deg) translateZ(8px)`;
+
+        // Specular highlight follow
+        if (shine) {
+          const vRect = visual.getBoundingClientRect();
+          shine.style.background = `radial-gradient(circle at ${e.clientX - vRect.left}px ${e.clientY - vRect.top}px, rgba(255,255,255,0.24), transparent 60%)`;
+        }
+
+        // True physical parallax displacement for surrounding badges
+        badges.forEach(b => {
+          b.style.transform = `translateZ(65px) translate3d(${-x * 20}px, ${-y * 16}px, 0)`;
+        });
+      });
+    });
+
+    stage.addEventListener('mouseleave', () => {
+      if (rafId) cancelAnimationFrame(rafId);
+      visual.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+      visual.style.transform = 'perspective(1200px) rotateY(0deg) rotateX(0deg) translateZ(0px)';
+      if (shine) shine.style.background = 'transparent';
+
+      badges.forEach(b => {
+        b.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+        b.style.transform = 'translateZ(65px) translate3d(0, 0, 0)';
+      });
+
+      setTimeout(() => {
+        visual.style.transition = '';
+        badges.forEach(b => b.style.transition = '');
+      }, 400);
+    });
+
+    stage.addEventListener('mouseenter', () => {
+      visual.style.transition = 'none';
+      badges.forEach(b => b.style.transition = 'none');
+    });
+  }
+
+  // 2. Standard 3D Tilt for regular cards
   function init3DCards() {
     if (!supportsHover || prefersReducedMotion) return;
 
-    document.querySelectorAll('.card-3d').forEach(card => {
+    document.querySelectorAll('.card-3d:not(#fintechHeroVisual)').forEach(card => {
       const shine = card.querySelector('.card-shine');
-      
       card.style.transformStyle = 'preserve-3d';
       card.style.willChange = 'transform';
       
@@ -184,9 +321,8 @@
     });
   }
   
-  // Content Reveal Safety: All elements are 100% visible by default (Never hide elements with opacity 0)
+  // 3. Content Reveal Safety
   function initScrollReveal() {
-    // Ensure all target elements are completely visible immediately
     document.querySelectorAll('.modern-product-card, .modern-news-card, .simulator-form-card, .cta-banner-wrapper').forEach(el => {
       el.style.opacity = '1';
       el.style.visibility = 'visible';
@@ -194,7 +330,6 @@
 
     if (prefersReducedMotion || !('IntersectionObserver' in window)) return;
 
-    // Subtle enhancement only: elements are already visible
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
@@ -209,10 +344,16 @@
     });
   }
   
+  function init() {
+    initHero3DParallax();
+    init3DCards();
+    initScrollReveal();
+  }
+
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => { init3DCards(); initScrollReveal(); });
+    document.addEventListener('DOMContentLoaded', init);
   } else {
-    init3DCards(); initScrollReveal();
+    init();
   }
 })();
 </script>

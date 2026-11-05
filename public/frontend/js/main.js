@@ -367,7 +367,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 startY: 28,
                 head: [['Nominal Penempatan', '1 Bulan', '3 Bulan', '6 Bulan', '12 Bulan']],
                 body: Array.from(document.querySelectorAll("#myTable tbody tr")).map(row => {
-                    return Array.from(row.querySelectorAll("td")).map(cell => cell.innerText.trim());
+                    return Array.from(row.querySelectorAll("td")).map(cell => (cell.textContent || cell.innerText || '').trim());
                 }),
                 theme: 'striped',
                 headStyles: { fillColor: [13, 104, 36] }
@@ -378,6 +378,126 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+// Client-Side Modern Pagination for Equivalent Rate Deposito Karimah (#myTable)
+document.addEventListener("DOMContentLoaded", function() {
+    initDepositoPagination();
+});
+
+function initDepositoPagination() {
+    const table = document.getElementById("myTable");
+    const container = document.getElementById("deposito-pagination-container");
+    if (!table || !container) return;
+
+    const tbody = table.querySelector("tbody");
+    if (!tbody) return;
+
+    const rows = Array.from(tbody.querySelectorAll("tr"));
+    const totalRows = rows.length;
+    if (totalRows === 0) return;
+
+    const infoEl = document.getElementById("deposito-pagination-info");
+    const pagesList = document.getElementById("deposito-pagination-pages");
+    const perPageSelect = document.getElementById("deposito-per-page");
+
+    let rowsPerPage = perPageSelect ? parseInt(perPageSelect.value, 10) || 5 : 5;
+    let currentPage = 1;
+
+    function renderPagination() {
+        const totalPages = Math.ceil(totalRows / rowsPerPage) || 1;
+        if (currentPage > totalPages) currentPage = totalPages;
+        if (currentPage < 1) currentPage = 1;
+
+        const startIdx = (currentPage - 1) * rowsPerPage;
+        const endIdx = Math.min(startIdx + rowsPerPage, totalRows);
+
+        // Show/hide rows with zero page reload
+        rows.forEach((row, idx) => {
+            if (idx >= startIdx && idx < endIdx) {
+                row.style.display = "";
+            } else {
+                row.style.display = "none";
+            }
+        });
+
+        // Update info text (Strict hyphen -)
+        if (infoEl) {
+            infoEl.textContent = `Menampilkan ${startIdx + 1} - ${endIdx} dari ${totalRows} nominal`;
+        }
+
+        // Render modern pagination buttons
+        if (pagesList) {
+            pagesList.innerHTML = "";
+
+            // Previous Button
+            const prevLi = document.createElement("li");
+            prevLi.className = `page-item ${currentPage === 1 ? "disabled" : ""}`;
+            prevLi.innerHTML = `
+                <button type="button" class="page-link page-link-modern" aria-label="Halaman Sebelumnya" ${currentPage === 1 ? 'disabled' : ''}>
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+            `;
+            const prevBtn = prevLi.querySelector("button");
+            prevBtn.addEventListener("click", function(e) {
+                e.preventDefault();
+                if (currentPage > 1) {
+                    currentPage--;
+                    renderPagination();
+                }
+            });
+            pagesList.appendChild(prevLi);
+
+            // Numbered Page Buttons
+            for (let i = 1; i <= totalPages; i++) {
+                const pageLi = document.createElement("li");
+                pageLi.className = `page-item ${i === currentPage ? "active" : ""}`;
+                pageLi.innerHTML = `
+                    <button type="button" class="page-link page-link-modern ${i === currentPage ? "is-active" : ""}" aria-label="Halaman ${i}" ${i === currentPage ? 'aria-current="page"' : ''}>
+                        ${i}
+                    </button>
+                `;
+                const pageBtn = pageLi.querySelector("button");
+                pageBtn.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    if (currentPage !== i) {
+                        currentPage = i;
+                        renderPagination();
+                    }
+                });
+                pagesList.appendChild(pageLi);
+            }
+
+            // Next Button
+            const nextLi = document.createElement("li");
+            nextLi.className = `page-item ${currentPage === totalPages ? "disabled" : ""}`;
+            nextLi.innerHTML = `
+                <button type="button" class="page-link page-link-modern" aria-label="Halaman Berikutnya" ${currentPage === totalPages ? 'disabled' : ''}>
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            `;
+            const nextBtn = nextLi.querySelector("button");
+            nextBtn.addEventListener("click", function(e) {
+                e.preventDefault();
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    renderPagination();
+                }
+            });
+            pagesList.appendChild(nextLi);
+        }
+    }
+
+    if (perPageSelect) {
+        perPageSelect.addEventListener("change", function() {
+            rowsPerPage = parseInt(this.value, 10) || 5;
+            currentPage = 1;
+            renderPagination();
+        });
+    }
+
+    // Initial render
+    renderPagination();
+}
 
 // Nested dropdown support for Bootstrap 5 (e.g. Layanan Lainnya -> Media)
 document.addEventListener("DOMContentLoaded", function () {

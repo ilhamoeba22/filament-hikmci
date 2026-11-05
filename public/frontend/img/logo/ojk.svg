@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 52" fill="none">
+  <!-- OJK Emblem (Garuda wings) -->
+  <g transform="translate(4, 2)">
+    <path d="M12 4C14 8 18 12 25 13C20 16 16 19 14 26C11 20 8 17 2 15C8 13 10 9 12 4Z" fill="#E11D48"/>
+    <path d="M22 10C24 13 28 16 35 17C29 19 25 22 23 28C21 23 18 20 12 18C18 17 20 14 22 10Z" fill="#BE123C"/>
+    <path d="M30 18C32 20 36 22 42 23C37 25 34 27 32 32C31 28 28 26 23 25C28 24 29 21 30 18Z" fill="#9F1239"/>
+    <!-- Crescent accent -->
+    <path d="M5 25C12 29 20 29 28 25C20 32 10 32 5 25Z" fill="#F43F5E"/>
+  </g>
+  <!-- OJK Text -->
+  <g fill="#FFFFFF">
+    <text x="50" y="22" font-family="'Outfit', 'Inter', sans-serif" font-weight="900" font-size="18" letter-spacing="1.5">OJK</text>
+    <text x="50" y="34" font-family="'Inter', sans-serif" font-weight="600" font-size="6.5" letter-spacing="0.5" fill="#CBD5E1">OTORITAS JASA KEUANGAN</text>
+  </g>
+</svg>

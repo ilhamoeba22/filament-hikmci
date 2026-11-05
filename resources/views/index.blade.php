@@ -73,68 +73,131 @@
                 </div>
             </div>
 
-            <!-- Right Column: 3D Fintech Physical Card & Glass Badges (Revolut/pixel-io style) -->
+            <!-- Right Column: 3D Islamic Digital Banking & Future Growth Showcase -->
             <div class="col-lg-5 text-center position-relative">
-                <div class="hero-card-stage position-relative mx-auto">
-                    <!-- Ambient Glow Behind Card -->
+                <div class="hero-card-stage position-relative mx-auto" id="heroFintechStage">
+                    <!-- Ambient Glow Behind 3D Showcase -->
                     <div class="card-ambient-glow" aria-hidden="true"></div>
 
-                    <!-- Floating Glass Tag 1: Top Right (Google Rating) -->
-                    <div class="floating-glass-badge badge-top-right animate-float">
+                    <!-- Floating Glass Tag 1: Top Right (Institutional Experience Badge) -->
+                    <div class="floating-glass-badge badge-top-right animate-float layer-parallax-high">
                         <div class="d-flex align-items-center gap-2">
-                            <div class="badge-icon-star"><i class="fas fa-star text-warning"></i></div>
+                            <div class="badge-icon-award"><i class="fas fa-award text-warning"></i></div>
                             <div class="text-start">
-                                <div class="badge-bold">Rating 4.8 / 5.0</div>
-                                <div class="badge-caption">97+ Ulasan Nasabah</div>
+                                <div class="badge-bold">16+ Tahun Mengabdi</div>
+                                <div class="badge-caption">Sejak 11 Januari 2008</div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Interactive 3D Physical Card Mockup -->
+                    <!-- 3D Interactive Fintech Visual Showcase (preserve-3d parallax depth) -->
                     <div class="card-3d-wrapper">
-                        <div class="physical-card card-3d">
-                            <div class="card-shine"></div>
-                            <!-- Card Header -->
-                            <div class="d-flex justify-content-between align-items-start mb-4">
-                                <div class="card-brand">
-                                    <span class="brand-sub">BPR SYARIAH</span>
-                                    <div class="brand-main">HIK <span>MCI</span></div>
+                        <div class="fintech-hero-visual card-3d" id="fintechHeroVisual" tabindex="0" role="region" aria-label="Showcase Perbankan Syariah Digital BPRS HIK MCI">
+                            <div class="card-shine" aria-hidden="true"></div>
+
+                            <!-- Layer 1: Base Chassis & Sacred Arabesque Star Geometry (translateZ: 0px) -->
+                            <div class="fintech-visual-base">
+                                <svg class="arabesque-pattern" viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <defs>
+                                        <linearGradient id="geomGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.35"/>
+                                            <stop offset="50%" stop-color="#10b981" stop-opacity="0.25"/>
+                                            <stop offset="100%" stop-color="#fbbf24" stop-opacity="0.2"/>
+                                        </linearGradient>
+                                        <pattern id="islamicStar" width="50" height="50" patternUnits="userSpaceOnUse">
+                                            <path d="M25,0 L32,18 L50,25 L32,32 L25,50 L18,32 L0,25 L18,18 Z" fill="none" stroke="url(#geomGlow)" stroke-width="0.8"/>
+                                            <circle cx="25" cy="25" r="10" fill="none" stroke="url(#geomGlow)" stroke-width="0.5"/>
+                                        </pattern>
+                                    </defs>
+                                    <rect width="100%" height="100%" fill="url(#islamicStar)"/>
+                                </svg>
+                            </div>
+
+                            <!-- Layer 2: Middle Financial Analytics & Growth Dashboard (translateZ: 25px) -->
+                            <div class="fintech-visual-middle">
+                                <!-- Portal Header -->
+                                <div class="d-flex justify-content-between align-items-center mb-3 fintech-header">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="live-pulse-dot"></span>
+                                        <span class="fintech-portal-title">BPRS HIK MCI DIGITAL PORTAL</span>
+                                    </div>
+                                    <div class="fintech-security-badge">
+                                        <i class="fas fa-lock me-1"></i>256-Bit SSL
+                                    </div>
                                 </div>
-                                <div class="card-contactless">
-                                    <i class="fas fa-wifi fa-rotate-90"></i>
+
+                                <!-- Growth Analytics Banner -->
+                                <div class="growth-metric-box mb-3">
+                                    <div class="d-flex justify-content-between align-items-baseline mb-1">
+                                        <div class="text-start">
+                                            <span class="metric-caption">Penyaluran Pembiayaan Syariah</span>
+                                            <div class="metric-value">Rp 480+ Miliar</div>
+                                        </div>
+                                        <div class="growth-trend-pill">
+                                            <i class="fas fa-arrow-up me-1"></i>+14.8% YoY
+                                        </div>
+                                    </div>
+
+                                    <!-- Interactive SVG Growth Line Chart -->
+                                    <div class="chart-container py-1">
+                                        <svg class="growth-chart-svg" viewBox="0 0 320 60" preserveAspectRatio="none" aria-hidden="true">
+                                            <defs>
+                                                <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
+                                                    <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.35"/>
+                                                    <stop offset="100%" stop-color="#0d6824" stop-opacity="0.0"/>
+                                                </linearGradient>
+                                                <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                    <stop offset="0%" stop-color="#10b981"/>
+                                                    <stop offset="50%" stop-color="#38bdf8"/>
+                                                    <stop offset="100%" stop-color="#e6b800"/>
+                                                </linearGradient>
+                                            </defs>
+                                            <!-- Area fill -->
+                                            <path d="M0,52 C40,48 70,36 110,38 C150,40 180,24 220,20 C260,16 280,8 320,4 L320,60 L0,60 Z" fill="url(#chartGradient)"/>
+                                            <!-- Glowing Line -->
+                                            <path d="M0,52 C40,48 70,36 110,38 C150,40 180,24 220,20 C260,16 280,8 320,4" fill="none" stroke="url(#lineGrad)" stroke-width="2.5" stroke-linecap="round"/>
+                                            <!-- Key Point Nodes -->
+                                            <circle cx="110" cy="38" r="3.5" fill="#10b981" stroke="#ffffff" stroke-width="1.5"/>
+                                            <circle cx="220" cy="20" r="3.5" fill="#38bdf8" stroke="#ffffff" stroke-width="1.5"/>
+                                            <circle cx="320" cy="4" r="4.5" fill="#e6b800" stroke="#ffffff" stroke-width="2"/>
+                                        </svg>
+                                    </div>
+                                </div>
+
+                                <!-- 2 Sharia Finance Key Metric Pillars -->
+                                <div class="row g-2 fintech-pillars text-start">
+                                    <div class="col-6">
+                                        <div class="pillar-card">
+                                            <div class="pillar-label">Bagi Hasil Deposito</div>
+                                            <div class="pillar-stat text-cyan">ER s.d 6.8% p.a</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="pillar-card">
+                                            <div class="pillar-label">Akad Perbankan</div>
+                                            <div class="pillar-stat text-gold">100% Murni Syariah</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
-                            <!-- EMV Smart Chip -->
-                            <div class="card-chip mb-4">
-                                <div class="chip-line chip-line-1"></div>
-                                <div class="chip-line chip-line-2"></div>
-                            </div>
-
-                            <!-- Card Number -->
-                            <div class="card-number mb-3">
-                                <span>••••</span>
-                                <span>••••</span>
-                                <span>••••</span>
-                                <span class="highlight-digits">2008</span>
-                            </div>
-
-                            <!-- Card Footer -->
-                            <div class="d-flex justify-content-between align-items-end">
-                                <div>
-                                    <div class="card-label">CARD HOLDER</div>
-                                    <div class="card-holder-name">NASABAH PRIORITAS MCI</div>
-                                </div>
-                                <div class="text-end">
-                                    <div class="card-label">TIER</div>
-                                    <div class="card-tier-badge">PLATINUM SYARIAH</div>
+                            <!-- Layer 3: Foreground Security & Sharia Seal (translateZ: 45px) -->
+                            <div class="fintech-visual-foreground">
+                                <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top border-white-10">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="shield-icon"><i class="fas fa-shield-alt text-success"></i></span>
+                                        <span class="compliance-tag">Diawasi OJK & Penjaminan LPS</span>
+                                    </div>
+                                    <div class="sharia-badge-pill">
+                                        <i class="fas fa-certificate text-warning me-1"></i>DSN-MUI
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Floating Glass Tag 2: Bottom Left (Live Activity) -->
-                    <div class="floating-glass-badge badge-bottom-left animate-float-delayed">
+                    <!-- Floating Glass Tag 2: Bottom Left (Head Office Location) -->
+                    <div class="floating-glass-badge badge-bottom-left animate-float-delayed layer-parallax-high">
                         <div class="d-flex align-items-center gap-2">
                             <span class="pulse-dot"></span>
                             <div class="text-start">
@@ -144,8 +207,8 @@
                         </div>
                     </div>
 
-                    <!-- Floating Glass Tag 3: Bottom Right (Equivalent Rate) -->
-                    <div class="floating-glass-badge badge-bottom-right animate-float">
+                    <!-- Floating Glass Tag 3: Bottom Right (Equivalent Rate Deposito) -->
+                    <div class="floating-glass-badge badge-bottom-right animate-float layer-parallax-high">
                         <div class="d-flex align-items-center gap-2">
                             <div class="badge-icon-trend"><i class="fas fa-chart-line text-success"></i></div>
                             <div class="text-start">
@@ -518,6 +581,27 @@
                         @endforeach
                     </tbody>
                 </table>
+            </div>
+
+            <!-- Client-Side Modern Pagination Controls (5 or 10 rows toggle, instant response) -->
+            <div id="deposito-pagination-container" class="deposito-pagination-bar d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 pt-3 pb-2 px-2 border-top mt-2">
+                <div class="d-flex flex-wrap align-items-center gap-3">
+                    <span id="deposito-pagination-info" class="pagination-info text-muted small">
+                        Menampilkan 1 - 5 dari {{ count($nominals) }} nominal
+                    </span>
+                    <div class="d-flex align-items-center gap-2">
+                        <label for="deposito-per-page" class="small text-muted mb-0">Baris:</label>
+                        <select id="deposito-per-page" class="form-select form-select-sm per-page-select" aria-label="Jumlah nominal per halaman">
+                            <option value="5" selected>5</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
+                </div>
+                <nav aria-label="Navigasi Halaman Deposito">
+                    <ul id="deposito-pagination-pages" class="pagination pagination-modern mb-0">
+                        <!-- Populated dynamically by client-side script with zero reload -->
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>

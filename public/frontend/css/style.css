@@ -577,40 +577,42 @@ section,
   background-color: var(--border-light);
 }
 
-/* === 3D FINTECH PHYSICAL CARD (Revolut style) === */
+/* === 3D FINTECH ISLAMIC DIGITAL BANKING SHOWCASE === */
 .hero-card-stage {
-  max-width: 440px;
+  max-width: 460px;
   padding: 40px 10px;
   perspective: 1200px;
   margin: 0 auto;
+  position: relative;
 }
 
 .card-ambient-glow {
   position: absolute;
-  width: 320px;
-  height: 220px;
+  width: 360px;
+  height: 240px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(13, 104, 36, 0.35) 0%, rgba(0, 119, 182, 0.2) 50%, rgba(255, 255, 255, 0) 70%);
-  filter: blur(40px);
+  background: radial-gradient(circle, rgba(13, 104, 36, 0.45) 0%, rgba(0, 150, 199, 0.25) 50%, rgba(255, 255, 255, 0) 72%);
+  filter: blur(44px);
   z-index: 1;
+  pointer-events: none;
 }
 
 .card-3d-wrapper {
   position: relative;
   z-index: 3;
+  transform-style: preserve-3d;
 }
 
-.physical-card {
+.fintech-hero-visual {
   width: 100%;
-  max-width: 380px;
-  aspect-ratio: 1.586;
-  border-radius: var(--radius-xl);
+  max-width: 410px;
+  border-radius: var(--radius-2xl);
   padding: 24px 26px;
-  background: linear-gradient(135deg, #071f0d 0%, #0d6824 50%, #083c16 100%);
+  background: linear-gradient(145deg, #051a0d 0%, #0d3e1c 55%, #051d10 100%);
   border: 1px solid rgba(255, 255, 255, 0.22);
-  box-shadow: var(--shadow-card-3d);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35), 0 0 30px rgba(13, 104, 36, 0.2);
   color: #ffffff;
   position: relative;
   overflow: hidden;
@@ -618,9 +620,10 @@ section,
   transition: transform 160ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 200ms cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
   text-align: left;
+  user-select: none;
 }
 
-.physical-card:active {
+.fintech-hero-visual:active {
   transform: scale(0.97);
 }
 
@@ -628,100 +631,171 @@ section,
   position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 2;
+  z-index: 5;
   border-radius: inherit;
   transition: background 0.1s ease;
 }
 
-/* Card Details */
-.card-brand .brand-sub {
-  font-size: 0.65rem;
-  letter-spacing: 0.15em;
-  color: rgba(255, 255, 255, 0.7);
-  font-weight: 600;
-  display: block;
+/* Layer 1: Base Chassis & Arabesque Pattern */
+.fintech-visual-base {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.22;
+  transform: translateZ(0px);
 }
 
-.card-brand .brand-main {
-  font-family: 'Outfit', sans-serif;
-  font-size: 1.25rem;
-  font-weight: 800;
-  letter-spacing: 0.05em;
+.arabesque-pattern {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.card-brand .brand-main span {
-  color: #38bdf8;
-}
-
-.card-contactless {
-  font-size: 1.3rem;
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.card-chip {
-  width: 44px;
-  height: 32px;
-  border-radius: 6px;
-  background: linear-gradient(135deg, #fef08a 0%, #eab308 50%, #ca8a04 100%);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+/* Layer 2: Middle Financial Analytics & Content */
+.fintech-visual-middle {
   position: relative;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  transform: translateZ(25px);
+  transform-style: preserve-3d;
 }
 
-.card-chip .chip-line-1 {
-  position: absolute;
-  top: 15px;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: rgba(0, 0, 0, 0.3);
+.fintech-header {
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: 0.04em;
 }
 
-.card-chip .chip-line-2 {
-  position: absolute;
-  left: 21px;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background: rgba(0, 0, 0, 0.3);
-}
-
-.card-number {
-  font-family: 'Courier New', monospace;
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
+.fintech-portal-title {
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
-  color: rgba(255, 255, 255, 0.95);
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-.card-number .highlight-digits {
-  color: #fef08a;
-}
-
-.card-label {
-  font-size: 0.55rem;
-  letter-spacing: 0.15em;
-  color: rgba(255, 255, 255, 0.6);
-  font-weight: 600;
-}
-
-.card-holder-name {
-  font-family: 'Courier New', monospace;
-  font-size: 0.8rem;
-  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
   letter-spacing: 0.1em;
-  color: #ffffff;
 }
 
-.card-tier-badge {
+.live-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  display: inline-block;
+  animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.fintech-security-badge {
   font-size: 0.65rem;
-  font-weight: 700;
+  font-weight: 600;
   color: #38bdf8;
   background: rgba(56, 189, 248, 0.15);
   border: 1px solid rgba(56, 189, 248, 0.3);
   padding: 2px 8px;
   border-radius: 20px;
+}
+
+.growth-metric-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: 12px 14px;
+  backdrop-filter: blur(8px);
+}
+
+.metric-caption {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.65);
+  display: block;
+}
+
+.metric-value {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+.growth-trend-pill {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.18);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  padding: 3px 9px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.growth-chart-svg {
+  width: 100%;
+  height: 52px;
+  overflow: visible;
+  filter: drop-shadow(0 2px 6px rgba(0, 229, 255, 0.25));
+}
+
+.fintech-pillars .pillar-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 8px 10px;
+}
+
+.pillar-label {
+  font-size: 0.62rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.pillar-stat {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.pillar-stat.text-cyan {
+  color: #38bdf8;
+}
+
+.pillar-stat.text-gold {
+  color: #fbbf24;
+}
+
+/* Layer 3: Foreground Security & Sharia Seal */
+.fintech-visual-foreground {
+  position: relative;
+  z-index: 3;
+  transform: translateZ(45px);
+  transform-style: preserve-3d;
+}
+
+.compliance-tag {
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.sharia-badge-pill {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.15);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  padding: 2px 8px;
+  border-radius: 9999px;
+}
+
+/* 3D Floating Glass Badges Parallax */
+.layer-parallax-high {
+  transform-style: preserve-3d;
+  will-change: transform;
 }
 
 /* Floating Glass Badges */
@@ -1261,29 +1335,373 @@ section,
   letter-spacing: -0.02em;
 }
 
-/* === FOOTER === */
-.footer {
-  background: var(--bg-dark) !important;
-  color: rgba(255, 255, 255, 0.75);
+/* === CLIENT-SIDE PAGINATION (Deposito Karimah #myTable) === */
+.deposito-pagination-bar {
+  background: #ffffff;
 }
 
-.footer h4 {
-  font-family: 'Outfit', sans-serif;
-  color: var(--gold-accent) !important;
-  font-size: 1.05rem;
+.pagination-info {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  color: var(--text-muted);
 }
 
-.footer a {
-  color: rgba(255, 255, 255, 0.65) !important;
+.per-page-select {
+  width: auto;
+  min-width: 65px;
+  padding: 4px 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: border-color 160ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 160ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.per-page-select:focus {
+  border-color: var(--primary-green);
+  box-shadow: 0 0 0 3px rgba(13, 104, 36, 0.15);
+  outline: none;
+}
+
+.pagination-modern {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pagination-modern .page-item {
+  margin: 0;
+}
+
+.pagination-modern .page-link-modern {
   display: inline-flex;
   align-items: center;
-  min-height: 38px;
-  transition: color 160ms ease, transform 160ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+  justify-content: center;
+  min-width: 38px;
+  height: 38px;
+  padding: 0 10px;
+  border-radius: 9999px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-main);
+  background: #f1f5f9;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 160ms cubic-bezier(0.16, 1, 0.3, 1), background-color 160ms cubic-bezier(0.16, 1, 0.3, 1), color 160ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 160ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.footer a:hover {
-  color: var(--gold-accent) !important;
-  transform: translateX(3px);
+.pagination-modern .page-link-modern:hover:not(:disabled) {
+  background: #e2e8f0;
+  color: var(--primary-green);
+  transform: translateY(-1px);
+}
+
+.pagination-modern .page-link-modern:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.pagination-modern .page-item.active .page-link-modern,
+.pagination-modern .page-link-modern.is-active {
+  background: linear-gradient(135deg, #0d6824 0%, #0096c7 100%) !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+  box-shadow: 0 4px 14px rgba(13, 104, 36, 0.32) !important;
+}
+
+.pagination-modern .page-item.disabled .page-link-modern,
+.pagination-modern .page-link-modern:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* === LUXURY FINTECH FOOTER (Modern Corporate Rombak Total) === */
+.footer-modern {
+  background: linear-gradient(180deg, #071f11 0%, #031208 100%);
+  color: rgba(255, 255, 255, 0.8);
+  font-family: 'Inter', sans-serif;
+}
+
+.footer-top-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #0d6824 0%, #0096c7 50%, #e6b800 100%);
+  box-shadow: 0 0 16px rgba(0, 150, 199, 0.5);
+}
+
+.border-white-10 {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.bg-white-5 {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Brand Strip */
+.footer-brand-logo-card {
+  background: #ffffff;
+  padding: 6px 14px;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.footer-brand-logo-card:hover {
+  transform: translateY(-2px);
+}
+
+.footer-brand-logo-card:active {
+  transform: scale(0.97);
+}
+
+.footer-brand-divider {
+  width: 1px;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.footer-brand-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+}
+
+.footer-tagline {
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+.footer-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 6px 14px;
+  border-radius: 9999px;
+  backdrop-filter: blur(8px);
+  transition: background-color 160ms cubic-bezier(0.16, 1, 0.3, 1), transform 160ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.footer-badge-pill:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-1px);
+}
+
+/* 4-Column Grid Titles & Content */
+.footer-col-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1.25rem;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+.footer-col-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 32px;
+  height: 2px;
+  background: linear-gradient(90deg, #10b981, #0096c7);
+  border-radius: 2px;
+}
+
+.btn-footer-map {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 9999px;
+  padding: 5px 12px;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  transition: background-color 160ms cubic-bezier(0.16, 1, 0.3, 1), transform 160ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-footer-map:hover {
+  background: rgba(56, 189, 248, 0.22);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.btn-footer-map:active {
+  transform: scale(0.97);
+}
+
+.footer-contact-list a {
+  transition: color 160ms ease, transform 160ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.footer-contact-list a:hover {
+  color: #38bdf8 !important;
+  transform: translateX(2px);
+}
+
+.footer-links-list li {
+  margin-bottom: 8px;
+}
+
+.footer-links-list a {
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-size: 0.88rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: color 160ms ease, transform 160ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.footer-links-list a i {
+  font-size: 0.65rem;
+  color: #10b981;
+  transition: transform 160ms ease;
+}
+
+.footer-links-list a:hover {
+  color: #ffffff !important;
+  transform: translateX(4px);
+}
+
+.footer-links-list a:hover i {
+  transform: translateX(2px);
+}
+
+.footer-links-list a:active {
+  transform: scale(0.97);
+}
+
+/* WhatsApp Card in Column 4 */
+.footer-wa-card {
+  background: linear-gradient(145deg, rgba(13, 104, 36, 0.28) 0%, rgba(3, 30, 12, 0.4) 100%);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  backdrop-filter: blur(8px);
+}
+
+.footer-wa-pulse {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #25d366;
+  box-shadow: 0 0 10px #25d366;
+  display: inline-block;
+  animation: pulse-ring 2s infinite;
+}
+
+.footer-wa-label {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: #ffffff;
+}
+
+.btn-wa-official {
+  background: #25d366;
+  color: #ffffff !important;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 9999px;
+  padding: 8px 16px;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
+  transition: background-color 160ms cubic-bezier(0.16, 1, 0.3, 1), transform 160ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 160ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-wa-official:hover {
+  background: #20bd5a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.45);
+}
+
+.btn-wa-official:active {
+  transform: scale(0.97);
+}
+
+/* Circular Social Icons */
+.social-circle-link {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  max-width: 40px;
+  max-height: 40px;
+  border-radius: 50% !important;
+  aspect-ratio: 1 / 1 !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff !important;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: transform 160ms cubic-bezier(0.16, 1, 0.3, 1), background-color 160ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 160ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.social-circle-link:active {
+  transform: scale(0.97);
+}
+
+.social-circle-link.ig-glow:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(214, 36, 159, 0.4);
+}
+
+.social-circle-link.fb-glow:hover {
+  background: #1877f2;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(24, 119, 242, 0.4);
+}
+
+.social-circle-link.maps-glow:hover {
+  background: #ea4335;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(234, 67, 53, 0.4);
+}
+
+/* Bottom Bar Legal Logos */
+.footer-legal-badge {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-sm);
+  padding: 4px 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+}
+
+.footer-legal-logo {
+  filter: brightness(1.05);
+  object-fit: contain;
+}
+
+.footer-compliance-text {
+  line-height: 1.5;
 }
 
 /* === FLOATING ACTION BUTTONS (Back to Top & WhatsApp) === */
@@ -1512,15 +1930,10 @@ button:active,
     padding: 10px 0;
   }
 
-  .physical-card {
-    max-width: 310px;
-    padding: 18px 20px;
+  .fintech-hero-visual {
+    max-width: 320px;
+    padding: 18px 16px;
     margin: 0 auto;
-  }
-
-  .card-number {
-    font-size: 0.95rem;
-    letter-spacing: 0.14em;
   }
 
   /* Keep floating badges within screen on small devices */
