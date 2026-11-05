@@ -395,25 +395,84 @@ section,
   transform: scale(0.97);
 }
 
-/* === HERO SECTION === */
+/* === HERO SECTION (Full-Bleed 3D WebGL Islamic Digital Banking) === */
 .hero-section {
-  padding-top: 120px !important;
-  padding-bottom: 40px !important;
+  background: radial-gradient(55% 65% at 75% 40%, #0a5a45 0%, transparent 70%),
+              radial-gradient(40% 50% at 95% 100%, #14407a44 0%, transparent 70%),
+              radial-gradient(40% 40% at 0% 0%, #6b4a0e44 0%, transparent 70%),
+              #01100c !important;
   position: relative;
+  min-height: 88svh;
+  overflow: hidden;
+  color: #eefaf5;
+  padding-top: 130px !important;
+  padding-bottom: 50px !important;
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.015) 0 1px, transparent 1px 3px);
+  pointer-events: none;
+  z-index: 2;
+}
+
+#stage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: auto;
+}
+
+#stage canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 0;
+  transition: opacity 1.6s ease;
+  outline: none;
+}
+
+#stage.on canvas {
+  opacity: 1;
+}
+
+#labels {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 2;
+  pointer-events: none;
 }
 
 .min-vh-hero {
-  min-height: auto;
+  min-height: 72svh;
+}
+
+@media (min-width: 992px) {
+  .min-vh-hero {
+    min-height: 78svh;
+  }
 }
 
 .hero-badge {
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(13, 104, 36, 0.18);
-  box-shadow: var(--shadow-xs);
-  color: var(--primary-green);
+  background: rgba(4, 36, 28, 0.7);
+  border: 1px solid rgba(25, 240, 176, 0.45);
+  color: #19f0b0;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
   font-size: 0.825rem;
   font-weight: 600;
   letter-spacing: 0.02em;
+}
+
+.hero-badge .hero-badge-text {
+  color: #19f0b0;
 }
 
 .pulse-dot {
@@ -421,49 +480,52 @@ section,
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: #22c55e;
-  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  background-color: #19f0b0;
+  box-shadow: 0 0 0 0 rgba(25, 240, 176, 0.7);
   animation: pulseDot 2s infinite;
 }
 
 @keyframes pulseDot {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
-  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(25, 240, 176, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(25, 240, 176, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(25, 240, 176, 0); }
 }
 
 .hero-title {
   font-size: clamp(2.3rem, 5vw, 3.8rem);
   font-weight: 800;
   line-height: 1.15;
-  color: var(--text-main);
+  color: #ffffff !important;
   letter-spacing: -0.03em;
 }
 
 .hero-gradient-text {
-  background: linear-gradient(135deg, var(--primary-green) 0%, var(--cyan) 100%);
+  background: linear-gradient(90deg, #ffd27a, #fff6d6 40%, #19f0b0);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-weight: 800;
 }
 
 .hero-description {
-  font-size: clamp(1rem, 1.8vw, 1.125rem);
-  color: var(--text-muted);
+  font-size: clamp(1rem, 1.8vw, 1.05rem);
+  color: #a9c9bd !important;
   line-height: 1.75;
   max-width: 580px;
 }
 
 /* Hero Buttons */
 .btn-modern-primary {
-  background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-green) 100%);
-  color: #ffffff !important;
+  background: linear-gradient(135deg, #ffd27a, #d9962a);
+  color: #2a1c00 !important;
   font-family: 'Outfit', sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.95rem;
   padding: 13px 28px;
   border-radius: var(--radius-full);
   border: none;
-  box-shadow: 0 10px 25px -5px rgba(13, 104, 36, 0.35);
+  box-shadow: 0 10px 30px rgba(255, 210, 122, 0.28);
   transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 200ms cubic-bezier(0.16, 1, 0.3, 1), background 200ms ease;
   display: inline-flex;
   align-items: center;
@@ -472,8 +534,10 @@ section,
 }
 
 .btn-modern-primary:hover {
+  background: linear-gradient(135deg, #ffe099, #e5a43b);
+  color: #1a1000 !important;
+  box-shadow: 0 14px 35px rgba(255, 210, 122, 0.4);
   transform: translateY(-2px);
-  box-shadow: 0 16px 30px -5px rgba(13, 104, 36, 0.45);
 }
 
 .btn-modern-primary:active {
@@ -481,14 +545,16 @@ section,
 }
 
 .btn-modern-ghost {
-  background: #ffffff;
-  color: var(--text-main) !important;
+  border: 1px solid rgba(25, 240, 176, 0.5);
+  color: #19f0b0 !important;
+  background: rgba(25, 240, 176, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   font-family: 'Outfit', sans-serif;
   font-weight: 600;
   font-size: 0.95rem;
   padding: 13px 26px;
   border-radius: var(--radius-full);
-  border: 1px solid var(--border-light);
   box-shadow: var(--shadow-xs);
   transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 200ms cubic-bezier(0.16, 1, 0.3, 1), background-color 200ms ease, border-color 200ms ease, color 200ms ease;
   display: inline-flex;
@@ -498,10 +564,14 @@ section,
 }
 
 .btn-modern-ghost:hover {
-  background: var(--light-green);
-  border-color: rgba(13, 104, 36, 0.2);
-  color: var(--primary-green) !important;
+  background: rgba(25, 240, 176, 0.18);
+  border-color: rgba(25, 240, 176, 0.8);
+  color: #ffffff !important;
   transform: translateY(-2px);
+}
+
+.btn-modern-ghost i {
+  color: #19f0b0 !important;
 }
 
 .btn-modern-ghost:active {
@@ -537,10 +607,11 @@ section,
 
 /* Highlights Strip */
 .hero-highlights-strip {
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(4, 36, 28, 0.65) !important;
+  border: 1px solid rgba(25, 240, 176, 0.25) !important;
   backdrop-filter: blur(12px);
-  border: 1px solid var(--border-light);
-  box-shadow: var(--shadow-sm);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
   max-width: 620px;
 }
 
@@ -555,33 +626,50 @@ section,
   flex-shrink: 0;
 }
 
-.bg-emerald-soft { background: var(--light-green); }
-.bg-cyan-soft { background: var(--cyan-light); }
+.highlight-icon-box.bg-emerald-soft {
+  background: rgba(25, 240, 176, 0.15) !important;
+  color: #19f0b0 !important;
+}
+
+.highlight-icon-box.bg-emerald-soft i {
+  color: #19f0b0 !important;
+}
+
+.highlight-icon-box.bg-cyan-soft {
+  background: rgba(0, 180, 216, 0.15) !important;
+  color: #48cae4 !important;
+}
+
+.highlight-icon-box.bg-cyan-soft i {
+  color: #48cae4 !important;
+}
+
 .bg-gold-soft { background: var(--gold-light); }
 
 .highlight-title {
   font-family: 'Outfit', sans-serif;
   font-weight: 700;
   font-size: 0.9rem;
-  color: var(--text-main);
+  color: #ffffff !important;
   line-height: 1.25;
 }
 
 .highlight-sub {
   font-size: 0.775rem;
-  color: var(--text-muted);
+  color: #a9c9bd !important;
 }
 
 .highlight-divider {
   width: 1px;
   height: 36px;
-  background-color: var(--border-light);
+  background-color: rgba(25, 240, 176, 0.25) !important;
 }
 
-/* === 3D FINTECH ISLAMIC DIGITAL BANKING SHOWCASE === */
+/* === 3D HERO INTERACTIVE STAGE & FLOATING BADGES === */
+.hero-badges-stage,
 .hero-card-stage {
   max-width: 480px;
-  padding: 30px 10px;
+  min-height: 480px;
   perspective: 1200px;
   margin: 0 auto;
   position: relative;
@@ -594,7 +682,7 @@ section,
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(25, 240, 176, 0.32) 0%, rgba(255, 210, 122, 0.18) 45%, rgba(0, 0, 0, 0) 72%);
+  background: radial-gradient(circle, rgba(25, 240, 176, 0.28) 0%, rgba(255, 210, 122, 0.15) 45%, rgba(0, 0, 0, 0) 72%);
   filter: blur(48px);
   z-index: 1;
   pointer-events: none;
@@ -606,70 +694,7 @@ section,
   transform-style: preserve-3d;
 }
 
-/* === 3D MODERN ISLAMIC BANKING ARTWORK SHOWCASE === */
-.sharia-3d-visual {
-  width: 100%;
-  max-width: 480px;
-  border-radius: var(--radius-2xl);
-  padding: 8px;
-  background: linear-gradient(145deg, rgba(4, 36, 28, 0.92) 0%, rgba(2, 20, 16, 0.98) 100%);
-  border: 1px solid rgba(25, 240, 176, 0.3);
-  box-shadow: 0 25px 60px -15px rgba(2, 26, 20, 0.65), 0 0 35px rgba(25, 240, 176, 0.18);
-  position: relative;
-  overflow: hidden;
-  transform-style: preserve-3d;
-  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1);
-  cursor: grab;
-  user-select: none;
-}
-
-.sharia-3d-visual:active {
-  transform: scale(0.98);
-  cursor: grabbing;
-}
-
-.sharia-canvas-stage {
-  position: relative;
-  width: 100%;
-  height: 480px;
-  border-radius: calc(var(--radius-2xl) - 4px);
-  overflow: hidden;
-  background: radial-gradient(circle at 50% 45%, #053327 0%, #021a14 60%, #010f0c 100%);
-  display: block;
-  touch-action: none;
-}
-
-/* 3D WebGL Canvas Stage & Floating Akad Labels */
-#stage {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: 1;
-}
-
-#stage canvas {
-  display: block;
-  width: 100% !important;
-  height: 100% !important;
-  opacity: 0;
-  transition: opacity 1.6s ease;
-  outline: none;
-}
-
-#stage.on canvas {
-  opacity: 1;
-}
-
-#labels {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  z-index: 3;
-  pointer-events: none;
-}
-
+/* 3D Orbiting Coin Floating Labels */
 .lab {
   position: absolute;
   left: 0;
@@ -706,26 +731,28 @@ section,
 
 .scene-3d-hint {
   position: absolute;
-  bottom: 12px;
-  right: 14px;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
   background: rgba(4, 36, 28, 0.85);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(25, 240, 176, 0.35);
-  padding: 4px 12px;
+  padding: 5px 14px;
   border-radius: 9999px;
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   font-weight: 600;
   color: #19f0b0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
   pointer-events: none;
   z-index: 6;
+  white-space: nowrap;
   animation: hintPulse 3s ease-in-out infinite;
 }
 
 @keyframes hintPulse {
-  0%, 100% { opacity: 0.85; transform: translateY(0); }
-  50% { opacity: 1; transform: translateY(-2px); }
+  0%, 100% { opacity: 0.85; transform: translateX(-50%) translateY(0); }
+  50% { opacity: 1; transform: translateX(-50%) translateY(-3px); }
 }
 
 .sharia-illustration-frame {
@@ -820,52 +847,81 @@ section,
 .floating-glass-badge {
   position: absolute;
   z-index: 4;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(4, 36, 28, 0.65) !important;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--border-light);
+  border: 1px solid rgba(25, 240, 176, 0.35) !important;
   border-radius: var(--radius-lg);
   padding: 10px 16px;
-  box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.4), 0 0 15px rgba(25, 240, 176, 0.15);
+  color: #ffffff !important;
 }
 
 .badge-top-right {
-  top: -10px;
-  right: -20px;
+  top: 15px;
+  right: -5px;
 }
 
 .badge-bottom-left {
-  bottom: 10px;
-  left: -20px;
+  bottom: 85px;
+  left: -10px;
 }
 
 .badge-bottom-right {
-  bottom: -25px;
-  right: -10px;
+  bottom: 15px;
+  right: 5px;
+}
+
+@media (max-width: 991px) {
+  .badge-top-right {
+    top: 5px;
+    right: 5px;
+  }
+  .badge-bottom-left {
+    bottom: 65px;
+    left: 5px;
+  }
+  .badge-bottom-right {
+    bottom: 5px;
+    right: 5px;
+  }
+}
+
+@media (max-width: 576px) {
+  .floating-glass-badge {
+    padding: 8px 12px;
+  }
+  .badge-bold {
+    font-size: 0.78rem !important;
+  }
+  .badge-caption {
+    font-size: 0.68rem !important;
+  }
 }
 
 .badge-bold {
   font-family: 'Outfit', sans-serif;
   font-weight: 700;
   font-size: 0.85rem;
-  color: var(--text-main);
+  color: #ffffff !important;
   line-height: 1.2;
 }
 
 .badge-caption {
   font-size: 0.725rem;
-  color: var(--text-muted);
+  color: #a9c9bd !important;
 }
 
-.badge-icon-star, .badge-icon-trend {
+.badge-icon-star, .badge-icon-trend, .badge-icon-award {
   width: 32px;
   height: 32px;
   border-radius: 10px;
-  background: var(--light-green);
+  background: rgba(25, 240, 176, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 0.9rem;
+  color: #19f0b0;
 }
 
 /* Float Animations */
@@ -884,9 +940,19 @@ section,
 
 /* === MARQUEE TICKER === */
 .marquee-section {
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(8px);
-  border-color: var(--border-light) !important;
+  background: #021611 !important;
+  color: #d8fff2 !important;
+  border-color: rgba(25, 240, 176, 0.2) !important;
+}
+
+.marquee-item {
+  color: #d8fff2 !important;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.marquee-dot {
+  color: #19f0b0 !important;
 }
 
 .marquee-wrapper {
@@ -912,14 +978,14 @@ section,
   font-family: 'Outfit', sans-serif;
   font-size: 0.95rem;
   font-weight: 600;
-  color: var(--text-main);
+  color: #d8fff2 !important;
   display: inline-flex;
   align-items: center;
 }
 
 .marquee-dot {
-  color: var(--primary-green);
-  opacity: 0.5;
+  color: #19f0b0 !important;
+  opacity: 0.8;
   font-size: 1.2rem;
 }
 

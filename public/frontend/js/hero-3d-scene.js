@@ -416,30 +416,20 @@
     const dust = new THREE.Points(gg, new THREE.PointsMaterial({ color: 0xffd27a, size: 0.12, map: gG, transparent: true, depthWrite: false, blending: ADD }));
     S.add(dust);
 
-    // Responsive Resizing & Frustum Dynamic Scaling
+    // Responsive Resizing & Positioning (Full-bleed Hero Section)
     let base = 1, W = 1, H = 1;
 
     function resize() {
       if (!el) return;
-      W = el.clientWidth || 440;
-      H = el.clientHeight || 480;
+      W = el.clientWidth || window.innerWidth;
+      H = el.clientHeight || window.innerHeight;
       R.setSize(W, H);
       C.aspect = W / H;
       C.updateProjectionMatrix();
 
-      // Frustum calculation to ensure card + 6 orbiting coins + floating labels fit seamlessly
-      const vFovRad = (C.fov * Math.PI) / 180;
-      const visibleHeight = 2 * Math.tan(vFovRad / 2) * C.position.z;
-      const visibleWidth = visibleHeight * C.aspect;
-
-      // Span of orbit (~8.6 units) plus label margins (~1.8 units) = ~10.4 units
-      const fitX = (visibleWidth * 0.84) / 10.4;
-      const fitY = (visibleHeight * 0.84) / 9.2;
-      base = Math.min(fitX, fitY, 0.95);
-      if (W < 520) base = Math.min(base, 0.68);
-      if (W < 400) base = Math.min(base, 0.58);
-
-      world.position.set(0, 0, 0);
+      const wide = W >= 900;
+      base = W < 600 ? 0.52 : (wide ? 1.0 : 0.72);
+      world.position.set(wide ? 3.0 : 0, wide ? 0 : 2.0, 0);
     }
 
     window.addEventListener('resize', resize);

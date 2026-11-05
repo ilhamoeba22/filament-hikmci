@@ -1,8 +1,12 @@
 @include('header')
 
-<!-- Main Hero Section Start (pixel-io inspired modern split hero) -->
+<!-- Main Hero Section Start (Full-Bleed 3D WebGL Islamic Digital Banking) -->
 <section id="hero" class="hero-section position-relative overflow-hidden">
-    <div class="container hero-container position-relative z-2">
+    <!-- Full-Bleed 3D WebGL Canvas & Floating Labels -->
+    <div id="stage" aria-hidden="true"></div>
+    <div id="labels" aria-hidden="true"></div>
+
+    <div class="container hero-container position-relative z-3">
         <div class="row align-items-center g-4 g-lg-5 min-vh-hero">
             <!-- Left Column: Copy & CTAs -->
             <div class="col-lg-7 text-start">
@@ -15,7 +19,7 @@
                 <!-- Stadium Headline -->
                 <h1 class="hero-title mb-4">
                     Keuangan Syariah <br class="d-none d-sm-inline" />
-                    <span class="hero-gradient-text">Berkah, Amanah & Modern</span>
+                    <span class="hero-gradient-text">Berkah, Amanah &amp; Modern</span>
                 </h1>
 
                 <!-- Subtitle / Value Proposition -->
@@ -30,7 +34,7 @@
                         <i class="fas fa-arrow-right ms-2"></i>
                     </a>
                     <a href="#produk-unggulan" class="btn btn-modern-ghost">
-                        <i class="fas fa-th-large me-2 text-success"></i>
+                        <i class="fas fa-th-large me-2"></i>
                         <span>Jelajahi Produk</span>
                     </a>
                     <a href="https://wa.me/6281222770657" target="_blank" class="btn btn-modern-wa">
@@ -43,7 +47,7 @@
                 <div class="hero-highlights-strip p-2 p-md-3 rounded-2xl d-flex flex-wrap align-items-center justify-content-start gap-3 gap-md-4">
                     <div class="d-flex align-items-center gap-3 highlight-item">
                         <div class="highlight-icon-box bg-emerald-soft">
-                            <i class="fas fa-shield-alt text-success"></i>
+                            <i class="fas fa-shield-alt"></i>
                         </div>
                         <div>
                             <div class="highlight-title">LPS Terjamin</div>
@@ -53,20 +57,20 @@
                     <div class="highlight-divider d-none d-md-block"></div>
                     <div class="d-flex align-items-center gap-3 highlight-item">
                         <div class="highlight-icon-box bg-cyan-soft">
-                            <i class="fas fa-hand-holding-heart text-info"></i>
+                            <i class="fas fa-hand-holding-heart"></i>
                         </div>
                         <div>
                             <div class="highlight-title">100% Prinsip Syariah</div>
-                            <div class="highlight-sub">Akad murni, adil & tanpa riba</div>
+                            <div class="highlight-sub">Akad murni, adil &amp; tanpa riba</div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Right Column: 3D Islamic Digital Banking Showcase (Real 3D Illustration) -->
+            <!-- Right Column: Interactive Stage & Floating Badges -->
             <div class="col-lg-5 text-center position-relative">
-                <div class="hero-card-stage position-relative mx-auto" id="heroFintechStage">
-                    <!-- Ambient Glow Behind 3D Showcase -->
+                <div class="hero-badges-stage position-relative mx-auto" id="heroFintechStage">
+                    <!-- Ambient Glow Behind Badges -->
                     <div class="card-ambient-glow" aria-hidden="true"></div>
 
                     <!-- Floating Glass Tag 1: Top Right (Institutional Experience Badge) -->
@@ -76,29 +80,6 @@
                             <div class="text-start">
                                 <div class="badge-bold">16+ Tahun Mengabdi</div>
                                 <div class="badge-caption">Sejak 11 Januari 2008</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 3D Interactive Sharia Banking WebGL & Canvas Showcase -->
-                    <div class="card-3d-wrapper">
-                        <div class="sharia-3d-visual card-3d" id="fintechHeroVisual" tabindex="0" role="region" aria-label="Visual 3D Interaktif Perbankan Syariah Digital BPRS HIK MCI">
-                            <div class="card-shine" aria-hidden="true"></div>
-
-                            <!-- Real-time WebGL 3D Canvas Stage -->
-                            <div class="sharia-canvas-stage position-relative overflow-hidden" id="sharia3DCanvasStage">
-                                <!-- 3D Three.js WebGL Stage & Floating Akad Labels Container -->
-                                <div id="stage" aria-hidden="true"></div>
-                                <div id="labels" aria-hidden="true"></div>
-                                
-                                <!-- Floating Light Glow Ambient Orbs -->
-                                <div class="sharia-glow-orb orb-1" aria-hidden="true"></div>
-                                <div class="sharia-glow-orb orb-2" aria-hidden="true"></div>
-
-                                <!-- Interactive 3D Orbit / Scroll Prompt Pill -->
-                                <div class="scene-3d-hint">
-                                    <i class="fas fa-cube text-warning me-1"></i>3D Interaktif &amp; Scroll
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -119,10 +100,15 @@
                         <div class="d-flex align-items-center gap-2">
                             <div class="badge-icon-trend"><i class="fas fa-shield-alt text-success"></i></div>
                             <div class="text-start">
-                                <div class="badge-bold">Murni Syariah & Terpercaya</div>
-                                <div class="badge-caption">Diawasi OJK & Dijamin LPS</div>
+                                <div class="badge-bold">Murni Syariah &amp; Terpercaya</div>
+                                <div class="badge-caption">Diawasi OJK &amp; Dijamin LPS</div>
                             </div>
                         </div>
+                    </div>
+
+                    <!-- Interactive 3D Orbit / Scroll Prompt Pill -->
+                    <div class="scene-3d-hint">
+                        <i class="fas fa-cube text-warning me-1"></i>3D Interaktif &amp; Scroll
                     </div>
                 </div>
             </div>

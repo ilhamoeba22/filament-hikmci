@@ -209,10 +209,10 @@
     if (!supportsHover || prefersReducedMotion) return;
 
     const stage = document.getElementById('heroFintechStage');
-    const visual = document.getElementById('fintechHeroVisual');
-    if (!stage || !visual) return;
+    if (!stage) return;
 
-    const shine = visual.querySelector('.card-shine');
+    const visual = document.getElementById('fintechHeroVisual');
+    const shine = visual ? visual.querySelector('.card-shine') : null;
     const badges = stage.querySelectorAll('.layer-parallax-high');
     let rafId = null;
 
@@ -223,41 +223,43 @@
         const x = (e.clientX - rect.left) / rect.width - 0.5;
         const y = (e.clientY - rect.top) / rect.height - 0.5;
 
-        // Multi-axis 3D rotation (subtle frame tilt complementing Three.js internal world rotation)
-        visual.style.transform = `perspective(1200px) rotateY(${x * 7}deg) rotateX(${-y * 7}deg) translateZ(6px)`;
-
-        // Specular highlight follow
-        if (shine) {
-          const vRect = visual.getBoundingClientRect();
-          shine.style.background = `radial-gradient(circle at ${e.clientX - vRect.left}px ${e.clientY - vRect.top}px, rgba(255,255,255,0.24), transparent 60%)`;
+        // Multi-axis 3D rotation if frame present
+        if (visual) {
+          visual.style.transform = `perspective(1200px) rotateY(${x * 7}deg) rotateX(${-y * 7}deg) translateZ(6px)`;
+          if (shine) {
+            const vRect = visual.getBoundingClientRect();
+            shine.style.background = `radial-gradient(circle at ${e.clientX - vRect.left}px ${e.clientY - vRect.top}px, rgba(255,255,255,0.24), transparent 60%)`;
+          }
         }
 
         // True physical parallax displacement for surrounding badges
         badges.forEach(b => {
-          b.style.transform = `translateZ(65px) translate3d(${-x * 20}px, ${-y * 16}px, 0)`;
+          b.style.transform = `translate3d(${-x * 24}px, ${-y * 18}px, 0)`;
         });
       });
     });
 
     stage.addEventListener('mouseleave', () => {
       if (rafId) cancelAnimationFrame(rafId);
-      visual.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
-      visual.style.transform = 'perspective(1200px) rotateY(0deg) rotateX(0deg) translateZ(0px)';
-      if (shine) shine.style.background = 'transparent';
+      if (visual) {
+        visual.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+        visual.style.transform = 'perspective(1200px) rotateY(0deg) rotateX(0deg) translateZ(0px)';
+        if (shine) shine.style.background = 'transparent';
+      }
 
       badges.forEach(b => {
         b.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
-        b.style.transform = 'translateZ(65px) translate3d(0, 0, 0)';
+        b.style.transform = 'translate3d(0, 0, 0)';
       });
 
       setTimeout(() => {
-        visual.style.transition = '';
+        if (visual) visual.style.transition = '';
         badges.forEach(b => b.style.transition = '');
       }, 400);
     });
 
     stage.addEventListener('mouseenter', () => {
-      visual.style.transition = 'none';
+      if (visual) visual.style.transition = 'none';
       badges.forEach(b => b.style.transition = 'none');
     });
   }
