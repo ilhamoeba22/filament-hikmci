@@ -747,12 +747,20 @@
     const dust = new THREE.Points(gg, new THREE.PointsMaterial({ color: 0xffd27a, size: 0.12, map: gG, transparent: true, depthWrite: false, blending: ADD }));
     S.add(dust);
 
-    // Responsif: Penempatan Elemen 3D tersinkronisasi presisi dengan #heroFintechStage
+    // Responsif: Penempatan Elemen 3D tersinkronisasi presisi dengan #heroFintechStage (Desktop >= 992px)
     let base = 1, W = 1, H = 1;
     let currentOrbitRadius = 2.6;
 
     function updateStageLayout() {
       if (!el) return;
+      if (window.innerWidth < 992) {
+        if (rafId) {
+          cancelAnimationFrame(rafId);
+          rafId = null;
+        }
+        return;
+      }
+
       W = el.clientWidth || window.innerWidth;
       H = el.clientHeight || window.innerHeight;
       if (W <= 0 || H <= 0) return;
@@ -783,24 +791,18 @@
         if (W >= 1200) {
           base = 1.0;
           currentOrbitRadius = 2.6;
-        } else if (W >= 992) {
+        } else {
           base = 0.88;
           currentOrbitRadius = 2.3;
-        } else if (W >= 768) {
-          base = 0.72;
-          currentOrbitRadius = 2.0;
-        } else if (W >= 480) {
-          base = 0.58;
-          currentOrbitRadius = 1.75;
-        } else {
-          base = 0.50;
-          currentOrbitRadius = 1.55;
         }
       } else {
-        const wide = W >= 992;
-        base = W < 600 ? 0.52 : (wide ? 0.95 : 0.72);
-        currentOrbitRadius = wide ? 2.6 : 1.9;
-        world.position.set(wide ? 3.8 : 0, wide ? 0.2 : -0.5, 0);
+        base = 0.95;
+        currentOrbitRadius = 2.5;
+        world.position.set(3.8, 0.2, 0);
+      }
+
+      if (!rafId && isVisible) {
+        rafId = requestAnimationFrame(frame);
       }
     }
 
@@ -932,13 +934,15 @@
     frame();
   }
 
-  // Safe bootstrap
+  // Safe bootstrap (Desktop only >= 992px to maximize mobile performance & eliminate overlap)
   function bootstrap() {
     if (typeof THREE === 'undefined') {
       setTimeout(bootstrap, 50);
       return;
     }
-    initHero3D();
+    if (window.innerWidth >= 992) {
+      initHero3D();
+    }
   }
 
   if (document.readyState === 'loading') {
@@ -946,4 +950,10 @@
   } else {
     bootstrap();
   }
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 992 && !document.querySelector('#stage canvas')) {
+      bootstrap();
+    }
+  });
 })();

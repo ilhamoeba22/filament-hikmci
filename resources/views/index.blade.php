@@ -2,14 +2,14 @@
 
 <!-- Main Hero Section Start (Full-Bleed 3D WebGL Islamic Digital Banking) -->
 <section id="hero" class="hero-section position-relative overflow-hidden">
-    <!-- Full-Bleed 3D WebGL Canvas & Floating Labels -->
-    <div id="stage" aria-hidden="true"></div>
-    <div id="labels" aria-hidden="true"></div>
+    <!-- Full-Bleed 3D WebGL Canvas & Floating Labels (Desktop Only >= 992px) -->
+    <div id="stage" class="d-none d-lg-block" aria-hidden="true"></div>
+    <div id="labels" class="d-none d-lg-block" aria-hidden="true"></div>
 
     <div class="container hero-container position-relative" style="position: relative; z-index: 30 !important; pointer-events: auto !important;">
         <div class="row align-items-center g-4 g-lg-5 min-vh-hero">
             <!-- Left Column: Copy & CTAs -->
-            <div class="col-lg-6 text-start">
+            <div class="col-lg-6 col-12 text-start">
                 <!-- Trust Pill Badge -->
                 <div class="d-inline-flex align-items-center gap-2 px-3 py-1.5 rounded-pill hero-badge mb-4">
                     <span class="pulse-dot"></span>
@@ -67,8 +67,8 @@
                 </div>
             </div>
 
-            <!-- Right Column: Interactive Stage & Floating Badges -->
-            <div class="col-lg-6 text-center position-relative">
+            <!-- Right Column: Interactive Stage & Floating Badges (Desktop Only >= 992px) -->
+            <div class="col-lg-6 text-center position-relative d-none d-lg-block">
                 <div class="hero-badges-stage position-relative mx-auto" id="heroFintechStage">
                     <!-- Ambient Glow Behind Badges -->
                     <div class="card-ambient-glow" aria-hidden="true"></div>
