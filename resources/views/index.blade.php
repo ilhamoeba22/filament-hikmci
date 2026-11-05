@@ -401,6 +401,9 @@
 <!-- Equivalent Rate Deposito Start (Modern Fintech Table) -->
 <section id="rate-deposito" class="rate-section py-4">
     <div class="container py-2">
+        @php
+            $latestRate = $rateDeposito->first();
+        @endphp
         <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between mb-4">
             <div>
                 <div class="section-pill-badge mb-2">BAGI HASIL TERBARU</div>
@@ -408,7 +411,7 @@
                     Equivalent Rate Deposito Karimah
                 </h2>
                 <p class="section-subheading mb-0">
-                    Bulan <span id="bulan" class="fw-bold text-success">{{ $rateDeposito->first()->bulan ?? 'N/A' }}</span> Tahun <span id="tahun" class="fw-bold text-success">{{ $rateDeposito->first()->created_at->format('Y') ?? 'N/A' }}</span>
+                    Bulan <span id="bulan" class="fw-bold text-success">{{ $latestRate?->bulan ?? 'N/A' }}</span> Tahun <span id="tahun" class="fw-bold text-success">{{ $latestRate?->created_at?->format('Y') ?? 'N/A' }}</span>
                 </p>
             </div>
             <div class="mt-3 mt-md-0">
@@ -427,46 +430,52 @@
                             <th colspan="4" class="text-center bg-emerald-soft text-dark">Jangka Waktu & Imbal Hasil</th>
                         </tr>
                         <tr class="text-center table-subhead-row">
-                            <th class="py-3">1 Bulan <br><span class="badge-er mt-1">ER {{ $rateDeposito->first()->rate_1_bulan ?? 'N/A' }}%</span></th>
-                            <th class="py-3">3 Bulan <br><span class="badge-er mt-1">ER {{ $rateDeposito->first()->rate_3_bulan ?? 'N/A' }}%</span></th>
-                            <th class="py-3">6 Bulan <br><span class="badge-er mt-1">ER {{ $rateDeposito->first()->rate_6_bulan ?? 'N/A' }}%</span></th>
-                            <th class="py-3">12 Bulan <br><span class="badge-er mt-1">ER {{ $rateDeposito->first()->rate_12_bulan ?? 'N/A' }}%</span></th>
+                            <th class="py-3">1 Bulan <br><span class="badge-er mt-1">ER {{ $latestRate?->rate_1_bulan ?? 'N/A' }}%</span></th>
+                            <th class="py-3">3 Bulan <br><span class="badge-er mt-1">ER {{ $latestRate?->rate_3_bulan ?? 'N/A' }}%</span></th>
+                            <th class="py-3">6 Bulan <br><span class="badge-er mt-1">ER {{ $latestRate?->rate_6_bulan ?? 'N/A' }}%</span></th>
+                            <th class="py-3">12 Bulan <br><span class="badge-er mt-1">ER {{ $latestRate?->rate_12_bulan ?? 'N/A' }}%</span></th>
                         </tr>
                     </thead>
                     <tbody class="text-secondary">
-                        @foreach ($nominals as $nominal)
+                        @forelse ($nominals as $nominal)
                         <tr>
                             <td data-label="Nominal" class="fw-bold text-dark ps-3">Rp. {{ number_format($nominal->nominal, 2, ',', '.') }}</td>
                             <td data-label="1 Bulan" class="text-center">
-                                @if ($rateDeposito->first()->rate_1_bulan)
-                                <span class="fw-semibold text-success">Rp. {{ number_format(($nominal->nominal * $rateDeposito->first()->rate_1_bulan / 100) / 12, 2, ',', '.') }}</span>
+                                @if ($latestRate && $latestRate->rate_1_bulan)
+                                <span class="fw-semibold text-success">Rp. {{ number_format(($nominal->nominal * $latestRate->rate_1_bulan / 100) / 12, 2, ',', '.') }}</span>
                                 @else
                                 <span class="text-muted">N/A</span>
                                 @endif
                             </td>
                             <td data-label="3 Bulan" class="text-center">
-                                @if ($rateDeposito->first()->rate_3_bulan)
-                                <span class="fw-semibold text-success">Rp. {{ number_format(($nominal->nominal * $rateDeposito->first()->rate_3_bulan / 100) / 12, 2, ',', '.') }}</span>
+                                @if ($latestRate && $latestRate->rate_3_bulan)
+                                <span class="fw-semibold text-success">Rp. {{ number_format(($nominal->nominal * $latestRate->rate_3_bulan / 100) / 12, 2, ',', '.') }}</span>
                                 @else
                                 <span class="text-muted">N/A</span>
                                 @endif
                             </td>
                             <td data-label="6 Bulan" class="text-center">
-                                @if ($rateDeposito->first()->rate_6_bulan)
-                                <span class="fw-semibold text-success">Rp. {{ number_format(($nominal->nominal * $rateDeposito->first()->rate_6_bulan / 100) / 12, 2, ',', '.') }}</span>
+                                @if ($latestRate && $latestRate->rate_6_bulan)
+                                <span class="fw-semibold text-success">Rp. {{ number_format(($nominal->nominal * $latestRate->rate_6_bulan / 100) / 12, 2, ',', '.') }}</span>
                                 @else
                                 <span class="text-muted">N/A</span>
                                 @endif
                             </td>
                             <td data-label="12 Bulan" class="text-center">
-                                @if ($rateDeposito->first()->rate_12_bulan)
-                                <span class="fw-semibold text-success">Rp. {{ number_format(($nominal->nominal * $rateDeposito->first()->rate_12_bulan / 100) / 12, 2, ',', '.') }}</span>
+                                @if ($latestRate && $latestRate->rate_12_bulan)
+                                <span class="fw-semibold text-success">Rp. {{ number_format(($nominal->nominal * $latestRate->rate_12_bulan / 100) / 12, 2, ',', '.') }}</span>
                                 @else
                                 <span class="text-muted">N/A</span>
                                 @endif
                             </td>
                         </tr>
-                        @endforeach
+                        @empty
+                        <tr>
+                            <td colspan="5" class="text-center py-4 text-muted">
+                                Data nominal belum tersedia.
+                            </td>
+                        </tr>
+                        @endforelse
                     </tbody>
                 </table>
             </div>
@@ -513,14 +522,14 @@
         </div>
 
         <div class="row g-4 justify-content-center">
-            @foreach($beritaTerakhir as $berita)
+            @forelse($beritaTerakhir as $berita)
             <div class="col-lg-4 col-md-6">
                 <article class="modern-news-card card-3d h-100 d-flex flex-column rounded-3xl overflow-hidden border shadow-sm bg-white">
                     <div class="card-shine"></div>
                     <div class="news-thumb-wrapper position-relative overflow-hidden">
                         <img src="{{ asset('storage/berita/' . $berita->gambar) }}" class="img-fluid w-100 news-thumb-img" alt="{{ $berita->judul }}" loading="lazy" />
                         <span class="news-date-badge">
-                            <i class="far fa-calendar-alt me-1"></i> {{ $berita->created_at->format('d M Y') }}
+                            <i class="far fa-calendar-alt me-1"></i> {{ $berita->created_at?->format('d M Y') }}
                         </span>
                     </div>
                     <div class="news-body p-4 d-flex flex-column flex-grow-1">
@@ -539,7 +548,11 @@
                     </div>
                 </article>
             </div>
-            @endforeach
+            @empty
+            <div class="col-12 text-center py-4 text-muted">
+                <p class="mb-0">Belum ada berita terbaru saat ini.</p>
+            </div>
+            @endforelse
         </div>
     </div>
 </section>

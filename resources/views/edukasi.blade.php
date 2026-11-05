@@ -32,15 +32,15 @@
         </div>
 
         <div class="row g-4 justify-content-center">
-            @foreach($edukasis as $edukasi)
+            @forelse($edukasis as $edukasi)
             <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.2s">
                 <div class="article-modern-card">
                     <!-- Thumbnail with 16:10 Ratio -->
                     <div class="article-thumb-wrapper">
-                        <img src="{{ asset('storage/edukasi/' . $edukasi->gambar) }}" alt="{{ $edukasi->judul }}" loading="lazy" />
+                        <img src="{{ (!empty($edukasi->gambar) && file_exists(public_path('storage/edukasi/' . $edukasi->gambar))) ? asset('storage/edukasi/' . $edukasi->gambar) : asset('frontend/img/logo/logo_mci.png') }}" alt="{{ $edukasi->judul }}" loading="lazy" style="{{ empty($edukasi->gambar) ? 'object-fit: contain; padding: 24px;' : '' }}" />
                         <div class="position-absolute top-0 start-0 m-3">
                             <span class="badge text-white rounded-pill px-3 py-2 small shadow-sm" style="background-color: #0d6824 !important;">
-                                <i class="bi bi-calendar-event me-1"></i> {{ $edukasi->created_at->format('d M Y') }}
+                                <i class="bi bi-calendar-event me-1"></i> {{ $edukasi->created_at?->format('d M Y') }}
                             </span>
                         </div>
                     </div>
@@ -63,7 +63,17 @@
                     </div>
                 </div>
             </div>
-            @endforeach
+            @empty
+            <div class="col-12 text-center py-5">
+                <div class="modern-sub-card p-5 text-center mx-auto" style="max-width: 600px;">
+                    <div class="bento-icon-box mx-auto mb-3" style="width: 64px; height: 64px; font-size: 1.75rem;">
+                        <i class="bi bi-lightbulb text-muted"></i>
+                    </div>
+                    <h4 class="h5 fw-bold text-dark mt-2">Belum Ada Artikel Edukasi</h4>
+                    <p class="text-muted small mb-0">Artikel literasi keuangan syariah akan segera kami hadirkan.</p>
+                </div>
+            </div>
+            @endforelse
         </div>
 
         <!-- Pagination -->

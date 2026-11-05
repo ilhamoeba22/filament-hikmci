@@ -230,16 +230,6 @@
         </div>
     </header>
     <!-- Fixed Header End -->
-    <?php
-    if (!function_exists('isActive')) {
-        // Fungsi untuk menentukan halaman aktif
-        function isActive($page)
-        {
-            $current_page = basename($_SERVER['PHP_SELF'] ?? '');
-            return $current_page == $page ? 'active' : '';
-        }
-    }
-    ?>
 
     <script>
       // Navbar scroll effect

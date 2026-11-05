@@ -34,7 +34,7 @@
         </div>
 
         <div class="row g-4 justify-content-center">
-            @foreach($beritas as $berita)
+            @forelse($beritas as $berita)
             <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.2s">
                 <div class="article-modern-card">
                     <!-- Thumbnail with 16:10 Frame -->
@@ -42,7 +42,7 @@
                         <img src="{{ asset('storage/berita/' . $berita->gambar) }}" alt="{{ $berita->judul }}" loading="lazy" />
                         <div class="position-absolute top-0 start-0 m-3">
                             <span class="badge text-white rounded-pill px-3 py-2 small shadow-sm" style="background-color: #0d6824 !important;">
-                                <i class="bi bi-calendar-event me-1"></i> {{ $berita->created_at->format('d M Y') }}
+                                <i class="bi bi-calendar-event me-1"></i> {{ $berita->created_at?->format('d M Y') }}
                             </span>
                         </div>
                     </div>
@@ -65,7 +65,17 @@
                     </div>
                 </div>
             </div>
-            @endforeach
+            @empty
+            <div class="col-12 text-center py-5">
+                <div class="modern-sub-card p-5 text-center mx-auto" style="max-width: 600px;">
+                    <div class="bento-icon-box mx-auto mb-3" style="width: 64px; height: 64px; font-size: 1.75rem;">
+                        <i class="bi bi-newspaper text-muted"></i>
+                    </div>
+                    <h4 class="h5 fw-bold text-dark mt-2">Belum Ada Berita yang Tersedia</h4>
+                    <p class="text-muted small mb-0">Informasi dan berita terkini akan diperbarui secara berkala.</p>
+                </div>
+            </div>
+            @endforelse
         </div>
 
         <!-- Pagination -->

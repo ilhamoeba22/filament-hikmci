@@ -66,9 +66,6 @@ Route::prefix('berita')->group(function () {
     Route::get('/{id}', [BeritaController::class, 'show'])->name('berita.show');
 });
 
-// Route Ajax Paginate
-Route::get('/get-nominals', [IndexController::class, 'getNominals'])->name('get.nominals');
-
 Route::get('/edukasi', [EdukasiController::class, 'index'])->name('edukasi.index');
 Route::get('/edukasi/{id}', [EdukasiController::class, 'show'])->name('edukasi.show');
 

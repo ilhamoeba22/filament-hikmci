@@ -31,9 +31,13 @@
             </h2>
         </div>
 
-        @if(count($karirs) > 0)
+        @php
+            $karirList = isset($karirs) ? $karirs : (isset($karir) && $karir ? collect([$karir]) : collect([]));
+        @endphp
+
+        @if(count($karirList) > 0)
         <div class="row g-4 justify-content-center">
-            @foreach ($karirs as $karir)
+            @foreach ($karirList as $karir)
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
                 <div class="career-modern-card">
                     <!-- Thumbnail Box with Trigger to Modal -->

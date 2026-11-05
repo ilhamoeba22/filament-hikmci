@@ -44,8 +44,8 @@
                     </div>
 
                     <!-- Featured Image -->
-                    <div class="mb-4 overflow-hidden rounded-4 border bg-light shadow-sm">
-                        <img src="{{ asset('storage/edukasi/' . $edukasi->gambar) }}" class="w-100 object-fit-cover" style="max-height: 480px;" alt="{{ $edukasi->judul }}">
+                    <div class="mb-4 overflow-hidden rounded-4 border bg-light shadow-sm text-center">
+                        <img src="{{ (!empty($edukasi->gambar) && file_exists(public_path('storage/edukasi/' . $edukasi->gambar))) ? asset('storage/edukasi/' . $edukasi->gambar) : asset('frontend/img/logo/logo_mci.png') }}" class="w-100 object-fit-cover" style="max-height: 480px; {{ empty($edukasi->gambar) ? 'object-fit: contain; max-height: 240px; padding: 40px;' : '' }}" alt="{{ $edukasi->judul }}">
                     </div>
 
                     <!-- Body Content -->
@@ -73,19 +73,21 @@
                     </div>
 
                     <div class="d-flex flex-column gap-3 mb-4">
-                        @foreach($edukasiLainnya as $eItem)
+                        @forelse($edukasiLainnya as $eItem)
                         <div class="d-flex align-items-center gap-3 p-2 rounded-3 hover-bg-light transition" style="border: 1px solid rgba(0,0,0,0.05);">
-                            <img src="{{ asset('storage/edukasi/' . $eItem->gambar) }}" class="rounded-3 object-fit-cover flex-shrink-0" style="width: 76px; height: 76px;" alt="{{ $eItem->judul }}">
+                            <img src="{{ (!empty($eItem->gambar) && file_exists(public_path('storage/edukasi/' . $eItem->gambar))) ? asset('storage/edukasi/' . $eItem->gambar) : asset('frontend/img/logo/logo_mci.png') }}" class="rounded-3 object-fit-cover flex-shrink-0" style="width: 76px; height: 76px; {{ empty($eItem->gambar) ? 'object-fit: contain; padding: 8px;' : '' }}" alt="{{ $eItem->judul }}">
                             <div class="flex-grow-1 min-w-0">
                                 <a class="text-dark fw-bold small text-decoration-none d-block text-truncate-2 mb-1" href="{{ route('edukasi.show', $eItem->id) }}">
                                     {{ $eItem->judul }}
                                 </a>
                                 <span class="text-muted small" style="font-size: 0.75rem;">
-                                    <i class="bi bi-calendar-event me-1"></i> {{ $eItem->created_at->format('d M Y') }}
+                                    <i class="bi bi-calendar-event me-1"></i> {{ $eItem->created_at?->format('d M Y') }}
                                 </span>
                             </div>
                         </div>
-                        @endforeach
+                        @empty
+                        <p class="text-muted small text-center mb-0">Tidak ada artikel lainnya.</p>
+                        @endforelse
                     </div>
 
                     <div>

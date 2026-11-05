@@ -27,6 +27,7 @@
         <div class="row g-4 g-lg-5">
             <!-- Article Main Column -->
             <div class="col-lg-8">
+                @if($berita)
                 <div class="modern-sub-card p-4 p-lg-5">
                     <!-- Title -->
                     <h1 class="h2 fw-bold text-dark mb-3 lh-sm" style="font-family: 'Outfit', sans-serif;">
@@ -36,10 +37,10 @@
                     <!-- Meta Badges -->
                     <div class="d-flex flex-wrap align-items-center gap-2 mb-4 pb-3 border-bottom">
                         <span class="badge bg-light text-muted border px-3 py-2 small">
-                            <i class="bi bi-calendar3 me-1 text-success"></i> {{ $berita->created_at->format('l, d F Y') }}
+                            <i class="bi bi-calendar3 me-1 text-success"></i> {{ $berita->created_at?->format('l, d F Y') }}
                         </span>
                         <span class="badge badge-soft-success px-3 py-2 small">
-                            <i class="bi bi-person-fill me-1"></i> Author: {{ $berita->user->name }}
+                            <i class="bi bi-person-fill me-1"></i> Author: {{ $berita->user?->name ?? 'Admin BPRS HIK MCI' }}
                         </span>
                         @if(!empty($berita->lokasi))
                         <span class="badge bg-light text-secondary border px-3 py-2 small">
@@ -49,13 +50,17 @@
                     </div>
 
                     <!-- Featured Image -->
+                    @if($berita->gambar)
                     <div class="mb-4 overflow-hidden rounded-4 border bg-light shadow-sm">
                         <img src="{{ asset('storage/berita/' . $berita->gambar) }}" class="w-100 object-fit-cover" style="max-height: 480px;" alt="{{ $berita->judul }}">
                     </div>
+                    @endif
 
                     <!-- Article Body Content -->
                     <div class="lh-lg text-secondary mb-4" style="font-size: 1.05rem; text-align: justify;">
+                        @if(!empty($berita->lokasi))
                         <span class="fw-bold text-dark">{{ $berita->lokasi }} - </span>
+                        @endif
                         {!! nl2br(e($berita->isi)) !!}
                     </div>
 
@@ -66,6 +71,18 @@
                         </a>
                     </div>
                 </div>
+                @else
+                <div class="modern-sub-card p-5 text-center">
+                    <div class="bento-icon-box mx-auto mb-3" style="width: 64px; height: 64px; font-size: 1.75rem;">
+                        <i class="bi bi-newspaper text-muted"></i>
+                    </div>
+                    <h3 class="h4 fw-bold text-dark mb-2">Belum Ada Berita</h3>
+                    <p class="text-muted mb-4">Belum ada publikasi berita yang tersedia saat ini.</p>
+                    <a href="{{ url('/') }}" class="btn btn-outline-success rounded-pill px-4 py-2">
+                        <i class="bi bi-arrow-left me-1"></i> Kembali ke Beranda
+                    </a>
+                </div>
+                @endif
             </div>
 
             <!-- Sidebar Column -->
@@ -79,7 +96,7 @@
                     </div>
 
                     <div class="d-flex flex-column gap-3 mb-4">
-                        @foreach($beritaTerkini as $bItem)
+                        @forelse($beritaTerkini as $bItem)
                         <div class="d-flex align-items-center gap-3 p-2 rounded-3 hover-bg-light transition" style="border: 1px solid rgba(0,0,0,0.05);">
                             <img src="{{ asset('storage/berita/' . $bItem->gambar) }}" class="rounded-3 object-fit-cover flex-shrink-0" style="width: 76px; height: 76px;" alt="{{ $bItem->judul }}">
                             <div class="flex-grow-1 min-w-0">
@@ -87,11 +104,13 @@
                                     {{ $bItem->judul }}
                                 </a>
                                 <span class="text-muted small" style="font-size: 0.75rem;">
-                                    <i class="bi bi-calendar-event me-1"></i> {{ $bItem->created_at->format('d M Y') }}
+                                    <i class="bi bi-calendar-event me-1"></i> {{ $bItem->created_at?->format('d M Y') }}
                                 </span>
                             </div>
                         </div>
-                        @endforeach
+                        @empty
+                        <p class="text-muted small text-center mb-0">Tidak ada berita terkini lainnya.</p>
+                        @endforelse
                     </div>
 
                     <div>

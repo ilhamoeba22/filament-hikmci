@@ -294,46 +294,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// Lazy Load Data Nominal Deposito saat Scroll (Halaman Deposito)
-(function ($) {
-    "use strict";
-    let offset = 10;
-    const limit = 10;
-    let isLoading = false;
-
-    function loadMoreData(currentOffset, currentLimit) {
-        if (isLoading) return;
-        isLoading = true;
-
-        $.ajax({
-            url: "/get-nominals",
-            method: "GET",
-            data: { offset: currentOffset, limit: currentLimit },
-            success: function(data) {
-                if (data && data.trim() !== '') {
-                    $('#nominals-data').append(data);
-                    offset += currentLimit;
-                }
-                isLoading = false;
-            },
-            error: function(xhr, status, error) {
-                isLoading = false;
-            }
-        });
-    }
-
-    $('#nominals-data').on('scroll', function() {
-        const scrollTop = $(this).scrollTop();
-        const scrollHeight = $(this)[0].scrollHeight;
-        const windowHeight = $(this).height();
-
-        if (scrollTop + windowHeight >= scrollHeight - 15) {
-            loadMoreData(offset, limit);
-        }
-    });
-
-})(jQuery);
-
 // Export PDF Resmi (dengan safety null check)
 document.addEventListener("DOMContentLoaded", function() {
     const downloadBtn = document.getElementById("download-pdf");

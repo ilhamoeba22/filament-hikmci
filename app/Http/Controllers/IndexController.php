@@ -1,21 +1,36 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use App\Models\Berita;
 use App\Models\Carousel;
-use App\Models\RateDeposito;
 use App\Models\Nominal;
-use Illuminate\Http\Request;
+use App\Models\RateDeposito;
+use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Cache;
 
 class IndexController extends Controller
 {
-    public function index()
+    public function index(): View
     {
-        $beritaTerakhir = Berita::latest()->take(3)->get();
-        $carousels = Carousel::all();
-        $rateDeposito = RateDeposito::whereNotNull('bulan')->get(); // Ambil data rate deposito yang memiliki bulan
-        $nominals = Nominal::all(); // Ambil data nominal dengan pagination, 15 item per halaman
+        $beritaTerakhir = Cache::remember('web:home:berita_terakhir', 3600, function () {
+            return Berita::latest()->take(3)->get();
+        });
+
+        $carousels = Cache::remember('web:home:carousels', 86400, function () {
+            return Carousel::all();
+        });
+
+        $rateDeposito = Cache::remember('web:home:rates', 86400, function () {
+            return RateDeposito::whereNotNull('bulan')->get(); // Ambil data rate deposito yang memiliki bulan
+        });
+
+        $nominals = Cache::remember('web:home:nominals', 86400, function () {
+            return Nominal::all(); // Ambil data nominal
+        });
+
         return view('index', compact('beritaTerakhir', 'carousels', 'rateDeposito', 'nominals'));
     }
 

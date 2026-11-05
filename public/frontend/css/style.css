@@ -660,7 +660,7 @@ section,
 
 /* Section Header on Subpages */
 .subpage-section-header {
-  margin-bottom: 24px;
+  margin-bottom: 2rem;
 }
 
 .subpage-section-header .sub-badge {
@@ -1110,7 +1110,21 @@ section,
     max-height: 70vh;
     overflow-y: auto;
   }
+
+  .modern-navbar .dropend > .dropdown-menu {
+    position: static;
+    display: none;
+    background: rgba(241, 245, 249, 0.85);
+    border-radius: 10px;
+    margin: 4px 0 6px 12px;
+    padding: 6px;
+  }
+
+  .modern-navbar .dropend > .dropdown-menu.show {
+    display: block;
+  }
 }
+
 @media (min-width: 992px) {
   .modern-navbar .dropdown:hover > .dropdown-menu {
     display: block;
@@ -1127,20 +1141,6 @@ section,
     left: 100%;
     margin-top: -6px;
     margin-left: 4px;
-  }
-}
-
-@media (max-width: 991px) {
-  .modern-navbar .dropend > .dropdown-menu {
-    position: static;
-    display: none;
-    background: rgba(241, 245, 249, 0.85);
-    border-radius: 10px;
-    margin: 4px 0 6px 12px;
-    padding: 6px;
-  }
-  .modern-navbar .dropend > .dropdown-menu.show {
-    display: block;
   }
 }
 
@@ -1664,9 +1664,6 @@ section,
 }
 
 @media (max-width: 576px) {
-  .floating-glass-badge {
-    padding: 8px 12px;
-  }
   .badge-bold {
     font-size: 0.78rem !important;
   }
@@ -2892,19 +2889,11 @@ section,
 /* === TACTILE PRESS FEEDBACK (Emil Kowalski Philosophy) === */
 .btn:active,
 button:active,
-.btn-nav-cta:active,
-.btn-modern-primary:active,
-.btn-modern-ghost:active,
-.btn-modern-wa:active,
-.btn-product-action:active,
-.btn-carousel-arrow:active,
-.btn-preset-amount:active,
 .btn-sm-square:active,
 .btn-lg-square:active,
-.back-to-top:active,
 .section-pill-badge:active,
 .floating-glass-badge:active {
-  transform: scale(0.97) !important;
+  transform: scale(0.97);
 }
 
 /* === MODAL & CARD SCALE-IN (Never animate from scale 0; scale from 0.95 with opacity 0) === */
@@ -3015,18 +3004,13 @@ button:active,
     height: 420px;
   }
 
-  @media (max-width: 420px) {
-    .sharia-canvas-stage {
-      height: 380px;
-    }
-  }
-
   /* Keep floating badges within screen on small devices */
   .floating-glass-badge {
     position: static !important;
     inset: auto !important;
     margin: 10px auto !important;
     max-width: 290px;
+    padding: 8px 12px;
   }
 
   .card-ambient-glow {
@@ -3053,6 +3037,12 @@ button:active,
     bottom: 20px !important;
     right: 16px !important;
     gap: 8px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .sharia-canvas-stage {
+    height: 380px;
   }
 }
 
@@ -3270,9 +3260,6 @@ button:active,
    ============================================================== */
 
 /* Section heading utility inside subpages */
-.subpage-section-header {
-  margin-bottom: 2rem;
-}
 .subpage-section-tag {
   display: inline-flex;
   align-items: center;
