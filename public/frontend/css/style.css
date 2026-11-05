@@ -304,9 +304,17 @@ section,
   padding: 8px;
   background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(16px);
-  min-width: 210px;
+  min-width: 220px;
   transform-origin: top left;
   animation: dropdownSlide 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modern-dropdown.mega-dropdown {
+  min-width: 320px;
+  padding: 10px;
+  border-radius: 18px;
+  border: 1px solid rgba(13, 104, 36, 0.15);
+  box-shadow: 0 25px 50px -12px rgba(2, 26, 20, 0.15), 0 0 0 1px rgba(13, 104, 36, 0.05);
 }
 
 @keyframes dropdownSlide {
@@ -333,7 +341,776 @@ section,
   transform: translateX(3px);
 }
 
+/* Rich Sub-menu dropdown items */
+.modern-dropdown .rich-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  min-height: 52px;
+}
+
+.modern-dropdown .rich-dropdown-item:hover,
+.modern-dropdown .rich-dropdown-item.active {
+  background: rgba(13, 104, 36, 0.08);
+  transform: translateX(4px);
+}
+
+.modern-dropdown .rich-dropdown-item .item-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(13, 104, 36, 0.08);
+  color: var(--primary-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.modern-dropdown .rich-dropdown-item:hover .item-icon,
+.modern-dropdown .rich-dropdown-item.active .item-icon {
+  background: var(--primary-green);
+  color: #ffffff;
+}
+
+.modern-dropdown .rich-dropdown-item .item-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.modern-dropdown .rich-dropdown-item .item-title {
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: #0f172a;
+  line-height: 1.3;
+}
+
+.modern-dropdown .rich-dropdown-item .item-desc {
+  font-size: 0.75rem;
+  color: #64748b;
+  line-height: 1.25;
+  margin-top: 2px;
+}
+
+/* === MODERN SUBPAGE HERO BANNER & DESIGN SYSTEM === */
+.subpage-hero {
+  position: relative;
+  padding: 130px 0 55px;
+  background: linear-gradient(135deg, #021a14 0%, #064e3b 50%, #022c22 100%);
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.subpage-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 85% 25%, rgba(16, 185, 129, 0.2), transparent 50%),
+              radial-gradient(circle at 15% 75%, rgba(0, 150, 199, 0.15), transparent 45%);
+  pointer-events: none;
+}
+
+.subpage-hero-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.07;
+  background-image: radial-gradient(#ffffff 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+
+.subpage-breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 0.825rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 16px;
+}
+
+.subpage-breadcrumb a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.subpage-breadcrumb a:hover {
+  color: #ffd27a;
+}
+
+.subpage-breadcrumb .active {
+  color: #ffd27a;
+  font-weight: 600;
+}
+
+.subpage-breadcrumb .separator {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.75rem;
+}
+
+.subpage-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.subpage-subtitle {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.subpage-content-wrapper {
+  background: #f8fafc;
+  padding: 60px 0 80px;
+  min-height: 60vh;
+}
+
+.modern-sub-card {
+  background: #ffffff;
+  border: 1px solid rgba(13, 104, 36, 0.12);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.modern-sub-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 35px -10px rgba(13, 104, 36, 0.1);
+  border-color: rgba(13, 104, 36, 0.25);
+}
+
+.feature-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ecfdf5;
+  color: #0d6824;
+  border: 1px solid rgba(13, 104, 36, 0.2);
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 5px 14px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.bento-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #ecfdf5;
+  color: #0d6824;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+  border: 1px solid rgba(13, 104, 36, 0.15);
+}
+
+/* Bento Product Card */
+.bento-product-card {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.bento-product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 35px -8px rgba(13, 104, 36, 0.12), 0 1px 3px rgba(0, 0, 0, 0.04);
+  border-color: rgba(13, 104, 36, 0.3);
+}
+
+.bento-product-thumb {
+  position: relative;
+  overflow: hidden;
+  background: #f1f5f9;
+  aspect-ratio: 16/10;
+}
+
+.bento-product-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bento-product-card:hover .bento-product-thumb img {
+  transform: scale(1.07);
+}
+
+.bento-product-body {
+  padding: 22px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.bento-product-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 8px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.bento-product-title:hover {
+  color: #0d6824;
+}
+
+/* Feature & Spec Item */
+.bento-feature-item {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 18px;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  height: 100%;
+}
+
+.bento-feature-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px -6px rgba(13, 104, 36, 0.08);
+  border-color: rgba(13, 104, 36, 0.25);
+}
+
+/* Checklist Item Card for Syarat */
+.checklist-card {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 18px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  height: 100%;
+}
+
+.checklist-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px -6px rgba(13, 104, 36, 0.08);
+  border-color: rgba(13, 104, 36, 0.25);
+}
+
+.checklist-card .check-pill {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: #ecfdf5;
+  color: #0d6824;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  flex-shrink: 0;
+  border: 1px solid rgba(13, 104, 36, 0.15);
+}
+
+/* Product Hero Showcase in Details */
+.product-showcase-frame {
+  background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+  border: 1px solid rgba(13, 104, 36, 0.12);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 15px 35px -10px rgba(13, 104, 36, 0.08);
+  text-align: center;
+  overflow: hidden;
+}
+
+.product-showcase-frame img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
+  transition: transform 0.4s ease;
+}
+
+.product-showcase-frame:hover img {
+  transform: scale(1.02);
+}
+
+/* Section Header on Subpages */
+.subpage-section-header {
+  margin-bottom: 24px;
+}
+
+.subpage-section-header .sub-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ecfdf5;
+  color: #0d6824;
+  border: 1px solid rgba(13, 104, 36, 0.2);
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 4px 14px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+}
+
+.subpage-section-header h2,
+.subpage-section-header h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.01em;
+  margin-bottom: 0;
+}
+
+/* Subpage Call-to-Action Box */
+.subpage-cta-card {
+  background: linear-gradient(135deg, #022c22 0%, #064e3b 60%, #0d6824 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 40px 32px;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 45px -10px rgba(6, 78, 59, 0.35);
+}
+
+.subpage-cta-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Modern Comparison Table */
+.table-modern-comparison {
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.table-modern-comparison th {
+  background: linear-gradient(135deg, #0d6824, #064e3b);
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  padding: 16px 20px;
+  border: none;
+}
+
+.table-modern-comparison td {
+  padding: 16px 20px;
+  vertical-align: middle;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+  font-size: 0.95rem;
+}
+
+.table-modern-comparison tr:last-child td {
+  border-bottom: none;
+}
+
+.table-modern-comparison tr:hover td {
+  background-color: #f8fafc;
+}
+
+/* Wakaf Steps Flow */
+.wakaf-step-box {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 20px;
+  padding: 24px 20px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wakaf-step-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px -8px rgba(13, 104, 36, 0.12);
+  border-color: rgba(13, 104, 36, 0.25);
+}
+
+.wakaf-step-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  background: #ecfdf5;
+  color: #0d6824;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 14px;
+  border: 1px solid rgba(13, 104, 36, 0.15);
+}
+
+.wakaf-step-arrow {
+  color: #0d6824;
+  font-size: 1.75rem;
+  opacity: 0.5;
+}
+
+/* Subpage Bento & Tab Components */
+.bento-card {
+  background: #ffffff;
+  border: 1px solid rgba(13, 104, 36, 0.12);
+  border-radius: 20px;
+  padding: 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.04);
+}
+
+.bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px -8px rgba(13, 104, 36, 0.12);
+  border-color: rgba(13, 104, 36, 0.28);
+}
+
+.bento-checklist-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 100%;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bento-checklist-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(13, 104, 36, 0.25);
+  box-shadow: 0 8px 20px -4px rgba(13, 104, 36, 0.06);
+}
+
+.bento-check-icon {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  border-radius: 12px;
+  background: #ecfdf5;
+  color: #0d6824;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  flex-shrink: 0;
+  border: 1px solid rgba(13, 104, 36, 0.15);
+}
+
+.product-showcase-box {
+  background: #ffffff;
+  border: 1px solid rgba(13, 104, 36, 0.12);
+  border-radius: 24px;
+  padding: 28px 24px;
+  box-shadow: 0 12px 35px -10px rgba(0, 0, 0, 0.05);
+}
+
+.product-showcase-img {
+  max-height: 420px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.product-showcase-box:hover .product-showcase-img {
+  transform: scale(1.02);
+}
+
+.nav-subpage-pills {
+  background: #ffffff;
+  border: 1px solid rgba(13, 104, 36, 0.12);
+  border-radius: 20px;
+  padding: 12px;
+  box-shadow: 0 6px 20px -6px rgba(0, 0, 0, 0.04);
+}
+
+.nav-subpage-pills .nav-link {
+  color: #334155;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 14px 18px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+  margin-bottom: 6px;
+  text-align: left;
+}
+
+.nav-subpage-pills .nav-link:hover {
+  background: #f1f5f9;
+  color: #0d6824;
+}
+
+.nav-subpage-pills .nav-link.active {
+  background: linear-gradient(135deg, #0d6824 0%, #087f23 100%);
+  color: #ffffff !important;
+  box-shadow: 0 8px 20px -4px rgba(13, 104, 36, 0.35);
+  border-color: rgba(25, 240, 176, 0.3);
+}
+
+.nav-subpage-pills .nav-link.active .pill-arrow {
+  color: #ffd27a;
+  transform: translateX(4px);
+}
+
+/* Bento Counter Cards */
+.bento-counter-card {
+  background: #ffffff;
+  border: 1px solid rgba(13, 104, 36, 0.12);
+  border-radius: 20px;
+  padding: 24px 20px;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  height: 100%;
+}
+.bento-counter-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 35px -10px rgba(13, 104, 36, 0.12);
+  border-color: rgba(13, 104, 36, 0.3);
+}
+.bento-counter-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: #ecfdf5;
+  color: #0d6824;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  border: 1px solid rgba(13, 104, 36, 0.15);
+  margin-bottom: 14px;
+}
+
+/* Company Spec Sheet */
+.company-spec-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 18px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.company-spec-item:hover {
+  background: #f0fdf4;
+  border-color: rgba(13, 104, 36, 0.25);
+}
+.company-spec-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #ecfdf5;
+  color: #0d6824;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  border: 1px solid rgba(13, 104, 36, 0.15);
+  margin-top: 2px;
+}
+
+/* Executive Cards */
+.executive-card {
+  background: #ffffff;
+  border: 1px solid rgba(13, 104, 36, 0.12);
+  border-radius: 22px;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.executive-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 35px -10px rgba(13, 104, 36, 0.12);
+  border-color: rgba(13, 104, 36, 0.3);
+}
+.executive-avatar-frame {
+  width: 105px;
+  height: 105px;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, #0d6824 0%, #10b981 100%);
+  display: inline-block;
+  box-shadow: 0 8px 18px rgba(13, 104, 36, 0.18);
+  flex-shrink: 0;
+}
+.executive-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ffffff;
+}
+.executive-role-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ecfdf5;
+  color: #0d6824;
+  font-weight: 700;
+  font-size: 0.825rem;
+  padding: 5px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(13, 104, 36, 0.2);
+}
+.legal-decree-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 0.8rem;
+  color: #475569;
+  line-height: 1.55;
+  margin-top: auto;
+}
+
+/* Luxury Awards Gallery */
+.luxury-award-card {
+  background: #ffffff;
+  border: 1px solid rgba(255, 210, 122, 0.45);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.luxury-award-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 35px -10px rgba(217, 119, 6, 0.18);
+  border-color: #ffd27a;
+}
+.award-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  background: #0f172a;
+  cursor: pointer;
+}
+.award-img-wrapper img {
+  transition: transform 0.4s ease;
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+.luxury-award-card:hover .award-img-wrapper img {
+  transform: scale(1.06);
+}
+.award-zoom-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 26, 20, 0.45);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.25s ease;
+}
+.luxury-award-card:hover .award-zoom-overlay {
+  opacity: 1;
+}
+
+/* Piagam Audit & Emerald Action Buttons */
+.piagam-governance-card {
+  background: #ffffff;
+  border: 1px solid rgba(13, 104, 36, 0.12);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04);
+}
+.piagam-doc-card {
+  background: #ffffff;
+  border: 1px solid rgba(13, 104, 36, 0.12);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.piagam-doc-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 35px -10px rgba(13, 104, 36, 0.12);
+  border-color: rgba(13, 104, 36, 0.3);
+}
+.btn-emerald-action {
+  background: linear-gradient(135deg, #0d6824 0%, #059669 100%);
+  color: #ffffff !important;
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 4px 14px rgba(13, 104, 36, 0.22);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-emerald-action:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(13, 104, 36, 0.35);
+}
+
 /* Nested Dropdowns Support */
+@media (max-width: 991px) {
+  .modern-dropdown.mega-dropdown {
+    min-width: 100%;
+    box-shadow: none;
+    border: 1px solid rgba(13, 104, 36, 0.1);
+    background: #ffffff;
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+}
 @media (min-width: 992px) {
   .modern-navbar .dropdown:hover > .dropdown-menu {
     display: block;
@@ -2293,4 +3070,335 @@ button:active,
   .pulse-dot {
     animation: none !important;
   }
+}
+
+/* ==============================================================
+   SUBPAGE FINTECH REDESIGN SUITE
+   Pages: Pengaduan, Lapkeu, Karir, Asset, Berita, Edukasi, E-Book
+   ============================================================== */
+
+/* Section heading utility inside subpages */
+.subpage-section-header {
+  margin-bottom: 2rem;
+}
+.subpage-section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ecfdf5;
+  color: #0d6824;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid rgba(13, 104, 36, 0.18);
+  margin-bottom: 12px;
+}
+.subpage-section-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.4rem, 2.2vw, 1.95rem);
+  color: #0f172a;
+  letter-spacing: -0.02em;
+}
+
+/* Modern Fintech Table */
+.modern-table-card {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid rgba(13, 104, 36, 0.12);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+.modern-fintech-table {
+  width: 100%;
+  margin-bottom: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.modern-fintech-table th {
+  background: #f8fafc;
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e2e8f0;
+  vertical-align: middle;
+}
+.modern-fintech-table td {
+  padding: 16px 20px;
+  color: #334155;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+  background: #ffffff;
+}
+.modern-fintech-table tr:last-child td {
+  border-bottom: none;
+}
+.modern-fintech-table tr:hover td {
+  background: #f8fafc;
+}
+.modern-fintech-table ul {
+  padding-left: 1.25rem;
+  margin-bottom: 0;
+}
+.modern-fintech-table li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+.modern-fintech-table li:last-child {
+  margin-bottom: 0;
+}
+
+/* Modern Workflow Step Cards (Pengaduan Flow) */
+.flow-diagram-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.flow-step-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: stretch;
+  justify-content: center;
+}
+.flow-step-card {
+  flex: 1 1 150px;
+  max-width: 200px;
+  background: #ffffff;
+  border: 1px solid rgba(13, 104, 36, 0.12);
+  border-radius: 16px;
+  padding: 16px 12px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 15px -4px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.flow-step-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(13, 104, 36, 0.3);
+}
+.flow-step-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #ecfdf5;
+  color: #0d6824;
+  font-weight: 700;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  border: 1px solid rgba(13, 104, 36, 0.2);
+}
+.flow-step-card p {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.35;
+}
+.flow-step-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0d6824;
+  font-size: 1.25rem;
+  padding: 0 4px;
+}
+@media (max-width: 767.98px) {
+  .flow-step-card {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+  .flow-step-arrow {
+    transform: rotate(90deg);
+    padding: 6px 0;
+  }
+}
+
+/* Document Portal (Lapkeu) */
+.doc-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  color: #334155;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.doc-tab-btn:hover {
+  background: #f8fafc;
+  color: #0d6824;
+  border-color: rgba(13, 104, 36, 0.25);
+  transform: translateX(3px);
+}
+.doc-tab-btn.active {
+  background: #0d6824;
+  color: #ffffff;
+  border-color: #0d6824;
+  box-shadow: 0 8px 20px -6px rgba(13, 104, 36, 0.4);
+}
+.doc-tab-btn i {
+  font-size: 1.15rem;
+}
+
+.pdf-container-modern {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+.pdf-item-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid rgba(13, 104, 36, 0.12);
+  padding: 20px;
+  text-decoration: none !important;
+  color: inherit;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  box-shadow: 0 4px 15px -4px rgba(0, 0, 0, 0.03);
+  position: relative;
+  min-height: 180px;
+}
+.pdf-item-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(13, 104, 36, 0.3);
+  box-shadow: 0 15px 30px -8px rgba(13, 104, 36, 0.12);
+}
+.pdf-item-card .pdf-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #fee2e2;
+  color: #dc2626;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+/* Job Cards (Karir) */
+.career-modern-card {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid rgba(13, 104, 36, 0.12);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.career-modern-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 35px -10px rgba(13, 104, 36, 0.12);
+}
+.career-thumb-box {
+  position: relative;
+  overflow: hidden;
+  background: #f1f5f9;
+  cursor: pointer;
+}
+.career-thumb-box img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+.career-modern-card:hover .career-thumb-box img {
+  transform: scale(1.04);
+}
+
+/* Asset Cards */
+.asset-card-fintech {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid rgba(13, 104, 36, 0.12);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.asset-card-fintech:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 35px -10px rgba(13, 104, 36, 0.12);
+}
+
+/* Article / News & Edukasi Cards */
+.article-modern-card {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid rgba(13, 104, 36, 0.12);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.article-modern-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 35px -10px rgba(13, 104, 36, 0.12);
+}
+.article-thumb-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #f1f5f9;
+}
+.article-thumb-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+.article-modern-card:hover .article-thumb-wrapper img {
+  transform: scale(1.05);
+}
+
+/* E-Book Modern Item */
+.ebook-card-fintech {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid rgba(13, 104, 36, 0.12);
+  box-shadow: 0 8px 25px -8px rgba(0, 0, 0, 0.04);
+  padding: 22px;
+  margin-bottom: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.ebook-card-fintech:hover {
+  transform: translateY(-3px);
+  border-color: rgba(13, 104, 36, 0.25);
+  box-shadow: 0 15px 30px -8px rgba(13, 104, 36, 0.1);
+}
+.ebook-cover-fintech {
+  width: 90px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }

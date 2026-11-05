@@ -1,126 +1,252 @@
 @include('header')
 
-<!-- Navbar & Hero Start -->
-<div class="container-fluid position-relative p-0">
-    <!-- Header Start -->
-    <div class="container-fluid bg-breadcrumb">
-        <div class="container text-center py-5" style="max-width: 900px;">
-            <h4 class="text-white display-5 mb-4 wow fadeInDown" data-wow-delay="0.1s">Produk Tabungan Cahaya</h4>
-            <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
-                <li class="breadcrumb-item"><a href="{{ url('tabungan') }}">Tabungan</a></li>
-                <li class="breadcrumb-item active text-primary">Tabungan Cahaya</li>
-            </ol>
+<!-- Subpage Hero Start -->
+<section class="subpage-hero">
+    <div class="subpage-hero-pattern"></div>
+    <div class="container position-relative text-center">
+        <div class="subpage-breadcrumb wow fadeInDown" data-wow-delay="0.1s">
+            <a href="{{ url('/') }}"><i class="fas fa-home me-1"></i> Home</a>
+            <span class="separator"><i class="fas fa-chevron-right"></i></span>
+            <a href="{{ url('tabungan') }}">Tabungan</a>
+            <span class="separator"><i class="fas fa-chevron-right"></i></span>
+            <span class="active">Tabungan Cahaya</span>
         </div>
+        <h1 class="subpage-title wow fadeInDown" data-wow-delay="0.2s">Produk Tabungan Cahaya</h1>
+        <p class="subpage-subtitle wow fadeInUp" data-wow-delay="0.3s">Tabungan berjangka syariah eksklusif dengan hadiah langsung tanpa diundi sesuai pilihan Anda</p>
     </div>
-    <!-- Header End -->
-</div>
-<!-- Navbar & Hero End -->
+</section>
+<!-- Subpage Hero End -->
 
-<!-- Tabungan Cahaya Start -->
-<div class="container-fluid tabungan">
+<!-- Tabungan Detail Content Start -->
+<div class="subpage-content-wrapper">
     <div class="container">
-        <div class="row g-5">
-            <div class="wow fadeInRight" data-wow-delay="0.2s">
-                <div class="tabungan-item">
-                    <div class="row g-5 mb-3">
-                        <div class="col-md-12 text-center d-flex justify-content-start align-items-start">
-                            <img src="{{asset('frontend/img/produk/MCI_Produk_Cahaya.png')}}" class="img-fluid-produk" alt="Responsive image">
+        <!-- Product Showcase Banner -->
+        <div class="row g-4 mb-5 align-items-center">
+            <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
+                <div class="product-showcase-frame">
+                    <img src="{{ asset('frontend/img/produk/MCI_Produk_Cahaya.png') }}" class="img-fluid" alt="Produk Tabungan Cahaya">
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
+                <div class="p-lg-4">
+                    <span class="feature-pill-badge mb-3">
+                        <i class="fas fa-gift"></i> Hadiah Langsung Tanpa Diundi
+                    </span>
+                    <h2 class="subpage-title text-dark mb-3" style="font-size: clamp(1.6rem, 2.5vw, 2.2rem);">
+                        Tabungan Cahaya BPRS HIK MCI
+                    </h2>
+                    <p class="text-muted mb-4" style="line-height: 1.8;">
+                        Simpanan berjangka prestisius dengan akad Mudharabah Mutlaqah yang memberikan kebebasan memilih hadiah langsung berupa barang atau jasa di awal periode, tanpa perlu menunggu undian.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <div class="d-flex align-items-center gap-2 bg-white px-3 py-2 rounded-pill border">
+                            <i class="fas fa-check text-success"></i>
+                            <span class="small fw-semibold text-dark">Hadiah Barang / Jasa</span>
                         </div>
-                    </div>
-                    <h1 class="pt-1">
-                        Fitur
-                    </h1>
-                    <div class="row g-5">
-                        <div class="col-md-6 d-flex align-items-center mb-1">
-                            <i class="bi bi-bag-fill me-3 icon-hover" style="font-size: 2rem;"></i>
-                            <h5 class="mb-0">Menggunakan Akad Mudharabah Mutlaqah</h5>
+                        <div class="d-flex align-items-center gap-2 bg-white px-3 py-2 rounded-pill border">
+                            <i class="fas fa-check text-success"></i>
+                            <span class="small fw-semibold text-dark">Pengadaan Cepat</span>
                         </div>
-                        <div class="col-md-6 d-flex align-items-center mb-1">
-                            <i class="bi bi-calendar-week me-3 icon-hover" style="font-size: 2rem;"></i>
-                            <h5 class="mb-0">Minimal Setora Awal Rp. 10.000.000,-</h5>
-                        </div>
-                    </div>
-                    <h1 class="pt-1">
-                        Keunggulan
-                    </h1>
-                    <div class="row g-5">
-                        <div class="col-md-6 d-flex align-items-center mb-1">
-                            <i class="bi bi-gift-fill me-3 icon-hover" style="font-size: 2rem;"></i>
-                            <h5 class="mb-0">Mendapatkan hadiah langsung tanpa diundi</h5>
-                        </div>
-                        <div class="col-md-6 d-flex align-items-center mb-1">
-                            <i class="bi bi-box-seam-fill me-3 icon-hover" style="font-size: 2rem;"></i>
-                            <h5 class="mb-0">Pilihan hadiah berupa Barang / Jasa</h5>
-                        </div>
-                    </div>
-                    <div class="row g-5">
-                        <div class="col-md-6 d-flex align-items-center mb-1">
-                            <i class="bi bi-alarm-fill me-3 icon-hover" style="font-size: 2rem;"></i>
-                            <h5 class="mb-0">Proses pengadaan hadiah cepat (Max 21 hari kerja)</h5>
-                        </div>
-                        <div class="col-md-6 d-flex align-items-center mb-1">
-                            <i class="bi bi-wallet-fill me-3 icon-hover" style="font-size: 2rem;"></i>
-                            <h5 class="mb-0">Gratis Biaya Administrasi</h5>
-                        </div>
-                    </div>
-                    <!-- syarat -->
-                    <h1 class="pt-1">
-                        Syarat Perorangan
-                    </h1>
-                    <div class="row g-5">
-                        <div class="col-md-6 d-flex align-items-center mb-1">
-                            <i class="bi bi-person-badge me-3 icon-hover" style="font-size: 2rem;"></i>
-                            <h5 class="mb-0">Usia minimal 17 tahun</h5>
-                        </div>
-                        <div class="col-md-6 d-flex align-items-center mb-1">
-                            <i class="bi bi-credit-card-2-front me-3 icon-hover" style="font-size: 2rem;"></i>
-                            <h5 class="mb-0">Memiliki KTP</h5>
-                        </div>
-                    </div>
-                    <div class="row g-5">
-                        <div class="col-md-6 d-flex align-items-center mb-1">
-                            <i class="bi bi-file-text me-3 icon-hover" style="font-size: 2rem;"></i>
-                            <h5 class="mb-0">NPWP (opsional)</h5>
-                        </div>
-                    </div>
-
-                    <h1 class="pt-1">
-                        Syarat Badan Usaha
-                    </h1>
-                    <div class="row g-5">
-                        <div class="col-md-6 d-flex align-items-center mb-1">
-                            <i class="bi bi-file-earmark-text me-3 icon-hover" style="font-size: 2rem;"></i>
-                            <h5 class="mb-0">Akta Pendirian dan Akta Perubahan</h5>
-                        </div>
-                        <div class="col-md-6 d-flex align-items-center mb-1">
-                            <i class="bi bi-building me-3 icon-hover" style="font-size: 2rem;"></i>
-                            <h5 class="mb-0">NIB Badan Hukum</h5>
-                        </div>
-                    </div>
-                    <div class="row g-5">
-                        <div class="col-md-6 d-flex align-items-center mb-1">
-                            <i class="bi bi-file-text me-3 icon-hover" style="font-size: 2rem;"></i>
-                            <h5 class="mb-0">NPWP Pengurus</h5>
-                        </div>
-                        <div class="col-md-6 d-flex align-items-center mb-1">
-                            <i class="bi bi-person-vcard me-3 icon-hover" style="font-size: 2rem;"></i>
-                            <h5 class="mb-0">KTP Pengurus</h5>
-                        </div>
-                    </div>
-                    <div class="row pb-4 align-items-center text-center">
-                        <div class="col-md-12 ">
-                            <a href="https://wa.me/6285771796642" class="btn btn-primary btn-lg">
-                                Buka Rekening
-                            </a>
+                        <div class="d-flex align-items-center gap-2 bg-white px-3 py-2 rounded-pill border">
+                            <i class="fas fa-check text-success"></i>
+                            <span class="small fw-semibold text-dark">Gratis Biaya Admin</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Fitur Section -->
+        <div class="mb-5 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="subpage-section-header">
+                <span class="sub-badge"><i class="fas fa-star"></i> Fitur Produk</span>
+                <h2>Fitur</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="bento-feature-item">
+                        <span class="bento-icon-box">
+                            <i class="bi bi-bag-fill"></i>
+                        </span>
+                        <div>
+                            <h5 class="mb-0 text-dark fw-bold" style="font-size: 1.05rem;">Menggunakan Akad Mudharabah Mutlaqah</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="bento-feature-item">
+                        <span class="bento-icon-box">
+                            <i class="bi bi-calendar-week"></i>
+                        </span>
+                        <div>
+                            <h5 class="mb-0 text-dark fw-bold" style="font-size: 1.05rem;">Minimal Setora Awal Rp. 10.000.000,-</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Keunggulan Section -->
+        <div class="mb-5 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="subpage-section-header">
+                <span class="sub-badge"><i class="fas fa-gem"></i> Nilai Lebih</span>
+                <h2>Keunggulan</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="bento-feature-item">
+                        <span class="bento-icon-box">
+                            <i class="bi bi-gift-fill"></i>
+                        </span>
+                        <div>
+                            <h5 class="mb-0 text-dark fw-bold" style="font-size: 1.05rem;">Mendapatkan hadiah langsung tanpa diundi</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="bento-feature-item">
+                        <span class="bento-icon-box">
+                            <i class="bi bi-box-seam-fill"></i>
+                        </span>
+                        <div>
+                            <h5 class="mb-0 text-dark fw-bold" style="font-size: 1.05rem;">Pilihan hadiah berupa Barang / Jasa</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="bento-feature-item">
+                        <span class="bento-icon-box">
+                            <i class="bi bi-alarm-fill"></i>
+                        </span>
+                        <div>
+                            <h5 class="mb-0 text-dark fw-bold" style="font-size: 1.05rem;">Proses pengadaan hadiah cepat (Max 21 hari kerja)</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="bento-feature-item">
+                        <span class="bento-icon-box">
+                            <i class="bi bi-wallet-fill"></i>
+                        </span>
+                        <div>
+                            <h5 class="mb-0 text-dark fw-bold" style="font-size: 1.05rem;">Gratis Biaya Administrasi</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Syarat Perorangan Section -->
+        <div class="mb-5 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="subpage-section-header">
+                <span class="sub-badge"><i class="fas fa-user-check"></i> Nasabah Individu</span>
+                <h2>Syarat Perorangan</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="checklist-card">
+                        <span class="check-pill">
+                            <i class="bi bi-person-badge"></i>
+                        </span>
+                        <div>
+                            <h5 class="mb-1 text-dark fw-bold" style="font-size: 1.05rem;">Usia minimal 17 tahun</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="checklist-card">
+                        <span class="check-pill">
+                            <i class="bi bi-credit-card-2-front"></i>
+                        </span>
+                        <div>
+                            <h5 class="mb-1 text-dark fw-bold" style="font-size: 1.05rem;">Memiliki KTP</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="checklist-card">
+                        <span class="check-pill">
+                            <i class="bi bi-file-text"></i>
+                        </span>
+                        <div>
+                            <h5 class="mb-1 text-dark fw-bold" style="font-size: 1.05rem;">NPWP (opsional)</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Syarat Badan Usaha Section -->
+        <div class="mb-5 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="subpage-section-header">
+                <span class="sub-badge"><i class="fas fa-building"></i> Nasabah Perusahaan</span>
+                <h2>Syarat Badan Usaha</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="checklist-card">
+                        <span class="check-pill">
+                            <i class="bi bi-file-earmark-text"></i>
+                        </span>
+                        <div>
+                            <h5 class="mb-1 text-dark fw-bold" style="font-size: 1.05rem;">Akta Pendirian dan Akta Perubahan</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="checklist-card">
+                        <span class="check-pill">
+                            <i class="bi bi-building"></i>
+                        </span>
+                        <div>
+                            <h5 class="mb-1 text-dark fw-bold" style="font-size: 1.05rem;">NIB Badan Hukum</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="checklist-card">
+                        <span class="check-pill">
+                            <i class="bi bi-file-text"></i>
+                        </span>
+                        <div>
+                            <h5 class="mb-1 text-dark fw-bold" style="font-size: 1.05rem;">NPWP Pengurus</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="checklist-card">
+                        <span class="check-pill">
+                            <i class="bi bi-person-vcard"></i>
+                        </span>
+                        <div>
+                            <h5 class="mb-1 text-dark fw-bold" style="font-size: 1.05rem;">KTP Pengurus</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Box WhatsApp -->
+        <div class="subpage-cta-card text-center wow fadeInUp" data-wow-delay="0.3s">
+            <div class="position-relative" style="z-index: 2; max-width: 720px; margin: 0 auto;">
+                <span class="badge bg-white text-success px-3 py-2 rounded-pill fw-bold mb-3" style="font-size: 0.8rem;">
+                    <i class="fab fa-whatsapp me-1"></i> Layanan Cepat & Praktis
+                </span>
+                <h3 class="text-white fw-bold mb-3" style="font-family: 'Outfit', sans-serif;">
+                    Pilih Hadiah Impian Anda Bersama Tabungan Cahaya
+                </h3>
+                <p class="text-white-75 mb-4" style="line-height: 1.7;">
+                    Konsultasikan nominal simpanan dan hadiah impian Anda dengan petugas kami. Proses pengadaan transparan, terpercaya, dan sesuai syariat.
+                </p>
+                <div class="d-inline-block">
+                    <a href="https://wa.me/6285771796642" target="_blank" rel="noopener noreferrer" class="btn btn-modern-wa">
+                        <i class="fab fa-whatsapp fs-5 me-2"></i> Buka Rekening
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-
-<!-- Products End -->
+<!-- Tabungan Detail Content End -->
 
 @include('footer')

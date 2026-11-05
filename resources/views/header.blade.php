@@ -108,38 +108,115 @@
                         <a href="{{ url('/') }}" class="nav-item nav-link {{ request()->is('/') ? 'active' : '' }}">Home</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle {{ request()->is('about') || request()->is('team') || request()->is('lapkeu') || request()->is('pengaduan') || request()->is('penghargaan') || request()->is('piagam-audit') ? 'active' : '' }}" data-bs-toggle="dropdown">Tentang Kami</a>
-                            <div class="dropdown-menu modern-dropdown m-0">
-                                <a href="{{ url('about') }}" class="dropdown-item {{ request()->is('about') ? 'active' : '' }}">Profile</a>
-                                <a href="{{ url('team') }}" class="dropdown-item {{ request()->is('team') ? 'active' : '' }}">Pengurus</a>
-                                <a href="{{ url('lapkeu') }}" class="dropdown-item {{ request()->is('lapkeu') ? 'active' : '' }}">Laporan Keuangan</a>
-                                <a href="{{ url('pengaduan') }}" class="dropdown-item {{ request()->is('pengaduan') ? 'active' : '' }}">Layanan Pengaduan</a>
-                                <a href="{{ url('penghargaan') }}" class="dropdown-item {{ request()->is('penghargaan') ? 'active' : '' }}">Penghargaan</a>
-                                <a href="{{ url('piagam-audit') }}" class="dropdown-item {{ request()->is('piagam-audit') ? 'active' : '' }}">Piagam Audit Internal</a>
+                            <div class="dropdown-menu modern-dropdown mega-dropdown m-0 shadow-lg">
+                                <a href="{{ url('about') }}" class="rich-dropdown-item {{ request()->is('about') ? 'active' : '' }}">
+                                    <div class="item-icon"><i class="bi bi-building"></i></div>
+                                    <div class="item-text">
+                                        <div class="item-title">Profile</div>
+                                        <div class="item-desc">Sejarah, visi-misi &amp; legalitas resmi</div>
+                                    </div>
+                                </a>
+                                <a href="{{ url('team') }}" class="rich-dropdown-item {{ request()->is('team') ? 'active' : '' }}">
+                                    <div class="item-icon"><i class="bi bi-people-fill"></i></div>
+                                    <div class="item-text">
+                                        <div class="item-title">Pengurus</div>
+                                        <div class="item-desc">Komisaris, Direksi &amp; Dewan Pengawas</div>
+                                    </div>
+                                </a>
+                                <a href="{{ url('lapkeu') }}" class="rich-dropdown-item {{ request()->is('lapkeu') ? 'active' : '' }}">
+                                    <div class="item-icon"><i class="bi bi-file-earmark-bar-graph"></i></div>
+                                    <div class="item-text">
+                                        <div class="item-title">Laporan Keuangan</div>
+                                        <div class="item-desc">Publikasi berkala &amp; transparansi</div>
+                                    </div>
+                                </a>
+                                <a href="{{ url('pengaduan') }}" class="rich-dropdown-item {{ request()->is('pengaduan') ? 'active' : '' }}">
+                                    <div class="item-icon"><i class="bi bi-shield-check"></i></div>
+                                    <div class="item-text">
+                                        <div class="item-title">Layanan Pengaduan</div>
+                                        <div class="item-desc">Mekanisme &amp; perlindungan nasabah</div>
+                                    </div>
+                                </a>
+                                <a href="{{ url('penghargaan') }}" class="rich-dropdown-item {{ request()->is('penghargaan') ? 'active' : '' }}">
+                                    <div class="item-icon"><i class="bi bi-trophy-fill"></i></div>
+                                    <div class="item-text">
+                                        <div class="item-title">Penghargaan</div>
+                                        <div class="item-desc">Prestasi &amp; Infobank Awards</div>
+                                    </div>
+                                </a>
+                                <a href="{{ url('piagam-audit') }}" class="rich-dropdown-item {{ request()->is('piagam-audit') ? 'active' : '' }}">
+                                    <div class="item-icon"><i class="bi bi-patch-check-fill"></i></div>
+                                    <div class="item-text">
+                                        <div class="item-title">Piagam Audit Internal</div>
+                                        <div class="item-desc">Tata kelola pengawasan internal</div>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle {{ request()->is('tabungan') || request()->is('deposito') || request()->is('pembiayaan') ? 'active' : '' }}" data-bs-toggle="dropdown">Produk</a>
-                            <div class="dropdown-menu modern-dropdown m-0">
-                                <a href="{{ url('tabungan') }}" class="dropdown-item {{ request()->is('tabungan') ? 'active' : '' }}">Tabungan</a>
-                                <a href="{{ url('main-deposito') }}" class="dropdown-item {{ request()->is('main-deposito') ? 'active' : '' }}">Deposito</a>
-                                <a href="{{ url('pembiayaan') }}" class="dropdown-item {{ request()->is('pembiayaan') ? 'active' : '' }}">Pembiayaan</a>
-                                <a href="{{ url('https://riplay.bprshikmciyk.co.id/') }}" class="dropdown-item" target="_blank">RIPLAY</a>
+                            <a href="#" class="nav-link dropdown-toggle {{ request()->is('tabungan') || request()->is('deposito') || request()->is('main-deposito*') || request()->is('pembiayaan') ? 'active' : '' }}" data-bs-toggle="dropdown">Produk</a>
+                            <div class="dropdown-menu modern-dropdown mega-dropdown m-0 shadow-lg">
+                                <a href="{{ url('tabungan') }}" class="rich-dropdown-item {{ request()->is('tabungan') ? 'active' : '' }}">
+                                    <div class="item-icon"><i class="bi bi-wallet2"></i></div>
+                                    <div class="item-text">
+                                        <div class="item-title">Tabungan</div>
+                                        <div class="item-desc">Simpanan syariah berkah &amp; fleksibel</div>
+                                    </div>
+                                </a>
+                                <a href="{{ url('main-deposito') }}" class="rich-dropdown-item {{ request()->is('main-deposito*') || request()->is('deposito') ? 'active' : '' }}">
+                                    <div class="item-icon"><i class="bi bi-cash-coin"></i></div>
+                                    <div class="item-text">
+                                        <div class="item-title">Deposito</div>
+                                        <div class="item-desc">Investasi bagi hasil kompetitif &amp; aman LPS</div>
+                                    </div>
+                                </a>
+                                <a href="{{ url('pembiayaan') }}" class="rich-dropdown-item {{ request()->is('pembiayaan') ? 'active' : '' }}">
+                                    <div class="item-icon"><i class="bi bi-graph-up-arrow"></i></div>
+                                    <div class="item-text">
+                                        <div class="item-title">Pembiayaan</div>
+                                        <div class="item-desc">Solusi modal usaha UMKM &amp; kepemilikan aset</div>
+                                    </div>
+                                </a>
+                                <a href="{{ url('https://riplay.bprshikmciyk.co.id/') }}" class="rich-dropdown-item" target="_blank" rel="noopener noreferrer">
+                                    <div class="item-icon"><i class="bi bi-info-circle"></i></div>
+                                    <div class="item-text">
+                                        <div class="item-title d-flex align-items-center gap-1">
+                                            RIPLAY
+                                            <i class="bi bi-box-arrow-up-right" style="font-size: 0.7rem; color: #94a3b8;"></i>
+                                        </div>
+                                        <div class="item-desc">Ringkasan Informasi Produk &amp; Layanan</div>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                         <a href="{{ url('berita') }}" class="nav-item nav-link {{ request()->is('berita') ? 'active' : '' }}">Berita</a>
                         <a href="{{ url('karir') }}" class="nav-item nav-link {{ request()->is('karir') ? 'active' : '' }}">Karir</a>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle {{ request()->is('asset') || request()->is('edukasi') || request()->is('ebook') ? 'active' : '' }}" data-bs-toggle="dropdown">Layanan Lainnya</a>
-                            <div class="dropdown-menu modern-dropdown m-0">
-                                <a href="{{ url('asset') }}" class="dropdown-item {{ request()->is('asset') ? 'active' : '' }}">E-Asset</a>
-
-                                <div class="dropend">
-                                    <a href="#" class="dropdown-item dropdown-toggle {{ request()->is('edukasi') || request()->is('ebook') ? 'active' : '' }}" data-bs-toggle="dropdown" aria-expanded="false">Media</a>
-                                    <ul class="dropdown-menu modern-dropdown m-0">
-                                        <li><a class="dropdown-item {{ request()->is('edukasi') ? 'active' : '' }}" href="{{ url('edukasi') }}">Edukasi</a></li>
-                                        <li><a class="dropdown-item {{ request()->is('ebook') ? 'active' : '' }}" href="{{ route('ebook.index') }}">E-Book</a></li>
-                                    </ul>
-                                </div>
+                            <a href="#" class="nav-link dropdown-toggle {{ request()->is('asset') || request()->is('edukasi') || request()->is('ebook*') ? 'active' : '' }}" data-bs-toggle="dropdown">Layanan Lainnya</a>
+                            <div class="dropdown-menu modern-dropdown mega-dropdown m-0 shadow-lg">
+                                <a href="{{ url('asset') }}" class="rich-dropdown-item {{ request()->is('asset') ? 'active' : '' }}">
+                                    <div class="item-icon"><i class="bi bi-houses-fill"></i></div>
+                                    <div class="item-text">
+                                        <div class="item-title">E-Asset</div>
+                                        <div class="item-desc">Agunan lelang &amp; properti syariah</div>
+                                    </div>
+                                </a>
+                                <div class="dropdown-divider my-2 opacity-50"></div>
+                                <div class="px-3 py-1 text-uppercase text-muted fw-bold" style="font-size: 0.68rem; letter-spacing: 0.08em;">Media Informasi</div>
+                                <a href="{{ url('edukasi') }}" class="rich-dropdown-item {{ request()->is('edukasi') ? 'active' : '' }}">
+                                    <div class="item-icon"><i class="bi bi-journal-bookmark-fill"></i></div>
+                                    <div class="item-text">
+                                        <div class="item-title">Edukasi</div>
+                                        <div class="item-desc">Literasi perbankan syariah</div>
+                                    </div>
+                                </a>
+                                <a href="{{ route('ebook.index') }}" class="rich-dropdown-item {{ request()->is('ebook*') ? 'active' : '' }}">
+                                    <div class="item-icon"><i class="bi bi-book-half"></i></div>
+                                    <div class="item-text">
+                                        <div class="item-title">E-Book</div>
+                                        <div class="item-desc">Publikasi digital &amp; panduan keuangan</div>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                         <div class="nav-item ms-lg-3 mt-3 mt-lg-0">

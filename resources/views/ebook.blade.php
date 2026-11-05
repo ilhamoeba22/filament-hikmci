@@ -1,104 +1,133 @@
 @include('header')
 
-<div class="container-fluid bg-breadcrumb">
-    <div class="container text-center py-5" style="max-width: 900px">
-        <h4 class="text-white display-5 mb-4 wow fadeInDown" data-wow-delay="0.1s">
-            E-Book
-        </h4>
-        <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-            <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Layanan Lainnya</a></li>
-            <li class="breadcrumb-item"><a href="#">Media</a></li>
-            <li class="breadcrumb-item active text-primary">E-Book</li>
-        </ol>
+<!-- Subpage Hero Banner Start -->
+<div class="subpage-hero">
+    <div class="subpage-hero-pattern"></div>
+    <div class="container position-relative z-index-2 text-center">
+        <div class="subpage-breadcrumb wow fadeInDown" data-wow-delay="0.1s">
+            <a href="{{ url('/') }}">Home</a>
+            <span class="separator"><i class="bi bi-chevron-right"></i></span>
+            <a href="#">Layanan Lainnya</a>
+            <span class="separator"><i class="bi bi-chevron-right"></i></span>
+            <a href="#">Media</a>
+            <span class="separator"><i class="bi bi-chevron-right"></i></span>
+            <span class="active">E-Book</span>
+        </div>
+        <h1 class="subpage-title wow fadeInDown" data-wow-delay="0.2s">
+            E-Book &amp; Publikasi Digital
+        </h1>
+        <p class="subpage-subtitle wow fadeInUp" data-wow-delay="0.3s">
+            Buku panduan digital, majalah literasi syariah, dan referensi finansial yang dapat dibaca dan diunduh secara cuma-cuma.
+        </p>
     </div>
 </div>
-<div class="container-fluid background-index py-5">
-    <div class="container pb-5">
+<!-- Subpage Hero Banner End -->
 
-        <div class="text-center mx-auto pb-4 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-            <h1 class="text-capitalize mb-3">
+<!-- Main Content Wrapper Start -->
+<div class="subpage-content-wrapper">
+    <div class="container">
+
+        <div class="text-center mx-auto pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+            <span class="subpage-section-tag">
+                <i class="bi bi-journal-bookmark"></i> Pustaka Digital
+            </span>
+            <h2 class="subpage-section-title">
                 Semua E-Book
-            </h1>
+            </h2>
         </div>
 
-        <div class="row justify-content-center mb-5 wow fadeInUp" data-wow-delay="0.3s">
-            <div class="col-lg-10">
-                <div class="input-group input-group-lg shadow-sm">
-                    <span class="input-group-text" style="border-radius: 0.5rem 0 0 0.5rem;"><i class="fa fa-search"></i></span>
-                    <input type="search"
-                        id="ebook-live-search" class="form-control"
-                        style="border-radius: 0 0.5rem 0.5rem 0;"
-                        placeholder="Ketik untuk memfilter E-Book...">
+        <!-- Live Search Bar -->
+        <div class="row justify-content-center mb-5 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="col-lg-8">
+                <div class="modern-sub-card p-2 shadow-sm">
+                    <div class="input-group">
+                        <span class="input-group-text bg-transparent border-0 text-muted ps-3">
+                            <i class="bi bi-search fs-5"></i>
+                        </span>
+                        <input type="search"
+                            id="ebook-live-search" 
+                            class="form-control border-0 shadow-none ps-2 py-3"
+                            placeholder="Ketik untuk memfilter E-Book...">
+                    </div>
                 </div>
             </div>
         </div>
 
+        <!-- E-Book List -->
         <div class="row justify-content-center">
-            <div class="col-lg-10 wow fadeInUp" data-wow-delay="0.4s" id="ebook-list-container">
+            <div class="col-lg-9 wow fadeInUp" data-wow-delay="0.3s" id="ebook-list-container">
 
                 @forelse($ebooks as $ebook)
-                <div class="card ebook-card-modern shadow-sm mb-2 ebook-item-filterable">
-                    <div class="card-body">
-                        <div class="d-md-flex align-items-center">
+                <div class="modern-sub-card p-3 p-md-4 mb-3 ebook-item-filterable">
+                    <div class="d-flex flex-column flex-md-row align-items-center gap-4">
+                        <!-- Cover Image -->
+                        <div class="text-center flex-shrink-0">
+                            <img src="{{ asset('storage/edukasi/' . $ebook->gambar) }}"
+                                class="rounded-3 shadow-sm object-fit-cover"
+                                style="width: 100px; height: 135px; border: 1px solid rgba(0,0,0,0.08);"
+                                alt="{{ $ebook->judul }}">
+                        </div>
 
-                            <div class="text-center text-md-start flex-shrink-0">
-                                <img src="{{ asset('storage/edukasi/' . $ebook->gambar) }}"
-                                    class="ebook-cover-new"
-                                    alt="{{ $ebook->judul }}">
-                            </div>
+                        <!-- Info -->
+                        <div class="text-center text-md-start flex-grow-1">
+                            <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 rounded-pill px-3 py-1 mb-2 small fw-semibold">
+                                <i class="bi bi-book me-1"></i> E-Book Resmi
+                            </span>
+                            <h4 class="h5 fw-bold text-dark mb-2 ebook-title-new">{{ $ebook->judul }}</h4>
+                            <p class="text-muted small mb-0">
+                                <i class="bi bi-calendar3 me-1 text-success"></i>
+                                Modified: {{ $ebook->created_at->format('F d, Y') }}
+                            </p>
+                        </div>
 
-                            <div class="ebook-info-new mx-md-2 text-center text-md-start my-3 my-md-0">
-                                <h4 class="ebook-title-new">{{ $ebook->judul }}</h4>
-                                <small class="ebook-date-new text-muted">
-                                    <i class="fa fa-calendar-alt me-1"></i>
-                                    Modified: {{ $ebook->created_at->format('F d, Y') }}
-                                </small>
-                            </div>
+                        <!-- Actions -->
+                        <div class="flex-shrink-0 d-flex flex-row flex-md-column gap-2 w-100 w-md-auto justify-content-center">
+                            <a href="{{ asset('storage/edukasi/' . $ebook->file_pdf) }}"
+                                class="btn btn-outline-success rounded-pill px-4 py-2 btn-sm flex-fill d-inline-flex align-items-center justify-content-center gap-1"
+                                target="_blank">
+                                <i class="bi bi-eye"></i>
+                                <span>Lihat</span>
+                            </a>
 
-                            <div class="ebook-action-new ms-md-auto flex-shrink-0 d-flex flex-column align-items-center">
-
-                                <a href="{{ asset('storage/edukasi/' . $ebook->file_pdf) }}"
-                                    class="btn btn-primary btn-pill"
-                                    target="_blank">
-                                    <i class="fa fa-eye me-sm-2"></i>
-                                    <span class="d-none d-sm-inline">Lihat</span>
-                                </a>
-
-                                <a href="{{ asset('storage/edukasi/' . $ebook->file_pdf) }}"
-                                    class="btn btn-secondary btn-pill mt-2" target="_blank"
-                                    download>
-                                    <i class="fa fa-download me-sm-2"></i>
-                                    <span class="d-none d-sm-inline">Unduh</span>
-                                </a>
-
-                            </div>
+                            <a href="{{ asset('storage/edukasi/' . $ebook->file_pdf) }}"
+                                class="btn btn-success rounded-pill px-4 py-2 btn-sm text-white flex-fill d-inline-flex align-items-center justify-content-center gap-1" 
+                                target="_blank"
+                                download>
+                                <i class="bi bi-download"></i>
+                                <span>Unduh</span>
+                            </a>
                         </div>
                     </div>
                 </div>
-
                 @empty
-                <div class="card shadow-sm text-center p-5" id="ebook-not-found">
-                    <p class="mb-0 fs-5">Belum ada E-Book yang tersedia saat ini.</p>
+                <div class="modern-sub-card text-center p-5 mx-auto" id="ebook-not-found" style="max-width: 600px;">
+                    <div class="bento-icon-box mx-auto mb-3" style="width: 64px; height: 64px; font-size: 1.75rem;">
+                        <i class="bi bi-book text-muted"></i>
+                    </div>
+                    <p class="mb-0 fs-5 text-secondary">Belum ada E-Book yang tersedia saat ini.</p>
                 </div>
+                @endforelse
 
-                @endforelse <div class="card shadow-sm text-center p-5" id="ebook-js-not-found" style="display: none;">
-                    <p class="mb-0 fs-5">E-Book yang Anda cari tidak ditemukan.</p>
+                <!-- Not Found from Javascript filter -->
+                <div class="modern-sub-card text-center p-5 mx-auto" id="ebook-js-not-found" style="display: none; max-width: 600px;">
+                    <div class="bento-icon-box mx-auto mb-3" style="width: 64px; height: 64px; font-size: 1.75rem;">
+                        <i class="bi bi-search text-muted"></i>
+                    </div>
+                    <p class="mb-0 fs-5 text-secondary">E-Book yang Anda cari tidak ditemukan.</p>
                 </div>
 
             </div>
         </div>
     </div>
 </div>
+<!-- Main Content Wrapper End -->
 
 @push('scripts')
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const searchInput = document.getElementById('ebook-live-search');
         const ebookItems = document.querySelectorAll('.ebook-item-filterable');
-
         const emptyMessage = document.getElementById('ebook-not-found');
-
         const jsNotFoundMessage = document.getElementById('ebook-js-not-found');
 
         if (searchInput) {
