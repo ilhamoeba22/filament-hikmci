@@ -1479,7 +1479,16 @@ section,
 }
 
 @media (max-width: 991.98px) {
-  #stage,
+  #stage {
+    display: block !important;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none !important;
+    z-index: 1;
+  }
+
   #labels,
   .hero-badges-stage {
     display: none !important;
@@ -1501,7 +1510,6 @@ section,
     padding-top: 105px !important;
     padding-bottom: 40px !important;
   }
-}
 }
 
 .card-ambient-glow {

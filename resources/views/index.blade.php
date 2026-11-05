@@ -2,8 +2,8 @@
 
 <!-- Main Hero Section Start (Full-Bleed 3D WebGL Islamic Digital Banking) -->
 <section id="hero" class="hero-section position-relative overflow-hidden">
-    <!-- Full-Bleed 3D WebGL Canvas & Floating Labels (Desktop Only >= 992px) -->
-    <div id="stage" class="d-none d-lg-block" aria-hidden="true"></div>
+    <!-- Full-Bleed 3D WebGL Ambient Canvas -->
+    <div id="stage" aria-hidden="true"></div>
     <div id="labels" class="d-none d-lg-block" aria-hidden="true"></div>
 
     <div class="container hero-container position-relative" style="position: relative; z-index: 30 !important; pointer-events: auto !important;">

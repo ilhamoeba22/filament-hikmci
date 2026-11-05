@@ -21,6 +21,9 @@
   }
 
   function initHero3D() {
+    if (window.__hero3DInitialized) return;
+    window.__hero3DInitialized = true;
+
     const el = document.getElementById('stage');
     const LB = document.getElementById('labels');
 
@@ -62,10 +65,16 @@
     p2.position.set(6, 3, 5);
     S.add(p2);
 
-    // 3. World Group (Positioned gracefully in col-lg-5 right column)
+    // 3. World Group
     const world = new THREE.Group();
     world.position.set(3.9, 0.2, 0);
     S.add(world);
+
+    // Focal Group: Objek 3D interaktif utama (Buku Tabungan, koin dinar, HUD rings, dll.)
+    // Tampil 100% di desktop (>= 992px), dan disembunyikan di mobile (< 992px)
+    // agar layar mobile tetap bersih dan tidak menutupi teks headline dan tombol CTA.
+    const focalGroup = new THREE.Group();
+    world.add(focalGroup);
 
     const lineM = (c, o) => new THREE.LineBasicMaterial({ color: c, transparent: true, opacity: o, blending: ADD });
 
@@ -126,7 +135,7 @@
 
     // Globe jaringan digital holografik (radius disesuaikan ke 2.0)
     const globe = new THREE.Group();
-    world.add(globe);
+    focalGroup.add(globe);
     const ico = new THREE.IcosahedronGeometry(2.0, 2);
     globe.add(new THREE.LineSegments(new THREE.WireframeGeometry(ico), lineM(0x19f0b0, 0.22)));
     globe.add(new THREE.Points(ico, new THREE.PointsMaterial({ color: 0x8dffe6, size: 0.15, map: gE, transparent: true, depthWrite: false, blending: ADD })));
@@ -135,14 +144,14 @@
     // Bintang Khatam holografik (8-point Islamic star, radius disesuaikan ke 1.6 & 1.22)
     const starG = new THREE.Group();
     starG.position.set(0, 0.3, -0.4);
-    world.add(starG);
+    focalGroup.add(starG);
     const sqA = outline(sq(1.6), 0xffd27a, 0.85);
     const sqB = outline(sq(1.6), 0xffd27a, 0.85);
     sqB.rotation.z = PI / 4;
     starG.add(sqA, sqB);
     const inner = outline(star(1.22, 8, 0.765), 0x19f0b0, 0.8);
     inner.position.set(0, 0.3, -0.5);
-    world.add(inner);
+    focalGroup.add(inner);
 
     // ========================================================
     // BUKU TABUNGAN SYARIAH BPRS HIK MCI (CANVAS TEXTURE & 3D)
@@ -590,7 +599,7 @@
     const bookGeo = new THREE.BoxGeometry(3.4, 2.26, 0.12);
     const bukuTabungan = new THREE.Mesh(bookGeo, bookMaterials);
     bukuTabungan.position.set(0, 0.3, 1.4);
-    world.add(bukuTabungan);
+    focalGroup.add(bukuTabungan);
     bukuTabungan.add(glow(gE, 5.5, 0, 0, -0.25, 0.35));
 
     // Re-render cover buku saat web font dimuat
@@ -606,7 +615,7 @@
     // Cincin HUD konsentris bersinar (radius disesuaikan ke 2.1, 2.4, 2.7)
     const rg = new THREE.Group();
     rg.position.set(0, 0.3, -0.2);
-    world.add(rg);
+    focalGroup.add(rg);
 
     function ring(r, c, o, tx, tz) {
       const m = new THREE.Mesh(
@@ -635,7 +644,7 @@
     const orbit = new THREE.Group();
     orbit.position.set(0, 0.3, 0);
     orbit.rotation.set(0.45, 0, 0.15);
-    world.add(orbit);
+    focalGroup.add(orbit);
 
     const gold = new THREE.MeshStandardMaterial({
       color: 0xffd27a,
@@ -747,19 +756,12 @@
     const dust = new THREE.Points(gg, new THREE.PointsMaterial({ color: 0xffd27a, size: 0.12, map: gG, transparent: true, depthWrite: false, blending: ADD }));
     S.add(dust);
 
-    // Responsif: Penempatan Elemen 3D tersinkronisasi presisi dengan #heroFintechStage (Desktop >= 992px)
+    // Responsif: Penempatan Elemen 3D tersinkronisasi presisi
     let base = 1, W = 1, H = 1;
     let currentOrbitRadius = 2.6;
 
     function updateStageLayout() {
       if (!el) return;
-      if (window.innerWidth < 992) {
-        if (rafId) {
-          cancelAnimationFrame(rafId);
-          rafId = null;
-        }
-        return;
-      }
 
       W = el.clientWidth || window.innerWidth;
       H = el.clientHeight || window.innerHeight;
@@ -769,36 +771,53 @@
       C.aspect = W / H;
       C.updateProjectionMatrix();
 
-      const stageEl = document.getElementById('heroFintechStage');
-      if (stageEl) {
-        const stageRect = stageEl.getBoundingClientRect();
-        const elRect = el.getBoundingClientRect();
+      const isDesktop = window.innerWidth >= 992;
+      focalGroup.visible = isDesktop;
+      if (LB) {
+        LB.style.display = isDesktop ? 'block' : 'none';
+      }
 
-        const stageCenterX = stageRect.left + (stageRect.width / 2) - elRect.left;
-        const stageCenterY = stageRect.top + (stageRect.height / 2) - elRect.top;
+      if (isDesktop) {
+        const stageEl = document.getElementById('heroFintechStage');
+        if (stageEl) {
+          const stageRect = stageEl.getBoundingClientRect();
+          const elRect = el.getBoundingClientRect();
 
-        const ndcX = (stageCenterX / W) * 2 - 1;
-        const ndcY = -(stageCenterY / H) * 2 + 1;
+          const stageCenterX = stageRect.left + (stageRect.width / 2) - elRect.left;
+          const stageCenterY = stageRect.top + (stageRect.height / 2) - elRect.top;
 
-        const vH = Math.tan((C.fov * Math.PI / 180) / 2) * C.position.z;
-        const vW = vH * C.aspect;
+          const ndcX = (stageCenterX / W) * 2 - 1;
+          const ndcY = -(stageCenterY / H) * 2 + 1;
 
-        const targetX = ndcX * vW;
-        const targetY = ndcY * vH;
+          const vH = Math.tan((C.fov * Math.PI / 180) / 2) * C.position.z;
+          const vW = vH * C.aspect;
 
-        world.position.set(targetX, targetY, 0);
+          const targetX = ndcX * vW;
+          const targetY = ndcY * vH;
 
-        if (W >= 1200) {
-          base = 1.0;
-          currentOrbitRadius = 2.6;
+          world.position.set(targetX, targetY, 0);
+
+          if (W >= 1200) {
+            base = 1.0;
+            currentOrbitRadius = 2.6;
+          } else {
+            base = 0.88;
+            currentOrbitRadius = 2.3;
+          }
         } else {
-          base = 0.88;
-          currentOrbitRadius = 2.3;
+          base = 0.95;
+          currentOrbitRadius = 2.5;
+          world.position.set(3.8, 0.2, 0);
         }
+        city.position.set(0, -2.8, -2.5);
+        city.scale.setScalar(0.9);
       } else {
-        base = 0.95;
-        currentOrbitRadius = 2.5;
-        world.position.set(3.8, 0.2, 0);
+        // Mode Mobile (< 992px):
+        // Mempertahankan animasi ambient grid kotak-kotak dan bintang-bintang kecil melayang
+        base = 0.7;
+        world.position.set(0, -0.6, 0);
+        city.position.set(0, -3.2, -3.5);
+        city.scale.setScalar(0.75);
       }
 
       if (!rafId && isVisible) {
@@ -857,35 +876,48 @@
       const k = ease(Math.min(t / 2.2, 1));
       world.scale.setScalar(base * (0.7 + 0.3 * k));
 
-      globe.rotation.y = t * 0.12;
-      globe.rotation.x = Math.sin(t * 0.2) * 0.15;
+      // Animasi elemen focal (hanya jika terlihat di Desktop)
+      if (focalGroup.visible) {
+        globe.rotation.y = t * 0.12;
+        globe.rotation.x = Math.sin(t * 0.2) * 0.15;
 
-      starG.rotation.z = t * 0.12;
-      inner.rotation.z = -t * 0.2;
+        starG.rotation.z = t * 0.12;
+        inner.rotation.z = -t * 0.2;
 
-      // Animasi Buku Tabungan
-      bukuTabungan.rotation.y = Math.sin(t * 0.6) * 0.22 + mx * 0.35;
-      bukuTabungan.rotation.x = -0.06 + Math.sin(t * 0.5) * 0.05 + my * 0.18;
-      bukuTabungan.position.y = 0.3 + Math.sin(t * 1.1) * 0.1;
-      bukuTabungan.position.z = 1.4 * k;
+        // Animasi Buku Tabungan
+        bukuTabungan.rotation.y = Math.sin(t * 0.6) * 0.22 + mx * 0.35;
+        bukuTabungan.rotation.x = -0.06 + Math.sin(t * 0.5) * 0.05 + my * 0.18;
+        bukuTabungan.position.y = 0.3 + Math.sin(t * 1.1) * 0.1;
+        bukuTabungan.position.z = 1.4 * k;
 
-      r1.rotation.y = t * 0.45;
-      r2.rotation.z = 0.4 + t * 0.3;
-      r3.rotation.z = 0.2 - t * 0.15;
+        r1.rotation.y = t * 0.45;
+        r2.rotation.z = 0.4 + t * 0.3;
+        r3.rotation.z = 0.2 - t * 0.15;
 
-      // Orbit berputar anggun dengan radius 2.6
-      orbit.rotation.y = t * 0.22 + currentScrollRot * 1.5;
+        // Orbit berputar anggun dengan radius dinamis
+        orbit.rotation.y = t * 0.22 + currentScrollRot * 1.5;
 
-      coins.forEach(({ g, c, i }) => {
-        const a = (i / 6) * PI * 2;
-        // Radius orbit dinamis menyesuaikan ukuran layar
-        g.position.set(Math.cos(a) * currentOrbitRadius, Math.sin(t * 1.2 + i) * 0.25, Math.sin(a) * currentOrbitRadius);
-        c.rotation.y = t * 1.4 + i;
-      });
+        coins.forEach(({ g, c, i }) => {
+          const a = (i / 6) * PI * 2;
+          g.position.set(Math.cos(a) * currentOrbitRadius, Math.sin(t * 1.2 + i) * 0.25, Math.sin(a) * currentOrbitRadius);
+          c.rotation.y = t * 1.4 + i;
+        });
 
+        // Proyeksikan posisi koin 3D ke label 2D di layar (Desktop)
+        coins.forEach(({ c, L }) => {
+          v3.setFromMatrixPosition(c.matrixWorld);
+          const z = v3.z;
+          v3.project(C);
+          L.style.transform = 'translate(' + ((v3.x * 0.5 + 0.5) * W) + 'px,' + ((-v3.y * 0.5 + 0.5) * H) + 'px) translate(-50%,-190%)';
+          L.style.opacity = Math.max(0.2, Math.min(1, 0.55 + z / 7)) * k;
+        });
+      }
+
+      // Animasi latar belakang ambient (Aktif di Desktop & Mobile):
+      // 1. Grid kotak-kotak perspektif bergerak halus
       grid.position.z = (t * 0.8) % 1;
 
-      // Aliran data naik
+      // 2. Aliran partikel data naik
       const ra = rgm.attributes.position;
       for (let i = 0; i < N; i++) {
         let y = ra.getY(i) + sp[i];
@@ -894,6 +926,7 @@
       }
       ra.needsUpdate = true;
 
+      // 3. Awan debu bintang emas berotasi
       dust.rotation.y = t * 0.03;
 
       // Parallax mouse halus
@@ -904,15 +937,6 @@
       p1.position.y = -2 + Math.cos(t * 0.8) * 2;
 
       R.render(S, C);
-
-      // Proyeksikan posisi koin 3D ke label 2D di layar
-      coins.forEach(({ c, L }) => {
-        v3.setFromMatrixPosition(c.matrixWorld);
-        const z = v3.z;
-        v3.project(C);
-        L.style.transform = 'translate(' + ((v3.x * 0.5 + 0.5) * W) + 'px,' + ((-v3.y * 0.5 + 0.5) * H) + 'px) translate(-50%,-190%)';
-        L.style.opacity = Math.max(0.2, Math.min(1, 0.55 + z / 7)) * k;
-      });
     }
 
     // IntersectionObserver untuk pause render saat hero di luar layar
@@ -934,15 +958,13 @@
     frame();
   }
 
-  // Safe bootstrap (Desktop only >= 992px to maximize mobile performance & eliminate overlap)
+  // Safe bootstrap (Active across all devices; mobile renders ambient grid & stars backdrop)
   function bootstrap() {
     if (typeof THREE === 'undefined') {
       setTimeout(bootstrap, 50);
       return;
     }
-    if (window.innerWidth >= 992) {
-      initHero3D();
-    }
+    initHero3D();
   }
 
   if (document.readyState === 'loading') {
@@ -950,10 +972,4 @@
   } else {
     bootstrap();
   }
-
-  window.addEventListener('resize', () => {
-    if (window.innerWidth >= 992 && !document.querySelector('#stage canvas')) {
-      bootstrap();
-    }
-  });
 })();
