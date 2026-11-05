@@ -1477,7 +1477,7 @@ section,
   pointer-events: none !important;
 }
 
-@media (max-width: 1023.98px) {
+@media (max-width: 991.98px) {
   #stage {
     display: block !important;
     position: absolute;
@@ -1489,15 +1489,8 @@ section,
   }
 
   #labels,
-  .hero-badges-stage,
-  .hero-badges-stage-col {
+  .hero-badges-stage {
     display: none !important;
-  }
-
-  .hero-text-col {
-    width: 100% !important;
-    max-width: 100% !important;
-    flex: 0 0 100% !important;
   }
 
   .hero-section {
@@ -1508,16 +1501,6 @@ section,
 
   .min-vh-hero {
     min-height: auto !important;
-  }
-}
-
-@media (min-width: 1024px) {
-  .hero-badges-stage-col {
-    display: block !important;
-  }
-
-  .hero-badges-stage {
-    display: block !important;
   }
 }
 

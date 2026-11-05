@@ -760,6 +760,8 @@
     // Responsif: Penempatan Elemen 3D tersinkronisasi presisi
     let base = 1, W = 1, H = 1;
     let currentOrbitRadius = 2.6;
+    let isVisible = true;
+    let rafId = null;
 
     function updateStageLayout() {
       if (!el) return;
@@ -772,7 +774,7 @@
       C.aspect = W / H;
       C.updateProjectionMatrix();
 
-      const isDesktop = window.innerWidth >= 1024;
+      const isDesktop = window.innerWidth >= 992;
       focalGroup.visible = isDesktop;
       if (LB) {
         LB.style.display = isDesktop ? 'block' : 'none';
@@ -802,7 +804,7 @@
             base = 1.0;
             currentOrbitRadius = 2.6;
           } else {
-            // Screens 1024px - 1199px (iPad Air 13", iPad Pro, 1024px displays)
+            // Screens 992px - 1199px (iPad Air 13" 1024px, iPad Pro, compact desktop)
             base = 0.88;
             currentOrbitRadius = 2.3;
           }
@@ -814,7 +816,7 @@
         city.position.set(0, -2.8, -2.5);
         city.scale.setScalar(0.9);
       } else {
-        // Mode Mobile & Tablet (< 1024px):
+        // Mode Mobile & Tablet (< 992px):
         // Mempertahankan animasi ambient grid kotak-kotak dan bintang-bintang kecil melayang
         base = 0.7;
         world.position.set(0, -0.6, 0);
@@ -858,10 +860,6 @@
     const v3 = new THREE.Vector3();
     const ease = x => 1 - Math.pow(1 - x, 3);
     let t = 0;
-
-    // Visibility Management (0% CPU/GPU overhead saat keluar viewport)
-    let isVisible = true;
-    let rafId = null;
 
     function frame() {
       if (!isVisible) {
