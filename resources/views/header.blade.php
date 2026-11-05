@@ -67,11 +67,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <!-- Google Web Fonts -->
+    <!-- Google Web Fonts (Outfit & Inter for Modern Fintech UI) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
     <!-- Icon Font Stylesheet -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -84,35 +83,32 @@
     <link href="{{ asset('frontend/css/bootstrap.min.css') }}" rel="stylesheet" />
     <!-- Template Stylesheet -->
     <link href="{{ asset('frontend/css/style.css') }}" rel="stylesheet" />
-    <style>
-      /* Navbar scroll effect */
-      header.fixed-top.scrolled {
-        box-shadow: 0 4px 24px rgba(0,0,0,0.1) !important;
-      }
-      
-      /* Smooth page load */
-      body { opacity: 0; transition: opacity 0.3s ease; }
-      body.loaded { opacity: 1; }
-    </style>
 </head>
 
 <body>
-    <!-- Fixed Header Start -->
-    <header class="fixed-top">
-        <div class="container-fluid position-relative p-0">
-            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-                <a href="{{ url('/') }}" class="navbar-brand p-0">
-                    <img src="{{ asset('frontend/img/logo/logo_mci.png') }}" alt="Logo" />
+    <!-- Floating Soft Backdrop (pixel-io style ambient glow) -->
+    <div class="ambient-backdrop pointer-events-none" aria-hidden="true">
+        <div class="ambient-orb ambient-orb-1"></div>
+        <div class="ambient-orb ambient-orb-2"></div>
+        <div class="ambient-orb ambient-orb-3"></div>
+    </div>
+
+    <!-- Fixed Header Start (pixel-io modern floating pill nav) -->
+    <header class="fixed-top modern-header-wrapper">
+        <div class="container-fluid px-3 px-lg-4">
+            <nav class="navbar navbar-expand-lg modern-navbar px-3 px-lg-4 py-2">
+                <a href="{{ url('/') }}" class="navbar-brand p-0 d-flex align-items-center">
+                    <img src="{{ asset('frontend/img/logo/logo_mci.png') }}" alt="Logo BPRS HIK MCI" class="navbar-logo" />
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars"></span>
+                <button class="navbar-toggler modern-toggler border-0 shadow-none p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
+                    <span class="fa fa-bars text-success fs-5"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto">
+                    <div class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
                         <a href="{{ url('/') }}" class="nav-item nav-link {{ request()->is('/') ? 'active' : '' }}">Home</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle {{ request()->is('about') || request()->is('team') || request()->is('lapkeu') || request()->is('pengaduan') || request()->is('penghargaan') || request()->is('piagam-audit') ? 'active' : '' }}" data-bs-toggle="dropdown">Tentang Kami</a>
-                            <div class="dropdown-menu m-0">
+                            <div class="dropdown-menu modern-dropdown m-0">
                                 <a href="{{ url('about') }}" class="dropdown-item {{ request()->is('about') ? 'active' : '' }}">Profile</a>
                                 <a href="{{ url('team') }}" class="dropdown-item {{ request()->is('team') ? 'active' : '' }}">Pengurus</a>
                                 <a href="{{ url('lapkeu') }}" class="dropdown-item {{ request()->is('lapkeu') ? 'active' : '' }}">Laporan Keuangan</a>
@@ -123,29 +119,33 @@
                         </div>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle {{ request()->is('tabungan') || request()->is('deposito') || request()->is('pembiayaan') ? 'active' : '' }}" data-bs-toggle="dropdown">Produk</a>
-                            <div class="dropdown-menu m-0">
+                            <div class="dropdown-menu modern-dropdown m-0">
                                 <a href="{{ url('tabungan') }}" class="dropdown-item {{ request()->is('tabungan') ? 'active' : '' }}">Tabungan</a>
                                 <a href="{{ url('main-deposito') }}" class="dropdown-item {{ request()->is('main-deposito') ? 'active' : '' }}">Deposito</a>
                                 <a href="{{ url('pembiayaan') }}" class="dropdown-item {{ request()->is('pembiayaan') ? 'active' : '' }}">Pembiayaan</a>
-                                <a href="{{ url('https://riplay.bprshikmciyk.co.id/') }}" class="dropdown-item">RIPLAY</a>
+                                <a href="{{ url('https://riplay.bprshikmciyk.co.id/') }}" class="dropdown-item" target="_blank">RIPLAY</a>
                             </div>
                         </div>
                         <a href="{{ url('berita') }}" class="nav-item nav-link {{ request()->is('berita') ? 'active' : '' }}">Berita</a>
                         <a href="{{ url('karir') }}" class="nav-item nav-link {{ request()->is('karir') ? 'active' : '' }}">Karir</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle {{ request()->is('asset') || request()->is('edukasi') || request()->is('ebook') ? 'active' : '' }}" data-bs-toggle="dropdown">Layanan Lainnya</a>
-                            <div class="dropdown-menu m-0">
+                            <div class="dropdown-menu modern-dropdown m-0">
                                 <a href="{{ url('asset') }}" class="dropdown-item {{ request()->is('asset') ? 'active' : '' }}">E-Asset</a>
 
-                                <div class="dropend"> <a href="#" class="dropdown-item dropdown-toggle {{ request()->is('edukasi') || request()->is('ebook') ? 'active' : '' }}" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Media
-                                    </a>
-                                    <ul class="dropdown-menu m-0">
+                                <div class="dropend">
+                                    <a href="#" class="dropdown-item dropdown-toggle {{ request()->is('edukasi') || request()->is('ebook') ? 'active' : '' }}" data-bs-toggle="dropdown" aria-expanded="false">Media</a>
+                                    <ul class="dropdown-menu modern-dropdown m-0">
                                         <li><a class="dropdown-item {{ request()->is('edukasi') ? 'active' : '' }}" href="{{ url('edukasi') }}">Edukasi</a></li>
                                         <li><a class="dropdown-item {{ request()->is('ebook') ? 'active' : '' }}" href="{{ route('ebook.index') }}">E-Book</a></li>
                                     </ul>
                                 </div>
                             </div>
+                        </div>
+                        <div class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                            <a href="https://wa.me/+6281222770657" target="_blank" class="btn btn-nav-cta">
+                                <i class="fab fa-whatsapp me-1"></i> Buka Rekening
+                            </a>
                         </div>
                     </div>
                 </div>

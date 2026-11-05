@@ -1,187 +1,508 @@
 @include('header')
 
-<!-- Carousel Start -->
-<div class="carousel-header">
-    <div id="carouselId" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
-        <ol class="carousel-indicators">
-            @foreach($carousels as $index => $carousel)
-            <li data-bs-target="#carouselId" data-bs-slide-to="{{ $index }}" class="{{ $index == 0 ? 'active' : '' }}"></li>
-            @endforeach
-        </ol>
-        <div class="carousel-inner" role="listbox">
-            @foreach($carousels as $index => $carousel)
-            <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
-                <img src="{{ Storage::url($carousel->image) }}" class="img-fluid w-100" alt="Image" width="1920" height="1080" loading="lazy" />
-            </div>
-            @endforeach
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon btn btn-primary" aria-hidden="true"><i class="fa fa-angle-left fa-3x"></i></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
-            <span class="carousel-control-next-icon btn btn-primary" aria-hidden="true"><i class="fa fa-angle-right fa-3x"></i></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-</div>
-<!-- Carousel End -->
+<!-- Main Hero Section Start (pixel-io inspired modern split hero) -->
+<section id="hero" class="hero-section position-relative overflow-hidden pt-5 pb-5">
+    <div class="container hero-container position-relative z-2">
+        <div class="row align-items-center g-5 min-vh-hero">
+            <!-- Left Column: Copy & CTAs -->
+            <div class="col-lg-7 text-start">
+                <!-- Trust Pill Badge -->
+                <div class="d-inline-flex align-items-center gap-2 px-3 py-1.5 rounded-pill hero-badge mb-4">
+                    <span class="pulse-dot"></span>
+                    <span class="hero-badge-text">Berizin & Diawasi OJK • Peserta Penjaminan LPS (s.d Rp 2 Miliar)</span>
+                </div>
 
-<!-- Products Start -->
-<div class="container-fluid bg-light py-3">
-    <div class="container py-2">
-        <div class="text-center mx-auto pb-4">
-            <h3 class="text-uppercase text-primary">Produk Kami</h3>
-            <h2 class="text-capitalize text-uppercase mb-3">
-                Wujudkan Keuangan Syariah yang Berkah dan Terpercaya
-            </h2>
+                <!-- Stadium Headline -->
+                <h1 class="hero-title mb-4">
+                    Keuangan Syariah <br class="d-none d-sm-inline" />
+                    <span class="hero-gradient-text">Berkah, Amanah & Modern</span>
+                </h1>
+
+                <!-- Subtitle / Value Proposition -->
+                <p class="hero-description mb-4">
+                    Solusi perbankan syariah terpercaya di Yogyakarta sejak 2008. Dukung kemajuan usaha Anda melalui pembiayaan produktif, investasi deposito bagi hasil optimal, dan tabungan syariah yang menentramkan.
+                </p>
+
+                <!-- Action Button Group -->
+                <div class="d-flex flex-wrap align-items-center gap-3 mb-5">
+                    <a href="#simulasi-section" class="btn btn-modern-primary">
+                        <span>Simulasi Pembiayaan</span>
+                        <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                    <a href="#produk-unggulan" class="btn btn-modern-ghost">
+                        <i class="fas fa-th-large me-2 text-success"></i>
+                        <span>Jelajahi Produk</span>
+                    </a>
+                    <a href="https://wa.me/+6281222770657" target="_blank" class="btn btn-modern-wa">
+                        <i class="fab fa-whatsapp me-2"></i>
+                        <span>WhatsApp CS</span>
+                    </a>
+                </div>
+
+                <!-- Trust Strip / Key Metrics (pixel-io split highlights) -->
+                <div class="hero-highlights-strip p-2 p-md-3 rounded-2xl d-flex flex-wrap align-items-center justify-content-between gap-3">
+                    <div class="d-flex align-items-center gap-3 highlight-item">
+                        <div class="highlight-icon-box bg-emerald-soft">
+                            <i class="fas fa-shield-alt text-success"></i>
+                        </div>
+                        <div>
+                            <div class="highlight-title">LPS Terjamin</div>
+                            <div class="highlight-sub">Simpanan aman s.d Rp 2 Miliar</div>
+                        </div>
+                    </div>
+                    <div class="highlight-divider d-none d-md-block"></div>
+                    <div class="d-flex align-items-center gap-3 highlight-item">
+                        <div class="highlight-icon-box bg-cyan-soft">
+                            <i class="fas fa-hand-holding-heart text-info"></i>
+                        </div>
+                        <div>
+                            <div class="highlight-title">100% Prinsip Syariah</div>
+                            <div class="highlight-sub">Akad murni, adil & tanpa riba</div>
+                        </div>
+                    </div>
+                    <div class="highlight-divider d-none d-md-block"></div>
+                    <div class="d-flex align-items-center gap-3 highlight-item">
+                        <div class="highlight-icon-box bg-gold-soft">
+                            <i class="fas fa-calendar-check text-warning"></i>
+                        </div>
+                        <div>
+                            <div class="highlight-title">16+ Tahun Mengabdi</div>
+                            <div class="highlight-sub">Sejak 11 Januari 2008</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: 3D Fintech Physical Card & Glass Badges (Revolut/pixel-io style) -->
+            <div class="col-lg-5 text-center position-relative">
+                <div class="hero-card-stage position-relative mx-auto">
+                    <!-- Ambient Glow Behind Card -->
+                    <div class="card-ambient-glow" aria-hidden="true"></div>
+
+                    <!-- Floating Glass Tag 1: Top Right (Google Rating) -->
+                    <div class="floating-glass-badge badge-top-right animate-float">
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="badge-icon-star"><i class="fas fa-star text-warning"></i></div>
+                            <div class="text-start">
+                                <div class="badge-bold">Rating 4.8 / 5.0</div>
+                                <div class="badge-caption">97+ Ulasan Nasabah</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive 3D Physical Card Mockup -->
+                    <div class="card-3d-wrapper">
+                        <div class="physical-card card-3d">
+                            <div class="card-shine"></div>
+                            <!-- Card Header -->
+                            <div class="d-flex justify-content-between align-items-start mb-4">
+                                <div class="card-brand">
+                                    <span class="brand-sub">BPR SYARIAH</span>
+                                    <div class="brand-main">HIK <span>MCI</span></div>
+                                </div>
+                                <div class="card-contactless">
+                                    <i class="fas fa-wifi fa-rotate-90"></i>
+                                </div>
+                            </div>
+
+                            <!-- EMV Smart Chip -->
+                            <div class="card-chip mb-4">
+                                <div class="chip-line chip-line-1"></div>
+                                <div class="chip-line chip-line-2"></div>
+                            </div>
+
+                            <!-- Card Number -->
+                            <div class="card-number mb-3">
+                                <span>••••</span>
+                                <span>••••</span>
+                                <span>••••</span>
+                                <span class="highlight-digits">2008</span>
+                            </div>
+
+                            <!-- Card Footer -->
+                            <div class="d-flex justify-content-between align-items-end">
+                                <div>
+                                    <div class="card-label">CARD HOLDER</div>
+                                    <div class="card-holder-name">NASABAH PRIORITAS MCI</div>
+                                </div>
+                                <div class="text-end">
+                                    <div class="card-label">TIER</div>
+                                    <div class="card-tier-badge">PLATINUM SYARIAH</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Glass Tag 2: Bottom Left (Live Activity) -->
+                    <div class="floating-glass-badge badge-bottom-left animate-float-delayed">
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="pulse-dot"></span>
+                            <div class="text-start">
+                                <div class="badge-bold">Kantor Pusat Sleman</div>
+                                <div class="badge-caption">Jl. Kaliurang KM 09, Yogyakarta</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Glass Tag 3: Bottom Right (Equivalent Rate) -->
+                    <div class="floating-glass-badge badge-bottom-right animate-float">
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="badge-icon-trend"><i class="fas fa-chart-line text-success"></i></div>
+                            <div class="text-start">
+                                <div class="badge-bold">ER Deposito Kompetitif</div>
+                                <div class="badge-caption">Bagi Hasil Transparan & Adil</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
+</section>
+<!-- Main Hero Section End -->
+
+<!-- Logo / Trust Marquee Strip Start (pixel-io style) -->
+<section class="marquee-section border-top border-bottom py-3">
+    <div class="marquee-wrapper overflow-hidden">
+        <div class="animate-marquee d-inline-flex align-items-center gap-5">
+            <div class="marquee-item"><i class="fas fa-shield-alt text-success me-2"></i>Berizin & Diawasi OJK</div>
+            <div class="marquee-dot">•</div>
+            <div class="marquee-item"><i class="fas fa-university text-info me-2"></i>Dijamin Lembaga Penjamin Simpanan (LPS)</div>
+            <div class="marquee-dot">•</div>
+            <div class="marquee-item"><i class="fas fa-mosque text-success me-2"></i>100% Akad Sesuai Syariah Islam</div>
+            <div class="marquee-dot">•</div>
+            <div class="marquee-item"><i class="fas fa-award text-warning me-2"></i>16+ Tahun Melayani Yogyakarta</div>
+            <div class="marquee-dot">•</div>
+            <div class="marquee-item"><i class="fas fa-handshake text-info me-2"></i>Mitra Pertumbuhan UMKM & Bisnis</div>
+            <div class="marquee-dot">•</div>
+            <div class="marquee-item"><i class="fas fa-map-marker-alt text-danger me-2"></i>Sleman, Daerah Istimewa Yogyakarta</div>
+            <div class="marquee-dot">•</div>
+            <!-- Duplicate for seamless infinite loop -->
+            <div class="marquee-item"><i class="fas fa-shield-alt text-success me-2"></i>Berizin & Diawasi OJK</div>
+            <div class="marquee-dot">•</div>
+            <div class="marquee-item"><i class="fas fa-university text-info me-2"></i>Dijamin Lembaga Penjamin Simpanan (LPS)</div>
+            <div class="marquee-dot">•</div>
+            <div class="marquee-item"><i class="fas fa-mosque text-success me-2"></i>100% Akad Sesuai Syariah Islam</div>
+            <div class="marquee-dot">•</div>
+            <div class="marquee-item"><i class="fas fa-award text-warning me-2"></i>16+ Tahun Melayani Yogyakarta</div>
+            <div class="marquee-dot">•</div>
+            <div class="marquee-item"><i class="fas fa-handshake text-info me-2"></i>Mitra Pertumbuhan UMKM & Bisnis</div>
+            <div class="marquee-dot">•</div>
+            <div class="marquee-item"><i class="fas fa-map-marker-alt text-danger me-2"></i>Sleman, Daerah Istimewa Yogyakarta</div>
+        </div>
+    </div>
+</section>
+<!-- Logo / Trust Marquee Strip End -->
+
+<!-- Core Products Section Start (pixel-io Bento Grid style) -->
+<section id="produk-unggulan" class="products-section py-5 position-relative">
+    <div class="container py-4">
+        <!-- Section Title (Title.tsx style) -->
+        <div class="text-center max-w-700 mx-auto mb-5">
+            <div class="section-pill-badge mb-3">PRODUK & LAYANAN UNGGULAN</div>
+            <h2 class="section-heading mb-3">Solusi Finansial Syariah Lengkap & Fleksibel</h2>
+            <p class="section-subheading">
+                Didesain dengan transparansi akad syariah untuk mendukung setiap tahap kehidupan finansial, usaha, dan masa depan Anda.
+            </p>
+        </div>
+
+        <!-- 3-Column Bento Cards -->
         <div class="row g-4 justify-content-center">
-            <div class="col-lg-6 col-xl-4">
-                <div class="card h-100 card-3d">
+            <!-- Card 1: Deposito Karimah -->
+            <div class="col-lg-4 col-md-6">
+                <div class="modern-product-card card-3d h-100 d-flex flex-column">
                     <div class="card-shine"></div>
-                    <img src="{{ asset('frontend/img/home/MCI_Home_Depo.webp') }}" class="card-img-top" alt="Deposito" width="400" height="300" loading="lazy" />
-                    <div class="card-body text-center">
-                        <h5 class="card-title"><a href="{{ url('main-deposito') }}" class="text-decoration-none">Deposito</a></h5>
-                        <a href="{{ url('main-deposito') }}" class="btn btn-secondary rounded-pill py-2 px-4">Selengkapnya</a>
+                    <div class="product-card-img-wrap">
+                        <img src="{{ asset('frontend/img/home/MCI_Home_Depo.webp') }}" class="img-fluid w-100" alt="Deposito Karimah BPRS HIK MCI" loading="lazy" />
+                        <span class="product-floating-tag">Investasi Berkah</span>
+                    </div>
+                    <div class="product-card-body p-4 d-flex flex-column flex-grow-1">
+                        <div class="product-category mb-2">Simpanan Berjangka</div>
+                        <h4 class="product-card-title mb-3">Deposito Karimah</h4>
+                        <p class="product-card-desc mb-4 flex-grow-1">
+                            Investasi syariah dengan nisbah bagi hasil kompetitif. Dana aman dijamin LPS hingga Rp 2 Miliar dengan pilihan jangka waktu 1, 3, 6, hingga 12 bulan.
+                        </p>
+                        <div class="product-features-list mb-4">
+                            <div class="feature-item"><i class="fas fa-check-circle text-success me-2"></i>Bagi Hasil Kompetitif & Adil</div>
+                            <div class="feature-item"><i class="fas fa-check-circle text-success me-2"></i>Dijamin Penuh oleh LPS</div>
+                            <div class="feature-item"><i class="fas fa-check-circle text-success me-2"></i>Dapat Digunakan Sebagai Jaminan</div>
+                        </div>
+                        <a href="{{ url('main-deposito') }}" class="btn btn-product-action w-100">
+                            <span>Pelajari Deposito</span>
+                            <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 col-xl-4">
-                <div class="card h-100 card-3d">
+
+            <!-- Card 2: Tabungan Syariah -->
+            <div class="col-lg-4 col-md-6">
+                <div class="modern-product-card card-3d h-100 d-flex flex-column">
                     <div class="card-shine"></div>
-                    <img src="{{ asset('frontend/img/home/MCI_Home_Tabungan.webp') }}" class="card-img-top" alt="Tabungan" width="400" height="300" loading="lazy" />
-                    <div class="card-body text-center">
-                        <h5 class="card-title"><a href="{{ url('tabungan') }}" class="text-decoration-none">Tabungan</a></h5>
-                        <a href="{{ url('tabungan') }}" class="btn btn-secondary rounded-pill py-2 px-4">Selengkapnya</a>
+                    <div class="product-card-img-wrap">
+                        <img src="{{ asset('frontend/img/home/MCI_Home_Tabungan.webp') }}" class="img-fluid w-100" alt="Tabungan Syariah BPRS HIK MCI" loading="lazy" />
+                        <span class="product-floating-tag tag-cyan">Rencana Masa Depan</span>
+                    </div>
+                    <div class="product-card-body p-4 d-flex flex-column flex-grow-1">
+                        <div class="product-category mb-2">Simpanan Fleksibel</div>
+                        <h4 class="product-card-title mb-3">Tabungan Syariah</h4>
+                        <p class="product-card-desc mb-4 flex-grow-1">
+                            Kelola keuangan harian dan wujudkan impian dengan ragam tabungan syariah: Tabungan Ukhuwah, Karimah, Rencana, dan Cerdas tanpa potongan riba.
+                        </p>
+                        <div class="product-features-list mb-4">
+                            <div class="feature-item"><i class="fas fa-check-circle text-info me-2"></i>Akad Wadiah & Mudharabah</div>
+                            <div class="feature-item"><i class="fas fa-check-circle text-info me-2"></i>Setoran Awal Sangat Ringan</div>
+                            <div class="feature-item"><i class="fas fa-check-circle text-info me-2"></i>Fasilitas Buku Tabungan Lengkap</div>
+                        </div>
+                        <a href="{{ url('tabungan') }}" class="btn btn-product-action w-100">
+                            <span>Pelajari Tabungan</span>
+                            <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 col-xl-4">
-                <div class="card h-100 card-3d">
+
+            <!-- Card 3: Pembiayaan Syariah -->
+            <div class="col-lg-4 col-md-6">
+                <div class="modern-product-card card-3d h-100 d-flex flex-column">
                     <div class="card-shine"></div>
-                    <img src="{{ asset('frontend/img/home/MCI_Home_Pembiayaan.webp') }}" class="card-img-top" alt="Pembiayaan" width="400" height="300" loading="lazy" />
-                    <div class="card-body text-center">
-                        <h5 class="card-title"><a href="{{ url('pembiayaan') }}" class="text-decoration-none">Pembiayaan</a></h5>
-                        <a href="{{ url('pembiayaan') }}" class="btn btn-secondary rounded-pill py-2 px-4">Selengkapnya</a>
+                    <div class="product-card-img-wrap">
+                        <img src="{{ asset('frontend/img/home/MCI_Home_Pembiayaan.webp') }}" class="img-fluid w-100" alt="Pembiayaan Syariah BPRS HIK MCI" loading="lazy" />
+                        <span class="product-floating-tag tag-gold">Solusi Permodalan</span>
+                    </div>
+                    <div class="product-card-body p-4 d-flex flex-column flex-grow-1">
+                        <div class="product-category mb-2">Mitra Bisnis & Properti</div>
+                        <h4 class="product-card-title mb-3">Pembiayaan Syariah</h4>
+                        <p class="product-card-desc mb-4 flex-grow-1">
+                            Bantuan modal kerja usaha UMKM, kepemilikan properti/rumah impian, hingga kebutuhan konsumtif dengan proses cepat, angsuran tetap, dan akad Murabahah.
+                        </p>
+                        <div class="product-features-list mb-4">
+                            <div class="feature-item"><i class="fas fa-check-circle text-warning me-2"></i>Angsuran Tetap Hingga Lunas</div>
+                            <div class="feature-item"><i class="fas fa-check-circle text-warning me-2"></i>Proses Cepat & Persyaratan Mudah</div>
+                            <div class="feature-item"><i class="fas fa-check-circle text-warning me-2"></i>Konsultasi Ramah & Berpengalaman</div>
+                        </div>
+                        <a href="{{ url('pembiayaan') }}" class="btn btn-product-action w-100">
+                            <span>Pelajari Pembiayaan</span>
+                            <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Products End -->
+</section>
+<!-- Core Products Section End -->
 
-<!-- Simulasi Perhitungan Start -->
-<div class="container-fluid py-3">
-    <div class="container pb-3">
-        <div class="text-center mx-auto pb-4">
-            <h3 class="text-uppercase text-primary">Simulasi Pembiayaan</h3>
-            <h2 class="text-capitalize text-uppercase mb-3">
-                Berapapun Anda Simulasikan, HIK MCI Siap Membantu
-            </h2>
-        </div>
-        <div class="row g-4 align-items-center">
-            <div class="col-lg-4 col-md-6 text-center mb-4 mb-lg-0">
-                <img src="{{ asset('frontend/img/home/kalkulator-01.webp') }}" class="img-fluid rounded" alt="Kalkulator" width="300" height="200" loading="lazy" />
+<!-- RELOCATED CAROUSEL SECTION: Promo, Kegiatan & Informasi Terkini (Clean Modern Frame) -->
+<section id="promo-carousel-section" class="carousel-modern-section py-5">
+    <div class="container py-3">
+        <!-- Section Title -->
+        <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between mb-4">
+            <div>
+                <div class="section-pill-badge mb-2">UPDATE & PENGUMUMAN</div>
+                <h2 class="section-heading mb-1">Informasi, Promo & Kegiatan Terkini</h2>
+                <p class="section-subheading mb-0">Ikuti perkembangan program dan penawaran spesial BPRS HIK MCI</p>
             </div>
-            <div class="col-lg-8 col-md-6">
-                <form class="row g-3" id="pembiayaanForm">
-                    <div class="col-md-4 text-center">
-                        <label for="jumlahPembiayaan" class="form-label">Jumlah Pembiayaan</label>
-                        <input type="text" class="form-control form-control-lg rounded-pill" id="jumlahPembiayaan" placeholder="Jumlah Pembiayaan" />
+            <!-- Custom Carousel Navigation Buttons -->
+            <div class="d-flex align-items-center gap-2 mt-3 mt-md-0">
+                <button class="btn btn-carousel-arrow" type="button" data-bs-target="#carouselId" data-bs-slide="prev" aria-label="Slide sebelumnya">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="btn btn-carousel-arrow" type="button" data-bs-target="#carouselId" data-bs-slide="next" aria-label="Slide berikutnya">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Modern Framed Carousel -->
+        <div class="modern-carousel-frame rounded-3xl overflow-hidden position-relative shadow-lg border">
+            <div id="carouselId" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+                <ol class="carousel-indicators modern-indicators">
+                    @foreach($carousels as $index => $carousel)
+                    <li data-bs-target="#carouselId" data-bs-slide-to="{{ $index }}" class="{{ $index == 0 ? 'active' : '' }}" aria-label="Slide {{ $index + 1 }}"></li>
+                    @endforeach
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    @foreach($carousels as $index => $carousel)
+                    <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                        <img src="{{ Storage::url($carousel->image) }}" class="d-block w-100 carousel-banner-img" alt="Banner BPRS HIK MCI {{ $index + 1 }}" loading="lazy" />
                     </div>
-                    <!-- <div class="col-md-4 text-center">
-                        <label for="produkPembiayaan" class="form-label">Produk</label>
-                        <select class="form-select form-select-lg rounded-pill" id="produkPembiayaan">
-                            <option value="" disabled selected>Pilih Produk</option>
-                            <option value="Micro UMKM">Micro UMKM</option>
-                            <option value="Corporate">Corporate</option>
-                            <option value="Property">Property</option>
-                            <option value="CF Pekerja Migran">CF Pekerja Migran</option>
-                            <option value="CF Sertifikasi Pendidik">CF Sertifikasi Pendidik</option>
-                            <option value="CF Kolektif Karyawan">CF Kolektif Karyawan</option>
-                            <option value="CF Umroh">CF Umroh</option>
-                        </select>
-                    </div> -->
-                    <div class="col-md-4 text-center">
-                        <label for="jangkaWaktuPembiayaan" class="form-label">Jangka Waktu</label>
-                        <select class="form-select form-select-lg rounded-pill" id="jangkaWaktuPembiayaan">
-                            <option value="" disabled selected>Pilih Jangka Waktu</option>
-                            <option value="3">3 bulan</option>
-                            <option value="6">6 bulan</option>
-                            <option value="9">9 bulan</option>
-                            <option value="12">12 bulan</option>
-                        </select>
-                    </div>
-                </form>
-                <div class="col-12 text-center mt-4">
-                    <button type="button" class="btn btn-primary btn-lg rounded-pill" onclick="calculatePembiayaan()">Hitung</button>
+                    @endforeach
                 </div>
-                <div id="pembiayaanResult" class="text-center mt-4" style="min-height: 100px; display: none;"></div>
             </div>
         </div>
     </div>
-</div>
-<!-- Simulasi Perhitungan End -->
+</section>
+<!-- Relocated Carousel Section End -->
 
-<!-- Equivalent Rate Deposito Start -->
-<div class="container-fluid bg-light py-3">
-    <div class="container py-2">
-        <div class="text-center mx-auto pb-1">
-            <h3 class="text-uppercase text-primary">Equivalent Rate Deposito</h3>
-            <h2 class="text-capitalize">
-                Bulan <span id="bulan">{{ $rateDeposito->first()->bulan ?? 'N/A' }}</span> Tahun <span id="tahun">{{ $rateDeposito->first()->created_at->format('Y') ?? 'N/A' }}</span>
-            </h2>
+<!-- Interactive Financing Simulator Start (pixel-io modern fintech tool) -->
+<section id="simulasi-section" class="simulator-section py-5 position-relative">
+    <div class="container py-4">
+        <div class="text-center max-w-700 mx-auto mb-5">
+            <div class="section-pill-badge mb-3">KALKULATOR SYARIAH</div>
+            <h2 class="section-heading mb-3">Simulasi Pembiayaan Fleksibel</h2>
+            <p class="section-subheading">
+                Berapapun rencana pembiayaan Anda, hitung estimasi angsuran bulanan secara transparan sebelum mengajukan permohonan.
+            </p>
         </div>
-        <div class="row g-5 align-items-center">
-            <div class="d-flex justify-content-end">
-                <button id="download-pdf" class="btn btn-secondary mb-3">Download PDF</button>
+
+        <div class="row g-4 align-items-center justify-content-center">
+            <!-- Left Info Card -->
+            <div class="col-lg-4">
+                <div class="simulator-info-card p-4 rounded-3xl h-100">
+                    <div class="d-flex align-items-center gap-3 mb-4">
+                        <div class="info-card-icon">
+                            <i class="fas fa-calculator text-success fs-3"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1 text-dark fw-bold">Hitung Cepat</h5>
+                            <small class="text-muted">Estimasi margin transparan</small>
+                        </div>
+                    </div>
+                    <p class="text-muted small mb-4">
+                        Simulasi ini menggunakan estimasi margin flat syariah sebagai acuan awal. Tim pembiayaan kami siap membantu perhitungan spesifik sesuai kebutuhan usaha Anda.
+                    </p>
+                    <div class="p-3 rounded-2xl bg-white border mb-4">
+                        <div class="d-flex justify-content-between mb-2 small">
+                            <span class="text-muted">Plafon Pembiayaan:</span>
+                            <span class="fw-bold text-dark">s.d Rp 2 Miliar</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2 small">
+                            <span class="text-muted">Akad Utama:</span>
+                            <span class="fw-bold text-success">Murabahah / Ijarah</span>
+                        </div>
+                        <div class="d-flex justify-content-between small">
+                            <span class="text-muted">Keputusan:</span>
+                            <span class="fw-bold text-info">Cepat & Amanah</span>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/+6281222770657?text=Halo%20BPRS%20HIK%20MCI,%20saya%20ingin%20konsultasi%20pembiayaan." target="_blank" class="btn btn-outline-success w-100 rounded-pill py-2">
+                        <i class="fab fa-whatsapp me-2"></i>Konsultasi Tim Pembiayaan
+                    </a>
+                </div>
             </div>
+
+            <!-- Right Calculator Form -->
+            <div class="col-lg-8">
+                <div class="simulator-form-card p-4 p-md-5 rounded-3xl border shadow-sm bg-white">
+                    <form class="row g-4" id="pembiayaanForm">
+                        <!-- Quick Amount Presets -->
+                        <div class="col-12">
+                            <label class="form-label text-dark fw-semibold mb-2">Pilih Cepat Nominal:</label>
+                            <div class="d-flex flex-wrap gap-2 mb-2">
+                                <button type="button" class="btn btn-sm btn-preset-amount" onclick="setPresetAmount(10000000)">Rp 10 Juta</button>
+                                <button type="button" class="btn btn-sm btn-preset-amount" onclick="setPresetAmount(25000000)">Rp 25 Juta</button>
+                                <button type="button" class="btn btn-sm btn-preset-amount" onclick="setPresetAmount(50000000)">Rp 50 Juta</button>
+                                <button type="button" class="btn btn-sm btn-preset-amount" onclick="setPresetAmount(100000000)">Rp 100 Juta</button>
+                                <button type="button" class="btn btn-sm btn-preset-amount" onclick="setPresetAmount(250000000)">Rp 250 Juta</button>
+                            </div>
+                        </div>
+
+                        <!-- Jumlah Pembiayaan Input -->
+                        <div class="col-md-6">
+                            <label for="jumlahPembiayaan" class="form-label text-dark fw-semibold">Jumlah Pembiayaan (Rp)</label>
+                            <div class="input-group input-group-modern">
+                                <span class="input-group-text bg-transparent border-end-0 text-muted fw-bold">Rp</span>
+                                <input type="text" class="form-control border-start-0" id="jumlahPembiayaan" placeholder="Contoh: 50.000.000" />
+                            </div>
+                            <small class="text-muted">Ketik angka atau klik tombol nominal cepat di atas</small>
+                        </div>
+
+                        <!-- Jangka Waktu Dropdown -->
+                        <div class="col-md-6">
+                            <label for="jangkaWaktuPembiayaan" class="form-label text-dark fw-semibold">Jangka Waktu (Tenor)</label>
+                            <select class="form-select form-select-modern" id="jangkaWaktuPembiayaan">
+                                <option value="" disabled selected>Pilih Jangka Waktu</option>
+                                <option value="3">3 Bulan (Jangka Pendek)</option>
+                                <option value="6">6 Bulan (Setengah Tahun)</option>
+                                <option value="9">9 Bulan</option>
+                                <option value="12">12 Bulan (1 Tahun)</option>
+                            </select>
+                            <small class="text-muted">Tenor fleksibel sesuai siklus perputaran usaha</small>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="col-12 text-center pt-2">
+                            <button type="button" class="btn btn-modern-primary px-5 py-3 rounded-pill" onclick="calculatePembiayaan()">
+                                <i class="fas fa-calculator me-2"></i>Hitung Angsuran Sekarang
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Result Container (preserves original ID & styling) -->
+                    <div id="pembiayaanResult" class="mt-4 p-4 rounded-2xl bg-light border" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Interactive Financing Simulator End -->
+
+<!-- Equivalent Rate Deposito Start (Modern Fintech Table) -->
+<section id="rate-deposito" class="rate-section py-5">
+    <div class="container py-3">
+        <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between mb-4">
+            <div>
+                <div class="section-pill-badge mb-2">BAGI HASIL TERBARU</div>
+                <h2 class="section-heading mb-1">
+                    Equivalent Rate Deposito Karimah
+                </h2>
+                <p class="section-subheading mb-0">
+                    Bulan <span id="bulan" class="fw-bold text-success">{{ $rateDeposito->first()->bulan ?? 'N/A' }}</span> Tahun <span id="tahun" class="fw-bold text-success">{{ $rateDeposito->first()->created_at->format('Y') ?? 'N/A' }}</span>
+                </p>
+            </div>
+            <div class="mt-3 mt-md-0">
+                <button id="download-pdf" class="btn btn-outline-success rounded-pill px-4 py-2">
+                    <i class="fas fa-file-pdf me-2"></i>Download PDF Resmi
+                </button>
+            </div>
+        </div>
+
+        <div class="modern-table-container rounded-3xl border shadow-sm bg-white overflow-hidden p-2 p-md-3">
             <div class="table-responsive">
-                <table class="table table-bordered table-striped table-hover" id="myTable">
-                    <thead class="text-dark">
+                <table class="table table-hover align-middle mb-0" id="myTable">
+                    <thead>
                         <tr>
-                            <th rowspan="2" class="text-center align-middle">Nominal</th>
-                            <th colspan="4" class="text-center">Jangka Waktu</th>
+                            <th rowspan="2" class="text-center align-middle bg-emerald-soft text-dark">Nominal Penempatan</th>
+                            <th colspan="4" class="text-center bg-emerald-soft text-dark">Jangka Waktu & Imbal Hasil</th>
                         </tr>
-                        <tr class="text-center">
-                            <th>1 Bulan <br> (Setara ER {{ $rateDeposito->first()->rate_1_bulan ?? 'N/A' }}%)</th>
-                            <th>3 Bulan <br> (Setara ER {{ $rateDeposito->first()->rate_3_bulan ?? 'N/A' }}%)</th>
-                            <th>6 Bulan <br> (Setara ER {{ $rateDeposito->first()->rate_6_bulan ?? 'N/A' }}%)</th>
-                            <th>12 Bulan <br> (Setara ER {{ $rateDeposito->first()->rate_12_bulan ?? 'N/A' }}%)</th>
+                        <tr class="text-center bg-light">
+                            <th class="py-3">1 Bulan <br><span class="badge bg-success-soft text-success mt-1">ER {{ $rateDeposito->first()->rate_1_bulan ?? 'N/A' }}%</span></th>
+                            <th class="py-3">3 Bulan <br><span class="badge bg-success-soft text-success mt-1">ER {{ $rateDeposito->first()->rate_3_bulan ?? 'N/A' }}%</span></th>
+                            <th class="py-3">6 Bulan <br><span class="badge bg-success-soft text-success mt-1">ER {{ $rateDeposito->first()->rate_6_bulan ?? 'N/A' }}%</span></th>
+                            <th class="py-3">12 Bulan <br><span class="badge bg-success-soft text-success mt-1">ER {{ $rateDeposito->first()->rate_12_bulan ?? 'N/A' }}%</span></th>
                         </tr>
                     </thead>
                     <tbody class="text-secondary">
                         @foreach ($nominals as $nominal)
                         <tr>
-                            <td data-label="Nominal">Rp. {{ number_format($nominal->nominal, 2, ',', '.') }}</td>
-                            <td data-label="1 Bulan">
+                            <td data-label="Nominal" class="fw-bold text-dark ps-3">Rp. {{ number_format($nominal->nominal, 2, ',', '.') }}</td>
+                            <td data-label="1 Bulan" class="text-center">
                                 @if ($rateDeposito->first()->rate_1_bulan)
-                                Rp. {{ number_format(($nominal->nominal * $rateDeposito->first()->rate_1_bulan / 100) / 12, 2, ',', '.') }}
+                                <span class="fw-semibold text-success">Rp. {{ number_format(($nominal->nominal * $rateDeposito->first()->rate_1_bulan / 100) / 12, 2, ',', '.') }}</span>
                                 @else
-                                N/A
+                                <span class="text-muted">N/A</span>
                                 @endif
                             </td>
-                            <td data-label="3 Bulan">
+                            <td data-label="3 Bulan" class="text-center">
                                 @if ($rateDeposito->first()->rate_3_bulan)
-                                Rp. {{ number_format(($nominal->nominal * $rateDeposito->first()->rate_3_bulan / 100) / 12, 2, ',', '.') }}
+                                <span class="fw-semibold text-success">Rp. {{ number_format(($nominal->nominal * $rateDeposito->first()->rate_3_bulan / 100) / 12, 2, ',', '.') }}</span>
                                 @else
-                                N/A
+                                <span class="text-muted">N/A</span>
                                 @endif
                             </td>
-                            <td data-label="6 Bulan">
+                            <td data-label="6 Bulan" class="text-center">
                                 @if ($rateDeposito->first()->rate_6_bulan)
-                                Rp. {{ number_format(($nominal->nominal * $rateDeposito->first()->rate_6_bulan / 100) / 12, 2, ',', '.') }}
+                                <span class="fw-semibold text-success">Rp. {{ number_format(($nominal->nominal * $rateDeposito->first()->rate_6_bulan / 100) / 12, 2, ',', '.') }}</span>
                                 @else
-                                N/A
+                                <span class="text-muted">N/A</span>
                                 @endif
                             </td>
-                            <td data-label="12 Bulan">
+                            <td data-label="12 Bulan" class="text-center">
                                 @if ($rateDeposito->first()->rate_12_bulan)
-                                Rp. {{ number_format(($nominal->nominal * $rateDeposito->first()->rate_12_bulan / 100) / 12, 2, ',', '.') }}
+                                <span class="fw-semibold text-success">Rp. {{ number_format(($nominal->nominal * $rateDeposito->first()->rate_12_bulan / 100) / 12, 2, ',', '.') }}</span>
                                 @else
-                                N/A
+                                <span class="text-muted">N/A</span>
                                 @endif
                             </td>
                         </tr>
@@ -191,41 +512,108 @@
             </div>
         </div>
     </div>
-</div>
+</section>
 <!-- Equivalent Rate Deposito End -->
 
-<!-- Berita Terkini Start -->
-<div class="container-fluid py-3">
-    <div class="container pb-3">
-        <div class="text-center mx-auto pb-3">
-            <h3 class="text-uppercase text-primary">Berita</h3>
-            <h2 class="text-capitalize text-uppercase mb-3">Berita Terkini</h2>
+<!-- Berita Terkini Start (Modern News Cards) -->
+<section id="berita-section" class="news-section py-5">
+    <div class="container py-3">
+        <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between mb-4">
+            <div>
+                <div class="section-pill-badge mb-2">ARTIKEL & PUBLIKASI</div>
+                <h2 class="section-heading mb-1">Berita & Informasi Terbaru</h2>
+                <p class="section-subheading mb-0">Wawasan perbankan syariah, literasi keuangan, dan agenda BPRS HIK MCI</p>
+            </div>
+            <div class="mt-3 mt-md-0">
+                <a href="{{ url('berita') }}" class="btn btn-outline-success rounded-pill px-4 py-2">
+                    Lihat Semua Berita <i class="fas fa-arrow-right ms-1"></i>
+                </a>
+            </div>
         </div>
+
         <div class="row g-4 justify-content-center">
             @foreach($beritaTerakhir as $berita)
-            <div class="col-lg-6 col-xl-4">
-                <div class="card h-100 card-3d">
+            <div class="col-lg-4 col-md-6">
+                <article class="modern-news-card card-3d h-100 d-flex flex-column rounded-3xl overflow-hidden border shadow-sm bg-white">
                     <div class="card-shine"></div>
-                    <div class="position-relative">
-                        <img src="{{ asset('storage/berita/' . $berita->gambar) }}" class="card-img-top" alt="{{ $berita->judul }}" width="400" height="300" loading="lazy" />
-                        <div class="position-absolute bottom-0 start-0 bg-primary text-white px-4 py-2">
-                            <i class="fa fa-calendar-alt me-1"></i> {{ $berita->created_at->format('d M Y') }}
-                        </div>
+                    <div class="news-thumb-wrapper position-relative overflow-hidden">
+                        <img src="{{ asset('storage/berita/' . $berita->gambar) }}" class="img-fluid w-100 news-thumb-img" alt="{{ $berita->judul }}" loading="lazy" />
+                        <span class="news-date-badge">
+                            <i class="far fa-calendar-alt me-1"></i> {{ $berita->created_at->format('d M Y') }}
+                        </span>
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="{{ route('berita.show', $berita->id) }}" class="text-decoration-none">{{ Str::limit($berita->judul, 50) }}</a></h5>
-                        <p class="card-text">{{ Str::limit($berita->isi, 100) }}</p>
-                        <a href="{{ route('berita.show', $berita->id) }}" class="btn btn-link p-0">Selengkapnya <i class="fa fa-angle-right"></i></a>
+                    <div class="news-body p-4 d-flex flex-column flex-grow-1">
+                        <h5 class="news-title mb-3">
+                            <a href="{{ route('berita.show', $berita->id) }}" class="text-decoration-none text-dark hover-green">
+                                {{ Str::limit($berita->judul, 60) }}
+                            </a>
+                        </h5>
+                        <p class="news-excerpt text-muted small mb-4 flex-grow-1">
+                            {{ Str::limit(strip_tags($berita->isi), 110) }}
+                        </p>
+                        <a href="{{ route('berita.show', $berita->id) }}" class="news-read-more d-inline-flex align-items-center text-success fw-semibold text-decoration-none">
+                            <span>Baca Selengkapnya</span>
+                            <i class="fas fa-arrow-right ms-2 transition-arrow"></i>
+                        </a>
                     </div>
-                </div>
+                </article>
             </div>
             @endforeach
         </div>
     </div>
-</div>
+</section>
 <!-- Berita Terkini End -->
+
+<!-- Call To Action Banner Start (pixel-io CTA component inspired) -->
+<section class="cta-section py-5">
+    <div class="container">
+        <div class="cta-banner-wrapper p-4 p-md-5 rounded-3xl position-relative overflow-hidden text-center text-md-start">
+            <div class="row align-items-center g-4 position-relative z-2">
+                <div class="col-md-8">
+                    <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-white/20 text-white text-xs fw-semibold mb-3">
+                        <i class="fas fa-hands-helping"></i> Layanan Konsultasi Gratis
+                    </div>
+                    <h2 class="cta-title text-white fw-bold mb-3">Siap Menjalin Kerjasama Syariah Bersama Kami?</h2>
+                    <p class="cta-subtitle text-white-50 mb-0">
+                        Kunjungi kantor kami di Sleman atau hubungi layanan WhatsApp resmi untuk pembukaan rekening, simulasi pembiayaan, dan kemitraan usaha.
+                    </p>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <a href="https://wa.me/+6281222770657" target="_blank" class="btn btn-light text-success fw-bold rounded-pill px-4 py-3 shadow-sm me-md-2 mb-2 mb-md-0">
+                        <i class="fab fa-whatsapp me-2 fs-5"></i>Hubungi WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Call To Action Banner End -->
 
 @include('footer')
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+
+<script>
+// Helper to set preset amounts in simulation input
+function setPresetAmount(amount) {
+    const input = document.getElementById('jumlahPembiayaan');
+    if (input) {
+        input.value = amount.toLocaleString('id-ID');
+        input.focus();
+    }
+}
+
+// Auto-format currency typing in #jumlahPembiayaan
+document.addEventListener('DOMContentLoaded', function() {
+    const amountInput = document.getElementById('jumlahPembiayaan');
+    if (amountInput) {
+        amountInput.addEventListener('input', function(e) {
+            let val = this.value.replace(/\D/g, '');
+            if (val) {
+                this.value = parseInt(val, 10).toLocaleString('id-ID');
+            }
+        });
+    }
+});
+</script>
