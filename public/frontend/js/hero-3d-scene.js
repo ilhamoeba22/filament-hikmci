@@ -21,15 +21,15 @@
   }
 
   function initHero3D() {
-    if (window.__hero3DInitialized) return;
-    window.__hero3DInitialized = true;
-
     const el = document.getElementById('stage');
     const LB = document.getElementById('labels');
 
     if (!el || !LB || !isWebGLAvailable() || typeof THREE === 'undefined') {
       return;
     }
+
+    if (window.__hero3DInitialized) return;
+    window.__hero3DInitialized = true;
 
     const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
     const ADD = THREE.AdditiveBlending;
@@ -43,6 +43,7 @@
     // Clear any previous canvas if re-initializing
     el.innerHTML = '';
     el.appendChild(R.domElement);
+    el.classList.add('on');
 
     // 2. Scene, Camera, Fog, Lights
     const S = new THREE.Scene();
@@ -771,15 +772,15 @@
       C.aspect = W / H;
       C.updateProjectionMatrix();
 
-      const isTabletOrDesktop = window.innerWidth >= 768;
-      focalGroup.visible = isTabletOrDesktop;
+      const isDesktop = window.innerWidth >= 1024;
+      focalGroup.visible = isDesktop;
       if (LB) {
-        LB.style.display = isTabletOrDesktop ? 'block' : 'none';
+        LB.style.display = isDesktop ? 'block' : 'none';
       }
 
-      if (isTabletOrDesktop) {
+      if (isDesktop) {
         const stageEl = document.getElementById('heroFintechStage');
-        if (stageEl) {
+        if (stageEl && stageEl.offsetParent !== null) {
           const stageRect = stageEl.getBoundingClientRect();
           const elRect = el.getBoundingClientRect();
 
@@ -800,23 +801,20 @@
           if (W >= 1200) {
             base = 1.0;
             currentOrbitRadius = 2.6;
-          } else if (W >= 992) {
+          } else {
+            // Screens 1024px - 1199px (iPad Air 13", iPad Pro, 1024px displays)
             base = 0.88;
             currentOrbitRadius = 2.3;
-          } else {
-            // Tablet & iPad Portrait (768px - 991px)
-            base = 0.74;
-            currentOrbitRadius = 2.05;
           }
         } else {
-          base = 0.85;
-          currentOrbitRadius = 2.2;
-          world.position.set(3.2, 0.2, 0);
+          base = 0.95;
+          currentOrbitRadius = 2.5;
+          world.position.set(3.8, 0.2, 0);
         }
         city.position.set(0, -2.8, -2.5);
         city.scale.setScalar(0.9);
       } else {
-        // Mode Mobile (< 768px):
+        // Mode Mobile & Tablet (< 1024px):
         // Mempertahankan animasi ambient grid kotak-kotak dan bintang-bintang kecil melayang
         base = 0.7;
         world.position.set(0, -0.6, 0);

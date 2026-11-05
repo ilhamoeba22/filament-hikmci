@@ -1215,8 +1215,7 @@ section,
   display: block;
   width: 100% !important;
   height: 100% !important;
-  opacity: 0;
-  transition: opacity 1.6s ease;
+  opacity: 1;
   outline: none;
   pointer-events: none !important;
 }
@@ -1478,7 +1477,7 @@ section,
   pointer-events: none !important;
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 1023.98px) {
   #stage {
     display: block !important;
     position: absolute;
@@ -1490,8 +1489,15 @@ section,
   }
 
   #labels,
-  .hero-badges-stage {
+  .hero-badges-stage,
+  .hero-badges-stage-col {
     display: none !important;
+  }
+
+  .hero-text-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
   }
 
   .hero-section {
@@ -1505,24 +1511,13 @@ section,
   }
 }
 
-@media (min-width: 768px) and (max-width: 991.98px) {
-  .hero-title {
-    font-size: 2.25rem !important;
-    line-height: 1.25 !important;
-  }
-
-  .hero-description {
-    font-size: 0.95rem !important;
+@media (min-width: 1024px) {
+  .hero-badges-stage-col {
+    display: block !important;
   }
 
   .hero-badges-stage {
-    max-width: 380px !important;
-    min-height: 400px !important;
-  }
-
-  .hero-section {
-    padding-top: 135px !important;
-    padding-bottom: 60px !important;
+    display: block !important;
   }
 }
 
