@@ -605,26 +605,98 @@ section,
   transform-style: preserve-3d;
 }
 
-.fintech-hero-visual {
+/* === 3D MODERN ISLAMIC BANKING ARTWORK SHOWCASE === */
+.sharia-3d-visual {
   width: 100%;
-  max-width: 410px;
+  max-width: 440px;
   border-radius: var(--radius-2xl);
-  padding: 24px 26px;
-  background: linear-gradient(145deg, #051a0d 0%, #0d3e1c 55%, #051d10 100%);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35), 0 0 30px rgba(13, 104, 36, 0.2);
-  color: #ffffff;
+  padding: 8px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.96) 0%, rgba(240, 253, 244, 0.9) 100%);
+  border: 1px solid rgba(13, 104, 36, 0.16);
+  box-shadow: 0 25px 60px -15px rgba(13, 104, 36, 0.22), 0 10px 25px -5px rgba(0, 150, 199, 0.14);
   position: relative;
   overflow: hidden;
   transform-style: preserve-3d;
-  transition: transform 160ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
-  text-align: left;
   user-select: none;
 }
 
-.fintech-hero-visual:active {
-  transform: scale(0.97);
+.sharia-3d-visual:active {
+  transform: scale(0.98);
+}
+
+.sharia-illustration-frame {
+  position: relative;
+  border-radius: calc(var(--radius-2xl) - 4px);
+  overflow: hidden;
+  background: #f8fafc;
+  transform-style: preserve-3d;
+  animation: shariaLevitate 5s ease-in-out infinite;
+}
+
+.sharia-3d-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  border-radius: inherit;
+  transform: translateZ(16px);
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 12px 24px rgba(13, 104, 36, 0.08));
+}
+
+/* Subtle Idle Levitation / Micro-Animation */
+@keyframes shariaLevitate {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.35deg);
+  }
+}
+
+.animate-sharia-levitate {
+  animation: shariaLevitate 5s ease-in-out infinite;
+}
+
+/* Ambient glow orbs floating across the artwork for subtle dynamic life */
+.sharia-glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(24px);
+  opacity: 0.5;
+  z-index: 2;
+}
+
+.sharia-glow-orb.orb-1 {
+  width: 130px;
+  height: 130px;
+  top: -20px;
+  left: 15%;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.45) 0%, transparent 70%);
+  animation: orbDrift1 6s ease-in-out infinite alternate;
+}
+
+.sharia-glow-orb.orb-2 {
+  width: 140px;
+  height: 140px;
+  bottom: -20px;
+  right: 10%;
+  background: radial-gradient(circle, rgba(230, 184, 0, 0.4) 0%, transparent 70%);
+  animation: orbDrift2 7.5s ease-in-out infinite alternate;
+}
+
+@keyframes orbDrift1 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(25px, 15px) scale(1.15); }
+}
+
+@keyframes orbDrift2 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-20px, -15px) scale(1.2); }
 }
 
 .card-shine {
@@ -634,162 +706,6 @@ section,
   z-index: 5;
   border-radius: inherit;
   transition: background 0.1s ease;
-}
-
-/* Layer 1: Base Chassis & Arabesque Pattern */
-.fintech-visual-base {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.22;
-  transform: translateZ(0px);
-}
-
-.arabesque-pattern {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Layer 2: Middle Financial Analytics & Content */
-.fintech-visual-middle {
-  position: relative;
-  z-index: 2;
-  transform: translateZ(25px);
-  transform-style: preserve-3d;
-}
-
-.fintech-header {
-  font-family: 'Outfit', sans-serif;
-  letter-spacing: 0.04em;
-}
-
-.fintech-portal-title {
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.9);
-  letter-spacing: 0.1em;
-}
-
-.live-pulse-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #10b981;
-  box-shadow: 0 0 8px #10b981;
-  display: inline-block;
-  animation: pulse-ring 2s infinite;
-}
-
-@keyframes pulse-ring {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
-}
-
-.fintech-security-badge {
-  font-size: 0.65rem;
-  font-weight: 600;
-  color: #38bdf8;
-  background: rgba(56, 189, 248, 0.15);
-  border: 1px solid rgba(56, 189, 248, 0.3);
-  padding: 2px 8px;
-  border-radius: 20px;
-}
-
-.growth-metric-box {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-lg);
-  padding: 12px 14px;
-  backdrop-filter: blur(8px);
-}
-
-.metric-caption {
-  font-size: 0.7rem;
-  color: rgba(255, 255, 255, 0.65);
-  display: block;
-}
-
-.metric-value {
-  font-family: 'Outfit', sans-serif;
-  font-size: 1.35rem;
-  font-weight: 800;
-  color: #ffffff;
-  letter-spacing: -0.01em;
-  line-height: 1.1;
-}
-
-.growth-trend-pill {
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: #10b981;
-  background: rgba(16, 185, 129, 0.18);
-  border: 1px solid rgba(16, 185, 129, 0.35);
-  padding: 3px 9px;
-  border-radius: 9999px;
-  display: inline-flex;
-  align-items: center;
-}
-
-.growth-chart-svg {
-  width: 100%;
-  height: 52px;
-  overflow: visible;
-  filter: drop-shadow(0 2px 6px rgba(0, 229, 255, 0.25));
-}
-
-.fintech-pillars .pillar-card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius-md);
-  padding: 8px 10px;
-}
-
-.pillar-label {
-  font-size: 0.62rem;
-  color: rgba(255, 255, 255, 0.6);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.pillar-stat {
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 700;
-}
-
-.pillar-stat.text-cyan {
-  color: #38bdf8;
-}
-
-.pillar-stat.text-gold {
-  color: #fbbf24;
-}
-
-/* Layer 3: Foreground Security & Sharia Seal */
-.fintech-visual-foreground {
-  position: relative;
-  z-index: 3;
-  transform: translateZ(45px);
-  transform-style: preserve-3d;
-}
-
-.compliance-tag {
-  font-size: 0.65rem;
-  color: rgba(255, 255, 255, 0.75);
-}
-
-.sharia-badge-pill {
-  font-size: 0.68rem;
-  font-weight: 700;
-  color: #fbbf24;
-  background: rgba(251, 191, 36, 0.15);
-  border: 1px solid rgba(251, 191, 36, 0.3);
-  padding: 2px 8px;
-  border-radius: 9999px;
 }
 
 /* 3D Floating Glass Badges Parallax */
@@ -1930,9 +1846,10 @@ button:active,
     padding: 10px 0;
   }
 
+  .sharia-3d-visual,
   .fintech-hero-visual {
     max-width: 320px;
-    padding: 18px 16px;
+    padding: 6px;
     margin: 0 auto;
   }
 

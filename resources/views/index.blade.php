@@ -73,7 +73,7 @@
                 </div>
             </div>
 
-            <!-- Right Column: 3D Islamic Digital Banking & Future Growth Showcase -->
+            <!-- Right Column: 3D Islamic Digital Banking Showcase (Real 3D Illustration) -->
             <div class="col-lg-5 text-center position-relative">
                 <div class="hero-card-stage position-relative mx-auto" id="heroFintechStage">
                     <!-- Ambient Glow Behind 3D Showcase -->
@@ -90,108 +90,24 @@
                         </div>
                     </div>
 
-                    <!-- 3D Interactive Fintech Visual Showcase (preserve-3d parallax depth) -->
+                    <!-- 3D Interactive Sharia Banking Artwork Showcase (Cursor-reactive & levitating) -->
                     <div class="card-3d-wrapper">
-                        <div class="fintech-hero-visual card-3d" id="fintechHeroVisual" tabindex="0" role="region" aria-label="Showcase Perbankan Syariah Digital BPRS HIK MCI">
+                        <div class="sharia-3d-visual card-3d animate-sharia-levitate" id="fintechHeroVisual" tabindex="0" role="region" aria-label="Visual 3D Perbankan Syariah Digital BPRS HIK MCI">
                             <div class="card-shine" aria-hidden="true"></div>
 
-                            <!-- Layer 1: Base Chassis & Sacred Arabesque Star Geometry (translateZ: 0px) -->
-                            <div class="fintech-visual-base">
-                                <svg class="arabesque-pattern" viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                    <defs>
-                                        <linearGradient id="geomGlow" x1="0%" y1="0%" x2="100%" y2="100%">
-                                            <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.35"/>
-                                            <stop offset="50%" stop-color="#10b981" stop-opacity="0.25"/>
-                                            <stop offset="100%" stop-color="#fbbf24" stop-opacity="0.2"/>
-                                        </linearGradient>
-                                        <pattern id="islamicStar" width="50" height="50" patternUnits="userSpaceOnUse">
-                                            <path d="M25,0 L32,18 L50,25 L32,32 L25,50 L18,32 L0,25 L18,18 Z" fill="none" stroke="url(#geomGlow)" stroke-width="0.8"/>
-                                            <circle cx="25" cy="25" r="10" fill="none" stroke="url(#geomGlow)" stroke-width="0.5"/>
-                                        </pattern>
-                                    </defs>
-                                    <rect width="100%" height="100%" fill="url(#islamicStar)"/>
-                                </svg>
-                            </div>
-
-                            <!-- Layer 2: Middle Financial Analytics & Growth Dashboard (translateZ: 25px) -->
-                            <div class="fintech-visual-middle">
-                                <!-- Portal Header -->
-                                <div class="d-flex justify-content-between align-items-center mb-3 fintech-header">
-                                    <div class="d-flex align-items-center gap-2">
-                                        <span class="live-pulse-dot"></span>
-                                        <span class="fintech-portal-title">BPRS HIK MCI DIGITAL PORTAL</span>
-                                    </div>
-                                    <div class="fintech-security-badge">
-                                        <i class="fas fa-lock me-1"></i>256-Bit SSL
-                                    </div>
-                                </div>
-
-                                <!-- Growth Analytics Banner -->
-                                <div class="growth-metric-box mb-3">
-                                    <div class="d-flex justify-content-between align-items-baseline mb-1">
-                                        <div class="text-start">
-                                            <span class="metric-caption">Penyaluran Pembiayaan Syariah</span>
-                                            <div class="metric-value">Rp 480+ Miliar</div>
-                                        </div>
-                                        <div class="growth-trend-pill">
-                                            <i class="fas fa-arrow-up me-1"></i>+14.8% YoY
-                                        </div>
-                                    </div>
-
-                                    <!-- Interactive SVG Growth Line Chart -->
-                                    <div class="chart-container py-1">
-                                        <svg class="growth-chart-svg" viewBox="0 0 320 60" preserveAspectRatio="none" aria-hidden="true">
-                                            <defs>
-                                                <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
-                                                    <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.35"/>
-                                                    <stop offset="100%" stop-color="#0d6824" stop-opacity="0.0"/>
-                                                </linearGradient>
-                                                <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                                                    <stop offset="0%" stop-color="#10b981"/>
-                                                    <stop offset="50%" stop-color="#38bdf8"/>
-                                                    <stop offset="100%" stop-color="#e6b800"/>
-                                                </linearGradient>
-                                            </defs>
-                                            <!-- Area fill -->
-                                            <path d="M0,52 C40,48 70,36 110,38 C150,40 180,24 220,20 C260,16 280,8 320,4 L320,60 L0,60 Z" fill="url(#chartGradient)"/>
-                                            <!-- Glowing Line -->
-                                            <path d="M0,52 C40,48 70,36 110,38 C150,40 180,24 220,20 C260,16 280,8 320,4" fill="none" stroke="url(#lineGrad)" stroke-width="2.5" stroke-linecap="round"/>
-                                            <!-- Key Point Nodes -->
-                                            <circle cx="110" cy="38" r="3.5" fill="#10b981" stroke="#ffffff" stroke-width="1.5"/>
-                                            <circle cx="220" cy="20" r="3.5" fill="#38bdf8" stroke="#ffffff" stroke-width="1.5"/>
-                                            <circle cx="320" cy="4" r="4.5" fill="#e6b800" stroke="#ffffff" stroke-width="2"/>
-                                        </svg>
-                                    </div>
-                                </div>
-
-                                <!-- 2 Sharia Finance Key Metric Pillars -->
-                                <div class="row g-2 fintech-pillars text-start">
-                                    <div class="col-6">
-                                        <div class="pillar-card">
-                                            <div class="pillar-label">Bagi Hasil Deposito</div>
-                                            <div class="pillar-stat text-cyan">ER s.d 6.8% p.a</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="pillar-card">
-                                            <div class="pillar-label">Akad Perbankan</div>
-                                            <div class="pillar-stat text-gold">100% Murni Syariah</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Layer 3: Foreground Security & Sharia Seal (translateZ: 45px) -->
-                            <div class="fintech-visual-foreground">
-                                <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top border-white-10">
-                                    <div class="d-flex align-items-center gap-2">
-                                        <span class="shield-icon"><i class="fas fa-shield-alt text-success"></i></span>
-                                        <span class="compliance-tag">Diawasi OJK & Penjaminan LPS</span>
-                                    </div>
-                                    <div class="sharia-badge-pill">
-                                        <i class="fas fa-certificate text-warning me-1"></i>DSN-MUI
-                                    </div>
-                                </div>
+                            <!-- 3D Illustration Frame -->
+                            <div class="sharia-illustration-frame position-relative overflow-hidden">
+                                <img src="{{ asset('frontend/img/home/sharia_banking_hero_3d.jpg') }}"
+                                     alt="3D Ilustrasi Perbankan Syariah Digital Modern BPRS HIK MCI"
+                                     class="sharia-3d-img img-fluid"
+                                     width="1200"
+                                     height="896"
+                                     loading="eager"
+                                     decoding="async">
+                                
+                                <!-- Floating Glowing Shimmer Particles / Orbs for Micro-Animation -->
+                                <div class="sharia-glow-orb orb-1" aria-hidden="true"></div>
+                                <div class="sharia-glow-orb orb-2" aria-hidden="true"></div>
                             </div>
                         </div>
                     </div>
@@ -207,13 +123,13 @@
                         </div>
                     </div>
 
-                    <!-- Floating Glass Tag 3: Bottom Right (Equivalent Rate Deposito) -->
+                    <!-- Floating Glass Tag 3: Bottom Right (Sharia Compliance & Trust) -->
                     <div class="floating-glass-badge badge-bottom-right animate-float layer-parallax-high">
                         <div class="d-flex align-items-center gap-2">
-                            <div class="badge-icon-trend"><i class="fas fa-chart-line text-success"></i></div>
+                            <div class="badge-icon-trend"><i class="fas fa-shield-alt text-success"></i></div>
                             <div class="text-start">
-                                <div class="badge-bold">ER Deposito Kompetitif</div>
-                                <div class="badge-caption">Bagi Hasil Transparan & Adil</div>
+                                <div class="badge-bold">Murni Syariah & Terpercaya</div>
+                                <div class="badge-caption">Diawasi OJK & Dijamin LPS</div>
                             </div>
                         </div>
                     </div>
