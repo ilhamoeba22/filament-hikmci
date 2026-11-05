@@ -80,24 +80,23 @@
                         </div>
                     </div>
 
-                    <!-- 3D Interactive Sharia Banking Artwork Showcase (Cursor-reactive & levitating) -->
+                    <!-- 3D Interactive Sharia Banking WebGL & Canvas Showcase -->
                     <div class="card-3d-wrapper">
-                        <div class="sharia-3d-visual card-3d animate-sharia-levitate" id="fintechHeroVisual" tabindex="0" role="region" aria-label="Visual 3D Perbankan Syariah Digital BPRS HIK MCI">
+                        <div class="sharia-3d-visual card-3d" id="fintechHeroVisual" tabindex="0" role="region" aria-label="Visual 3D Interaktif Perbankan Syariah Digital BPRS HIK MCI">
                             <div class="card-shine" aria-hidden="true"></div>
 
-                            <!-- 3D Illustration Frame -->
-                            <div class="sharia-illustration-frame position-relative overflow-hidden">
-                                <img src="{{ asset('frontend/img/home/sharia_banking_hero_3d.jpg') }}"
-                                     alt="3D Ilustrasi Perbankan Syariah Digital Modern BPRS HIK MCI"
-                                     class="sharia-3d-img img-fluid"
-                                     width="1200"
-                                     height="896"
-                                     loading="eager"
-                                     decoding="async">
+                            <!-- Real-time WebGL 3D Canvas Stage -->
+                            <div class="sharia-canvas-stage position-relative overflow-hidden" id="sharia3DCanvasStage">
+                                <canvas id="hero3DCanvas" class="hero-3d-webgl-canvas"></canvas>
                                 
-                                <!-- Floating Glowing Shimmer Particles / Orbs for Micro-Animation -->
+                                <!-- Floating Light Glow Ambient Orbs -->
                                 <div class="sharia-glow-orb orb-1" aria-hidden="true"></div>
                                 <div class="sharia-glow-orb orb-2" aria-hidden="true"></div>
+
+                                <!-- Interactive 3D Orbit / Scroll Prompt Pill -->
+                                <div class="scene-3d-hint">
+                                    <i class="fas fa-cube text-warning me-1"></i>3D Interaktif & Scroll
+                                </div>
                             </div>
                         </div>
                     </div>
