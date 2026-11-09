@@ -42,13 +42,15 @@
                          role="button"
                          data-bs-toggle="modal" 
                          data-bs-target="#flyerModal" 
-                         data-img="{{ Storage::url($asset->gambar) }}" 
-                         data-title="{{ $asset->judul }}">
-                        <img src="{{ Storage::url($asset->gambar) }}" 
+                         data-img="{{ $asset->image_url }}" 
+                         data-title="{{ $asset->judul }}"
+                         data-url="{{ $asset->share_url }}">
+                        <img src="{{ $asset->image_url }}" 
                              alt="{{ $asset->judul }}" 
                              class="w-100 h-100 object-fit-cover"
                              style="transition: transform 0.4s ease;"
-                             loading="lazy">
+                             loading="lazy"
+                             onerror="this.onerror=null; this.src='{{ asset('frontend/img/logo/logo_mci.png') }}';">
                         
                         <!-- Badges Overlay -->
                         <div class="position-absolute top-0 start-0 m-3">
@@ -70,27 +72,48 @@
                     <!-- Content -->
                     <div class="p-4 d-flex flex-column justify-content-between flex-grow-1">
                         <div>
-                            <h5 class="fw-bold text-dark mb-2" title="{{ $asset->judul }}">
-                                {{ $asset->judul }}
+                            <h5 class="fw-bold mb-2">
+                                <a href="{{ route('asset.show', $asset) }}" class="text-decoration-none text-dark hover-green" title="{{ $asset->judul }}">
+                                    {{ $asset->judul }}
+                                </a>
                             </h5>
                             <p class="text-muted small mb-3">
                                 <i class="bi bi-file-earmark-image me-1 text-success"></i> Flyer resmi aset lelang dan penjualan langsung.
                             </p>
                         </div>
-                        <div class="d-flex gap-2 justify-content-center pt-2 border-top">
-                            <button type="button" 
-                                    class="btn btn-outline-success rounded-pill px-3 py-2 btn-sm flex-fill" 
-                                    data-bs-toggle="modal" 
-                                    data-bs-target="#flyerModal" 
-                                    data-img="{{ Storage::url($asset->gambar) }}" 
-                                    data-title="{{ $asset->judul }}">
-                                <i class="bi bi-eye me-1"></i> Preview
-                            </button>
-                            <a href="{{ Storage::url($asset->gambar) }}" 
-                               download 
-                               class="btn btn-success rounded-pill px-3 py-2 btn-sm text-white flex-fill">
-                                <i class="bi bi-download me-1"></i> Download Flyer
-                            </a>
+                        <div class="d-flex flex-column gap-2 pt-2 border-top">
+                            <div class="d-flex gap-2">
+                                <button type="button" 
+                                        class="btn btn-outline-success rounded-pill px-3 py-2 btn-sm flex-fill" 
+                                        data-bs-toggle="modal" 
+                                        data-bs-target="#flyerModal" 
+                                        data-img="{{ $asset->image_url }}" 
+                                        data-title="{{ $asset->judul }}"
+                                        data-url="{{ $asset->share_url }}">
+                                    <i class="bi bi-eye me-1"></i> Preview
+                                </button>
+                                <a href="{{ $asset->image_url }}" 
+                                   download 
+                                   class="btn btn-success rounded-pill px-3 py-2 btn-sm text-white flex-fill">
+                                    <i class="bi bi-download me-1"></i> Download
+                                </a>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <a href="https://api.whatsapp.com/send?text={{ rawurlencode('*' . $asset->judul . "*\n\nLihat informasi agunan/aset resmi di BPRS HIK MCI:\n" . $asset->share_url) }}" 
+                                   target="_blank" 
+                                   rel="noopener noreferrer" 
+                                   class="btn btn-sm btn-outline-success rounded-pill px-3 py-1 flex-fill d-inline-flex align-items-center justify-content-center gap-1"
+                                   style="border-color: #25D366; color: #128C7E;"
+                                   title="Bagikan ke WhatsApp">
+                                    <i class="bi bi-whatsapp"></i> <span>Share WA</span>
+                                </a>
+                                <button type="button" 
+                                        class="btn btn-sm btn-outline-secondary rounded-pill px-3 py-1 flex-fill d-inline-flex align-items-center justify-content-center gap-1"
+                                        onclick="copyShareLink('{{ $asset->share_url }}', this)"
+                                        title="Salin Tautan">
+                                    <i class="bi bi-link-45deg"></i> <span>Salin Link</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -128,9 +151,20 @@
                     <img id="modalFlyerImg" src="" class="img-fluid rounded-3" style="max-height: 75vh; width: auto; object-fit: contain;" alt="Flyer Detail">
                     <div class="p-3 text-center border-top mt-3">
                         <h5 id="modalFlyerTitle" class="fw-bold text-dark mb-3"></h5>
-                        <a id="modalFlyerDownload" href="" download class="btn btn-success rounded-pill px-4 py-2 text-white">
-                            <i class="bi bi-download me-2"></i>Download Flyer
-                        </a>
+                        <div class="d-flex flex-wrap gap-2 justify-content-center">
+                            <a id="modalFlyerDownload" href="" download class="btn btn-success rounded-pill px-4 py-2 text-white">
+                                <i class="bi bi-download me-1"></i> Download
+                            </a>
+                            <a id="modalFlyerWA" href="" target="_blank" rel="noopener noreferrer" class="btn btn-outline-success rounded-pill px-3 py-2" style="border-color: #25D366; color: #128C7E;">
+                                <i class="bi bi-whatsapp me-1"></i> Share WA
+                            </a>
+                            <button id="modalFlyerCopy" type="button" class="btn btn-outline-dark rounded-pill px-3 py-2" onclick="copyShareLink(this.getAttribute('data-url'), this)">
+                                <i class="bi bi-link-45deg me-1"></i> Salin Link
+                            </button>
+                            <a id="modalFlyerDetail" href="" class="btn btn-outline-secondary rounded-pill px-3 py-2">
+                                <i class="bi bi-arrow-up-right-square me-1"></i> Detail Aset
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -149,14 +183,21 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!trigger) return;
             const imgSrc = trigger.getAttribute('data-img');
             const title = trigger.getAttribute('data-title');
+            const url = trigger.getAttribute('data-url');
             
             const modalImg = document.getElementById('modalFlyerImg');
             const modalTitle = document.getElementById('modalFlyerTitle');
             const modalDownload = document.getElementById('modalFlyerDownload');
+            const modalWA = document.getElementById('modalFlyerWA');
+            const modalCopy = document.getElementById('modalFlyerCopy');
+            const modalDetail = document.getElementById('modalFlyerDetail');
             
             if (modalImg) modalImg.src = imgSrc || '';
             if (modalTitle) modalTitle.textContent = title || '';
             if (modalDownload) modalDownload.href = imgSrc || '';
+            if (modalWA) modalWA.href = 'https://api.whatsapp.com/send?text=' + encodeURIComponent('*' + (title || 'E-Asset BPRS HIK MCI') + "*\n\nLihat informasi agunan/aset resmi di BPRS HIK MCI:\n" + (url || window.location.href));
+            if (modalCopy) modalCopy.setAttribute('data-url', url || '');
+            if (modalDetail) modalDetail.href = url || '#';
         });
     }
 });

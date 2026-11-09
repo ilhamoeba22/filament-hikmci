@@ -48,17 +48,25 @@
                     <!-- Content -->
                     <div class="p-4 d-flex flex-column justify-content-between flex-grow-1">
                         <div>
-                            <a href="{{ route('edukasi.show', $edukasi->id) }}" class="h5 fw-bold text-dark text-decoration-none d-block mb-2 text-truncate-2">
+                            <a href="{{ route('edukasi.show', $edukasi) }}" class="h5 fw-bold text-dark text-decoration-none d-block mb-2 text-truncate-2">
                                 {{ $edukasi->judul }}
                             </a>
                             <p class="text-secondary small mb-3">
                                 {{ Str::limit($edukasi->isi, 100) }}
                             </p>
                         </div>
-                        <div class="pt-2 border-top">
-                            <a href="{{ route('edukasi.show', $edukasi->id) }}" class="fw-bold text-success text-decoration-none small d-inline-flex align-items-center gap-1">
+                        <div class="pt-2 border-top d-flex align-items-center justify-content-between">
+                            <a href="{{ route('edukasi.show', $edukasi) }}" class="fw-bold text-success text-decoration-none small d-inline-flex align-items-center gap-1">
                                 Selengkapnya <i class="bi bi-arrow-right"></i>
                             </a>
+                            <div class="d-flex align-items-center gap-1">
+                                <a href="https://api.whatsapp.com/send?text={{ rawurlencode('*' . $edukasi->judul . "*\n\nBaca artikel edukasi di BPRS HIK MCI:\n" . $edukasi->share_url) }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-success rounded-circle p-0 d-inline-flex align-items-center justify-content-center" style="width: 32px; height: 32px;" title="Bagikan ke WhatsApp">
+                                    <i class="bi bi-whatsapp"></i>
+                                </a>
+                                <button type="button" class="btn btn-sm btn-outline-secondary rounded-circle p-0 d-inline-flex align-items-center justify-content-center" style="width: 32px; height: 32px;" onclick="copyShareLink('{{ $edukasi->share_url }}', this)" title="Salin Tautan">
+                                    <i class="bi bi-link-45deg"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>

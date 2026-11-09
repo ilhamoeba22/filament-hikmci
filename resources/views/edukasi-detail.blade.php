@@ -53,6 +53,13 @@
                         {!! nl2br(e($edukasi->isi)) !!}
                     </div>
 
+                    <!-- Share Section Box -->
+                    @include('partials.share-box', [
+                        'title' => $edukasi->judul,
+                        'url' => $edukasi->share_url,
+                        'type' => 'Edukasi',
+                    ])
+
                     <!-- Back Navigation -->
                     <div class="pt-4 border-top">
                         <a href="{{ route('edukasi.index') }}" class="btn btn-outline-success rounded-pill px-4 py-2">
@@ -77,7 +84,7 @@
                         <div class="d-flex align-items-center gap-3 p-2 rounded-3 hover-bg-light transition" style="border: 1px solid rgba(0,0,0,0.05);">
                             <img src="{{ $eItem->image_url }}" class="rounded-3 object-fit-cover flex-shrink-0" style="width: 76px; height: 76px; {{ empty($eItem->gambar) ? 'object-fit: contain; padding: 8px;' : '' }}" alt="{{ $eItem->judul }}" onerror="this.onerror=null; this.src='{{ asset('frontend/img/logo/logo_mci.png') }}'; this.classList.remove('object-fit-cover'); this.style.objectFit='contain'; this.style.padding='8px';">
                             <div class="flex-grow-1 min-w-0">
-                                <a class="text-dark fw-bold small text-decoration-none d-block text-truncate-2 mb-1" href="{{ route('edukasi.show', $eItem->id) }}">
+                                <a class="text-dark fw-bold small text-decoration-none d-block text-truncate-2 mb-1" href="{{ route('edukasi.show', $eItem) }}">
                                     {{ $eItem->judul }}
                                 </a>
                                 <span class="text-muted small" style="font-size: 0.75rem;">

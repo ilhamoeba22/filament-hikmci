@@ -53,6 +53,7 @@ Route::get('/karir/{id}', [KarirFrontendController::class, 'show'])->name('karir
 
 // Asset
 Route::get('/asset', [AssetFrontendController::class, 'index'])->name('asset.index');
+Route::get('/asset/{id}', [AssetFrontendController::class, 'show'])->name('asset.show');
 
 // Laporan Keuangan
 Route::get('/laporan', [LaporanController::class, 'index'])->name('laporan.index');

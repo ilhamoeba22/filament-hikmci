@@ -191,5 +191,89 @@ class DynamicPagesEdgeCaseTest extends TestCase
         $this->assertStringContainsString('Equivalent Rate Deposito Karimah', $html);
         $this->assertStringContainsString('Data nominal belum tersedia', $html);
     }
+
+    public function test_share_box_and_friendly_slug_urls(): void
+    {
+        $berita = new \App\Models\Berita([
+            'judul' => 'Sosialisasi Literasi Keuangan Syariah Yogyakarta',
+            'isi' => 'Isi berita pengujian.',
+            'gambar' => 'images/test.jpg',
+        ]);
+        $berita->id = 59;
+
+        $edukasi = new \App\Models\Edukasi([
+            'judul' => 'Panduan Menabung Cerdas Syariah',
+            'isi' => 'Isi edukasi pengujian.',
+            'gambar' => 'images/edu.jpg',
+        ]);
+        $edukasi->id = 7;
+
+        $asset = new \App\Models\Asset([
+            'judul' => 'Tanah dan Bangunan Sleman Siap Huni',
+            'gambar' => 'asset/images/tanah.jpg',
+        ]);
+        $asset->id = 12;
+
+        $this->assertEquals('59-sosialisasi-literasi-keuangan-syariah-yogyakarta', $berita->getRouteKey());
+        $this->assertStringContainsString('/berita/59-sosialisasi-literasi-keuangan-syariah-yogyakarta', $berita->share_url);
+
+        $this->assertEquals('7-panduan-menabung-cerdas-syariah', $edukasi->getRouteKey());
+        $this->assertStringContainsString('/edukasi/7-panduan-menabung-cerdas-syariah', $edukasi->share_url);
+
+        $this->assertEquals('12-tanah-dan-bangunan-sleman-siap-huni', $asset->getRouteKey());
+        $this->assertStringContainsString('/asset/12-tanah-dan-bangunan-sleman-siap-huni', $asset->share_url);
+
+        $shareBoxHtml = View::make('partials.share-box', [
+            'title' => $berita->judul,
+            'url' => $berita->share_url,
+            'type' => 'Berita',
+        ])->render();
+
+        $this->assertStringContainsString('https://api.whatsapp.com/send?text=', $shareBoxHtml);
+        $this->assertStringContainsString('copyShareLink', $shareBoxHtml);
+        $this->assertStringContainsString('Salin Link', $shareBoxHtml);
+    }
+
+    public function test_asset_detail_renders(): void
+    {
+        $asset = new \App\Models\Asset([
+            'judul' => 'Ruko Strategis Kaliurang',
+            'gambar' => 'asset/images/ruko.jpg',
+        ]);
+        $asset->id = 25;
+        $asset->created_at = now();
+
+        $assetsLainnya = collect([]);
+
+        $html = View::make('asset-detail', compact('asset', 'assetsLainnya'))->render();
+        $this->assertNotEmpty($html);
+        $this->assertStringContainsString('Ruko Strategis Kaliurang', $html);
+        $this->assertStringContainsString('Tanya Aset via WhatsApp', $html);
+        $this->assertStringContainsString('Bagikan E-Asset Ini', $html);
+    }
+
+    public function test_slug_url_routes_resolve_successfully(): void
+    {
+        $berita = \App\Models\Berita::first();
+        if ($berita) {
+            $response = $this->get('/berita/' . $berita->id . '-' . $berita->slug);
+            $response->assertStatus(200);
+            $response->assertSee($berita->judul);
+        }
+
+        $edukasi = \App\Models\Edukasi::first();
+        if ($edukasi) {
+            $response = $this->get('/edukasi/' . $edukasi->id . '-' . $edukasi->slug);
+            $response->assertStatus(200);
+            $response->assertSee($edukasi->judul);
+        }
+
+        $asset = \App\Models\Asset::first();
+        if ($asset) {
+            $response = $this->get('/asset/' . $asset->id . '-' . $asset->slug);
+            $response->assertStatus(200);
+            $response->assertSee($asset->judul);
+        }
+    }
 }
 

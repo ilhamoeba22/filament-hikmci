@@ -52,7 +52,7 @@
                     <!-- Featured Image -->
                     @if($berita->gambar)
                     <div class="mb-4 overflow-hidden rounded-4 border bg-light shadow-sm">
-                        <img src="{{ asset('storage/berita/' . $berita->gambar) }}" class="w-100 object-fit-cover" style="max-height: 480px;" alt="{{ $berita->judul }}">
+                        <img src="{{ $berita->image_url }}" class="w-100 object-fit-cover" style="max-height: 480px;" alt="{{ $berita->judul }}" onerror="this.onerror=null; this.src='{{ asset('frontend/img/logo/logo_mci.png') }}';">
                     </div>
                     @endif
 
@@ -63,6 +63,13 @@
                         @endif
                         {!! nl2br(e($berita->isi)) !!}
                     </div>
+
+                    <!-- Share Section Box -->
+                    @include('partials.share-box', [
+                        'title' => $berita->judul,
+                        'url' => $berita->share_url,
+                        'type' => 'Berita',
+                    ])
 
                     <!-- Back Navigation -->
                     <div class="pt-4 border-top">
@@ -98,9 +105,9 @@
                     <div class="d-flex flex-column gap-3 mb-4">
                         @forelse($beritaTerkini as $bItem)
                         <div class="d-flex align-items-center gap-3 p-2 rounded-3 hover-bg-light transition" style="border: 1px solid rgba(0,0,0,0.05);">
-                            <img src="{{ asset('storage/berita/' . $bItem->gambar) }}" class="rounded-3 object-fit-cover flex-shrink-0" style="width: 76px; height: 76px;" alt="{{ $bItem->judul }}">
+                            <img src="{{ $bItem->image_url }}" class="rounded-3 object-fit-cover flex-shrink-0" style="width: 76px; height: 76px;" alt="{{ $bItem->judul }}" onerror="this.onerror=null; this.src='{{ asset('frontend/img/logo/logo_mci.png') }}';">
                             <div class="flex-grow-1 min-w-0">
-                                <a class="text-dark fw-bold small text-decoration-none d-block text-truncate-2 mb-1" href="{{ route('berita.show', $bItem->id) }}">
+                                <a class="text-dark fw-bold small text-decoration-none d-block text-truncate-2 mb-1" href="{{ route('berita.show', $bItem) }}">
                                     {{ $bItem->judul }}
                                 </a>
                                 <span class="text-muted small" style="font-size: 0.75rem;">

@@ -3,21 +3,29 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>BPRS HIK MCI</title>
+    <title>{{ $metaTitle ?? 'BPRS HIK MCI - Bank Pembiayaan Rakyat Syariah' }}</title>
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon" />
     <link rel="icon" href="{{ asset('frontend/img/logo/head_logo.png') }}" type="image/png" sizes="225x225" />
     <link rel="apple-touch-icon" href="{{ asset('frontend/img/logo/head_logo.png') }}" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="BPRS HIK MCI, Bank Syariah HIK MCI, Pembiayaan Syariah, Deposito Syariah, Tabungan Syariah, BPRS Sleman Yogyakarta" name="keywords" />
-    <meta content="PT BPRS HIK MCI (Harta Insan Karimah Mitra Cahaya Indonesia) - Bank Pembiayaan Rakyat Syariah berizin dan diawasi oleh OJK serta dijamin LPS. Berpusat di Jalan Kaliurang KM 09, Sleman, Yogyakarta." name="description" />
+    <meta content="{{ $metaKeywords ?? 'BPRS HIK MCI, Bank Syariah HIK MCI, Pembiayaan Syariah, Deposito Syariah, Tabungan Syariah, BPRS Sleman Yogyakarta' }}" name="keywords" />
+    <meta content="{{ $metaDescription ?? 'PT BPRS HIK MCI (Harta Insan Karimah Mitra Cahaya Indonesia) - Bank Pembiayaan Rakyat Syariah berizin dan diawasi oleh OJK serta dijamin LPS. Berpusat di Jalan Kaliurang KM 09, Sleman, Yogyakarta.' }}" name="description" />
 
-    <!-- Open Graph / Meta Identitas -->
-    <meta property="og:type" content="business.business" />
-    <meta property="og:title" content="BPRS HIK MCI - Bank Pembiayaan Rakyat Syariah" />
-    <meta property="og:description" content="Wujudkan Keuangan Syariah yang Berkah dan Terpercaya bersama BPRS HIK MCI. Berizin dan diawasi OJK, dijamin LPS." />
-    <meta property="og:url" content="https://bprshikmciyk.co.id" />
+    <!-- Open Graph / Meta Identitas untuk Berbagi Link (WhatsApp, FB, Telegram, dll) -->
+    <meta property="og:type" content="{{ $ogType ?? 'website' }}" />
+    <meta property="og:title" content="{{ $metaTitle ?? 'BPRS HIK MCI - Bank Pembiayaan Rakyat Syariah' }}" />
+    <meta property="og:description" content="{{ $metaDescription ?? 'Wujudkan Keuangan Syariah yang Berkah dan Terpercaya bersama BPRS HIK MCI. Berizin dan diawasi OJK, dijamin LPS.' }}" />
+    <meta property="og:url" content="{{ $canonicalUrl ?? url()->current() }}" />
     <meta property="og:site_name" content="BPRS HIK MCI" />
-    <meta property="og:image" content="{{ asset('frontend/img/logo/logo_mci.png') }}" />
+    <meta property="og:image" content="{{ $ogImage ?? asset('frontend/img/logo/logo_mci.png') }}" />
+    <meta property="og:image:secure_url" content="{{ $ogImage ?? asset('frontend/img/logo/logo_mci.png') }}" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ $metaTitle ?? 'BPRS HIK MCI - Bank Pembiayaan Rakyat Syariah' }}" />
+    <meta name="twitter:description" content="{{ $metaDescription ?? 'Wujudkan Keuangan Syariah yang Berkah dan Terpercaya bersama BPRS HIK MCI.' }}" />
+    <meta name="twitter:image" content="{{ $ogImage ?? asset('frontend/img/logo/logo_mci.png') }}" />
+    <link rel="canonical" href="{{ $canonicalUrl ?? url()->current() }}" />
 
     <!-- Schema.org JSON-LD Structured Data untuk Google Knowledge Graph & Local Business -->
     <script type="application/ld+json">

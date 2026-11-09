@@ -344,6 +344,61 @@
     init();
   }
 })();
+
+// Global Share Helper: Salin Tautan dengan Feedback Toast
+function copyShareLink(url, btn) {
+    const targetUrl = url || window.location.href;
+    
+    function showCopiedFeedback() {
+        if (btn) {
+            const originalHtml = btn.innerHTML;
+            btn.innerHTML = '<i class="bi bi-check2 text-success"></i> <span class="text-success fw-bold">Tersalin!</span>';
+            btn.classList.add('border-success');
+            setTimeout(() => {
+                btn.innerHTML = originalHtml;
+                btn.classList.remove('border-success');
+            }, 2200);
+        }
+
+        let toast = document.getElementById('globalShareToast');
+        if (!toast) {
+            toast = document.createElement('div');
+            toast.id = 'globalShareToast';
+            toast.style.cssText = 'position:fixed;bottom:28px;right:28px;z-index:99999;background:#0d6824;color:#fff;padding:12px 22px;border-radius:50px;box-shadow:0 10px 30px rgba(13,104,36,0.35);font-size:0.92rem;font-weight:600;display:flex;align-items:center;gap:10px;transition:opacity 0.3s ease,transform 0.3s ease;opacity:0;transform:translateY(20px);pointer-events:none;';
+            toast.innerHTML = '<i class="bi bi-check-circle-fill fs-5"></i><span>Tautan berhasil disalin ke clipboard!</span>';
+            document.body.appendChild(toast);
+        }
+        toast.style.opacity = '1';
+        toast.style.transform = 'translateY(0)';
+        setTimeout(() => {
+            toast.style.opacity = '0';
+            toast.style.transform = 'translateY(20px)';
+        }, 2200);
+    }
+
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(targetUrl).then(showCopiedFeedback).catch(fallbackCopy);
+    } else {
+        fallbackCopy();
+    }
+
+    function fallbackCopy() {
+        const ta = document.createElement('textarea');
+        ta.value = targetUrl;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        try {
+            document.execCommand('copy');
+            showCopiedFeedback();
+        } catch (err) {
+            prompt('Salin tautan ini:', targetUrl);
+        }
+        document.body.removeChild(ta);
+    }
+}
 </script>
 
 @stack('scripts')

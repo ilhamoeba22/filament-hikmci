@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class Asset extends Model
 {
@@ -19,6 +20,58 @@ class Asset extends Model
     ];
 
     public $timestamps = true;
+
+    protected $appends = [
+        'slug',
+        'share_url',
+        'image_url',
+    ];
+
+    /**
+     * Get URL-friendly slug for the asset title.
+     */
+    public function getSlugAttribute(): string
+    {
+        return Str::slug($this->judul ?: 'e-asset');
+    }
+
+    /**
+     * Get route key for implicit route model binding or route helper.
+     */
+    public function getRouteKey(): mixed
+    {
+        return $this->id . '-' . $this->slug;
+    }
+
+    /**
+     * Get the full canonical shareable URL with slug.
+     */
+    public function getShareUrlAttribute(): string
+    {
+        return route('asset.show', $this->id . '-' . $this->slug);
+    }
+
+    /**
+     * Get the accessible public URL for the asset flyer/image.
+     */
+    public function getImageUrlAttribute(): string
+    {
+        if (empty($this->gambar)) {
+            return asset('frontend/img/logo/logo_mci.png');
+        }
+
+        if (Str::startsWith($this->gambar, ['http://', 'https://'])) {
+            return $this->gambar;
+        }
+
+        $gambar = ltrim($this->gambar, '/');
+
+        if (Str::startsWith($gambar, 'storage/')) {
+            return asset($gambar);
+        }
+
+        return asset('storage/' . $gambar);
+    }
 
     protected static function boot()
     {

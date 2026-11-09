@@ -17,12 +17,38 @@ class Edukasi extends Model
     ];
 
     protected $appends = [
+        'slug',
+        'share_url',
         'image_url',
     ];
 
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    /**
+     * Get URL-friendly slug for the article title.
+     */
+    public function getSlugAttribute(): string
+    {
+        return Str::slug($this->judul ?: 'edukasi');
+    }
+
+    /**
+     * Get route key for implicit route model binding or route helper.
+     */
+    public function getRouteKey(): mixed
+    {
+        return $this->id . '-' . $this->slug;
+    }
+
+    /**
+     * Get the full canonical shareable URL with slug.
+     */
+    public function getShareUrlAttribute(): string
+    {
+        return route('edukasi.show', $this->id . '-' . $this->slug);
     }
 
     /**

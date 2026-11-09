@@ -39,7 +39,7 @@
                 <div class="article-modern-card">
                     <!-- Thumbnail with 16:10 Frame -->
                     <div class="article-thumb-wrapper">
-                        <img src="{{ asset('storage/berita/' . $berita->gambar) }}" alt="{{ $berita->judul }}" loading="lazy" />
+                        <img src="{{ $berita->image_url }}" alt="{{ $berita->judul }}" loading="lazy" onerror="this.onerror=null; this.src='{{ asset('frontend/img/logo/logo_mci.png') }}';" />
                         <div class="position-absolute top-0 start-0 m-3">
                             <span class="badge text-white rounded-pill px-3 py-2 small shadow-sm" style="background-color: #0d6824 !important;">
                                 <i class="bi bi-calendar-event me-1"></i> {{ $berita->created_at?->format('d M Y') }}
@@ -50,17 +50,25 @@
                     <!-- Content -->
                     <div class="p-4 d-flex flex-column justify-content-between flex-grow-1">
                         <div>
-                            <a href="{{ route('berita.show', $berita->id) }}" class="h5 fw-bold text-dark text-decoration-none d-block mb-2 text-truncate-2">
+                            <a href="{{ route('berita.show', $berita) }}" class="h5 fw-bold text-dark text-decoration-none d-block mb-2 text-truncate-2">
                                 {{ Str::limit($berita->judul, 50) }}
                             </a>
                             <p class="text-secondary small mb-3">
                                 {{ Str::limit($berita->isi, 100) }}
                             </p>
                         </div>
-                        <div class="pt-2 border-top">
-                            <a href="{{ route('berita.show', $berita->id) }}" class="fw-bold text-success text-decoration-none small d-inline-flex align-items-center gap-1">
+                        <div class="pt-2 border-top d-flex align-items-center justify-content-between">
+                            <a href="{{ route('berita.show', $berita) }}" class="fw-bold text-success text-decoration-none small d-inline-flex align-items-center gap-1">
                                 Selengkapnya <i class="bi bi-arrow-right"></i>
                             </a>
+                            <div class="d-flex align-items-center gap-1">
+                                <a href="https://api.whatsapp.com/send?text={{ rawurlencode('*' . $berita->judul . "*\n\nBaca selengkapnya di BPRS HIK MCI:\n" . $berita->share_url) }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-success rounded-circle p-0 d-inline-flex align-items-center justify-content-center" style="width: 32px; height: 32px;" title="Bagikan ke WhatsApp">
+                                    <i class="bi bi-whatsapp"></i>
+                                </a>
+                                <button type="button" class="btn btn-sm btn-outline-secondary rounded-circle p-0 d-inline-flex align-items-center justify-content-center" style="width: 32px; height: 32px;" onclick="copyShareLink('{{ $berita->share_url }}', this)" title="Salin Tautan">
+                                    <i class="bi bi-link-45deg"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -527,21 +527,21 @@
                 <article class="modern-news-card card-3d h-100 d-flex flex-column rounded-3xl overflow-hidden border shadow-sm bg-white">
                     <div class="card-shine"></div>
                     <div class="news-thumb-wrapper position-relative overflow-hidden">
-                        <img src="{{ asset('storage/berita/' . $berita->gambar) }}" class="img-fluid w-100 news-thumb-img" alt="{{ $berita->judul }}" loading="lazy" />
+                        <img src="{{ $berita->image_url }}" class="img-fluid w-100 news-thumb-img" alt="{{ $berita->judul }}" loading="lazy" onerror="this.onerror=null; this.src='{{ asset('frontend/img/logo/logo_mci.png') }}';" />
                         <span class="news-date-badge">
                             <i class="far fa-calendar-alt me-1"></i> {{ $berita->created_at?->format('d M Y') }}
                         </span>
                     </div>
                     <div class="news-body p-4 d-flex flex-column flex-grow-1">
                         <h5 class="news-title mb-3">
-                            <a href="{{ route('berita.show', $berita->id) }}" class="text-decoration-none text-dark hover-green">
+                            <a href="{{ route('berita.show', $berita) }}" class="text-decoration-none text-dark hover-green">
                                 {{ Str::limit($berita->judul, 60) }}
                             </a>
                         </h5>
                         <p class="news-excerpt text-muted small mb-4 flex-grow-1">
                             {{ Str::limit(strip_tags($berita->isi), 110) }}
                         </p>
-                        <a href="{{ route('berita.show', $berita->id) }}" class="news-read-more d-inline-flex align-items-center text-success fw-semibold text-decoration-none">
+                        <a href="{{ route('berita.show', $berita) }}" class="news-read-more d-inline-flex align-items-center text-success fw-semibold text-decoration-none">
                             <span>Baca Selengkapnya</span>
                             <i class="fas fa-arrow-right ms-2 transition-arrow"></i>
                         </a>
