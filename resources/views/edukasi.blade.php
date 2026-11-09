@@ -52,7 +52,7 @@
                                 {{ $edukasi->judul }}
                             </a>
                             <p class="text-secondary small mb-3">
-                                {{ Str::limit($edukasi->isi, 100) }}
+                                {{ Str::limit(strip_tags($edukasi->isi), 110) }}
                             </p>
                         </div>
                         <div class="pt-2 border-top d-flex align-items-center justify-content-between">
