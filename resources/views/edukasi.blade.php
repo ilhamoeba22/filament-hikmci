@@ -37,10 +37,15 @@
                 <div class="article-modern-card">
                     <!-- Thumbnail with 16:10 Ratio -->
                     <div class="article-thumb-wrapper">
-                        <img src="{{ $edukasi->image_url }}" alt="{{ $edukasi->judul }}" loading="lazy" style="{{ empty($edukasi->gambar) ? 'object-fit: contain; padding: 24px;' : '' }}" onerror="this.onerror=null; this.src='{{ asset('frontend/img/logo/logo_mci.png') }}'; this.style.objectFit='contain'; this.style.padding='24px';" />
+                        <img src="{{ $edukasi->image_url }}" alt="{{ $edukasi->judul }}" loading="lazy" onerror="this.onerror=null; this.src='{{ asset('frontend/img/logo/logo_mci.png') }}';" />
                         <div class="position-absolute top-0 start-0 m-3">
                             <span class="badge text-white rounded-pill px-3 py-2 small shadow-sm" style="background-color: #0d6824 !important;">
                                 <i class="bi bi-calendar-event me-1"></i> {{ $edukasi->created_at?->format('d M Y') }}
+                            </span>
+                        </div>
+                        <div class="position-absolute top-0 end-0 m-3">
+                            <span class="badge bg-white text-dark rounded-pill px-2 py-1 small shadow-sm">
+                                <i class="bi bi-mortarboard-fill text-success me-1"></i> Literasi
                             </span>
                         </div>
                     </div>
@@ -48,7 +53,12 @@
                     <!-- Content -->
                     <div class="p-4 d-flex flex-column justify-content-between flex-grow-1">
                         <div>
-                            <a href="{{ route('edukasi.show', $edukasi) }}" class="h5 fw-bold text-dark text-decoration-none d-block mb-2 text-truncate-2">
+                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                <span class="reading-pill">
+                                    <i class="bi bi-clock text-success"></i> {{ max(1, (int) ceil(str_word_count(strip_tags($edukasi->isi)) / 180)) }} mnt baca
+                                </span>
+                            </div>
+                            <a href="{{ route('edukasi.show', $edukasi) }}" class="h5 fw-bold text-dark text-decoration-none d-block mb-2 text-truncate-2" style="font-family: 'Outfit', sans-serif;">
                                 {{ $edukasi->judul }}
                             </a>
                             <p class="text-secondary small mb-3">

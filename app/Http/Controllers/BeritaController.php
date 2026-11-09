@@ -15,8 +15,8 @@ class BeritaController extends Controller
     {
         $berita = Berita::with('user')->latest()->first();
         $beritaTerkini = $berita
-            ? Berita::with('user')->where('id', '!=', $berita->id)->latest()->take(5)->get()
-            : Berita::with('user')->latest()->take(5)->get();
+            ? Berita::with('user')->where('id', '!=', $berita->id)->latest()->take(6)->get()
+            : Berita::with('user')->latest()->take(6)->get();
 
         $metaTitle = $berita ? ($berita->judul . ' - Berita BPRS HIK MCI') : 'Kabar Berita - BPRS HIK MCI';
         $metaDescription = $berita ? Str::limit(strip_tags($berita->isi), 160) : 'Informasi dan berita terkini PT BPRS HIK MCI.';
@@ -42,7 +42,7 @@ class BeritaController extends Controller
         $beritaTerkini = Berita::with('user')
             ->where('id', '!=', $berita->id)
             ->latest()
-            ->take(5)
+            ->take(6)
             ->get();
 
         $metaTitle = $berita->judul . ' - Berita BPRS HIK MCI';

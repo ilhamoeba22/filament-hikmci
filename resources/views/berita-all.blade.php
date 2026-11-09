@@ -45,16 +45,26 @@
                                 <i class="bi bi-calendar-event me-1"></i> {{ $berita->created_at?->format('d M Y') }}
                             </span>
                         </div>
+                        <div class="position-absolute top-0 end-0 m-3">
+                            <span class="badge bg-white text-dark rounded-pill px-2 py-1 small shadow-sm">
+                                <i class="bi bi-newspaper text-success me-1"></i> Warta
+                            </span>
+                        </div>
                     </div>
 
                     <!-- Content -->
                     <div class="p-4 d-flex flex-column justify-content-between flex-grow-1">
                         <div>
-                            <a href="{{ route('berita.show', $berita) }}" class="h5 fw-bold text-dark text-decoration-none d-block mb-2 text-truncate-2">
-                                {{ Str::limit($berita->judul, 50) }}
+                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                <span class="reading-pill">
+                                    <i class="bi bi-clock text-success"></i> {{ max(1, (int) ceil(str_word_count(strip_tags($berita->isi)) / 180)) }} mnt baca
+                                </span>
+                            </div>
+                            <a href="{{ route('berita.show', $berita) }}" class="h5 fw-bold text-dark text-decoration-none d-block mb-2 text-truncate-2" style="font-family: 'Outfit', sans-serif;">
+                                {{ $berita->judul }}
                             </a>
                             <p class="text-secondary small mb-3">
-                                {{ Str::limit($berita->isi, 100) }}
+                                {{ Str::limit(strip_tags($berita->isi), 110) }}
                             </p>
                         </div>
                         <div class="pt-2 border-top d-flex align-items-center justify-content-between">

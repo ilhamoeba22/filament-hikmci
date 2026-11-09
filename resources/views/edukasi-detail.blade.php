@@ -39,12 +39,15 @@
                             <i class="bi bi-calendar3 me-1 text-success"></i> {{ $edukasi->created_at->format('l, d F Y') }}
                         </span>
                         <span class="badge badge-soft-success px-3 py-2 small">
-                            <i class="bi bi-mortarboard-fill me-1"></i> Edukasi Keuangan
+                            <i class="bi bi-mortarboard-fill me-1"></i> Literasi Finansial Syariah
+                        </span>
+                        <span class="reading-pill py-2 px-3">
+                            <i class="bi bi-clock me-1 text-success"></i> {{ max(1, (int) ceil(str_word_count(strip_tags($edukasi->isi)) / 180)) }} menit baca
                         </span>
                     </div>
 
                     <!-- Featured Image -->
-                    <div class="mb-4 overflow-hidden rounded-4 border bg-light shadow-sm text-center">
+                    <div class="mb-4 overflow-hidden rounded-4 border bg-light shadow-sm text-center article-featured-img-frame">
                         <img src="{{ $edukasi->image_url }}" class="w-100 object-fit-cover" style="max-height: 480px; {{ empty($edukasi->gambar) ? 'object-fit: contain; max-height: 240px; padding: 40px;' : '' }}" alt="{{ $edukasi->judul }}" onerror="this.onerror=null; this.src='{{ asset('frontend/img/logo/logo_mci.png') }}'; this.classList.remove('object-fit-cover'); this.style.objectFit='contain'; this.style.maxHeight='240px'; this.style.padding='40px';">
                     </div>
 
@@ -67,47 +70,131 @@
                     <!-- Back Navigation -->
                     <div class="pt-4 border-top">
                         <a href="{{ route('edukasi.index') }}" class="btn btn-outline-success rounded-pill px-4 py-2">
-                            <i class="bi bi-arrow-left me-2"></i> Kembali ke Edukasi
+                            <i class="bi bi-arrow-left me-2"></i> Kembali ke Semua Edukasi
                         </a>
                     </div>
                 </div>
             </div>
 
-            <!-- Sidebar Column -->
+            <!-- Sidebar Column: Edukasi Lainnya Modern Redesign -->
             <div class="col-lg-4">
-                <div class="modern-sub-card p-4 sticky-lg-top" style="top: 100px; z-index: 10;">
-                    <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom">
-                        <h3 class="h5 fw-bold text-dark mb-0">
-                            <i class="bi bi-lightbulb text-success me-2"></i>Edukasi Lainnya
+                <div class="sidebar-modern-card sticky-lg-top" style="top: 100px; z-index: 10;">
+                    <!-- Sidebar Header with Pulse Indicator -->
+                    <div class="sidebar-header-box">
+                        <h3 class="sidebar-block-title">
+                            <i class="bi bi-lightbulb text-success"></i> Edukasi Lainnya
                         </h3>
-                        <span class="badge badge-soft-success rounded-pill px-2 py-1 small">Artikel</span>
+                        <span class="badge-pulse-emerald">
+                            <span class="pulse-dot"></span> Literasi Pilihan
+                        </span>
                     </div>
 
+                    <!-- Article List Cards -->
                     <div class="d-flex flex-column gap-3 mb-4">
-                        @forelse($edukasiLainnya as $eItem)
-                        <div class="d-flex align-items-center gap-3 p-2 rounded-3 hover-bg-light transition" style="border: 1px solid rgba(0,0,0,0.05);">
-                            <img src="{{ $eItem->image_url }}" class="rounded-3 object-fit-cover flex-shrink-0" style="width: 76px; height: 76px; {{ empty($eItem->gambar) ? 'object-fit: contain; padding: 8px;' : '' }}" alt="{{ $eItem->judul }}" onerror="this.onerror=null; this.src='{{ asset('frontend/img/logo/logo_mci.png') }}'; this.classList.remove('object-fit-cover'); this.style.objectFit='contain'; this.style.padding='8px';">
-                            <div class="flex-grow-1 min-w-0">
-                                <a class="text-dark fw-bold small text-decoration-none d-block text-truncate-2 mb-1" href="{{ route('edukasi.show', $eItem) }}">
-                                    {{ $eItem->judul }}
-                                </a>
-                                <span class="text-muted small" style="font-size: 0.75rem;">
-                                    <i class="bi bi-calendar-event me-1"></i> {{ $eItem->created_at?->format('d M Y') }}
-                                </span>
+                        @forelse($edukasiLainnya->take(5) as $idx => $eItem)
+                        <a href="{{ route('edukasi.show', $eItem) }}" class="sidebar-article-item">
+                            <div class="sidebar-article-thumb">
+                                <span class="sidebar-article-rank">{{ sprintf('%02d', $idx + 1) }}</span>
+                                <img src="{{ $eItem->image_url }}" alt="{{ $eItem->judul }}" loading="lazy" onerror="this.onerror=null; this.src='{{ asset('frontend/img/logo/logo_mci.png') }}';">
                             </div>
-                        </div>
+                            <div class="sidebar-article-info">
+                                <h4 class="sidebar-article-title">
+                                    {{ $eItem->judul }}
+                                </h4>
+                                <div class="sidebar-article-meta">
+                                    <span>
+                                        <i class="bi bi-calendar3 me-1 text-success"></i> {{ $eItem->created_at?->format('d M Y') }}
+                                    </span>
+                                    <span class="reading-pill">
+                                        <i class="bi bi-clock"></i> {{ max(1, (int) ceil(str_word_count(strip_tags($eItem->isi)) / 180)) }} mnt
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
                         @empty
-                        <p class="text-muted small text-center mb-0">Tidak ada artikel lainnya.</p>
+                        <div class="text-center py-4">
+                            <i class="bi bi-inbox text-muted fs-3 mb-2 d-block"></i>
+                            <p class="text-muted small mb-0">Belum ada artikel edukasi lainnya.</p>
+                        </div>
                         @endforelse
                     </div>
 
                     <div>
-                        <a href="{{ route('edukasi.index') }}" class="btn btn-success rounded-pill w-100 py-2 text-white">
-                            Lihat Semua Edukasi <i class="bi bi-arrow-right ms-1"></i>
+                        <a href="{{ route('edukasi.index') }}" class="btn btn-success rounded-pill w-100 py-2 text-white fw-semibold d-inline-flex align-items-center justify-content-center gap-2 shadow-sm">
+                            <span>Lihat Semua Edukasi</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Sidebar Quick Contact / Info CTA Box -->
+                    <div class="sidebar-cta-box">
+                        <span class="badge bg-white text-success rounded-pill px-2 py-1 small fw-bold mb-2 d-inline-block">Konsultasi Syariah</span>
+                        <h4 class="h6 fw-bold mb-1 text-white">Ingin Diskusi Lebih Dekat?</h4>
+                        <p class="small text-white-50 mb-0" style="font-size: 0.8rem; line-height: 1.4;">
+                            Dapatkan penjelasan mendalam seputar prinsip muamalah, akad, dan produk finansial syariah MCI.
+                        </p>
+                        <a href="https://wa.me/6281222770657?text=Assalamu%27alaikum%20BPRS%20HIK%20MCI,%20saya%20ingin%20berkonsultasi%20seputar%20produk%20dan%20literasi%20syariah" target="_blank" rel="noopener noreferrer" class="sidebar-cta-btn">
+                            <i class="bi bi-whatsapp"></i> Chat WhatsApp Resmi
                         </a>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Bottom Related Edukasi Section Start -->
+        @if($edukasiLainnya->isNotEmpty())
+        <div class="related-articles-section">
+            <div class="related-section-header">
+                <div>
+                    <span class="subpage-section-tag mb-1">
+                        <i class="bi bi-mortarboard-fill"></i> Literasi Terkait
+                    </span>
+                    <h3 class="h4 fw-bold text-dark mb-0" style="font-family: 'Outfit', sans-serif;">
+                        Rekomendasi Edukasi Pilihan Lainnya
+                    </h3>
+                </div>
+                <a href="{{ route('edukasi.index') }}" class="btn btn-sm btn-outline-success rounded-pill px-3 py-1 d-none d-md-inline-flex align-items-center gap-1">
+                    Semua Edukasi <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="row g-4">
+                @foreach($edukasiLainnya->take(3) as $rEdu)
+                <div class="col-md-6 col-lg-4">
+                    <div class="article-modern-card">
+                        <div class="article-thumb-wrapper">
+                            <img src="{{ $rEdu->image_url }}" alt="{{ $rEdu->judul }}" loading="lazy" onerror="this.onerror=null; this.src='{{ asset('frontend/img/logo/logo_mci.png') }}';">
+                            <div class="position-absolute top-0 start-0 m-3">
+                                <span class="badge text-white rounded-pill px-3 py-2 small shadow-sm" style="background-color: #0d6824 !important;">
+                                    <i class="bi bi-calendar-event me-1"></i> {{ $rEdu->created_at?->format('d M Y') }}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-4 d-flex flex-column justify-content-between flex-grow-1">
+                            <div>
+                                <a href="{{ route('edukasi.show', $rEdu) }}" class="h6 fw-bold text-dark text-decoration-none d-block mb-2 text-truncate-2" style="font-family: 'Outfit', sans-serif;">
+                                    {{ $rEdu->judul }}
+                                </a>
+                                <p class="text-secondary small mb-3">
+                                    {{ Str::limit(strip_tags($rEdu->isi), 90) }}
+                                </p>
+                            </div>
+                            <div class="pt-2 border-top d-flex align-items-center justify-content-between">
+                                <a href="{{ route('edukasi.show', $rEdu) }}" class="fw-bold text-success text-decoration-none small d-inline-flex align-items-center gap-1">
+                                    Baca Materi <i class="bi bi-arrow-right"></i>
+                                </a>
+                                <span class="reading-pill">
+                                    <i class="bi bi-clock"></i> {{ max(1, (int) ceil(str_word_count(strip_tags($rEdu->isi)) / 180)) }} mnt
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+        @endif
+        <!-- Bottom Related Edukasi Section End -->
         </div>
     </div>
 </div>

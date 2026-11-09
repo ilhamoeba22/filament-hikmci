@@ -10,7 +10,7 @@ class EdukasiController extends Controller
 {
     public function index()
     {
-        $edukasis = Edukasi::paginate(10);
+        $edukasis = Edukasi::latest()->paginate(9);
         $metaTitle = 'Edukasi & Literasi Keuangan Syariah - BPRS HIK MCI';
         $metaDescription = 'Tingkatkan pemahaman mengenai prinsip perbankan syariah, tips perencanaan finansial, dan muamalah berkeadilan.';
         return view('edukasi', compact('edukasis', 'metaTitle', 'metaDescription'));
@@ -20,7 +20,7 @@ class EdukasiController extends Controller
     {
         $recordId = is_numeric($id) ? (int)$id : (int)explode('-', (string)$id)[0];
         $edukasi = Edukasi::findOrFail($recordId);
-        $edukasiLainnya = Edukasi::where('id', '!=', $edukasi->id)->latest()->take(5)->get();
+        $edukasiLainnya = Edukasi::where('id', '!=', $edukasi->id)->latest()->take(6)->get();
 
         $metaTitle = $edukasi->judul . ' - Literasi Syariah BPRS HIK MCI';
         $metaDescription = Str::limit(strip_tags($edukasi->isi), 160);

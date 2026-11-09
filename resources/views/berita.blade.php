@@ -51,7 +51,7 @@
 
                     <!-- Featured Image -->
                     @if($berita->gambar)
-                    <div class="mb-4 overflow-hidden rounded-4 border bg-light shadow-sm">
+                    <div class="mb-4 overflow-hidden rounded-4 border bg-light shadow-sm article-featured-img-frame">
                         <img src="{{ $berita->image_url }}" class="w-100 object-fit-cover" style="max-height: 480px;" alt="{{ $berita->judul }}" onerror="this.onerror=null; this.src='{{ asset('frontend/img/logo/logo_mci.png') }}';">
                     </div>
                     @endif
@@ -96,41 +96,125 @@
                 @endif
             </div>
 
-            <!-- Sidebar Column -->
+            <!-- Sidebar Column: Berita Lainnya Modern Redesign -->
             <div class="col-lg-4">
-                <div class="modern-sub-card p-4 sticky-lg-top" style="top: 100px; z-index: 10;">
-                    <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom">
-                        <h3 class="h5 fw-bold text-dark mb-0">
-                            <i class="bi bi-newspaper text-success me-2"></i>Berita Lainnya
+                <div class="sidebar-modern-card sticky-lg-top" style="top: 100px; z-index: 10;">
+                    <!-- Sidebar Header with Pulse Indicator -->
+                    <div class="sidebar-header-box">
+                        <h3 class="sidebar-block-title">
+                            <i class="bi bi-newspaper text-success"></i> Berita Lainnya
                         </h3>
-                        <span class="badge badge-soft-success rounded-pill px-2 py-1 small">Update</span>
+                        <span class="badge-pulse-emerald">
+                            <span class="pulse-dot"></span> Warta Terkini
+                        </span>
                     </div>
 
+                    <!-- Article List Cards -->
                     <div class="d-flex flex-column gap-3 mb-4">
-                        @forelse($beritaTerkini as $bItem)
-                        <div class="d-flex align-items-center gap-3 p-2 rounded-3 hover-bg-light transition" style="border: 1px solid rgba(0,0,0,0.05);">
-                            <img src="{{ $bItem->image_url }}" class="rounded-3 object-fit-cover flex-shrink-0" style="width: 76px; height: 76px;" alt="{{ $bItem->judul }}" onerror="this.onerror=null; this.src='{{ asset('frontend/img/logo/logo_mci.png') }}';">
-                            <div class="flex-grow-1 min-w-0">
-                                <a class="text-dark fw-bold small text-decoration-none d-block text-truncate-2 mb-1" href="{{ route('berita.show', $bItem) }}">
-                                    {{ $bItem->judul }}
-                                </a>
-                                <span class="text-muted small" style="font-size: 0.75rem;">
-                                    <i class="bi bi-calendar-event me-1"></i> {{ $bItem->created_at?->format('d M Y') }}
-                                </span>
+                        @forelse($beritaTerkini->take(5) as $idx => $bItem)
+                        <a href="{{ route('berita.show', $bItem) }}" class="sidebar-article-item">
+                            <div class="sidebar-article-thumb">
+                                <span class="sidebar-article-rank">{{ sprintf('%02d', $idx + 1) }}</span>
+                                <img src="{{ $bItem->image_url }}" alt="{{ $bItem->judul }}" loading="lazy" onerror="this.onerror=null; this.src='{{ asset('frontend/img/logo/logo_mci.png') }}';">
                             </div>
-                        </div>
+                            <div class="sidebar-article-info">
+                                <h4 class="sidebar-article-title">
+                                    {{ $bItem->judul }}
+                                </h4>
+                                <div class="sidebar-article-meta">
+                                    <span>
+                                        <i class="bi bi-calendar3 me-1 text-success"></i> {{ $bItem->created_at?->format('d M Y') }}
+                                    </span>
+                                    <span class="reading-pill">
+                                        <i class="bi bi-clock"></i> {{ max(1, (int) ceil(str_word_count(strip_tags($bItem->isi)) / 180)) }} mnt
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
                         @empty
-                        <p class="text-muted small text-center mb-0">Tidak ada berita terkini lainnya.</p>
+                        <div class="text-center py-4">
+                            <i class="bi bi-inbox text-muted fs-3 mb-2 d-block"></i>
+                            <p class="text-muted small mb-0">Belum ada warta berita lainnya.</p>
+                        </div>
                         @endforelse
                     </div>
 
                     <div>
-                        <a href="{{ route('berita-all') }}" class="btn btn-success rounded-pill w-100 py-2 text-white">
-                            Lihat Semua Berita <i class="bi bi-arrow-right ms-1"></i>
+                        <a href="{{ route('berita-all') }}" class="btn btn-success rounded-pill w-100 py-2 text-white fw-semibold d-inline-flex align-items-center justify-content-center gap-2 shadow-sm">
+                            <span>Lihat Semua Berita</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Sidebar Quick Contact / Info CTA Box -->
+                    <div class="sidebar-cta-box">
+                        <span class="badge bg-white text-success rounded-pill px-2 py-1 small fw-bold mb-2 d-inline-block">Layanan Nasabah</span>
+                        <h4 class="h6 fw-bold mb-1 text-white">Butuh Informasi Perbankan?</h4>
+                        <p class="small text-white-50 mb-0" style="font-size: 0.8rem; line-height: 1.4;">
+                            Konsultasikan kebutuhan tabungan, deposito, &amp; pembiayaan syariah bersama tim BPRS HIK MCI.
+                        </p>
+                        <a href="https://wa.me/6281222770657?text=Assalamu%27alaikum%20BPRS%20HIK%20MCI,%20saya%20ingin%20berkonsultasi%20terkait%20layanan%20syariah" target="_blank" rel="noopener noreferrer" class="sidebar-cta-btn">
+                            <i class="bi bi-whatsapp"></i> Chat WhatsApp Resmi
                         </a>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Bottom Related Articles Section Start -->
+        @if($beritaTerkini->isNotEmpty())
+        <div class="related-articles-section">
+            <div class="related-section-header">
+                <div>
+                    <span class="subpage-section-tag mb-1">
+                        <i class="bi bi-compass"></i> Warta Pilihan
+                    </span>
+                    <h3 class="h4 fw-bold text-dark mb-0" style="font-family: 'Outfit', sans-serif;">
+                        Rekomendasi Berita Pilihan Lainnya
+                    </h3>
+                </div>
+                <a href="{{ route('berita-all') }}" class="btn btn-sm btn-outline-success rounded-pill px-3 py-1 d-none d-md-inline-flex align-items-center gap-1">
+                    Semua Berita <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="row g-4">
+                @foreach($beritaTerkini->take(3) as $rItem)
+                <div class="col-md-6 col-lg-4">
+                    <div class="article-modern-card">
+                        <div class="article-thumb-wrapper">
+                            <img src="{{ $rItem->image_url }}" alt="{{ $rItem->judul }}" loading="lazy" onerror="this.onerror=null; this.src='{{ asset('frontend/img/logo/logo_mci.png') }}';">
+                            <div class="position-absolute top-0 start-0 m-3">
+                                <span class="badge text-white rounded-pill px-3 py-2 small shadow-sm" style="background-color: #0d6824 !important;">
+                                    <i class="bi bi-calendar-event me-1"></i> {{ $rItem->created_at?->format('d M Y') }}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-4 d-flex flex-column justify-content-between flex-grow-1">
+                            <div>
+                                <a href="{{ route('berita.show', $rItem) }}" class="h6 fw-bold text-dark text-decoration-none d-block mb-2 text-truncate-2" style="font-family: 'Outfit', sans-serif;">
+                                    {{ $rItem->judul }}
+                                </a>
+                                <p class="text-secondary small mb-3">
+                                    {{ Str::limit(strip_tags($rItem->isi), 90) }}
+                                </p>
+                            </div>
+                            <div class="pt-2 border-top d-flex align-items-center justify-content-between">
+                                <a href="{{ route('berita.show', $rItem) }}" class="fw-bold text-success text-decoration-none small d-inline-flex align-items-center gap-1">
+                                    Baca Berita <i class="bi bi-arrow-right"></i>
+                                </a>
+                                <span class="reading-pill">
+                                    <i class="bi bi-clock"></i> {{ max(1, (int) ceil(str_word_count(strip_tags($rItem->isi)) / 180)) }} mnt
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+        @endif
+        <!-- Bottom Related Articles Section End -->
         </div>
     </div>
 </div>
