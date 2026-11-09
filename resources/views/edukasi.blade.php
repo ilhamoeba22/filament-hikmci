@@ -37,7 +37,7 @@
                 <div class="article-modern-card">
                     <!-- Thumbnail with 16:10 Ratio -->
                     <div class="article-thumb-wrapper">
-                        <img src="{{ (!empty($edukasi->gambar) && file_exists(public_path('storage/edukasi/' . $edukasi->gambar))) ? asset('storage/edukasi/' . $edukasi->gambar) : asset('frontend/img/logo/logo_mci.png') }}" alt="{{ $edukasi->judul }}" loading="lazy" style="{{ empty($edukasi->gambar) ? 'object-fit: contain; padding: 24px;' : '' }}" />
+                        <img src="{{ $edukasi->image_url }}" alt="{{ $edukasi->judul }}" loading="lazy" style="{{ empty($edukasi->gambar) ? 'object-fit: contain; padding: 24px;' : '' }}" onerror="this.onerror=null; this.src='{{ asset('frontend/img/logo/logo_mci.png') }}'; this.style.objectFit='contain'; this.style.padding='24px';" />
                         <div class="position-absolute top-0 start-0 m-3">
                             <span class="badge text-white rounded-pill px-3 py-2 small shadow-sm" style="background-color: #0d6824 !important;">
                                 <i class="bi bi-calendar-event me-1"></i> {{ $edukasi->created_at?->format('d M Y') }}

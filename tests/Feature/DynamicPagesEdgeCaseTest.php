@@ -120,6 +120,49 @@ class DynamicPagesEdgeCaseTest extends TestCase
         $this->assertStringContainsString('Belum Ada Artikel Edukasi', $html);
     }
 
+    public function test_edukasi_renders_with_custom_image_and_fallback(): void
+    {
+        $edukasiItem = new \App\Models\Edukasi([
+            'judul' => 'Uji Coba Edukasi Syariah',
+            'isi' => 'Konten pengujian edukasi syariah untuk nasabah.',
+            'gambar' => 'images/sample-edukasi.jpg',
+        ]);
+        $edukasiItem->id = 999;
+        $edukasiItem->created_at = now();
+
+        $edukasis = new LengthAwarePaginator([$edukasiItem], 1, 10);
+        $html = View::make('edukasi', compact('edukasis'))->render();
+        $this->assertNotEmpty($html);
+        $this->assertStringContainsString('storage/edukasi/images/sample-edukasi.jpg', $html);
+        $this->assertStringContainsString('onerror=', $html);
+    }
+
+    public function test_edukasi_detail_renders_with_custom_image(): void
+    {
+        $edukasi = new \App\Models\Edukasi([
+            'judul' => 'Detail Edukasi Finansial',
+            'isi' => 'Panduan lengkap literasi keuangan syariah.',
+            'gambar' => 'images/featured-edukasi.png',
+        ]);
+        $edukasi->id = 100;
+        $edukasi->created_at = now();
+
+        $sidebarItem = new \App\Models\Edukasi([
+            'judul' => 'Artikel Edukasi Lainnya',
+            'isi' => 'Ringkasan artikel sampingan.',
+            'gambar' => 'images/sidebar-edukasi.png',
+        ]);
+        $sidebarItem->id = 101;
+        $sidebarItem->created_at = now();
+
+        $edukasiLainnya = collect([$sidebarItem]);
+
+        $html = View::make('edukasi-detail', compact('edukasi', 'edukasiLainnya'))->render();
+        $this->assertNotEmpty($html);
+        $this->assertStringContainsString('storage/edukasi/images/featured-edukasi.png', $html);
+        $this->assertStringContainsString('storage/edukasi/images/sidebar-edukasi.png', $html);
+    }
+
     public function test_ebook_renders_with_zero_records(): void
     {
         $ebooks = collect([]);

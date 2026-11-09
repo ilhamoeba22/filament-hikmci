@@ -45,7 +45,7 @@
 
                     <!-- Featured Image -->
                     <div class="mb-4 overflow-hidden rounded-4 border bg-light shadow-sm text-center">
-                        <img src="{{ (!empty($edukasi->gambar) && file_exists(public_path('storage/edukasi/' . $edukasi->gambar))) ? asset('storage/edukasi/' . $edukasi->gambar) : asset('frontend/img/logo/logo_mci.png') }}" class="w-100 object-fit-cover" style="max-height: 480px; {{ empty($edukasi->gambar) ? 'object-fit: contain; max-height: 240px; padding: 40px;' : '' }}" alt="{{ $edukasi->judul }}">
+                        <img src="{{ $edukasi->image_url }}" class="w-100 object-fit-cover" style="max-height: 480px; {{ empty($edukasi->gambar) ? 'object-fit: contain; max-height: 240px; padding: 40px;' : '' }}" alt="{{ $edukasi->judul }}" onerror="this.onerror=null; this.src='{{ asset('frontend/img/logo/logo_mci.png') }}'; this.classList.remove('object-fit-cover'); this.style.objectFit='contain'; this.style.maxHeight='240px'; this.style.padding='40px';">
                     </div>
 
                     <!-- Body Content -->
@@ -75,7 +75,7 @@
                     <div class="d-flex flex-column gap-3 mb-4">
                         @forelse($edukasiLainnya as $eItem)
                         <div class="d-flex align-items-center gap-3 p-2 rounded-3 hover-bg-light transition" style="border: 1px solid rgba(0,0,0,0.05);">
-                            <img src="{{ (!empty($eItem->gambar) && file_exists(public_path('storage/edukasi/' . $eItem->gambar))) ? asset('storage/edukasi/' . $eItem->gambar) : asset('frontend/img/logo/logo_mci.png') }}" class="rounded-3 object-fit-cover flex-shrink-0" style="width: 76px; height: 76px; {{ empty($eItem->gambar) ? 'object-fit: contain; padding: 8px;' : '' }}" alt="{{ $eItem->judul }}">
+                            <img src="{{ $eItem->image_url }}" class="rounded-3 object-fit-cover flex-shrink-0" style="width: 76px; height: 76px; {{ empty($eItem->gambar) ? 'object-fit: contain; padding: 8px;' : '' }}" alt="{{ $eItem->judul }}" onerror="this.onerror=null; this.src='{{ asset('frontend/img/logo/logo_mci.png') }}'; this.classList.remove('object-fit-cover'); this.style.objectFit='contain'; this.style.padding='8px';">
                             <div class="flex-grow-1 min-w-0">
                                 <a class="text-dark fw-bold small text-decoration-none d-block text-truncate-2 mb-1" href="{{ route('edukasi.show', $eItem->id) }}">
                                     {{ $eItem->judul }}
