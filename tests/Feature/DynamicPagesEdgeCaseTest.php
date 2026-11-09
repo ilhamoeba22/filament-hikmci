@@ -188,8 +188,16 @@ class DynamicPagesEdgeCaseTest extends TestCase
 
         $html = View::make('index', compact('beritaTerakhir', 'carousels', 'rateDeposito', 'nominals'))->render();
         $this->assertNotEmpty($html);
-        $this->assertStringContainsString('Equivalent Rate Deposito Karimah', $html);
-        $this->assertStringContainsString('Data nominal belum tersedia', $html);
+        $this->assertStringContainsString('Berita & Informasi Terbaru', $html);
+        $this->assertStringNotContainsString('Equivalent Rate Deposito Karimah', $html);
+    }
+
+    public function test_deposito_page_renders_equivalent_rate_table(): void
+    {
+        $response = $this->get('/main-deposito/deposito');
+        $response->assertStatus(200);
+        $response->assertSee('Equivalent Rate Deposito Karimah');
+        $response->assertSee('BAGI HASIL TERBARU');
     }
 
     public function test_share_box_and_friendly_slug_urls(): void

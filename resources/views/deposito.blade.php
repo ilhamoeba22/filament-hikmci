@@ -162,6 +162,117 @@
             </div>
         </div>
 
+        <!-- Equivalent Rate Deposito Karimah Start (Modern Fintech Table) -->
+        <div id="rate-deposito" class="rate-section mb-5 wow fadeInUp" data-wow-delay="0.25s">
+            @php
+                $rateDeposito = $rateDeposito ?? \Illuminate\Support\Facades\Cache::remember('web:deposito:rates', 86400, function () {
+                    return \App\Models\RateDeposito::whereNotNull('bulan')->get();
+                });
+                $nominals = $nominals ?? \Illuminate\Support\Facades\Cache::remember('web:deposito:nominals', 86400, function () {
+                    return \App\Models\Nominal::all();
+                });
+                $latestRate = $rateDeposito->first();
+            @endphp
+            <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between mb-4">
+                <div>
+                    <div class="section-pill-badge mb-2">BAGI HASIL TERBARU</div>
+                    <h2 class="subpage-title text-dark mb-1" style="font-size: clamp(1.6rem, 2.5vw, 2.2rem);">
+                        Equivalent Rate Deposito Karimah
+                    </h2>
+                    <p class="section-subheading mb-0 text-muted">
+                        Bulan <span id="bulan" class="fw-bold text-success">{{ $latestRate?->bulan ?? 'N/A' }}</span> Tahun <span id="tahun" class="fw-bold text-success">{{ $latestRate?->created_at?->format('Y') ?? 'N/A' }}</span>
+                    </p>
+                </div>
+                <div class="mt-3 mt-md-0">
+                    <button id="download-pdf" class="btn btn-outline-success rounded-pill px-4 py-2">
+                        <i class="fas fa-file-pdf me-2"></i>Download PDF Resmi
+                    </button>
+                </div>
+            </div>
+
+            <div class="modern-table-container rounded-3xl border shadow-sm bg-white overflow-hidden p-2 p-md-3">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0" id="myTable">
+                        <thead>
+                            <tr>
+                                <th rowspan="2" class="text-center align-middle bg-emerald-soft text-dark">Nominal Penempatan</th>
+                                <th colspan="4" class="text-center bg-emerald-soft text-dark">Jangka Waktu &amp; Imbal Hasil</th>
+                            </tr>
+                            <tr class="text-center table-subhead-row">
+                                <th class="py-3">1 Bulan <br><span class="badge-er mt-1">ER {{ $latestRate?->rate_1_bulan ?? 'N/A' }}%</span></th>
+                                <th class="py-3">3 Bulan <br><span class="badge-er mt-1">ER {{ $latestRate?->rate_3_bulan ?? 'N/A' }}%</span></th>
+                                <th class="py-3">6 Bulan <br><span class="badge-er mt-1">ER {{ $latestRate?->rate_6_bulan ?? 'N/A' }}%</span></th>
+                                <th class="py-3">12 Bulan <br><span class="badge-er mt-1">ER {{ $latestRate?->rate_12_bulan ?? 'N/A' }}%</span></th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-secondary">
+                            @forelse ($nominals as $nominal)
+                            <tr>
+                                <td data-label="Nominal" class="fw-bold text-dark ps-3">Rp. {{ number_format($nominal->nominal, 2, ',', '.') }}</td>
+                                <td data-label="1 Bulan" class="text-center">
+                                    @if ($latestRate && $latestRate->rate_1_bulan)
+                                    <span class="fw-semibold text-success">Rp. {{ number_format(($nominal->nominal * $latestRate->rate_1_bulan / 100) / 12, 2, ',', '.') }}</span>
+                                    @else
+                                    <span class="text-muted">N/A</span>
+                                    @endif
+                                </td>
+                                <td data-label="3 Bulan" class="text-center">
+                                    @if ($latestRate && $latestRate->rate_3_bulan)
+                                    <span class="fw-semibold text-success">Rp. {{ number_format(($nominal->nominal * $latestRate->rate_3_bulan / 100) / 12, 2, ',', '.') }}</span>
+                                    @else
+                                    <span class="text-muted">N/A</span>
+                                    @endif
+                                </td>
+                                <td data-label="6 Bulan" class="text-center">
+                                    @if ($latestRate && $latestRate->rate_6_bulan)
+                                    <span class="fw-semibold text-success">Rp. {{ number_format(($nominal->nominal * $latestRate->rate_6_bulan / 100) / 12, 2, ',', '.') }}</span>
+                                    @else
+                                    <span class="text-muted">N/A</span>
+                                    @endif
+                                </td>
+                                <td data-label="12 Bulan" class="text-center">
+                                    @if ($latestRate && $latestRate->rate_12_bulan)
+                                    <span class="fw-semibold text-success">Rp. {{ number_format(($nominal->nominal * $latestRate->rate_12_bulan / 100) / 12, 2, ',', '.') }}</span>
+                                    @else
+                                    <span class="text-muted">N/A</span>
+                                    @endif
+                                </td>
+                            </tr>
+                            @empty
+                            <tr>
+                                <td colspan="5" class="text-center py-4 text-muted">
+                                    Data nominal belum tersedia.
+                                </td>
+                            </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Client-Side Modern Pagination Controls (5 or 10 rows toggle, instant response) -->
+                <div id="deposito-pagination-container" class="deposito-pagination-bar d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 pt-3 pb-2 px-2 border-top mt-2">
+                    <div class="d-flex flex-wrap align-items-center gap-3">
+                        <span id="deposito-pagination-info" class="pagination-info text-muted small">
+                            Menampilkan 1 - 5 dari {{ count($nominals) }} nominal
+                        </span>
+                        <div class="d-flex align-items-center gap-2">
+                            <label for="deposito-per-page" class="small text-muted mb-0">Baris:</label>
+                            <select id="deposito-per-page" class="form-select form-select-sm per-page-select" aria-label="Jumlah nominal per halaman">
+                                <option value="5" selected>5</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                    </div>
+                    <nav aria-label="Navigasi Halaman Deposito">
+                        <ul id="deposito-pagination-pages" class="pagination pagination-modern mb-0">
+                            <!-- Populated dynamically by client-side script with zero reload -->
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- Equivalent Rate Deposito Karimah End -->
+
         <!-- CTA Box WhatsApp -->
         <div class="subpage-cta-card text-center wow fadeInUp" data-wow-delay="0.3s">
             <div class="position-relative" style="z-index: 2; max-width: 720px; margin: 0 auto;">
@@ -184,5 +295,8 @@
     </div>
 </div>
 <!-- Deposito Detail Content End -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
 
 @include('footer')

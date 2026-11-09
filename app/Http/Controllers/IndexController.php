@@ -34,6 +34,19 @@ class IndexController extends Controller
         return view('index', compact('beritaTerakhir', 'carousels', 'rateDeposito', 'nominals'));
     }
 
+    public function deposito(): View
+    {
+        $rateDeposito = Cache::remember('web:deposito:rates', 86400, function () {
+            return RateDeposito::whereNotNull('bulan')->get();
+        });
+
+        $nominals = Cache::remember('web:deposito:nominals', 86400, function () {
+            return Nominal::all();
+        });
+
+        return view('deposito', compact('rateDeposito', 'nominals'));
+    }
+
     public function getNominals(Request $request)
     {
         if ($request->ajax()) {

@@ -42,7 +42,7 @@ Route::prefix('tabungan')->group(function () {
 // Main-Deposito Pages
 Route::prefix('main-deposito')->group(function () {
     Route::view('/', 'main-deposito')->name('main-deposito');
-    Route::view('/deposito', 'deposito')->name('deposito');
+    Route::get('/deposito', [IndexController::class, 'deposito'])->name('deposito');
     Route::get('/wakaf', [WakafController::class, 'index'])->name('wakaf.index');
     Route::get('/wakaf/{id}', [WakafController::class, 'show'])->name('wakaf.show');
 });
