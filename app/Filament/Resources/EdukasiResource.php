@@ -10,6 +10,7 @@ use Filament\Tables\Table;
 use Filament\Resources\Resource;
 use Filament\Pages\Actions\EditAction;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\FileUpload;
 use Illuminate\Database\Eloquent\Builder;
@@ -34,16 +35,40 @@ class EdukasiResource extends Resource
         return $form
             ->schema([
                 TextInput::make('judul')
+                    ->label('Judul Edukasi')
+                    ->placeholder('Masukkan judul artikel edukasi / literasi syariah')
                     ->required()
-                    ->maxLength(255),
-                Textarea::make('isi')
-                    ->required(),
+                    ->maxLength(255)
+                    ->columnSpanFull(),
                 FileUpload::make('gambar')
+                    ->label('Gambar Utama Edukasi')
                     ->image()
                     ->disk('edukasi')
                     ->directory('images')
                     ->preserveFilenames()
-                    ->required(),
+                    ->required()
+                    ->columnSpanFull(),
+                RichEditor::make('isi')
+                    ->label('Isi Artikel Edukasi')
+                    ->placeholder('Tuliskan naskah edukasi literasi syariah di sini...')
+                    ->toolbarButtons([
+                        'attachFiles',
+                        'blockquote',
+                        'bold',
+                        'bulletList',
+                        'codeBlock',
+                        'h2',
+                        'h3',
+                        'italic',
+                        'link',
+                        'orderedList',
+                        'redo',
+                        'strike',
+                        'underline',
+                        'undo',
+                    ])
+                    ->required()
+                    ->columnSpanFull(),
             ]);
     }
 

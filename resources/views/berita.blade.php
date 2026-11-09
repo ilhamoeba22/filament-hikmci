@@ -57,11 +57,15 @@
                     @endif
 
                     <!-- Article Body Content -->
-                    <div class="lh-lg text-secondary mb-4" style="font-size: 1.05rem; text-align: justify;">
+                    <div class="article-content-body lh-lg text-secondary mb-4" style="font-size: 1.05rem; text-align: justify;">
                         @if(!empty($berita->lokasi))
-                        <span class="fw-bold text-dark">{{ $berita->lokasi }} - </span>
+                        <p class="mb-3"><span class="fw-bold text-dark">{{ $berita->lokasi }} &ndash;</span></p>
                         @endif
-                        {!! nl2br(e($berita->isi)) !!}
+                        @if(strip_tags($berita->isi) !== $berita->isi)
+                            {!! $berita->isi !!}
+                        @else
+                            {!! nl2br(e($berita->isi)) !!}
+                        @endif
                     </div>
 
                     <!-- Share Section Box -->

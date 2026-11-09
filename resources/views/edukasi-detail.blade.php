@@ -49,8 +49,12 @@
                     </div>
 
                     <!-- Body Content -->
-                    <div class="lh-lg text-secondary mb-4" style="font-size: 1.05rem; text-align: justify;">
-                        {!! nl2br(e($edukasi->isi)) !!}
+                    <div class="article-content-body lh-lg text-secondary mb-4" style="font-size: 1.05rem; text-align: justify;">
+                        @if(strip_tags($edukasi->isi) !== $edukasi->isi)
+                            {!! $edukasi->isi !!}
+                        @else
+                            {!! nl2br(e($edukasi->isi)) !!}
+                        @endif
                     </div>
 
                     <!-- Share Section Box -->

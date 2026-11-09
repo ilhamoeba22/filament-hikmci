@@ -10,6 +10,7 @@ use Filament\Resources\Resource;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\RichEditor;
 use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
@@ -33,25 +34,53 @@ class BeritaResource extends Resource
         return $form
             ->schema([
                 TextInput::make('judul')
+                    ->label('Judul Berita')
+                    ->placeholder('Masukkan judul berita yang menarik')
                     ->required()
-                    ->maxLength(255),
-                Textarea::make('isi')
-                    ->required(),
+                    ->maxLength(255)
+                    ->columnSpanFull(),
                 TextInput::make('lokasi')
+                    ->label('Lokasi Kegiatan / Liputan')
+                    ->placeholder('Contoh: Sleman, Yogyakarta')
                     ->required()
                     ->maxLength(255),
+                DatePicker::make('created_at')
+                    ->label('Tanggal Publikasi')
+                    ->default(now())
+                    ->required(),
+                Select::make('user_id')
+                    ->relationship('user', 'name')
+                    ->label('Penulis / Author')
+                    ->required(),
                 FileUpload::make('gambar')
+                    ->label('Gambar Utama Berita')
                     ->image()
                     ->disk('berita')
                     ->directory('images')
                     ->preserveFilenames()
-                    ->required(),
-                Select::make('user_id')
-                    ->relationship('user', 'name')
-                    ->required(),
-                DatePicker::make('created_at')
-                    ->label('Tanggal')
-                    ->required(),
+                    ->required()
+                    ->columnSpanFull(),
+                RichEditor::make('isi')
+                    ->label('Isi Berita')
+                    ->placeholder('Tuliskan naskah berita lengkap di sini...')
+                    ->toolbarButtons([
+                        'attachFiles',
+                        'blockquote',
+                        'bold',
+                        'bulletList',
+                        'codeBlock',
+                        'h2',
+                        'h3',
+                        'italic',
+                        'link',
+                        'orderedList',
+                        'redo',
+                        'strike',
+                        'underline',
+                        'undo',
+                    ])
+                    ->required()
+                    ->columnSpanFull(),
             ]);
     }
 

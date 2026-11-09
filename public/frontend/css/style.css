@@ -3633,3 +3633,96 @@ button:active,
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
+
+/* ==========================================================================
+   Article Content Typography (RichEditor Formatting Support)
+   ========================================================================== */
+.article-content-body {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: #374151;
+  text-align: justify;
+}
+.article-content-body p {
+  margin-bottom: 1.25rem;
+}
+.article-content-body ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+.article-content-body ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+.article-content-body li {
+  margin-bottom: 0.45rem;
+  line-height: 1.75;
+}
+.article-content-body h2,
+.article-content-body h3,
+.article-content-body h4 {
+  color: #111827;
+  font-weight: 700;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+  font-family: 'Outfit', sans-serif;
+  line-height: 1.35;
+}
+.article-content-body blockquote {
+  border-left: 4px solid #0d6824;
+  padding: 0.85rem 1.25rem;
+  background: #f8fafc;
+  border-radius: 0 0.75rem 0.75rem 0;
+  font-style: italic;
+  color: #334155;
+  margin: 1.5rem 0;
+}
+.article-content-body strong,
+.article-content-body b {
+  color: #0f172a;
+  font-weight: 700;
+}
+.article-content-body em,
+.article-content-body i {
+  font-style: italic;
+}
+.article-content-body u {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.article-content-body s,
+.article-content-body del {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+.article-content-body a {
+  color: #0d6824;
+  text-decoration: underline;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+.article-content-body a:hover {
+  color: #074316;
+}
+.article-content-body pre,
+.article-content-body code {
+  background: #f1f5f9;
+  color: #0f172a;
+  border-radius: 6px;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.9em;
+}
+.article-content-body pre code {
+  padding: 0;
+  background: transparent;
+}
+.article-content-body pre {
+  padding: 1rem;
+  overflow-x: auto;
+  border: 1px solid #e2e8f0;
+  margin: 1.25rem 0;
+}
