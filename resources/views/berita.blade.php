@@ -23,10 +23,10 @@
 
 <!-- Main Content Wrapper Start -->
 <div class="subpage-content-wrapper">
-    <div class="container">
-        <div class="row g-4 g-lg-5">
+    <div class="container news-detail-container">
+        <div class="row g-3 g-lg-4 justify-content-center">
             <!-- Article Main Column -->
-            <div class="col-lg-8">
+            <div class="col-12 col-lg-8 news-main-column">
                 @if($berita)
                 <div class="modern-sub-card p-4 p-lg-5">
                     <!-- Title -->
@@ -97,7 +97,7 @@
             </div>
 
             <!-- Sidebar Column: Berita Lainnya Modern Redesign -->
-            <div class="col-lg-4">
+            <div class="col-12 col-lg-4 news-sidebar-column">
                 <div class="sidebar-modern-card sticky-lg-top" style="top: 100px; z-index: 10;">
                     <!-- Sidebar Header with Pulse Indicator -->
                     <div class="sidebar-header-box">

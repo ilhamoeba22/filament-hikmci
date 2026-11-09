@@ -3742,13 +3742,42 @@ button:active,
   background: #f8fafc !important;
 }
 
+/* News & Edukasi Detail Compact Proportions */
+.news-detail-container {
+  max-width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 992px) {
+  .news-main-column {
+    flex: 0 0 68%;
+    max-width: 68%;
+  }
+  .news-sidebar-column {
+    flex: 0 0 32%;
+    max-width: 32%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .news-main-column {
+    flex: 0 0 71%;
+    max-width: 71%;
+  }
+  .news-sidebar-column {
+    flex: 0 0 29%;
+    max-width: 29%;
+  }
+}
+
 /* Sidebar Container */
 .sidebar-modern-card {
   background: #ffffff;
-  border-radius: 24px;
+  border-radius: 20px;
   border: 1px solid rgba(13, 104, 36, 0.12);
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
-  padding: 24px;
+  padding: 20px 18px;
   position: relative;
   overflow: hidden;
 }
@@ -3757,15 +3786,15 @@ button:active,
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 16px;
-  margin-bottom: 20px;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
   border-bottom: 1px solid rgba(13, 104, 36, 0.1);
 }
 
 .sidebar-block-title {
   font-family: 'Outfit', sans-serif;
   font-weight: 700;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   color: #0f172a;
   margin: 0;
   display: flex;
@@ -3816,9 +3845,9 @@ button:active,
 .sidebar-article-item {
   display: flex;
   align-items: center;
-  gap: 14px;
-  padding: 10px;
-  border-radius: 16px;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 12px;
   background: #ffffff;
   border: 1px solid rgba(15, 23, 42, 0.06);
   text-decoration: none !important;
@@ -3845,10 +3874,10 @@ button:active,
 /* Sidebar Thumbnail Frame */
 .sidebar-article-thumb {
   position: relative;
-  width: 84px;
-  height: 72px;
+  width: 72px;
+  height: 58px;
   flex-shrink: 0;
-  border-radius: 12px;
+  border-radius: 8px;
   overflow: hidden;
   background: #f1f5f9;
   border: 1px solid rgba(0, 0, 0, 0.04);
@@ -3863,14 +3892,14 @@ button:active,
 
 .sidebar-article-rank {
   position: absolute;
-  top: 4px;
-  left: 4px;
+  top: 3px;
+  left: 3px;
   background: rgba(13, 104, 36, 0.9);
   color: #ffffff;
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   font-weight: 700;
-  padding: 2px 6px;
-  border-radius: 6px;
+  padding: 1px 5px;
+  border-radius: 4px;
   line-height: 1;
   backdrop-filter: blur(4px);
   z-index: 2;
@@ -3884,11 +3913,11 @@ button:active,
 
 .sidebar-article-title {
   font-family: 'Outfit', sans-serif;
-  font-size: 0.88rem;
+  font-size: 0.84rem;
   font-weight: 600;
   line-height: 1.35;
   color: #1e293b;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -3900,15 +3929,15 @@ button:active,
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   color: #64748b;
 }
 
 /* Sidebar Quick Action CTA Banner */
 .sidebar-cta-box {
-  margin-top: 20px;
-  padding: 20px;
-  border-radius: 18px;
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 16px;
   background: linear-gradient(135deg, #0d6824 0%, #084c1a 100%);
   color: #ffffff;
   position: relative;
@@ -3934,15 +3963,15 @@ button:active,
   justify-content: center;
   gap: 8px;
   width: 100%;
-  padding: 10px 16px;
+  padding: 8px 14px;
   border-radius: 999px;
   background: #ffffff;
   color: #0d6824;
   font-weight: 700;
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   text-decoration: none;
   transition: all 0.25s ease;
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
 .sidebar-cta-btn:hover {
