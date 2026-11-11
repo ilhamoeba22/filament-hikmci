@@ -29,8 +29,8 @@
                     <div class="feature-pill-badge mb-3">
                         <i class="bi bi-building-check"></i> Tentang Perusahaan
                     </div>
-                    <h2 class="display-6 fw-bold text-dark mb-4">Kenali BPRS HIK MCI</h2>
-                    <p class="lead text-secondary mb-4" style="line-height: 1.8; text-align: justify;">
+                    <h2 class="display-6 fw-bold text-dark mb-4" style="font-family: 'Outfit', sans-serif;">Kenali BPRS HIK MCI</h2>
+                    <p class="text-secondary mb-4" style="font-size: 1.05rem; line-height: 1.8; text-align: justify;">
                         BPRS HIK MCI, yang berpusat di Jalan Kaliurang KM 9, Ngaglik, Sleman,
                         Yogyakarta, beroperasi mulai tanggal 11 Januari 2008. Didukung penuh
                         oleh Dana Pensiun Syariah Muhammadiyah sebagai Pemegang Saham Pengendali
@@ -39,11 +39,11 @@
                         syariah masyarakat. Dengan dukungan jaringan yang kuat dan keahlian
                         manajemen, kami terus mempersiapkan diri menyambut era digital banking.
                     </p>
-                    <p class="text-secondary mb-0" style="line-height: 1.8; text-align: justify;">
+                    <p class="text-secondary mb-0" style="font-size: 1.05rem; line-height: 1.8; text-align: justify;">
                         BPRS HIK MCI juga telah meraih berbagai penghargaan bergengsi,
                         termasuk predikat "Sangat Bagus" dari Infobank selama empat tahun
-                        berturut-turut, “The Most Profitable Sharia Rural Banks” (2015-2017),
-                        dan “The Best Performance Sharia Rural Bank” (2019). Kami kembali meraih
+                        berturut-turut, "The Most Profitable Sharia Rural Banks" (2015-2017),
+                        dan "The Best Performance Sharia Rural Bank" (2019). Kami kembali meraih
                         Infobank Award tahun 2024 dengan predikat The Best Bank Perekonomian
                         Rakyat Syariah dengan aset di atas 250 Milyar. Berlandaskan visi untuk
                         menghadirkan layanan perbankan syariah yang optimal dan amanah,
