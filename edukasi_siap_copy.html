@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Materi Edukasi: Mengenal dan Menangkal Modus Social Engineering</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      line-height: 1.85;
+      color: #1f2937;
+      background: #f3f4f6;
+      margin: 0;
+      padding: 24px;
+    }
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+    .top-bar {
+      position: sticky;
+      top: 12px;
+      background: #0d6824;
+      color: #ffffff;
+      padding: 16px 24px;
+      border-radius: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 15px rgba(13,104,36,0.3);
+      z-index: 100;
+    }
+    .btn-copy {
+      background: #ffffff;
+      color: #0d6824;
+      border: none;
+      padding: 10px 22px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border-radius: 50px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+    .btn-copy:hover {
+      background: #ecfdf5;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .content-area {
+      font-size: 1.05rem;
+      color: #374151;
+      text-align: justify;
+    }
+    h2 {
+      color: #064e1c;
+      font-size: 1.45rem;
+      margin-top: 2.2rem;
+      margin-bottom: 0.85rem;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 8px;
+    }
+    h3 {
+      color: #111827;
+      font-size: 1.2rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      margin-bottom: 1.25rem;
+    }
+    ol, ul {
+      margin-top: 0.5rem;
+      margin-bottom: 1.25rem;
+      padding-left: 1.6rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
+      line-height: 1.75;
+    }
+    blockquote {
+      border-left: 4px solid #0d6824;
+      padding: 14px 20px;
+      background: #f9fafb;
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+      color: #4b5563;
+      margin: 1.5rem 0;
+    }
+    strong {
+      color: #111827;
+      font-weight: 700;
+    }
+    em {
+      font-style: italic;
+    }
+    #toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #111827;
+      color: #ffffff;
+      padding: 12px 24px;
+      border-radius: 50px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      display: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="top-bar">
+      <div>
+        <strong>Naskah Literasi Edukasi Siap Salin</strong>
+        <div style="font-size: 0.85rem; opacity: 0.9;">Gaya narasi edukatif & bebas simbol markdown. Klik tombol lalu Paste (Ctrl+V) ke Filament RichEditor.</div>
+      </div>
+      <button class="btn-copy" onclick="copyFormattedText()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        <span id="btnLabel">Salin Teks Berformat</span>
+      </button>
+    </div>
+
+    <!-- AREA KONTEN LITERASI EDUKASI ASLI (BEBAS SIMBOL MARKDOWN) -->
+    <div id="articleContent" class="content-area">
+      <p>Pernahkah Anda membayangkan bahwa ancaman terbesar terhadap rekening tabungan di era digital saat ini bukanlah peretasan server yang rumit, melainkan manipulasi psikologis sederhana?</p>
+
+      <p>Banyak orang mengira kejahatan perbankan digital selalu melibatkan pembobolan sistem komputer berkemampuan tinggi. Faktanya, sebagian besar kasus penipuan yang terjadi justru memanfaatkan kelengahan manusia. Pelaku tidak membongkar pintu brankas secara paksa, melainkan membujuk pemilik kunci agar membukakan pintunya sendiri.</p>
+
+      <p>Metode manipulasi pikiran inilah yang dalam dunia keamanan digital dikenal sebagai <strong>Social Engineering</strong> atau <strong>Rekayasa Sosial</strong>. Mari kita pelajari bersama cara kerja modus ini, bagaimana mendeteksinya, dan langkah bijak melindunginya sesuai prinsip kehati-hatian syariah.</p>
+
+      <h2>Memahami Rekayasa Sosial: Saat Pikiran Kita yang Diretas</h2>
+      <p><em>Social engineering</em> adalah seni memanipulasi psikologis seseorang agar secara sukarela membocorkan data rahasia perbankan, memberikan akses perangkat, atau melakukan transfer dana yang merugikan.</p>
+      <p>Jika peretasan biasa menyerang celah kelemahan aplikasi, maka rekayasa sosial menargetkan celah kelemahan manusiawi kita (<strong>human hacking</strong>). Tiga pemicu utama yang kerap dieksploitasi penipu antara lain:</p>
+      <ol>
+        <li><strong>Rasa Panik dan Takut:</strong> Pesan mendadak yang mengabarkan rekening akan diblokir, denda pajak, atau transaksi mencurigakan dalam jumlah besar.</li>
+        <li><strong>Sikap Patuh pada Otoritas:</strong> Pelaku berpura-pura menjadi aparat penegak hukum, petugas OJK, auditor, atau staf resmi bank yang berwenang.</li>
+        <li><strong>Empati dan Kebaikan Hati:</strong> Permintaan bantuan dana mendesak dari nomor baru yang mengaku sebagai kerabat dekat yang sedang tertimpa musibah.</li>
+      </ol>
+
+      <h2>Empat Tahap Perjalanan Modus Penipuan</h2>
+      <p>Memahami pola pikir pelaku adalah langkah awal untuk melindungi diri. Penipu umumnya bekerja melalui empat tahapan terstruktur:</p>
+      <ul>
+        <li><strong>Tahap 1: Pengintaian Data (Reconnaissance)</strong><br>Pelaku mencari informasi awal mengenai calon korban dari jejak media sosial, riwayat aktivitas online, atau data publik. Informasi sekecil nama panggilan, tempat bekerja, dan bank yang digunakan sudah cukup menjadi modal awal.</li>
+        <li><strong>Tahap 2: Membangun Kepercayaan (Trust Building)</strong><br>Pelaku menghubungi korban dengan tutur kata yang sangat sopan, profesional, dan meyakinkan. Mereka menggunakan atribut resmi, seperti logo instansi pada foto profil atau nada bicara layaknya staf perbankan berpengalaman.</li>
+        <li><strong>Tahap 3: Eksekusi Manipulasi (Exploitation)</strong><br>Saat korban mulai percaya atau panik, pelaku mulai mengarahkan korban pada satu instruksi kunci: menyebutkan kode verifikasi OTP, mengklik tautan formulir palsu, mentransfer dana pengaman, atau mengunduh aplikasi tertentu.</li>
+        <li><strong>Tahap 4: Memutus Jejak (Exit)</strong><br>Setelah tujuan tercapai, pelaku segera mematikan nomor kontak, menguras saldo ke rekening penampung berlapis, dan menghilang tanpa jejak.</li>
+      </ul>
+
+      <h2>Modus Operandi yang Paling Sering Beredar</h2>
+      <p>Agar Anda dan keluarga lebih waspada, kenali beberapa varian modus yang paling sering dijumpai sehari-hari:</p>
+      <ul>
+        <li><strong>Phishing dan Smishing:</strong> Pesan melalui SMS atau WhatsApp yang memuat tautan palsu. Tautan ini mengarahkan Anda ke situs tiruan yang sangat mirip dengan web resmi bank untuk menjebak username dan kata sandi Anda.</li>
+        <li><strong>Modus File APK Berbahaya:</strong> Pengiriman berkas dengan akhiran <em>.apk</em> yang disamarkan sebagai surat undangan pernikahan digital, resi pelacakan paket kurir, atau surat tilang elektronik. Jika file ini diinstal di ponsel Android, aplikasi jahat dapat menyadap seluruh SMS kode perbankan Anda.</li>
+        <li><strong>Vishing (Voice Phishing):</strong> Panggilan telepon langsung yang mengabarkan situasi darurat keluarga atau tawaran peningkatan limit pembiayaan dengan syarat menyebutkan data rahasia.</li>
+        <li><strong>Pretexting:</strong> Skenario rekaan yang rapi, misalnya seseorang mengaku dari tim IT bank yang meminta bantuan pengujian sistem dengan meminta kode yang masuk ke ponsel Anda.</li>
+      </ul>
+
+      <h2>Formula Tiga Langkah: Berhenti, Pikir, Verifikasi</h2>
+      <p>Ketika Anda menerima pesan atau telepon yang meminta tindakan finansial mendadak, tanamkan rumus perlindungan praktis berikut ini:</p>
+      <ol>
+        <li><strong>Berhenti (Stop):</strong> Tarik napas dalam-dalam dan jangan terburu-buru merespons. Beri jeda pada diri Anda. Jangan pernah mengklik tautan atau mentransfer uang dalam kondisi emosi yang tertekan atau panik. Tutup panggilan telepon jika penelpon terus memaksa.</li>
+        <li><strong>Pikir (Think):</strong> Gunakan logika sehat: Apakah wajar bank meminta nomor PIN atau kode OTP kepada nasabah? Mengapa permintaan ini harus diselesaikan dalam hitungan menit? Ingat bahwa institusi perbankan resmi memiliki standar operasional yang ketat dan tidak pernah meminta data rahasia nasabah.</li>
+        <li><strong>Verifikasi (Verify):</strong> Konfirmasikan kebenaran informasi tersebut melalui saluran resmi yang Anda cari sendiri secara mandiri, misalnya melalui nomor telepon kantor cabang terdekat atau situs resmi lembaga, bukan menghubungi nomor telepon yang dicantumkan oleh si pengirim pesan.</li>
+      </ol>
+
+      <blockquote>
+        <strong>Prinsip Emas:</strong> Petugas bank yang sebenarnya tidak akan pernah mendesak Anda menyerahkan kode rahasia, sedangkan penipu akan selalu menekan Anda agar segera bertindak tanpa berpikir.
+      </blockquote>
+
+      <h2>Tujuh Kebiasaan Bijak Menjaga Keamanan Rekening</h2>
+      <p>Jadikan kebiasaan-kebiasaan sederhana ini sebagai benteng perlindungan tabungan Anda:</p>
+      <ol>
+        <li><strong>Rahasiakan Kredensial Pribadi:</strong> Anggap PIN, Password, dan kode OTP seperti kunci pribadi rumah Anda. Jangan pernah membagikannya kepada siapa pun, termasuk pihak yang mengaku sebagai pegawai bank.</li>
+        <li><strong>Pasang Aplikasi Hanya dari Toko Resmi:</strong> Selalu unduh aplikasi mobile banking hanya melalui Google Play Store atau Apple App Store. Tolak dan hapus file kiriman berformat .apk dari ruang percakapan.</li>
+        <li><strong>Teliti Alamat Tautan Website:</strong> Periksa ejaan domain situs web perbankan dengan cermat sebelum memasukkan data. Penipu kerap menggunakan nama domain tiruan yang hanya berbeda satu huruf dari domain resmi.</li>
+        <li><strong>Bijak dalam Membagikan Data di Media Sosial:</strong> Hindari mengunggah foto KTP, kartu identitas, tiket perjalanan, atau tangkapan layar buku tabungan ke media sosial.</li>
+        <li><strong>Konfirmasi Panggilan Bantuan Keluarga:</strong> Jika ada kerabat yang meminta bantuan dana mendesak melalui nomor baru, hubungi kembali nomor lama yang tersimpan di kontak ponsel Anda untuk memastikan situasinya.</li>
+        <li><strong>Waspadai Tawaran yang Terlalu Menggiurkan:</strong> Jika ada penawaran hadiah undian tanpa pernah mendaftar, atau janji imbal hasil investasi yang tidak masuk akal, patut dicurigai sebagai jebakan.</li>
+        <li><strong>Selalu Cek Legalitas Lembaga:</strong> Pastikan setiap lembaga keuangan yang menawarkan produk simpanan maupun pembiayaan telah terdaftar resmi dan diawasi oleh Otoritas Jasa Keuangan (OJK).</li>
+      </ol>
+
+      <h2>Panduan Darurat: Bila Sudah Terlanjur Menjadi Korban</h2>
+      <p>Jika Anda merasa telah terlanjur membagikan kode rahasia atau mentransfer dana kepada pelaku, waktu adalah faktor yang sangat menentukan:</p>
+      <ul>
+        <li><strong>Segera Hubungi Bank:</strong> Mintalah pemblokiran rekening tujuan dan rekening Anda secepat mungkin agar saldo tersisa dapat diselamatkan.</li>
+        <li><strong>Putuskan Koneksi dan Amankan Akun:</strong> Segera copot (uninstall) aplikasi mencurigakan dari ponsel Anda, lalu ganti PIN dan password perbankan digital dari perangkat lain yang aman.</li>
+        <li><strong>Kumpulkan Dokumentasi Bukti:</strong> Simpan tangkapan layar percakapan, nomor telepon pengirim, bukti transfer, dan catatan jam kejadian.</li>
+        <li><strong>Buat Laporan Resmi ke OJK:</strong> Laporkan kronologi insiden melalui portal resmi Indonesia Anti-Scam Centre (IASC) di situs <em>iasc.ojk.go.id</em> atau melalui layanan <strong>Kontak OJK 157</strong> dan WhatsApp resmi OJK <strong>081-157-157-157</strong>.</li>
+      </ul>
+
+      <h2>Perspektif Syariah: Menjaga Amanah Harta dan Budaya Tabayyun</h2>
+      <p>Dalam pandangan ekonomi syariah, harta merupakan amanah dari Allah Subhanahu wa Ta'ala yang wajib kita jaga keberadaannya (prinsip <em>Hifzh al-Mal</em>). Menjaga keamanan simpanan dari tindak kejahatan adalah bagian dari ikhtiar menegakkan amanah tersebut.</p>
+      <p>Selain itu, Al-Qur'an secara tegas mengajarkan prinsip <strong>Tabayyun</strong>, yaitu kewajiban untuk meneliti dan memverifikasi kebenaran setiap kabar yang datang sebelum kita mengambil keputusan atau bertindak. Sikap tergesa-gesa mempercayai pesan yang belum terbukti kebenarannya bertentangan dengan prinsip kehati-hatian yang diajarkan Islam.</p>
+
+      <h2>Pesan Penutup</h2>
+      <p>Keamanan transaksi digital tidak semata-mata bergantung pada teknologi pengamanan sistem perbankan, melainkan berpijak pada kesadaran dan literasi setiap nasabah.</p>
+      <p>Mari jadikan diri kita sebagai nasabah yang cerdas, kritis, dan berhati-hati. Apabila Anda menerima pesan atau telepon yang mencurigakan atas nama PT BPRS HIK MCI, segera hubungi kontak resmi kami atau kunjungi kantor layanan BPRS HIK MCI terdekat.</p>
+      <p>Bagikan pengetahuan literasi ini kepada keluarga dan orang-orang tercinta di sekitar Anda. Satu orang yang teredukasi dapat melindungi seluruh keluarga dari jerat kejahatan finansial digital.</p>
+    </div>
+  </div>
+
+  <div id="toast">Materi Edukasi Berformat Berhasil Disalin!</div>
+
+  <script>
+    function copyFormattedText() {
+      const content = document.getElementById('articleContent');
+      if (navigator.clipboard && window.ClipboardItem) {
+        const htmlBlob = new Blob([content.innerHTML], { type: 'text/html' });
+        const textBlob = new Blob([content.innerText], { type: 'text/plain' });
+        const data = [new ClipboardItem({ 'text/html': htmlBlob, 'text/plain': textBlob })];
+
+        navigator.clipboard.write(data).then(() => {
+          showFeedback();
+        }).catch(() => {
+          fallbackSelection();
+        });
+      } else {
+        fallbackSelection();
+      }
+    }
+
+    function fallbackSelection() {
+      const content = document.getElementById('articleContent');
+      const range = document.createRange();
+      range.selectNodeContents(content);
+      const selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+      try {
+        document.execCommand('copy');
+        showFeedback();
+      } catch (err) {
+        alert('Silakan tekan Ctrl+A lalu Ctrl+C di halaman ini.');
+      }
+      selection.removeAllRanges();
+    }
+
+    function showFeedback() {
+      const label = document.getElementById('btnLabel');
+      const toast = document.getElementById('toast');
+      label.textContent = 'Berhasil Disalin!';
+      toast.style.display = 'block';
+      setTimeout(() => {
+        label.textContent = 'Salin Teks Berformat';
+        toast.style.display = 'none';
+      }, 2500);
+    }
+  </script>
+</body>
+</html>
+

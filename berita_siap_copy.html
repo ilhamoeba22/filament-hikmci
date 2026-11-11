@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naskah Berita: Mengenal dan Menangkal Social Engineering</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      line-height: 1.8;
+      color: #1f2937;
+      background: #f3f4f6;
+      margin: 0;
+      padding: 24px;
+    }
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+    .top-bar {
+      position: sticky;
+      top: 12px;
+      background: #0d6824;
+      color: #ffffff;
+      padding: 16px 24px;
+      border-radius: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 15px rgba(13,104,36,0.3);
+      z-index: 100;
+    }
+    .btn-copy {
+      background: #ffffff;
+      color: #0d6824;
+      border: none;
+      padding: 10px 22px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border-radius: 50px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+    .btn-copy:hover {
+      background: #ecfdf5;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .content-area {
+      font-size: 1.05rem;
+      color: #374151;
+      text-align: justify;
+    }
+    h2 {
+      color: #064e1c;
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 6px;
+    }
+    p {
+      margin-bottom: 1.25rem;
+    }
+    ol, ul {
+      margin-top: 0.5rem;
+      margin-bottom: 1.25rem;
+      padding-left: 1.6rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
+      line-height: 1.7;
+    }
+    blockquote {
+      border-left: 4px solid #0d6824;
+      padding: 12px 18px;
+      background: #f9fafb;
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+      color: #4b5563;
+      margin: 1.5rem 0;
+    }
+    strong {
+      color: #111827;
+      font-weight: 700;
+    }
+    em {
+      font-style: italic;
+    }
+    #toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #111827;
+      color: #ffffff;
+      padding: 12px 24px;
+      border-radius: 50px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      display: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="top-bar">
+      <div>
+        <strong>Naskah Berita Siap Salin</strong>
+        <div style="font-size: 0.85rem; opacity: 0.9;">Bebas simbol markdown. Klik tombol di kanan lalu Paste (Ctrl+V) ke Filament RichEditor.</div>
+      </div>
+      <button class="btn-copy" onclick="copyFormattedText()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        <span id="btnLabel">Salin Teks Berformat</span>
+      </button>
+    </div>
+
+    <!-- AREA KONTEN BERITA ASLI (FORMATTED HTML TANPA SIMBOL MARKDOWN) -->
+    <div id="articleContent" class="content-area">
+      <blockquote>
+        Selasa siang, ponsel Bu Sari berdering. Suara pria di seberang terdengar tenang dan sopan. Ia menyebut nama lengkap Bu Sari, nama bank tempatnya menabung, bahkan dua digit terakhir nomor rekeningnya.<br><br>
+        <em>"Ibu, ada percobaan transaksi Rp15 juta dari luar kota. Kalau bukan Ibu yang melakukan, kami harus memblokirnya sekarang. Mohon sebutkan kode yang baru masuk ke HP Ibu."</em><br><br>
+        Jantung Bu Sari berdebar. Ia takut tabungannya raib, lalu menyebutkan kode itu. Lima menit kemudian, saldonya berkurang.<br><br>
+        <small>(Kisah di atas hanya ilustrasi, tetapi kejadian serupa dialami banyak orang setiap hari.)</small>
+      </blockquote>
+
+      <p>Perhatikan bahwa <strong>tidak ada sistem yang dibobol</strong> dan <strong>tidak ada peretasan canggih</strong>. Pelaku hanya perlu satu hal: <strong>membuat korban sendiri yang membukakan pintu</strong>. Inilah yang disebut <em>social engineering</em> atau rekayasa sosial.</p>
+
+      <h2>APA ITU SOCIAL ENGINEERING?</h2>
+      <p><em>Social engineering</em> adalah teknik manipulasi psikologis untuk membuat seseorang menyerahkan informasi rahasia, membuka akses, atau melakukan tindakan tertentu, seperti mentransfer dana atau memasang aplikasi berbahaya. Para pakar menyebutnya <strong>human hacking</strong>: yang diretas adalah cara berpikir dan bertindak manusia, bukan perangkatnya.</p>
+      <p>Tujuannya biasanya salah satu dari dua hal: <strong>mencuri</strong> (uang, data, akses) atau <strong>menyabotase</strong> (merusak atau melumpuhkan sistem). Serangan bisa datang lewat telepon, pesan singkat, email, media sosial, atau tatap muka langsung.</p>
+      <p>Ada dua hal yang membuatnya sangat berbahaya:</p>
+      <ul>
+        <li><strong>Pertama</strong>, pelaku mempelajari apa yang memotivasi korban, seperti rasa takut, rasa percaya, rasa ingin menolong, atau keinginan cepat untung, lalu memakainya sebagai senjata.</li>
+        <li><strong>Kedua</strong>, banyak orang belum menyadari betapa berharganya data pribadi seperti nomor telepon, nomor KTP, atau tanggal lahir, dan belum mengenal ancaman yang terus berkembang, misalnya <em>drive-by download</em> (malware yang terunduh diam-diam saat kita membuka situs tertentu).</li>
+      </ul>
+
+      <h2>SEBERAPA NYATA ANCAMANNYA?</h2>
+      <p>Angkanya cukup untuk membuat kita waspada. Menurut data yang disampaikan OJK, sejak mulai beroperasi pada 22 November 2024 hingga 31 Agustus 2026, <strong>Indonesia Anti-Scam Centre (IASC)</strong> telah menerima <strong>668.441 laporan penipuan</strong>, dan <strong>159.472 nomor telepon</strong> dilaporkan korban sebagai nomor penipu.</p>
+      <p>Di sisi lain, OJK mencatat dana korban yang berhasil diblokir mencapai <strong>Rp811,1 miliar</strong>, dan <strong>Rp207,16 miliar</strong> di antaranya telah dikembalikan kepada korban dari rekening di 24 bank.</p>
+      <blockquote>
+        <strong>Pelajaran Penting:</strong> Dana masih bisa diselamatkan bila korban melapor dengan cepat kepada pihak bank.
+      </blockquote>
+
+      <h2>BAGAIMANA PELAKU BEKERJA? EMPAT TAHAP YANG SELALU BERULANG</h2>
+      <ol>
+        <li><strong>Riset.</strong> Pelaku mengumpulkan informasi tentang calon korban, seperti pekerjaan, bank yang dipakai, dan kontak keluarga, sering kali dari media sosial atau data yang bocor.</li>
+        <li><strong>Membangun kepercayaan.</strong> Pelaku tampil sebagai pihak yang kredibel: petugas bank, kurir, rekan kerja, atasan, atau aparat.</li>
+        <li><strong>Eksploitasi.</strong> Setelah korban percaya, pelaku meminta satu tindakan: menyebutkan OTP, mengklik tautan, memasang aplikasi, atau mentransfer dana.</li>
+        <li><strong>Menghilang.</strong> Tujuan tercapai, kontak diputus, dan jejak sulit dilacak.</li>
+      </ol>
+      <p>Proses ini bisa selesai dalam satu panggilan telepon, atau berlangsung berminggu-minggu lewat percakapan yang tampak ramah dan wajar.</p>
+
+      <h2>KENALI POLA EMOSINYA: LIMA TOMBOL YANG DITEKAN PELAKU</h2>
+      <p>Modus penipuan terus berganti, tetapi tombol emosi yang ditekan nyaris selalu sama. Jika sebuah pesan atau telepon membuat emosi Anda tiba-tiba naik, anggap itu sinyal bahaya:</p>
+      <ul>
+        <li><strong>Takut:</strong> <em>"Rekening Anda akan diblokir."</em> atau <em>"Ada transaksi mencurigakan Rp15 juta."</em></li>
+        <li><strong>Terburu-buru:</strong> <em>"Hanya berlaku 10 menit."</em> atau <em>"Harus selesai hari ini."</em></li>
+        <li><strong>Patuh pada otoritas:</strong> Mengaku petugas bank, OJK, polisi, atau pimpinan perusahaan.</li>
+        <li><strong>Tergiur:</strong> Hadiah undian, bonus, atau investasi dengan untung tidak wajar.</li>
+        <li><strong>Ingin menolong:</strong> <em>"Ini saya, nomor baru. Tolong transfer dulu, nanti saya ganti."</em></li>
+      </ul>
+
+      <h2>MODUS YANG PERLU DIKENALI</h2>
+      <ul>
+        <li><strong>Phishing:</strong> Pesan atau email yang menyamar sebagai lembaga resmi dan mengarahkan Anda ke tautan atau situs palsu.</li>
+        <li><strong>Spear phishing:</strong> Phishing yang dipersonalisasi. Pelaku memilih individu atau perusahaan tertentu dan menyesuaikan pesan dengan jabatan, kebiasaan, dan kontak korban.</li>
+        <li><strong>Vishing dan smishing:</strong> Penipuan lewat telepon dan lewat SMS atau WhatsApp. Yang marak belakangan adalah file APK yang menyamar sebagai surat undangan, tagihan, atau info paket. Begitu dipasang, aplikasi ini bisa membaca SMS dan mengendalikan perangkat.</li>
+        <li><strong>Pretexting:</strong> Pelaku merangkai skenario bohong yang rapi, misalnya berpura-pura sebagai tim IT, auditor, atau petugas verifikasi data.</li>
+        <li><strong>Baiting (umpan):</strong> Iming-iming hadiah, undian, atau file gratis yang menggoda untuk dibuka.</li>
+        <li><strong>Penyamaran pimpinan atau kerabat:</strong> Pesan mendadak dari nomor baru yang mengaku atasan atau keluarga.</li>
+        <li><strong>Tailgating:</strong> Orang tak dikenal menyelinap ke area terbatas dengan mengikuti pegawai yang membuka pintu.</li>
+        <li><strong>Mencatut nama lembaga resmi:</strong> Pelaku bahkan membuat situs palsu yang mengatasnamakan Indonesia Anti-Scam Centre (IASC), sehingga masyarakat diimbau selalu mengecek kebenarannya lewat Kontak OJK 157.</li>
+      </ul>
+
+      <h2>SATU ATURAN EMAS: BERHENTI. PIKIR. VERIFIKASI.</h2>
+      <p>Setiap kali ada permintaan yang terasa mendesak, menakutkan, atau terlalu menggiurkan:</p>
+      <ol>
+        <li><strong>Berhenti.</strong> Jangan langsung menjawab, mengklik, atau mentransfer. Tutup telepon bila perlu.</li>
+        <li><strong>Pikir.</strong> Masuk akalkah bank meminta ini lewat telepon? Mengapa harus sekarang?</li>
+        <li><strong>Verifikasi.</strong> Hubungi lembaga terkait lewat kontak resmi yang Anda cari sendiri, bukan nomor atau tautan yang diberikan si penghubung.</li>
+      </ol>
+      <blockquote>
+        Kalimat berikut bisa langsung Anda pakai: <strong>"Terima kasih, saya akan menghubungi layanan resmi sendiri."</strong><br>
+        <em>Penipu sejati akan semakin menekan. Petugas yang sungguhan akan memahami.</em>
+      </blockquote>
+
+      <h2>UNTUK NASABAH: TUJUH KEBIASAAN PELINDUNG</h2>
+      <ol>
+        <li><strong>Rahasiakan PIN, password, dan OTP</strong> dari siapa pun, termasuk yang mengaku petugas bank. Petugas bank yang sebenarnya tidak akan pernah memintanya.</li>
+        <li><strong>Pasang aplikasi hanya dari toko resmi</strong> dan jangan membuka file berekstensi .apk dari pesan.</li>
+        <li><strong>Cek alamat dan pengirim sebelum mengklik tautan.</strong> Satu huruf yang berbeda sudah cukup untuk membedakan situs asli dan palsu.</li>
+        <li><strong>Batasi data pribadi di media sosial.</strong> Foto kartu, KTP, dan nomor rekening jangan diunggah.</li>
+        <li><strong>Beri jeda untuk setiap permintaan transfer mendadak</strong>, walaupun dari kerabat atau keluarga. Telepon balik ke nomor lama yang Anda kenal.</li>
+        <li><strong>Anggap hadiah yang tidak Anda ikuti undiannya sebagai jebakan.</strong></li>
+        <li><strong>Cek legalitas penawaran investasi dan pinjaman</strong> melalui OJK sebelum menyetor dana.</li>
+      </ol>
+
+      <h2>UNTUK INSAN PERBANKAN: GARDA TERDEPAN KITA</h2>
+      <p>Pegawai memegang akses dan informasi yang sangat berharga, sehingga sering menjadi sasaran serangan yang dirancang khusus. Pegangan praktisnya adalah <strong>Tiga Cek</strong>:</p>
+      <ul>
+        <li><strong>Cek identitas:</strong> Apakah pihak ini benar-benar siapa yang diakuinya? Buktikan lewat jalur resmi dan terdokumentasi, bukan lewat nomor yang diberikan penghubung.</li>
+        <li><strong>Cek prosedur:</strong> Apakah permintaan ini sesuai SOP? Perintah mendesak atau klaim dari pimpinan tidak menggugurkan prosedur.</li>
+        <li><strong>Cek jalur:</strong> Apakah permintaan datang lewat kanal yang semestinya? Permintaan akses, perubahan data nasabah, atau transfer lewat chat pribadi patut dicurigai.</li>
+      </ul>
+      <p><strong>Kebiasaan pendukung di tempat kerja:</strong></p>
+      <ul>
+        <li>Jangan pernah membagikan, meminjamkan, atau mengirim kredensial lewat chat.</li>
+        <li>Periksa pengirim dan tautan sebelum membuka email dan lampiran.</li>
+        <li>Kunci layar setiap meninggalkan meja, dan jaga meja kerja dari dokumen sensitif.</li>
+        <li>Jangan biarkan orang tak dikenal masuk area terbatas tanpa verifikasi dan pendampingan.</li>
+        <li>Laporkan setiap kejadian mencurigakan segera, walau belum yakin dan walau Anda hampir terkecoh. Pelaporan dini adalah pertahanan terbaik.</li>
+      </ul>
+
+      <h2>JIKA TERLANJUR MENJADI KORBAN: KECEPATAN MENENTUKAN</h2>
+      <ol>
+        <li><strong>Hubungi bank Anda segera</strong> melalui kontak resmi untuk meminta pemblokiran rekening tujuan dan rekening Anda guna penanganan cepat.</li>
+        <li><strong>Amankan perangkat dan akun.</strong> Hapus aplikasi mencurigakan, lalu ganti PIN dan password dari perangkat yang aman.</li>
+        <li><strong>Simpan bukti:</strong> Tangkapan layar percakapan, nomor penghubung, dan riwayat transaksi.</li>
+        <li><strong>Laporkan ke Indonesia Anti-Scam Centre (IASC) OJK</strong> melalui situs <em>iasc.ojk.go.id</em>, atau hubungi <strong>Kontak OJK 157</strong> dan WhatsApp <strong>081-157-157-157</strong> (layanan 24 jam).</li>
+      </ol>
+
+      <h2>PERSPEKTIF SYARIAH: TABAYYUN DAN MENJAGA AMANAH</h2>
+      <p>Islam mengajarkan kita memeriksa kebenaran suatu kabar sebelum bertindak (prinsip <em>tabayyun</em>). Prinsip ini sangat relevan di era digital: jangan tergesa mempercayai telepon, pesan, atau tawaran yang belum jelas sumbernya.</p>
+      <p>Menjaga harta (<em>hifzh al-mal</em>) juga termasuk tujuan utama syariah (<em>maqashid syariah</em>). Karena itu, waspada terhadap penipuan adalah bagian dari ikhtiar menunaikan amanah: bagi nasabah, amanah atas harta dan data pribadinya; bagi insan perbankan, amanah atas dana dan kepercayaan nasabah.</p>
+
+      <h2>PENUTUP</h2>
+      <p>Teknologi keamanan terus berkembang, tetapi pelaku kejahatan tahu bahwa jalan paling mudah adalah lewat manusia. Karena itu, benteng terkuat adalah kebiasaan sederhana yang dijalankan bersama: <strong>Berhenti. Pikir. Verifikasi.</strong></p>
+      <p>Jika Anda ragu terhadap telepon, pesan, atau tautan yang mengatasnamakan BPRS HIK MCI, jangan ikuti instruksinya. Hubungi kami melalui kontak resmi yang tercantum di website ini atau kunjungi kantor terdekat.</p>
+      <p>Bagikan artikel ini kepada keluarga, tetangga, dan rekan Anda, karena satu orang yang waspada dapat menyelamatkan banyak orang di sekitarnya.</p>
+      <blockquote>
+        <small><strong>Sumber data:</strong> Otoritas Jasa Keuangan (OJK) melalui Indonesia Anti-Scam Centre (IASC), data per 31 Agustus 2026 dan hasil Rapat Dewan Komisioner Bulanan (RDKB) OJK September 2026.</small>
+      </blockquote>
+    </div>
+  </div>
+
+  <div id="toast">Teks Berformat Berhasil Disalin!</div>
+
+  <script>
+    function copyFormattedText() {
+      const content = document.getElementById('articleContent');
+      
+      // Salin sebagai formatted HTML dan plain text menggunakan Clipboard API
+      if (navigator.clipboard && window.ClipboardItem) {
+        const htmlBlob = new Blob([content.innerHTML], { type: 'text/html' });
+        const textBlob = new Blob([content.innerText], { type: 'text/plain' });
+        const data = [new ClipboardItem({ 'text/html': htmlBlob, 'text/plain': textBlob })];
+
+        navigator.clipboard.write(data).then(() => {
+          showFeedback();
+        }).catch(() => {
+          fallbackSelection();
+        });
+      } else {
+        fallbackSelection();
+      }
+    }
+
+    function fallbackSelection() {
+      const content = document.getElementById('articleContent');
+      const range = document.createRange();
+      range.selectNodeContents(content);
+      const selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+      try {
+        document.execCommand('copy');
+        showFeedback();
+      } catch (err) {
+        alert('Silakan tekan Ctrl+A lalu Ctrl+C di halaman ini.');
+      }
+      selection.removeAllRanges();
+    }
+
+    function showFeedback() {
+      const label = document.getElementById('btnLabel');
+      const toast = document.getElementById('toast');
+      label.textContent = 'Berhasil Disalin!';
+      toast.style.display = 'block';
+      setTimeout(() => {
+        label.textContent = 'Salin Teks Berformat';
+        toast.style.display = 'none';
+      }, 2500);
+    }
+  </script>
+</body>
+</html>
+
