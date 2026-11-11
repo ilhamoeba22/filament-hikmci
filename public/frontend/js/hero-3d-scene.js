@@ -525,7 +525,7 @@
       x.fillStyle = '#d8fff2';
       x.font = '500 16px "Plus Jakarta Sans", system-ui, sans-serif';
       x.fillText('Kantor Pusat: Jl. Kaliurang KM 09, Sleman, D.I. Yogyakarta', midX, 448);
-      x.fillText('Telp: (0274) 888 666  •  WhatsApp CS: 0812-2277-0657', midX, 482);
+      x.fillText('Telp: (0274) 888 666  •  WhatsApp CS: 0813-2075-0415', midX, 482);
       x.fillText('Website: www.bprshikmci.co.id', midX, 516);
 
       x.fillStyle = '#ffd27a';

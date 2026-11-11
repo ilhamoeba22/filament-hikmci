@@ -107,7 +107,7 @@
                             <i class="fas fa-arrow-left"></i>
                             <span>Kembali</span>
                         </a>
-                        <a href="https://wa.me/6282137908367" target="_blank" rel="noopener noreferrer" class="btn btn-modern-wa">
+                        <a href="https://wa.me/6281320750415" target="_blank" rel="noopener noreferrer" class="btn btn-modern-wa">
                             <i class="fab fa-whatsapp fs-5 me-2"></i> Salurkan Wakaf via CS
                         </a>
                     </div>
@@ -148,7 +148,7 @@
                         <p class="text-white-75 small mb-3">
                             Ingin mengetahui lebih dalam mengenai alur dan mekanisme penempatan Deposito Wakaf BPRS HIK MCI?
                         </p>
-                        <a href="https://wa.me/6282137908367" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-light rounded-pill px-4 py-2 fw-bold text-success w-100">
+                        <a href="https://wa.me/6281320750415" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-light rounded-pill px-4 py-2 fw-bold text-success w-100">
                             <i class="fab fa-whatsapp me-1"></i> Hubungi Kami
                         </a>
                     </div>

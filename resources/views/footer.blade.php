@@ -115,7 +115,7 @@
                         <p class="footer-wa-sub text-white-75 small mb-3">
                             Konsultasi pembiayaan & simpanan syariah responsif bersama tim kami.
                         </p>
-                        <a href="https://wa.me/6281222770657" target="_blank" rel="noopener noreferrer" class="btn btn-wa-official w-100">
+                        <a href="https://wa.me/6281320750415" target="_blank" rel="noopener noreferrer" class="btn btn-wa-official w-100">
                             <i class="fab fa-whatsapp me-2"></i>Chat WhatsApp Resmi
                         </a>
                     </div>
@@ -167,7 +167,7 @@
     <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top" style="display: none;" title="Kembali ke atas" aria-label="Kembali ke atas">
         <i class="fa fa-arrow-up"></i>
     </a>
-    <a href="https://wa.me/6281222770657" target="_blank" rel="noopener noreferrer" class="btn btn-success btn-lg-square rounded-circle" title="Konsultasi via WhatsApp" aria-label="Konsultasi via WhatsApp">
+    <a href="https://wa.me/6281320750415" target="_blank" rel="noopener noreferrer" class="btn btn-success btn-lg-square rounded-circle" title="Konsultasi via WhatsApp" aria-label="Konsultasi via WhatsApp">
         <i class="fab fa-whatsapp" style="font-size: 26px;"></i>
     </a>
 </div>

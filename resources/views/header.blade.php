@@ -228,7 +228,7 @@
                             </div>
                         </div>
                         <div class="nav-item ms-lg-3 mt-3 mt-lg-0">
-                            <a href="https://wa.me/6281222770657" target="_blank" class="btn btn-nav-cta" aria-label="Buka Rekening via WhatsApp">
+                            <a href="https://wa.me/6281320750415" target="_blank" class="btn btn-nav-cta" aria-label="Buka Rekening via WhatsApp">
                                 <i class="fab fa-whatsapp me-1"></i> Buka Rekening
                             </a>
                         </div>

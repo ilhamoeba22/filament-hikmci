@@ -37,7 +37,7 @@
                         <i class="fas fa-th-large me-2"></i>
                         <span>Jelajahi Produk</span>
                     </a>
-                    <a href="https://wa.me/6281222770657" target="_blank" class="btn btn-modern-wa">
+                    <a href="https://wa.me/6281320750415" target="_blank" class="btn btn-modern-wa">
                         <i class="fab fa-whatsapp me-2"></i>
                         <span>WhatsApp CS</span>
                     </a>
@@ -336,7 +336,7 @@
                             <span class="fw-bold text-info">Cepat & Amanah</span>
                         </div>
                     </div>
-                    <a href="https://wa.me/6281222770657?text=Halo%20BPRS%20HIK%20MCI,%20saya%20ingin%20konsultasi%20pembiayaan." target="_blank" class="btn btn-outline-success w-100 rounded-pill py-2">
+                    <a href="https://wa.me/6281320750415?text=Halo%20BPRS%20HIK%20MCI,%20saya%20ingin%20konsultasi%20pembiayaan." target="_blank" class="btn btn-outline-success w-100 rounded-pill py-2">
                         <i class="fab fa-whatsapp me-2"></i>Konsultasi Tim Pembiayaan
                     </a>
                 </div>
@@ -466,7 +466,7 @@
                     </p>
                 </div>
                 <div class="col-md-4 text-md-end">
-                    <a href="https://wa.me/6281222770657" target="_blank" class="btn btn-cta-wa me-md-2 mb-2 mb-md-0">
+                    <a href="https://wa.me/6281320750415" target="_blank" class="btn btn-cta-wa me-md-2 mb-2 mb-md-0">
                         <i class="fab fa-whatsapp me-2 fs-5 text-success"></i><span>Hubungi WhatsApp</span>
                     </a>
                 </div>

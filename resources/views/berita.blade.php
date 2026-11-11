@@ -153,7 +153,7 @@
                         <p class="small text-white-50 mb-0" style="font-size: 0.8rem; line-height: 1.4;">
                             Konsultasikan kebutuhan tabungan, deposito, &amp; pembiayaan syariah bersama tim BPRS HIK MCI.
                         </p>
-                        <a href="https://wa.me/6281222770657?text=Assalamu%27alaikum%20BPRS%20HIK%20MCI,%20saya%20ingin%20berkonsultasi%20terkait%20layanan%20syariah" target="_blank" rel="noopener noreferrer" class="sidebar-cta-btn">
+                        <a href="https://wa.me/6281320750415?text=Assalamu%27alaikum%20BPRS%20HIK%20MCI,%20saya%20ingin%20berkonsultasi%20terkait%20layanan%20syariah" target="_blank" rel="noopener noreferrer" class="sidebar-cta-btn">
                             <i class="bi bi-whatsapp"></i> Chat WhatsApp Resmi
                         </a>
                     </div>

@@ -64,7 +64,7 @@
                             @php
                                 $waInquiryText = rawurlencode("Halo BPRS HIK MCI, saya tertarik dengan informasi E-Asset: {$asset->judul}. Mohon informasi detail mengenai legalitas dan prosedur pembeliannya.\n\nLink Aset: {$asset->share_url}");
                             @endphp
-                            <a href="https://wa.me/6281222770657?text={{ $waInquiryText }}" target="_blank" rel="noopener noreferrer" class="btn btn-success rounded-pill w-100 py-3 fw-bold d-inline-flex align-items-center justify-content-center gap-2 shadow-sm text-white" style="background-color: #25D366; border-color: #25D366;">
+                            <a href="https://wa.me/6281320750415?text={{ $waInquiryText }}" target="_blank" rel="noopener noreferrer" class="btn btn-success rounded-pill w-100 py-3 fw-bold d-inline-flex align-items-center justify-content-center gap-2 shadow-sm text-white" style="background-color: #25D366; border-color: #25D366;">
                                 <i class="bi bi-whatsapp fs-5"></i>
                                 <span>Tanya Aset via WhatsApp</span>
                             </a>

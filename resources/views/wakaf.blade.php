@@ -311,7 +311,7 @@
                     Konsultasikan penempatan deposito wakaf Anda bersama petugas kami. Dapatkan pahala jariyah berkelanjutan tanpa mengurangi nilai pokok investasi Anda.
                 </p>
                 <div class="d-inline-block">
-                    <a href="https://wa.me/6282137908367" target="_blank" rel="noopener noreferrer" class="btn btn-modern-wa">
+                    <a href="https://wa.me/6281320750415" target="_blank" rel="noopener noreferrer" class="btn btn-modern-wa">
                         <i class="fab fa-whatsapp fs-5 me-2"></i> Buka Rekening
                     </a>
                 </div>

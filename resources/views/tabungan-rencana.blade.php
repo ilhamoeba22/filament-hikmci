@@ -301,7 +301,7 @@
                     Buka rekening mudah dan nikmati keuntungan bagi hasil kompetitif serta hadiah langsung tanpa diundi. Tim BPRS HIK MCI siap mendampingi perencanaan keuangan syariah Anda.
                 </p>
                 <div class="d-inline-block">
-                    <a href="https://wa.me/6285771796642" target="_blank" rel="noopener noreferrer" class="btn btn-modern-wa">
+                    <a href="https://wa.me/6281320750415" target="_blank" rel="noopener noreferrer" class="btn btn-modern-wa">
                         <i class="fab fa-whatsapp fs-5 me-2"></i> Buka Rekening
                     </a>
                 </div>

@@ -208,7 +208,7 @@
                                     <p class="text-white mb-0" style="opacity: 0.92;">Hubungi petugas BPRS HIK MCI untuk informasi dan pembukaan rekening pembiayaan via WhatsApp.</p>
                                 </div>
                                 <div class="col-lg-4 text-md-end text-center">
-                                    <a href="https://wa.me/6285771796642" target="_blank" rel="noopener noreferrer" class="btn btn-cta-wa" aria-label="Buka Rekening via WhatsApp">
+                                    <a href="https://wa.me/6281320750415" target="_blank" rel="noopener noreferrer" class="btn btn-cta-wa" aria-label="Buka Rekening via WhatsApp">
                                         <i class="bi bi-whatsapp me-2 fs-5 text-success"></i>
                                         <span>Buka Rekening</span>
                                     </a>
@@ -360,7 +360,7 @@
                                     <p class="text-white mb-0" style="opacity: 0.92;">Konsultasikan kemudahan pembiayaan sertifikasi pendidik bersama Account Officer kami via WhatsApp.</p>
                                 </div>
                                 <div class="col-lg-4 text-md-end text-center">
-                                    <a href="https://wa.me/6285771796642" target="_blank" rel="noopener noreferrer" class="btn btn-cta-wa" aria-label="Buka Rekening via WhatsApp">
+                                    <a href="https://wa.me/6281320750415" target="_blank" rel="noopener noreferrer" class="btn btn-cta-wa" aria-label="Buka Rekening via WhatsApp">
                                         <i class="bi bi-whatsapp me-2 fs-5 text-success"></i>
                                         <span>Buka Rekening</span>
                                     </a>
@@ -501,7 +501,7 @@
                                     <p class="text-white mb-0" style="opacity: 0.92;">Dapatkan kemudahan fasilitas pembiayaan institusional untuk institusi dan karyawan Anda via WhatsApp.</p>
                                 </div>
                                 <div class="col-lg-4 text-md-end text-center">
-                                    <a href="https://wa.me/6285771796642" target="_blank" rel="noopener noreferrer" class="btn btn-cta-wa" aria-label="Buka Rekening via WhatsApp">
+                                    <a href="https://wa.me/6281320750415" target="_blank" rel="noopener noreferrer" class="btn btn-cta-wa" aria-label="Buka Rekening via WhatsApp">
                                         <i class="bi bi-whatsapp me-2 fs-5 text-success"></i>
                                         <span>Buka Rekening</span>
                                     </a>
@@ -665,7 +665,7 @@
                                     <p class="text-white mb-0" style="opacity: 0.92;">Rencanakan perjalanan ibadah suci Anda bersama kemudahan pembiayaan syariah BPRS HIK MCI.</p>
                                 </div>
                                 <div class="col-lg-4 text-md-end text-center">
-                                    <a href="https://wa.me/6285771796642" target="_blank" rel="noopener noreferrer" class="btn btn-cta-wa" aria-label="Buka Rekening via WhatsApp">
+                                    <a href="https://wa.me/6281320750415" target="_blank" rel="noopener noreferrer" class="btn btn-cta-wa" aria-label="Buka Rekening via WhatsApp">
                                         <i class="bi bi-whatsapp me-2 fs-5 text-success"></i>
                                         <span>Buka Rekening</span>
                                     </a>

@@ -187,7 +187,7 @@
                     Buka rekening mudah dan nikmati layanan pickup service langsung dari tempat Anda. Tim kami siap membantu proses pembukaan rekening dengan amanah.
                 </p>
                 <div class="d-inline-block">
-                    <a href="https://wa.me/6285771796642" target="_blank" rel="noopener noreferrer" class="btn btn-modern-wa">
+                    <a href="https://wa.me/6281320750415" target="_blank" rel="noopener noreferrer" class="btn btn-modern-wa">
                         <i class="fab fa-whatsapp fs-5 me-2"></i> Buka Rekening
                     </a>
                 </div>

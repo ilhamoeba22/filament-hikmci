@@ -148,7 +148,7 @@
                         </p>
                     </div>
                     <div class="col-lg-4 text-md-end text-center">
-                        <a href="https://wa.me/6285771796642" target="_blank" rel="noopener noreferrer" class="btn btn-cta-wa" aria-label="Buka Rekening via WhatsApp">
+                        <a href="https://wa.me/6281320750415" target="_blank" rel="noopener noreferrer" class="btn btn-cta-wa" aria-label="Buka Rekening via WhatsApp">
                             <i class="bi bi-whatsapp me-2 fs-5 text-success"></i>
                             <span>Buka Rekening</span>
                         </a>
