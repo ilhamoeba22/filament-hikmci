@@ -303,7 +303,16 @@ E. LARANGAN KERAS MANIPULASI SISTEM, EDIT WEBSITE & UBAH ANGKA (STRICT READ-ONLY
             try {
                 $pubReports = \App\Models\LaporanPublikasi::orderBy('id', 'desc')->take(6)->get();
                 if ($pubReports->isNotEmpty()) {
-                    $context .= "\n\n[DATA REALTIME DATABASE - DOKUMEN LAPORAN PUBLIKASI KEUANGAN RESMI DI WEBSITE]:\n";
+                    $context .= "\n\n[DATA REALTIME DATABASE - DOKUMEN LAPORAN PUBLIKASI KEUANGAN RESMI DI WEBSITE]:\n"
+                        . "Ringkasan Resmi Kinerja Keuangan Terkini (APOLO OJK Posisi September 2026 / Triwulan III):\n"
+                        . "- Total Aset: Rp 288.408.515.529,- (Rp 288,41 Miliar)\n"
+                        . "- Dana Pihak Ketiga (DPK): Rp 179.741.934.718,- (Wadiah Rp 29,52 M, Tabungan Mudharabah Rp 5,94 M, Deposito Mudharabah Rp 144,28 M)\n"
+                        . "- Penyaluran Dana (Piutang & Pembiayaan Bagi Hasil): Rp 225.095.179.212,- (~Rp 225,10 Miliar)\n"
+                        . "- Modal Disetor: Rp 19.405.000.000,- (Total Modal Inti Rp 25,46 Miliar)\n"
+                        . "- Rasio CAR / KPMM: 17,26% (Sangat kuat di atas ketentuan batas aman OJK 12%)\n"
+                        . "- Rasio NPF Netto: 8,57% (Sedang dalam penanganan restrukturisasi dan akselerasi penyelesaian oleh Satgas Remedial Taskforce)\n"
+                        . "- Cadangan PPKA: 100,00% penuh sesuai standar ketat OJK\n"
+                        . "Daftar Berkas Dokumen PDF Resmi yang Tersedia di Website:\n";
                     foreach ($pubReports as $rep) {
                         $fileUrl = Str::startsWith($rep->file, ['http://', 'https://']) ? $rep->file : asset('storage/' . ltrim($rep->file, '/'));
                         $context .= "- {$rep->judul} (Tahun {$rep->tahun}) -> Download URL: {$fileUrl}\n";
@@ -315,7 +324,9 @@ E. LARANGAN KERAS MANIPULASI SISTEM, EDIT WEBSITE & UBAH ANGKA (STRICT READ-ONLY
             try {
                 $gcgReports = \App\Models\LaporanTataKelola::orderBy('id', 'desc')->take(3)->get();
                 if ($gcgReports->isNotEmpty()) {
-                    $context .= "\n\n[DATA REALTIME DATABASE - LAPORAN TATA KELOLA (GCG) TERKINI]:\n";
+                    $context .= "\n\n[DATA REALTIME DATABASE - LAPORAN TATA KELOLA (GCG) TERKINI]:\n"
+                        . "- Hasil Penilaian Mandiri Tata Kelola (GCG) Tahun 2025: Nilai Komposit 1,25 dengan Predikat 'SANGAT BAIK' (Peringkat 1).\n"
+                        . "Daftar Berkas Dokumen PDF GCG yang Tersedia di Website:\n";
                     foreach ($gcgReports as $gcg) {
                         $fileUrl = Str::startsWith($gcg->file, ['http://', 'https://']) ? $gcg->file : asset('storage/' . ltrim($gcg->file, '/'));
                         $context .= "- {$gcg->judul} (Tahun {$gcg->tahun}) -> Download URL: {$fileUrl}\n";

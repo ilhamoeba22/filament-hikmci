@@ -294,93 +294,74 @@
   ],
   "catalog_pdf_url": "/storage/asset/Katalog_Portofolio_Properti.pdf",
   "financial_reports_and_governance": {
-    "summary_health_status": "SANGAT SEHAT & KUAT (Permodalan CAR 21,39%, Tata Kelola Peringkat 1 Sangat Baik, Pengawasan OJK & Penjaminan LPS)",
+    "summary_health_status": "SANGAT SEHAT & KUAT (Permodalan CAR 17,26% di atas ketentuan OJK 12%, Tata Kelola Peringkat 1 Sangat Baik dengan Nilai Komposit 1,25, Pengawasan OJK & Penjaminan LPS)",
     "publication_reports": [
       {
-        "period": "Triwulan III 2024 (Posisi 30 September 2024) - LAPORAN PUBLIKASI TERKINI",
+        "period": "Triwulan III 2026 (Posisi 30 September 2026) - LAPORAN PUBLIKASI TERKINI APOLO OJK",
         "is_latest": true,
-        "total_assets": "Rp 274.804.821.000 (Rp 274,80 Miliar) - Tumbuh 11,4% (YoY)",
-        "total_dpk": "Rp 159.760.955.000 (Rp 159,76 Miliar)",
+        "total_assets": "Rp 288.408.515.529 (Rp 288,41 Miliar)",
+        "total_dpk": "Rp 179.741.934.718 (Rp 179,74 Miliar)",
         "dpk_breakdown": {
-          "tabungan_wadiah": "Rp 16,73 Miliar",
-          "tabungan_mudharabah": "Rp 2,28 Miliar",
-          "deposito_mudharabah": "Rp 140,75 Miliar"
+          "tabungan_wadiah": "Rp 29.520.245.729 (Rp 29,52 Miliar)",
+          "tabungan_mudharabah": "Rp 5.941.724.757 (Rp 5,94 Miliar)",
+          "deposito_mudharabah": "Rp 144.279.964.232 (Rp 144,28 Miliar)"
         },
-        "total_financing": "Rp 208.033.974.000 (Rp 208,03 Miliar)",
-        "net_profit_ytd": "Rp 2.441.410.000 (Rp 2,44 Miliar) - Tumbuh 164% dibanding periode sama tahun sebelumnya (Rp 923,9 Juta)",
-        "capital_equity": "Rp 30.560.395.000 (Rp 30,56 Miliar) dengan Modal Disetor Rp 19,41 Miliar",
+        "total_financing_and_receivables": "Rp 225.095.179.212 (Rp 225,10 Miliar)",
+        "financing_breakdown": {
+          "piutang_murabahah": "Rp 82.351.709.373 (Rp 82,35 Miliar)",
+          "piutang_multijasa": "Rp 24.810.246.777 (Rp 24,81 Miliar)",
+          "piutang_qardh": "Rp 118.883.333 (Rp 118,88 Juta)",
+          "pembiayaan_musyarakah": "Rp 117.647.339.729 (Rp 117,65 Miliar)",
+          "pembiayaan_mudharabah": "Rp 167.000.000 (Rp 167 Juta)"
+        },
+        "interbank_placement": "Rp 42.736.002.550 (Rp 42,74 Miliar pada Bank Syariah Lain)",
+        "capital_equity": "Modal Disetor Rp 19.405.000.000 (Rp 19,41 Miliar) ditambah Tambahan Modal Disetor Rp 6.051.250.000 (Total Modal Inti Rp 25,46 Miliar)",
         "key_ratios": {
           "CAR_KPMM": {
-            "value": "21,39%",
-            "explanation": "Kewajiban Penyediaan Modal Minimum (CAR). Batas minimum aman OJK adalah 12%. Angka 21,39% membuktikan BPRS HIK MCI memiliki bantalan permodalan yang sangat kokoh untuk menanggung risiko dan menjaga keamanan simpanan nasabah."
+            "value": "17,26%",
+            "explanation": "Kewajiban Penyediaan Modal Minimum (CAR). Batas minimum aman OJK adalah 12%. Angka 17,26% membuktikan BPRS HIK MCI memiliki ketahanan permodalan yang sangat kokoh untuk menanggung risiko dan menjamin keamanan dana nasabah."
           },
           "NPF_Net": {
-            "value": "4,87%",
-            "explanation": "Rasio Pembiayaan Bermasalah Bersih. Berada di angka 4,87%, di bawah batas toleransi maksimum regulator OJK (5,00%), membuktikan kualitas pembiayaan dikelola dengan penuh kehati-hatian."
+            "value": "8,57%",
+            "explanation": "Rasio Pembiayaan Bermasalah Bersih (Netto) yang sedang dalam proses penanganan intensif dan restrukturisasi terukur oleh Satgas Remedial."
           },
-          "NPF_Gross": {
-            "value": "6,75%",
-            "explanation": "Rasio Pembiayaan Bermasalah Kotor sebelum cadangan penyisihan."
-          },
-          "ROA": {
-            "value": "1,53%",
-            "explanation": "Return on Asset, mencerminkan kemampuan aset bank dalam menghasilkan laba bersih secara efisien."
-          },
-          "BOPO": {
-            "value": "88,73%",
-            "explanation": "Beban Operasional terhadap Pendapatan Operasional. Angka di bawah 90% membuktikan bank beroperasi secara efisien dan sehat."
-          },
-          "FDR": {
-            "value": "130,22%",
-            "explanation": "Financing to Deposit Ratio, menunjukkan tingginya peran BPRS HIK MCI dalam mengalirkan dana nasabah menjadi pembiayaan sektor riil dan UMKM produktif."
-          },
-          "PPAP": {
+          "PPKA": {
             "value": "100,00%",
-            "explanation": "Penyisihan Penghapusan Aset Produktif dipenuhi 100% penuh sesuai standar regulasi OJK."
+            "explanation": "Rasio Cadangan terhadap Penyisihan Penilaian Kualitas Aset (PPKA) dipenuhi 100,00% penuh sesuai standar ketat OJK."
           }
         },
         "shareholders": {
-          "controlling_shareholder_PSP": "Dana Pensiun Syariah Muhammadiyah (53,73%)",
+          "controlling_shareholder_PSP": "Dana Pensiun Syariah Muhammadiyah (53,73% - Pemegang Saham Pengendali / PSP)",
           "other_shareholders": "Hj. Rini Sujiyanti, SE, MM (11,19%), Prof. Dr. H. Edy Suandi Hamid, M.Ec (8,16%), Drs. Prabowo Soenirman, Akt, MM (6,33%), Arief Nur Wibawanto (4,84%), PT Induk Harta Insan Karimah (4,03%), Dr. Fuad Bawazier, MA (1,93%), Mohammad Yamin (1,93%), Noraini Bawazier (1,93%), Lainnya (5,93%)"
         },
         "management": {
-          "direksi": "Kholid, S.Pd, MM (Direktur Utama), Mushoniful Agustian (Direktur Kepatuhan)",
-          "komisaris": "Dede Haris Sumarno (Komisaris Utama), Prof. Dr. Edy Suandi Hamid (Komisaris)",
+          "direksi": "Kholid, S.Pd, MM (Direktur Utama), Mushoniful Agustian (Direktur Operasional & Kepatuhan)",
+          "komisaris": "Dede Haris Sumarno (Komisaris Utama), Prof. Dr. Edy Suandi Hamid, M.Ec (Komisaris)",
           "dps": "Ahim Abdurahim, Toto Suparwoto (Dewan Pengawas Syariah)"
         },
-        "pdf_download_url": "/storage/laporan/publikasi/_LAPORAN PUBLIKASI TRIWULAN III.pdf"
+        "pdf_download_url": "/storage/laporan/publikasi/LAPORAN%20PUBLIKASI%20TRIWULAN%20III%202026.pdf"
       },
       {
-        "period": "Triwulan I 2024 (Posisi 31 Maret 2024)",
-        "total_assets": "Rp 253,53 Miliar",
-        "net_profit": "Rp 804,87 Juta",
-        "CAR": "24,36%",
-        "NPF_Net": "4,41%",
-        "BOPO": "92,24%",
-        "pdf_download_url": "/storage/laporan/publikasi/_LAPORAN PUBLIKASI TRIWULAN I.pdf"
+        "period": "Triwulan II 2026 (Posisi 30 Juni 2026)",
+        "pdf_download_url": "/storage/laporan/publikasi/LAPORAN%20PUBLIKASI%20TRIWULAN%20II%202026.pdf"
       },
       {
-        "period": "Triwulan IV 2023 (Posisi 31 Desember 2023)",
-        "total_assets": "Rp 267,23 Miliar",
-        "net_profit": "Rp 2,45 Miliar",
-        "CAR": "23,72%",
-        "NPF_Net": "5,29%",
-        "BOPO": "91,70%",
-        "pdf_download_url": "/storage/laporan/publikasi/_LAPORAN PUBLIKASI TRIWULAN IV_REV.pdf"
+        "period": "Triwulan I 2026 (Posisi 31 Maret 2026)",
+        "pdf_download_url": "/storage/laporan/publikasi/LAP%20PUBLIKASI%20TRIWULAN%20I%202026.pdf"
       }
     ],
     "governance_report_gcg": {
-      "title": "Laporan Penerapan Tata Kelola (Good Corporate Governance) BPRS HIK MCI Tahun 2024",
-      "composite_score": "1,18 (Skala 1 - 5, makin kecil makin baik)",
+      "title": "Laporan Penerapan Tata Kelola (Good Corporate Governance) BPRS HIK MCI Tahun 2025",
+      "composite_score": "1,25 (Skala 1 - 5, semakin mendekati 1 semakin baik)",
       "composite_rating": "Peringkat 1 (Kategori SANGAT BAIK)",
       "principles_applied": "TARIF: Transparansi, Akuntabilitas, Responsibilitas, Independensi/Profesionalisme, dan Kewajaran (Fairness)",
       "highlights": [
-        "Memiliki organ Direksi lengkap (termasuk Direksi Kepatuhan) dan Dewan Komisaris yang telah lulus uji kelayakan (Fit & Proper Test) OJK dan disahkan RUPS.",
+        "Memiliki organ Direksi lengkap (Direktur Utama & Direktur yang Membawahkan Fungsi Kepatuhan) dan Dewan Komisaris yang telah lulus uji kelayakan (Fit & Proper Test) OJK dan disahkan RUPS.",
         "Diawasi secara aktif oleh Dewan Pengawas Syariah (DPS) bersertifikasi DSN-MUI untuk menjamin seluruh produk dan transaksi 100% bebas riba, gharar, dan maysir.",
-        "Memiliki komite penunjang: Komite Audit, Komite Pemantau Risiko, serta Komite Remunerasi & Nominasi.",
+        "Memiliki komite penunjang lengkap: Komite Audit, Komite Pemantau Risiko, serta Komite Remunerasi & Nominasi.",
         "Telah menerapkan pedoman penanganan benturan kepentingan (conflict of interest) dan transparansi informasi publikasi secara berkala."
       ],
-      "pdf_download_url": "/storage/laporan/tata_kelola/LAPORAN TATA KELOLA 2024.pdf"
+      "pdf_download_url": "/storage/laporan/tata_kelola/Laporan%20Penerapan%20Tata%20Kelola%20PT%20BPRS%20HIK%20MCI%20Tahun%202025.pdf"
     },
     "internal_audit_charter": {
       "title": "Piagam Audit Internal (Internal Audit Charter) BPRS HIK MCI Tahun 2025",
