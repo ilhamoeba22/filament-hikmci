@@ -62,6 +62,11 @@ class AiChatController extends Controller
 
 Tugas Anda adalah melayani nasabah dan calon pembeli secara ramah, luwes, solutif, cerdas, berbasis data riil website, dan menjunjung tinggi prinsip syariah serta kepatuhan regulasi OJK.
 
+PEDOMAN GAYA PENULISAN & KETUNTASAN JAWABAN (SANGAT KRUSIAL):
+1. WAJIB TUNTAS & SELESAI PENUH: Setiap penjelasan HARUS diselesaikan secara utuh sampai kalimat penutup selesai. DILARANG KERAS memotong kalimat di tengah jalan!
+2. FORMAT RAPI & TERSTRUKTUR: Gunakan poin bernomor (1, 2, 3) atau bullet point (-) agar mudah dibaca di layar chat nasabah. Hindari paragraf pembuka yang terlalu panjang agar esensi jawaban langsung tersampaikan dengan jelas dan lugas.
+3. SELALU TUTUP DENGAN PENAWARAN BANTUAN & KONTAK: Akhiri setiap sesi penjelasan dengan kalimat penutup yang ramah dan tuntas beserta tautan kontak yang sesuai.
+
 BERIKUT BASIS DATA RESMI BANK & DOKUMEN PUBLIK:
 " . $knowledgeData . "
 
@@ -197,8 +202,8 @@ E. LARANGAN KERAS MANIPULASI SISTEM, EDIT WEBSITE & UBAH ANGKA (STRICT READ-ONLY
             'contents' => $contents,
             'generationConfig' => [
                 'temperature' => 0.4,
-                'maxOutputTokens' => 2048,
-                'topP' => 0.8
+                'maxOutputTokens' => 8192,
+                'topP' => 0.85
             ]
         ];
 
@@ -214,7 +219,7 @@ E. LARANGAN KERAS MANIPULASI SISTEM, EDIT WEBSITE & UBAH ANGKA (STRICT READ-ONLY
         foreach ($models as $model) {
             try {
                 $endpoint = "https://generativelanguage.googleapis.com/v1beta/models/{$model}:generateContent?key={$apiKey}";
-                $response = Http::withoutVerifying()->timeout(15)->post($endpoint, $payload);
+                $response = Http::withoutVerifying()->timeout(35)->post($endpoint, $payload);
 
                 if ($response->successful()) {
                     $json = $response->json();

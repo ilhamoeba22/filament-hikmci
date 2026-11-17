@@ -386,8 +386,8 @@
 
         // Parse basic markdown: bold, lists, links
         formatted = formatted
-            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-            .replace(/\*(.*?)\*/g, '<em>$1</em>')
+            .replace(/\*\*([\s\S]*?)\*\*/g, '<strong>$1</strong>')
+            .replace(/\*([\s\S]*?)\*/g, '<em>$1</em>')
             .replace(/\n\* /g, '<br>• ')
             .replace(/\n- /g, '<br>• ')
             .replace(/\n\n/g, '<br><br>')
@@ -409,10 +409,10 @@
         input.value = '';
         appendMessage(text, 'user');
         
-        // Compact history (last 4 turns, max 500 chars each) to prevent payload explosion
+        // Compact history (last 4 turns, max 1500 chars each) to maintain full context naturally
         const outgoingHistory = chatHistory.slice(-4).map(h => ({
             sender: h.sender,
-            text: (h.text || '').substring(0, 500)
+            text: (h.text || '').substring(0, 1500)
         }));
 
         chatHistory.push({ sender: 'user', text: text });
