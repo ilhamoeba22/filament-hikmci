@@ -11,6 +11,10 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
+        $middleware->trustProxies(at: '*');
+        $middleware->validateCsrfTokens(except: [
+            'api/*',
+        ]);
         $middleware->web(append: [
             \App\Http\Middleware\SecurityAndPerformanceHeaders::class,
             \App\Http\Middleware\TrackVisitor::class,

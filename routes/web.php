@@ -71,3 +71,9 @@ Route::get('/edukasi', [EdukasiController::class, 'index'])->name('edukasi.index
 Route::get('/edukasi/{id}', [EdukasiController::class, 'show'])->name('edukasi.show');
 
 Route::get('/ebook', [EbookController::class, 'index'])->name('ebook.index');
+
+
+// Asisten AI Virtual BPRS HIK MCI
+Route::post('/api/ai/chat', [\App\Http\Controllers\Api\AiChatController::class, 'chat'])
+    ->middleware('throttle:20,1')
+    ->name('api.ai.chat');

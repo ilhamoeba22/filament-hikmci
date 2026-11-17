@@ -162,13 +162,10 @@
 </footer>
 <!-- Footer End -->
 
-<!-- Floating Action Buttons (Strict 1:1 Aspect-Ratio Circles) -->
-<div class="fixed-buttons">
+<!-- Floating Back to Top Button -->
+<div class="fixed-buttons" style="position: fixed !important; bottom: 88px !important; right: 28px !important; z-index: 9999;">
     <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top" style="display: none;" title="Kembali ke atas" aria-label="Kembali ke atas">
         <i class="fa fa-arrow-up"></i>
-    </a>
-    <a href="https://wa.me/6281320750415" target="_blank" rel="noopener noreferrer" class="btn btn-success btn-lg-square rounded-circle" title="Konsultasi via WhatsApp" aria-label="Konsultasi via WhatsApp">
-        <i class="fab fa-whatsapp" style="font-size: 26px;"></i>
     </a>
 </div>
 
@@ -400,6 +397,9 @@ function copyShareLink(url, btn) {
     }
 }
 </script>
+
+{{-- Asisten Virtual AI BPRS HIK MCI --}}
+@include('ai-chat-widget')
 
 @stack('scripts')
 </body>

@@ -1,0 +1,585 @@
+{
+  "bank_profile": {
+    "name": "PT BPRS Harta Insan Karimah MCI (BPRS HIK MCI)",
+    "type": "Bank Pembiayaan Rakyat Syariah (BPRS)",
+    "regulator": "Berizin dan diawasi oleh Otoritas Jasa Keuangan (OJK), peserta penjaminan Lembaga Penjamin Simpanan (LPS)",
+    "head_office": "Jl. Kaliurang KM 09, Kapanewon Ngaglik, Kabupaten Sleman, D.I. Yogyakarta 55581",
+    "phone": "(0274) 881159",
+    "emails": [
+      "bprsmci@gmail.com",
+      "corsec@bprshikmci.co.id"
+    ],
+    "operating_hours": "Senin - Jumat, pukul 08.00 - 15.00 WIB",
+    "website": "www.bprshikmciyk.co.id",
+    "sharia_board": "Diawasi oleh Dewan Pengawas Syariah (DPS) yang tersertifikasi DSN-MUI",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=PT%20BPRS%20Harta%20Insan%20Karimah%20MCI%20Jl.%20Kaliurang%20KM%2009%20Sleman"
+  },
+  "contacts": {
+    "customer_care_whatsapp": {
+      "number": "0813-2075-0415",
+      "url": "https://wa.me/6281320750415",
+      "label": "WhatsApp Customer Care Resmi BPRS HIK MCI",
+      "usage": "WAJIB gunakan nomor ini untuk seluruh pertanyaan produk perbankan umum: Tabungan, Deposito Mudharabah, Pembiayaan UMKM/Konsumer/Multiguna, Wakaf, Informasi Kantor, dan Layanan Nasabah."
+    },
+    "property_taskforce_pic": {
+      "pic_1": {
+        "name": "Mas Fahrul",
+        "phone": "0858-6472-7859",
+        "role": "Tim Leader Teknis Lapangan & Pemasaran Properti"
+      },
+      "pic_2": {
+        "name": "Mas Setio",
+        "phone": "0813-2822-1721",
+        "role": "Tim Leader Teknis Lapangan & Legalitas Aset"
+      },
+      "usage": "HANYA tampilkan Mas Fahrul dan Mas Setio jika pertanyaan calon pembeli secara spesifik berfokus pada Penjualan Aset Properti (Kavling, Rumah, Gedung Al-Azhar, dan survei fisik lokasi properti)."
+    },
+    "head_office_phone": "(0274) 881159"
+  },
+  "funding_products": [
+    {
+      "name": "Tabungan Karimah",
+      "akad": "Wadi'ah (Titipan murni aman tanpa bunga/bagi hasil)",
+      "description": "Simpanan transaksi harian berkah tanpa biaya administrasi bulanan (kecuali nasabah pembiayaan baru Rp 1.000/bln). Setoran awal resmi Rp 50.000,-.",
+      "min_deposit": "Rp 50.000,- (Setoran awal resmi RIPLAY, non-negotiable). Setoran selanjutnya min Rp 10.000,-. Saldo mengendap min Rp 10.000,-",
+      "riplay_url": "https://riplay.bprshikmciyk.co.id/produk/11/download"
+    },
+    {
+      "name": "Tabungan Ukhuwah",
+      "akad": "Mudharabah Mutlaqah",
+      "description": "Tabungan bersama BPRS se-Indonesia dengan bagi hasil menarik serta peluang memenangkan hadiah undian berkala (mobil, motor, umroh).",
+      "min_deposit": "Rp 100.000,- (Setoran awal resmi RIPLAY). Setoran selanjutnya min Rp 10.000,-.",
+      "riplay_url": "https://riplay.bprshikmciyk.co.id/produk/13/download"
+    },
+    {
+      "name": "Tabungan Cerdas",
+      "akad": "Wadiah Yad Dhamanah",
+      "description": "Tabungan khusus pelajar, santri, dan mahasiswa untuk melatih kedisiplinan menabung sejak dini. Bebas biaya administrasi bulanan, setoran awal Rp 10.000.",
+      "min_deposit": "Rp 10.000,- (Setoran awal resmi RIPLAY khusus pelajar). Setoran selanjutnya min Rp 1.000,-. Saldo mengendap min Rp 5.000,-",
+      "riplay_url": "https://riplay.bprshikmciyk.co.id/produk/10/download"
+    },
+    {
+      "name": "Tabungan Rencana",
+      "akad": "Mudharabah",
+      "description": "Tabungan berjangka dengan setoran rutin bulanan untuk mewujudkan target masa depan (pendidikan anak, pernikahan, aqiqah, qurban, atau liburan).",
+      "min_deposit": "Rp 100.000,- (Setoran awal resmi RIPLAY). Setoran rutin min Rp 100.000,-/bulan.",
+      "riplay_url": "https://riplay.bprshikmciyk.co.id/produk/12/download"
+    },
+    {
+      "name": "Tabungan Cahaya",
+      "akad": "Wadiah / Mudharabah",
+      "description": "Tabungan khusus porsi haji dan umroh terencana untuk membantu nasabah mempersiapkan keberangkatan ke Tanah Suci dengan tenang.",
+      "min_deposit": "Rp 10.000.000,- (Setoran awal resmi RIPLAY berjangka min 12 bulan).",
+      "riplay_url": "https://riplay.bprshikmciyk.co.id/produk/9/download"
+    },
+    {
+      "name": "Deposito Mudharabah",
+      "akad": "Mudharabah Mutlaqah",
+      "description": "Investasi berjangka syariah dengan jangka waktu pilihan 1, 3, 6, dan 12 bulan. Nisbah bagi hasil kompetitif, dijamin LPS, dan dapat dijadikan jaminan pembiayaan.",
+      "min_placement": "Rp 2.500.000,- (Penempatan awal resmi RIPLAY, non-negotiable).",
+      "riplay_url": "https://riplay.bprshikmciyk.co.id/produk/7/download"
+    },
+    {
+      "name": "Wakaf Uang (Cash Waqf)",
+      "akad": "Wakaf Uang Abadi / Berjangka",
+      "description": "Layanan penerimaan wakaf uang resmi sebagai Lembaga Keuangan Syariah Penerima Wakaf Uang (LKS-PWU) bekerjasama dengan Badan Wakaf Indonesia (BWI) dan Kemenag RI."
+    }
+  ],
+  "financing_products": [
+    {
+      "name": "Pembiayaan Griya / Kepemilikan Rumah & Kavling",
+      "akad": "Murabahah (Jual Beli) & Istishna (Pesan Bangun)",
+      "description": "Fasilitas pembiayaan untuk pembelian rumah baru/bekas, tanah kavling siap bangun, atau renovasi/pembangunan rumah. Angsuran flat (tetap) sampai lunas, tanpa bunga, tanpa denda berlipat, DP ringan mulai 10% (bisa dicicil), dan tenor hingga 10-15 tahun."
+    },
+    {
+      "name": "Pembiayaan Consumer Finance (Konsumer / Multiguna)",
+      "akad": "Murabahah / Ijarah Multijasa",
+      "description": "Solusi kebutuhan konsumtif halal: pembelian kendaraan bermotor, biaya pendidikan sekolah/kuliah, pernikahan, hingga perlengkapan rumah tangga."
+    },
+    {
+      "name": "Pembiayaan UMKM (Modal Kerja & Usaha)",
+      "akad": "Murabahah / Mudharabah / Musyarakah",
+      "description": "Dukungan modal kerja operasional dan pengadaan barang dagangan bagi pelaku usaha mikro, kecil, dan menengah dengan proses cepat dan persyaratan fleksibel."
+    },
+    {
+      "name": "Pembiayaan Corporate / Lembaga",
+      "akad": "Musyarakah Mutanaqisah / Murabahah / Ijarah",
+      "description": "Pembiayaan skala besar untuk yayasan, sekolah/kampus, rumah sakit, instansi, dan korporat, termasuk fasilitas potong gaji (payroll) pegawai."
+    }
+  ],
+  "property_assets": [
+    {
+      "id": "01",
+      "name": "Bale Yasa Antapura",
+      "location": "Wonosari, Gunungkidul (DIY)",
+      "stock": "Ready 14 Kavling (SHGB)",
+      "price": "Rp 120 Jt (Kavling) / Rp 275 Jt (Rumah)",
+      "pic": "Mas Fahrul (0858-6472-7859)",
+      "highlight": "Dekat pusat kota Wonosari, RSUD, RS PKU, dan Polres Gunungkidul.",
+      "flyer_image_url": "/storage/asset/flyers/01_bale_yasa_wonosari.jpg",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Bale%20Yasa%20Antapura%20Wonosari%20Gunungkidul"
+    },
+    {
+      "id": "02",
+      "name": "Baiyati Al Jannati",
+      "location": "Panjatan, Kulon Progo (DIY)",
+      "stock": "Ready 22 Kavling (SHGB)",
+      "price": "Rp 100 Jt (Kavling) / Rp 166 Jt (Rumah)",
+      "pic": "Mas Fahrul (0858-6472-7859)",
+      "highlight": "Kawasan asri dekat pesisir dan jalur alternatif Bandara YIA.",
+      "flyer_image_url": "/storage/asset/flyers/02_baiyati_panjatan.jpg",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Panjatan%20Kulon%20Progo%20Yogyakarta"
+    },
+    {
+      "id": "03",
+      "name": "O'Isyana Village",
+      "location": "Sentolo, Kulon Progo (DIY)",
+      "stock": "Sisa 3 Kavling (SHM)",
+      "price": "Rp 100 Jt (Kavling) / Rp 250 Jt (Rumah)",
+      "pic": "Mas Setio (0813-2822-1721)",
+      "highlight": "Akses 5 menit Stasiun Sentolo, tepi jalan utama menuju Bandara YIA.",
+      "flyer_image_url": "/storage/asset/flyers/03_oisyana_sentolo.jpg",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=OIsyana%20Village%20Sentolo%20Kulon%20Progo"
+    },
+    {
+      "id": "04",
+      "name": "Atalanta Residence",
+      "location": "Pandowoharjo, Sleman (DIY)",
+      "stock": "Ready 14 Kavling (SHM)",
+      "price": "Rp 600 Jt (Kavling Mewah)",
+      "pic": "Mas Setio (0813-2822-1721)",
+      "highlight": "Kawasan eksklusif dekat Pemda Sleman, Sleman City Hall, Masjid Suciati.",
+      "flyer_image_url": "/storage/asset/flyers/04_atalanta_sleman.jpg",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Atalanta%20Residence%20Pandowoharjo%20Sleman"
+    },
+    {
+      "id": "05",
+      "name": "Perumahan Alora",
+      "location": "Gebang, Purworejo (Jateng)",
+      "stock": "Ready 16 Kavling (SHM)",
+      "price": "Rp 125 Jt (Kavling) / Rp 275 Jt (Rumah)",
+      "pic": "Mas Fahrul (0858-6472-7859)",
+      "highlight": "Dekat pusat kota Purworejo, lingkungan perumahan sudah berpenghuni.",
+      "flyer_image_url": "/storage/asset/flyers/05_alora_purworejo.jpg",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Perumahan%20Alora%20Gebang%20Purworejo"
+    },
+    {
+      "id": "06",
+      "name": "Perumahan Bariki",
+      "location": "Purworejo Kota, Purworejo (Jateng)",
+      "stock": "Sisa 3 Kavling (SHM)",
+      "price": "Rp 125 Jt (Kavling Siap Huni)",
+      "pic": "Mas Fahrul (0858-6472-7859)",
+      "highlight": "Kavling matang siap langsung bangun di tengah kota Purworejo.",
+      "flyer_image_url": "/storage/asset/flyers/06_bariki_purworejo.jpg",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Perumahan%20Bariki%20Purworejo"
+    },
+    {
+      "id": "07",
+      "name": "Kranggan Badran",
+      "location": "Kranggan, Temanggung (Jateng)",
+      "stock": "Ready 33 Kavling (SHGB)",
+      "price": "Rp 100 Jt (Kavling Agrowisata)",
+      "pic": "Mas Setio (0813-2822-1721)",
+      "highlight": "View alam pegunungan sejuk, cocok untuk hunian peristirahatan dan villa.",
+      "flyer_image_url": "/storage/asset/flyers/07_kranggan_temanggung.jpg",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Kranggan%20Badran%20Temanggung"
+    },
+    {
+      "id": "08",
+      "name": "Perumahan Traji",
+      "location": "Parakan, Temanggung (Jateng)",
+      "stock": "Ready 17 Kavling (SHM)",
+      "price": "Rp 120 Jt (Kavling) / Rp 275 Jt (Rumah)",
+      "pic": "Mas Setio (0813-2822-1721)",
+      "highlight": "Akses mudah Jl. Raya Parakan–Wonosobo, udara sejuk dan sumber air melimpah.",
+      "flyer_image_url": "/storage/asset/flyers/08_traji_parakan.jpg",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Perumahan%20Traji%20Parakan%20Temanggung"
+    },
+    {
+      "id": "09",
+      "name": "Argorejo Sedayu",
+      "location": "Sedayu, Bantul (DIY)",
+      "stock": "Ready 10 Kavling (SHGB)",
+      "price": "Rp 100 Jt (Kavling) / Rp 271 Jt (Rumah)",
+      "pic": "Mas Setio (0813-2822-1721)",
+      "highlight": "Jalur Wates KM 12, dekat Kampus Mercu Buana Yogyakarta dan RS Mitra Sehat.",
+      "flyer_image_url": "/storage/asset/flyers/09_argorejo_sedayu.jpg",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Argorejo%20Sedayu%20Bantul%20Yogyakarta"
+    },
+    {
+      "id": "10",
+      "name": "Graha Alwita Slawi",
+      "location": "Slawi, Tegal (Jateng)",
+      "stock": "Ready 23 Kavling (SHGB/SHM)",
+      "price": "Rp 180 Jt (Kavling) / Rp 320 Jt (Rumah)",
+      "pic": "Mas Setio (0813-2822-1721)",
+      "highlight": "Dekat pusat pemerintahan Kabupaten Tegal, akses jalan lebar dan bebas banjir.",
+      "flyer_image_url": "/storage/asset/flyers/10_graha_alwita_slawi.jpg",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Graha%20Alwita%20Slawi%20Tegal"
+    },
+    {
+      "id": "11",
+      "name": "Citrakarsa Bantul",
+      "location": "Bantul Kota, Bantul (DIY)",
+      "stock": "Ready 31 Unit (SHM/SHGB)",
+      "price": "Rp 275 Jt (Kavling & Rumah)",
+      "pic": "Mas Setio (0813-2822-1721)",
+      "highlight": "Pusat Kabupaten Bantul, dekat RSUD Panembahan Senopati dan Pasar Bantul.",
+      "flyer_image_url": "/storage/asset/flyers/11_citrakarsa_bantul.jpg",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Perumahan%20Citrakarsa%20Bantul"
+    },
+    {
+      "id": "12",
+      "name": "Grand Rafa Mansion",
+      "location": "Banyuurip, Purworejo (Jateng)",
+      "stock": "Ready 15 Kavling (SHGB)",
+      "price": "Rp 130 Jt (Kavling) / Rp 275 Jt (Rumah)",
+      "pic": "Mas Fahrul (0858-6472-7859)",
+      "highlight": "Dekat Jalan Daendels dan akses cepat menuju Bandara YIA Kulon Progo.",
+      "flyer_image_url": "/storage/asset/flyers/12_grand_rafa_purworejo.jpg",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Grand%20Rafa%20Mansion%20Banyuurip%20Purworejo"
+    },
+    {
+      "id": "13",
+      "name": "The Neya Residence",
+      "location": "Banyuurip, Purworejo (Jateng)",
+      "stock": "Ready 16 Kavling (SHM)",
+      "price": "Rp 125 Jt (Kavling) / Rp 275 Jt (Rumah)",
+      "pic": "Mas Fahrul (0858-6472-7859)",
+      "highlight": "Konsep hunian modern asri di kawasan berkembang Purworejo Selatan.",
+      "flyer_image_url": "/storage/asset/flyers/13_the_neya_purworejo.jpg",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=The%20Neya%20Residence%20Banyuurip%20Purworejo"
+    },
+    {
+      "id": "14",
+      "name": "Krinjingan Asri",
+      "location": "Nanggulan, Kulon Progo (DIY)",
+      "stock": "Ready 25 Kavling (SHM)",
+      "price": "Rp 100 Jt (Kavling Wisata)",
+      "pic": "Mas Fahrul (0858-6472-7859)",
+      "highlight": "Kawasan wisata kuliner sawah Nanggulan, pemandangan indah perbukitan Menoreh.",
+      "flyer_image_url": "/storage/asset/flyers/14_krinjingan_kulonprogo.jpg",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Krinjingan%20Nanggulan%20Kulon%20Progo"
+    },
+    {
+      "id": "15",
+      "name": "Gedung Komersial Al-Azhar",
+      "location": "Jl. Kaliurang KM 13,5 Besi, Ngaglik, Sleman (DIY)",
+      "stock": "Lahan 3.391 m², Gedung 2 Lantai (29 Ruang)",
+      "price": "Rp 18 Miliar (Nego / Beli / Cash Bertahap / KSO)",
+      "pic": "Mas Fahrul & Mas Setio (AMU)",
+      "highlight": "Tepi jalan raya provinsi Jl. Kaliurang, dekat Kampus Terpadu UII. Sangat ideal untuk kampus satelit, rumah sakit/klinik, pesantren, kantor, atau coliving.",
+      "flyer_image_url": "/storage/asset/flyers/15_alazhar_kaliurang.jpg",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Jl.%20Kaliurang%20KM%2013.5%20Besi%20Ngaglik%20Sleman"
+    }
+  ],
+  "faq_syariah": [
+    {
+      "q": "Apakah BPRS HIK MCI diawasi OJK dan LPS?",
+      "a": "Ya, BPRS HIK MCI adalah bank syariah resmi yang berizin dan diawasi OJK serta peserta penjaminan LPS. Simpanan nasabah aman terjamin."
+    },
+    {
+      "q": "Apa bedanya pembiayaan syariah dengan pinjaman bank konvensional?",
+      "a": "Di BPRS HIK MCI tidak ada bunga (riba), melainkan akad jual beli (Murabahah) atau bagi hasil (Mudharabah/Musyarakah). Cicilan bulanan bersifat flat (pasti sampai lunas), tidak ada bunga mengambang, tidak ada denda keterlambatan finansial berlipat, dan tidak ada pinalti pelunasan dipercepat."
+    },
+    {
+      "q": "Apakah sertifikat properti aman dan siap balik nama?",
+      "a": "Semua properti kelolaan BPRS HIK MCI berstatus clean & clear 100%, sertifikat pecahan (SHM/SHGB) sudah tersedia per bidang dan transaksi langsung dilakukan dengan Akta Jual Beli (AJB) di hadapan Notaris/PPAT."
+    },
+    {
+      "q": "Bagaimana cara survei lokasi properti?",
+      "a": "Survei lokasi 100% GRATIS dan didampingi tim bank kami. Nasabah dapat menghubungi Mas Fahrul (0858-6472-7859) atau Mas Setio (0813-2822-1721)."
+    }
+  ],
+  "catalog_pdf_url": "/storage/asset/Katalog_Portofolio_Properti.pdf",
+  "financial_reports_and_governance": {
+    "summary_health_status": "SANGAT SEHAT & KUAT (Permodalan CAR 21,39%, Tata Kelola Peringkat 1 Sangat Baik, Pengawasan OJK & Penjaminan LPS)",
+    "publication_reports": [
+      {
+        "period": "Triwulan III 2024 (Posisi 30 September 2024) - LAPORAN PUBLIKASI TERKINI",
+        "is_latest": true,
+        "total_assets": "Rp 274.804.821.000 (Rp 274,80 Miliar) - Tumbuh 11,4% (YoY)",
+        "total_dpk": "Rp 159.760.955.000 (Rp 159,76 Miliar)",
+        "dpk_breakdown": {
+          "tabungan_wadiah": "Rp 16,73 Miliar",
+          "tabungan_mudharabah": "Rp 2,28 Miliar",
+          "deposito_mudharabah": "Rp 140,75 Miliar"
+        },
+        "total_financing": "Rp 208.033.974.000 (Rp 208,03 Miliar)",
+        "net_profit_ytd": "Rp 2.441.410.000 (Rp 2,44 Miliar) - Tumbuh 164% dibanding periode sama tahun sebelumnya (Rp 923,9 Juta)",
+        "capital_equity": "Rp 30.560.395.000 (Rp 30,56 Miliar) dengan Modal Disetor Rp 19,41 Miliar",
+        "key_ratios": {
+          "CAR_KPMM": {
+            "value": "21,39%",
+            "explanation": "Kewajiban Penyediaan Modal Minimum (CAR). Batas minimum aman OJK adalah 12%. Angka 21,39% membuktikan BPRS HIK MCI memiliki bantalan permodalan yang sangat kokoh untuk menanggung risiko dan menjaga keamanan simpanan nasabah."
+          },
+          "NPF_Net": {
+            "value": "4,87%",
+            "explanation": "Rasio Pembiayaan Bermasalah Bersih. Berada di angka 4,87%, di bawah batas toleransi maksimum regulator OJK (5,00%), membuktikan kualitas pembiayaan dikelola dengan penuh kehati-hatian."
+          },
+          "NPF_Gross": {
+            "value": "6,75%",
+            "explanation": "Rasio Pembiayaan Bermasalah Kotor sebelum cadangan penyisihan."
+          },
+          "ROA": {
+            "value": "1,53%",
+            "explanation": "Return on Asset, mencerminkan kemampuan aset bank dalam menghasilkan laba bersih secara efisien."
+          },
+          "BOPO": {
+            "value": "88,73%",
+            "explanation": "Beban Operasional terhadap Pendapatan Operasional. Angka di bawah 90% membuktikan bank beroperasi secara efisien dan sehat."
+          },
+          "FDR": {
+            "value": "130,22%",
+            "explanation": "Financing to Deposit Ratio, menunjukkan tingginya peran BPRS HIK MCI dalam mengalirkan dana nasabah menjadi pembiayaan sektor riil dan UMKM produktif."
+          },
+          "PPAP": {
+            "value": "100,00%",
+            "explanation": "Penyisihan Penghapusan Aset Produktif dipenuhi 100% penuh sesuai standar regulasi OJK."
+          }
+        },
+        "shareholders": {
+          "controlling_shareholder_PSP": "Dana Pensiun Syariah Muhammadiyah (53,73%)",
+          "other_shareholders": "Hj. Rini Sujiyanti, SE, MM (11,19%), Prof. Dr. H. Edy Suandi Hamid, M.Ec (8,16%), Drs. Prabowo Soenirman, Akt, MM (6,33%), Arief Nur Wibawanto (4,84%), PT Induk Harta Insan Karimah (4,03%), Dr. Fuad Bawazier, MA (1,93%), Mohammad Yamin (1,93%), Noraini Bawazier (1,93%), Lainnya (5,93%)"
+        },
+        "management": {
+          "direksi": "Kholid, S.Pd, MM (Direktur Utama), Mushoniful Agustian (Direktur Kepatuhan)",
+          "komisaris": "Dede Haris Sumarno (Komisaris Utama), Prof. Dr. Edy Suandi Hamid (Komisaris)",
+          "dps": "Ahim Abdurahim, Toto Suparwoto (Dewan Pengawas Syariah)"
+        },
+        "pdf_download_url": "/storage/laporan/publikasi/_LAPORAN PUBLIKASI TRIWULAN III.pdf"
+      },
+      {
+        "period": "Triwulan I 2024 (Posisi 31 Maret 2024)",
+        "total_assets": "Rp 253,53 Miliar",
+        "net_profit": "Rp 804,87 Juta",
+        "CAR": "24,36%",
+        "NPF_Net": "4,41%",
+        "BOPO": "92,24%",
+        "pdf_download_url": "/storage/laporan/publikasi/_LAPORAN PUBLIKASI TRIWULAN I.pdf"
+      },
+      {
+        "period": "Triwulan IV 2023 (Posisi 31 Desember 2023)",
+        "total_assets": "Rp 267,23 Miliar",
+        "net_profit": "Rp 2,45 Miliar",
+        "CAR": "23,72%",
+        "NPF_Net": "5,29%",
+        "BOPO": "91,70%",
+        "pdf_download_url": "/storage/laporan/publikasi/_LAPORAN PUBLIKASI TRIWULAN IV_REV.pdf"
+      }
+    ],
+    "governance_report_gcg": {
+      "title": "Laporan Penerapan Tata Kelola (Good Corporate Governance) BPRS HIK MCI Tahun 2024",
+      "composite_score": "1,18 (Skala 1 - 5, makin kecil makin baik)",
+      "composite_rating": "Peringkat 1 (Kategori SANGAT BAIK)",
+      "principles_applied": "TARIF: Transparansi, Akuntabilitas, Responsibilitas, Independensi/Profesionalisme, dan Kewajaran (Fairness)",
+      "highlights": [
+        "Memiliki organ Direksi lengkap (termasuk Direksi Kepatuhan) dan Dewan Komisaris yang telah lulus uji kelayakan (Fit & Proper Test) OJK dan disahkan RUPS.",
+        "Diawasi secara aktif oleh Dewan Pengawas Syariah (DPS) bersertifikasi DSN-MUI untuk menjamin seluruh produk dan transaksi 100% bebas riba, gharar, dan maysir.",
+        "Memiliki komite penunjang: Komite Audit, Komite Pemantau Risiko, serta Komite Remunerasi & Nominasi.",
+        "Telah menerapkan pedoman penanganan benturan kepentingan (conflict of interest) dan transparansi informasi publikasi secara berkala."
+      ],
+      "pdf_download_url": "/storage/laporan/tata_kelola/LAPORAN TATA KELOLA 2024.pdf"
+    },
+    "internal_audit_charter": {
+      "title": "Piagam Audit Internal (Internal Audit Charter) BPRS HIK MCI Tahun 2025",
+      "scope": "Menetapkan misi, visi, independensi, wewenang, dan tanggung jawab Satuan Kerja Audit Internal (SKAI) dalam melakukan pengawasan objektif atas sistem pengendalian internal, kepatuhan regulasi OJK, dan manajemen risiko bank.",
+      "pdf_download_url": "/storage/laporan/piagam_audit_internal/PIAGAM AUDIT INTERNAL BPRS HIK MCI (INTERNAL AUDIT CHARTER).pdf"
+    },
+    "regulatory_documents": {
+      "title": "Regulasi dan Laporan Tahunan",
+      "description": "Pedoman Standar Penerapan Manajemen Risiko Bagi BPRS (SE OJK No. 1/SEOJK.03/2017)",
+      "pdf_download_url": "/storage/laporan/tahunan/SE OJK Nomor 1 Tahun 2017.pdf"
+    }
+  },
+  "riplay_official_documents": {
+    "portal_url": "https://riplay.bprshikmciyk.co.id/",
+    "regulation_notice": "Seluruh fitur produk, nominal setoran awal minimal, saldo mengendap, akad, dan biaya adalah WAJIB, BAKU, dan TUNDUK pada dokumen Ringkasan Informasi Produk dan Layanan (RIPLAY) resmi yang disahkan OJK. Nasabah TIDAK DAPAT menawar nominal setoran minimal atau mengubah syarat di luar ketentuan RIPLAY.",
+    "products": [
+      {
+        "id": 11,
+        "name": "Produk iB Tabungan Karimah",
+        "category": "Tabungan",
+        "akad": "Wadi'ah (Titipan murni tanpa bagi hasil)",
+        "purpose": "Rekening penampungan deposito, autodebet, setoran angsuran, dan transaksi harian berkah",
+        "segment": "Perorangan & Badan Usaha / Lembaga",
+        "min_initial_deposit": "Rp 50.000,- (TETAP / NON-NEGOTIABLE, tidak boleh kurang)",
+        "min_subsequent_deposit": "Rp 10.000,-",
+        "min_retained_balance": "Rp 10.000,- (saldo mengendap)",
+        "admin_fee": "Bebas biaya administrasi bulanan (khusus nasabah pembiayaan baru Rp 1.000,-/bln)",
+        "other_fees": "Buku hilang: Rp 5.000,- | Penutupan rekening: Rp 10.000,- | Cetak koran: Rp 5.000,- | Ganti buku penuh: Bebas biaya",
+        "requirements": "Perorangan: KTP & Formulir pembukaan. Badan Usaha: Akta, NPWP, KTP Pengurus, NIB, Formulir",
+        "lps_coverage": "Dijamin LPS hingga Rp 2 Miliar",
+        "riplay_download_url": "https://riplay.bprshikmciyk.co.id/produk/11/download",
+        "riplay_portal_url": "https://riplay.bprshikmciyk.co.id/"
+      },
+      {
+        "id": 10,
+        "name": "Produk iB Tabungan Cerdas",
+        "category": "Tabungan",
+        "akad": "Wadi'ah (Titipan murni)",
+        "purpose": "Meningkatkan literasi dan inklusi menabung bagi para siswa/pelajar di bawah 17 tahun",
+        "segment": "Pelajar / Siswa",
+        "min_initial_deposit": "Rp 10.000,- (TETAP, khusus pelajar)",
+        "min_subsequent_deposit": "Rp 1.000,-",
+        "min_retained_balance": "Rp 5.000,- (saldo mengendap)",
+        "admin_fee": "Gratis / Bebas biaya admin bulanan",
+        "other_fees": "Buku hilang: Rp 5.000,- | Penutupan rekening: Rp 1.000,- | Ganti buku penuh: Bebas biaya",
+        "requirements": "Kartu Pelajar / Akta Kelahiran + KTP Orang Tua/Wali",
+        "lps_coverage": "Dijamin LPS hingga Rp 2 Miliar",
+        "riplay_download_url": "https://riplay.bprshikmciyk.co.id/produk/10/download",
+        "riplay_portal_url": "https://riplay.bprshikmciyk.co.id/"
+      },
+      {
+        "id": 13,
+        "name": "Produk iB Tabungan Ukhuwah",
+        "category": "Tabungan",
+        "akad": "Mudharabah Mutlaqah (Bagi Hasil)",
+        "purpose": "Tabungan bersama BPRS se-Indonesia dengan bagi hasil dan peluang undian hadiah berkala (mobil, motor, umroh)",
+        "segment": "Perorangan dan Badan Usaha",
+        "min_initial_deposit": "Rp 100.000,- (TETAP / NON-NEGOTIABLE)",
+        "min_subsequent_deposit": "Rp 10.000,-",
+        "min_retained_balance": "Rp 25.000,-",
+        "profit_sharing": "Nisbah: 22% Nasabah : 78% Bank",
+        "lottery_points": "Poin undian dihitung dari kelipatan saldo tabungan tertentu",
+        "admin_fee": "Bebas biaya administrasi bulanan",
+        "other_fees": "Penutupan rekening: Rp 25.000,- | Buku hilang: Rp 5.000,- | Ganti buku penuh: Gratis",
+        "requirements": "KTP & Formulir pembukaan rekening",
+        "lps_coverage": "Dijamin LPS hingga Rp 2 Miliar",
+        "riplay_download_url": "https://riplay.bprshikmciyk.co.id/produk/13/download",
+        "riplay_portal_url": "https://riplay.bprshikmciyk.co.id/"
+      },
+      {
+        "id": 12,
+        "name": "Produk iB Tabungan Rencana",
+        "category": "Tabungan Berjangka",
+        "akad": "Mudharabah Mutlaqah",
+        "purpose": "Perencanaan kebutuhan masa depan: pendidikan anak, pernikahan, qurban, ibadah umroh, dll.",
+        "segment": "Perorangan",
+        "min_initial_deposit": "Rp 100.000,- (TETAP)",
+        "min_subsequent_deposit": "Rp 100.000,- / bulan (setoran rutin per bulan sama)",
+        "profit_sharing": "Nisbah bagi hasil 30% untuk Nasabah (atau setara ER 4% p.a.)",
+        "admin_fee": "Rp 1.500,- per bulan",
+        "other_fees": "Buku hilang/rusak: Rp 5.000,- | Penutupan rekening: Rp 10.000,-",
+        "requirements": "KTP & Buku Tabungan sumber autodebet",
+        "lps_coverage": "Dijamin LPS hingga Rp 2 Miliar",
+        "riplay_download_url": "https://riplay.bprshikmciyk.co.id/produk/12/download",
+        "riplay_portal_url": "https://riplay.bprshikmciyk.co.id/"
+      },
+      {
+        "id": 9,
+        "name": "Produk iB Tabungan Cahaya Berhadiah",
+        "category": "Tabungan Berjangka Hadiah Langsung",
+        "akad": "Mudharabah Mutlaqah",
+        "purpose": "Tabungan berjangka dengan promo hadiah langsung tanpa diundi sesuai skema penempatan dana",
+        "segment": "Perorangan dan Badan Usaha",
+        "min_initial_deposit": "Minimal Rp 10.000.000,- (TETAP / dana di-lock)",
+        "tenor": "Minimal 12 Bulan",
+        "profit_sharing": "Nisbah 5% Nasabah : 95% Bank + Hadiah Langsung di awal penempatan",
+        "admin_fee": "Rp 1.500,- per bulan",
+        "other_fees": "Buku hilang: Rp 5.000,- | Penutupan saat/sebelum jatuh tempo: Rp 10.000,-",
+        "requirements": "KTP & Formulir kepesertaan program Tabungan Cahaya",
+        "lps_coverage": "Dijamin LPS hingga Rp 2 Miliar",
+        "riplay_download_url": "https://riplay.bprshikmciyk.co.id/produk/9/download",
+        "riplay_portal_url": "https://riplay.bprshikmciyk.co.id/"
+      },
+      {
+        "id": 7,
+        "name": "Produk iB Deposito Karimah",
+        "category": "Deposito Mudharabah",
+        "akad": "Mudharabah Mutlaqah",
+        "purpose": "Investasi berjangka syariah aman, menguntungkan, dan berkah dengan bilyet resmi",
+        "segment": "Perorangan dan Badan Usaha",
+        "min_placement": "Minimal Rp 2.500.000,- (TETAP / NON-NEGOTIABLE, tidak boleh kurang)",
+        "tenor": "3 Bulan (Nisbah 43% : 57%), 6 Bulan (Nisbah 46% : 54%), 12 Bulan (Nisbah 50% : 50%)",
+        "equivalent_rate_sync": "Mengacu pada Equivalent Rate terkini di sistem (ER 5,13% p.a.)",
+        "admin_fee": "Bebas biaya administrasi",
+        "tax": "Pajak 20% atas bagi hasil sesuai regulasi perpajakan yang berlaku",
+        "penalty": "Tanpa penalti pencairan jatuh tempo (ARO / Non-ARO)",
+        "requirements": "KTP (Perorangan) / Akta, NPWP, NIB (Badan Usaha)",
+        "lps_coverage": "Dijamin LPS hingga Rp 2 Miliar",
+        "riplay_download_url": "https://riplay.bprshikmciyk.co.id/produk/7/download",
+        "riplay_portal_url": "https://riplay.bprshikmciyk.co.id/"
+      },
+      {
+        "id": 8,
+        "name": "Cash Waqf Linked Deposit (CWLD)",
+        "category": "Wakaf Uang Berjangka (CWLD)",
+        "akad": "Mudharabah Mutlaqah",
+        "purpose": "Investasi sosial syariah memadukan deposito dan wakaf uang temporer untuk kemaslahatan umat",
+        "segment": "Perorangan dan Lembaga",
+        "min_placement": "Minimal Rp 1.000.000,-",
+        "tenor": "Minimal 12 Bulan (pokok dana kembali 100% ke wakif saat jatuh tempo, bagi hasil disalurkan ke Mauquf Alaih via Nazhir)",
+        "riplay_download_url": "https://riplay.bprshikmciyk.co.id/produk/8/download",
+        "riplay_portal_url": "https://riplay.bprshikmciyk.co.id/"
+      },
+      {
+        "id": 2,
+        "name": "Produk iB Pembiayaan UMKM",
+        "category": "Pembiayaan Produktif",
+        "akad": "Murabahah (Jual Beli), Musyarakah / Mudharabah (Bagi Hasil), MMQ, atau Ijarah",
+        "purpose": "Modal kerja dan investasi usaha produktif sektor riil / UMKM",
+        "plafon": "Mulai Rp 5 Juta hingga Batas Maksimum Penyaluran Dana (BMPD)",
+        "tenor": "Maksimal 60 Bulan (5 Tahun)",
+        "collateral": "SHM / SHGB / BPKB Kendaraan bermotor",
+        "riplay_download_url": "https://riplay.bprshikmciyk.co.id/produk/2/download",
+        "riplay_portal_url": "https://riplay.bprshikmciyk.co.id/"
+      },
+      {
+        "id": 3,
+        "name": "Produk iB Pembiayaan Sertifikasi Pendidik",
+        "category": "Pembiayaan Konsumtif / Multiguna",
+        "akad": "Murabahah / Ijarah Multi Jasa",
+        "purpose": "Pembiayaan khusus Guru dan Dosen bersertifikasi pendidik (PNS/Yayasan)",
+        "plafon": "Rp 5.000.000,- s.d Rp 100.000.000,-",
+        "tenor": "Maksimal 60 Bulan",
+        "margin": "Setara 12% - 15% flat per tahun",
+        "collateral": "SK Sertifikasi Pendidik / Ijazah / Dokumen kepegawaian",
+        "riplay_download_url": "https://riplay.bprshikmciyk.co.id/produk/3/download",
+        "riplay_portal_url": "https://riplay.bprshikmciyk.co.id/"
+      },
+      {
+        "id": 6,
+        "name": "Produk iB Pembiayaan Kolektif Pegawai",
+        "category": "Pembiayaan Pegawai",
+        "akad": "Murabahah, Ijarah, Ijarah Multi Jasa",
+        "purpose": "Pembiayaan pegawai swasta/instansi melalui skema PKS potong gaji",
+        "plafon": "Rp 5.000.000,- s.d Rp 100.000.000,-",
+        "tenor": "Maksimal 60 Bulan",
+        "collateral": "SK Pengangkatan Pegawai Tetap & Rekomendasi Instansi",
+        "riplay_download_url": "https://riplay.bprshikmciyk.co.id/produk/6/download",
+        "riplay_portal_url": "https://riplay.bprshikmciyk.co.id/"
+      },
+      {
+        "id": 5,
+        "name": "Produk iB Pembiayaan Multijasa Umroh",
+        "category": "Pembiayaan Multijasa Ibadah",
+        "akad": "Ijarah Multi Jasa",
+        "purpose": "Dana talangan dan paket perjalanan ibadah umroh ke tanah suci",
+        "segment": "UMKM, Karyawan Tetap, Profesional, ASN",
+        "riplay_download_url": "https://riplay.bprshikmciyk.co.id/produk/5/download",
+        "riplay_portal_url": "https://riplay.bprshikmciyk.co.id/"
+      },
+      {
+        "id": 4,
+        "name": "Produk iB Pembiayaan Pekerja Migran Indonesia (PMI)",
+        "category": "Pembiayaan Penempatan PMI",
+        "akad": "Murabahah, Ijarah, Qardh",
+        "purpose": "Pembiayaan biaya penempatan tenaga kerja ke luar negeri bekerja sama dengan P3MI resmi",
+        "riplay_download_url": "https://riplay.bprshikmciyk.co.id/produk/4/download",
+        "riplay_portal_url": "https://riplay.bprshikmciyk.co.id/"
+      },
+      {
+        "id": 1,
+        "name": "Produk iB Pembiayaan Showroom Mobil",
+        "category": "Pembiayaan Modal Kerja",
+        "akad": "Murabahah, Musyarakah, MMQ, Ijarah (Line Facility)",
+        "purpose": "Fasilitas perputaran stok kendaraan dagangan showroom mobil",
+        "margin": "Setara 1,5% flat per bulan",
+        "riplay_download_url": "https://riplay.bprshikmciyk.co.id/produk/1/download",
+        "riplay_portal_url": "https://riplay.bprshikmciyk.co.id/"
+      }
+    ]
+  }
+}
