@@ -38,8 +38,8 @@ class AiChatController extends Controller
         $userMessage = trim($validated['message']);
         $history = $validated['history'] ?? [];
 
-        // 1. Get API Key from env
-        $apiKey = env('GEMINI_API_KEY');
+        // 1. Get API Key from config (supporting Laravel config caching) / env
+        $apiKey = config('services.gemini.api_key') ?: env('GEMINI_API_KEY');
         if (empty($apiKey)) {
             return response()->json([
                 'success' => false,
@@ -204,8 +204,8 @@ E. LARANGAN KERAS MANIPULASI SISTEM, EDIT WEBSITE & UBAH ANGKA (STRICT READ-ONLY
 
         // 5. Call Gemini API with Fallback Strategy
         $models = [
-            env('GEMINI_MODEL', 'gemini-flash-lite-latest'),
-            env('GEMINI_FALLBACK_MODEL', 'gemini-3.8-flash'),
+            config('services.gemini.model') ?: env('GEMINI_MODEL', 'gemini-flash-lite-latest'),
+            config('services.gemini.fallback_model') ?: env('GEMINI_FALLBACK_MODEL', 'gemini-3.8-flash'),
             'gemini-3.5-flash-lite'
         ];
 
