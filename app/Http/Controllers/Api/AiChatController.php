@@ -62,6 +62,21 @@ class AiChatController extends Controller
 
 Tugas Anda adalah melayani nasabah dan calon pembeli secara ramah, luwes, solutif, cerdas, berbasis data riil website, dan menjunjung tinggi prinsip syariah serta kepatuhan regulasi OJK.
 
+========================================================================
+PEDOMAN MUTLAK BASIS KONTEN WEBSITE (STRICT WEBSITE-GROUNDED & ZERO-HALLUCINATION POLICY):
+========================================================================
+1. SATU-SATUNYA SUMBER KEBENARAN ADALAH WEBSITE WWW.BPRSHIKMCIYK.CO.ID:
+   - Anda HANYA boleh menjawab pertanyaan yang fakta, data angka, produk, dan ketentuannya termuat di dalam basis data resmi website dan dokumen RIPLAY resmi yang disajikan di bawah ini.
+   - DILARANG KERAS menggunakan pengetahuan luar yang tidak terkait dengan konten website BPRS HIK MCI.
+2. OTOMATIS MEMBACA DATA TERBARU DARI WEBSITE (AUTO-SYNC WEBSITE UPDATES):
+   - Seluruh data pada bagian [DATA REALTIME DATABASE ...] di bawah ditarik langsung secara dinamis dan real-time dari sistem database website www.bprshikmciyk.co.id.
+   - Setiap kali manajemen atau tim IT bank memperbarui website (mengunggah dokumen laporan keuangan publikasi triwulan baru, laporan tahunan baru, laporan keberlanjutan baru, penyesuaian suku bunga/nisbah deposito, pembaruan aset properti, rilis berita kegiatan, artikel edukasi, atau lowongan karir baru), data tersebut seketika menjadi fakta resmi paling mutakhir.
+   - Anda WAJIB selalu memprioritaskan dan menggunakan data realtime terkini tersebut sebagai rujukan utama dalam setiap respon kepada nasabah.
+3. KETENTUAN JIKA DATA TIDAK DITEMUKAN DI WEBSITE:
+   - JIKA informasi yang ditanyakan pengguna TIDAK TERCANTUM dalam basis data website di bawah (misalnya nama properti yang tidak ada di daftar, produk di luar perbankan syariah BPRS HIK MCI, atau data internal rahasia):
+     * DILARANG MENGARANG ATAU MENEBAK!
+     * Respon Wajib & Jujur: Sampaikan dengan santun bahwa informasi tersebut saat ini belum/tidak tercantum pada website resmi BPRS HIK MCI, kemudian tawarkan bantuan informasi resmi lainnya atau arahkan nasabah ke Customer Care resmi melalui WhatsApp 0813-2075-0415 / Telepon (0274) 881159.
+
 PEDOMAN GAYA PENULISAN & KETUNTASAN JAWABAN (SANGAT KRUSIAL):
 1. WAJIB TUNTAS & SELESAI PENUH: Setiap penjelasan HARUS diselesaikan secara utuh sampai kalimat penutup selesai. DILARANG KERAS memotong kalimat di tengah jalan!
 2. FORMAT RAPI & TERSTRUKTUR: Gunakan poin bernomor (1, 2, 3) atau bullet point (-) agar mudah dibaca di layar chat nasabah. Hindari paragraf pembuka yang terlalu panjang agar esensi jawaban langsung tersampaikan dengan jelas dan lugas.
@@ -185,8 +200,9 @@ F. TOPIK DI LUAR LINGKUP BPRS HIK MCI (HARD OUT-OF-SCOPE REFUSAL GUARDRAILS):
      a. Produk Tabungan (Wadiah, Mudharabah, Ukhuwah, Karimah, Cerdas, Qurban, Simpel, dll.) dan Deposito Mudharabah sesuai RIPLAY OJK.
      b. Produk Pembiayaan Syariah (Murabahah UMKM modal kerja, konsumer, multiguna, griya) dan simulasi angsuran flat.
      c. Portofolio Aset Properti resmi bank (kavling, rumah, Gedung Al-Azhar, tautan peta Google Maps, flyer brosur, jadwal survei).
-     d. Laporan Keuangan Publikasi Triwulan OJK, Laporan Tata Kelola (GCG), Piagam Audit Internal, Berita Resmi, dan Lowongan Karir di website.
-     e. Profil bank, alamat kantor pusat/cabang/kas, dan kontak Customer Care resmi.
+     d. Laporan Keuangan Publikasi Triwulan OJK, Laporan Tahunan (Annual Report), Laporan Keuangan Berkelanjutan, Laporan Tata Kelola (GCG), Piagam Audit Internal.
+     e. Berita Kegiatan, Artikel Edukasi/Literasi Syariah, E-book Syariah, Program Wakaf Uang (CWLD), dan Lowongan Karir di website.
+     f. Profil bank, alamat kantor pusat/cabang/kas, dan kontak Customer Care resmi.
 
 2. PENANGANAN PERTANYAAN CAMPURAN (MULTI-PART / COMPOUND QUESTIONS) - SANGAT KRUSIAL:
    - JIKA pengguna mengirim pesan yang menggabungkan beberapa pertanyaan sekaligus, di mana SEBAGIAN pertanyaan berkaitan dengan BPRS HIK MCI dan SEBAGIAN LAINNYA di luar perbankan (contoh kasus nyata di log: 'Produk tabungan debet bisa minus? Menara Eiffel di mana? Rekomendasi bioskop di Sleman? Berapa rate deposito?'):
@@ -300,6 +316,8 @@ F. TOPIK DI LUAR LINGKUP BPRS HIK MCI (HARD OUT-OF-SCOPE REFUSAL GUARDRAILS):
             $category = 'Keuangan & GCG';
         } elseif (Str::contains($lowerMsg, ['karir', 'lowongan', 'loker', 'kerja', 'rekrutmen'])) {
             $category = 'Karir & Lowongan';
+        } elseif (Str::contains($lowerMsg, ['edukasi', 'literasi', 'ebook', 'e-book', 'wakaf', 'cwld'])) {
+            $category = 'Edukasi & Wakaf';
         }
 
         // Persist interaction log for Filament Admin Dashboard & AI Continuous Learning
@@ -331,7 +349,7 @@ F. TOPIK DI LUAR LINGKUP BPRS HIK MCI (HARD OUT-OF-SCOPE REFUSAL GUARDRAILS):
     private function getDynamicLiveContext(): string
     {
         try {
-            return Cache::remember('ai_dynamic_website_context', 120, function () {
+            return Cache::remember('ai_dynamic_website_context', 60, function () {
             $context = "";
 
             // 1. Live Rate Deposito (Equivalent Rate)
@@ -368,7 +386,31 @@ F. TOPIK DI LUAR LINGKUP BPRS HIK MCI (HARD OUT-OF-SCOPE REFUSAL GUARDRAILS):
                 }
             } catch (\Throwable $e) {}
 
-            // 3. Live Laporan Tata Kelola (GCG)
+            // 3. Live Laporan Tahunan (Annual Reports)
+            try {
+                $annReports = \App\Models\LaporanTahunan::orderBy('tahun', 'desc')->take(3)->get();
+                if ($annReports->isNotEmpty()) {
+                    $context .= "\n\n[DATA REALTIME DATABASE - DOKUMEN LAPORAN TAHUNAN (ANNUAL REPORT) DI WEBSITE]:\n";
+                    foreach ($annReports as $ann) {
+                        $fileUrl = Str::startsWith($ann->file, ['http://', 'https://']) ? $ann->file : asset('storage/' . ltrim($ann->file, '/'));
+                        $context .= "- {$ann->judul} (Tahun {$ann->tahun}) -> Download URL: {$fileUrl}\n";
+                    }
+                }
+            } catch (\Throwable $e) {}
+
+            // 4. Live Laporan Keuangan Berkelanjutan (Sustainability Reports)
+            try {
+                $susReports = \App\Models\LaporanKeuanganBerkelanjutan::orderBy('tahun', 'desc')->take(3)->get();
+                if ($susReports->isNotEmpty()) {
+                    $context .= "\n\n[DATA REALTIME DATABASE - DOKUMEN LAPORAN KEUANGAN BERKELANJUTAN (SUSTAINABILITY REPORT) DI WEBSITE]:\n";
+                    foreach ($susReports as $sus) {
+                        $fileUrl = Str::startsWith($sus->file, ['http://', 'https://']) ? $sus->file : asset('storage/' . ltrim($sus->file, '/'));
+                        $context .= "- {$sus->judul} (Tahun {$sus->tahun}) -> Download URL: {$fileUrl}\n";
+                    }
+                }
+            } catch (\Throwable $e) {}
+
+            // 5. Live Laporan Tata Kelola (GCG)
             try {
                 $gcgReports = \App\Models\LaporanTataKelola::orderBy('id', 'desc')->take(3)->get();
                 if ($gcgReports->isNotEmpty()) {
@@ -382,7 +424,7 @@ F. TOPIK DI LUAR LINGKUP BPRS HIK MCI (HARD OUT-OF-SCOPE REFUSAL GUARDRAILS):
                 }
             } catch (\Throwable $e) {}
 
-            // 4. Live Piagam Audit Internal
+            // 6. Live Piagam Audit Internal
             try {
                 $auditReports = \App\Models\PiagamAuditInternal::orderBy('id', 'desc')->take(2)->get();
                 if ($auditReports->isNotEmpty()) {
@@ -394,7 +436,7 @@ F. TOPIK DI LUAR LINGKUP BPRS HIK MCI (HARD OUT-OF-SCOPE REFUSAL GUARDRAILS):
                 }
             } catch (\Throwable $e) {}
 
-            // 5. Live Berita Terkini Website (Admin Dashboard Articles)
+            // 7. Live Berita Terkini Website (Admin Dashboard Articles)
             try {
                 $beritas = \App\Models\Berita::orderBy('id', 'desc')->take(5)->get();
                 if ($beritas->isNotEmpty()) {
@@ -408,7 +450,32 @@ F. TOPIK DI LUAR LINGKUP BPRS HIK MCI (HARD OUT-OF-SCOPE REFUSAL GUARDRAILS):
                 }
             } catch (\Throwable $e) {}
 
-            // 6. Live Asset Properti (Admin Dashboard Assets)
+            // 8. Live Edukasi & Literasi Keuangan Syariah
+            try {
+                $edukasis = \App\Models\Edukasi::orderBy('id', 'desc')->take(4)->get();
+                if ($edukasis->isNotEmpty()) {
+                    $context .= "\n\n[DATA REALTIME DATABASE - ARTIKEL EDUKASI & LITERASI SYARIAH DI WEBSITE]:\n";
+                    foreach ($edukasis as $ed) {
+                        $excerpt = Str::limit(strip_tags($ed->isi), 150);
+                        $shareUrl = $ed->share_url ?? route('edukasi.show', $ed->id . '-' . $ed->slug);
+                        $context .= "- {$ed->judul}: {$excerpt} [Baca Lengkap: {$shareUrl}]\n";
+                    }
+                }
+            } catch (\Throwable $e) {}
+
+            // 9. Live E-Book Literasi Keuangan Syariah
+            try {
+                $ebooks = \App\Models\Ebook::orderBy('id', 'desc')->take(3)->get();
+                if ($ebooks->isNotEmpty()) {
+                    $context .= "\n\n[DATA REALTIME DATABASE - E-BOOK LITERASI SYARIAH DI WEBSITE]:\n";
+                    foreach ($ebooks as $eb) {
+                        $pdfUrl = Str::startsWith($eb->file_pdf, ['http://', 'https://']) ? $eb->file_pdf : asset('storage/edukasi/' . ltrim($eb->file_pdf, '/'));
+                        $context .= "- {$eb->judul} -> Unduh E-book: {$pdfUrl}\n";
+                    }
+                }
+            } catch (\Throwable $e) {}
+
+            // 10. Live Asset Properti (Admin Dashboard Assets)
             try {
                 $liveAssets = \App\Models\Asset::orderBy('id', 'desc')->get();
                 if ($liveAssets->isNotEmpty()) {
@@ -422,7 +489,7 @@ F. TOPIK DI LUAR LINGKUP BPRS HIK MCI (HARD OUT-OF-SCOPE REFUSAL GUARDRAILS):
                 }
             } catch (\Throwable $e) {}
 
-            // 7. Live Lowongan Karir (Job Openings)
+            // 11. Live Lowongan Karir (Job Openings)
             try {
                 $karirs = \App\Models\Karir::orderBy('id', 'desc')->get();
                 if ($karirs->isNotEmpty()) {
@@ -436,7 +503,31 @@ F. TOPIK DI LUAR LINGKUP BPRS HIK MCI (HARD OUT-OF-SCOPE REFUSAL GUARDRAILS):
                 }
             } catch (\Throwable $e) {}
 
-            // 8. Continuous Learning: Evaluasi & Catatan Khusus dari Tim Bank di Dashboard Filament
+            // 12. Live Program Wakaf Uang (Cash Waqf Linked Deposit / CWLD)
+            try {
+                $wakafs = \App\Models\Wakaf::where('status', 'aktif')->orWhereNull('status')->orderBy('id', 'desc')->take(3)->get();
+                if ($wakafs->isNotEmpty()) {
+                    $context .= "\n\n[DATA REALTIME DATABASE - PROGRAM WAKAF UANG (CWLD) DI WEBSITE]:\n";
+                    foreach ($wakafs as $w) {
+                        $targetFormatted = $w->target ? 'Rp ' . number_format($w->target, 0, ',', '.') : 'Sesuai Partisipasi';
+                        $context .= "- {$w->judul} | Target: {$targetFormatted} | Lokasi: {$w->lokasi} | Nazhir: {$w->nahzir}\n";
+                    }
+                }
+            } catch (\Throwable $e) {}
+
+            // 13. Live Dokumen Publik Lainnya
+            try {
+                $docs = \App\Models\Document::orderBy('id', 'desc')->take(4)->get();
+                if ($docs->isNotEmpty()) {
+                    $context .= "\n\n[DATA REALTIME DATABASE - DOKUMEN RESMI PUBLIK LAINNYA]:\n";
+                    foreach ($docs as $doc) {
+                        $fileUrl = Str::startsWith($doc->file, ['http://', 'https://']) ? $doc->file : asset('storage/' . ltrim($doc->file, '/'));
+                        $context .= "- {$doc->judul} -> Download: {$fileUrl}\n";
+                    }
+                }
+            } catch (\Throwable $e) {}
+
+            // 14. Continuous Learning: Evaluasi & Catatan Khusus dari Tim Bank di Dashboard Filament
             try {
                 $staffNotes = \App\Models\AiChatLog::whereNotNull('admin_notes')
                     ->where('admin_notes', '!=', '')
